@@ -5,6 +5,163 @@ Autolean is a command-line tool that converts a directory of JSON-encoded math p
 By default model calls use OpenRouter API. You can switch model calls to local `codex exec`
 with `--use-codex-exec` while keeping the rest of the pipeline unchanged.
 
+## Formalization pipeline
+
+The core `autolean run` command converts JSON math problems into compilable Lean 4 theorem statements.
+
+```
+                         *.json files
+                              |
+                              v
+                   +---------------------+
+                   |  Validate JSON       |
+                   |  (uuid + problem)    |
+                   +---------------------+
+                              |
+                              v
+                   +---------------------+
+              +--->|  Phase 5.2: Think    |  (iteration 1 only)
+              |    |  proof strategy,     |
+              |    |  candidate lemmas    |
+              |    +---------------------+
+              |               |
+              |               v
+              |    +---------------------+
+              |    |  Phase 5.3: Code     |
+              |    |  generate Lean 4     |
+              |    |  {"lean": "..."}     |
+              |    +---------------------+
+              |               |
+              |               v
+              |    +---------------------+
+              |    |  Anti-trivialization |
+              |    |  guard (reject       |
+              |    |  `: True`/`: False`) |
+              |    +---------------------+
+              |               |
+              |               v
+              |    +---------------------+
+              |    |  Compile             |
+              |    |  lake env lean ...   |
+              |    +---------------------+
+              |          |           |
+              |        fail        pass
+              |          |           |
+              |          v           v
+              |    +-----------+  +---------------------+
+              |    | iter < N? |  |  Semantic eval      |
+              |    +-----------+  |  grade A-D vs JSON  |
+              |     yes |  | no   +---------------------+
+              |         |  |           |            |
+              +---------+  |       grade >= B    grade < B
+                           |           |            |
+                           v           v            |
+                        FAIL       *.lean       iter < N?
+                                   written     yes |  | no
+                                                   |  |
+                                       +-----------+  |
+                                       |              v
+                                       |           FAIL
+                                       |
+                                       +---> retry phase 5.3
+                                             with eval feedback
+```
+
+## Proving pipeline
+
+The proving scripts take existing Lean files with placeholder proofs (`sorry`) and attempt to fill in complete proofs.
+
+### Independent attempts (`prove_lean_formalizations.py`)
+
+```
+                      *.lean with sorry
+                              |
+                              v
+               +-----------------------------+
+               |  Launch K independent       |
+               |  proof attempts in parallel |
+               +-----------------------------+
+                    |        |        |
+                    v        v        v
+              [Attempt 1] [Attempt 2] ... [Attempt K]
+                    |
+                    v
+          +-------------------+
+          |  LLM: generate    |
+          |  proof body       |
+          +-------------------+
+                    |
+                    v
+          +-------------------+
+          |  Reject if:       |
+          |  - still sorry    |
+          |  - frozen changed |
+          |  - new axiom      |
+          +-------------------+
+                    |
+                    v
+          +-------------------+
+          |  Compile          |
+          +-------------------+
+               |         |
+             fail       pass -------> record pass
+               |
+               v
+          iter < max-iters?
+          yes |      | no
+              |      v
+              |   record fail
+              v
+         retry with compiler
+         feedback (same attempt)
+```
+
+### With replanning (`prove_lean_formalizations_replan.py`)
+
+```
+                      *.lean with sorry
+                              |
+                              v
+               +-----------------------------+
+               |  Plan round 1               |
+               |  Planner LLM: proof plan    |
+               +-----------------------------+
+                              |
+                              v
+               +-----------------------------+
+               |  Prove (up to N attempts)   |
+               |  Prover LLM + compile loop  |
+               +-----------------------------+
+                         |           |
+                       pass        all fail
+                         |           |
+                         v           v
+                      *.lean   +---------------------------+
+                      done     | rounds < max-plan-rounds? |
+                               +---------------------------+
+                                  yes |          | no
+                                      |          v
+                                      |        FAIL
+                                      v
+                               +-----------------------------+
+                               |  Replan                     |
+                               |  Planner LLM: new plan      |
+                               |  using failure report        |
+                               +-----------------------------+
+                                              |
+                                              v
+                               +-----------------------------+
+                               |  Prove (up to N attempts)   |
+                               |  with new plan              |
+                               +-----------------------------+
+                                         |           |
+                                       pass        all fail
+                                         |           |
+                                         v           v
+                                      *.lean      repeat or FAIL
+                                      done
+```
+
 ## Input format
 
 Each input file is a `*.json` file placed in the input directory (default: `problems/`).
