@@ -1,6 +1,6 @@
-# Autolean — OpenRouter ↔ Lean Formalization Loop
+# Autolean — Agentic Lean Formalization Loop
 
-Autolean is a command-line tool that converts a directory of JSON-encoded math problems into Lean 4 files using the OpenRouter API, then compiles, repairs, and evaluates semantic fidelity against the original problem. It is designed for repeatability, logging, and easy integration with an existing Lean + Mathlib environment.
+Autolean is a command-line tool that converts a directory of JSON-encoded math problems into Lean 4 files using the llm API, then compiles, repairs, and evaluates semantic fidelity against the original problem. It is designed for repeatability, logging, and easy integration with an existing Lean + Mathlib environment.
 
 By default model calls use OpenRouter API. You can switch model calls to local `codex exec`
 with `--use-codex-exec` while keeping the rest of the pipeline unchanged.
