@@ -5,10 +5,74 @@ Autolean is a command-line tool that converts a directory of JSON-encoded math p
 By default model calls use OpenRouter API. You can switch model calls to local `codex exec`
 with `--use-codex-exec` while keeping the rest of the pipeline unchanged.
 
+## Input format
+
+Each input file is a `*.json` file placed in the input directory (default: `problems/`).
+
+### Required fields
+
+| Field     | Type       | Description |
+|-----------|------------|-------------|
+| `uuid`    | `string`   | Identifier for the problem (kept in the prompt as metadata; not used for file naming). |
+| `problem` | `string[]` | Array of natural-language statements describing the problem. Lines are concatenated in order. May include LaTeX. |
+
+### Optional fields
+
+Any other fields (`solution`, `remark`, `reference`, `figures`, etc.) are preserved in the prompt but ignored by the parser.
+
+### Single-problem example
+
+File: `problems/set_union_comm.json`
+```json
+{
+  "uuid": "chapter1/problem-1",
+  "problem": [
+    "Prove that A ∪ B = B ∪ A.",
+    "Assume A, B are sets."
+  ],
+  "solution": ["ignored by Autolean"],
+  "remark": []
+}
+```
+
+### Multi-part problem example
+
+A single JSON file can contain multiple sub-problems when `problem` has more than one entry. Use the split script to break it into individual files before running Autolean:
+
+File: `problems/14.json` (before splitting)
+```json
+{
+  "uuid": "chapter4/problem-14",
+  "problem": [
+    "(1) Prove that every closed subset of a compact space is compact.",
+    "(2) Prove that a compact subset of a Hausdorff space is closed.",
+    "(3) Prove that the continuous image of a compact set is compact.",
+    "(4) Prove that a continuous bijection from a compact space to a Hausdorff space is a homeomorphism."
+  ]
+}
+```
+
+After running `python scripts/split_subproblems.py --input-dir problems`, this produces:
+- `problems/14_1.json` — sub-problem (1)
+- `problems/14_2.json` — sub-problem (2)
+- `problems/14_3.json` — sub-problem (3)
+- `problems/14_4.json` — sub-problem (4)
+
+### Multipart chain naming convention
+
+Autolean recognizes multipart chains by the `<name>_<index>.json` naming pattern (e.g., `14_1.json`, `14_2.json`). These are processed sequentially, with prior sub-question context injected into later parts.
+
+Rules:
+- Indices must start at `1` and be contiguous (no gaps).
+- A single `<name>_1.json` without further parts is treated as a standalone problem.
+- If a chain has index gaps, the entire main question is marked failed and skipped.
+- If part `k` fails, parts `k+1...` are skipped and Autolean continues with the next main question.
+
 ## What it does
+
 For each `*.json` file in the input directory:
 1. Validates required fields (`uuid`, `problem`).
-   For multipart chains named like `99_1.json`, `99_2.json`, `99_3.json`, Autolean processes them in order and passes prior sub-question context forward.
+   For multipart chains, Autolean processes them in order and passes prior sub-question context forward.
 2. Builds a prompt that embeds the full JSON (authoritative).
 3. Runs phase 5.2 (Thinking) only on iteration 1: derive proof idea and likely lemma calls.
 4. Runs phase 5.3 (Codex implementation): writes Lean using the phase 5.2 notes.
@@ -29,8 +93,6 @@ For multipart chains:
 - You can enable fast resume with `--autopass-eval-a` to skip compile-check for files that already have latest eval grade `A`.
 - You can also enable fast resume with `--autopass-has-eval` to skip compile-check for files that already have any eval artifact, regardless of grade.
 - Later parts receive earlier sub-question JSON and earlier Lean formalizations as prerequisite context.
-- If a chain has index gaps (e.g., `99_1.json`, `99_3.json` without `99_2.json`), that main question is marked failed and skipped.
-- If part `k` fails, parts `k+1...` are skipped, and Autolean continues with the next main question.
 
 ## Key features
 - Deterministic file naming from input filenames (with sanitization and CJK→pinyin transliteration).
@@ -52,20 +114,6 @@ For multipart chains:
 - Lean 4 + Lake available on PATH **in the environment used for compilation**.
 - Mathlib installed in the Lean project used for compilation (the generated Lean always uses `import Mathlib`).
 
-### Reference Lean environment (recommended)
-If you want the same environment used by the `leancheck` project on this machine, point `--cwd` to:
-`/Users/jcfeng/Documents/Lean/leancheck`
-
-That project is configured with:
-- Lean toolchain: `leanprover/lean4:v4.28.0-rc1`.
-- Direct dependency: `mathlib` at `v4.28.0-rc1`.
-- Transitive packages available via the manifest:
-  `plausible`, `LeanSearchClient`, `importGraph`, `proofwidgets`, `aesop`,
-  `Qq` (quote4), `batteries`, `Cli` (lean4-cli).
-
-If you compile outside of `leancheck`, you need at least Mathlib; the other packages are only required
-if the generated Lean code imports or depends on them.
-
 ## Install
 ```bash
 python -m venv .venv
@@ -81,11 +129,10 @@ autolean run --input problems --output Formalizations
 ```
 
 ## Split Multi-Part Problems
-If a JSON file contains multiple sub-problems in `problem` (for example `Chap4/14.json` with 4 parts),
-you can split it into `14_1.json`, `14_2.json`, `14_3.json`, `14_4.json`:
+If a JSON file contains multiple sub-problems in `problem`, you can split it into individual files:
 
 ```bash
-python scripts/split_subproblems.py --input-dir Chap4
+python scripts/split_subproblems.py --input-dir problems
 ```
 
 By default, after successful split the original multi-part source file is deleted.
@@ -94,26 +141,26 @@ Use `--no-delete-original` if you want to keep the source file.
 Useful options:
 ```bash
 # Preview without writing files
-python scripts/split_subproblems.py --input-dir Chap4 --dry-run
+python scripts/split_subproblems.py --input-dir problems --dry-run
 
 # Overwrite existing split files
-python scripts/split_subproblems.py --input-dir Chap4 --force
+python scripts/split_subproblems.py --input-dir problems --force
 
 # Write split files into a separate directory
-python scripts/split_subproblems.py --input-dir Chap4 --output-dir Chap4_split
+python scripts/split_subproblems.py --input-dir problems --output-dir problems_split
 
 # Keep original multi-part files
-python scripts/split_subproblems.py --input-dir Chap4 --no-delete-original
+python scripts/split_subproblems.py --input-dir problems --no-delete-original
 ```
 
 ## Batch Lean Compile Check
-Use this to compile-check all formalizations for a chapter folder and print only failed files.
+Use this to compile-check all formalizations for a folder and print only failed files.
 
 ```bash
 python scripts/check_lean_formalizations.py \
-  --input-dir Chap5 \
-  --formalizations-dir Chap5_Fin \
-  --cwd /Users/jcfeng/Documents/Lean/leancheck \
+  --input-dir problems \
+  --formalizations-dir Formalizations \
+  --cwd /path/to/lean/project \
   --compile-cmd "lake env lean {file}" \
   --workers 4
 ```
@@ -129,27 +176,25 @@ Use this to evaluate existing formalizations with the exact same semantic-eval p
 Codex Exec (default provider, gpt-5.2 + xhigh):
 ```bash
 python scripts/evaluate_lean_formalizations.py \
-  --input-dir Book2_Chap2 \
-  --formalizations-dir Book2_Chap2_Fin \
-  --out-dir Book2_Chap2_Fin/eval_out \
+  --input-dir problems \
+  --formalizations-dir Formalizations \
+  --out-dir Formalizations/eval_out \
   --provider codex-exec \
   --eval-model openai/gpt-5.2 \
   --reasoning-effort xhigh \
-  --workers 10 \
-  --openrouter-api-key-env AUTOLEAN_API
+  --workers 10
 ```
 
 OpenRouter API:
 ```bash
 python scripts/evaluate_lean_formalizations.py \
-  --input-dir Book2_Chap2 \
-  --formalizations-dir Book2_Chap2_Fin \
-  --out-dir Book2_Chap2_Fin/eval_out \
+  --input-dir problems \
+  --formalizations-dir Formalizations \
+  --out-dir Formalizations/eval_out \
   --provider openrouter \
   --eval-model openai/gpt-5.2 \
   --reasoning-effort xhigh \
-  --workers 10 \
-  --openrouter-api-key-env AUTOLEAN_API
+  --workers 10
 ```
 
 Key outputs in `--out-dir`:
@@ -165,8 +210,8 @@ reasoning effort `xhigh`, and API key env var `AUTOLEAN_API`.
 
 ```bash
 python scripts/evaluate_strict_aplus.py \
-  --input-dir Book2_Chap2 \
-  --formalizations-dir Book2_Chap2_Fin \
+  --input-dir problems \
+  --formalizations-dir Formalizations \
   --workers 10
 ```
 
@@ -188,34 +233,34 @@ Key outputs in `new_eval`:
 - `evaluation_summary.json` and `evaluation_report.txt`.
 
 ## Batch Proof Completion From Existing Lean Formalizations
-Use this to take an existing corpus of Lean files with placeholder proofs (for example `A_evaled_lean_formalizations`),
+Use this to take an existing corpus of Lean files with placeholder proofs,
 launch several independent LLM proof attempts per theorem, compile-check every attempt, and count how many attempts pass.
 
 OpenRouter API:
 ```bash
 python scripts/prove_lean_formalizations.py \
-  --input-dir A_evaled_lean_formalizations \
+  --input-dir Formalizations \
   --out-dir proof_runs \
   --provider openrouter \
   --model openai/gpt-5.2-codex \
   --reasoning-effort xhigh \
   --attempts 4 \
   --max-iters 3 \
-  --cwd /Users/jcfeng/Documents/Lean/leancheck \
+  --cwd /path/to/lean/project \
   --compile-cmd "lake env lean {file}"
 ```
 
 Codex Exec:
 ```bash
 python scripts/prove_lean_formalizations.py \
-  --input-dir A_evaled_lean_formalizations \
+  --input-dir Formalizations \
   --out-dir proof_runs \
   --provider codex-exec \
   --model openai/gpt-5.2-codex \
   --reasoning-effort xhigh \
   --attempts 4 \
   --max-iters 3 \
-  --cwd /Users/jcfeng/Documents/Lean/leancheck \
+  --cwd /path/to/lean/project \
   --compile-cmd "lake env lean {file}" \
   --codex-exec-sandbox read-only
 ```
@@ -258,7 +303,7 @@ Default models:
 Example:
 ```bash
 python scripts/prove_lean_formalizations_replan.py \
-  --input-dir A_evaled_lean_formalizations \
+  --input-dir Formalizations \
   --out-dir proof_runs_replan \
   --planner-model openai/gpt-5.4 \
   --planner-reasoning-effort xhigh \
@@ -267,17 +312,17 @@ python scripts/prove_lean_formalizations_replan.py \
   --attempts-before-replan 5 \
   --max-plan-rounds 2 \
   --workers 8 \
-  --cwd /Users/jcfeng/Documents/Lean/leancheck \
+  --cwd /path/to/lean/project \
   --compile-cmd "lake env lean {file}"
 ```
 
 Fresh rerun instead of resuming:
 ```bash
 python scripts/prove_lean_formalizations_replan.py \
-  --input-dir A_evaled_lean_formalizations \
+  --input-dir Formalizations \
   --out-dir proof_runs_replan \
   --no-resume \
-  --cwd /Users/jcfeng/Documents/Lean/leancheck \
+  --cwd /path/to/lean/project \
   --compile-cmd "lake env lean {file}"
 ```
 
@@ -297,8 +342,8 @@ Use this to generate two histograms from an existing proof-run directory:
 Example:
 ```bash
 python scripts/plot_proof_histograms.py \
-  --input-dir A_evaled_lean_formalizations/Book1_Chap1_Solution \
-  --out-dir A_evaled_lean_formalizations/Book1_Chap1_Solution/histograms
+  --input-dir proof_runs \
+  --out-dir proof_runs/histograms
 ```
 
 Behavior:
@@ -308,14 +353,13 @@ Behavior:
 - Writes `one_shot_worked_out_attempts_histogram.svg` and `one_shot_worked_out_attempts_histogram.png`.
 - Writes `histogram_data.json` with the exact bucket counts used for both plots.
 
-## Recommended Run (This Repo)
-The following command is a good default for this repository layout (`TestProblem` → `TestOut`) and a local `leancheck` environment:
+## Recommended Run
 
 ```bash
 autolean run \
-  --input TestProblem \
-  --output TestOut \
-  --cwd /Users/jcfeng/Documents/Lean/leancheck \
+  --input problems \
+  --output Formalizations \
+  --cwd /path/to/lean/project \
   --openrouter-thinking-model openai/gpt-5.2 \
   --openrouter-model openai/gpt-5.2-codex \
   --openrouter-thinking-reasoning-effort xhigh \
@@ -327,7 +371,7 @@ autolean run \
   --workers 4
 ```
 
-Post-compile A–D grading still runs automatically in this command using defaults:
+Post-compile A-D grading still runs automatically in this command using defaults:
 - `--openrouter-eval-model openai/gpt-5.2`
 - `--openrouter-eval-reasoning-effort xhigh`
 - `--min-eval-grade B`
@@ -373,9 +417,9 @@ autolean run --input problems --output Formalizations \
   --use-codex-exec \
   --codex-exec-sandbox read-only
 
-# Choose API key variable name (default AUTOLEAN_API)
+# Override API key variable name
 autolean run --input problems --output Formalizations \
-  --openrouter-api-key-env AUTOLEAN_API
+  --openrouter-api-key-env MY_CUSTOM_KEY
 
 # Use a specific evaluator model/effort for post-compile A-D grading
 autolean run --input problems --output Formalizations \
@@ -420,7 +464,7 @@ Run `autolean --help` or `autolean run --help` to see all options. Key flags:
   When `--use-codex-exec` is enabled, phase 5.3 coding is forced to `gpt-5.3-codex-spark` with `xhigh` reasoning effort; if that model is unavailable, Autolean retries with `gpt-5.3-codex`.
   OpenRouter-style `openai/...` model IDs are normalized before `codex exec` calls (for example `openai/gpt-5.2-codex` -> `gpt-5.2-codex`).
 - `--compile-cmd`: compile command template; must include `{file}`.
-- `--cwd`: working directory where compilation runs.
+- `--cwd`: working directory where compilation runs (your Lean project root with Mathlib configured).
 - `--require-no-sorry`: reject outputs that contain `sorry` and retry.
   Incompatible with default `--formalization-only`; use `--no-formalization-only` if you require no `sorry`.
 - `--workers`: parallel workers (1 disables parallelism).
@@ -430,26 +474,6 @@ Run `autolean --help` or `autolean run --help` to see all options. Key flags:
 Exit codes:
 - `0` if all problems succeeded.
 - `1` if any problem failed.
-
-## Input JSON schema
-Required fields:
-- `uuid`: string, kept in the prompt as authoritative metadata (not used for naming).
-- `problem`: array of strings; lines are concatenated in order.
-
-Other fields are allowed and preserved in the prompt but ignored by the parser.
-
-Example:
-```json
-{
-  "uuid": "chapter1/problem-1",
-  "problem": [
-    "Prove that A ∪ B = B ∪ A.",
-    "Assume A, B are sets."
-  ],
-  "solution": ["ignored"],
-  "remark": []
-}
-```
 
 ## Output naming and sanitization
 - Output theorem name: `problem_<sanitized filename>`.
@@ -473,7 +497,7 @@ Per problem and iteration, Autolean writes:
 - Phase 5.2 thinking stdout/stderr logs (full model output on iteration 1; skipped marker on later iterations).
 - Phase 5.3 coding stdout/stderr logs.
 - Compiler stdout/stderr logs.
-- Evaluation stdout/stderr logs and parsed `A`–`D` payload JSON (on compile-success iterations).
+- Evaluation stdout/stderr logs and parsed `A`-`D` payload JSON (on compile-success iterations).
 - A metadata JSON file with prompt hash and return codes.
 
 Logs live under the directory passed to `--logs` (default: `logs/`).
@@ -507,9 +531,8 @@ ruff format .
 
 ## Project layout
 - `src/autolean/`: core library + CLI.
-- `tests/`: unit tests for sanitization and prompt construction.
+- `scripts/`: batch utilities (compile check, evaluation, proof completion, splitting, histograms).
 - `specs/`: requirements and engineering standards.
-- `examples/`: sample input JSON and documentation.
 
 ## Notes
 - This project does not ship a Lean environment; you must provide one.
