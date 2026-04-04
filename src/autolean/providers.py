@@ -16,9 +16,9 @@ from urllib.request import Request, urlopen
 
 from .util import CommandResult, ensure_dir
 
-_CODEX_EXEC_CODING_MODEL = "gpt-5.3-codex-spark"
-_CODEX_EXEC_CODING_FALLBACK_MODEL = "gpt-5.3-codex"
-_CODEX_EXEC_CODING_REASONING_EFFORT = "xhigh"
+CODEX_EXEC_CODING_MODEL = "gpt-5.3-codex-spark"
+CODEX_EXEC_CODING_FALLBACK_MODEL = "gpt-5.3-codex"
+CODEX_EXEC_CODING_REASONING_EFFORT = "xhigh"
 
 
 # ---------------------------------------------------------------------------
@@ -330,10 +330,10 @@ def call_codex_exec(
     )
     if (
         codex_res.returncode != 0
-        and normalized_model == _CODEX_EXEC_CODING_MODEL
+        and normalized_model == CODEX_EXEC_CODING_MODEL
         and _is_codex_model_not_found(codex_res.stderr)
     ):
-        argv = _build_argv(_CODEX_EXEC_CODING_FALLBACK_MODEL)
+        argv = _build_argv(CODEX_EXEC_CODING_FALLBACK_MODEL)
         codex_res = run_subprocess(
             argv, cwd=workdir, stdin_text=prompt,
             live=live_logs, stdout_sink=stdout_sink, stderr_sink=stderr_sink,

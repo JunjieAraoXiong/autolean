@@ -8,6 +8,8 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
+import tempfile
 import time
 from pathlib import Path
 from typing import Optional
@@ -25,8 +27,6 @@ class ResponseCache:
         self.cache_dir = cache_dir or Path(_DEFAULT_CACHE_DIR)
         self._hits = 0
         self._misses = 0
-        if self.enabled:
-            self.cache_dir.mkdir(parents=True, exist_ok=True)
 
     @property
     def hits(self) -> int:
@@ -94,7 +94,19 @@ class ResponseCache:
             "stderr": result.stderr,
         }
         try:
-            path.write_text(json.dumps(data, ensure_ascii=True, indent=2), encoding="utf-8")
+            # Atomic write: write to temp file then rename to prevent corruption
+            path.parent.mkdir(parents=True, exist_ok=True)
+            fd, tmp_path = tempfile.mkstemp(dir=path.parent, suffix=".tmp")
+            try:
+                with os.fdopen(fd, "w", encoding="utf-8") as f:
+                    json.dump(data, f, ensure_ascii=True)
+                os.replace(tmp_path, path)
+            except BaseException:
+                try:
+                    os.unlink(tmp_path)
+                except OSError:
+                    pass
+                raise
         except OSError:
             pass  # Cache write failure is non-fatal
 

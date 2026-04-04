@@ -5,7 +5,7 @@ from __future__ import annotations
 import json
 from typing import Optional
 
-_EVAL_GRADES = {"A", "B", "C", "D"}
+EVAL_GRADES = {"A", "B", "C", "D"}
 _EVAL_GRADE_ORDER = {"A": 4, "B": 3, "C": 2, "D": 1}
 _EVAL_RETRY_RESPONSE_CHARS = 4000
 OPENROUTER_GEMINI_FLASH_PREVIEW_MODEL = "google/gemini-3-flash-preview"
@@ -127,7 +127,7 @@ def parse_formalization_eval_payload(payload: dict) -> dict[str, object]:
     if not isinstance(raw_grade, str):
         raise ValueError("Evaluation output missing 'grade' field.")
     grade = raw_grade.strip().upper()
-    if grade not in _EVAL_GRADES:
+    if grade not in EVAL_GRADES:
         raise ValueError("Evaluation grade must be one of A/B/C/D.")
 
     summary = ""
@@ -191,7 +191,7 @@ def format_eval_feedback_for_repair(eval_payload: dict[str, object]) -> str:
         if not isinstance(grade_obj, str):
             return 999
         grade = grade_obj.strip().upper()
-        if grade not in _EVAL_GRADES:
+        if grade not in EVAL_GRADES:
             return 999
         return _EVAL_GRADE_ORDER.get(grade, 999)
 

@@ -24,6 +24,7 @@ from .compiler import (
     update_error_memory,
 )
 from .evaluation import (
+    EVAL_GRADES,
     GEMINI_DOUBLE_CHECK_SECONDARY_EVAL_MODEL,
     GEMINI_DOUBLE_CHECK_SECONDARY_EVAL_REASONING_EFFORT,
     build_eval_retry_prompt,
@@ -36,8 +37,8 @@ from .evaluation import (
 )
 from .prompting import build_prompts
 from .providers import (
-    _CODEX_EXEC_CODING_MODEL,
-    _CODEX_EXEC_CODING_REASONING_EFFORT,
+    CODEX_EXEC_CODING_MODEL,
+    CODEX_EXEC_CODING_REASONING_EFFORT,
     call_codex_exec,
     call_openrouter_chat,
     extract_model_response_text,
@@ -183,8 +184,8 @@ def _call_model(
     codex_exec_model = model
     codex_exec_reasoning_effort = reasoning_effort
     if stage == "coding":
-        codex_exec_model = _CODEX_EXEC_CODING_MODEL
-        codex_exec_reasoning_effort = _CODEX_EXEC_CODING_REASONING_EFFORT
+        codex_exec_model = CODEX_EXEC_CODING_MODEL
+        codex_exec_reasoning_effort = CODEX_EXEC_CODING_REASONING_EFFORT
 
     if cfg.use_codex_exec:
         suffix = f"{theorem_name}.iter{iter_no}.{stage}"
@@ -380,14 +381,13 @@ def _apply_double_check(
     primary_eval_reasoning_effort: str,
 ) -> None:
     """Merge double-check results into eval_payload in-place."""
-    _EVAL_GRADES = {"A", "B", "C", "D"}
 
     primary_grade_obj = primary_eval_payload.get("grade")
     secondary_grade_obj = secondary_eval_payload.get("grade")
     primary_grade = primary_grade_obj.upper() if isinstance(primary_grade_obj, str) else ""
     secondary_grade = secondary_grade_obj.upper() if isinstance(secondary_grade_obj, str) else ""
-    primary_ok = str(primary_eval_payload.get("status", "")).strip() == "ok" and primary_grade in _EVAL_GRADES
-    secondary_ok = str(secondary_eval_payload.get("status", "")).strip() == "ok" and secondary_grade in _EVAL_GRADES
+    primary_ok = str(primary_eval_payload.get("status", "")).strip() == "ok" and primary_grade in EVAL_GRADES
+    secondary_ok = str(secondary_eval_payload.get("status", "")).strip() == "ok" and secondary_grade in EVAL_GRADES
     both_a_pass = primary_ok and secondary_ok and primary_grade == "A" and secondary_grade == "A"
 
     if primary_ok and secondary_ok:
