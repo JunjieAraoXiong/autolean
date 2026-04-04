@@ -505,6 +505,18 @@ def _build_parser() -> argparse.ArgumentParser:
         help="Working directory in which to run the compiler (e.g., your Lean project root).",
     )
     run.add_argument("--force", action="store_true", help="Re-run even if output file exists.")
+    run.add_argument(
+        "--no-cache",
+        action="store_true",
+        default=False,
+        help="Disable LLM response caching (by default, identical prompts are cached to save API costs).",
+    )
+    run.add_argument(
+        "--cache-dir",
+        type=Path,
+        default=None,
+        help="Directory for LLM response cache (default: .autolean_cache/).",
+    )
 
     return p
 
@@ -556,6 +568,8 @@ def main(argv: list[str] | None = None) -> int:
             live_logs=live_logs,
             compile_cmd=args.compile_cmd,
             cwd=args.cwd,
+            cache_enabled=not args.no_cache,
+            cache_dir=args.cache_dir,
         )
 
         if cfg.formalization_only and cfg.require_no_sorry:
