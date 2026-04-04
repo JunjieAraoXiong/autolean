@@ -1,0 +1,12 @@
+{
+  "uuid": "erdos_ginzburg_ziv",
+  "problem": [
+    "Prove the Erdős-Ginzburg-Ziv theorem: for any positive integer n, any sequence of 2n-1 integers contains n integers whose sum is divisible by n."
+  ],
+  "tier": 1,
+  "mathlib_status": "formalized",
+  "mathlib_declaration": "ZMod.erdos_ginzburg_ziv",
+  "mathlib_module": "Mathlib/Combinatorics/Additive/ErdosGinzburgZiv",
+  "proof_strategy": "Chevalley-Warning polynomial method",
+  "expected_difficulty": "easy_with_retrieval"
+}

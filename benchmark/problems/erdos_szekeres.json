@@ -1,0 +1,12 @@
+{
+  "uuid": "erdos_szekeres",
+  "problem": [
+    "Prove the Erdős-Szekeres theorem: for any positive integers r and s, any sequence of more than r*s distinct real numbers contains an increasing subsequence of length greater than r, or a decreasing subsequence of length greater than s."
+  ],
+  "tier": 1,
+  "mathlib_status": "formalized",
+  "mathlib_declaration": "Theorems100.erdos_szekeres",
+  "mathlib_module": "Archive/Wiedijk100Theorems/AscendingDescendingSequences",
+  "proof_strategy": "Pigeonhole principle with (longest increasing, longest decreasing) labels",
+  "expected_difficulty": "easy_with_retrieval"
+}

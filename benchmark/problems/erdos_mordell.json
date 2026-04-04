@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_erdos_mordell",
+  "problem": [
+    "For any triangle ABC and any point P in its interior, the sum of distances from P to the vertices is at least twice the sum of distances from P to the sides: PA + PB + PC >= 2(d(P, BC) + d(P, CA) + d(P, AB)), where d(P, l) denotes the perpendicular distance from point P to line l."
+  ],
+  "tier": 2,
+  "mathlib_status": "not_in_mathlib",
+  "building_blocks": [
+    "Mathlib.Geometry.Euclidean.Basic",
+    "Mathlib.Geometry.Euclidean.Triangle",
+    "Mathlib.Geometry.Euclidean.Angle.Oriented.Basic",
+    "Mathlib.Analysis.InnerProductSpace.Basic",
+    "Mathlib.Analysis.MeanInequalities"
+  ],
+  "proof_strategy": "Express distances from P to each side in terms of areas of sub-triangles PBC, PCA, PAB. For each vertex-distance (e.g., PA), use the relation PA * sin(angle at A between AB and AC) >= d(P, AB) + d(P, AC) combined with the AM-GM inequality or the sine rule to obtain PA >= (b * d(P, AB) + c * d(P, AC)) / a, where a, b, c are the side lengths. Summing these three inequalities and applying Cauchy-Schwarz or direct algebraic manipulation yields the result.",
+  "expected_difficulty": "hard"
+}
