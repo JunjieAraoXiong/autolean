@@ -1,0 +1,15 @@
+{
+  "uuid": "erdos_777",
+  "problem": [
+    "Erdős Problem #777"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 777,
+  "status": "solved",
+  "tags": [
+    "graph theory",
+    "combinatorics"
+  ],
+  "prize": "no",
+  "formalized_on_site": false
+}

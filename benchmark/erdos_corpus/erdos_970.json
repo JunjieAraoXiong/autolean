@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_970",
+  "problem": [
+    "Let h(k) be Jacobsthal's function, defined to as the minimal m such that, if n has at most k prime factors, then in any set of m consecutive integers there exists an integer coprime to n. Determine the order of magnitude of h(k). In particular, is it true thath(k) \\ll k^2?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 970,
+  "status": "open",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $h(k)$ be Jacobsthal's function, defined to as the minimal $m$ such that, if $n$ has at most $k$ prime factors, then in any set of $m$ consecutive integers there exists an integer coprime to $n$. Determine the order of magnitude of $h(k)$. In particular, is it true that\\[h(k) \\ll k^2?\\]",
+  "additional_context": "That h(k)\\ll k^2 is a conjecture of Jacobsthal. Iwaniec \\cite{Iw78} provedh(k) \\ll (k\\log k)^2.The best lower bound known ish(k) \\gg ((\\log k)(\\log\\log\\log k))/((\\log\\log k)^2)k,due to Ford, Green, Konyagin, Maynard, and Tao \\cite{FGKMT18}.\n\nThis is a more general form of the function considered in [687].\n\nReferences\n\n[FGKMT18] Ford, Kevin and Green, Ben and Konyagin, Sergei and Maynard, James and Tao, Terence, Long gaps between primes. J. Amer. Math. Soc. (2018), 65-105.\n\n[Iw78] Iwaniec, Henryk, On the problem of {J}acobsthal. Demonstratio Math. (1978), 225--231.",
+  "reference_proof_hint": "Write $g(n)$ for Jacobsthal’s function [[nomath]](many authors write $j(n)$)[[/nomath]]: the least $m$ such that every block of $m$ consecutive integers contains an integer coprime to $n$. Since coprimality to $n$ depends only on the *set* of primes dividing $n$, one may assume $n$ is squarefree and write (\\omega(n)) for the number of distinct prime divisors.\n\nYour $h(k)$ is then\n[\nh(k)=\\max_{\\omega(n)\\le k} g(n).\n]\n\n## Best known general upper bound\n\nA theorem of Iwaniec (1978) implies an upper bound of the shape\n[\ng(n)\\ \\ll\\ (\\omega(n)\\log\\omega(n))^2,\n]\nand hence\n[\nh(k)\\ \\ll\\ (k\\log k)^2.\n]\nThis is the best general upper bound currently known (up to constants). ([OEIS][1])\n\nSo the conjectural (k^2) bound is *not* known; the best proved bound has an extra ((\\log k)^2).\n\n## A strong unconditional lower bound\n\nA useful way to get lower bounds is to take $n$ to be a primorial-type product. Let\n[\nP(x)=\\prod_{p\\le x}p.\n]\nFord–Green–Konyagin–Maynard–Tao study the “interval sieve” quantity "
+}

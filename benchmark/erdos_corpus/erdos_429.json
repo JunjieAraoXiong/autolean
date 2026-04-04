@@ -1,0 +1,14 @@
+{
+  "uuid": "erdos_429",
+  "problem": [
+    "Erdős Problem #429"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 429,
+  "status": "disproved (Lean)",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false
+}

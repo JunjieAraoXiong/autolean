@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_1030",
+  "problem": [
+    "If R(k,l) is the Ramsey number then prove the existence of some c>0 such that\\lim_k (R(k+1,k))/(R(k,k))> 1+c."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 1030,
+  "status": "open",
+  "tags": [
+    "graph theory",
+    "ramsey theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "If $R(k,l)$ is the Ramsey number then prove the existence of some $c>0$ such that\\[\\lim_k \\frac{R(k+1,k)}{R(k,k)}> 1+c.\\]",
+  "additional_context": "A problem of Erdős and S\\'{o}s, who could not even prove whether R(k+1,k)-R(k,k)>k^c for any c>1.\n\nIt is trivial that R(k+1,k)-R(k,k)≥ k-2. Burr, Erdős, Faudree, and Schelp \\cite{BEFS89} provedR(k+1,k)-R(k,k)≥ 2k-5.See also [544] for a similar question concerning R(3,k), and [1014] for the general off-diagonal case.\n\nReferences\n\n[BEFS89] Burr, S. A. and Erdős, P. and Faudree, R. J. and Schelp, R.\nH., On the difference between consecutive {R}amsey numbers. Utilitas Math. (1989), 115--118.",
+  "reference_proof_hint": "Let $R(k,\\ell)$ denote the usual 2–colour Ramsey number.\n\n### 1. Status of the statement you ask to prove\n\nThe claim\n\n[\n\\exists,c>0\\ \\text{ such that }\\ \\lim_{k\\to\\infty}\\frac{R(k+1,k)}{R(k,k)} > 1+c\n]\n\nis **a well-known open problem** (posed by Erdős and Sós, listed as Erdős Problem #1030). In particular, it is explicitly recorded as open, and even much weaker superlinear lower bounds on the *difference* (R(k+1,k)-R(k,k)) are not known. ([Erdős Problems][1])\n\nSo there is currently no published proof (as of the sources cited) establishing such a constant (c>0).\n\n### 2. What *is* known unconditionally (and why it’s far from what you want)\n\nWrite\n[\nr_k := R(k,k),\\qquad s_k := R(k+1,k).\n]\n\n#### A “trivial” linear lower bound on the difference\n\nOne can always get a linear additive gap (not multiplicative):\n\n**Claim.** (R(k+1,k)\\ge R(k,k)+k-1) for all (k\\ge2).\n\n**Proof.** Let (n=r_k-1). By definition of (r_k), there exists a red/blue colouring of (K_n) with **no** red (K_k) and **no** blue "
+}

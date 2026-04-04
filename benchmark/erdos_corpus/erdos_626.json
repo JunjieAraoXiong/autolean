@@ -1,0 +1,19 @@
+{
+  "uuid": "erdos_626",
+  "problem": [
+    "Let k≥ 4 and g_k(n) denote the largest m such that there is a graph on n vertices with chromatic number k and girth >m (i.e. contains no cycle of length ≤ m). Does\\lim_{n→ ∞}(g_k(n))/(\\log n)exist?\n\nConversely, if h^{(m)}(n) is the maximal chromatic number of a graph on n vertices with girth >m then does\\lim_{n→ ∞}\\frac{\\log h^{(m)}(n)}{\\log n}exist, and what is its value?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 626,
+  "status": "open",
+  "tags": [
+    "graph theory",
+    "chromatic number",
+    "cycles"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $k\\geq 4$ and $g_k(n)$ denote the largest $m$ such that there is a graph on $n$ vertices with chromatic number $k$ and girth $>m$ (i.e. contains no cycle of length $\\leq m$). Does\\[\\lim_{n\\to \\infty}\\frac{g_k(n)}{\\log n}\\]exist?\n\nConversely, if $h^{(m)}(n)$ is the maximal chromatic number of a graph on $n$ vertices with girth $>m$ then does\\[\\lim_{n\\to \\infty}\\frac{\\log h^{(m)}(n)}{\\log n}\\]exist, and what is its value?",
+  "additional_context": "It is known that(1)/(4\\log k)\\log n≤ g_k(n) ≤ (2)/(\\log(k-2))\\log n+1,the lower bound due to Kostochka \\cite{Ko88} and the upper bound to Erdős \\cite{Er59b}.\n\nErdős \\cite{Er59b} proved that\\lim_{n→ ∞}\\frac{\\log h^{(m)}(n)}{\\log n}\\gg (1)/(m)and, for odd m,\\lim_{n→ ∞}\\frac{\\log h^{(m)}(n)}{\\log n}≤ (2)/(m+1),and conjectured this is sharp. He had no good guess for the value of the limit for even m, other that it should lie in [(2)/(m+2),(2)/(m)], but could not prove this even for m=4.\n\nSee also the entry in the graphs problem collection.\n\nReferences\n\n[Er59b] Erdős, P., Graph theory and probability. Canadian J. Math. (1959), 34-38.\n\n[Ko88] Kostochka, A. V., Upper bounds on the chromatic number of graphs. Trudy Inst. Mat. (Novosibirsk) (1988), 204-226, 265.",
+  "reference_proof_hint": "### 1) Fixed chromatic number $k$: the function (g_k(n))\n\nFor fixed (k\\ge 4), (g_k(n)) grows on the order of (\\log n), but the *constant* in front of (\\log n) is not known sharply.\n\nA standard reduction is: any $k$-chromatic graph contains a $k$-**critical** subgraph, and a $k$-critical graph has minimum degree at least $k-1$. Once you have minimum degree $k-1$, a Moore–type BFS/tree growth argument forces a short cycle, giving an upper bound of the form\n[\ng_k(n)\\ \\le\\ \\frac{2}{\\log(k-2)}\\log n + O(1).\n]\nErdős proved [[nomath]](with an explicit “$+1$” term)[[/nomath]] the bound\n[\ng_k(n)\\ \\le\\ \\frac{2}{\\log(k-2)}\\log n + 1.\n]\n([Erdős Problems][1])\n\nOn the other hand, Kostochka proved a logarithmic lower bound\n[\ng_k(n)\\ \\ge\\ \\frac{1}{4\\log k}\\log n.\n]\n([Erdős Problems][1])\n\nSo we know\n[\n\\frac{1}{4\\log k}\\ \\le\\ \\liminf_{n\\to\\infty}\\frac{g_k(n)}{\\log n}\n\\ \\le\\\n\\limsup_{n\\to\\infty}\\frac{g_k(n)}{\\log n}\n\\ \\le\\ \\frac{2}{\\log(k-2)}.\n]\n([Erdős Problems][1])\n\n**Does (\\displaystyle \\lim_{n\\to\\inf"
+}

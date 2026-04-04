@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_450",
+  "problem": [
+    "How large must y=y(\\epsilon,n) be such that the number of integers in (x,x+y) with a divisor in (n,2n) is at most \\epsilon y?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 450,
+  "status": "open",
+  "tags": [
+    "number theory",
+    "divisors"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "How large must $y=y(\\epsilon,n)$ be such that the number of integers in $(x,x+y)$ with a divisor in $(n,2n)$ is at most $\\epsilon y$?",
+  "additional_context": "It is not clear what the intended quantifier on x is. Cambie has observed that if this is intended to hold for all x then, provided\\epsilon(\\log n)^\\delta (\\log\\log n)^{3/2}→ ∞as n→ ∞, where \\delta=0.086\\cdots, there is no such y, which follows from an averaging argument and the work of Ford \\cite{Fo08}.\n\nOn the other hand, Cambie has observed that if \\epsilon\\ll 1/n then y(\\epsilon,n)\\sim 2n: indeed, if y<2n then this is impossible taking x+n to be a multiple of the lowest common multiple of \\{n+1,\\ldots,2n-1\\}. On the other hand, for every fixed \\delta∈ (0,1) and n large every 2(1+\\delta)n consecutive elements contains many elements which are a multiple of an element in (n,2n).\n\nReferences\n\n[Fo08] Ford, Kevin, The distribution of integers with a divisor in a given\ninterval. Ann. of Math. (2) (2008), 367-433.",
+  "reference_proof_hint": "Let\n\n[\nA_n:={m\\in \\mathbb Z:\\ \\exists d\\in(n,2n)\\text{ with }d\\mid m}.\n]\n\nSo you are asking for a length (y=y(\\varepsilon,n)) such that, **for every** $x$,\n\n[\n|A_n\\cap (x,x+y)|\\ \\le\\ \\varepsilon,y.\n]\n\n(That “for every $x$” is the natural reading, but I will say what changes if it is not.)\n\n## 1) A hard obstruction: the global density\n\nLet (\\delta(n)) be the (natural) density of (A_n), i.e.\n\n[\n\\delta(n)=\\lim_{X\\to\\infty}\\frac{|A_n\\cap[1,X]|}{X}.\n]\n\nKevin Ford’s work on integers with a divisor in an interval implies that\n\n[\n\\delta(n)\\asymp \\frac{1}{(\\log n)^{\\alpha}(\\log\\log n)^{3/2}}\n\\quad\\text{as }n\\to\\infty,\n]\n\nwith\n[\n\\alpha ;=; 1-\\frac{1+\\log\\log 2}{\\log 2};\\approx;0.08607.\n]\n([ford126.web.illinois.edu][1])\n\nNow, if your inequality (|A_n\\cap(x,x+y)|\\le \\varepsilon y) is required for **all** $x$, then you must at least have\n\n[\n\\varepsilon \\ \\ge\\ \\delta(n)\n]\n\n(up to absolute constants).\nReason: if you look at a very long stretch of integers and slide the window $(x,x+y)$ through it, th"
+}

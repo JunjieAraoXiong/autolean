@@ -1,0 +1,19 @@
+{
+  "uuid": "erdos_685",
+  "problem": [
+    "Let \\epsilon>0 and n be large depending on \\epsilon. Is it true that for all n^\\epsilon<k≤ n^{1-\\epsilon} the number of distinct prime divisors of \\binom{n}{k} is(1+o(1))k∑_{k<p<n}(1)/(p)?Or perhaps even when k ≥ (\\log n)^c?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 685,
+  "status": "open",
+  "tags": [
+    "number theory",
+    "primes",
+    "binomial coefficients"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $\\epsilon>0$ and $n$ be large depending on $\\epsilon$. Is it true that for all $n^\\epsilon<k\\leq n^{1-\\epsilon}$ the number of distinct prime divisors of $\\binom{n}{k}$ is\\[(1+o(1))k\\sum_{k<p<n}\\frac{1}{p}?\\]Or perhaps even when $k \\geq (\\log n)^c$?",
+  "additional_context": "It is trivial that the number of prime factors is>(\\log \\binom{n)/(k)}{\\log n},and this inequality becomes (asymptotic) equality if k>n^{1-o(1)}.",
+  "reference_proof_hint": "Write (\\omega(m)) for the number of **distinct** prime divisors of $m$.\n\n### 1) What your main term is really counting\n\nFor a prime (p>k), we have (v_p(k!)=0), and the interval $(n-k,n]$ has length (k<p), so there is **at most one** multiple of $p$ among\n[\nn-k+1,\\dots,n.\n]\nHence\n[\nv_p\\binom{n}{k}=v_p\\bigl(n(n-1)\\cdots(n-k+1)\\bigr)\\in{0,1}\n]\nand in fact\n$\np\\mid \\binom{n}{k}\\quad\\Longleftrightarrow\\quad \\exists,j\\in{0,1,\\dots,k-1}:\\ p\\mid(n-j)\n\\quad\\Longleftrightarrow\\quad n\\bmod p<k.\n$\nThis is an immediate special case of Kummer’s theorem [[nomath]](the $p$-adic valuation of $\\binom{n}{k}$ is the number of carries when adding $k$ and $n-k$ in base $p$)[[/nomath]]; when (p>k) there is only the “units digit” to worry about, giving exactly the condition (n\\bmod p<k). ([DMS UMontreal][1])\n\nSo the “large prime” contribution is exactly\n$\nS(n,k)\\ :=\\ |\\\\{,p:\\ k<p\\le n,\\ n\\bmod p<k,\\\\}|\n\\ =\\ \\sum_{k<p\\le n}\\mathbf 1_{n\\bmod p<k}.\n$\n\nMoreover, in your range (n^\\varepsilon<k\\le n^{1-\\varepsilon})"
+}

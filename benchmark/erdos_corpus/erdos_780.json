@@ -1,0 +1,16 @@
+{
+  "uuid": "erdos_780",
+  "problem": [
+    "Erdős Problem #780"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 780,
+  "status": "proved",
+  "tags": [
+    "combinatorics",
+    "hypergraphs",
+    "chromatic number"
+  ],
+  "prize": "no",
+  "formalized_on_site": false
+}

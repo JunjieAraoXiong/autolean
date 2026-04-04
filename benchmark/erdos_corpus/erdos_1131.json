@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_1131",
+  "problem": [
+    "For x_1,\\ldots,x_n∈ [-1,1] letl_k(x)=\\frac{∏_{i≠ k}(x-x_i)}{∏_{i≠ k}(x_k-x_i)},which are such that l_k(x_k)=1 and l_k(x_i)=0 for i≠ k.\n\nWhat is the minimal value ofI(x_1,\\ldots,x_n)=∈t_{-1}^1 ∑_k | l_k(x)|^2\\mathrm{d}x?In particular, is it true that\\min I =2-(1+o(1))(1)/(n)?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 1131,
+  "status": "open",
+  "tags": [
+    "analysis",
+    "polynomials"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "For $x_1,\\ldots,x_n\\in [-1,1]$ let\\[l_k(x)=\\frac{\\prod_{i\\neq k}(x-x_i)}{\\prod_{i\\neq k}(x_k-x_i)},\\]which are such that $l_k(x_k)=1$ and $l_k(x_i)=0$ for $i\\neq k$.\n\nWhat is the minimal value of\\[I(x_1,\\ldots,x_n)=\\int_{-1}^1 \\sum_k \\lvert l_k(x)\\rvert^2\\mathrm{d}x?\\]In particular, is it true that\\[\\min I =2-(1+o(1))\\frac{1}{n}?\\]",
+  "additional_context": "Erdős first conjectured this minimum was achieved by taking the x_i to be the roots of the integral of the Legendre polynomial, since Fejer \\cite{Fe32} had earlier shown these to be minimisers of\\max_{x∈ [-1,1]}∑_k | l_k(x)|^2.This was disproved by Szabados \\cite{Sz66} for every n>3.\n\nErdős, Szabados, Varma, and V\\'{e}rtesi \\cite{ESVV94} proved that2-O\\left(((\\log n)^2)/(n)\\right)≤ \\min I≤ 2-(2)/(2n-1)where the upper bound is witnessed by the roots of the integral of the Legendre polynomial as above.\n\nReferences\n\n[ESVV94] Erdős, P. and Szabados, J. and Varma, A. K. and V\\'{e}rtesi,\nP., On an interpolation theoretical extremal problem. Studia Sci. Math. Hungar. (1994), 55--60.\n\n[Fe32] Fej\\'{e}r, Leopold, Bestimmung derjenigen {A}bszissen eines {I}ntervalles, f\\\"ur\nwelche die {Q}uadratsumme der {G}rundfunktionen der\n{L}agrangeschen {I}nterpolation im {I}ntervalle ein\n{M}\\\"oglichst kleines {M}aximum {B}esitzt. Ann. Scuola Norm. Super. Pisa Cl. Sci. (2) (1932), 263--276.\n\n[Sz66] Szabados, J., On a problem of {P}. {E}rd\\H{o}s. Acta Math. Acad. Sci. Hungar. (1966), 155--157.",
+  "reference_proof_hint": "Let (P_{n-1}) be the space of real polynomials of degree (\\le n-1), and let $\\\\{\\phi_j\\\\}_{j=0}^{n-1}$ be any orthonormal basis of (L^2([-1,1])\\cap P*{n-1}) (e.g. normalized Legendre polynomials).\n\nDefine the (n\\times n) “evaluation matrix”\n[\nA_{k,j}=\\phi_{j-1}(x_k)\\qquad (k,j=1,\\dots,n).\n]\nSince the Lagrange polynomials satisfy\n[\nl_k(x)=\\sum_{j=1}^n c_{j,k},\\phi_{j-1}(x),\\qquad l_k(x_i)=\\delta_{ik},\n]\nwe have (A,C=I), i.e. (C=A^{-1}), where (C=(c_{j,k})). Therefore\n[\n|l_k|*{L^2([-1,1])}^2=\\sum_{j=1}^n |c_{j,k}|^2,\n]\nand summing over $k$ gives the basis‐invariant identity\n[\nI(x_1,\\dots,x_n)=\\sum_{k=1}^n |l_k|_2^2\n=|A^{-1}|_F^2\n=\\operatorname{tr}!\\bigl((A^\\top A)^{-1}\\bigr).\n]\nSo your problem is exactly the **$A$-optimal saturated design** problem for polynomial regression on $[-1,1]$.\n\n## What is known rigorously\n\nThis is a classical Erdős extremal problem. Let\n[\nI_n^{\\min}:=\\inf_{x_1,\\dots,x_n\\in[-1,1]} I(x_1,\\dots,x_n).\n]\n\n* There is an explicit **general upper bound** coming from th"
+}

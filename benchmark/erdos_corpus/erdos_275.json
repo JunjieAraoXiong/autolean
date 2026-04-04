@@ -1,0 +1,16 @@
+{
+  "uuid": "erdos_275",
+  "problem": [
+    "Erdős Problem #275"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 275,
+  "status": "proved (Lean)",
+  "tags": [
+    "number theory",
+    "covering systems"
+  ],
+  "prize": "no",
+  "formalized_on_site": true,
+  "ground_truth_lean": "/-\nCopyright 2026 The Formal Conjectures Authors.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    https://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n-/\n\nimport FormalConjectures.Util.ProblemImports\n\n/-!\n# Erdős Problem 275\n\n*References:*\n- [erdosproblems.com/275](https://www.erdosproblems.com/275)\n- [CrVE70] R.B. Crittenden and C.L. Vanden Eynden, *Any n arithmetic progressions covering the first\n  2^n integers cover all integers*, Proc. Amer. Math. Soc. 24 (1970), 475-481.\n-/\n\nopen Set\n\nnamespace Erdos275\n\n/--\nIf a finite system of $r$ congruences $\\{ a_i\\pmod{n_i} : 1\\leq i\\leq r\\}$ (the $n_i$ are not\nnecessarily distinct) covers $2^r$ consecutive integers then it covers all integers.\n\nThis is best possible as the system $2^{i-1}\\pmod{2^i}$ shows. This was proved independently by\nSelfridge and Crittenden and Vanden Eynden [CrVE70].\n\nThis was formalized in Lean by Alexeev using Aristotle.\n-/\n@[category research solved, AMS 11, formal_proof using lean4 at \"https://github.com/plby/lean-proofs/blob/main/src/v4.24.0/ErdosProblems/Erdos275.lean\"]\ntheorem erdos_275 (r : ℕ) (a : Fin r → ℤ) (n : Fin r → ℕ)\n    (H : ∃ k : ℤ, ∀ x ∈ Ico k (k + 2 ^ r), ∃ i, x ≡ a i [ZMOD n i]) (x : ℤ) :\n    ∃ i, x ≡ a i [ZMOD n i] := by\n  sorry\n\nend Erdos275\n"
+}

@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_112",
+  "problem": [
+    "Let k=k(n,m) be minimal such that any directed graph on k vertices must contain either an independent set of size n or a transitive tournament of size m. Determine k(n,m)."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 112,
+  "status": "open",
+  "tags": [
+    "graph theory",
+    "ramsey theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $k=k(n,m)$ be minimal such that any directed graph on $k$ vertices must contain either an independent set of size $n$ or a transitive tournament of size $m$. Determine $k(n,m)$.",
+  "additional_context": "A problem of Erdős and Rado \\cite{ErRa67}, who showed k(n,m) \\ll_m n^{m-1}, or more precisely,k(n,m) ≤ \\frac{2^{m-1}(n-1)^m+n-2}{2n-3}.Larson and Mitchell \\cite{LaMi97} improved the dependence on m, establishing in particular  that k(n,3)≤ n^{2}. Zach Hunter has observed thatR(n,m) ≤ k(n,m)≤ R(n,m,m),which in particular proves the upper bound k(n,m)≤ 3^{n+2m}.\n\nSee also the entry in the graphs problem collection - on this site the problem replaces transitive tournament with directed path, but Zach Hunter and Raphael Steiner have a simple argument that proves, for this alternative definition, that k(n,m)=(n-1)(m-1).\n\nReferences\n\n[ErRa67] Erdős, P. and Rado, R., Partition relations and transitivity domains of binary\nrelations. J. London Math. Soc. (1967), 624-633.\n\n[LaMi97] Larson, Jean A. and Mitchell, William J., On a problem of Erdős and Rado. Ann. Comb. (1997), 245-252.",
+  "reference_proof_hint": "This is a real Ramsey-type problem of Erdős–Rado, and it is **not known in general**. In the literature your number is usually written as\n[\nk(n,m)=r(I_n,L_m),\n]\nthe least $k$ so that every **oriented** graph on $k$ vertices has either an independent set of size $n$ or a **transitive tournament** (acyclic tournament) of size $m$. The full exact formula for all $n,m$ is open.\n\n## Easy exact cases\n\n* **(m=2)**: a transitive tournament of size 2 is just one directed edge, so\n  [\n  k(n,2)=n.\n  ]\n* **(n=2)**: then you are asking for the least size forcing a transitive subtournament of order $m$ in a tournament. The standard bound is (2^{m-1}) (and it is tight in the tournament setting).\n\n## General bounds in terms of ordinary Ramsey numbers\n\nLet $R(a,b)$ be the usual (undirected) Ramsey number.\n\nA basic comparison is\n[\nR(n,m)\\ \\le\\ k(n,m)\\ \\le\\ R!\\bigl(n,2^{m-1}\\bigr).\n]\nThis is stated in the recent work of Ihringer–Rajendraprasad–Weinert [[nomath]](they write it as $r(m,n)\\le r(I_m,L_n)\\le "
+}

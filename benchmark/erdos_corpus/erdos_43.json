@@ -1,0 +1,19 @@
+{
+  "uuid": "erdos_43",
+  "problem": [
+    "If A,B⊂ \\{1,\\ldots,N\\} are two Sidon sets such that (A-A)∩(B-B)=\\{0\\} then is it true that \\binom{| A|}{2}+\\binom{| B|}{2}≤\\binom{f(N)}{2}+O(1),where f(N) is the maximum possible size of a Sidon set in \\{1,\\ldots,N\\}? If | A|=| B| then can this bound be improved to\\binom{| A|}{2}+\\binom{| B|}{2}≤ (1-c+o(1))\\binom{f(N)}{2}for some constant c>0?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 43,
+  "status": "open",
+  "tags": [
+    "number theory",
+    "sidon sets",
+    "additive combinatorics"
+  ],
+  "prize": "$100",
+  "formalized_on_site": false,
+  "original_latex": "If $A,B\\subset \\{1,\\ldots,N\\}$ are two Sidon sets such that $(A-A)\\cap(B-B)=\\{0\\}$ then is it true that\\[ \\binom{\\lvert A\\rvert}{2}+\\binom{\\lvert B\\rvert}{2}\\leq\\binom{f(N)}{2}+O(1),\\]where $f(N)$ is the maximum possible size of a Sidon set in $\\{1,\\ldots,N\\}$? If $\\lvert A\\rvert=\\lvert B\\rvert$ then can this bound be improved to\\[\\binom{\\lvert A\\rvert}{2}+\\binom{\\lvert B\\rvert}{2}\\leq (1-c+o(1))\\binom{f(N)}{2}\\]for some constant $c>0$?",
+  "additional_context": "Since it is known that f(N)\\sim \\sqrt{N} (see [30]) the latter question is equivalent to asking whether, if | A|=| B|,| A| ≤ \\left((1)/(\\sqrt{2)}-c+o(1)\\right)\\sqrt{N}for some constant c>0. In the comments Tao has given a proof of this upper bound without the -c.\n\nIn the comments Barreto has given a negative answer to the second question: for infinitely many N there exist Sidon sets A,B⊂ \\{1,\\ldots,N\\} with | A|=| B| and (A-A)∩ (B-B)=\\{0\\} and\\binom{| A|}{2}+\\binom{| B|}{2}≥ (1-o(1))\\binom{f(N)}{2}.",
+  "reference_proof_hint": "This is exactly **Erdős Problem #43**. As of the current public status (edited 20 Dec 2025), the **first (additive $O(1)$) question is still open**, but the **second [[nomath]](“save a fixed constant $c>0$” when $|A|=|B|$)[[/nomath]] is false**.\n\n## The equal-size improvement with a fixed (c>0) is false\n\nNo such absolute constant (c>0) can exist. In fact, there are **infinitely many** (N) for which one can find Sidon sets (A,B\\subset [N]) with (|A|=|B|), ((A-A)\\cap(B-B)={0}), and\n[\n\\binom{|A|}{2}+\\binom{|B|}{2}\\ \\ge\\ (1-o(1))\\binom{f(N)}{2}.\n]\nSo the ratio can go to $1$, which kills any fixed saving $1-c$.\n\n### How the construction works (sketch)\n\nPick an **odd prime power** $q$. Let\n[\nM:=q^2-1,\\qquad N:=\\frac{M}{2}=\\frac{q^2-1}{2}.\n]\nBy the **Bose–Chowla** construction, there is a set (S\\subset{1,\\dots,q^2-2}) with (|S|=q) that is Sidon modulo (q^2-1) [[nomath]](hence Sidon in $\\mathbb Z$ as well)[[/nomath]]. ([arXiv][1])\n\nNow split $S$ into even and odd elements:\n[\nS_{\\rm even}=S\\cap"
+}

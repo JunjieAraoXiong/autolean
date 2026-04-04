@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_301",
+  "problem": [
+    "Let f(N) be the size of the largest A⊆ \\{1,\\ldots,N\\} such that there are no solutions to(1)/(a)≠ (1)/(b_1)+\\cdots+(1)/(b_k)with distinct a,b_1,\\ldots,b_k∈ A?\n\nEstimate f(N). In particular, is f(N)=(\\tfrac{1}{2}+o(1))N?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 301,
+  "status": "open",
+  "tags": [
+    "number theory",
+    "unit fractions"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $f(N)$ be the size of the largest $A\\subseteq \\{1,\\ldots,N\\}$ such that there are no solutions to\\[\\frac{1}{a}\\neq \\frac{1}{b_1}+\\cdots+\\frac{1}{b_k}\\]with distinct $a,b_1,\\ldots,b_k\\in A$?\n\nEstimate $f(N)$. In particular, is $f(N)=(\\tfrac{1}{2}+o(1))N$?",
+  "additional_context": "The example A=(N/2,N]∩ ℕ shows that f(N)≥ N/2.\n\nWouter van Doorn has given an elementary argument that provesf(N)≤ (25/28+o(1))N.Indeed, consider the sets S_a=\\{2a,3a,4a,6a,12a\\}∩ [1,N] as a ranges over all integers of the form 8^b9^cd with (d,6)=1. All such S_a are disjoint and, if A has no solutions to the given equation, then A must omit at least two elements of S_a when a≤ N/12 and at least one element of S_a when N/12<a≤ N/6, and an elementary calculation concludes the proof.\n\nStijn Cambie and Wouter van Doorn have noted that, if we allow solutions to this equation with non-distinct b_i, then the size of the maximal set is at most N/2. Indeed, this is the classical threshold for the existence of some distinct a,b∈ A such that a\\mid b.\n\nSee also [302] and [327].",
+  "reference_proof_hint": "Interpreting your display as a typo (as noted on the Erdős Problems forum), the intended forbidden relation is\n\n[\n\\frac1a=\\frac1{b_1}+\\cdots+\\frac1{b_k}\n]\n\nwith **distinct** (a,b_1,\\dots,b_k\\in A) [[nomath]](and $k\\ge 2$, since $k=1$ would force $a=b_1$)[[/nomath]]. ([Erdős Problems][1])\n\n---\n\n## What is known about $f(N)$\n\nThis is Erdős–Graham problem #301 and is currently **open**. ([Erdős Problems][2])\n\n### Lower bound: (f(N)\\ge N/2)\n\nTake\n[\nA=\\\\{ \\lfloor N/2\\rfloor+1,\\dots,N\\\\}.\n]\nThen (|A|=\\lceil N/2\\rceil).\n\nWhy this works: if (a\\in A), then (a>N/2), and any (b_i\\in A) with (b_i\\ne a) must satisfy (b_i>a), hence (b_i\\le N<2a). Multiplying the equation by $a$ gives\n[\n1=\\sum_{i=1}^k \\frac{a}{b_i}.\n]\nBut each term satisfies\n[\n\\frac12<\\frac{a}{b_i}<1,\n]\nso for (k\\ge 2) the RHS is (>1), contradiction. Hence there are no solutions, and (f(N)\\ge N/2). ([Erdős Problems][2])\n\n### Best published/recorded upper bound: (f(N)\\le (25/28+o(1))N)\n\nWouter van Doorn gave an elementary density argu"
+}

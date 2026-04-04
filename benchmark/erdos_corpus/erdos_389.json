@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_389",
+  "problem": [
+    "Is it true that for every n≥ 1 there is a k such thatn(n+1)\\cdots(n+k-1)\\mid (n+k)\\cdots (n+2k-1)?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 389,
+  "status": "open",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": true,
+  "original_latex": "Is it true that for every $n\\geq 1$ there is a $k$ such that\\[n(n+1)\\cdots(n+k-1)\\mid (n+k)\\cdots (n+2k-1)?\\]",
+  "additional_context": "Asked by Erdős and Straus.\nFor example when n=2 we have k=5:2\\times 3 \\times 4 \\times 5\\times 6 \\mid 7 \\times 8 \\times 9\\times 10\\times 11.and when n=3 we have k=4:3\\times 4\\times 5\\times 6 \\mid 7\\times 8\\times 9\\times 10.Bhavik Mehta has computed the minimal such k for 1≤ n≤ 18 (now available as A375071 on the OEIS).",
+  "reference_proof_hint": "✅ **Empirically (and very plausibly in general): yes, it appears to be true**, i.e.\n\n[\n\\forall,n\\ge 1\\ \\exists,k\\ge 1 \\text{ such that }\\quad\nn(n+1)\\cdots(n+k-1)\\mid (n+k)(n+k+1)\\cdots(n+2k-1).\n]\n\nHowever, **I’m not able (within this response) to supply a complete published-style proof**, and I want to be transparent about that. What I *can* do is:\n\n1. rewrite the condition in a much cleaner equivalent form,\n2. show concrete $k$’s for many $n$, and\n3. explain the main structural obstacles and what a proof must overcome.\n\n---\n\n## 1) A useful equivalent reformulation (binomial–ratio form)\n\nLet\n\n[\nA=\\prod_{i=0}^{k-1}(n+i),\\qquad B=\\prod_{i=0}^{k-1}(n+k+i).\n]\n\nThen\n\n[\nA=\\frac{(n+k-1)!}{(n-1)!},\\qquad\nB=\\frac{(n+2k-1)!}{(n+k-1)!}.\n]\n\nSo (A\\mid B) is equivalent to\n\n[\n\\frac{B}{A}\n=\\frac{(n+2k-1)!,(n-1)!}{(n+k-1)!^2}\\in \\mathbb{Z}.\n]\n\nEquivalently [[nomath]](factoring out $k!$)[[/nomath]]:\n\n[\nA=k!\\binom{n+k-1}{k},\\qquad\nB=k!\\binom{n+2k-1}{k},\n]\n\nso the divisibility is equivalent to\n\n[\n\\boxed{\\",
+  "ground_truth_lean": "/-\nCopyright 2025 The Formal Conjectures Authors.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    https://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n-/\n\nimport FormalConjectures.Util.ProblemImports\n\n/-!\n# Erdős Problem 389\n\n*Reference:* [erdosproblems.com/389](https://www.erdosproblems.com/389)\n-/\n\nnamespace Erdos389\n\n/--\nIs it true that for every $n \\geq 1$ there is a $k$ such that\n$$\n  n(n + 1) \\cdots (n + k - 1) \\mid (n + k) \\cdots (n + 2k - 1)?\n$$\n-/\n@[category research open, AMS 11]\ntheorem erdos_389 : answer(sorry) ↔\n    ∀ n ≥ 1, ∃ k ≥ 1, ∏ i ∈ Finset.range k, (n + i) ∣ ∏ i ∈ Finset.range k, (n + k + i) := by\n  sorry\n\n/--\nBhavik Mehta has computed the minimal such $k$ for $1 \\leq n \\leq 18$.\nFor example, the minimal $k$ for $n = 4$ is $207$.\n-/\n@[category high_school, AMS 11]\ntheorem erdos_389.variants.mehta_four :\n    IsLeast\n      { k | 1 ≤ k ∧ ∏ i ∈ Finset.range k, (4 + i) ∣ ∏ i ∈ Finset.range k, (4 + k + i) }\n      207 := by\n  sorry\n\nend Erdos389\n"
+}

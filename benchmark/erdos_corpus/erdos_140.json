@@ -1,0 +1,15 @@
+{
+  "uuid": "erdos_140",
+  "problem": [
+    "Erdős Problem #140"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 140,
+  "status": "proved",
+  "tags": [
+    "additive combinatorics",
+    "arithmetic progressions"
+  ],
+  "prize": "$500",
+  "formalized_on_site": false
+}

@@ -1,0 +1,73 @@
+{
+  "uuid": "erdos_333",
+  "problem": [
+    "Erdős Problem #333"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 333,
+  "status": "disproved (Lean)",
+  "tags": [
+    "number theory",
+    "additive basis"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "expert_comments": [
+    {
+      "author": "",
+      "text": "I have been experimentally exploring the discussion on the forum so far with ChatGPT.\n\nThe initial goal is to intuit/assess KStar's greedy construction and Boris' prime construction.\n(Edit: Boris noted that his proof is wrong because Cauchy-Davenport bound goes the wrong way. In ChatGPT's chat, that step is also incorrect but neither I nor ChatGPT was able to spot it at the time.)\n\nThen we moved on to exploring the Erdos-Newman paper mentioned as already resolving the problem. ChatGPT sketched how it follows from Theorem 2, and noted KoishiChan's typo: $\\min(n \\log N, N^{1/2} / 2)$ should be $\\min(n / \\log N, N^{1/2} / 2)$.\n\nFinally I attached a page of Erdos-Graham paper which stated the problem. The exact quote is\n\n\"Let $A$ be a set of integers with asymptotic density zero. Does there always exist a basis $B$ with $B(x) = o(\\sqrt x)$ so that every $a \\in A$ can be written as $a = b_i + b_j$, $b_i,b_j \\in B$? This is known [Er-Ne (77)] to be possible, for example, when $A$ is the set "
+    },
+    {
+      "author": "natso26",
+      "text": "I am really sorry to point this out, but in Theorem 2 of the paper of Erdos and Newman linked in this problem, a negative answer to this problem was already obtained. In particular, they showed that for most subsets A of [N] with size n, the size of smallest B with A < B + B is at least min(n log N, N^{1/2} / 2). Taking say n = N^{0.6} and gluing the sets A together for dyadic N gives the desired result.\n\nHere is a link for the paper \nhttps://users.renyi.hu/~p_erdos/1977-05.pdf\n      \n      \n      \n(The site has been updated to address this comment.)"
+    },
+    {
+      "author": "KoishiChan",
+      "text": "BTW, it is really confusing why Erdos asked this again in 1980, considering his paper with Newman was published in 1977..."
+    },
+    {
+      "author": "KoishiChan",
+      "text": "This is very tragic. Back to the drawing board."
+    },
+    {
+      "author": "Kevin Barreto",
+      "text": "BTW I really like your work on this website. Sincerely wish you success!"
+    },
+    {
+      "author": "KoishiChan",
+      "text": "Thank you. My formal request to all members of the website is to put greater focus on literature search on the problems currently marked as open. As someone who has fallen for this twice now, it’s quite gut-wrenching to find out a problem one had gotten a solution to, had already been previously solved. Of course, this is a personal error on my part, but it would help if the possibilities of such things happening was reduced overall."
+    },
+    {
+      "author": "Kevin Barreto",
+      "text": "I think Alfaiz for example is actively doing that. Tao has also performed many Deep researches and has advocated for such practices to be standard (because rediscovery is actually quite often in mathematics in this exact way). I think Bloom himself stated that the website is an informal, unofficial endeavor, but the public has taken it to attain a somewhat “formal” status now, so that can’t be helped… Finally, there is already a non-short Disclaimer saying exactly this. So yes, we should be aware of this, but in some sense I think it’s just how life works!"
+    },
+    {
+      "author": "natso26",
+      "text": "I'm not sure what else can be done - as the disclaimer on each 'open' problem states, all such statuses should be taken with a pinch of salt, and I expect the investigating user to check everything themselves, including both the actual statement in Erdős' papers, and also to read the previous literature and search for more.\n\nThis site was only ever intended as a useful starting point, not a replacement to the existing literature.\n\nThanks to the efforts of many in the last several months, a lot of the gaps in my knowledge/literature searches have been filled in, but I'm sure some still do remain. One should adopt a sceptical attitude in general, especially with short/elementary problems like this which have (according to the site anyway) received very little literature. \n\nI am sorry for the emotional gut-wrench, I'm sure this has happened to all mathematicians (long before this site existed). As well as reading the literature yourself, another way to avoid this in the future is to comme"
+    },
+    {
+      "author": "Thomas Bloom",
+      "text": "Sorry! I think my reply may have come off as more hostile than intended. It was definitely not an attack on you or the efforts of others. I agree it’s very much a personal oversight. My warning there to save others from similar embarrassment, was simply to always perform a deep literature search first before attempting a problem. Of course, this sounds obvious, but it’s something I am only coming to fully internalise now. \n\nIn any case, Merry Christmas all!"
+    },
+    {
+      "author": "Kevin Barreto",
+      "text": "Real research is a messy process. Don't be embarrassed (or be pressured into embarrassment from others e.g. on Reddit). I think Woett went through a similar experience at #354, with Tao commenting there that he also went through a similar experience at #243..."
+    },
+    {
+      "author": "natso26",
+      "text": "Interpreting the problem in the way suggested by Woett:\n\"Let $A\\subseteq \\mathbb{N}_0$ be a set of natural density zero. Does there exist a basis $B$ for $A$ such that $A\\subseteq B+B$ and\\[\\lvert B\\cap \\{0,\\ldots,N\\}\\rvert =o(N^{1/2})\\]for all large $N$?\" \n\nGPT-5.2 Pro provides a negative answer to this here (and with conventions elaborated on here). We believe, to the best of our knowledge, this is the first case of an LLM fully autonomously resolving an Erdős problem, not previously resolved by humans. GPT-5.2 Pro's solution was then autoformalised in Lean 4 by Claude Opus 4.5, and is viewable here. There was no human input to the argument of the proof. Originally, GPT-5.2 gave a probabilistic argument which appeared correct but annoying to formalise; my only role was in asking GPT-5.2 Pro to give a more constructive argument and instructing Claude Opus 4.5 to search through the Mathlib4 GitHub repository for relevant tactics as it formalised GPT-5.2 Pro's informal proof. Everything"
+    },
+    {
+      "author": "Kevin Barreto",
+      "text": "Cool stuff!\n\n\nI attempted a literature search with ChatGPT 5.2 Pro, but instead it gave me the following explicit construction:\n\nPick a sequence of primes $p_1<p_2<\\cdots$ growing fast enough that $p_{k+1} > p_k^2$.  Define blocks $S_k = \\{p_k^2+r \\mid 0 \\le r < p_k\\}$ and set $A = \\bigcup_k S_k$.\n\nThe density of $A$ is zero because its size up to $p_k^2+p_k$ is dominated by the last $p_k$ numbers.\n\nMeanwhile, it doesn't have bases of order of growth $o(\\sqrt{n})$ because by the Cauchy–Davenport theorem mod $p_k$, it must have at least $p_k/2$ numbers to hit $S_k$, which goes up to $p_k^2+p_k$ and has all residues mod $p_k$.\n\n[UPDATE: Wow, oops!  This proof is wrong!  The Cauchy–Davenport theorem bound goes the wrong way.]"
+    },
+    {
+      "author": "BorisAlexeev",
+      "text": "Are $A$ and $B$ meant to be subsets of positive integers or non-negative integers? If the former, then $A=\\{1\\}$ gives a counterexample, right? Just checking on which convention of $\\mathbb{N}$ is being used here (might be worth saying here), and what $B$ is meant to be a basis of, since the source of the problem seems to allow for $0$ to be included in the sets."
+    },
+    {
+      "author": "Kevin Barreto",
+      "text": "To quote Thomas from a comment on #28: \n\nI'd rather leave it ambiguous whether $0 \\in \\mathbb{N}$ - sometimes this makes sense, sometimes not. I think it's almost always obvious from the context whether $0$ is included or not (e.g. whether the statement is trivially true or false at $0$)\n\nIn this case one could perhaps argue that writing $\\lvert B\\cap \\{0,\\ldots,N\\}\\rvert$ makes slightly more sense than $\\lvert B\\cap \\{1,\\ldots,N\\}\\rvert$ though.\n\nAnd I believe a basis for the set $A$ is meant. So one could just write 'set $B$' here, instead of 'basis $B$', to avoid confusion.\n\nPS. Page number is [ErGr80, p. 50]."
+    }
+  ]
+}

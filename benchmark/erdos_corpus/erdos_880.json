@@ -1,0 +1,15 @@
+{
+  "uuid": "erdos_880",
+  "problem": [
+    "Erdős Problem #880"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 880,
+  "status": "proved",
+  "tags": [
+    "number theory",
+    "additive basis"
+  ],
+  "prize": "no",
+  "formalized_on_site": false
+}

@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_460",
+  "problem": [
+    "Let a_0=n and a_1=1, and in general a_k is the least integer >a_{k-1} for which (n-a_k,n-a_i)=1 for all 1≤ i<k. Does∑_{i}(1)/(a_i)→ ∞as n→ ∞? What about if we restrict the sum to those i such that n-a_j is divisible by some prime ≤ a_j, or the complement of such i?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 460,
+  "status": "open",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $a_0=n$ and $a_1=1$, and in general $a_k$ is the least integer $>a_{k-1}$ for which $(n-a_k,n-a_i)=1$ for all $1\\leq i<k$. Does\\[\\sum_{i}\\frac{1}{a_i}\\to \\infty\\]as $n\\to \\infty$? What about if we restrict the sum to those $i$ such that $n-a_j$ is divisible by some prime $\\leq a_j$, or the complement of such $i$?",
+  "additional_context": "This question arose in work of Eggleton, Erdős, and Selfridge, who could prove that a_k <k^{2+o(1)} for k large enough depending on n, but conjectured that in fact a_k\\ll k\\log k is true.",
+  "reference_proof_hint": "Write\n[\nb_k:=n-a_k\\qquad (k\\ge 1).\n]\nThen the defining condition is exactly that the (b_k)’s are **pairwise coprime**:\n$\n\\gcd(b_k,b_i)=1\\quad (1\\le i<k).\n$\nAnd because (a_k) is the *least* integer (>a_{k-1}) with that property, equivalently (b_k) is the **largest** integer (<b_{k-1}) that is coprime to all earlier (b_i). So ((b_k)) is a strictly decreasing sequence.\n\n## The unrestricted process forces an “all primes” tail\n\nAssume gcd is taken for integers in the usual way, (\\gcd(x,y)=\\gcd(|x|,|y|)), so the recursion continues past (a_k>n).\n\n### Step 1: you must eventually pick $b=1$\n\nSince the search for (b_k) is just “scan downward for the next integer coprime to all previous ones,” you will certainly reach $b=1$, and $1$ is coprime to everything. So for some index $K$,\n[\nb_K=1\\qquad\\text{hence}\\qquad a_K=n-1.\n]\n\n### Step 2: by the time (b_K=1), every prime (<n) has already appeared\n\nClaim: every prime (p<n) divides at least one of (b_1,\\dots,b_{K-1}).\n\nIf not, take the largest prime "
+}

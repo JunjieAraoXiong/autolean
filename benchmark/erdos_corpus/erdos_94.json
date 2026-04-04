@@ -1,0 +1,16 @@
+{
+  "uuid": "erdos_94",
+  "problem": [
+    "Erdős Problem #94"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 94,
+  "status": "proved (Lean)",
+  "tags": [
+    "geometry",
+    "convex",
+    "distances"
+  ],
+  "prize": "£25",
+  "formalized_on_site": false
+}

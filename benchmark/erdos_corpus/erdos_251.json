@@ -1,0 +1,19 @@
+{
+  "uuid": "erdos_251",
+  "problem": [
+    "Is∑ (p_n)/(2^n)irrational? (Here p_n is the nth prime.)"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 251,
+  "status": "open",
+  "tags": [
+    "number theory",
+    "irrationality"
+  ],
+  "prize": "no",
+  "formalized_on_site": true,
+  "original_latex": "Is\\[\\sum \\frac{p_n}{2^n}\\]irrational? (Here $p_n$ is the $n$th prime.)",
+  "additional_context": "Erdős \\cite{Er58b} proved that ∑ (p_n^k)/(n!) is irrational for every k≥ 1.\n\nIn \\cite{Er88c} he further conjectures that ∑ (p_n^k)/(2^n) is irrational for every k, and that if g_n≥ 2 and g_n=o(p_n) then∑_{n=1}^∞ (p_n)/(g_1\\cdots g_n)is irrational. (The example g_n=p_n+1 shows that some condition on the growth of the g_n is necessary here.)\n\nThe decimal expansion of this sum is A098990 on the OEIS.\n\nReferences\n\n[Er58b] Erdős, Paul, Sur certaines s\\'{e}ries \\`a{} valeur irrationnelle. Enseign. Math. (2) (1958), 93--100.\n\n[Er88c] Erd\\\"{o}s, P., On the irrationality of certain series: problems and results. New advances in transcendence theory (Durham, 1986) (1988), 102-109.",
+  "reference_proof_hint": "Let\n\n[\nS=\\sum_{n\\ge1}\\frac{p_n}{2^n}\\qquad(p_n=\\text{the }n\\text{th prime}).\n]\n\nAs of today (January 2026), **it is not known** whether $S$ is rational or irrational.\n\nThis question was raised by Erdős, and he **conjectured** that this kind of series should be irrational [[nomath]](more generally $\\sum p_n^k/2^n$ for each fixed $k\\ge1$)[[/nomath]], but he did not have a proof even for (k=1). \n\nIt is also listed as an **open Erdős problem** (Erdős Problem #251). ([erdosproblems.com][1])\n\nIf you want to see the numerical value, its decimal expansion is recorded in OEIS as **A098990**. ([oeis.org][2])\n\n[1]: https://www.erdosproblems.com/251 \"\n  \n    Erdős Problem #251\n  \n\"\n[2]: https://oeis.org/A098990 \"A098990 - OEIS\"\n",
+  "ground_truth_lean": "/-\nCopyright 2025 The Formal Conjectures Authors.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    https://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n-/\n\nimport FormalConjectures.Util.ProblemImports\n\n/-!\n# Erdős Problem 251\n\n*Reference:* [erdosproblems.com/251](https://www.erdosproblems.com/251)\n-/\n\nnamespace Erdos251\n\n/--\nIs $\\sum_{n=1}^\\infty \\frac{p_n}{2^n}$ irrational? Here $p_n$ is the $n$-th prime ($p_1=2, p_2=3, \\dots$).\n-/\n@[category research open, AMS 11]\ntheorem erdos_251 : answer(sorry) ↔ Irrational (∑' n : ℕ, (Nat.nth Nat.Prime n) / (2 ^ n)) := by\n  sorry\n\nend Erdos251\n"
+}

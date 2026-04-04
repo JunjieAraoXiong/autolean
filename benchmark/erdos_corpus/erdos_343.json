@@ -1,0 +1,15 @@
+{
+  "uuid": "erdos_343",
+  "problem": [
+    "Erdős Problem #343"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 343,
+  "status": "proved",
+  "tags": [
+    "number theory",
+    "complete sequences"
+  ],
+  "prize": "no",
+  "formalized_on_site": false
+}

@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_689",
+  "problem": [
+    "Let n be sufficiently large. Is there some choice of congruence class a_p for all primes 2≤ p≤ n such that every integer in [1,n] satisfies at least two of the congruences \\equiv a_p\\pmod{p}?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 689,
+  "status": "open",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": true,
+  "original_latex": "Let $n$ be sufficiently large. Is there some choice of congruence class $a_p$ for all primes $2\\leq p\\leq n$ such that every integer in $[1,n]$ satisfies at least two of the congruences $\\equiv a_p\\pmod{p}$?",
+  "additional_context": "One can ask a similar question replacing 2 by any fixed integer r (provided n is sufficiently large depending on r).\n\nSee also [687] and [688].\n\nThis problem (with 2 replaced by 10) is Problem 45 on Green's open problems list.",
+  "reference_proof_hint": "As far as the current literature goes, this is **not known**: it’s an **open problem** of Erdős.\n\n* Erdős explicitly asked (in 1979) whether one can choose residues (c_p \\pmod p) for every prime (2\\le p\\le n) so that **every** (x\\le n) satisfies **at least 2** [[nomath]](or at least $r$)[[/nomath]] of the congruences (x\\equiv c_p\\pmod p). \n* The same question is catalogued as **Erdős Problem #689** and is listed as open (as of the site’s Dec 2025 update). ([Erdős Problems][1])\n* It also appears as **Problem 45** in Ben Green’s open problems list; he notes that Erdős “does not know how to answer it with 10 replaced by 2,” i.e. exactly your $r=2$ question. \n\nA few bits of context that help frame why it’s plausible but delicate:\n\n* A trivial “near miss”: if you take (a_p\\equiv 0\\pmod p) for all primes (p\\le n), then every integer (\\le n) with at least two **distinct** prime factors automatically satisfies at least two congruences; the only exceptions are $1$ and prime powers. So the probl",
+  "ground_truth_lean": "/-\nCopyright 2025 The Formal Conjectures Authors.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    https://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n-/\n\nimport FormalConjectures.Util.ProblemImports\n\n/-!\n# Erdős Problem 689\n*References:*\n* [erdosproblems.com/689](https://www.erdosproblems.com/689)\n* [Ben Green's Open Problem 45](https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf#problem.45)\n-/\n\nnamespace Erdos689\n\n/--\nLet `n` be sufficiently large. Is there some choice of congruence class `a_p` for all primes\n`2 ≤ p ≤ n` such that every integer in `[1,n]` satisfies at least two of the congruences\n`≡ a_p (mod p)`?\n-/\n@[category research open, AMS 11]\ntheorem erdos_689 :\n    answer(sorry) ↔ ∀ᶠ n in .atTop, ∃ a : ℕ → ℕ, ∀ m ∈ Finset.Icc 1 n,\n      2 ≤ (Finset.Icc 1 n |>.filter fun p => p.Prime ∧ a p ≡ m [MOD p]).card := by\n  sorry\n\nend Erdos689\n"
+}

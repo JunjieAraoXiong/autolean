@@ -1,0 +1,14 @@
+{
+  "uuid": "erdos_1123",
+  "problem": [
+    "Erdős Problem #1123"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 1123,
+  "status": "independent",
+  "tags": [
+    "algebra"
+  ],
+  "prize": "$100",
+  "formalized_on_site": false
+}

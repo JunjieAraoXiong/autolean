@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_260",
+  "problem": [
+    "Let a_1<a_2<\\cdots be an increasing sequence such that a_n/n→ ∞. Is the sum∑_n (a_n)/(2^{a_n)}irrational?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 260,
+  "status": "open",
+  "tags": [
+    "irrationality"
+  ],
+  "prize": "no",
+  "formalized_on_site": true,
+  "original_latex": "Let $a_1<a_2<\\cdots$ be an increasing sequence such that $a_n/n\\to \\infty$. Is the sum\\[\\sum_n \\frac{a_n}{2^{a_n}}\\]irrational?",
+  "additional_context": "Erdős \\cite{Er81l} proved this is true under either of the stronger assumptions that\n{UL}\n{LI} a_{n+1}-a_n→ ∞ or {/LI}\n{LI} a_n \\gg n\\sqrt{\\log n\\log\\log n}.{/LI}\n{/UL}\nErdős and Graham speculate that the condition \\limsup a_{n+1}-a_n=∞ is not sufficient, but know of no example.\n\nReferences\n\n[Er81l] Erdős, Paul, Sur l'irrationalit\\'{e}{} d'une certaine s\\'{e}rie. C. R. Acad. Sci. Paris S\\'{e}r. I Math. (1981), 765--768.",
+  "reference_proof_hint": "This is **not known in general**. It is recorded as **Erdős Problem #260** and is still listed as **open** (the problem page was last edited **19 October 2025**). ([Erdős Problems][1])\n\nWhat *is* known is that the sum is irrational under **stronger** hypotheses. In particular, Erdős proved that if the consecutive gaps grow,\n[\na_{n+1}-a_n\\to\\infty,\n]\nthen\n[\n\\sum_{n=1}^\\infty \\frac{a_n}{2^{a_n}}\n]\nis irrational [[nomath]](and he notes the same argument works with $2$ replaced by any integer base $t>1$)[[/nomath]]. ([old.renyi.hu][2])\n\nErdős also wrote that it “seems very plausible” that the weaker condition in your question,\n[\n\\frac{a_n}{n}\\to\\infty,\n]\nshould already be sufficient, but that his method breaks down there; he further suspected there might even exist a counterexample with (\\limsup(a_{n+1}-a_n)=\\infty) and the sum rational, though he did not have one. ([old.renyi.hu][2]) The Erdős Problems site likewise notes an additional sufficient growth condition (also attributed to Erdős",
+  "ground_truth_lean": "/-\nCopyright 2026 The Formal Conjectures Authors.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    https://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n-/\n\nimport FormalConjectures.Util.ProblemImports\n\n/-!\n# Erdős Problem 260\n\n*Reference:* [erdosproblems.com/260](https://www.erdosproblems.com/260)\n-/\n\nnamespace Erdos260\n\nopen Filter\n\n/-\nLet $a_1 < a_2 < \\cdots$ be an increasing sequence such that $\\frac{a_n}{n} → \\infty$.\nIs the sum $\\sum_{n}^{\\infty} \\frac{a_n}{2^{a_n}}$ irrational?\n-/\n@[category research open, AMS 11]\ntheorem erdos_260 : answer(sorry) ↔\n                  ∀ a : ℕ → ℤ, ∀ s : ℝ,\n                  StrictMono a →\n                  Tendsto (fun n => (a n : ℝ ) / n ) atTop atTop →\n                  HasSum (fun n => (a n : ℝ ) / 2 ^ a n) s → Irrational s :=\n  sorry\n\n-- TODO: Add a proof of the theorem under the strong assumption $a_{n+1}-a_n → \\infty$\n-- TODO: Add a proof of the theorem under the strong assumption $a_n \\gg n\\sqrt{\\log{n}\\log{\\log{n}}}$\n\nend Erdos260\n"
+}

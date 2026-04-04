@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_573",
+  "problem": [
+    "Is it true that\\mathrm{ex}(n;\\{C_3,C_4\\})\\sim (n/2)^{3/2}?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 573,
+  "status": "open",
+  "tags": [
+    "graph theory",
+    "turan number"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Is it true that\\[\\mathrm{ex}(n;\\{C_3,C_4\\})\\sim (n/2)^{3/2}?\\]",
+  "additional_context": "A problem of Erdős and Simonovits, who proved that\\mathrm{ex}(n;\\{C_4,C_5\\})=(n/2)^{3/2}+O(n).K\\\"{o}v\\'{a}ri, S\\'{o}s, and Tur\\'{a}n \\cite{KST54} proved that the extremal number of edges for containing either C_4 or an odd cycle of any length is \\sim (n/2)^{3/2}. This problem is therefore asking whether the threshold is the same if we just forbid odd cycles of length 3.\n\nSee also [574] for the general case, and [765] for \\mathrm{ex}(n;C_4).\n\nSee also the entry in the graphs problem collection.\n\nReferences\n\n[KST54] K\\\"{o}vari, T. and S\\'{o}s, V. T. and Tur\\'{a}n, P., On a problem of K. Zarankiewicz. Colloq. Math. (1954), 50-57.",
+  "reference_proof_hint": "It’s **not known**. The statement\n[\n\\mathrm{ex}(n;{C_3,C_4})\\sim\\left(\\frac n2\\right)^{3/2}\n]\nis essentially **Erdős’s conjecture** and remains **wide open**.\n\n### What is known\n\nLet $z(n,C_4)$ be the **Zarankiewicz number**: the maximum number of edges in an $n$-vertex **bipartite** (C_4)-free graph. Since bipartite graphs are automatically triangle-free,\n[\n\\mathrm{ex}(n;{C_3,C_4})\\ \\ge\\ z(n,C_4).\n]\nMoreover,\n[\nz(n,C_4)=\\left(\\frac n2\\right)^{3/2}+o(n^{3/2}),\n]\nand in fact explicit two-sided estimates of the form\n[\n\\left(\\frac n2\\right)^{3/2}-cn^{4/3}\\ \\le\\ z(n,C_4)\\ \\le\\ \\left(\\frac n2\\right)^{3/2}+\\frac14 n\n]\nare known. \n\nSo we get the lower bound\n[\n\\mathrm{ex}(n;{C_3,C_4})\\ \\ge\\ \\left(\\frac n2\\right)^{3/2}+o(n^{3/2}). \n]\n\nOn the other hand, the best general **upper bound** currently available is still the “trivial” one coming from forbidding only (C_4):\n[\n\\mathrm{ex}(n;{C_3,C_4})\\ \\le\\ \\mathrm{ex}(n,C_4)\\ =\\ \\frac12n^{3/2}+O(n). \n]\n\nSo the leading constant is only known to lie in t"
+}

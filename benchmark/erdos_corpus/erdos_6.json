@@ -1,0 +1,16 @@
+{
+  "uuid": "erdos_6",
+  "problem": [
+    "Erdős Problem #6"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 6,
+  "status": "proved",
+  "tags": [
+    "number theory",
+    "primes"
+  ],
+  "prize": "$100",
+  "formalized_on_site": true,
+  "ground_truth_lean": "/-\nCopyright 2025 The Formal Conjectures Authors.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    https://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n-/\n\nimport FormalConjectures.Util.ProblemImports\n\n/-!\n# Erdős Problem 6\n\n*References:*\n- [erdosproblems.com/6](https://www.erdosproblems.com/6)\n- [BFT15] Banks, William D. and Freiberg, Tristan and Turnage-Butterbaugh, Caroline L., Consecutive primes in tuples. Acta Arith. (2015), 261-266.\n- [Ma15] Maynard, James, Small gaps between primes. Ann. of Math. (2) (2015), 383-413.\n-/\n\nnamespace Erdos6\n\n/--\nThere are infinitely many $n$ such that $d_n < d_{n+1} < d_{n+2}$, where $d$\ndenotes the prime gap function.\n-/\n@[category research solved, AMS 11]\ntheorem erdos_6 :\n    {n | primeGap n < primeGap (n + 1) ∧ primeGap (n + 1) < primeGap (n + 2)}.Infinite := by\n  sorry\n\n/--\nFor all $m$, there are infinitely many $n$ such that $d_n < d_{n+1} < \\dots < d_{n+m}$,\nwhere $d$ denotes the prime gap function.\n\nProved by Banks, Freiberg, and Turnage-Butterbaugh [BFT15] with an application of the\nMaynard-Tao machinery concerning bounded gaps between primes [Ma15]\n-/\n@[category research solved, AMS 11]\ntheorem erdos_6.variants.increasing (m : ℕ) :\n    {n | ∀ i ∈ Finset.range m, primeGap (n + i) < primeGap (n + i + 1)}.Infinite := by\n  sorry\n\n\n/--\nFor all $m$, there are infinitely many $n$ such that $d_n > d_{n+1} \\dots > d_{n+m}$,\nwhere $d$ denotes the prime gap function.\n\nProved by Banks, Freiberg, and Turnage-Butterbaugh [BFT15] with an application of the\nMaynard-Tao machinery concerning bounded gaps between primes [Ma15]\n-/\n@[category research solved, AMS 11]\ntheorem erdos_6.variants.decreasing (m : ℕ) :\n    {n | ∀ i ∈ Finset.range m, primeGap (n + i) > primeGap (n + i + 1)}.Infinite := by\n  sorry\n\nend Erdos6\n"
+}

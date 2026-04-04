@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_829",
+  "problem": [
+    "Let A⊂ℕ be the set of cubes. Is it true that1_A\\ast 1_A(n) \\ll (\\log n)^{O(1)}?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 829,
+  "status": "open",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $A\\subset\\mathbb{N}$ be the set of cubes. Is it true that\\[1_A\\ast 1_A(n) \\ll (\\log n)^{O(1)}?\\]",
+  "additional_context": "Mordell proved that\\limsup_{n→ ∞} 1_A\\ast 1_A(n)=∞and Mahler \\cite{Ma35b} proved1_A\\ast 1_A(n) \\gg (\\log n)^{1/4}for infinitely many n. Stewart \\cite{St08} improved this to1_A\\ast 1_A(n) \\gg (\\log n)^{11/13}.\n\nReferences\n\n[Ma35b] Mahler, Kurt, On the Lattice Points on Curves of Genus 1. Proc. London Math. Soc. (2) (1935), 431-466.\n\n[St08] Stewart, Cameron L., Cubic {T}hue equations with many solutions. Int. Math. Res. Not. IMRN (2008), Art. ID rnn040, 11.",
+  "reference_proof_hint": "Let\n[\nr(n):=(1_A*1_A)(n)=\\sum_{a+b=n}1_A(a),1_A(b),\n]\nwhere (A={m^3:m\\in\\mathbb N}). Then $r(n)$ is exactly the number of (ordered) pairs ((c,d)\\in\\mathbb N^2) with\n[\nc^3+d^3=n.\n]\n\n## What we can prove unconditionally\n\nA standard argument gives a **divisor-type bound** [[nomath]](hence $n^{o(1)}$, but not polylog)[[/nomath]]:\n\nFactor\n[\nc^3+d^3=(c+d)(c^2-cd+d^2)=n.\n]\nSo (s:=c+d) is a positive divisor of $n$. For a fixed divisor (s\\mid n), put (d=s-c) and substitute into (c^2-cd+d^2=n/s). This becomes a **quadratic equation in $c$**, hence yields **at most 2** integer solutions $(c,d)$ for each $s$. Therefore\n[\nr(n)\\le 2,\\tau(n),\n]\nwhere (\\tau(n)) is the divisor function. Combining with the classical “divisor bound” (\\tau(n)=n^{o(1)}) gives\n[\nr(n)\\ll_\\varepsilon n^\\varepsilon\\qquad(\\forall \\varepsilon>0),\n]\nequivalently (r(n)\\le \\exp(O(\\log n/\\log\\log n))).\n\nThis (n^\\varepsilon) bound [[nomath]](and an alternative proof via cube roots of $-1$ modulo $n$)[[/nomath]] is stated explicitly a"
+}

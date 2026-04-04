@@ -1,0 +1,15 @@
+{
+  "uuid": "erdos_964",
+  "problem": [
+    "Erdős Problem #964"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 964,
+  "status": "proved (Lean)",
+  "tags": [
+    "number theory",
+    "divisors"
+  ],
+  "prize": "no",
+  "formalized_on_site": false
+}

@@ -1,0 +1,19 @@
+{
+  "uuid": "erdos_458",
+  "problem": [
+    "Let [1,\\ldots,n] denote the least common multiple of \\{1,\\ldots,n\\}. Is it true that, for all k≥ 1,[1,\\ldots,p_{k+1}-1]< p_k[1,\\ldots,p_k]?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 458,
+  "status": "falsifiable",
+  "tags": [
+    "number theory",
+    "primes"
+  ],
+  "prize": "no",
+  "formalized_on_site": true,
+  "original_latex": "Let $[1,\\ldots,n]$ denote the least common multiple of $\\{1,\\ldots,n\\}$. Is it true that, for all $k\\geq 1$,\\[[1,\\ldots,p_{k+1}-1]< p_k[1,\\ldots,p_k]?\\]",
+  "additional_context": "Erdős and Graham write this is 'almost certainly' true, but the proof is beyond our ability, for (at least) two reasons:\n{UL}\n{LI}Firstly, one has to rule out the possibility of many primes q such that p_k<q^2<p_{k+1}. There should be at most one such q, which would follow from p_{k+1}-p_k<p_k^{1/2}, which is essentially the notorious Legendre's conjecture.{/LI}\n{LI} The small primes also cause trouble.{/LI}\n{/UL}",
+  "reference_proof_hint": "This is **open** (as far as the current literature databases I can find indicate).\n\nIt appears explicitly as **Erdős Problem #458** (from Erdős–Graham, *Old and New Problems and Results in Combinatorial Number Theory*), and the Erdős Problems site lists it as **“FALSIFIABLE: open”**; Erdős and Graham wrote it is *“almost certainly”* true but they did not have a proof. ([Erdős Problems][1])\n\n## A useful reformulation\n\nLet (L(n):=[1,\\ldots,n]=\\operatorname{lcm}(1,2,\\dots,n)). A standard identity is\n[\nL(n)=\\prod_{q\\ \\text{prime}} q^{\\lfloor \\log_q n\\rfloor},\n]\nequivalently (\\log L(n)=\\psi(n)), the second Chebyshev function. ([Wikipedia][2])\n\nNow fix $k$ and consider the prime gap $(p_k,,p_{k+1})$. There are **no primes** in this open interval, but there may be **prime powers** (q^a) [[nomath]](with $a\\ge 2$)[[/nomath]] lying in it. Each time you pass such a prime power (q^a), the lcm $L(n)$ gains a factor of $q$ [[nomath]](the exponent of $q$ in the lcm increases by 1)[[/nomath]].\n\nFrom t",
+  "ground_truth_lean": "/-\nCopyright 2025 The Formal Conjectures Authors.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    https://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n-/\n\nimport FormalConjectures.Util.ProblemImports\n\n/-!\n# Erdős Problem 458\n*Reference:* [erdosproblems.com/458](https://www.erdosproblems.com/458)\n-/\n\nnamespace Erdos458\n\n/--\nThe least common multiple of the integers in the set $\\{1, \\dots, n\\}$.\n-/\ndef lcm_upto (n : ℕ) : ℕ :=\n  (Finset.Icc 1 n).lcm id\n\n/--\nLet $\\operatorname{lcm}(1, \\dots, n)$ denote the least common multiple of $\\{1, \\dots, n\\}$.\nLet $p_k$ be the $k$-th prime.\nIs it true that for all $k \\geq 1$, $\\operatorname{lcm}(1, \\dots, p_{k+1}-1) < p_k \\cdot \\operatorname{lcm}(1, \\dots, p_k)$?\n-/\n@[category research open, AMS 11]\ntheorem erdos_458 :\n    answer(sorry) ↔ ∀ k : ℕ, lcm_upto ((k + 1).nth Prime - 1)\n     < k.nth Prime * lcm_upto (k.nth Prime) := by\n    sorry\n\nend Erdos458\n"
+}

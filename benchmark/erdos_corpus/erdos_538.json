@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_538",
+  "problem": [
+    "Let r≥ 2 and suppose that A⊆\\{1,\\ldots,N\\} is such that, for any m, there are at most r solutions to m=pa where p is prime and a∈ A. Give the best possible upper bound for∑_{n∈ A}(1)/(n)."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 538,
+  "status": "open",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $r\\geq 2$ and suppose that $A\\subseteq\\{1,\\ldots,N\\}$ is such that, for any $m$, there are at most $r$ solutions to $m=pa$ where $p$ is prime and $a\\in A$. Give the best possible upper bound for\\[\\sum_{n\\in A}\\frac{1}{n}.\\]",
+  "additional_context": "Erdős observed that∑_{n∈ A}(1)/(n)∑_{p≤ N}(1)/(p)≤ r∑_{m≤ N^2}(1)/(m)\\ll r\\log N,and hence∑_{n∈ A}(1)/(n) \\ll r(\\log N)/(\\log\\log N).See also [536] and [537].",
+  "reference_proof_hint": "Write all logarithms as natural logs.\nLet\n\n[\nS(A):=\\sum_{n\\in A}\\frac1n .\n]\n\nThen the correct order of magnitude is a power of (\\log N).\n\n## Claim (best possible asymptotic upper bound)\n\nFor each fixed (r\\ge2),\n\n[\n\\sup_{A\\subseteq{1,\\dots,N}\\atop \\forall m:|\\\\\\\\{(p,a):m=pa,\\ p\\ \\text{prime},\\ a\\in A\\\\}|\\le r\\\\}\\ S(A)\n=(\\log N)^{\\alpha_r+o(1)}\\qquad(N\\to\\infty),\n]\n\nwhere\n\n[\n\\boxed{\\alpha_r:=\\frac{r-1}{e\\cdot\\bigl((r-1)!\\bigr)^{1/(r-1)}}}\n]\n\nand the $o(1)$ depends on $r$ [[nomath]](tends to $0$ as $N\\to\\infty$)[[/nomath]].\n\nSo the best possible upper bound is\n\n[\n\\boxed{\\sum_{n\\in A}\\frac1n\\ \\le\\ (\\log N)^{\\alpha_r+o(1)}}\n]\n\nand this exponent (\\alpha_r) is sharp.\n\nFor small $r$:\n\n* (r=2:\\ \\alpha_2=\\dfrac1e\\approx 0.3679)\n* (r=3:\\ \\alpha_3=\\dfrac{2}{e\\sqrt2}=\\dfrac{\\sqrt2}{e}\\approx 0.5205)\n* (r=4:\\ \\alpha_4=\\dfrac{3}{e,6^{1/3}}\\approx 0.6074)\n\n---\n\n## Why this is attainable (matching construction)\n\nLet\n[\nw_*:=e\\cdot\\bigl((r-1)!\\bigr)^{1/(r-1)}.\n]\nLet $k$ be the largest integer with\n[\nk,w_"
+}

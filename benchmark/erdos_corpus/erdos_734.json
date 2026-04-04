@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_734",
+  "problem": [
+    "Find, for all large n, a non-trivial pairwise balanced block design A_1,\\ldots,A_m⊆ \\{1,\\ldots,n\\} such that, for all t, there are O(n^{1/2}) many i such that | A_i|=t."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 734,
+  "status": "open",
+  "tags": [
+    "combinatorics"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Find, for all large $n$, a non-trivial pairwise balanced block design $A_1,\\ldots,A_m\\subseteq \\{1,\\ldots,n\\}$ such that, for all $t$, there are $O(n^{1/2})$ many $i$ such that $\\lvert A_i\\rvert=t$.",
+  "additional_context": "A_1,\\ldots,A_m is a pairwise balanced block design if every pair in \\{1,\\ldots,n\\} is contained in exactly one of the A_i.\n\nErdős \\cite{Er81} writes 'this will be probably not be very difficult to prove but so far I was not successful'.\n\nErdős and de Bruijn \\cite{dBEr48} proved that if A_1,\\ldots,A_m⊆ \\{1,\\ldots,n\\} is a pairwise balanced block design then m≥ n, and this implies there must be some t such that there are \\gg n^{1/2} many t with | A_i|=t.\n\nReferences\n\n[Er81] Erdős, P., On the combinatorial problems which I would most like to see solved. Combinatorica (1981), 25-42.\n\n[dBEr48] de Bruijn, N. G. and Erdős, P., On a combinatorial problem. Nederl. Akad. Wetensch., Proc. (1948), 1277--1279 = Indagationes Math. 10, 421--423.",
+  "reference_proof_hint": "Fix a large $n$ and write\n[\nk:=\\left\\lceil \\sqrt n\\right\\rceil,\\qquad K:={k,k+1,\\dots,2k-1}.\n]\n\nThink of a block (A_i\\subseteq[n]) of size (|A_i|=t) as a copy of the clique (K_t) on the vertex set (A_i). Then a pairwise balanced design with block-sizes in $K$ is exactly a decomposition of the complete graph (K_n) into cliques whose orders lie in $K$.\n\n### Step 1: existence of a $K$-PBD for all large $n$\n\nLet (\\mathcal G:={K_t: t\\in K}) be the (finite) family of allowed cliques. Lamken–Wilson’s existence theory for (\\mathcal G)-decompositions gives: for all sufficiently large $n$, there is a (\\mathcal G)-decomposition of (K_n) provided the standard divisibility conditions (\\alpha(\\mathcal G)\\mid (n-1)) and (\\beta(\\mathcal G)\\mid n(n-1)) hold. ([UVicSpace][1])\n\nFor cliques, (\\deg(K_t)=t-1) and (|E(K_t)|=\\binom t2). Hence\n[\n\\alpha(\\mathcal G)=\\gcd{t-1:t\\in K}=\\gcd{k-1,k,\\dots,2k-2}=1,\n]\nso (\\alpha(\\mathcal G)\\mid(n-1)) is automatic. Also\n[\n\\beta(\\mathcal G)=2\\gcd\\\\{\\binom t2:t\\in K\\\\},\n]\n"
+}

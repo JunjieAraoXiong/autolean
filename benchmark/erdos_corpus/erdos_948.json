@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_948",
+  "problem": [
+    "Is there a function f(n) and a k such that in any k-colouring of the integers there exists a sequence a_1<\\cdots such that a_n<f(n) for infinitely many n and the set\\left\\{ ∑_{i∈ S}a_i : \\textrm{finite }S\\right\\}does not contain all colours?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 948,
+  "status": "open",
+  "tags": [
+    "number theory",
+    "ramsey theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Is there a function $f(n)$ and a $k$ such that in any $k$-colouring of the integers there exists a sequence $a_1<\\cdots$ such that $a_n<f(n)$ for infinitely many $n$ and the set\\[\\left\\{ \\sum_{i\\in S}a_i : \\textrm{finite }S\\right\\}\\]does not contain all colours?",
+  "additional_context": "Erdős initially asked whether this is possible with the set being monochromatic, but Galvin showed that this is not always possible, considering the two colouring where, writing n=2^km with m odd, we colour n red if m≥ F(k) and blue if m<F(k) (for some sufficiently quickly growing F).\n\nThis is open even in the case of \\aleph_0-many colours.\n\nThis is asking about a variant of Hindman's theorem (see [532]).",
+  "reference_proof_hint": "As far as I can tell from the current literature/status pages, this is **still open**: no such pair $(f,k)$ is known, and no impossibility result is known for the problem as you stated it. ([Erdős Problems][1])\n\nHere’s the landscape that *is* known.\n\n## Why $k=2$ cannot work\n\nIf $k=2$, then “the finite-sums set does not contain all colours” means it misses one of the two colours, i.e. **it is monochromatic**. So your question would become a “bounded” variant of Hindman’s theorem:\n\n> in every 2-colouring, find an infinite sequence ((a_n)) whose finite sums are monochromatic **and** with (a_n<f(n)) for infinitely many $n$.\n\nGalvin showed that this **monochromatic** bounded strengthening fails already for **two colours**, by constructing a 2-colouring of (\\mathbb N) based on the 2-adic valuation: write (n=2^k m) with $m$ odd, and colour $n$ red/blue depending on whether (m\\ge F(k)) or (m<F(k)), for a sufficiently fast-growing $F$. ([Erdős Problems][1])\n\nSo $k=2$ is ruled out.\n\n## For (k\\g"
+}

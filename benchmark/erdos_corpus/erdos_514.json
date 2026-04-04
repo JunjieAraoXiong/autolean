@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_514",
+  "problem": [
+    "Let f(z) be an entire function. Does there exist a path L so that, for every n,| f(z)/z^n| → ∞as z→ ∞ along L?\n\nCan the length of this path be estimated in terms of M(r)=\\max_{| z|=r}| f(z)|? Does there exist a path along which | f(z)| tends to ∞ faster than a fixed function of M(r) (such that M(r)^\\epsilon)?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 514,
+  "status": "open",
+  "tags": [
+    "analysis"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $f(z)$ be an entire function. Does there exist a path $L$ so that, for every $n$,\\[\\lvert f(z)/z^n\\rvert \\to \\infty\\]as $z\\to \\infty$ along $L$?\n\nCan the length of this path be estimated in terms of $M(r)=\\max_{\\lvert z\\rvert=r}\\lvert f(z)\\rvert$? Does there exist a path along which $\\lvert f(z)\\rvert$ tends to $\\infty$ faster than a fixed function of $M(r)$ (such that $M(r)^\\epsilon$)?",
+  "additional_context": "Boas (unpublished) has proved the first part, that such a path must exist.",
+  "reference_proof_hint": "* If $f$ is a **polynomial**, the answer is **no**: if (\\deg f=d), then (\\bigl|f(z)/z^n\\bigr|\\to 0) along every path for every (n>d).\n\n* If $f$ is **transcendental entire** (i.e. not a polynomial), the answer is **yes**.\n\n## Existence of a single path beating every power of $z$\n\nA result attributed to **R. P. Boas (unpublished)** states that for a transcendental entire function $f$ there exists a path (\\Gamma_\\infty) tending to (\\infty) such that for **every** (n\\in\\mathbb{N}),\n[\n\\left|\\frac{f(z)}{z^n}\\right|\\longrightarrow\\infty\\qquad(z\\to\\infty,\\ z\\in \\Gamma_\\infty).\n]\nThis is recorded (as “Problem 2.6” with update) in Hayman’s problem compilation. ([arXiv][1])\n\nSo, apart from the polynomial obstruction, such a path always exists.\n\n[[nomath]](Separately, it’s also classical that $\\infty$ is an asymptotic value of every transcendental entire function, i.e. there is always some curve on which $|f(z)|\\to\\infty$; the Boas statement is much stronger because it forces growth faster than **"
+}

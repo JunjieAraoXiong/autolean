@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_411",
+  "problem": [
+    "Let g_1=g(n)=n+\\phi(n) and g_k(n)=g(g_{k-1}(n)). For which n and r is it true that g_{k+r}(n)=2g_k(n) for all large k?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 411,
+  "status": "open",
+  "tags": [
+    "number theory",
+    "iterated functions"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $g_1=g(n)=n+\\phi(n)$ and $g_k(n)=g(g_{k-1}(n))$. For which $n$ and $r$ is it true that $g_{k+r}(n)=2g_k(n)$ for all large $k$?",
+  "additional_context": "The known solutions to g_{k+2}(n)=2g_k(n) are n=10 and n=94. Selfridge and Weintraub found solutions to g_{k+9}(n)=9g_k(n) and Weintraub foundg_{k+25}(3114)=729g_k(3114)for all k≥ 6.\n\nSteinerberger \\cite{St25} has observed that, for r=2, this problem is equivalent to asking for solutions to\\phi(n)+\\phi(n+\\phi(n))=n,and has shown that if this holds then either the odd part of n is in \\{1,3,5,7,35,47\\}, or is equal to 8m+7 or 6m+5, where 8m+7≥ 10^{10} is a prime number and \\phi(6m+5)=4m+4. Whether there are infinitely many such m is related to the question of whether\\phi(n)=(2)/(3)(n+1)has infinitely many solutions.\n\nCambie conjectures that the only solutions have r=2 and n=2^lp for some l≥ 1 and p∈ \\{2,3,5,7,35,47\\}. Cambie has shown this problem is reducible to the question of which integers r,t≥ 1 and primes p\\equiv 7\\pmod{8} satisfy g_k(2p^t)=4p^t, and conjectures there are no solutions to this except when t=1 and p∈ \\{7,47\\}. Cambie has also observed thatg_{k+4}(738)=3g_k(738),g_{k+4}(148646)=4g_k(148646),andg_{k+4}(4325798)=4g_{k}(4325798)for all k≥ 1.\n\nReferences\n\n[St25] S. Steinerberger, On an iterated arithmetic function problem of Erdős and Graham. arXiv:2504.08023 (2025).",
+  "reference_proof_hint": "Write (g(n)=n+\\varphi(n)) and (g_k(n)=g^{\\circ k}(n)) (the (k)-fold iterate). Suppose that for some integers (r\\ge1) and some (K) we have\n[\ng_{k+r}(n)=2,g_k(n)\\qquad\\text{for all }k\\ge K.\n]\n\n### Basic necessary facts\n\n* If (n) is odd and (n>2), then (\\varphi(n)) is even and (g(n)=n+\\varphi(n)) is odd; hence all iterates (g_k(n)) are odd. Then (2g_k(n)) is even, so the identity cannot hold. Therefore **$n$ must be even** [[nomath]](and $n=1,2$ do not work)[[/nomath]]. ([ar5iv][1])\n* Also (r\\neq 1) (for (n>1), (\\varphi(n)<n), so (g(n)<2n), hence (g(n)=2n) is impossible).\n\nSo any solution must have **$n$ even and (r\\ge2)**.\n\n---\n\n## What is known for the doubling relation: the case (r=2)\n\nThis is the one case that has been analyzed in depth. Steinerberger (2025) shows that understanding\n[\ng_{k+2}(n)=2g_k(n)\\ \\ \\text{(eventually)}\n]\nreduces to a Diophantine equation and yields an essentially complete structural classification. ([arXiv][2])\n\nA key point is: once the relation holds at one ti"
+}

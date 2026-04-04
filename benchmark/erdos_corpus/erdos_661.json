@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_661",
+  "problem": [
+    "Are there, for all large n, some points x_1,\\ldots,x_n,y_1,\\ldots,y_n∈ ℝ^2 such that the number of distinct distances d(x_i,y_j) iso\\left((n)/(\\sqrt{\\log n)}\\right)?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 661,
+  "status": "open",
+  "tags": [
+    "geometry",
+    "distances"
+  ],
+  "prize": "$50",
+  "formalized_on_site": false,
+  "original_latex": "Are there, for all large $n$, some points $x_1,\\ldots,x_n,y_1,\\ldots,y_n\\in \\mathbb{R}^2$ such that the number of distinct distances $d(x_i,y_j)$ is\\[o\\left(\\frac{n}{\\sqrt{\\log n}}\\right)?\\]",
+  "additional_context": "One can also ask this for points in ℝ^3. In ℝ^4 Lenz observed that there are x_1,\\ldots,x_n,y_1,\\ldots,y_n∈ ℝ^4 such that d(x_i,y_j)=1 for all i,j, taking the points on two orthogonal circles.\n\nMore generally, if F(2n) is the minimal number of such distances, and f(2n) is minimal number of distinct distances between any 2n points in ℝ^2, then is F =o(f)?\n\nSee also [89].",
+  "reference_proof_hint": "Interpreting the question in the usual nontrivial way [[nomath]](the $x_i$’s are $n$ **distinct** points and the $y_j$’s are $n$ **distinct** points; if repetitions are allowed then you can make the answer trivially “yes” by collapsing all $x_i$’s and all $y_j$’s)[[/nomath]], this is **open**.\n\nA standard way to formalize it is to define\n[\nD(m,n)=\\min_{|\\mathcal P|=m,,|\\mathcal Q|=n} \\bigl|{,|p-q|: (p,q)\\in \\mathcal P\\times \\mathcal Q,}\\bigr|\n]\n[[nomath]](the minimum number of distinct “bipartite” distances between an $m$-point set and an $n$-point set)[[/nomath]].\n\nYour question is exactly asking whether\n[\nD(n,n)=o\\left(\\frac{n}{\\sqrt{\\log n}}\\right)\n]\ncan happen.\n\n### What is known (best general bounds)\n\n* **Upper bound:** One always has\n  [\n  D(n,n)\\le D(2n)=O\\left(\\frac{n}{\\sqrt{\\log n}}\\right),\n  ]\n  by taking a (\\sqrt{2n}\\times \\sqrt{2n}) integer lattice patch (Erdős’ classic construction for the usual distinct distances problem) and then splitting the (2n) points into two sets o"
+}

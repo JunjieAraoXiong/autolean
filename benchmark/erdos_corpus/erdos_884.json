@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_884",
+  "problem": [
+    "Is it true that, for any n, if d_1<\\cdots <d_t are the divisors of n, then∑_{1≤ i<j≤ t}(1)/(d_j-d_i) \\ll 1+∑_{1≤ i<t}(1)/(d_{i+1)-d_i},where the implied constant is absolute?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 884,
+  "status": "disproved",
+  "tags": [
+    "number theory",
+    "divisors"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Is it true that, for any $n$, if $d_1<\\cdots <d_t$ are the divisors of $n$, then\\[\\sum_{1\\leq i<j\\leq t}\\frac{1}{d_j-d_i} \\ll 1+\\sum_{1\\leq i<t}\\frac{1}{d_{i+1}-d_i},\\]where the implied constant is absolute?",
+  "additional_context": "See also [144].",
+  "reference_proof_hint": "No—at least **conditionally**.\n\nThis question is *exactly* **Erdős Problem #884**. ([Erdős Problems][1])\n\nTerence Tao wrote a note (dated **September 9, 2025**) showing that **assuming a qualitative form of the Hardy–Littlewood prime tuples conjecture**, Erdős’s proposed absolute-constant bound **fails**: the ratio\n$\n\\frac{\\sum_{1\\le i<j\\le \\tau(n)} \\frac{1}{d_j-d_i}}{1+\\sum_{1\\le i<\\tau(n)} \\frac{1}{d_{i+1}-d_i}}\n$\nis **unbounded** as (n\\to\\infty). \n\nMore concretely, Tao’s construction [[nomath]](taking $n$ to be a product of “nearly consecutive primes”)[[/nomath]] produces, for arbitrarily large $K$, infinitely many $n$ such that\n$\n\\sum_{1\\le i<j\\le\\tau(n)}\\frac1{d_j-d_i}\\ \\gg\\ \\log K\n\\quad\\text{but}\\quad\n\\sum_{1\\le i<\\tau(n)}\\frac1{d_{i+1}-d_i}\\ \\ll\\ 1,\n$\nwhich immediately forces the ratio above to blow up, so there cannot be an absolute implied constant in your (\\ll). \n\n### What is known unconditionally?\n\nUnconditionally, Tao notes a general upper bound (coming from harmonic-mean/a"
+}

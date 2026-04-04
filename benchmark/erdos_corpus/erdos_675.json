@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_675",
+  "problem": [
+    "We say that A⊂ ℕ has the translation property if, for every n, there exists some integer t_n≥ 1 such that, for all 1≤ a≤ n,a∈ A\\quad\\textrm{ if and only if }\\quad a+t_n∈ A.{UL}\n{LI}Does the set of the sums of two squares have the translation property?{/LI}\n{LI}If we partition all primes into P\\sqcup Q, such that each set contains \\gg x/\\log x many primes ≤ x for all large x, then can the set of integers only divisible by primes from P have the translation property?{/LI}\n{LI}If A is the set of squarefree numbers then how fast does the minimal such t_n grow? Is it true that t_n>\\exp(n^c) for some constant c>0?{/LI}\n{/UL}"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 675,
+  "status": "open",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "We say that $A\\subset \\mathbb{N}$ has the translation property if, for every $n$, there exists some integer $t_n\\geq 1$ such that, for all $1\\leq a\\leq n$,\\[a\\in A\\quad\\textrm{ if and only if }\\quad a+t_n\\in A.\\]{UL}\n{LI}Does the set of the sums of two squares have the translation property?{/LI}\n{LI}If we partition all primes into $P\\sqcup Q$, such that each set contains $\\gg x/\\log x$ many primes $\\leq x$ for all large $x$, then can the set of integers only divisible by primes from $P$ have the translation property?{/LI}\n{LI}If $A$ is the set of squarefree numbers then how fast does the minimal such $t_n$ grow? Is it true that $t_n>\\exp(n^c)$ for some constant $c>0$?{/LI}\n{/UL}",
+  "additional_context": "Elementary sieve theory implies that the set of squarefree numbers has the translation property.\n\nMore generally, Brun's sieve can be used to prove that if B⊆ ℕ is a set of pairwise coprime integers with ∑_{b<x}(1)/(b)=o(\\log\\log x) then A=\\{ n: b\\nmid n\\textrm{ for all }b∈ A\\} has the translation property. Erdős did not know what happens if the condition on ∑_{b<x}(1)/(b) is weakened or dropped altogether.",
+  "reference_proof_hint": "These three questions are exactly the “Translation Properties” problem posed by Erdős (1979), and (at least in the form you’ve stated) the first two parts are still open. \n\n## 1) Sums of two squares\n\n**Unknown / open.** Erdős explicitly wrote that he did not know whether the integers representable as a sum of two squares have the translation property. \nThe Erdős Problems database still lists this as open. ([Erdős Problems][1])\n\n[[nomath]](Just for context: the set is multiplicative, characterized by “every prime $p\\equiv 3 \\pmod 4$ occurs to an even exponent”, but it does not fit into the “avoid multiples of a coprime family $B$” framework where sieve methods easily give the property.)[[/nomath]]\n\n## 2) Integers composed only of primes from $P$ in a “dense” partition (P\\sqcup Q)\n\nAgain **unknown / open** in general. Erdős specifically asked this case [[nomath]](two disjoint prime sets each having $\\gg x/\\log x$ primes $\\le x$)[[/nomath]] and said he did not know. \n\nWhat *is* known (and"
+}

@@ -1,0 +1,11 @@
+{
+  "uuid": "erdos_14",
+  "problem": [
+    "Let A⊆ ℕ. Let B⊆ ℕ be the set of integers which are representable in exactly one way as the sum of two elements from A.\n\nIs it true that for all \\epsilon>0 and large N| \\{1,…,N\\}\\backslash B| \\gg_\\epsilon N^{1/2-\\epsilon}?Is it possible that| \\{1,…,N\\}\\backslash B| =o(N^{1/2})?",
+    "Apparently originally considered by Erdős and Nathanson, although later Erdős attributes this to Erdős, S\\'{a}rk\\\"{o}zy, and Szemer\\'{e}di (but gives no reference), and claims a construction of an A such that for all \\epsilon>0 and all large N| \\{1,…,N\\}\\backslash B| \\ll_\\epsilon N^{1/2+\\epsilon},and yet there for all \\epsilon>0 there exist infinitely many N where| \\{1,…,N\\}\\backslash B| \\gg_\\epsilon N^{1/3-\\epsilon}.Erd\\\"{o}s and Freud investigated the finite analogue in \\cite{ErFr91}, proving that there exists A⊆ \\{1,…,N\\} such that the number of integers not representable in exactly one way as the sum of two elements from A is <2^{3/2}N^{1/2}, and suggest the constant 2^{3/2} is perhaps best possible.\n\nReferences\n\n[ErFr91] Erdős, P. and Freud, R., On sums of a {S}idon-sequence. J. Number Theory (1991), 196--205."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 14,
+  "original_latex": "Let $A\\subseteq \\mathbb{N}$. Let $B\\subseteq \\mathbb{N}$ be the set of integers which are representable in exactly one way as the sum of two elements from $A$.\n\nIs it true that for all $\\epsilon>0$ and large $N$\\[\\lvert \\{1,\\ldots,N\\}\\backslash B\\rvert \\gg_\\epsilon N^{1/2-\\epsilon}?\\]Is it possible that\\[\\lvert \\{1,\\ldots,N\\}\\backslash B\\rvert =o(N^{1/2})?\\]",
+  "reference_proof_hint": "Let (r_A(n)) be the (unordered) representation function\n$$\nr_A(n):= |\\\\{\\\\{a,a'\\\\}\\subseteq A:\\ a+a'=n\\\\}|,\n$$\nso (B={n\\in\\mathbb N:\\ r_A(n)=1}) and the “exceptional set” is\n[\nE(N):=\\bigl|\\\\{1,\\dots,N\\\\}\\setminus B\\bigr|=|\\\\{n\\le N:\\ r_A(n)\\ne 1\\\\}|.\n]\n(If you instead count *ordered* representations, the questions are equivalent up to harmless constants, so all known bounds have the same exponents.)\n\n### Status\n\nAs far as the current literature indicates, **both questions are open**: it is not k"
+}

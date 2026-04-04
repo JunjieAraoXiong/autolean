@@ -1,0 +1,19 @@
+{
+  "uuid": "erdos_396",
+  "problem": [
+    "Is it true that for every k there exists n such that∏_{0≤ i≤ k}(n-i) \\mid \\binom{2n}{n}?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 396,
+  "status": "open",
+  "tags": [
+    "number theory",
+    "binomial coefficients"
+  ],
+  "prize": "no",
+  "formalized_on_site": true,
+  "original_latex": "Is it true that for every $k$ there exists $n$ such that\\[\\prod_{0\\leq i\\leq k}(n-i) \\mid \\binom{2n}{n}?\\]",
+  "additional_context": "Erdős and Graham write that n+1 always divides \\binom{2n}{n} (indeed (1)/(n+1)\\binom{2n}{n} is the nth Catalan number), but it is quite rare that n divides \\binom{2n}{n}.\n\nPomerance \\cite{Po14} has shown that for any k≥ 0 there are infinitely many n such that n-k\\mid\\binom{2n}{n}, although the set of such n has upper density <1/3. Pomerance also shows that the set of n such that∏_{1≤ i≤ k}(n+i)\\mid \\binom{2n}{n}has density 1.\n\nThe smallest n for each k are listed as A375077 on the OEIS.\n\nReferences\n\n[Po14] Pomerance, C., Divisors of the middle binomial coefficient. American Mathematical Monthly (2014).",
+  "reference_proof_hint": "This is **open** (as far as the current literature indicates).\n\nIt appears as **Erdős Problem #396** (Erdős–Graham), asking exactly whether for every $k$ there exists an $n$ such that\n[\n\\prod_{i=0}^{k}(n-i)\\ \\bigg|\\ \\binom{2n}{n}.\n]\nThe Erdős Problems database lists it as **OPEN**. ([Erdős Problems][1])\n\n### What is known\n\n* There are strong **partial results for single factors**: for any fixed (k\\ge 0), Pomerance showed there are **infinitely many** $n$ with\n  [\n  n-k \\mid \\binom{2n}{n},\n  ]\n  and even gives a quantitative lower bound on how many such (n\\le x) exist. \n  [[nomath]](But this is much weaker than requiring the whole product $n(n-1)\\cdots(n-k)$ to divide.)[[/nomath]]\n\n* Pomerance also showed that the **“forward” product** (\\prod_{1\\le i\\le k}(n+i)) divides (\\binom{2n}{n}) for “almost all” $n$ [[nomath]](density $1$)[[/nomath]], again highlighting that the “backward” product in your question is the hard direction. ([Erdős Problems][1])\n\n### Computational evidence\n\nFor each ",
+  "ground_truth_lean": "/-\nCopyright 2025 The Formal Conjectures Authors.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    https://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n-/\nimport FormalConjectures.Util.ProblemImports\n\n/-!\n# Erdős Problem 396\n\n*Reference:* [erdosproblems.com/396](https://www.erdosproblems.com/396)\n-/\n\nnamespace Erdos396\n\nopen Nat\n\n/--\nIs it true that for every $k$ there exists $n$ such that\n$$\\prod_{0\\leq i\\leq k}(n-i) \\mid \\binom{2n}{n}?$$\n-/\n@[category research open, AMS 11]\ntheorem erdos_396 : answer(sorry) ↔ ∀ k : ℕ, ∃ n : ℕ, descFactorial n (k + 1) ∣ centralBinom n := by\n  sorry\n\n\n-- TODO(firsching): formalise the additional material\n\nend Erdos396\n"
+}

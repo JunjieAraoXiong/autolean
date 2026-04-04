@@ -1,0 +1,15 @@
+{
+  "uuid": "erdos_656",
+  "problem": [
+    "Erdős Problem #656"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 656,
+  "status": "proved",
+  "tags": [
+    "number theory",
+    "additive combinatorics"
+  ],
+  "prize": "no",
+  "formalized_on_site": false
+}

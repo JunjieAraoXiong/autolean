@@ -1,0 +1,15 @@
+{
+  "uuid": "erdos_834",
+  "problem": [
+    "Erdős Problem #834"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 834,
+  "status": "solved",
+  "tags": [
+    "graph theory",
+    "hypergraphs"
+  ],
+  "prize": "no",
+  "formalized_on_site": false
+}

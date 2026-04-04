@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_415",
+  "problem": [
+    "For any n let F(n) be the largest k such that any of the k! possible ordering patterns appears in some sequence of \\phi(m+1),\\ldots,\\phi(m+k) with m+k≤ n. Is it true thatF(n)=(c+o(1))\\log\\log\\log nfor some constant c? Is the first pattern which fails to appear always\\phi(m+1)>\\phi(m+2)>\\cdots \\phi(m+k)?Is it true that 'natural' ordering which mimics what happens to \\phi(1),\\ldots,\\phi(k) is the most likely to appear?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 415,
+  "status": "open",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "For any $n$ let $F(n)$ be the largest $k$ such that any of the $k!$ possible ordering patterns appears in some sequence of $\\phi(m+1),\\ldots,\\phi(m+k)$ with $m+k\\leq n$. Is it true that\\[F(n)=(c+o(1))\\log\\log\\log n\\]for some constant $c$? Is the first pattern which fails to appear always\\[\\phi(m+1)>\\phi(m+2)>\\cdots \\phi(m+k)?\\]Is it true that 'natural' ordering which mimics what happens to $\\phi(1),\\ldots,\\phi(k)$ is the most likely to appear?",
+  "additional_context": "Erdős \\cite{Er36b} proved thatF(n)\\asymp \\log\\log\\log n,and similarly if we replace \\phi with \\sigma or \\tau or \\nu or any 'decent' additive or multiplicative function.\n\nWeisenberg has observed that the same questions could be asked for ordering patterns which allow equality (indeed, the final problem only makes sense if we allow equality).\n\nReferences\n\n[Er36b] Erdős, P., On a problem of Chowla and some related problems. Proc. Cambridge Philos. Soc. (1936), 530-540.",
+  "reference_proof_hint": "Let me separate what is known rigorously from what is conjectural, and also flag one definitional issue.\n\n## 0. A small definitional point\n\nYour definition counts **$k!$** “ordering patterns”, so it’s implicitly talking about **strict** order types [[nomath]](i.e. the $\\phi(m+i)$ are all distinct in the witnessing block)[[/nomath]]. In practice one sometimes also studies **weak orderings** (allowing equalities), but then the number of patterns is larger than $k!$. The Erdős–Graham problem page explicitly notes that the “natural ordering” question only really makes sense in the weak-ordering setting, because (\\phi(1),\\phi(2),\\ldots) has ties right away. ([Erdős Problems][1])\n\nI’ll interpret your first two questions in the strict sense, and your third as a heuristic/frequency question (which is inherently “weak-ordering-ish”).\n\n## 1. Can $F(n)$ be ((c+o(1))\\log\\log\\log n) with (c>0)?\n\nIf your $k!$-pattern requirement includes the **monotone** patterns (increasing and decreasing), then th"
+}

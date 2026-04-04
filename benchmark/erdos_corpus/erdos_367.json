@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_367",
+  "problem": [
+    "Let B_2(n) be the 2-full part of n (that is, B_2(n)=n/n' where n' is the product of all primes that divide n exactly once). Is it true that, for every fixed k≥ 1,∏_{n≤ m<n+k}B_2(m) \\ll n^{2+o(1)}?Or perhaps even \\ll_k n^2?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 367,
+  "status": "open",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $B_2(n)$ be the 2-full part of $n$ (that is, $B_2(n)=n/n'$ where $n'$ is the product of all primes that divide $n$ exactly once). Is it true that, for every fixed $k\\geq 1$,\\[\\prod_{n\\leq m<n+k}B_2(m) \\ll n^{2+o(1)}?\\]Or perhaps even $\\ll_k n^2$?",
+  "additional_context": "It would also be interesting to find upper and lower bounds for the analogous product with B_r for r≥ 3, where B_r(n) is the r-full part of n (that is, the product of prime powers p^a \\mid n such that p^{a+1}\\nmid n and a≥ r). Is it true that, for every fixed r,k≥ 2 and \\epsilon>0,\\limsup \\frac{∏_{n≤ m<n+k}B_r(m) }{n^{1+\\epsilon}}→∞?van Doorn notes in the comments that for k≤ 2 we trivially have∏_{n≤ m<n+k}B_2(m) \\ll n^{2},but that this fails for all k≥ 3, and in fact∏_{n≤ m<n+3}B_2(m) \\gg n^{2}\\log ninfinitely often.",
+  "reference_proof_hint": "For (k\\le 2) it’s trivial, but for (k\\ge 3) the (\\ll_k n^2) strengthening is **false**, and the remaining (n^{2+o(1)}) question is (as far as I can tell from the current literature/status pages) still **open**.\n\n## The easy cases (k=1,2)\n\nSince (B_2(m)\\mid m) we have (B_2(m)\\le m). Hence\n\n* $k=1$: (B_2(n)\\le n).\n* $k=2$: (B_2(n)B_2(n+1)\\le n(n+1)\\le 2n^2).\n\nSo both (n^{2+o(1)}) and (\\ll_k n^2) hold for (k\\le 2) (indeed with a completely explicit constant). ([Erdős Problems][1])\n\n## For (k\\ge 3), the bound (\\ll_k n^2) fails\n\nAlready for $k=3$ there is an explicit infinite family with a logarithmic overshoot:\n[\n\\prod_{m=n}^{n+2} B_2(m);\\gg; n^2 \\log n\n\\quad\\text{infinitely often.}\n]\nConsequently, for every fixed (k\\ge 3),\n[\n\\prod_{m=n}^{n+k-1} B_2(m)\\ge\\prod_{m=n}^{n+2} B_2(m);\\gg;n^2\\log n\n]\ninfinitely often, so no bound of the form (\\ll_k n^2) can hold for (k\\ge 3). ([Erdős Problems][2])\n\n### Sketch of the construction [[nomath]](Pell + $5^t$ divisibility)[[/nomath]]\n\nThe discussion th"
+}

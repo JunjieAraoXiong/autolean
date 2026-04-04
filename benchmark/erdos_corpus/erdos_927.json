@@ -1,0 +1,15 @@
+{
+  "uuid": "erdos_927",
+  "problem": [
+    "Erdős Problem #927"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 927,
+  "status": "disproved",
+  "tags": [
+    "graph theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "reference_proof_hint": "This is **open in general** for a *fixed, specified* irrational (\\alpha>1).\n\nWhat is known is a strong **metric (almost-everywhere) result**.  In a paper of Hongze Li and Hao Pan (2008), they explicitly formulate the following conjecture:\n\n> **Conjecture (Li–Pan).** If (\\alpha>0) is irrational and (\\beta\\in\\mathbb R), then there are infinitely many primes $p$ such that (\\lfloor \\alpha p+\\beta\\rfloor) is also prime. ([arXiv][1])\n\nYour question is the special case (\\beta=0), (\\alpha>1).\n\nThey then prove that the conjecture holds for **almost all** (\\alpha) (in the sense of Lebesgue measure). More precisely, for any fixed (\\beta), for almost all irrational (\\alpha>0),\n[\n\\limsup_{x\\to\\infty}\\ \\pi^*_{\\alpha,\\beta}(x),\\frac{(\\log x)^2}{x}\\ \\ge 1,\n]\nwhere $\\pi^*_{\\alpha,\\beta}(x)=|\\\\{p\\le x:\\ p\\text{ prime and }\\lfloor \\alpha p+\\beta\\rfloor\\text{ prime}\\\\}|$. ([arXiv][1])\nIn particular, this implies (\\pi^*_{\\alpha,\\beta}(x)) is unbounded, hence there are **infinitely many** such primes $p$ fo"
+}

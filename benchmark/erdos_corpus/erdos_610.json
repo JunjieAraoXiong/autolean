@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_610",
+  "problem": [
+    "For a graph G let \\tau(G) denote the minimal number of vertices that include at least one from each maximal clique of G (sometimes called the clique transversal number).\n\nEstimate \\tau(G). In particular, is it true that if G has n vertices then\\tau(G) ≤ n-\\omega(n)\\sqrt{n}for some \\omega(n)→ ∞, or even\\tau(G) ≤ n-c\\sqrt{n\\log n}for some absolute constant c>0?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 610,
+  "status": "open",
+  "tags": [
+    "graph theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "For a graph $G$ let $\\tau(G)$ denote the minimal number of vertices that include at least one from each maximal clique of $G$ (sometimes called the clique transversal number).\n\nEstimate $\\tau(G)$. In particular, is it true that if $G$ has $n$ vertices then\\[\\tau(G) \\leq n-\\omega(n)\\sqrt{n}\\]for some $\\omega(n)\\to \\infty$, or even\\[\\tau(G) \\leq n-c\\sqrt{n\\log n}\\]for some absolute constant $c>0$?",
+  "additional_context": "A problem of Erdős, Gallai, and Tuza \\cite{EGT92}, who proved that\\tau(G) ≤ n-\\sqrt{2n}+O(1).This would be best possible, since there exist triangle-free graphs with all independent sets of size O(\\sqrt{n\\log n}), which follows from the lower bound for R(3,k) by Kim \\cite{Ki95} (see [165]).\n\nIndeed, Erdős, Gallai, and Tuza speculate that if f(n) is the largest k such that every triangle-free graph on n vertices contains an independent set on f(n) vertices, then \\tau(G)≤ n-f(n).\n\nA positive answer to this problem would follow from a positive answer to [151] (since Ajtai, Koml\\'{o}s, and Szemer\\'{e}di \\cite{AKS80} have proved that the H(n) defined there satisfies H(n)\\gg \\sqrt{n\\log n}).\n\nSee also [151], [611], this  entry and and this entry in the graphs problem collection.\n\nReferences\n\n[AKS80] Ajtai, Mikl\\'{o}s and Koml\\'{o}s, J\\'{a}nos and Szemer\\'{e}di, Endre, A note on Ramsey numbers. J. Combin. Theory Ser. A (1980), 354-360.\n\n[EGT92] Erdős, Paul and Gallai, Tibor and Tuza, Zsolt, Covering the cliques of a graph with vertices. Discrete Math. (1992), 279-289.\n\n[Ki95] Kim, J. H., The Ramsey number R(3,t) has order of magnitude t^2/\\log t. Random Structures and Algorithms (1995), 173-207.",
+  "reference_proof_hint": "I’ll follow the standard convention used in the Erdős–Gallai–Tuza papers/problem lists that **“cliques” means maximal complete subgraphs on at least two vertices** [[nomath]](otherwise isolated vertices give $\\tau(G)=n$ and no bound of the form $n-\\text{(something)}$ can hold)[[/nomath]]. ([Erdős Problems][1])\n\n## What is known in general?\n\nLet (n=|V(G)|).\n\nThe best general bound currently recorded in the literature is due to Erdős, Gallai and Tuza (1992):\n\n[\n\\tau(G)\\ \\le\\ n-\\sqrt{2n}+O(1).\n]\n([Erdős Problems][2])\n\nThere is also an “easy” weaker bound (also explicitly recorded in the same circle of problems):\n\n[\n\\tau(G)\\ \\le\\ n-\\sqrt n.\n]\n([Erdős Problems][1])\n\nAs of the most up-to-date public summaries I can find (edited Dec 2025), **no asymptotic improvement beyond the (\\Theta(\\sqrt n)) gap is known for arbitrary graphs**; the question is still open. ([Erdős Problems][2])\n\nSo at present we only know in full generality that\n[\nn-\\tau(G)=\\Omega(\\sqrt n),\n]\nwith the best constant being ("
+}

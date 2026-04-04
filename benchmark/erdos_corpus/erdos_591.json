@@ -1,0 +1,29 @@
+{
+  "uuid": "erdos_591",
+  "problem": [
+    "Let \\alpha be the infinite ordinal \\omega^{\\omega^2}. Is it true that in any red/blue colouring of the edges of K_\\alpha there is either a red K_\\alpha or a blue K_3?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 591,
+  "status": "proved",
+  "tags": [
+    "set theory",
+    "ramsey theory"
+  ],
+  "prize": "$250",
+  "formalized_on_site": true,
+  "original_latex": "Let $\\alpha$ be the infinite ordinal $\\omega^{\\omega^2}$. Is it true that in any red/blue colouring of the edges of $K_\\alpha$ there is either a red $K_\\alpha$ or a blue $K_3$?",
+  "additional_context": "For comparison, Specker \\cite{Sp57} proved this property holds when \\alpha=\\omega^2 and false when \\alpha=\\omega^n for 3≤ n<\\omega. Chang proved this property holds when \\alpha=\\omega^\\omega (see [590]).\n\nSee [592] for the general case.\n\nReferences\n\n[Sp57] Specker, Ernst, Teilmengen von Mengen mit Relationen. Comment. Math. Helv. (1957), 302-314.",
+  "reference_proof_hint": "Yes — in the usual *ordinal* sense of “(K_\\alpha)” [[nomath]](i.e., vertices are $\\alpha$ with its well-order, and a “$K_\\alpha$” subgraph means a subset of vertices of **order type $\\alpha$** whose induced edges are monochromatic)[[/nomath]].\n\nIn partition-calculus notation, what you are asking is exactly the relation\n[\n\\omega^{\\omega^2}\\ \\to\\ (\\omega^{\\omega^2},3)^2,\n]\nmeaning: for every 2-coloring (c:[\\omega^{\\omega^2}]^2\\to{\\text{red},\\text{blue}}), either there is a red-homogeneous subset of order type (\\omega^{\\omega^2}), or there is a blue-homogeneous 3-element set (a blue triangle).\n\nThis is known to be **true**. In fact, Schipperus proved a more general theorem: if (\\beta) is the sum of one or two additively indecomposable ordinals, then\n[\n\\omega^{\\omega^\\beta}\\ \\to\\ (\\omega^{\\omega^\\beta},3)^2.\n]\nTaking (\\beta=2=1+1) gives precisely\n[\n\\omega^{\\omega^2}\\ \\to\\ (\\omega^{\\omega^2},3)^2,\n]\nso your statement holds. Larson’s tutorial notes also record that Darby had proved the (\\bet",
+  "ground_truth_lean": "/-\nCopyright 2025 The Formal Conjectures Authors.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    https://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n-/\n\nimport FormalConjectures.Util.ProblemImports\n\n/-!\n# Erdős Problem 591\n\n*References:*\n- [erdosproblems.com/591](https://www.erdosproblems.com/591)\n- [Sc10] Schipperus, Rene, Countable partition ordinals. Ann. Pure Appl. Logic (2010), 1195-1215.\n-/\n\nopen Cardinal Ordinal\n\nnamespace Erdos591\n\nuniverse u\n\n/--\nLet $α$ be the infinite ordinal $\\omega^{\\omega^2}$. Is it true that any red/blue colouring of the\nedges of $K_α$ there is either a red $K_α$ or a blue $K_3$?\n\nThis is true and was proved independently by Schipperus [Sc10] and Darby.\n-/\n@[category research solved, AMS 3]\ntheorem erdos_591 : answer(True) ↔ OrdinalCardinalRamsey (ω ^ ω ^ 2) (ω ^ ω ^ 2) 3 := by\n  sorry\n\nend Erdos591\n",
+  "expert_comments": [
+    {
+      "author": "",
+      "text": "My colleague Andrew Xue has used ChatGPT Deep Research to identify a previous solution to this problem:\n\nhttps://chatgpt.com/share/696b2083-593c-8009-973e-e586bd74fd92\n\nHere is the provided citation: René Schipperus, Countable partition ordinals, Annals of Pure and Applied Logic 161(10) (2010), 1195–1215, DOI: 10.1016/j.apal.2009.12.007."
+    },
+    {
+      "author": "Neel Somani",
+      "text": "Confirmed this is solution. Theorem 28, taking $\\beta = 2$."
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "uuid": "erdos_203",
+  "problem": [
+    "Is there an integer m with (m,6)=1 such that none of 2^k3^\\ell m+1 are prime, for any k,\\ell≥ 0?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 203,
+  "status": "open",
+  "tags": [
+    "primes",
+    "covering systems"
+  ],
+  "prize": "no",
+  "formalized_on_site": true,
+  "original_latex": "Is there an integer $m$ with $(m,6)=1$ such that none of $2^k3^\\ell m+1$ are prime, for any $k,\\ell\\geq 0$?",
+  "additional_context": "Positive odd integers m such that none of 2^km+1 are prime are called Sierpinski numbers - see [1113] for more details.\n\nErdős and Graham also ask more generally about p_1^{k_1}\\cdots p_r^{k_r}m+1 for distinct primes p_i, or q_1\\cdots q_rm+1 where the q_i are primes congruent to 1\\pmod{4}. (Dogmachine has noted in the comments this latter question has the trivial answer m=1 - perhaps some condition such as m even is meant.)",
+  "reference_proof_hint": "If you really mean **any integer** $m$ and “prime” means a **(positive) prime number**, then there is a trivial example:\n\n* Take (m=-1). Then ((m,6)=1), and for all (k,\\ell\\ge 0),\n  [\n  2^k3^\\ell m+1 ;=; 1-2^k3^\\ell ;\\le; 0,\n  ]\n  so none of these values is a (positive) prime.\n\nHowever, in the **intended number-theoretic sense** (as in the Erdős–Graham question), one is asking for a **positive** integer $m$ with $(m,6)=1$. Under that interpretation:\n\n* **This is an open problem.** No such positive $m$ is currently known, and it is explicitly listed as open (Erdős Problem #203). ([Erdős Problems][1])\n\nFor context, the one-parameter analogue (“Sierpiński numbers”) asks for odd $m$ such that $m2^n+1$ is composite for all $n$, and such numbers are known (e.g. (78557)). ([Erdős Problems][1])\n\n[1]: https://www.erdosproblems.com/203 \"\n  \n    Erdős Problem #203\n  \n\"\n",
+  "ground_truth_lean": "/-\nCopyright 2025 The Formal Conjectures Authors.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    https://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n-/\n\nimport FormalConjectures.Util.ProblemImports\n\n/-!\n# Erdős Problem 203\n\n*Reference:* [erdosproblems.com/203](https://www.erdosproblems.com/203)\n-/\n\nnamespace Erdos203\n\n/--\nIs there an integer $m$ with $(m, 6) = 1$ such that none of $2^k \\cdot 3^\\ell \\cdot m + 1$ are prime,\nfor any $k, \\ell \\ge 0$?\n-/\n@[category research open, AMS 5]\ntheorem erdos_203 : answer(sorry) ↔ ∃ m, m.Coprime 6 ∧ ∀ k l, ¬ (2^k * 3^l * m + 1).Prime := by\n  sorry\n\n-- TODO(rdivyanshu): add statements about covering system and odd integers `m` such that none of 2^k*m + 1 is prime\n\nend Erdos203\n"
+}

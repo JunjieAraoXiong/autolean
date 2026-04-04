@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_152",
+  "problem": [
+    "For any M≥ 1, if A⊂ ℕ is a sufficiently large finite Sidon set then there are at least M many a∈ A+A such that a+1,a-1\\not∈ A+A."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 152,
+  "status": "proved",
+  "tags": [
+    "sidon sets"
+  ],
+  "prize": "no",
+  "formalized_on_site": true,
+  "original_latex": "For any $M\\geq 1$, if $A\\subset \\mathbb{N}$ is a sufficiently large finite Sidon set then there are at least $M$ many $a\\in A+A$ such that $a+1,a-1\\not\\in A+A$.",
+  "additional_context": "There may even be \\gg | A|^2 many such a. A similar question can be asked for truncations of infinite Sidon sets.",
+  "reference_proof_hint": "Let (A={a_1<a_2<\\dots<a_k}\\subset\\mathbb N) be a finite **Sidon set** [[nomath]](i.e. all sums $a_i+a_j$ with $i\\le j$ are distinct)[[/nomath]]. Put\n[\nS:=A+A={a_i+a_j:\\ 1\\le i\\le j\\le k}.\n]\nThen the condition\n\n[\na\\in S,\\quad a-1\\notin S,\\quad a+1\\notin S\n]\n\nmeans exactly that $a$ is a **singleton block** (a “length one interval”) when you write $S$ as a disjoint union of maximal intervals of consecutive integers.\n\n### Status of your statement\n\nAs far as the standard references indicate, the statement\n\n> “for every $M$ and all sufficiently large finite Sidon sets $A$, the sumset $A+A$ contains at least $M$ singleton blocks”\n\nis *precisely a known open problem* (posed by Erdős–Sárközy–Sós and repeated in later surveys). In particular, O’Bryant’s Sidon bibliography explicitly asks whether the number of “length one” intervals in the sumset of a finite Sidon set must go to infinity with (|A|). \n\nSo: the claim you wrote is not something that is “standardly proved” in the literature source I ",
+  "ground_truth_lean": "/-\nCopyright 2026 The Formal Conjectures Authors.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    https://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n-/\nimport FormalConjectures.Util.ProblemImports\n\n/-!\n# Erdős Problem 152\n\n#TODO: Formalize the corresponding conjecture for infinite Sidon sets.\n\n*References:*\n - [erdosproblems.com/152](https://www.erdosproblems.com/152)\n - [ESS94] Erdős, P. and Sárközy, A. and Sós, T., On Sum Sets of Sidon Sets, I. Journal of Number\n    Theory (1994), 329-347.\n-/\n\nopen scoped Pointwise Asymptotics\nopen Filter\n\nnamespace Erdos152\n\n/-- Define `f n` to be the minimum of `|{s | s - 1 ∉ A + A, s ∈ A + A, s + 1 ∉ A + A}|` as `A`\nranges over all Sidon sets of size `n`. -/\nnoncomputable def f (n : ℕ) : ℕ :=\n  ⨅ A : {A : Set ℕ | A.ncard = n ∧ IsSidon A},\n  {s : ℕ | s - 1 ∉ A.1 + A.1 ∧ s ∈ A.1 + A.1 ∧ s + 1 ∉ A.1 + A.1}.ncard\n\n/-- Must `lim f n = ∞`? -/\n@[category research open, AMS 5]\ntheorem erdos_152 : answer(sorry) ↔ Tendsto f atTop atTop := by\n  sorry\n\n/-- Must `f n ≫ n ^ 2`? -/\n@[category research open, AMS 5]\ntheorem erdos_152.variants.square : answer(sorry) ↔\n    (fun n => f n : ℕ → ℝ) ≫ (fun n => n ^ 2 : ℕ → ℝ) := by\n  sorry\n\nend Erdos152\n"
+}

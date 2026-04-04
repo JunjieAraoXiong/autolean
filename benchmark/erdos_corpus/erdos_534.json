@@ -1,0 +1,15 @@
+{
+  "uuid": "erdos_534",
+  "problem": [
+    "Erdős Problem #534"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 534,
+  "status": "solved",
+  "tags": [
+    "number theory",
+    "intersecting family"
+  ],
+  "prize": "no",
+  "formalized_on_site": false
+}

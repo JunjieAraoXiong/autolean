@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_935",
+  "problem": [
+    "For any integer n=∏ p^{k_p} let Q_2(n) be the powerful part of n, so thatQ_2(n) = ∏_{\\substack{p\\\\ k_p≥ 2}}p^{k_p}.Is it true that, for every \\epsilon>0 and \\ell≥ 1, if n is sufficiently large thenQ_2(n(n+1)\\cdots(n+\\ell))<n^{2+\\epsilon}?If \\ell≥ 2 then is\\limsup_{n→ ∞}(Q_2(n(n+1)\\cdots(n+\\ell)))/(n^2)infinite?\n\nIf \\ell≥ 2 then is\\lim_{n→ ∞}(Q_2(n(n+1)\\cdots(n+\\ell)))/(n^{\\ell+1)}=0?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 935,
+  "status": "open",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "For any integer $n=\\prod p^{k_p}$ let $Q_2(n)$ be the powerful part of $n$, so that\\[Q_2(n) = \\prod_{\\substack{p\\\\ k_p\\geq 2}}p^{k_p}.\\]Is it true that, for every $\\epsilon>0$ and $\\ell\\geq 1$, if $n$ is sufficiently large then\\[Q_2(n(n+1)\\cdots(n+\\ell))<n^{2+\\epsilon}?\\]If $\\ell\\geq 2$ then is\\[\\limsup_{n\\to \\infty}\\frac{Q_2(n(n+1)\\cdots(n+\\ell))}{n^2}\\]infinite?\n\nIf $\\ell\\geq 2$ then is\\[\\lim_{n\\to \\infty}\\frac{Q_2(n(n+1)\\cdots(n+\\ell))}{n^{\\ell+1}}=0?\\]",
+  "additional_context": "Erdős \\cite{Er76d} writes that if this is true then it 'seems very difficult to prove'.\n\nA result of Mahler implies, for every \\ell≥ 1,\\limsup_{n→ ∞}(Q_2(n(n+1)\\cdots(n+\\ell)))/(n^2)≥ 1.All these questions can be asked replacing Q_2 by Q_r for r>2, only keeping those prime powers with exponent ≥ r.\n\nReferences\n\n[Er76d] Erdős, P., Problems and results on number theoretic properties of consecutive integers and related questions. Proceedings of the Fifth Manitoba Conference on Numerical Mathematics (Univ. Manitoba, Winnipeg, Man., 1975) (1976), 25-44.",
+  "reference_proof_hint": "Let\n[\nP_{n,\\ell}:=n(n+1)\\cdots(n+\\ell),\n\\qquad\nP_{n,\\ell}=\\prod_p p^{v_p(P_{n,\\ell})},\n]\nand\n[\nQ_2(P_{n,\\ell})=\\prod_{p:,v_p(P_{n,\\ell})\\ge 2} p^{v_p(P_{n,\\ell})}\n]\n[[nomath]](the “powerful/squarefull part” of $P_{n,\\ell}$)[[/nomath]].\n\n## 1) Is it true that (Q_2(P_{n,\\ell})<n^{2+\\varepsilon}) eventually?\n\n* **For (\\ell=1)** this is **true and trivial**:\n  $\n  Q_2(n(n+1))\\le n(n+1)<n^{2+\\varepsilon}\\quad(n\\ \\text{large}).\n  $\n\n* **For every fixed (\\ell\\ge 2)** this is, as far as I can find, **open**. It appears explicitly as an Erdős problem (often catalogued as “Erdős Problem #935”). ([Erdős Problems][1])\n\nSo: **yes for (\\ell=1)**; **unknown for (\\ell\\ge 2)**.\n\n## 2) For (\\ell\\ge 2), is (\\displaystyle \\limsup_{n\\to\\infty}\\frac{Q_2(P_{n,\\ell})}{n^2}) infinite?\n\nWhat is known unconditionally is the **lower bound**\n[\n\\limsup_{n\\to\\infty}\\frac{Q_2(P_{n,\\ell})}{n^2}\\ \\ge\\ 1\n\\qquad(\\text{for every }\\ell\\ge 1),\n]\ncoming from the existence of infinitely many **pairs of consecutive powerful (s"
+}

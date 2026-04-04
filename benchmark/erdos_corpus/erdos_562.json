@@ -1,0 +1,20 @@
+{
+  "uuid": "erdos_562",
+  "problem": [
+    "Let R_r(n) denote the r-uniform hypergraph Ramsey number: the minimal m such that if we 2-colour all edges of the complete r-uniform hypergraph on m vertices then there must be some monochromatic copy of the complete r-uniform hypergraph on n vertices.\n\nProve that, for r≥ 3,\\log_{r-1} R_r(n) \\asymp_r n,where \\log_{r-1} denotes the (r-1)-fold iterated logarithm. That is, does R_r(n) grow like2^{2^{\\cdots n}}where the tower of exponentials has height r-1?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 562,
+  "status": "open",
+  "tags": [
+    "graph theory",
+    "ramsey theory",
+    "hypergraphs"
+  ],
+  "prize": "no",
+  "formalized_on_site": true,
+  "original_latex": "Let $R_r(n)$ denote the $r$-uniform hypergraph Ramsey number: the minimal $m$ such that if we $2$-colour all edges of the complete $r$-uniform hypergraph on $m$ vertices then there must be some monochromatic copy of the complete $r$-uniform hypergraph on $n$ vertices.\n\nProve that, for $r\\geq 3$,\\[\\log_{r-1} R_r(n) \\asymp_r n,\\]where $\\log_{r-1}$ denotes the $(r-1)$-fold iterated logarithm. That is, does $R_r(n)$ grow like\\[2^{2^{\\cdots n}}\\]where the tower of exponentials has height $r-1$?",
+  "additional_context": "A problem of Erdős, Hajnal, and Rado \\cite{EHR65}. A generalisation of [564].\n\nSee also the entry in the graphs problem collection.\n\nReferences\n\n[EHR65] Erdős, P. and Hajnal, A. and Rado, R., Partition relations for cardinal numbers. Acta Math. Acad. Sci. Hungar. (1965), 93-196.",
+  "reference_proof_hint": "Let me restate your claim in a convenient “tower” language, then I’ll prove the *known* matching upper bound and the *best known* lower bound, and finally explain why the desired two–sided statement is (as of now) a famous open problem already for $r=3$.\n\nThroughout, (\\log^{(k)} x) means the $k$-fold iterated base‑2 logarithm, and I’ll write (t_k(x)) for the “tower function”\n[\nt_1(x)=x,\\qquad t_{k+1}(x)=2^{t_k(x)}.\n]\nSo (t_2(x)=2^x,\\ t_3(x)=2^{2^x}), etc., and (\\log^{(k)} t_{k+1}(x)=x).\n\nWith this notation, your statement\n[\n\\log^{(r-1)} R_r(n)\\asymp_r n\n]\nis equivalent to the existence of constants (0<c_r<C_r) such that\n[\nt_r(c_r n)\\ \\le\\ R_r(n)\\ \\le\\ t_r(C_r n),\n]\ni.e. “a tower of height $r-1$” with top exponent linear in $n$.\n\n---\n\n## 1) The (known) upper bound: (R_r(n)\\le t_r(C_r n))\n\nThis is classical and comes from the Erdős–Rado “stepping‑down” recursion.\n\n### Lemma (Erdős–Rado recursion)\n\nFor every (r\\ge 3) and (n\\ge r), letting (m=R_{r-1}(n-1)),\n[\nR_r(n)\\ \\le\\ 2^{\\binom{m}{r-1}",
+  "ground_truth_lean": "/-\nCopyright 2025 The Formal Conjectures Authors.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    https://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n-/\nimport FormalConjectures.Util.ProblemImports\n\n/-!\n# Erdős Problem 562\n\n*Reference:* [erdosproblems.com/562](https://www.erdosproblems.com/562)\n-/\n\nopen Combinatorics Filter Real\nopen scoped Asymptotics\n\nnamespace Erdos562\n\n/--\nLet $R_r(n)$ denote the $r$-uniform hypergraph Ramsey number: the minimal $m$ such that if we\n$2$-colour all edges of the complete $r$-uniform hypergraph on $m$ vertices then there must be some\nmonochromatic copy of the complete $r$-uniform hypergraph on $n$ vertices.\n\nProve that, for $r \\ge 3$,\n$$ \\log_{r-1} R_r(n) \\asymp_r n, $$\nwhere $\\log_{r-1}$ denotes the $(r-1)$-fold iterated logarithm.\n-/\n@[category research open, AMS 05]\ntheorem erdos_562 : answer(sorry) ↔\n    ∀ r ≥ 3, (fun n ↦ log^[r - 1] (hypergraphRamsey r n)) ~[atTop] (fun n ↦ (n : ℝ)) := by\n  sorry\n\nend Erdos562\n"
+}

@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_568",
+  "problem": [
+    "Let G be a graph such that R(G,T_n)\\ll n for any tree T_n on n vertices and R(G,K_n)\\ll n^2. Is it true that, for any H with m edges and no isolated vertices,R(G,H)\\ll m?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 568,
+  "status": "open",
+  "tags": [
+    "graph theory",
+    "ramsey theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $G$ be a graph such that $R(G,T_n)\\ll n$ for any tree $T_n$ on $n$ vertices and $R(G,K_n)\\ll n^2$. Is it true that, for any $H$ with $m$ edges and no isolated vertices,\\[R(G,H)\\ll m?\\]",
+  "additional_context": "In other words, is G Ramsey size linear?\n\nSee also the entry in the graphs problem collection.",
+  "reference_proof_hint": "In general, this is **open**.\n\nWhat you’re asking is exactly whether such a graph $G$ must be **Ramsey size-linear**: i.e., whether there is a constant (C_G) so that for every graph $H$ with no isolated vertices,\n[\nR(G,H)\\le C_G, e(H).\n]\nThis formulation (and the broader programme) was introduced by Erdős–Faudree–Rousseau–Schelp. ([Cambridge University Press & Assessment][1])\n\nA few relevant points.\n\n## Why your hypotheses are “the right” necessary ones\n\n* If $G$ is Ramsey size-linear, then taking (H=T_n) [[nomath]](where $e(T_n)=n-1$)[[/nomath]] gives (R(G,T_n)=O(n)), and taking (H=K_n) [[nomath]](where $e(K_n)=\\Theta(n^2)$)[[/nomath]] gives (R(G,K_n)=O(n^2)). So your two assumptions are **necessary** for the desired conclusion.\n\n* Also, for a **fixed** $G$, the “tree condition” is not really restrictive: Chvátal’s tree–clique formula (R(T_n,K_m)=(n-1)(m-1)+1) implies (R(G,T_n)=O(n)) by monotonicity [[nomath]](since $G\\subseteq K_{|V(G)|}$)[[/nomath]]. ([combinatorics.org][2])\n  So th"
+}

@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_1032",
+  "problem": [
+    "We say that a graph is 4-chromatic critical if it has chromatic number 4, and removing any edge decreases the chromatic number to 3.\n\nIs there, for arbitrarily large n, a 4-chromatic critical graph on n vertices with minimum degree \\gg n?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 1032,
+  "status": "open",
+  "tags": [
+    "graph theory",
+    "chromatic number"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "We say that a graph is $4$-chromatic critical if it has chromatic number $4$, and removing any edge decreases the chromatic number to $3$.\n\nIs there, for arbitrarily large $n$, a $4$-chromatic critical graph on $n$ vertices with minimum degree $\\gg n$?",
+  "additional_context": "In \\cite{Er93} Erdős said he asked this 'more than 20 years ago'.\n\nDirac gave an example of a 6-chromatic critical graph with minimum degree >n/2. This problem is also open for 5-chromatic critical graphs.\n\nSimonovits \\cite{Si72} and Toft \\cite{To72} independently constructed 4-chromatic critical graphs with minimum degree \\gg n^{1/3}. Toft conjectured that a 4-chromatic critical graph on n vertices has at least ((5)/(3)+o(1))n vertices, and has examples to show this would be the best possible.\n\nSee also [917] and [944].\n\nReferences\n\n[Er93] Erdős, Paul, Some of my favorite solved and unsolved problems in graph\ntheory. Quaestiones Math. (1993), 333-350.\n\n[Si72] Simonovits, M., On colour-critical graphs. Studia Sci. Math. Hungar. (1972), 67--81.\n\n[To72] Toft, B., Two theorems on critical {4}-chromatic graphs. Studia Sci. Math. Hungar. (1972), 83--89.",
+  "reference_proof_hint": "As far as the literature currently records, this is **open**.\n\nThis is an old question of Erdős (Erdős Problems #1032). In particular, it is **not known** whether there are, for arbitrarily large $n$, **4-chromatic edge-critical** graphs $G$ on $n$ vertices with **linear** minimum degree (\\delta(G)=\\Omega(n)) [[nomath]](your $\\gg n$)[[/nomath]]. ([Erdős Problems][1])\n\nWhat *is* known is:\n\n* For larger chromatic number, very large minimum degree is possible: **Dirac** exhibited a **6-chromatic** critical graph with (\\delta(G) > n/2). ([Erdős Problems][1])\n* For $k=4$, the best-known general lower bound is much smaller: **Simonovits** and **Toft** independently constructed **4-chromatic critical** graphs with\n  [\n  \\delta(G)\\ \\gg\\ n^{1/3}.\n  ]\n  ([Erdős Problems][1])\n  [[nomath]](The same problem is also stated as open for $5$-chromatic critical graphs.)[[/nomath]] ([Erdős Problems][1])\n\nA simple sanity check: even without criticality, a graph with (\\chi(G)=4) has an independent set of s"
+}

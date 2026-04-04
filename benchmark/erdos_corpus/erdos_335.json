@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_335",
+  "problem": [
+    "Let d(A) denote the density of A⊆ ℕ. Characterise those A,B⊆ ℕ with positive density such thatd(A+B)=d(A)+d(B)."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 335,
+  "status": "open",
+  "tags": [
+    "number theory",
+    "additive combinatorics"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $d(A)$ denote the density of $A\\subseteq \\mathbb{N}$. Characterise those $A,B\\subseteq \\mathbb{N}$ with positive density such that\\[d(A+B)=d(A)+d(B).\\]",
+  "additional_context": "One way this can happen is if there exists \\theta>0 such thatA=\\{ n>0 : \\{ n\\theta\\} ∈ X_A\\}\\textrm{ and }B=\\{ n>0 : \\{n\\theta\\} ∈ X_B\\}where \\{x\\} denotes the fractional part of x and X_A,X_B⊆ ℝ/ℤ are such that \\mu(X_A+X_B)=\\mu(X_A)+\\mu(X_B). Are all possible A and B generated in a similar way (using other groups)?",
+  "reference_proof_hint": "Assume throughout that **natural density** exists:\n[\nd(A)=\\lim_{N\\to\\infty}\\frac{|A\\cap[1,N]|}{N}.\n]\nWrite (A\\sim A') if (d(A\\triangle A')=0) [[nomath]](they differ on a density–$0$ set)[[/nomath]]. Note that (d(A+t)=d(A)) for each fixed $t$, and finite changes don’t affect density.\n\nLet (\\alpha=d(A)>0), (\\beta=d(B)>0).\nA necessary condition for\n[\nd(A+B)=d(A)+d(B)\n]\nis (\\alpha+\\beta\\le 1) [[nomath]](since $d(A+B)\\le 1$)[[/nomath]].\n\nWhat follows is the clean structural description “up to (\\sim)” [[nomath]](i.e. up to density–$0$ perturbations)[[/nomath]], which is the right equivalence relation for density questions.\n\n---\n\n## The classification (up to density–0 changes)\n\nPairs ((A,B)\\subseteq\\mathbb N) with (\\alpha,\\beta>0) satisfy\n[\nd(A+B)=\\alpha+\\beta\n]\n**if and only if** [[nomath]](after translating $A,B$ by fixed integers and modifying on density–$0$ sets)[[/nomath]] they come from a **one–dimensional compact abelian model** in the following sense:\n\nThere exist\n\n* a finite-index ar"
+}

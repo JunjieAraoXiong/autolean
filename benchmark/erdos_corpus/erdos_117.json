@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_117",
+  "problem": [
+    "Let h(n) be minimal such that any group G with the property that any subset of >n elements contains some x≠ y such that xy=yx can be covered by at most h(n) many Abelian subgroups.\n\nEstimate h(n) as well as possible."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 117,
+  "status": "open",
+  "tags": [
+    "group theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $h(n)$ be minimal such that any group $G$ with the property that any subset of $>n$ elements contains some $x\\neq y$ such that $xy=yx$ can be covered by at most $h(n)$ many Abelian subgroups.\n\nEstimate $h(n)$ as well as possible.",
+  "additional_context": "Pyber \\cite{Py87} has proved there exist constants c_2>c_1>1 such that c_1^n<h(n)<c_2^n. Erdős \\cite{Er97f} writes that the lower bound was already known to Isaacs.\n\nReferences\n\n[Er97f] Erdős, Paul, Some unsolved problems. Combinatorics, geometry and probability (Cambridge, 1993) (1997), 1-10.\n\n[Py87] Pyber, L., The number of pairwise noncommuting elements and the index of the centre in a finite group. J. London Math. Soc. (2) (1987), 287-295.",
+  "reference_proof_hint": "Let\n\n* (\\omega(G)) = the largest size of a set (S\\subseteq G) with **no two distinct elements commuting** (a “pairwise non‑commuting” set).\n* $c(G)$ = the **smallest** number of abelian subgroups whose union is $G$.\n\nYour hypothesis is exactly (\\omega(G)\\le n).\nAnd (h(n)=\\sup{c(G):\\omega(G)\\le n}) (then rounded up to the least integer that works for all such groups).\n\n## Easy facts\n\n1. If $G$ is covered by $k$ abelian subgroups, then (\\omega(G)\\le k).\n   So always\n   [\n   h(n)\\ \\ge\\ n .\n   ]\n\n2. If (\\omega(G)) is finite, then $G$ is **central-by-finite**, i.e. (|G:Z(G)|<\\infty). This goes back to B. H. Neumann’s solution of Erdős’s question about infinite non‑commuting cliques. ([Cambridge University Press & Assessment][1])\n   So $h(n)$ is finite for each $n$.\n\n## A clean general upper bound: exponential\n\nA very simple covering argument gives\n[\nc(G)\\ \\le\\ |G:Z(G)|.\n]\nReason: for each coset $gZ(G)$, the subgroup (\\langle g,,Z(G)\\rangle) is abelian (it’s “cyclic times central”), and it c"
+}

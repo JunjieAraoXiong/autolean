@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_569",
+  "problem": [
+    "Let k≥ 1. What is the best possible c_k such thatR(C_{2k+1},H)≤ c_k mfor any graph H on m edges without isolated vertices?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 569,
+  "status": "open",
+  "tags": [
+    "graph theory",
+    "ramsey theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $k\\geq 1$. What is the best possible $c_k$ such that\\[R(C_{2k+1},H)\\leq c_k m\\]for any graph $H$ on $m$ edges without isolated vertices?",
+  "additional_context": "See also the entry in the graphs problem collection.",
+  "reference_proof_hint": "Write (\\ell=2k+1).\n\n### The optimal linear coefficient is $2$\n\nThere is a universal lower bound\n[\nR(C_{\\ell},H)\\ \\ge\\ |V(H)|\\ \\ge\\ 2m\n]\nbecause a graph with $m$ edges and no isolated vertices can have as many as $2m$ vertices [[nomath]](take $H$ to be a matching $M_m$ of $m$ disjoint edges)[[/nomath]]. Hence **any** inequality of the form (R(C_{\\ell},H)\\le c_km) forces (c_k\\ge 2).\n\nOn the other hand, a very recent result (January 2026) proves essentially the matching upper bound for cycles:\n\n> For every odd (\\ell), for every graph $H$ with (m=e(H)) edges and no isolated vertices,\n> $R(C_{\\ell},H)\\ \\le\\ 2m+\\Big\\lfloor\\frac{\\ell-1}{2}\\Big\\rfloor$\n> provided $m$ is sufficiently large with respect to (\\ell). ([arXiv][1])\n\nSpecializing to (\\ell=2k+1) gives\n[\nR(C_{2k+1},H)\\ \\le\\ 2m+k\\qquad\\text{for all such }H,\\ \\text{once }m\\text{ is large enough (depending on }k\\text{).}\n]\n([arXiv][1])\n\nMoreover, the same paper notes the bound is **tight** (up to equality) already for (H=M_m) (a matching),"
+}

@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_629",
+  "problem": [
+    "The list chromatic number \\chi_L(G) is defined to be the minimal k such that for any assignment of a list of k colours to each vertex of G (perhaps different lists for different vertices) a colouring of each vertex by a colour on its list can be chosen such that adjacent vertices receive distinct colours.\n\nDetermine the minimal number of vertices n(k) of a bipartite graph G such that \\chi_L(G)>k."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 629,
+  "status": "open",
+  "tags": [
+    "graph theory",
+    "chromatic number"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "The list chromatic number $\\chi_L(G)$ is defined to be the minimal $k$ such that for any assignment of a list of $k$ colours to each vertex of $G$ (perhaps different lists for different vertices) a colouring of each vertex by a colour on its list can be chosen such that adjacent vertices receive distinct colours.\n\nDetermine the minimal number of vertices $n(k)$ of a bipartite graph $G$ such that $\\chi_L(G)>k$.",
+  "additional_context": "A problem of Erdős, Rubin, and Taylor \\cite{ERT80}, who proved that2^{k-1}<n(k) <k^22^{k+2}.They also prove that if m(k) is the size of the smallest family of k-sets without property B (i.e. the smallest number of k-sets in a graph with chromatic number 3) then m(k)≤ n(k)≤ m(k+1). Bounds on m(k) are the subject of [901]. The lower bounds on m(k) by Radhakrishnan and Srinivasan \\cite{RaSr00} imply that2^k \\left((k)/(\\log k)\\right)^{1/2}\\ll n(k).Erdős, Rubin, and Taylor \\cite{ERT80} proved n(2)=6 and Hanson, MacGillivray, and Toft \\cite{HMT96} proved n(3)=14 andn(k) ≤ kn(k-2)+2^k.See also the entry in the graphs problem collection.\n\nReferences\n\n[ERT80] Erdős, Paul and Rubin, Arthur L. and Taylor, Herbert, Choosability in graphs.  (1980), 125-157.\n\n[HMT96] Hanson, Denis and MacGillivray, Gary and Toft, Bjarne, Choosability of bipartite graphs. Ars Combin. (1996), 183-192.\n\n[RaSr00] Radhakrishnan, Jaikumar and Srinivasan, Aravind, Improved bounds and algorithms for hypergraph {2}-coloring. Random Structures Algorithms (2000), 4--32.",
+  "reference_proof_hint": "Let\n\n[\nn(k)=\\min{|V(G)|:G\\text{ is bipartite and }\\chi_L(G)>k},\n]\n\ni.e. the smallest order of a bipartite graph that is **not** $k$-choosable.\n\n### 1) This is an Erdős–Rubin–Taylor open problem\n\nErdős–Rubin–Taylor explicitly posed this question [[nomath]](in their notation $N(2,k)$)[[/nomath]] and gave the basic bounds, but the exact value of $n(k)$ is not known in general. \n\nSo “determine $n(k)$” currently means “give the best known bounds / exact values for small $k$, and explain what $n(k)$ is equivalent to.”\n\n---\n\n### 2) You may assume the extremal graph is complete bipartite\n\nIf a bipartite graph $G$ with bipartition $(A,B)$ is not $k$-choosable, then adding edges between $A$ and $B$ keeps the graph bipartite and cannot make it easier to list-color. Hence, the smallest counterexample may be taken to be some complete bipartite (K_{|A|,|B|}). This is the $N(2,k)$ viewpoint in Erdős–Rubin–Taylor. \n\n---\n\n### 3) Connection to Property B (hypergraph 2-colorability)\n\nDefine (M_k) to be t"
+}

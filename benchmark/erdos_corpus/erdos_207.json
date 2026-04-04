@@ -1,0 +1,15 @@
+{
+  "uuid": "erdos_207",
+  "problem": [
+    "Erdős Problem #207"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 207,
+  "status": "proved",
+  "tags": [
+    "combinatorics",
+    "hypergraphs"
+  ],
+  "prize": "no",
+  "formalized_on_site": false
+}

@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_347",
+  "problem": [
+    "Is there a sequence A=\\{a_1≤ a_2≤ \\cdots\\} of integers with\\lim \\frac{a_{n+1}}{a_n}=2such thatP(A')= \\left\\{∑_{n∈ B}n : B⊆ A'\\textrm{ finite }\\right\\}has density 1 for every cofinite subsequence A' of A?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 347,
+  "status": "proved (Lean)",
+  "tags": [
+    "number theory",
+    "complete sequences"
+  ],
+  "prize": "no",
+  "formalized_on_site": true,
+  "original_latex": "Is there a sequence $A=\\{a_1\\leq a_2\\leq \\cdots\\}$ of integers with\\[\\lim \\frac{a_{n+1}}{a_n}=2\\]such that\\[P(A')= \\left\\{\\sum_{n\\in B}n : B\\subseteq A'\\textrm{ finite }\\right\\}\\]has density $1$ for every cofinite subsequence $A'$ of $A$?",
+  "reference_proof_hint": "As of **January 16, 2026**, this is **not known**: the existence of such a sequence $A$ with\n[\n\\lim_{n\\to\\infty}\\frac{a_{n+1}}{a_n}=2\n]\nand with the property that **for every cofinite subsequence** (A'\\subseteq A), the finite subset-sum set\n[\nP(A')=\\\\{\\sum_{n\\in B} n : B\\subseteq A'\\ \\text{finite}\\\\}\n]\nhas **(natural) density $1$**, is an **open problem** (it is listed as Erdős Problem #347). ([Erdős Problems][1])\n\n### Related context (what *is* known)\n\n* There is a **stronger** “robust completeness” phenomenon known at **slower growth**: in a 1964 paper, Graham proved that the sequence\n  [\n  s_n = F_n - (-1)^n\n  ]\n  [[nomath]](with $F_n$ Fibonacci)[[/nomath]] has the property that **deleting any finite subsequence** leaves a sequence whose subset sums contain **all sufficiently large integers** (i.e., it remains *complete* after any finite deletion). ([fq.math][2])\n  But this sequence grows like (\\varphi^n) [[nomath]](golden ratio $\\varphi\\approx 1.618$)[[/nomath]], not like (2^n), so",
+  "ground_truth_lean": "/-\nCopyright 2025 The Formal Conjectures Authors.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    https://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n-/\n\nimport FormalConjectures.Util.ProblemImports\n\n/-!\n# Erdős Problem 347\n\n*Reference:* [erdosproblems.com/347](https://www.erdosproblems.com/347)\n-/\n\nopen Filter Set Topology\n\nnamespace Erdos347\n\n/--\nThe set of subset sums of a set `A ⊆ ℕ`.\n-/\nlocal notation \"𝓟\" A => subsetSums A\n\n/--\nIs there a sequence $A=\\{a_1\\leq a_2\\leq \\cdots\\}$ of integers with\n\\[\\lim \\frac{a_{n+1}}{a_n}=2\\]\nsuch that\n\\[P(A')= \\left\\{\\sum_{n\\in B}n : B\\subseteq A'\\textrm{ finite }\\right\\}\\]\nhas density $1$ for every cofinite subsequence $A'$ of $A$?\n\nThis has been solved in the affirmative by ebarschkis in the comments (based on idea of Tao and\nvan Doorn, also in the comments).\n\nThos was formalized in Lean by Barschkis using Aristotle.\n-/\n@[category research solved, AMS 11, formal_proof using lean4 at \"https://github.com/ebarschkis/ErdosProblem/blob/main/Problem347/Formalization.lean\"]\ntheorem erdos_347 :\n    answer(True) ↔ ∃ a : ℕ → ℕ, (Monotone a) ∧\n      (Tendsto (fun n ↦ (a (n + 1) : ℝ) / (a n : ℝ)) atTop (𝓝 2)) ∧\n      (∀ ι : ℕ → ℕ, (range ι)ᶜ.Finite → HasDensity (𝓟 (range (a ∘ ι))) 1) := by\n  sorry\n\nend Erdos347\n"
+}

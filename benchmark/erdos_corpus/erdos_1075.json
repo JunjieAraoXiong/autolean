@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_1075",
+  "problem": [
+    "Let r≥ 3. There exists c_r>r^{-r} such that, for any \\epsilon>0, if n is sufficiently large, the following holds.\n\nAny r-uniform hypergraph on n vertices with at least (1+\\epsilon)(n/r)^r many edges contains a subgraph on m vertices with at least c_rm^r edges, where m=m(n)→ ∞ as n→ ∞."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 1075,
+  "status": "open",
+  "tags": [
+    "hypergraphs"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $r\\geq 3$. There exists $c_r>r^{-r}$ such that, for any $\\epsilon>0$, if $n$ is sufficiently large, the following holds.\n\nAny $r$-uniform hypergraph on $n$ vertices with at least $(1+\\epsilon)(n/r)^r$ many edges contains a subgraph on $m$ vertices with at least $c_rm^r$ edges, where $m=m(n)\\to \\infty$ as $n\\to \\infty$.",
+  "additional_context": "Erdős \\cite{Er64f} proved that this is true with c_r=r^{-r} whenever the graph has at least \\epsilon n^r many edges.\n\nReferences\n\n[Er64f] Erdős, P., On extremal problems of graphs and generalized graphs. Israel J. Math. (1964), 183--190.",
+  "reference_proof_hint": "What you wrote is *exactly* the “boundary case” of Erdős’s **jump problem** for $r$-uniform hypergraphs.\n\n### Why this is the jump problem\n\nThe number ((n/r)^r) is the edge count of the **balanced complete $r$-partite $r$-graph** [[nomath]](the blow‑up of a single $r$-edge with $r$ equal parts)[[/nomath]]. In the usual normalization\n[\nd(G):=\\frac{e(G)}{\\binom{n}{r}},\n]\nyour hypothesis\n[\ne(G)\\ge (1+\\varepsilon)\\left(\\frac nr\\right)^r\n]\nis equivalent [[nomath]](up to a $(1+o(1))$ factor as $n\\to\\infty$)[[/nomath]] to\n[\nd(G)\\ge(1+\\varepsilon)\\frac{r!}{r^r}.\n]\nAnd your desired conclusion “find a subgraph on (m\\to\\infty) vertices with at least (c_r m^r) edges, where (c_r>r^{-r})” translates to “find a subgraph whose normalized density is at least\n[\n\\frac{e(H)}{\\binom{m}{r}};\\gtrsim; c_r,r! ;>;\\frac{r!}{r^r},\n]\nby an amount bounded away from (\\frac{r!}{r^r}), **independently of (\\varepsilon)**.”\n\nThat is precisely the statement that the value (\\frac{r!}{r^r}) [[nomath]](equivalently $r^{-r}$"
+}

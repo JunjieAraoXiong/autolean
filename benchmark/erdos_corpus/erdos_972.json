@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_972",
+  "problem": [
+    "Let \\alpha>1 be irrational. Are there infinitely many primes p such that \\lfloor p\\alpha\\rfloor is also prime?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 972,
+  "status": "open",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": true,
+  "original_latex": "Let $\\alpha>1$ be irrational. Are there infinitely many primes $p$ such that $\\lfloor p\\alpha\\rfloor$ is also prime?",
+  "additional_context": "Vinogradov \\cite{Vi48} proved that the sequence \\{p\\alpha\\} is uniformly distributed for every irrational \\alpha, and hence there are infinitely many primes p of the shape p=\\lfloor n\\alpha\\rfloor for every irrational \\alpha>1. Indeed, this occurs if and only if(p)/(\\alpha)≤ n<(p+1)/(\\alpha),which is true if and only if \\{p\\alpha^{-1}\\}>1-\\alpha^{-1}, which happens infinitely often by the uniform distribution of \\{p\\alpha^{-1}\\}.\n\nReferences\n\n[Vi48] Vinogradov, I. M., On an estimate of trigonometric sums with prime numbers. Izv. Akad. Nauk SSSR Ser. Mat. (1948), 225--248.",
+  "reference_proof_hint": "This is **open in general** for a fixed irrational (\\alpha>1).\n\nIt is listed as **Erdős Problem #972** and marked **OPEN**: “Let (\\alpha>1) be irrational. Are there infinitely many primes $p$ such that (\\lfloor p\\alpha\\rfloor) is also prime?” ([erdosproblems.com][1])  (Terence Tao comments there that it “looks comparable in difficulty to the twin prime conjecture.”) ([erdosproblems.com][2])\n\n### What *is* known\n\nThere is a strong **“metric”** $almost-everywhere$ result: Li and Pan (2008) consider the more general conjecture\n\n[\n\\text{infinitely many primes }p\\text{ such that }\\lfloor \\alpha p+\\beta\\rfloor\\text{ is prime,}\n]\n\nand prove it for **almost all** irrational (\\alpha) (in the sense of Lebesgue measure), with a quantitative lower bound:\n[\n\\limsup_{x\\to\\infty} \\pi^*_{\\alpha,\\beta}(x),\\frac{(\\log x)^2}{x} \\ge 1,\n]\nwhere $\\pi^*_{\\alpha,\\beta}(x)=|\\\\{p\\le x:\\ p \\text{ and } \\lfloor \\alpha p+\\beta\\rfloor \\text{ are prime}\\\\}|$. ([ar5iv][3])\n\nIn particular, taking (\\beta=0), this impli",
+  "ground_truth_lean": "/-\nCopyright 2025 The Formal Conjectures Authors.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    https://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n-/\nimport FormalConjectures.Util.ProblemImports\n\n/-!\n# Erdős Problem 972\n\n*Reference:* [erdosproblems.com/972](https://www.erdosproblems.com/972)\n-/\n\nnamespace Erdos972\n\n/--\nThe set of primes `p` such that `Nat.floor (α * p)` is also prime.\n-/\ndef primeSet (α : ℝ) : Set ℕ :=\n  {p : ℕ | Nat.Prime p ∧ Nat.Prime ⌊ (α * p) ⌋₊}\n\n/--\n**Erdős problem 972.**\nLet $\\alpha > 1$ be irrational. Are there infinitely many primes $p$\nsuch that $\\lfloor p\\alpha \\rfloor$ is also prime?\n-/\n@[category research open, AMS 11]\ntheorem erdos_972 : answer(sorry) ↔ ∀ α > 1, Irrational α → (primeSet α).Infinite := by\n  sorry\n\nend Erdos972\n"
+}

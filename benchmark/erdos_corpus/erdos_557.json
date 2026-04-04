@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_557",
+  "problem": [
+    "Let R(G;k) denote the minimal m such that if the edges of K_m are k-coloured then there is a monochromatic copy of G. Is it true thatR(T;k)≤ kn+O(1)for any tree T on n vertices?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 557,
+  "status": "open",
+  "tags": [
+    "graph theory",
+    "ramsey theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $R(G;k)$ denote the minimal $m$ such that if the edges of $K_m$ are $k$-coloured then there is a monochromatic copy of $G$. Is it true that\\[R(T;k)\\leq kn+O(1)\\]for any tree $T$ on $n$ vertices?",
+  "additional_context": "A problem of Erdős and Graham. Implied by [548].\n\nThis would be best possible since, for example, R(S_n,k)≥ kn-O(k) if S_n=K_{1,n-1} is a star on n vertices.\n\nThis problem is #26 in Ramsey Theory in the graphs problem collection.",
+  "reference_proof_hint": "Not known in general — it is a classical **open problem of Erdős and Graham**.\n\nWhat *is* known [[nomath]](for fixed $k$, with $n\\to\\infty$)[[/nomath]]:\n\n* **Best general upper bound (all trees):** Erdős–Graham proved that for a tree (T_n) on $n$ **edges**,\n  [\n  r(T_n;k)<2kn+1,\n  ]\n  hence for a tree $T$ on $n$ **vertices** [[nomath]](so $n-1$ edges)[[/nomath]],\n  [\n  R(T;k)\\le 2k(n-1)+1=2kn-O(k).\n  ]\n\n\n* **The conjectured $kn+O(1)$ would follow from Erdős–Sós:** Erdős–Graham explicitly note that if the Erdős–Sós extremal conjecture “every graph with average degree (>n-2) contains every $n$-vertex tree” were known, then their $2k$ factor could be improved to\n  [\n  r(T_n;k) < kn+O(1),\n  ]\n  i.e. $R(T;k)\\le kn+O(1)$ in your notation. \n  [[nomath]](This implication is also recorded in the Erdős problems database: problem #548 $\\Rightarrow$ #557.)[[/nomath]] ([Erdős Problems][1])\n\n* **Sharpness of the coefficient $k$:** for stars (S_n=K_{1,n-1}) one has an *exact* formula (Burr–Roberts) s"
+}

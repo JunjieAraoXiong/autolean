@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_708",
+  "problem": [
+    "Let g(n) be minimal such that for any A⊆ [2,∞)∩ ℕ with | A| =n and any set I of \\max(A) consecutive integers there exists some B⊆ I with | B|=g(n) such that∏_{a∈ A} a \\mid ∏_{b∈ B}b.Is it true thatg(n) ≤ (2+o(1))n?Or perhaps even g(n)≤ 2n?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 708,
+  "status": "open",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "$100",
+  "formalized_on_site": false,
+  "original_latex": "Let $g(n)$ be minimal such that for any $A\\subseteq [2,\\infty)\\cap \\mathbb{N}$ with $\\lvert A\\rvert =n$ and any set $I$ of $\\max(A)$ consecutive integers there exists some $B\\subseteq I$ with $\\lvert B\\rvert=g(n)$ such that\\[\\prod_{a\\in A} a \\mid \\prod_{b\\in B}b.\\]Is it true that\\[g(n) \\leq (2+o(1))n?\\]Or perhaps even $g(n)\\leq 2n$?",
+  "additional_context": "A problem of Erdős and Sur\\'{a}nyi \\cite{ErSu59}, who proved that g(n) ≥ (2-o(1))n, and that g(3)=4. Their lower bound construction takes A as the set of p_ip_j for i≠ j, where p_1<\\cdots <p_\\ell is some set of primes such that 2p_1^2>p_\\ell^2.\n\nGallai was the first to consider problems of this type, and observed that g(2)=2 and g(3)≥ 4.\n\nIn \\cite{Er92c} Erdős offers '100 dollars or 1000 rupees', whichever is more, for a proof or disproof. (In 1992 1000 rupees was worth approximately \\38.60.)\n\nErdős and Sur\\'{a}nyi similarly asked what is the smallest c_n≥ 1 such that in any interval I⊂ [0,∞) of length c_n\\max(A) there exists some B⊆ I∩ ℕ with | B|=n such that∏_{a∈ A} a \\mid ∏_{b∈ B}b.They prove c_2=1 and c_3=\\sqrt{2}$, but have no good upper or lower bounds in general.\n\nSee also [709].\n\nReferences\n\n[Er92c] Erd\\\"{o}s, P., Some of my forgotten problems in number theory. Hardy-Ramanujan J. (1992), 34-50.\n\n[ErSu59] Erdős, P\\'{a}l and Sur\\'{a}nyi, J\\'{a}nos, Bemerkungen zu einer Aufgabe eines mathematischen\n{W}ettbewerbs. Mat. Lapok (1959), 39-48.",
+  "reference_proof_hint": "Interpreting your definition in the standard way (and the only way that makes a nontrivial asymptotic question possible), one takes\n\n$\ng(n)=\\min\\\\{k:\\ \\forall A\\subset{2,3,\\dots},\\ |A|=n,\\ \\forall I \\text{ an interval of } \\max(A)\\text{ consecutive integers,}\\\n\\exists B\\subseteq I,\\ |B|\\le k,\\ \\prod_{a\\in A}a\\mid \\prod_{b\\in B}b\\\\}.\n$\n\nWith “(|B|=g(n))” literally, $g(n)$ can’t exceed (\\min\\max(A)=n+1) [[nomath]](because you can always pick an $A$ with $\\max(A)=n+1$)[[/nomath]], so the $2n$ question would be vacuous. In the literature around this problem, it is indeed “(|B|\\le g(n))”. ([Erdős Problems][1])\n\nWith that understood:\n\n* **A sharp lower bound is known:** Erdős–Surányi showed that\n  [\n  g(n)\\ \\ge\\ (2-o(1)),n,\n  ]\n  via a construction where $A$ is built from products of primes [[nomath]](so one is essentially forced to “pay” almost two chosen integers in $I$ per element of $A$)[[/nomath]]. ([Erdős Problems][1])\n  In particular, **any true upper bound must have constant at least"
+}

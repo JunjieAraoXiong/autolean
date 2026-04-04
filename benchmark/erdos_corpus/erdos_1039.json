@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_1039",
+  "problem": [
+    "Let f(z)=∏_{i=1}^n(z-z_i)∈ \\mathbb{C}[z] with | z_i| ≤ 1 for all i. Let \\rho(f) be the radius of the largest disc which is contained in \\{z: | f(z)|< 1\\}.\n\nDetermine the behaviour of \\rho(f). In particular, is it always true that \\rho(f)\\gg 1/n?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 1039,
+  "status": "open",
+  "tags": [
+    "analysis"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $f(z)=\\prod_{i=1}^n(z-z_i)\\in \\mathbb{C}[z]$ with $\\lvert z_i\\rvert \\leq 1$ for all $i$. Let $\\rho(f)$ be the radius of the largest disc which is contained in $\\{z: \\lvert f(z)\\rvert< 1\\}$.\n\nDetermine the behaviour of $\\rho(f)$. In particular, is it always true that $\\rho(f)\\gg 1/n$?",
+  "additional_context": "A problem of Erdős, Herzog, and Piranian, who note that f(z)=z^n-1 has \\rho(f) ≤ (\\pi/2)/(n).\n\nPommerenke \\cite{Po61} proved that\\rho(f) ≥ (1)/(2en^2).Krishnapur, Lundberg, and Ramachandran \\cite{KLR25} proved\\rho(f) \\gg (1)/(n\\sqrt{\\log n)}.\n\nReferences\n\n[KLR25] M. Krishnapur, E. Lundberg, and K. Ramachandran, On the area of polynomial lemniscates. arXiv:2503.18270 (2025).\n\n[Po61] Pommerenke, Ch., On metric properties of complex polynomials. Michigan Math. J. (1961), 97-115.",
+  "reference_proof_hint": "Write\n[\n\\Lambda_f:={z\\in\\mathbb C:\\ |f(z)|<1}\n]\n[[nomath]](the filled lemniscate of $f$)[[/nomath]]. Your (\\rho(f)) is exactly the **inradius** of (\\Lambda_f):\n[\n\\rho(f)=\\sup{r>0:\\ \\exists a\\in\\mathbb C\\text{ with }D(a,r)\\subset \\Lambda_f}.\n]\n\nA natural way to phrase the “worst case in $n$” is\n[\n\\rho_n:=\\inf{\\rho(f): f \\text{ monic, }\\deg f=n,\\ \\text{all zeros in }\\overline{\\mathbb D}}.\n]\nThen your question “is it always true that (\\rho(f)\\gg 1/n)?” is exactly: **is (\\rho_n \\gg 1/n)?**\n\n## Upper bound: (\\rho_n\\lesssim 1/n) [[nomath]](so $1/n$ would be best possible)[[/nomath]]\n\nTake the Erdős lemniscate polynomial\n[\nf(z)=z^n-1,\n]\nwhose zeros are the $n$th roots of unity [[nomath]](all on $|z|=1$)[[/nomath]]. It is known (and easy to see) that its inradius is on the order of $1/n$; in particular (\\rho(z^n-1)\\asymp 1/n). This provides the general upper bound\n[\n\\rho_n \\le \\rho(z^n-1) \\asymp \\frac1n.\n]\nSo **no uniform lower bound can beat the order $1/n$**.\n\n[[nomath]](You can see the scal"
+}

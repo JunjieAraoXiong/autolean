@@ -1,0 +1,29 @@
+{
+  "uuid": "erdos_1108",
+  "problem": [
+    "LetA = \\left\\{ ∑_{n∈ S}n! : S⊂ ℕ\\textrm{ finite}\\right\\}.If k≥ 2, then does A contain only finitely many kth powers? Does it contain only finitely many powerful numbers?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 1108,
+  "status": "open",
+  "tags": [
+    "number theory",
+    "factorials"
+  ],
+  "prize": "no",
+  "formalized_on_site": true,
+  "original_latex": "Let\\[A = \\left\\{ \\sum_{n\\in S}n! : S\\subset \\mathbb{N}\\textrm{ finite}\\right\\}.\\]If $k\\geq 2$, then does $A$ contain only finitely many $k$th powers? Does it contain only finitely many powerful numbers?",
+  "additional_context": "Asked by Erdős at Oberwolfach in 1988. It is open even whether there are infinitely many squares of the form 1+n! (see [398]).\n\nThis was motivated in part by a problem of Mahler which he discussed with Erdős a few days before his death in 1988: if k≥ 5 andA_k= \\left\\{ ∑_{n∈ S}k^n : S⊂ ℕ\\textrm{ finite}\\right\\}then does A_k contain only finitely many squares? Mahler showed that there are infinitely many squares in A_k for k≤ 4, and found only one square for k≥ 5, namely1+7+7^2+7^3=400.Brindza and Erdős \\cite{BrEr91} proved that, for any r, if n_1!+\\cdots+n_r! is powerful then n_1\\ll_r 1.\n\nReferences\n\n[BrEr91] Brindza, B. and Erdős, P., On some {D}iophantine problems involving powers and\nfactorials. J. Austral. Math. Soc. Ser. A (1991), 1--7.",
+  "reference_proof_hint": "Both questions are **open** (as of early 2026).\n\nThis is an Erdős problem (asked at Oberwolfach in 1988): for\n[\nA=\\\\{\\sum_{n\\in S}n!:S\\subset\\mathbb N\\text{ finite}\\\\},\n]\nis $A$ expected/known to contain only finitely many perfect $k$th powers ((k\\ge2)) and only finitely many **powerful** (a.k.a. squareful) numbers?  No proof is known either way. ([Erdős Problems][1])\n\nA quick logical point: every perfect $k$th power with (k\\ge2) is automatically a **powerful number**, so a positive answer to the “powerful” question would imply a positive answer to the “$k$th powers” question. The difficulty is that even the powerful-number question is open. ([Erdős Problems][1])\n\n## What is known computationally (perfect powers)\n\nOEIS tracks the currently known **perfect powers** that can be written as a sum of distinct factorials [[nomath]](in the usual “factorial sum” sense; the OEIS entry notes its convention about whether $0!$ and $1!$ are treated as distinct)[[/nomath]]. The known perfect powers ",
+  "ground_truth_lean": "/-\nCopyright 2025 The Formal Conjectures Authors.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    https://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n-/\n\nimport FormalConjectures.Util.ProblemImports\n\n/-!\n# Erdős Problem 1108\n\n*Reference:* [erdosproblems.com/1108](https://www.erdosproblems.com/1108)\n-/\n\nopen Nat Filter BigOperators\n\nnamespace Erdos1108\n\n/--\nThe set $A = \\left\\{ \\sum_{n\\in S}n! : S\\subset \\mathbb{N}\\text{ finite}\\right\\}$ of all finite\nsums of distinct factorials.\n-/\ndef FactorialSums : Set ℕ :=\n  {m : ℕ | ∃ S : Finset ℕ, m = ∑ n ∈ S, n.factorial}\n\n/--\nA number is powerful if each prime factor appears with exponent at least 2.\n-/\ndef IsPowerful (n : ℕ) : Prop :=\n  ∀ p : ℕ, p.Prime → p ∣ n → p ^ 2 ∣ n\n/--\nFor each $k \\geq 2$, does the set $A = \\left\\{ \\sum_{n\\in S}n! : S\\subset \\mathbb{N}\\text{ finite}\\right\\}$ of all finite sums of distinct factorials contain only finitely many $k$-th powers?\n-/\n@[category research open, AMS 11]\ntheorem erdos_1108.parts.i : answer(sorry) ↔ ∀ k ≥ 2,\n    Set.Finite { a | a ∈ FactorialSums ∧ ∃ m : ℕ, m ^ k = a } := by\n  sorry\n\n/--\nDoes the set $A = \\left\\{ \\sum_{n\\in S}n! : S\\subset \\mathbb{N}\\text{ finite}\\right\\}$ of all finite sums of distinct factorials contain only finitely many powerful numbers?\n-/\n@[category research open, AMS 11]\ntheorem erdos_1108.parts.ii :\n     answer(sorry) ↔ {a ∈ FactorialSums | IsPowerful a}.Finite := by\n  sorry\n\nend Erdos1108\n",
+  "expert_comments": [
+    {
+      "author": "",
+      "text": "The OEIS sequences for the initial problem (some variants) are known:\nA051761\nA115645\nA025494\n\nThe largest number here is $1183893^2$ equals the sum of $i!$ for $i \\in \\{1,2,3,7,8,9,10,11,12,13,14,15\\}$.\n\nHeuristically, one of course expects a finite number of elements of this form."
+    },
+    {
+      "author": "StijnC",
+      "text": "Related to the problem discussed with Mahler:\n\n$\\textbf{remark on equivalent solutions}$\nOne should not be allowed to count equivalent ones.\nE.g. every set $S$ of $4$ consecutive numbers, starting with an even number $2j$, results in a square (of $20 \\cdot 7^j$).\nFor this reason, we may impose that we only count the sets $S$ containing $0.$\n\nAlso $1+k$ may be a square, so for additional special ones we of course need to impose $\\max S>2.$\n(the case $\\max S=2$ does not lead to a solution)\n\n$\\textbf{Heuristical remark}$\nA literature search didn't result in much.\nAs sketched in [BLPPPV21], for every $k>4$, the number of squares of the desired form for the fixed $k$, can be estimated by $\\frac{k}{k-4}$, and so one can expect there are finitely many for fixed $k$.\nFurthermore, with the additional imposed values, also over all $k \\ge 5$, the expected number of solutions is finite, since $\\sum_k 1/k^2$ is finite.\nI would estimate it slightly different myself, but all that is needed is some he"
+    }
+  ]
+}

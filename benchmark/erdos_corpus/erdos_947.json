@@ -1,0 +1,15 @@
+{
+  "uuid": "erdos_947",
+  "problem": [
+    "Erdős Problem #947"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 947,
+  "status": "proved (Lean)",
+  "tags": [
+    "number theory",
+    "covering systems"
+  ],
+  "prize": "no",
+  "formalized_on_site": false
+}

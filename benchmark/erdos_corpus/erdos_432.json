@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_432",
+  "problem": [
+    "Let A,B⊆ ℕ be two infinite sets. How dense can A+B be if all elements of A+B are pairwise relatively prime?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 432,
+  "status": "open",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $A,B\\subseteq \\mathbb{N}$ be two infinite sets. How dense can $A+B$ be if all elements of $A+B$ are pairwise relatively prime?",
+  "additional_context": "Asked by Straus, inspired by a problem of Ostmann (see [431]).",
+  "reference_proof_hint": "Let (S:=A+B={a+b:\\ a\\in A,\\ b\\in B}), and assume **(S) is pairwise coprime**, i.e. (\\gcd(s,s')=1) for all distinct (s,s'\\in S).\n\nFor (x\\ge 1), write\n$\nS(x):=|(S\\cap[1,x]).\n$\n\n### Key observation: each prime can appear only once\n\nFor every (s\\in S\\cap[1,x]) with (s>1), let (p(s)) be the *smallest prime divisor* of (s). Then:\n\n* (p(s)\\le s\\le x), so (p(s)) is a prime (\\le x).\n* If (s\\neq s') are in (S), then (\\gcd(s,s')=1), so they cannot share any prime divisor. In particular (p(s)\\neq p(s')).\n\nSo the map (s\\mapsto p(s)) is **injective** from ((S\\cap[1,x])\\setminus{1}) into the set of primes (\\le x). Therefore\n[\nS(x)\\le \\pi(x)+1,\n]\nwhere (\\pi(x)) is the prime-counting function.\n\n### Consequence: zero (upper) asymptotic density\n\nDivide by (x):\n[\n\\frac{S(x)}{x}\\le \\frac{\\pi(x)+1}{x}.\n]\nBy the prime number theorem, (\\pi(x)\\sim \\dfrac{x}{\\log x}), hence (\\pi(x)/x\\to 0). ([Wikipedia][1])\nSo\n[\n\\limsup_{x\\to\\infty}\\frac{S(x)}{x}=0.\n]\n\n### Quantitative version\n\nUsing (\\pi(x)\\sim x/\\log x), the "
+}

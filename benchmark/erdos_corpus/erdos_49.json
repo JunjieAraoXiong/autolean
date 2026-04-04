@@ -1,0 +1,15 @@
+{
+  "uuid": "erdos_49",
+  "problem": [
+    "Erdős Problem #49"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 49,
+  "status": "proved",
+  "tags": [
+    "number theory",
+    "primes"
+  ],
+  "prize": "no",
+  "formalized_on_site": false
+}

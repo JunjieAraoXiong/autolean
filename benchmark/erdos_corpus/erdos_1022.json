@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_1022",
+  "problem": [
+    "Is there a constant c_t, where c_t→ ∞ as t→ ∞, such that if \\mathcal{F} is a finite family of finite sets, all of size at least t, and for every set X there are <c_t| X| many A∈ \\mathcal{F} with A⊆ X, then \\mathcal{F} has chromatic number 2 (in other words, has property B)?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 1022,
+  "status": "proved (Lean)",
+  "tags": [
+    "combinatorics",
+    "hypergraphs"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Is there a constant $c_t$, where $c_t\\to \\infty$ as $t\\to \\infty$, such that if $\\mathcal{F}$ is a finite family of finite sets, all of size at least $t$, and for every set $X$ there are $<c_t\\lvert X\\rvert$ many $A\\in \\mathcal{F}$ with $A\\subseteq X$, then $\\mathcal{F}$ has chromatic number $2$ (in other words, has property B)?",
+  "additional_context": "Erdős originally conjectured, in this language, that c_2=1, which was proved by Lov\\'{a}sz \\cite{Lo68}.\n\nReferences\n\n[Lo68] Lov\\'{a}sz, L., On covering of graphs. Theory of Graphs (Proc. Colloq., Tihany, 1966) (1968), 231-236.",
+  "reference_proof_hint": "No. In fact you can’t even have (c_t>2) for any $t$: for every $t$ there is a finite $(t+1)$-uniform family (\\mathcal F) which is **not** 2‑colorable (has no property B) but still satisfies\n[\n\\forall X\\qquad |\\\\{A\\in\\mathcal F:A\\subseteq X\\\\}|\\le 2|X|.\n]\nSo any admissible (c_t) would have to satisfy (c_t\\le 2) for all $t$, hence (c_t\\not\\to\\infty). ([Erdős Problems][1])\n\nHere is a concrete construction and proof (essentially the one recorded in the Erdős #1022 discussion). ([Erdős Problems][1])\n\n---\n\n## A counterexample with “density constant” $2$\n\nFix (t\\ge 1). Let (\\Gamma) be a set of size (3t).\n\n### Step 1: vertices and the first layer of edges\n\nFor every ordered pair of $t$-subsets (A,B\\subset\\Gamma), introduce a new vertex (v_{A,B}).\nLet (V:={v_{A,B}}) be the set of all these new vertices.\n\nAdd the two ((t+1))-sets\n[\nA\\cup{v_{A,B}},\\qquad B\\cup{v_{A,B}}\n]\nto (\\mathcal F).\n\n### Step 2: vertices and the second layer of edges\n\nFor every $t$-subset (Q\\subset\\Gamma) and every $t$-subse"
+}

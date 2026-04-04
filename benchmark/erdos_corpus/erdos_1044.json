@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_1044",
+  "problem": [
+    "Let f(z)=∏_{i=1}^n(z-z_i)∈\\mathbb{C}[x] where | z_i|≤ 1 for all i. If \\Lambda(f) is the maximum of the lengths of the boundaries of the connected components of\\{ z: | f(z)|<1\\}then determine the infimum of \\Lambda(f)."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 1044,
+  "status": "solved",
+  "tags": [
+    "analysis"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $f(z)=\\prod_{i=1}^n(z-z_i)\\in\\mathbb{C}[x]$ where $\\lvert z_i\\rvert\\leq 1$ for all $i$. If $\\Lambda(f)$ is the maximum of the lengths of the boundaries of the connected components of\\[\\{ z: \\lvert f(z)\\rvert<1\\}\\]then determine the infimum of $\\Lambda(f)$.",
+  "additional_context": "A problem of Erdős, Herzog, and Piranian \\cite{EHP58}.\n\nReferences\n\n[EHP58] Erdős, P. and Herzog, F. and Piranian, G., Metric properties of polynomials. J. Analyse Math. (1958), 125-148.",
+  "reference_proof_hint": "Let\n[\nf(z)=\\prod_{i=1}^n (z-z_i),\\qquad |z_i|\\le 1,\n]\nand let (\\Lambda(f)) be the maximum [[nomath]](over connected components $U$ of ${|f|<1}$)[[/nomath]] of the boundary length (\\mathrm{length}(\\partial U)).\nThe infimum is taken over **all such polynomials of all degrees (n\\ge1)** (this is the “original” interpretation of the problem). ([Erdős Problems][1])\n\n## 1) A universal lower bound: (\\Lambda(f)>2) for every fixed polynomial\n\nFirst, a geometric fact:\n\n**Lemma (length vs diameter).** If (\\Gamma) is a rectifiable closed curve, then\n[\n\\mathrm{length}(\\Gamma)\\ \\ge\\ 2\\mathrm{diam}(\\Gamma).\n]\nIndeed, pick (a,b\\in\\Gamma) with (|a-b|=\\mathrm{diam}(\\Gamma)). Traversing (\\Gamma) from $a$ to $b$ in the two directions splits (\\Gamma) into two arcs, each of length (\\ge |a-b|); adding gives the inequality.\n\nNow we use a theorem of Pommerenke (1961): for any monic polynomial whose zeros lie in (\\overline{\\mathbb D}), if $U$ is the component of ({|f|<1}) containing $0$, then\n[\n\\mathrm{diam}(U) "
+}

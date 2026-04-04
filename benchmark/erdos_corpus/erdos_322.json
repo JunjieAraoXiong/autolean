@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_322",
+  "problem": [
+    "Let k≥ 3 and A⊂ ℕ be the set of kth powers. What is the order of growth of 1_A^{(k)}(n), i.e. the number of representations of n as the sum of k many kth powers? Does there exist some c>0 and infinitely many n such that1_A^{(k)}(n) >n^c?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 322,
+  "status": "open",
+  "tags": [
+    "number theory",
+    "powers"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $k\\geq 3$ and $A\\subset \\mathbb{N}$ be the set of $k$th powers. What is the order of growth of $1_A^{(k)}(n)$, i.e. the number of representations of $n$ as the sum of $k$ many $k$th powers? Does there exist some $c>0$ and infinitely many $n$ such that\\[1_A^{(k)}(n) >n^c?\\]",
+  "additional_context": "Connected to Waring's problem. The famous Hypothesis K of Hardy and Littlewood was that 1_A^{(k)}(n)≤ n^{o(1)}, but this was disproved by Mahler \\cite{Ma36} for k=3, who constructed infinitely many n such that1_A^{(3)}(n)\\gg n^{1/12}(where A is the set of cubes). Erdős believed Hypothesis K fails for all k≥ 4, but this is unknown. Hardy and Littlewood made the weaker Hypothesis K^* that for all N and \\epsilon>0∑_{n≤ N}1_A^{(k)}(n)^2 \\ll_\\epsilon N^{1+\\epsilon}.Erdős and Graham remark: 'This is probably true but no doubt very deep. However, it would suffice for most applications.'\n\nIndependently Erdős \\cite{Er36} and Chowla proved that for all k≥ 3 and infinitely many n1_A^{(k)}(n) \\gg n^{c/\\log\\log n}for some constant c>0 (depending on k). In \\cite{Er65b} Erdős claims an unpublished proof that, if B is the set of kth powers of any set of positive density, then\\limsup 1_B^{(k)}(n)=∞.This is discussed in problem D4 of Guy's collection \\cite{Gu04}.\n\nReferences\n\n[Er36] Erd\\\"{o}s, Paul, On the Representation of an Integer as the Sum of k k-th\nPowers. J. London Math. Soc. (1936), 133-136.\n\n[Er65b] Erdős, Paul, Some recent advances and current problems in number theory. Lectures on Modern Mathematics, Vol. III (1965), 196-244.\n\n[Gu04] Guy, Richard K., Unsolved problems in number theory.  (2004), xviii+437.\n\n[Ma36] Mahler, Kurt, Note on Hypothesis K of Hardy and Littlewood. J. London Math. Soc. (1936), 136-138.",
+  "reference_proof_hint": "Let\n\n[\nA={1^k,2^k,3^k,\\dots}\\subset\\mathbb N,\\qquad\nr_k(n):=1_A^{(k)}(n)\n=|\\\\{(x_1,\\dots,x_k)\\in \\mathbb N^k:\\ x_1^k+\\cdots+x_k^k=n\\\\}|,\n]\n\n[[nomath]](counting **ordered** representations; if you mod out by permutations you only change things by a factor $\\le k!$, irrelevant for “$n^c$” questions)[[/nomath]].\n\n## What one “expects” on average\n\nA basic scaling argument shows the **average size is constant**. Indeed,\n[\n\\sum_{m\\le N} r_k(m)\n=|\\\\{(x_1,\\dots,x_k)\\in\\mathbb N^k:\\ x_1^k+\\cdots+x_k^k\\le N\\\\}|.\n]\nPut (x_i=N^{1/k}y_i). The region (\\sum y_i^k\\le 1) in the positive orthant has fixed volume, so the count is (\\asymp N). Hence the mean value of (r_k(n)) for (n\\le N) is (\\asymp 1). In particular there is **no global power-law growth** in a typical sense [[nomath]](many $n$ have $r_k(n)=0$, and among the representable ones, heuristically $r_k(n)$ is usually $O(1)$)[[/nomath]].\n\nThe real difficulty is the **maximal order** or “how large can (r_k(n)) get along some sequence of $n$?”\n\n## "
+}

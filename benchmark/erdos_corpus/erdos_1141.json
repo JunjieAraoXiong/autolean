@@ -1,0 +1,16 @@
+{
+  "uuid": "erdos_1141",
+  "problem": [
+    "Erdős Problem #1141"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 1141,
+  "status": "open",
+  "tags": [
+    "number theory",
+    "primes"
+  ],
+  "prize": "no",
+  "formalized_on_site": true,
+  "ground_truth_lean": "/-\nCopyright 2026 The Formal Conjectures Authors.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    https://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n-/\n\nimport FormalConjectures.Util.ProblemImports\n\n/-!\n# Erdős Problem 1141\n\n*References:*\n- [erdosproblems.com/1141](https://www.erdosproblems.com/1141)\n- [A214583](https://oeis.org/A214583)\n- [Va99] Various, Some of Paul's favorite problems. Booklet produced for the conference \"Paul Erdős\n  and his mathematics\", Budapest, July 1999 (1999).\n-/\n\nopen Nat Set\n\nnamespace Erdos1141\n\n/--\nThe property that $n-k^2$ is prime for all $k$ with $(n,k)=1$ and $k^2 < n$.\n-/\ndef Erdos1141Prop (n : ℕ) : Prop :=\n  ∀ k, k ^ 2 < n → Coprime n k → (n - k ^ 2).Prime\n\ninstance (n : ℕ) : Decidable (Erdos1141Prop n) :=\n  decidable_of_iff (∀ k ≤ .sqrt (n - 1), Coprime n k → (n - k ^ 2).Prime) <| by\n    cases n with\n    | zero => simp [Erdos1141Prop]\n    | succ n' =>\n      simp [Erdos1141Prop, le_sqrt, pow_two]\n\n/--\nAre there infinitely many $n$ such that $n-k^2$ is prime for all $k$ with $(n,k)=1$ and $k^2 < n$?\n\nIn [Va99] it is asked whether $968$ is the largest integer with this property, but this is an\nerror, since for example $968-9=7\\cdot 137$.\n\nThe list of $n$ satisfying the given property is [A214583] in the OEIS. The largest known such $n$\nis $1722$.\n-/\n@[category research open, AMS 11]\ntheorem erdos_1141 :\n    answer(sorry) ↔ Infinite { n | Erdos1141Prop n } := by\n  sorry\n\n@[category test, AMS 11]\nexample : ¬ Erdos1141Prop 968 := by\n  decide +native\n\n@[category test, AMS 11]\nexample : Erdos1141Prop 1722 := by\n  decide +native\n\nend Erdos1141\n"
+}

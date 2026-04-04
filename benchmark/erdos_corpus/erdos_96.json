@@ -1,0 +1,19 @@
+{
+  "uuid": "erdos_96",
+  "problem": [
+    "If n points in ℝ^2 form a convex polygon then there are O(n) many pairs which are distance 1 apart."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 96,
+  "status": "open",
+  "tags": [
+    "geometry",
+    "distances",
+    "convex"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "If $n$ points in $\\mathbb{R}^2$ form a convex polygon then there are $O(n)$ many pairs which are distance $1$ apart.",
+  "additional_context": "Conjectured by Erdős and Moser. In \\cite{Er92e} Erdős credits the conjecture that the true upper bound is 2n to himself and Fishburn. F\\\"{u}redi \\cite{Fu90} proved an upper bound of O(n\\log n). A short proof of this bound was given by Brass and Pach \\cite{BrPa01}. The best known upper bound is≤ n\\log_2n+4n,due to Aggarwal \\cite{Ag15}.\n\nEdelsbrunner and Hajnal \\cite{EdHa91} have constructed n such points with 2n-7 pairs distance 1 apart. (This disproved an early stronger conjecture of Erdős and Moser, that the true answer was (5)/(3)n+O(1).)\n\nA positive answer would follow from [97]. See also [90].\n\nIn \\cite{Er92e} Erdős makes the stronger conjecture that, if g(x) counts the largest number of points equidistant from x in A, then∑_{x∈ A}g(x)< 4n.He notes that the example of Edelsbrunner and Hajnal shows that ∑_{x∈ A}g(x)>4n-O(1) is possible.\n\nReferences\n\n[Ag15] Aggarwal, Amol, On unit distances in a convex polygon. Discrete Math. (2015), 88-92.\n\n[BrPa01] Brass , Peter and Pach, J\\'{a}nos, The maximum number of times the same distance can occur among\nthe vertices of a convex {n}-gon is {O(n\\log n)}. J. Combin. Theory Ser. A (2001), 178-179.\n\n[EdHa91] Edelsbrunner, Herbert and Hajnal, P\\'{e}ter, A lower bound on the number of unit distances between the\nvertices of a convex polygon. J. Combin. Theory Ser. A (1991), 312-316.\n\n[Er92e] Erdős, P\\'{a}l, Some Unsolved problems in Geometry, Number Theory and Combinatorics. Eureka (1992), 44-48.\n\n[Fu90] F\\\"{u}redi, Zolt\\'{a}n, The maximum number of unit distances in a convex {n}-gon. J. Combin. Theory Ser. A (1990), 316-320.",
+  "reference_proof_hint": "Let $f(n)$ be the **maximum** possible number of pairs $\\\\{p,q\\\\}$ with (|p-q|=1), where (p_1,\\dots,p_n) are the vertices of a convex $n$-gon.\n\nYour claim “$f(n)=O(n)$” is **not known to be true or false**. It is a famous open problem of Erdős–Moser: they conjectured that (f(n)=\\Theta(n)), i.e. a linear bound should hold, but no accepted proof is known. \n\nWhat *is* known is:\n\n* **Best known general upper bound:**\n  [\n  f(n)\\le n\\log_2 n+4n,\n  ]\n  so in particular $f(n)=O(n\\log n)$. \n\n* **Best known general lower bound:** there are convex $n$-gons with at least\n  [\n  f(n)\\ge 2n-7\n  ]\n  unit-distance pairs. \n\n* **A special case where linear is proved:** if the convex $n$-gon is **centrally symmetric**, then\n  [\n  f_{\\text{sym}}(n)\\le 2n-3.\n  ]\n  ([California State University, Northridge][1])\n\nSo the correct “safe” statement right now is:\n\n[\n\\text{For vertices of a convex $n$-gon, the number of unit-distance pairs is } O(n\\log n),\n]\nand improving this to $O(n)$ is still open. \n\n[1]: https"
+}

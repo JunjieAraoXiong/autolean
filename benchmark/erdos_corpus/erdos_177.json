@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_177",
+  "problem": [
+    "Find the smallest h(d) such that the following holds. There exists a function f:ℕ→\\{-1,1\\} such that, for every d≥ 1,\\max_{P_d}\\left| ∑_{n∈ P_d}f(n)\\right|≤ h(d),where P_d ranges over all finite arithmetic progressions with common difference d."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 177,
+  "status": "open",
+  "tags": [
+    "discrepancy",
+    "arithmetic progressions"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Find the smallest $h(d)$ such that the following holds. There exists a function $f:\\mathbb{N}\\to\\{-1,1\\}$ such that, for every $d\\geq 1$,\\[\\max_{P_d}\\left\\lvert \\sum_{n\\in P_d}f(n)\\right\\rvert\\leq h(d),\\]where $P_d$ ranges over all finite arithmetic progressions with common difference $d$.",
+  "additional_context": "Cantor, Erdős, Schreiber, and Straus \\cite{Er66} proved that h(d)\\ll d! is possible. Van der Waerden's theorem implies that h(d)→ ∞. Beck \\cite{Be17} has shown that h(d) ≤ d^{8+\\epsilon} is possible for every \\epsilon>0. Roth's famous discrepancy lower bound \\cite{Ro64} implies that h(d)\\gg d^{1/2}.\n\nReferences\n\n[Be17] Beck, J\\'{o}zsef, A discrepancy problem: balancing infinite dimensional vectors. Number theory-Diophantine problems, uniform distribution\nand applications (2017), 61-82.\n\n[Er66] Erdős, P\\'al, Remarks on number theory. {V}. {E}xtremal problems in number\ntheory. {II}. Mat. Lapok (1966), 135--155.\n\n[Ro64] Roth, K. F., Remark concerning integer sequences. Acta Arith. (1964), 257-260.",
+  "reference_proof_hint": "Let\n\n[\nD_f(d):=\\max_{P_d}\\left|\\sum_{n\\in P_d} f(n)\\right|\n]\n\n[[nomath]](where $P_d$ runs over all finite arithmetic progressions with common difference $d$)[[/nomath]].\nYour question asks for the *smallest possible* function $h(d)$ for which there exists some (f:\\mathbb N\\to{-1,1}) with\n\n[\nD_f(d)\\le h(d)\\qquad\\text{for every }d\\ge 1.\n]\n\nThis exact “best” $h(d)$ is **not known**. What *is* known are the best current upper and lower bounds.\n\n## What is known (best bounds)\n\n### 1) $h(d)$ must go to infinity\n\nYou cannot have $h(d)$ bounded by a constant for all $d$. This already follows from van der Waerden–type phenomena: any 2‑coloring contains arbitrarily long monochromatic arithmetic progressions, which force large sums on some differences as $d$ grows. ([Erdős Problems][1])\n\nSo at minimum:\n[\nh(d)\\to\\infty.\n]\n\n### 2) Quantitative lower bound: at least about (\\sqrt d)\n\nA classical discrepancy lower bound of Roth implies that any such $h(d)$ must grow **at least on the order of** (d^{1/"
+}

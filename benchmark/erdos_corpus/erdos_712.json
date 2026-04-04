@@ -1,0 +1,19 @@
+{
+  "uuid": "erdos_712",
+  "problem": [
+    "Determine, for any k>r>2, the value of\\frac{\\mathrm{ex}_r(n,K_k^r)}{\\binom{n}{r}},where \\mathrm{ex}_r(n,K_k^r) is the largest number of r-edges which can placed on n vertices so that there exists no set of k vertices which is covered by all \\binom{k}{r} possible r-edges."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 712,
+  "status": "open",
+  "tags": [
+    "graph theory",
+    "turan number",
+    "hypergraphs"
+  ],
+  "prize": "$500",
+  "formalized_on_site": false,
+  "original_latex": "Determine, for any $k>r>2$, the value of\\[\\frac{\\mathrm{ex}_r(n,K_k^r)}{\\binom{n}{r}},\\]where $\\mathrm{ex}_r(n,K_k^r)$ is the largest number of $r$-edges which can placed on $n$ vertices so that there exists no set of $k$ vertices which is covered by all $\\binom{k}{r}$ possible $r$-edges.",
+  "additional_context": "Tur\\'{an proved} that, when r=2, this limit is(1)/(2)\\left(1-(1)/(k-1)\\right).Erdős \\cite{Er81} offered \\500 for the determination of this value for any fixed k>r>2, and \\1000 for 'clearing up the whole set of problems'.\n\nSee also [500] for the case r=3 and k=4.\n\nReferences\n\n[Er81] Erdős, P., On the combinatorial problems which I would most like to see solved. Combinatorica (1981), 25-42.",
+  "reference_proof_hint": "Let\n\n[\nf_{r,k}(n):=\\frac{\\mathrm{ex}_r(n,K_k^r)}{\\binom nr},\n]\n\ni.e. the **maximum edge–density** of an $r$-uniform hypergraph on $n$ vertices with no copy of the complete $r$-graph on $k$ vertices.\n\n## What is known in general\n\nA standard averaging argument shows that the sequence (f_{r,k}(n)) is **monotone decreasing in $n$**, hence it has a limit as (n\\to\\infty). This limit is called the **Turán density** of (K_k^r):\n\n[\n\\pi(K_k^r):=\\lim_{n\\to\\infty}\\frac{\\mathrm{ex}_r(n,K_k^r)}{\\binom nr}.\n]\n\nSo asymptotically,\n[\n\\mathrm{ex}*r(n,K_k^r)=\\bigl(\\pi(K_k^r)+o(1)\\bigr)\\binom nr,\n\\qquad\\text{equivalently}\\qquad\nf*{r,k}(n)=\\pi(K_k^r)+o(1).\n]\n\n\n## The punchline for (k>r>2)\n\nFor **every** (k>r\\ge 3), the exact value of (\\pi(K_k^r))—and therefore the asymptotic value of (f_{r,k}(n))—is a famous open problem in extremal combinatorics. In particular, *no* Turán density (\\pi(K_k^r)) is known exactly for any (k>r\\ge 3). ([Mathematics and Statistics at GSU][1])\n\nEven the smallest nontrivial case (r"
+}

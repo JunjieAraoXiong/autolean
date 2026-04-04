@@ -1,0 +1,19 @@
+{
+  "uuid": "erdos_521",
+  "problem": [
+    "Let (\\epsilon_k)_{k≥ 0} be independently uniformly chosen at random from \\{-1,1\\}. If R_n counts the number of real roots of f_n(z)=∑_{0≤ k≤ n}\\epsilon_k z^k then is it true that, almost surely,\\lim_{n→ ∞}(R_n)/(\\log n)=(2)/(\\pi)?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 521,
+  "status": "open",
+  "tags": [
+    "analysis",
+    "polynomials",
+    "probability"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $(\\epsilon_k)_{k\\geq 0}$ be independently uniformly chosen at random from $\\{-1,1\\}$. If $R_n$ counts the number of real roots of $f_n(z)=\\sum_{0\\leq k\\leq n}\\epsilon_k z^k$ then is it true that, almost surely,\\[\\lim_{n\\to \\infty}\\frac{R_n}{\\log n}=\\frac{2}{\\pi}?\\]",
+  "additional_context": "Erdős and Offord \\cite{EO56} showed that the number of real roots of a random degree n polynomial with \\pm 1 coefficients is ((2)/(\\pi)+o(1))\\log n.\n\nIt is ambiguous in \\cite{Er61} whether Erdős intended the coefficients to be uniformly chosen from \\{-1,1\\} or \\{0,1\\}. In the latter case, the constant (2)/(\\pi) should be (1)/(\\pi) (see the discussion in the comments).\n\nIn the case of \\{-1,1\\} Do \\cite{Do24} proved that, if R_n[-1,1] counts the number of roots in [-1,1], then, almost surely,\\lim_{n→ ∞}(R_n[-1,1])/(\\log n)=(1)/(\\pi).See also [522].\n\nReferences\n\n[Do24] Y. Do, A strong law of large numbers for real roots of random polynomials. arXiv:2403.06353 (2024).\n\n[EO56] Erd\\\"{o}s, Paul and Offord, A. C., On the number of real roots of a random algebraic equation. Proc. London Math. Soc. (3) (1956), 139-160.\n\n[Er61] Erdős, Paul, Some unsolved problems. Magyar Tud. Akad. Mat. Kutat\\'{o} Int. K\\\"{o}zl. (1961), 221-254.",
+  "reference_proof_hint": "Not with what’s currently proved.\n\nWhat *is* known for your Rademacher/Littlewood polynomials (f_n(x)=\\sum_{k=0}^n \\varepsilon_k x^k) is:\n\n* **Correct leading constant in expectation.** One has\n  [\n  \\mathbb E[R_n]=\\frac{2}{\\pi}\\log n+O(1),\n  ]\n  for i.i.d. coefficients with mild moment assumptions [[nomath]](in particular for Rademacher $\\pm 1$)[[/nomath]]. ([arXiv][1])\n\n* **Hence also the “(\\tfrac{2}{\\pi})” law in probability (and even a CLT).** There is a central limit theorem at scale (\\sqrt{\\log n}) for (N_n(\\mathbb R)) (the number of real roots), which in particular implies\n  [\n  \\frac{R_n}{\\log n}\\to \\frac{2}{\\pi}\n  \\quad\\text{in probability}.\n  ]\n  (One route: (R_n=\\mathbb E R_n+O_{\\mathbb P}(\\sqrt{\\log n})) together with (\\mathbb E R_n\\sim \\tfrac{2}{\\pi}\\log n).) \n\nWhat is **not** currently established is the **full almost-sure limit along *all* (n)**:\n[\n\\frac{R_n}{\\log n}\\stackrel{?}{\\longrightarrow}\\frac{2}{\\pi}\\quad\\text{a.s.}\n]\n\nThe strongest recent almost-sure statements "
+}

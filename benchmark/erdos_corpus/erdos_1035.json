@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_1035",
+  "problem": [
+    "Is there a constant c>0 such that every graph on 2^n vertices with minimum degree >(1-c)2^n contains the n-dimensional hypercube Q_n?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 1035,
+  "status": "open",
+  "tags": [
+    "graph theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Is there a constant $c>0$ such that every graph on $2^n$ vertices with minimum degree $>(1-c)2^n$ contains the $n$-dimensional hypercube $Q_n$?",
+  "additional_context": "Erdős \\cite{Er93} says 'if the conjecture is false, two related problems could be asked':\n{UL}\n{LI}Determine or estimate the smallest m>2^n such that every graph on m vertices with minimum degree >(1-c)2^n contains a Q_n, and {/LI}\n{LI}For which u_n is it true that every graph on 2^n vertices with minimum degree >2^n-u_n contains a Q_n.{/LI}\n{/UL}\n\nSee also [576] for the extremal number of edges that guarantee a Q_n.\n\nReferences\n\n[Er93] Erdős, Paul, Some of my favorite solved and unsolved problems in graph\ntheory. Quaestiones Math. (1993), 333-350.",
+  "reference_proof_hint": "As far as I can tell from the current literature, this is **open**: it is listed as **Erdős Problem #1035** (asked in [Er93]) and no constant (c>0) is currently known (nor is there a known counterexample ruling out all constants). ([Erdős Problems][1])\n\n### A standard “baseline” bound [[nomath]](but $c$ depends on $n$)[[/nomath]]\n\nLet (N=2^n). Your minimum–degree hypothesis\n[\n\\delta(G)>(1-c)N\n]\nis equivalent to saying the complement (\\overline G) has maximum degree\n[\n\\Delta(\\overline G)<cN.\n]\n\nNow use a classical graph *packing* theorem of **Sauer–Spencer (1978)**:\n\n> If $G,H$ are graphs on $N$ vertices and (2\\Delta(G)\\Delta(H)<N), then $G$ and $H$ pack [[nomath]](equivalently $H$ embeds into $\\overline G$)[[/nomath]]. \n\nApply this with (G=\\overline{G}) and (H=Q_n). Since (\\Delta(Q_n)=n), the condition becomes\n[\n2,\\Delta(\\overline G),n < N.\n]\nSo it is enough that (\\Delta(\\overline G) < \\frac{N}{2n}), i.e.\n[\n\\delta(G) ;>; N-\\frac{N}{2n}=\\\\(1-\\frac1{2n}\\\\)2^n.\n]\nThis proves the statement"
+}

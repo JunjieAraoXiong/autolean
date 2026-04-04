@@ -1,0 +1,15 @@
+{
+  "uuid": "erdos_268",
+  "problem": [
+    "Erdős Problem #268"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 268,
+  "status": "proved",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": true,
+  "ground_truth_lean": "/-\nCopyright 2025 The Formal Conjectures Authors.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    https://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n-/\n\nimport FormalConjectures.Util.ProblemImports\n\n/-!\n# Erdős Problem 268\n\n*Reference:*\n - [erdosproblems.com/268](https://www.erdosproblems.com/268)\n - [KoTa24] Kova\\vC, V. and Tao T., On several irrationality problems for Ahmes series.\n-/\n\nnamespace Erdos268\n\n/-- Let `X` be the set of points in `Fin d → ℝ` of the shape\n`fun i : Fin d => ∑' n : A, (1 : ℝ) / (n + i)` for some infinite subset `A ⊆ ℕ` such that\n`1 / n` is summable over `A`. `X` has nonempty interior. This is proved in [KoTa24].\n-/\n@[category research solved, AMS 40 54]\ntheorem erdos_268 (d : ℕ) : (interior {x : Fin d → ℝ | ∃ A : Set ℕ, A.Infinite ∧\n    Summable (fun n : A => (1 : ℝ) / n ) ∧\n    x = fun i : Fin d => ∑' n : A, (1 : ℝ) / (n + i)}).Nonempty := by\n  sorry\n\nend Erdos268\n"
+}

@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_595",
+  "problem": [
+    "Is there an infinite graph G which contains no K_4 and is not the union of countably many triangle-free graphs?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 595,
+  "status": "open",
+  "tags": [
+    "graph theory",
+    "set theory"
+  ],
+  "prize": "$250",
+  "formalized_on_site": false,
+  "original_latex": "Is there an infinite graph $G$ which contains no $K_4$ and is not the union of countably many triangle-free graphs?",
+  "additional_context": "A problem of Erdős and Hajnal. Folkman \\cite{Fo70} and Ne\\v{s}et\\v{r}il and R\\\"{o}dl \\cite{NeRo75} have proved that for every n≥ 1 there is a graph G which contains no K_4 and is not the union of n triangle-free graphs.\n\nSee also [582] and [596].\n\nReferences\n\n[Fo70] Folkman, Jon, Graphs with monochromatic complete subgraphs in every edge\ncoloring. SIAM J. Appl. Math. (1970), 19-24.\n\n[NeRo75] Ne\\u set\\u ril, Jaroslav and R\\\"odl, Vojt\\v ech, Type theory of partition properties of graphs.  (1975), 405-412.",
+  "reference_proof_hint": "No one knows in ZFC.\n\nLet me rewrite your question in a standard way.\nSaying that\n\n* $G$ is the union of countably many triangle‑free graphs\n\nmeans you can write (E(G)=\\bigcup_{n\\in\\omega}E_n) where each ((V(G),E_n)) has no triangle. This is the same as saying:\n\n* you can color the edges of $G$ with countably many colors so that **no triangle is monochromatic** (each color class is triangle‑free).\n\nSo your question is exactly:\n\n> Is there a (K_4)-free graph $G$ such that **every** edge‑coloring (c:E(G)\\to\\omega) contains a monochromatic triangle?\n\nThis is an old problem of Erdős. Shelah lists it as Question 8.11 and says the answer is **consistently yes**, but that **it is not clear whether ZFC proves it**. ([arXiv][1])\n\nA more recent survey by Reiher restates it (as Question 4.16) and again says it is open “provably in ZFC”, while noting that Shelah’s work gives consistency of a positive answer. \n\nOne easy side remark: if such a graph exists, it cannot be countable, because a countabl"
+}

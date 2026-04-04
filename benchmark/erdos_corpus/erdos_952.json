@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_952",
+  "problem": [
+    "Is there an infinite sequence of distinct Gaussian primes x_1,x_2,\\ldots such that| x_{n+1}-x_n| \\ll 1?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 952,
+  "status": "open",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": true,
+  "original_latex": "Is there an infinite sequence of distinct Gaussian primes $x_1,x_2,\\ldots$ such that\\[\\lvert x_{n+1}-x_n\\rvert \\ll 1?\\]",
+  "additional_context": "The Gaussian moat problem. This is not actually a problem of Erdős, but has been erroneously attributed to him in the past. In \\cite{Er77c} Erdős recalls: 'The conjecture was told me by Motzkin at the Pasadena number theory meeting 1963 November and it was apparently raised by Basil Gordon and Motzkin. I naturally liked it very much and told it right away to many people, naturally attributing it to Motzkin, but this was later forgotten. Thus the problem is returned to its rightful owners.'\n\nReferences\n\n[Er77c] Erdős, Paul, Problems and results on combinatorial number theory. III. Number theory day (Proc. Conf., Rockefeller Univ.,\nNew York, 1976) (1977), 43-72.",
+  "reference_proof_hint": "No one currently knows.\n\nYour question is exactly the **Gaussian moat problem**: view the Gaussian primes as vertices in a graph, connect two primes if their Euclidean distance is at most some fixed constant $C$, and ask whether there is an **infinite path** [[nomath]](equivalently, an infinite sequence $x_1,x_2,\\dots$ of distinct Gaussian primes with $|x_{n+1}-x_n|\\le C$)[[/nomath]]. This problem remains **unresolved** in the literature. ([MathWorld][1])\n\nWhat *is* known (partial progress):\n\n* **Small step sizes are provably/computationally insufficient (from the origin-component formulation).**\n  Gethner–Wagon–Wick (1998) showed that steps of length (<\\sqrt{26}) do not allow a walk to infinity (there is a “moat” of that width). ([MathWorld][1])\n  Tsuchimura (2004) pushed the computational barrier further, reporting that even for step size (k=\\sqrt{36}=6) the connected component containing the origin is finite [[nomath]](so there is a moat of width $6$ around that component)[[/nomath]",
+  "ground_truth_lean": "/-\nCopyright 2025 The Formal Conjectures Authors.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    https://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n-/\n\nimport FormalConjectures.Util.ProblemImports\n\n/-!\n# Erdős Problem 952\n\n*References:*\n- [erdosproblems.com/952](https://www.erdosproblems.com/952)\n- [Wikipedia](https://wikipedia.org/wiki/Gaussian_moat)\n-/\n\n\nnamespace Erdos952\n\n/--\nIs there an infinite sequence of distinct Gaussian primes $x_1,x_2,\\ldots$\nsuch that $\\lvert x_{n+1}-x_n\\rvert \\ll 1$?\n-/\n@[category research open, AMS 11]\ntheorem erdos_952 :\n  ∃ (x : ℕ → GaussianInt) (C : ℤ),\n    Function.Injective x ∧\n      ∀ n, Prime (x n) ∧ (x (n + 1) - x n).norm < C := by\n  sorry\n\nend Erdos952\n"
+}

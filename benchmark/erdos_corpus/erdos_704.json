@@ -1,0 +1,19 @@
+{
+  "uuid": "erdos_704",
+  "problem": [
+    "Let G_n be the unit distance graph in ℝ^n, with two vertices joined by an edge if and only if the distance between them is 1.\n\nEstimate the chromatic number \\chi(G_n). Does it grow exponentially in n? Does\\lim_{n→ ∞}\\chi(G_n)^{1/n}exist?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 704,
+  "status": "open",
+  "tags": [
+    "graph theory",
+    "geometry",
+    "chromatic number"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $G_n$ be the unit distance graph in $\\mathbb{R}^n$, with two vertices joined by an edge if and only if the distance between them is $1$.\n\nEstimate the chromatic number $\\chi(G_n)$. Does it grow exponentially in $n$? Does\\[\\lim_{n\\to \\infty}\\chi(G_n)^{1/n}\\]exist?",
+  "additional_context": "A generalisation of the Hadwiger-Nelson problem (which addresses n=2). Frankl and Wilson \\cite{FrWi81} proved exponential growth:\\chi(G_n) ≥ (1+o(1))1.2^n.The trivial colouring (by tiling with cubes) gives\\chi(G_n) ≤ (2+\\sqrt{n})^n.Larman and Rogers \\cite{LaRo72} improved this to\\chi(G_n) ≤ (3+o(1))^n,and conjecture the truth may be (2^{3/2}+o(1))^n. Prosanov \\cite{Pr20} has given an alternative proof of this upper bound.\n\nSee also [508], [705], and [706].\n\nReferences\n\n[FrWi81] Frankl, P. and Wilson, R. M., Intersection theorems with geometric consequences. Combinatorica (1981), 357-368.\n\n[LaRo72] Larman, D. G. and Rogers, C. A., The realization of distances within sets in Euclidean space. Mathematika (1972), 1-24.\n\n[Pr20] Prosanov, Roman, A new proof of the Larman-Rogers upper bound for the\nchromatic number of the Euclidean space. Discrete Appl. Math. (2020), 115-120.",
+  "reference_proof_hint": "Write (\\chi_n:=\\chi(G_n)). This is the usual **chromatic number of Euclidean space**\n$\n\\chi(\\mathbb R^n)=\\min\\\\{r:\\ \\mathbb R^n\\text{ can be colored with }r\\text{ colors and no unit-distance pair is monochromatic}\\\\}.\n$\n[[nomath]](Equivalently, $\\chi(G_n)$.)[[/nomath]] \n\n## What is known asymptotically?\n\n### Exponential lower bounds (so yes, it grows exponentially)\n\nErdős conjectured exponential growth, and Frankl–Wilson proved it: (\\chi(\\mathbb R^n)) grows exponentially in $n$. \n\nThe best currently recorded **asymptotic** bounds quoted in recent literature are\n[\n(1.239\\ldots+o(1))^n < \\chi(\\mathbb R^n) \\le (3+o(1))^n,\n]\nwith the lower bound attributed to Raigorodskii and the upper bound to Larman–Rogers. \n\nSo, in particular, (\\chi(G_n)) is sandwiched between two exponentials: there are constants (c_1>1) and (c_2<\\infty) such that\n[\nc_1^n \\lesssim \\chi(G_n)\\lesssim c_2^n,\n]\nand with the best published constants in that statement being (c_1\\approx 1.239) and (c_2=3) [[nomath]](up to the"
+}

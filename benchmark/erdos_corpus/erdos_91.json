@@ -1,0 +1,44 @@
+{
+  "uuid": "erdos_91",
+  "problem": [
+    "Suppose A⊂ ℝ^2 has | A|=n and minimises the number of distinct distances between points in A. Prove that for large n there are at least two (and probably many) such A which are non-similar."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 91,
+  "status": "open",
+  "tags": [
+    "geometry",
+    "distances"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Suppose $A\\subset \\mathbb{R}^2$ has $\\lvert A\\rvert=n$ and minimises the number of distinct distances between points in $A$. Prove that for large $n$ there are at least two (and probably many) such $A$ which are non-similar.",
+  "additional_context": "For n=3 the equilateral triangle is the only such set. For n=4 the square or two equilateral triangles sharing an edge give two non-similar examples.\n\nFor n=5 the regular pentagon is the unique such set (which has two distinct distances). Erdős mysteriously remarks in \\cite{Er90} this was proved by 'a colleague'. (In \\cite{Er87b} this is described as 'a colleague from Zagreb (unfortunately I do not have his letter)'.) A published proof of this fact is provided by Kov\\'{a}cs \\cite{Ko24c}.\n\nIn \\cite{Er87b} Erdős says that there are at least two non-similar examples for 6≤ n≤ 9.\n\nThe minimal possible number of distinct distances is the subject of [89].\n\nReferences\n\n[Er87b] Erdős, P., Some combinatorial and metric problems in geometry. Intuitive geometry (Si\\'{o}fok, 1985) (1987), 167-177.\n\n[Er90] Erdős, Paul, Some of my favourite unsolved problems. A tribute to Paul Erdős (1990), 467-478.\n\n[Ko24c] Z. Kov\\'{a}cs, A note on Erdős's mysterious remark. arXiv:2412.05190 (2024).",
+  "reference_proof_hint": "Let\n\n[\nD(A):=\\bigl|\\\\{|x-y|:x,y\\in A,\\ x\\neq y\\\\}\\bigr|\n]\n\nbe the number of **distinct** distances determined by $A$, and let\n\n[\nf(n):=\\min\\\\{D(A): A\\subset\\mathbb R^2,\\ |A|=n\\\\}.\n]\n\nSo the sets in the question are exactly the $A$ with (|A|=n) and (D(A)=f(n)).\n\nWe will show: for arbitrarily large $n$ there are (in fact, many) pairwise non-similar minimisers.\n\n---\n\n## 1) Two facts about $f(n)$\n\n### (a) $f(n)$ is nondecreasing and integer-valued\n\nIf (B\\subset A) then (D(B)\\le D(A)) (removing points cannot create new distances).\nSo (f(n+1)\\ge f(n)). Also (f(n)\\in\\mathbb Z).\n\n### (b) $f(n)=o(n)$\n\nThis is the classical Erdős upper bound coming from the (\\sqrt n\\times \\sqrt n) integer grid.\n\nTake (m=\\lceil\\sqrt n\\rceil) and take $n$ points from the grid ({1,\\dots,m}^2).\nEvery squared distance in this grid is of the form $a^2+b^2$ with (|a|,|b|\\le m-1), so\n\n[\nD(A)\\le #\\\\{a^2+b^2:\\ |a|,|b|\\le m-1\\\\}\n\\le #\\\\{k\\le 2(m-1)^2:\\ k=a^2+b^2 \\text{ for some }a,b\\in\\mathbb Z\\\\}.\n]\n\nA classical theorem o",
+  "expert_comments": [
+    {
+      "author": "",
+      "text": "Small typo: \"sufficently\" should be \"sufficiently\"."
+    },
+    {
+      "author": "Dogmachine",
+      "text": "Clarifying that \"large n\" means \"all sufficiently large n\" rather than \"for infinitely many (arbitrarily large) n\"? Otherwise I'm guessing the problem would be too simple (via a plateau argument)."
+    },
+    {
+      "author": "Neel Somani",
+      "text": "The wording in [Er87b, p.121] clearly uses the \"all sufficiently large $n$\" interpretation.  (But note that $A$ should be viewed as dependent on $n$, so the \"for large $n$\" in the problem statement above may be more accurately placed at the beginning of the problem rather than in the middle.)\n      \n      \n      \n(The site has been updated to address this comment.)"
+    },
+    {
+      "author": "TerenceTao",
+      "text": "Thanks, I was indeed looking at the wrong paper. (Feel free to delete those comments...)"
+    },
+    {
+      "author": "Moritz Firsching",
+      "text": "Regarding \"In [Er87b] Erdős says that there are at least two non-similar examples for $6\\le n\\le 9$\":\nWhere does it say that in [Er87b]? I only see a general statement \"for some $n \\ge 6$ for large $n$; this probably will not be easy \" on page 150. Might the claim about $6\\le n \\le9$ come from some other paper?"
+    },
+    {
+      "author": "Moritz Firsching",
+      "text": "This is given on p. 171 - he says for $n=6,7,8$ \"it is easy to see that there is no uniqueness here\", and mentions for $n=9$ the examples of a regular nonagon and the six vertices of a regular hexagon, its centre, and the mirror images of the centre with respect to the two neighbouring sides (the latter example given by Hegyi).\n\nThere is in fact no page 150 in [Er87b], so perhaps you're looking at the wrong paper?"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_585",
+  "problem": [
+    "What is the maximum number of edges that a graph on n vertices can have if it does not contain two edge-disjoint cycles with the same vertex set?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 585,
+  "status": "open",
+  "tags": [
+    "graph theory",
+    "cycles"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "What is the maximum number of edges that a graph on $n$ vertices can have if it does not contain two edge-disjoint cycles with the same vertex set?",
+  "additional_context": "Pyber, R\\\"{o}dl, and Szemer\\'{e}di \\cite{PRS95} constructed such a graph with \\gg n\\log\\log n edges.\n\nChakraborti, Janzer, Methuku, and Montgomery \\cite{CJMM24} have shown that such a graph can have at most n(\\log n)^{O(1)} many edges. Indeed, they prove that there exists a constant C>0 such that for any k≥ 2 there is a c_k such that if a graph has n vertices and at least c_kn(\\log n)^{C} many edges then it contains k pairwise edge-disjoint cycles with the same vertex set.\n\nReferences\n\n[CJMM24] Chakraborti, D. and Janzer, O. and Methuku, A. and Montgomery, R., Edge-disjoint cycles with the same vertex set. arXiv:2404.07190 (2024).\n\n[PRS95] Pyber, L. and R\\\"{o}dl, V. and Szemer\\'{e}di, E., Dense subgraphs without 3-regular subgraphs. Journal of Combinatorial Theory, Series B (1995), 41-54.",
+  "reference_proof_hint": "Let $f(n)$ be the maximum number of edges in an $n$-vertex (simple) graph that **does not** contain two **edge-disjoint** cycles with the **same vertex set**.\n\nThis is a classical question of **Erdős (1975)**, and the exact value of $f(n)$ is **not known** in general. ([arXiv][1])\n\nWhat *is* known (best current bounds):\n\n* **Lower bound:**\n  There exist $n$-vertex graphs with\n  [\n  f(n)\\ \\ge\\ c, n\\log\\log n\n  ]\n  edges [[nomath]](for some absolute constant $c>0$)[[/nomath]] that still avoid having two edge-disjoint cycles on the same vertex set. This comes from a construction of Pyber–Rödl–Szemerédi [[nomath]](via graphs with no $4$-regular subgraphs)[[/nomath]], and it implies the growth cannot be purely linear in $n$. ([arXiv][1])\n\n* **Upper bound (2024/2025 breakthrough):**\n  Chakraborti–Janzer–Methuku–Montgomery proved that there is a constant $t$ such that any $n$-vertex graph with at least\n  [\n  C, n(\\log n)^t = n\\cdot \\mathrm{polylog}(n)\n  ]\n  edges must contain (in fact) $k$ ed"
+}

@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_858",
+  "problem": [
+    "Let A⊆ \\{1,\\ldots,N\\} be such that there is no solution to at=b with a,b∈ A and the smallest prime factor of t is >a. Estimate the maximum of(1)/(\\log N)∑_{n∈ A}(1)/(n)."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 858,
+  "status": "open",
+  "tags": [
+    "number theory",
+    "primitive sets"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $A\\subseteq \\{1,\\ldots,N\\}$ be such that there is no solution to $at=b$ with $a,b\\in A$ and the smallest prime factor of $t$ is $>a$. Estimate the maximum of\\[\\frac{1}{\\log N}\\sum_{n\\in A}\\frac{1}{n}.\\]",
+  "additional_context": "Alexander \\cite{Al66} and Erdős, S\\'{a}rk\\\"{o}zi, and Szemer\\'{e}di \\cite{ESS68} proved that this maximum is o(1) (as N→ ∞). This condition on A is a weaker form of the usual primitive condition. If A is primitive then Behrend \\cite{Be35} proved(1)/(\\log N)∑_{n∈ A}(1)/(n)\\ll (1)/(\\sqrt{\\log\\log N)}.An example of such a set A is the set of all integers in [N^{1/2},N] divisible by some prime >N^{1/2}.\n\nSee also [143].\n\nReferences\n\n[Al66] Alexander, Ralph, Density and multiplicative structure of sets of integers. Acta Arith. (1966/67), 321--332.\n\n[Be35] Behrend, F., On sequences of numbers not divisible by another. London Math. Soc. Journal (1935), 42-45.\n\n[ESS68] Erdős, P. and S\\'{a}rk\\\"ozi, A. and Szemer\\'{e}di, E., On the solvability of certain equations in sequences of\npositive upper logarithmic density. J. London Math. Soc. (1968), 71--78.",
+  "reference_proof_hint": "Write (P^{-}(m)) for the smallest prime factor of $m$ [[nomath]](and ignore the case $t=1$, which is harmless)[[/nomath]].\nDefine a relation on ({2,\\dots,N}) by\n[\na\\prec b \\quad\\Longleftrightarrow\\quad b=a,t\\ \\text{ with }\\ P^{-}(t)>a .\n]\nYour hypothesis on $A$ is exactly that $A$ is an **antichain** in this poset: no two distinct elements of $A$ are comparable under (\\prec).\n\n### 1) The key structural simplification: the poset is a forest\n\nFix $b$. Suppose (a_1\\prec b) and (a_2\\prec b) with (a_1<a_2). Then (a_2=a_1 s) where (s\\mid (b/a_1)). But (b/a_1) has all prime factors (>a_1) [[nomath]](because $P^-(b/a_1)>a_1$)[[/nomath]], hence every divisor $s$ of (b/a_1) also satisfies (P^{-}(s)>a_1). Therefore (a_1\\prec a_2).\n\nSo **all predecessors of a given $b$ are linearly ordered**, hence each $b$ has **at most one immediate predecessor** (its maximal predecessor). This means the Hasse diagram of $({2,\\dots,N},\\prec)$ is a **rooted forest**.\n\nYou can describe the maximal predecessor expl"
+}

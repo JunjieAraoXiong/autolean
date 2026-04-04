@@ -1,0 +1,36 @@
+{
+  "uuid": "erdos_1063",
+  "problem": [
+    "Let k≥ 2 and define n_k≥ 2k to be the least value of n such that n-i divides \\binom{n}{k} for all but one 0≤ i<k. Estimate n_k."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 1063,
+  "status": "open",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": true,
+  "original_latex": "Let $k\\geq 2$ and define $n_k\\geq 2k$ to be the least value of $n$ such that $n-i$ divides $\\binom{n}{k}$ for all but one $0\\leq i<k$. Estimate $n_k$.",
+  "additional_context": "A problem of Erdős and Selfridge posed in \\cite{ErSe83}. Erdős and Selfridge noted (and a proof can be found in \\cite{Mo85}) that if n≥ 2k then there must exist at least one 0≤ i<k such that n-i does not divide \\binom{n}{k}.\n\nWe have n_2=4, n_3=6, n_4=9, and n_5=12. Monier \\cite{Mo85} observed that n_k≤ k! for k≥ 3, since \\binom{k!}{k} is divisible by k!-i for 1≤ i<k. Cambie observes in the comments that this can be improved ton_k≤ k[2,3,\\ldots,k-1]≤ e^{(1+o(1))k},where [\\cdots] is the least common multiple.\n\nThis is discussed in problem B31 of Guy's collection \\cite{Gu04}.\n\nReferences\n\n[ErSe83] Erdos, P. and Selfridge, J. L., Problem 6447. Amer. Math. Monthly (1983), 710.\n\n[Gu04] Guy, Richard K., Unsolved problems in number theory.  (2004), xviii+437.\n\n[Mo85] No reference found.",
+  "reference_proof_hint": "Write\n[\n\\binom nk=\\frac{n(n-1)\\cdots(n-k+1)}{k!}.\n]\nFor (m=n-i) [[nomath]](with $0\\le i<k$)[[/nomath]] we have\n$\n\\frac{\\binom nk}{m}=\\frac{\\prod_{0\\le j<k,\\ j\\ne i}(n-j)}{k!}.\n$\nHence\n$\nm\\mid \\binom nk \\quad\\Longleftrightarrow\\quad k!\\mid \\prod_{0\\le j<k,\\ j\\ne i}(n-j).\n$\nEquivalently, in $p$-adic valuations,\n$\nm\\mid \\binom nk\\quad\\Longleftrightarrow\\quad v_p(m)\\le v_p\\\\(\\binom nk\\\\)\\ \\text{ for every prime }p\\le k\n$\n[[nomath]](primes $>k$ never appear in $k!$, so they are never cancelled and cause no obstruction)[[/nomath]].\n\nThe growth of (n_k) is dictated by the “large” primes $p$ with (p>\\sqrt{k}). For such primes, (p^2>k), so in $k!$ the exponent is just\n[\nv_p(k!)=\\\\\\lfloor\\frac{k}{p}\\\\\\rfloor=:j.\n]\nAmong any $k$ consecutive integers, the count of multiples of $p$ is either $j$ or $j+1$ [[nomath]](because $k<(j+2)p$)[[/nomath]]. Ignoring the very rare event that one of these multiples is divisible by (p^2) (which does not affect the main asymptotics), we get\n[\nv_p\\\\(\\binom nk\\\\)\\i",
+  "ground_truth_lean": "/-\nCopyright 2026 The Formal Conjectures Authors.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    https://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n-/\n\nimport FormalConjectures.Util.ProblemImports\n\n/-!\n# Erdős Problem 1063\n\n*References:*\n * [erdosproblems.com/1063](https://www.erdosproblems.com/1063)\n * [ErSe83] Erdos, P. and Selfridge, J. L., Problem 6447. Amer. Math. Monthly (1983), 710.\n * [Gu04] Guy, Richard K., _Unsolved problems in number theory_. (2004), Problem B31.\n * [Mo85] Monier (1985). No reference found.\n-/\n\nopen Filter Real\nopen scoped Nat Topology\n\nnamespace Erdos1063\n\n/--\nLet $n_k$ be the least $n \\ge 2k$ such that all but one of the integers $n - i$ with\n$0 \\le i < k$ divide $\\binom{n}{k}$.\n-/\nnoncomputable def n (k : ℕ) : ℕ :=\n  sInf {m | 2 * k ≤ m ∧ ∃ i0 < k, ¬ (m - i0) ∣ m.choose k ∧\n    ∀ i < k, i ≠ i0 → (m - i) ∣ m.choose k}\n\n/--\nEstimate $n_k$ by finding a better upper bound.\n-/\n@[category research open, AMS 11]\ntheorem erdos_1063.better_upper :\n    let upper_bound : ℕ → ℝ := answer(sorry)\n    (fun k => (n k : ℝ)) =O[atTop] upper_bound ∧\n    upper_bound =o[atTop] fun k =>\n      (k : ℝ) * ((Finset.Icc 1 (k - 1)).lcm (fun n : ℕ => n) : ℝ) := by\n  sorry\n\n/--\nErdős and Selfridge noted that, for $n \\ge 2k$ with $k \\ge 2$, at least one of the numbers\n$n - i$ for $0 \\le i < k$ fails to divide $\\binom{n}{k}$ ([ErSe83]).\n-/\n@[category research solved, AMS 11]\ntheorem erdos_1063.variants.exists_exception {n k : ℕ} (hk : 2 ≤ k) (h : 2 * k ≤ n) :\n    ∃ i < k, ¬ (n - i) ∣ n.choose k := by\n  sorry\n\n/-- The initial values satisfy $n_2 = 4$, $n_3 = 6$, $n_4 = 9$, and $n_5 = 12$ ([Gu04], Problem B31). -/\n@[category research solved, AMS 11]\ntheorem erdos_1063.variants.small_values :\n    n 2 = 4 ∧ n 3 = 6 ∧ n 4 = 9 ∧ n 5 = 12 := by\n  sorry\n\n/-- Monier observed that $n_k \\le k!$ for $k \\ge 3$ ([Mo85]).\nTODO: Find reference\n-/\n@[category research solved, AMS 11]\ntheorem erdos_1063.variants.monier_upper_bound {k : ℕ} (hk : 3 ≤ k) :\n    n k ≤ k ! := by\n  sorry\n\n/-- [Cambie observed](https://www.erdosproblems.com/1063) the improved bound\n$n_k \\le k \\cdot \\operatorname{lcm}(1, \\dotsc, k - 1)$. -/\n@[category research solved, AMS 11]\ntheorem erdos_1063.variants.cambie_upper_bound {k : ℕ} (hk : 3 ≤ k) :\n    n k ≤ k * (Finset.Icc 1 (k - 1)).lcm id := by\n  sorry\n\n/-- The least common multiple bound implies $n_k \\le \\exp((1 + o(1))k)$. -/\n@[category research solved, AMS 11]\ntheorem erdos_1063.variants.exp_upper_bound :\n    ∃ f : ℕ → ℝ, Tendsto f atTop (𝓝 0) ∧\n      ∀ k, (n k : ℝ) ≤ exp ((1 + f k) * k) := by\n  sorry\n\nend Erdos1063\n",
+  "expert_comments": [
+    {
+      "author": "",
+      "text": "OEIS: A389360\n      \n      \n      \n(The site has been updated to address this comment.)"
+    },
+    {
+      "author": "StijnC",
+      "text": "Small observation related to the one by Monier:\n$n_k\\le  k \\cdot lcm( \\{2,3,\\ldots,k-1\\})$ by the same reason for $k \\ge 3$.\n\nThis implies an exponential upper bound $\\exp((1+o(1))n).$"
+    },
+    {
+      "author": "StijnC",
+      "text": "The behaviour could be exponential.\nHereby it is not sure if it is of the form $c^{(1+o(1))n}$ for some constant $c$, or there is an exponential lower- and upper-bound of the latter form, but $1/k \\log n_k$ does not converge.\nThe minimum and maximum of $n_k^{1/k}$ for $k \\le 37$ were attained in $k=10$ and $k=31$ with $(n_k)^{1/k} \\sim 2.178$ and $(n_k)^{1/k} \\sim 1.337$ respectively.\n\nAs a test, I checked the distribution of the number of $0 \\le i <k$ for which $n-i$ is not a divisor of $\\binom n k$, for $2k \\le n \\le n_k$.\nFor $k=23$ this gave e.g. \n$[0,\n 1,\n 4,\n 26,\n 131,\n 299,\n 432,\n 453,\n 428,\n 254,\n 165,\n 121,\n 87,\n 56,\n 57,\n 45,\n 20,\n 14,\n 2]$\n\n(no more than $18$ numbers i were bad here, but letting $n$ above $n_k$, one can reach higher numbers as well)\n\n(The distribution seems not to be approximated by a binomial distribution)"
+    },
+    {
+      "author": "StijnC",
+      "text": "Remark: the sequence $(n_k)_k$ is not monotone.\nThat implies that it is even harder to decide when this question is settled..."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_153",
+  "problem": [
+    "Let A be a finite Sidon set and A+A=\\{s_1<\\cdots<s_t\\}. Is it true that(1)/(t)∑_{1≤ i<t}(s_{i+1}-s_i)^2 → ∞as | A|→ ∞?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 153,
+  "status": "open",
+  "tags": [
+    "sidon sets"
+  ],
+  "prize": "no",
+  "formalized_on_site": true,
+  "original_latex": "Let $A$ be a finite Sidon set and $A+A=\\{s_1<\\cdots<s_t\\}$. Is it true that\\[\\frac{1}{t}\\sum_{1\\leq i<t}(s_{i+1}-s_i)^2 \\to \\infty\\]as $\\lvert A\\rvert\\to \\infty$?",
+  "additional_context": "A similar problem can be asked for infinite Sidon sets.",
+  "reference_proof_hint": "This exact question is (as far as I can find) **still open**.\n\nIt is stated as an open problem by Erdős–Sárközy–Sós (1994), and it is still listed as **OPEN** on the Erdős Problems site. ([Erdős Problems][1])\n\n### What is known around it\n\nWrite (n=|A|). For a Sidon set [[nomath]](in the usual “all sums $a+b$ with $a\\le b$ are distinct” sense)[[/nomath]], we have\n[\nt=|A+A|=\\frac{n(n+1)}2.\n]\n\nPeople have proved some facts about **single large gaps** in $A+A$, and also given constructions where gaps are **not too large**:\n\n* Erdős–Sárközy–Sós proved that for every finite Sidon set $A$, the **largest gap** in $A+A$ is at least a constant times (\\log |A|). ([arXiv][2])\n  (So the gaps do grow at least a bit.)\n\n* They also constructed Sidon sets (A\\subset[1,N]) whose sumset has **no gap longer than (3\\sqrt N)** (so, in that model, the largest gap can be “not crazy large”). ([arXiv][2])\n\n* Ruzsa (1996) improved several bounds/constructions: for Sidon sets (A\\subset[1,N]) he gives constructions",
+  "ground_truth_lean": "/-\nCopyright 2026 The Formal Conjectures Authors.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    https://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n-/\nimport FormalConjectures.Util.ProblemImports\n\n/-!\n# Erdős Problem 153\n\n#TODO: Formalize the corresponding conjecture for infinite Sidon sets.\n\n*References:*\n - [erdosproblems.com/153](https://www.erdosproblems.com/153)\n - [ESS94] Erdős, P. and Sárközy, A. and Sós, T., On Sum Sets of Sidon Sets, I. Journal of Number\n    Theory (1994), 329-347.\n-/\n\nopen scoped Pointwise\nopen Filter Finset Nat\n\nnamespace Erdos153\n\n/-- Define `f n` to be the minimum of\n`∑ (i : Set.Ico 1 ((A + A).card), (s i - s (i - 1)) ^ 2 / n` as `A` ranges over all Sidon sets\nof size `n`, where `s` is an order embedding from `Fin n` into `A`. -/\nnoncomputable def f (n : ℕ) : ℝ := ⨅ A : {A : Finset ℕ | A.card = n ∧ IsSidon (A : Set ℕ)},\n  let s := (A.1 + A).orderIsoOfFin rfl\n  ∑ i : Set.Ico 1 ((A.1 + A).card), (s ⟨i, i.2.2⟩ - s ⟨i - 1, by grind⟩) ^ 2 / (n : ℝ)\n\n/-- Must `lim f n = ∞`? -/\n@[category research open, AMS 5]\ntheorem erdos_153 : answer(sorry) ↔ Tendsto f atTop atTop := by\n  sorry\n\nend Erdos153\n"
+}

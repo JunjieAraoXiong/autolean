@@ -1,0 +1,19 @@
+{
+  "uuid": "erdos_410",
+  "problem": [
+    "Let \\sigma_1(n)=\\sigma(n), the sum of divisors function, and \\sigma_k(n)=\\sigma(\\sigma_{k-1}(n)). Is it true that\\lim_{k→ ∞} \\sigma_k(n)^{1/k}=∞?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 410,
+  "status": "open",
+  "tags": [
+    "number theory",
+    "iterated functions"
+  ],
+  "prize": "no",
+  "formalized_on_site": true,
+  "original_latex": "Let $\\sigma_1(n)=\\sigma(n)$, the sum of divisors function, and $\\sigma_k(n)=\\sigma(\\sigma_{k-1}(n))$. Is it true that\\[\\lim_{k\\to \\infty} \\sigma_k(n)^{1/k}=\\infty?\\]",
+  "additional_context": "This is discussed in problem B9 of Guy's collection \\cite{Gu04}.\n\nReferences\n\n[Gu04] Guy, Richard K., Unsolved problems in number theory.  (2004), xviii+437.",
+  "reference_proof_hint": "Not known in general.\n\n* If you allow **(n=1)**, then it is **false**: (\\sigma(1)=1), so (\\sigma_k(1)=1) for all $k$ and (\\sigma_k(1)^{1/k}=1).\n\n* For every **fixed (n>1)**, the question\n  [\n  \\lim_{k\\to\\infty}\\sigma_k(n)^{1/k}\\stackrel{?}{=}\\infty\n  ]\n  is a well-known **open problem of Erdős** (Erdős problem #410). ([Erdős Problems][1])\n\nThis is exactly statement (iii) in the list of six questions on iterating (\\sigma) discussed by Cohen & te Riele (1996), where they say (following Erdős et al.) that they could not prove or disprove it, but provide computational evidence supporting it. \n\n### What evidence/heuristics suggest\n\n* Cohen & te Riele computed large iterates for many starting values $n$ and found behavior consistent with\n  [\n  \\big(\\sigma_k(n)\\big)^{1/k}\\ \\text{growing at least on the order of }\\ \\log k,\n  ]\n  based on their normalization (h(n)=\\frac{(\\sigma_m(n))^{1/m}}{\\log m}) staying around a constant (\\approx 1.1) in the data they could reach. \n\n* For the specific orbit",
+  "ground_truth_lean": "/-\nCopyright 2025 The Formal Conjectures Authors.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    https://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n-/\n\nimport FormalConjectures.Util.ProblemImports\n\n/-!\n# Erdős Problem 410\n\n*Reference:* [erdosproblems.com/410](https://www.erdosproblems.com/410)\n-/\n\nopen ArithmeticFunction Filter\n\nnamespace Erdos410\n\n/--\nLet $σ_1(n) = σ(n)$, the sum of divisors function, and $σ_k(n) = σ(σ_{k-1}(n))$.\n\nIs it true that $\\lim_{k → ∞} σ_k(n)^{\\frac 1 k} = ∞$?\n\nThis is problem (iii) from\nErdos, Granville, Pomerance, Spiro\n\"On the normal behavior of the iterates of some arithmetical functions\"\n(page 169 of the book \"Analytic Number Theory\", 1990).\n-/\n@[category research open, AMS 11]\ntheorem erdos_410 : answer(sorry) ↔ ∀ n > 1,\n    Tendsto (fun k : ℕ ↦ ((sigma 1)^[k] n : ℝ) ^ (1 / (k : ℝ))) atTop atTop := by\n  sorry\n\nend Erdos410\n"
+}

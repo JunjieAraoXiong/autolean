@@ -1,0 +1,15 @@
+{
+  "uuid": "erdos_1183",
+  "problem": [
+    "Erdős Problem #1183"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 1183,
+  "status": "open",
+  "tags": [
+    "combinatorics",
+    "ramsey theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false
+}

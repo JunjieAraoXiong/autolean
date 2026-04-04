@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_953",
+  "problem": [
+    "Let A⊂ \\{ x∈ ℝ^2 : | x| <r\\} be a measurable set with no integer distances, that is, such that | a-b| \\not∈ ℤ for any distinct a,b∈ A. How large can the measure of A be?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 953,
+  "status": "open",
+  "tags": [
+    "geometry",
+    "distances"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $A\\subset \\{ x\\in \\mathbb{R}^2 : \\lvert x\\rvert <r\\}$ be a measurable set with no integer distances, that is, such that $\\lvert a-b\\rvert \\not\\in \\mathbb{Z}$ for any distinct $a,b\\in A$. How large can the measure of $A$ be?",
+  "additional_context": "A problem of Erdős and S\\'{a}rk\\\"{o}zi. Erdős \\cite{Er77c} writes that 'S\\'{a}rk\\\"{o}zi has the sharpest results, but nothing has been published yet'.\n\nThe trivial upper bound is O(r). Kovac has observed that S\\'{a}rk\\\"{o}zy's lower bound in [466] can be adapted to give a lower bound of \\gg r^{0.26} for this problem.\n\nSee also [465] for a similar problem (concerning upper bounds) and [466] for a similar problem (concerning lower bounds).\n\nReferences\n\n[Er77c] Erdős, Paul, Problems and results on combinatorial number theory. III. Number theory day (Proc. Conf., Rockefeller Univ.,\nNew York, 1976) (1977), 43-72.",
+  "reference_proof_hint": "Let\n[\nm(r):=\\sup\\\\{|A|:\\ A\\subset B(0,r)\\subset\\mathbb R^2\\text{ measurable and }|a-b|\\notin\\mathbb Z\\ \\forall a\\neq b\\in A\\\\},\n]\nwhere (|A|) is planar Lebesgue measure (area).\n\nThis is an open Erdős–Sárközy problem; what is known is that $m(r)$ grows at most linearly in $r$, and there is a (much smaller) known power-type lower bound. ([Erdős Problems][1])\n\n## A clean linear upper bound: (m(r)\\le 2r)\n\nKey 1D fact:\n\n**Lemma (1D bound).** If (S\\subset\\mathbb R) is measurable and (|s-t|\\notin\\mathbb Z) for all distinct (s,t\\in S), then (|S|\\le 1).\n\n*Proof.* For each (n\\in\\mathbb Z), let (S_n:=S\\cap[n,n+1)). Consider the translated sets (T_n:=S_n-n\\subset[0,1)).\nIf (T_n\\cap T_m\\neq\\emptyset) for (n\\neq m), then there exist (x\\in S_n), (y\\in S_m) with (x-n=y-m), hence (x-y=n-m\\in\\mathbb Z), contradiction. Thus the (T_n) are disjoint subsets of $[0,1)$. Therefore\n[\n|S|=\\sum_n |S_n|=\\sum_n |T_n|=\\left|\\bigcup_n T_n\\right|\\le |[0,1)|=1.\n]\n∎\n\nNow apply this lemma to horizontal slices of $A$. Fo"
+}

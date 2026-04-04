@@ -1,0 +1,19 @@
+{
+  "uuid": "erdos_234",
+  "problem": [
+    "For every c≥ 0 the density f(c) of integers for which\\frac{p_{n+1}-p_n}{\\log n}< cexists and is a continuous function of c."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 234,
+  "status": "open",
+  "tags": [
+    "number theory",
+    "primes"
+  ],
+  "prize": "no",
+  "formalized_on_site": true,
+  "original_latex": "For every $c\\geq 0$ the density $f(c)$ of integers for which\\[\\frac{p_{n+1}-p_n}{\\log n}< c\\]exists and is a continuous function of $c$.",
+  "additional_context": "See also [5].",
+  "reference_proof_hint": "Let (d_n := p_{n+1}-p_n). The statement you wrote is asking for a **limiting distribution** of the normalized gaps\n[\n\\frac{d_n}{\\log n}\n]\nin the following very strong sense:\n\nDefine (if it exists)\n\n$$\nf(c)\\ :=\\ \\lim_{N\\to\\infty}\\frac{1}{N}|\\\\{1\\le n\\le N:\\ \\frac{d_n}{\\log n}<c\\\\}|,\\qquad c\\ge 0.\n$$\n\nErdős asked whether **this limit exists for every (c\\ge 0)** and whether the resulting function $f(c)$ is **continuous**.\n\n### Status: open\n\nThis is **open** (Erdős problem #234), i.e. currently unproved for the actual primes. ([Erdős Problems][1])\n\n---\n\n## What is expected if primes behaved “randomly”?\n\nA standard heuristic is that primes near size (x) behave like a Poisson process with intensity (\\approx 1/\\log x). In that model, **waiting times** (gaps) are exponential, so the normalized gaps (d_n / \\log x) have an exponential distribution, which would give\n[\nf(c)\\ =\\ 1-e^{-c}.\n]\n\nMore than just heuristics: Gallagher showed that a sufficiently strong Hardy–Littlewood prime tuples conject",
+  "ground_truth_lean": "/-\nCopyright 2026 The Formal Conjectures Authors.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    https://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n-/\n\nimport FormalConjectures.Util.ProblemImports\n\n/-!\n# Erdős Problem 234\n\n*Reference:* [erdosproblems.com/234](https://www.erdosproblems.com/234)\n-/\n\nopen Real Set\nopen scoped NNReal\n\nnamespace Erdos234\n\n/--\nIs it true that for all `c ≥ 0`, the density `f c` of integers for which\n`(p (n + 1) - p n) / log n < c` exists and is a continuous function of `c`?\n-/\n@[category research open, AMS 11]\ntheorem erdos_234 : answer(sorry) ↔ ∃ f : ℝ≥0 → ℝ, Continuous f ∧\n    ∀ c : ℝ≥0, HasDensity {n : ℕ | primeGap n / log n < c} (f c) := by\n  sorry\n\nend Erdos234\n"
+}

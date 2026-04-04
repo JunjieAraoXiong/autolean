@@ -1,0 +1,20 @@
+{
+  "uuid": "erdos_593",
+  "problem": [
+    "Characterize those finite 3-uniform hypergraphs which appear in every 3-uniform hypergraph of chromatic number >\\aleph_0."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 593,
+  "status": "open",
+  "tags": [
+    "set theory",
+    "graph theory",
+    "hypergraphs",
+    "chromatic number"
+  ],
+  "prize": "$500",
+  "formalized_on_site": false,
+  "original_latex": "Characterize those finite 3-uniform hypergraphs which appear in every 3-uniform hypergraph of chromatic number $>\\aleph_0$.",
+  "additional_context": "Similar problems were investigated by Erdős, Galvin, and Hajnal \\cite{EGH75}. Erdős claims that for graphs the problem is completely solved: a graph of chromatic number ≥ \\aleph_1 must contain all finite bipartite graphs but need not contain any fixed odd cycle.\n\nReferences\n\n[EGH75] Erdős, P. and Galvin, F. and Hajnal, A., On set-systems having large chromatic number and not containing prescribed subsystems.  (1975), 425--513.",
+  "reference_proof_hint": "Let $F$ be a **finite 3‑uniform hypergraph** (a “triple system”). Call $F$ **obligatory** (aka *unavoidable*) if **every** 3‑uniform hypergraph $H$ with (\\chi(H)>\\aleph_0) contains a (not necessarily induced) copy of $F$. This is exactly the notion used in the modern literature on “obligatory hypergraphs”. ([arXiv][1])\n\nA **complete characterization for 3‑uniform hypergraphs is not known**; it is an Erdős problem and remains open. ([Erdős Problems][2])\n\nWhat *is* known is a fairly sharp collection of **necessary conditions** and several large **sufficient families**.\n\n## Necessary conditions for being unavoidable\n\nThese are hard obstructions: if $F$ fails any of them, then $F$ is **not** forced by (\\chi>\\aleph_0).\n\n### 1) Tripartite is necessary\n\nEvery obligatory $k$-uniform hypergraph is $k$-partite; in particular, every obligatory 3‑uniform hypergraph must be **3‑partite** (vertex set partitionable into 3 classes so each edge meets each class in exactly one vertex). ([arXiv][1])\n\nSo "
+}

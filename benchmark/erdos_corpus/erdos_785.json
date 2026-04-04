@@ -1,0 +1,14 @@
+{
+  "uuid": "erdos_785",
+  "problem": [
+    "Erdős Problem #785"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 785,
+  "status": "proved (Lean)",
+  "tags": [
+    "additive combinatorics"
+  ],
+  "prize": "no",
+  "formalized_on_site": false
+}

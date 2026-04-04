@@ -1,0 +1,16 @@
+{
+  "uuid": "erdos_783",
+  "problem": [
+    "Fix some constant C>0 and let n be large. Let A⊆ \\{2,\\ldots,n\\} be such that (a,b)=1 for all a≠ b∈ A and ∑_{n∈ A}(1)/(n)≤ C.\n\nWhat choice of such an A minimises the number of integers m≤ n not divisible by any a∈ A? Is this minimised by letting n≥ q_1>q_2>\\cdots be the consecutive primes in decreasing order and choosing A=\\{q_1,\\ldots,q_k\\} where k is maximal such that∑_{i=1}^k(1)/(q_i)≤ C?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 783,
+  "status": "open",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Fix some constant $C>0$ and let $n$ be large. Let $A\\subseteq \\{2,\\ldots,n\\}$ be such that $(a,b)=1$ for all $a\\neq b\\in A$ and $\\sum_{n\\in A}\\frac{1}{n}\\leq C$.\n\nWhat choice of such an $A$ minimises the number of integers $m\\leq n$ not divisible by any $a\\in A$? Is this minimised by letting $n\\geq q_1>q_2>\\cdots$ be the consecutive primes in decreasing order and choosing $A=\\{q_1,\\ldots,q_k\\}$ where $k$ is maximal such that\\[\\sum_{i=1}^k\\frac{1}{q_i}\\leq C?\\]",
+  "reference_proof_hint": "Let\n[\nU_A(n):=|\\\\{m\\le n:\\ \\forall a\\in A,\\ a\\nmid m\\\\}|\n]\nbe the number you want to **minimise**.\n\n## 1) For pairwise coprime $A$, the problem is essentially a product minimisation\n\nWrite (A={a_1,\\dots,a_k}) with ((a_i,a_j)=1) for (i\\ne j). Consider a “random” integer $m$. The events “(a_i\\mid m)” behave like independent congruence conditions because the moduli are coprime (Chinese remainder theorem intuition). In particular, the *natural density* of integers not divisible by any (a_i) is\n[\n\\prod_{i=1}^k \\\\(1-\\frac1{a_i}\\\\).\n]\nFor the kind of extremisers that are relevant here [[nomath]](they have $k=O(1)$ or at worst $k\\ll \\log\\log n$)[[/nomath]], one can turn this into an asymptotic\n[\nU_A(n)=n\\prod_{a\\in A}\\\\(1-\\frac1a\\\\)+o(n),\n]\nso **minimising (U_A(n))** is, for large $n$, the same as **minimising**\n[\nP(A):=\\prod_{a\\in A}\\\\(1-\\frac1a\\\\)\n\\quad\\text{subject to}\\quad\n\\sum_{a\\in A}\\frac1a\\le C.\n]\n\nSo the combinatorial question becomes:\n\n> choose pairwise coprime $a$’s with (\\sum 1/a\\l"
+}

@@ -1,0 +1,19 @@
+{
+  "uuid": "erdos_330",
+  "problem": [
+    "Does there exist a minimal basis with positive density, say A⊂ℕ, such that for any n∈ A the (upper) density of integers which cannot be represented without using n is positive?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 330,
+  "status": "open",
+  "tags": [
+    "number theory",
+    "additive basis"
+  ],
+  "prize": "no",
+  "formalized_on_site": true,
+  "original_latex": "Does there exist a minimal basis with positive density, say $A\\subset\\mathbb{N}$, such that for any $n\\in A$ the (upper) density of integers which cannot be represented without using $n$ is positive?",
+  "additional_context": "Asked by Erdős and Nathanson.",
+  "reference_proof_hint": "This is **open** (at least as of **January 16, 2026**).\n\nA standard way to formalize your condition [[nomath]](for an asymptotic basis of fixed order $h\\ge2$)[[/nomath]] is: for each $a\\in A$,\n$\nE(a)\\ :=\\ hA\\ \\setminus\\ h(A\\setminus\\\\{a\\\\}),\n$\ni.e. the set of integers whose **every** representation as a sum of $h$ elements of $A$ is “destroyed” if you delete $a$. Minimality is exactly the statement that $E(a)$ is infinite for every $a\\in A$. Your question asks for the stronger requirement that\n[\n\\overline d(E(a))>0\\quad\\text{for every }a\\in A,\n]\n[[nomath]](and additionally that $A$ has positive density)[[/nomath]].\n\nThis strengthened problem is explicitly posed by Erdős–Nathanson in their problem list, and they note they cannot rule it out. ([Theory of Numbers][1])\nIt is also listed as **Erdős Problem #330** and marked **OPEN**, last edited **Dec 8, 2025**. ([erdosproblems.com][2])\n\nSome relevant “nearby” facts (to calibrate what’s known):\n\n* **Minimal asymptotic bases with positive de",
+  "ground_truth_lean": "/-\nCopyright 2025 The Formal Conjectures Authors.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    https://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n-/\n\nimport FormalConjectures.Util.ProblemImports\n\n/-!\n# Erdős Problem 330\n\n*Reference:* [erdosproblems.com/330](https://www.erdosproblems.com/330)\n-/\n\nnamespace Erdos330\n\nopen Set\nopen scoped BigOperators\n\n/-- `Rep A m h` means `m` is a sum of at most `h` elements of `A`x. -/\ndef Rep (A : Set ℕ) (m h : ℕ) : Prop :=\n  ∃ k : ℕ, k ≤ h ∧ ∃ f : Fin k → ℕ, (∀ i, f i ∈ A) ∧ (∑ i : Fin k, f i) = m\n\n/-- Integers **not** representable as a finite sum of elements with at most `h` terms of `A`\n**while avoiding** `n`. -/\ndef UnrepWithout (A : Set ℕ) (n h: ℕ) : Set ℕ :=\n  {m | ¬ Rep (A \\ {n}) m h}\n\n/-- An asymptotic additive basis of order `h` is minimal when one cannot obtain an asymptotic\nadditive basis by removing any element from it. -/\ndef MinAsymptoticAddBasisOfOrder (A : Set ℕ) (h : ℕ) : Prop :=\n  IsAsymptoticAddBasisOfOrder A h ∧ ∀ n ∈ A, ¬ IsAsymptoticAddBasisOfOrder (A \\ {n}) h\n\n/--\nDoes there exist a minimal basis $A \\subset \\mathbb{N}$ with positive density\nsuch that, for any $n \\in A$, the (upper) density of integers which\ncannot be represented without using $n$ is positive?\n-/\n@[category research open, AMS 5 11]\ntheorem erdos_330_statement :\n    answer(sorry) ↔ ∃ (A : Set ℕ), ∃ h, MinAsymptoticAddBasisOfOrder A h ∧ A.HasPosDensity ∧\n    ∀ n ∈ A, Set.HasPosDensity (UnrepWithout A n h) := by\n  sorry\n\nend Erdos330\n"
+}

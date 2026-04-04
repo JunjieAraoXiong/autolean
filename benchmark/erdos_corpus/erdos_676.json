@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_676",
+  "problem": [
+    "Is every sufficiently large integer of the formap^2+bfor some prime p and integer a≥ 1 and 0≤ b<p?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 676,
+  "status": "open",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Is every sufficiently large integer of the form\\[ap^2+b\\]for some prime $p$ and integer $a\\geq 1$ and $0\\leq b<p$?",
+  "additional_context": "The sieve of Eratosthenes implies that almost all integers are of this form, and the Brun-Selberg sieve implies the number of exceptions in [1,x] is \\ll x/(\\log x)^c for some constant c>0. Erdős \\cite{Er79} believed it is 'rather unlikely' that all large integers are of this form.\n\nWhat if the condition that p is prime is omitted? Selfridge and Wagstaff made a 'preliminary computer search' and suggested that there are infinitely many n not of this form even without the condition that p is prime. It should be true that the number of exceptions in [1,x] is <x^c for some constant c<1.\n\nMost generally, given some infinite set A⊆ ℕ and function f:A→ ℕ one can ask for sufficient conditions on A and f that guarantee every large number (or almost all numbers) can be written asam^2+bfor some m∈ A and a≥ 1 and 0≤ b<f(m).\n\nIn another direction, one can ask what is the minimal c_n such that n can be written as n=ap^2+b with 0≤ b<c_np for some p≤ \\sqrt{n}. This problem asks whether c_n≤ 1 eventually, but in \\cite{Er79d} Erdős suggests that in fact \\limsup c_n=∞. Is it true that c_n<n^{o(1)}?\n\nReferences\n\n[Er79] Erdős, Paul, Some unconventional problems in number theory. Math. Mag. (1979), 67-70.\n\n[Er79d] Erdős, P., Some unconventional problems in number theory. Acta Math. Acad. Sci. Hungar. (1979), 71-80.",
+  "reference_proof_hint": "This is **open**.\n\nErdős asked (in 1979) whether there is an (n_0) such that **every** (n>n_0) can be written\n$\nn=a p^2+b,\\qquad p\\ \\text{prime},\\ a\\ge 1,\\ 0\\le b<p,\n$\nand noted that while a sieve argument shows the representation exists for **almost all** integers $n$, he thought it was likely that **infinitely many** $n$ have **no** such representation. \n\nA convenient equivalent reformulation is: find a prime (p\\le \\sqrt n) such that\n[\nn\\bmod p^2 \\in {0,1,2,\\dots,p-1},\n]\ni.e. the residue of $n$ mod (p^2) is *smaller than* $p$.\n\nWhat is known is that the set of exceptions is **very sparse**. The Erdős Problems Database entry for this question (Problem #676) records that:\n\n* “the sieve of Eratosthenes implies that almost all integers are of this form,” and\n* stronger sieve methods (Brun–Selberg) give upper bounds on the number of exceptions up to $x$, e.g. (\\ll x/(\\log x)^c) for some (c>0). ([Erdős Problems][1])\n\nBut **no one currently knows** whether the exceptional set is **finite** "
+}

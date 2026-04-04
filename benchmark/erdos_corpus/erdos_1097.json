@@ -1,0 +1,89 @@
+{
+  "uuid": "erdos_1097",
+  "problem": [
+    "Let A be a set of n integers. How many distinct d can occur as the common difference of a three-term arithmetic progression in A? Are there always O(n^{3/2}) many such d?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 1097,
+  "status": "open",
+  "tags": [
+    "number theory",
+    "additive combinatorics"
+  ],
+  "prize": "no",
+  "formalized_on_site": true,
+  "original_latex": "Let $A$ be a set of $n$ integers. How many distinct $d$ can occur as the common difference of a three-term arithmetic progression in $A$? Are there always $O(n^{3/2})$ many such $d$?",
+  "additional_context": "A problem Erdős posed in the 1989 problem session of Great Western Number Theory.\n\nHe states that Erdős and Ruzsa gave an explicit construction which achieved n^{1+c} for some c>0, and Erdős and Spencer gave a probabilistic proof which achieved n^{3/2}, and speculated this may be the best possible.\n\nIn the comment section, Chan has noticed that this problem is exactly equivalent to a sums-differences question of Bourgain \\cite{Bo99}, introduced as an arithmetic path towards the Kakeya conjecture: find the smallest c∈ [1,2] such that, for any finite sets of integers A and B and G⊆ A\\times B we have| A\\overset{G}{-}B| \\ll \\max(| A|,| B|, | A\\overset{G}{+}B|)^c(where, for example, A\\overset{G}{+}B denotes the set of a+b with (a,b)∈ G).\n\nThis is equivalent in the sense that the greatest exponent c achievable for the main problem here is equal to the smallest constant achievable for the sums-differences question. The current best bounds known are thus1.77898\\cdots ≤ c ≤ 11/6 \\approx 1.833.The upper bound is due to Katz and Tao \\cite{KaTa99}. The lower bound is due to Lemm \\cite{Le15} (with a very small improvement found by AlphaEvolve \\cite{GGTW25}).\n\nReferences\n\n[Bo99] Bourgain, J., On the dimension of {K}akeya sets and related maximal\ninequalities. Geom. Funct. Anal. (1999), 256--282.\n\n[GGTW25] B. Georgiev, J. G\\'{o}mez-Serrano, T. Tao, and A. Wagner, Mathematical exploration and discovery at scale. arXiv:2511.02864 (2025).\n\n[KaTa99] Katz, Nets Hawk and Tao, Terence, Bounds on arithmetic projections, and applications to the\n{K}akeya conjecture. Math. Res. Lett. (1999), 625--630.\n\n[Le15] Lemm, Marius, New counterexamples for sums-differences. Proc. Amer. Math. Soc. (2015), 3863--3868.",
+  "reference_proof_hint": "Let\n[\nD(A):={,d\\in \\mathbb Z\\setminus{0}:\\ \\exists a\\in\\mathbb Z\\ \\text{with}\\ a,\\ a+d,\\ a+2d\\in A,}\n]\n[[nomath]](the set of *distinct* nonzero common differences of 3-term arithmetic progressions in $A$)[[/nomath]].\nCounting (d>0) or (d\\neq 0) only changes things by a factor of $2$.\n\nIf one asks for the extremal function\n[\nf(n):=\\max_{|A|=n} |D(A)|,\n]\nthen this is a well-known Erdős problem (#1097) and is still open in the sense that the true exponent is not known. ([Erdős Problems][1])\n\n## What is known\n\n### Trivial bound\n\n[\n|D(A)| \\le |A-A| \\le \\binom{n}{2} = O(n^2),\n]\nsince each $d$ corresponds to at least one pair $(a,a+2d)$.\n\n### Best known general upper bound: $O(n^{11/6})$\n\nThere is a nontrivial upper bound\n[\n|D(A)| \\ll n^{11/6}.\n]\n\nOne clean way to see why the Katz–Tao “partial sums/differences” theorem applies is:\n\n* Define a graph (G\\subseteq A\\times A) by\n  [\n  (x,z)\\in G\\quad \\Longleftrightarrow\\quad \\frac{x+z}{2}\\in A.\n  ]\n  Then each such edge gives a 3-AP (x,\\frac{x+z}{",
+  "ground_truth_lean": "/-\nCopyright 2025 The Formal Conjectures Authors.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    https://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n-/\nimport FormalConjectures.Util.ProblemImports\n\n/-!\n# Erdős Problem 1097\n\n*Reference:* [erdosproblems.com/1097](https://www.erdosproblems.com/1097)\n-/\n\nnamespace Erdos1097\n\n/--\nGiven a finite set of integers `A` (modelled as a `Finset ℤ`), the set\n`CommonDifferencesThreeTermAP A` consists of all integers `d` such that there\nis a non-trivial three-term arithmetic progression `a, b, c ∈ A` with\n`b - a = d` and `c - b = d`.\n-/\ndef CommonDifferencesThreeTermAP (A : Finset ℤ) : Set ℤ :=\n  {d : ℤ | d ≠ 0 ∧ ∃ a ∈ A, ∃ b ∈ A, ∃ c ∈ A, b - a = d ∧ c - b = d}\n\n/--\nThe main conjecture: for any finite set of integers $A$ with $|A| = n$, the number of distinct\ncommon differences in three-term arithmetic progressions is $O(n^{3/2})$.\n-/\n@[category research open, AMS 11]\ntheorem erdos_1097 : answer(sorry) ↔ ∃ C > (0 : ℝ), ∀ (A : Finset ℤ),\n    (CommonDifferencesThreeTermAP A).ncard ≤ C * (A.card : ℝ) ^ (3 / 2 : ℝ) := by\n  sorry\n\n/--\nA weaker bound has been proven: there are always at most $n^2$ such values of $d$.\n-/\n@[category undergraduate, AMS 11]\ntheorem erdos_1097.variants.weaker :\n    ∀ A, (CommonDifferencesThreeTermAP A).ncard ≤ A.card ^ 2 := by\n  sorry\n\n/--\nA trivial lower bound: for sufficiently large `n` there exist sets $A$ with $|A| = n$ that contain at least $\\Omega(n)$\ndistinct common differences of three-term arithmetic progressions.\n-/\n@[category undergraduate, AMS 11]\ntheorem erdos_1097.variants.lower_bound : ∃ c > (0 : ℝ), ∀ᶠ n in Filter.atTop, ∃ (A : Finset ℤ),\n    A.card = n ∧ c * (n : ℝ) ≤ (CommonDifferencesThreeTermAP A).ncard := by\n  sorry\n\nend Erdos1097\n",
+  "expert_comments": [
+    {
+      "author": "",
+      "text": "The description says 'This is equivalent in the sense that the greatest exponent c\n achievable for the main problem here is equal to the smallest constant achievable for the sums-differences question.' \n\nThe only time $c$ in mentioned in the description with respect to this problem is when it says 'He states that Erdős and Ruzsa gave an explicit construction which achieved $n^{1+c}$ for some $c>0$.' It gives the impression (slightly) that the $c$ in the sums-differences problem is equivalent to an $n^{1+c}$ bound in this one."
+    },
+    {
+      "author": "Adenwalla",
+      "text": "Take $X = A \\cup B \\cup \\frac{1}{2} (A +_G B)$. Then for any $(a, b) \\in G$, the sequence $a, \\frac{1}{2}(a + b), b$ is an AP with difference $\\frac{1}{2}(b - a)$. Hence, $D(X) \\geq |A -_G B|$."
+    },
+    {
+      "author": "KoishiChan",
+      "text": "Of course, thanks! I think this neatly resolves the problem (in the sense that it's exactly equivalent to a more well-known problem at least). The lower bound has been improved, the current record is $1.77898$ (see page 41 of the AlphaEvolve paper). (Compare to $11/6\\approx 1.833$.)\n      \n      \n      \n(The site has been updated to address this comment.)"
+    },
+    {
+      "author": "Thomas Bloom",
+      "text": "Should this problem marked as 'solved' then?"
+    },
+    {
+      "author": "Moritz Firsching",
+      "text": "Well, it's not solved yet, as we don't know the optimal exponent. But at least KoishiChan showed that the optimal exponent for this problem is the same as the optimal exponent in the mentioned sums-differences question of Bourgain."
+    },
+    {
+      "author": "Woett",
+      "text": "The problem in the box doesn't ask about the optimal exponent, it only mentions $\\frac 3 2$, but from the comments it becomes clear that is it proven that this is an underestimate. In that sense the original question seems solved? Or it should be changed to asked for the optimal exponent?!\n      \n      \n      \n(The site has been updated to address this comment.)"
+    },
+    {
+      "author": "Moritz Firsching",
+      "text": "This is a two-parter, with the second (stronger) part resolved but the first part remains open."
+    },
+    {
+      "author": "natso26",
+      "text": "As Nat says, this is a two part question, and the first part is still open. It is 'closed' in the sense that it's exactly equivalent to another question, but since this other question remains open I think this one should be also. (In part because hopefully this will encourage more attention towards the sums-differences question.)"
+    },
+    {
+      "author": "Thomas Bloom",
+      "text": "Ok I think this is actually equivalent to a problem first considered by Bourgain in \"On the Dimension of Kakeya Sets and Related Maximal Inequalities\" and Rusza in \"Sums of Finite Sets\": If $A, B$ are finite set of integers, and $G \\subset A \\times B$ satisfies\n$$|A|, |B|, |A+_G B| \\leq N$$\nthen what is the smallest $c$ such that $|A -_G B| \\leq N^c$?\n\nTo see the connection, simply consider $X = A \\cup B \\cup \\frac{1}{2}\\cdot (A +_G B)$.\n\nBourgain proved an upper bound of $c \\leq 2 - \\frac{1}{13}$. The best upper bound I can find is due to Katz and Tao who proved $c \\leq 2 - \\frac{1}{6}$. In the same paper a lower bound of $c \\geq \\log(6) / \\log(3) = 1.6309$ was established.\n      \n      \n      \n(The site has been updated to address this comment.)"
+    },
+    {
+      "author": "KoishiChan",
+      "text": "Aha, yes - embarrassed I missed this since I've been thinking about this very problem recently! I agree that the upper bounds here imply an upper bound for this problem (taking $G$ to be the set of $(a,b)\\in A^2$ such that $a+b\\in 2\\cdot A$), which implies an upper bound of $2-1/6$ (this has not been improved over the Katz-Tao paper).\n\nI'm not sure I see why they're equivalent though, can you explain why a lower bound for this latter problem implies the same for this page's problem?"
+    },
+    {
+      "author": "Thomas Bloom",
+      "text": "Using my previous comment, together with recent results by AlphaEvolve, Robert Gerbicz, and Fan Zheng, I can disprove the prediction in the problem statement.\n\nThe above (together with a small tensor power argument) shows that\n$$\\sup_A \\frac{\\log |D(A)|}{\\log |A|} \\geq \\sup_U \\frac{\\log |U + U| + \\log |U - U| - \\log |U|}{\\log |U + U|}.$$\nNow, pp. 3 of this paper https://arxiv.org/pdf/2505.16105 seems to give quite a nice $U$. Specifically, the $U$ in the paper satisfies (base 10)\n$$\\log |U - U| \\geq 75899, \\log |U+U| \\leq 61229, \\log |U| \\leq 43547.$$\nSo we obtain\n$$\\frac{\\log |U + U| + \\log |U - U| - \\log |U|}{\\log |U + U|} \\geq 1.528.$$\nHence, we obtain $A$ with\n$$|D(A)| \\geq |A|^{1.528 - o(1)}.$$\nThis is slightly better :).\nOf course, I might just be stupid, and some very easy construction gives close to $2$ in the exponent. Who knows :))\n      \n      \n      \n(The site has been updated to address this comment.)"
+    },
+    {
+      "author": "KoishiChan",
+      "text": "Nice! This is the sort of construction that Imre Ruzsa would approve of.  I'll launch an AlphaEvolve run optimizing this score rather than the one studied in the previous papers, and see if we can do significantly better than 1.528.\n\nEDIT: AlphaEvolve instantly produced the example $U = \\{0,3,7,15,16,21\\}$ with $|U|=6$, $|U+U|=21$, $|U-U|=31$, giving a score of $(\\log(21)+\\log(31)-\\log(6))/\\log(21) \\approx 1.5394$ (so your search of subsets of $\\{0,\\dots,17\\}$ was only just shy of working).  I'll let it run for a few hours and see what improvements it can get.  Incidentally, this example, combined with the previous construction, should be within the capability of current autoformalization tools to convert into a Lean disproof of the second claim."
+    },
+    {
+      "author": "TerenceTao",
+      "text": "After 10 hours, AlphaEvolve was only able to come up with one slightly better construction: $U = \\{-1214, -729, -248, -89, 447, 206, -2209, 887, 665, -3302, -261, -195, -134, -1537\\}$, with a score of $1.5523$ ($|U|=14, |U+U|=105, |U-U|=183$).  Most likely using the high-dimensional constructions in the papers of Gerbicz, Zheng, or Gyarmati-Hennecart-Ruzsa will do better, but I haven't tried this.  This seems like a good \"beat the AI\" challenge!"
+    },
+    {
+      "author": "TerenceTao",
+      "text": "I think that, as you indicate, the high-dimensional construction of Hennecart, Robert, and Yudin ('On the number of sums and differences', Astérisque 1999, p. 173-178) does better, around $1.5828$.\n\nIf one checks the final page of that paper, you find a construction of a set $U$ (namely taking those non-negative integer vectors in $\\mathbb{Z}^{2m}$ with total weight $\\leq m$) such that\\[ \\lvert U+U\\rvert =\\lvert U\\rvert^{c_1+o(1)}\\]and\\[ \\lvert U-U\\rvert =\\lvert U\\rvert^{c_2+o(1)}\\]where\\[c_1=\\frac{4\\log 2}{3\\log 3-2\\log 2}\\]\\[c_2 =\\frac{4\\log(1+\\sqrt{2})}{3\\log 3-2\\log 2}.\\]This gives a score of\\[\\frac{\\log(64/27)+4\\log(1+\\sqrt{2})}{\\log(16)}\\approx 1.5828.\\]"
+    },
+    {
+      "author": "Thomas Bloom",
+      "text": "Very nice! I think the limit of your construction is an exponent of $5/3$:\n\nLet the size of A be $K\\lvert U\\rvert$. By Plunnecke-Ruzsa the size of your $D(A)$ is at most either $K^2\\lvert A\\rvert$ or $\\lvert U\\rvert\\lvert A\\rvert$. If $K$ is greater than $\\lvert U\\rvert^{1/2}$ use the latter, else use the former."
+    },
+    {
+      "author": "Thomas Bloom",
+      "text": "OT but these are all such a joy to read, especially with the explosion of collaboration happening on here.  Congrats on creating the coolest place to hang out in all of mathematics."
+    },
+    {
+      "author": "John N. Dvorak",
+      "text": "There seems to be a mysterious connection between this problem and the sum / difference set problem.\n\nTo motivate the discussion, we first provide a explicit construction of the $\\Omega(n^{3/2})$ bound. Take $X$ to be a finite set with no non-trivial solution to $x + y = z + w$, and set $A = (X - X) \\cup \\frac{1}{2} \\cdot (X - X)$. Then $|A| = \\Theta(|X - X|) = \\Theta(|X|^2)$. Let $D(A)$ denote the set of common differences. Note that for any $x, y, z \\in X$, the sequence $x - y, \\frac{1}{2}(x - z), y - z$ forms an AP in $A$ with common difference $\\frac{1}{2}(x + z - 2y)$. Hence, we have\n$$|D(A)| \\geq |X + X - 2\\cdot X| = \\Omega(|X|^3) = \\Omega(|A|^{3/2}).$$\nNow, how do we improve this? Well, we can use the construction above except with any $X$, and we win if\n$$|X + X - 2 \\cdot X| \\geq |X - X|^{3/2 + \\epsilon}.$$\nA standard tensor power argument shows that we win if\n$$|X + X - 2 \\cdot X| > |X - X|^{3/2}.$$\nHowever, I searched over subsets of $[1,...17]$ and found no counterexample.\n\n"
+    }
+  ]
+}

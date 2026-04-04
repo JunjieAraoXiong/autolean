@@ -1,0 +1,16 @@
+{
+  "uuid": "erdos_110",
+  "problem": [
+    "Erdős Problem #110"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 110,
+  "status": "not provable",
+  "tags": [
+    "graph theory",
+    "chromatic number",
+    "cycles"
+  ],
+  "prize": "no",
+  "formalized_on_site": false
+}

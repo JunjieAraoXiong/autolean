@@ -1,0 +1,15 @@
+{
+  "uuid": "erdos_59",
+  "problem": [
+    "Erdős Problem #59"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 59,
+  "status": "disproved",
+  "tags": [
+    "graph theory",
+    "turan number"
+  ],
+  "prize": "no",
+  "formalized_on_site": false
+}

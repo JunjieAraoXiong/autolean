@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_86",
+  "problem": [
+    "Let Q_n be the n-dimensional hypercube graph (so that Q_n has 2^n vertices and n2^{n-1} edges). Is it true that every subgraph of Q_n with≥ \\left((1)/(2)+o(1)\\right)n2^{n-1}many edges contains a C_4?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 86,
+  "status": "open",
+  "tags": [
+    "graph theory"
+  ],
+  "prize": "$100",
+  "formalized_on_site": false,
+  "original_latex": "Let $Q_n$ be the $n$-dimensional hypercube graph (so that $Q_n$ has $2^n$ vertices and $n2^{n-1}$ edges). Is it true that every subgraph of $Q_n$ with\\[\\geq \\left(\\frac{1}{2}+o(1)\\right)n2^{n-1}\\]many edges contains a $C_4$?",
+  "additional_context": "Let f(n) be the maximum number of edges in a subgraph of Q_n without a C_4, so that this conjecture is that f(n)≤ ((1)/(2)+o(1))n2^{n-1}.\n\nErdős \\cite{Er91} showed thatf(n) ≥ \\left((1)/(2)+(c)/(n)\\right)n2^{n-1}for some constant c>0, and wrote it is 'perhaps not hopeless' to determine f(n) exactly. Brass, Harborth, and Nienborg \\cite{BHN95} improved this tof(n) ≥ \\left((1)/(2)+(c)/(\\sqrt{n)}\\right)n2^{n-1}for some constant c>0.\n\nBalogh, Hu, Lidicky, and Liu \\cite{BHLL14} proved that f(n)≤ 0.6068 n2^{n-1}. This was improved to ≤ 0.60318 n2^{n-1} by Baber \\cite{Ba12b}.\n\nA similar question can be asked for other even cycles.\n\nSee also [666] and the entry in the graphs problem collection.\n\nReferences\n\n[BHLL14] Balogh, J\\'{o}zsef and Hu, Ping and Lidick\\'{y}, Bernard and Liu, Hong, Upper bounds on the size of 4- and 6-cycle-free subgraphs of the hypercube. European J. Combin. (2014), 75-85.\n\n[BHN95] Brass, Peter and Harborth, Heiko and Nienborg, Hauke, On the maximum number of edges in a {C_4}-free subgraph of\n{Q_n}. J. Graph Theory (1995), 17--23.\n\n[Ba12b] R. Baber, Tur\\'{a}n densities of hypercubes. arXiv:1201.3587 (2012).\n\n[Er91] Erd\\\"{o}s, P., Problems and results in combinatorial analysis and combinatorial number theory. Graph theory, combinatorics, and applications, Vol. 1 (Kalamazoo, MI, 1988) (1991), 397-406.",
+  "reference_proof_hint": "This is **not known**. In fact it is a well-known **Erdős open problem**.\n\nLet\n[\nf(n)=\\max\\\\{|E(G)|:G\\subseteq Q_n\\text{ and }G\\text{ has no }C_4\\\\}.\n]\nYour question is exactly asking whether\n[\nf(n)\\le \\Big(\\tfrac12+o(1)\\Big)|E(Q_n)|=\\Big(\\tfrac12+o(1)\\Big)n2^{n-1}.\n]\nErdős conjectured this “(\\tfrac12)” is the right asymptotic value. ([Erdős Problems][1])\n\n### What is known\n\n**Lower bounds [[nomath]](constructions with no $C_4$)[[/nomath]]:**\n\n* There is a very simple (C_4)-free construction with **exactly half** the edges: keep only edges between Hamming-weight layers ((0,1),(2,3),(4,5),\\dots) (i.e., “every second layer”). Any (C_4) in (Q_n) uses edges from two consecutive layer-gaps, so this kills all 4-cycles. This gives\n  [\n  f(n)\\ge \\tfrac12,|E(Q_n)|.\n  ]\n\n* Brass–Harborth–Nienborg gave a denser (C_4)-free example, with edge density about\n  [\n  \\frac{1}{2}\\Big(1+\\frac{1}{\\sqrt n}\\Big),\n  ]\n  (stated in the later papers as valid for certain $n$, e.g. $n$ a power of $4$). So you can"
+}

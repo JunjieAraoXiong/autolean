@@ -1,0 +1,137 @@
+{
+  "uuid": "erdos_729",
+  "problem": [
+    "Erdős Problem #729"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 729,
+  "status": "proved (Lean)",
+  "tags": [
+    "number theory",
+    "factorials"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "expert_comments": [
+    {
+      "author": "",
+      "text": "I'm putting this here but it concerns both [728] and [729].\n\nSo I've been working on what the \"general\" statement is, following Bloom's suggestion. Here's one.\n\nThere exist absolute constants $c_1, c_2 > 0$ with the following properties. Let $f: \\mathbb{N} \\to \\mathbb{N}$ be any function with $f(M) \\le \\exp(c_1 \\sqrt{\\log M})$ for all $M$ large. Let $\\varepsilon > 0$ be arbitrary. Then for all sufficiently large $M$, there is $m \\in [M, (1+\\varepsilon)M]$ such that\n$$ v_p((2m)!) + v_p(f(M)!) - v_p(m!) - v_p((m+f(M))!) \\ge c_2 \\frac{\\log M}{\\log p} \\cdot [p \\le 2k] $$\nfor all primes $p$.\n\n(That's a lot of quantifiers!)\n\nTo get [728]. You take $f(M) = \\lfloor c \\log M \\rfloor$. You want $LHS \\ge 0$. This is easy: $\\log M/\\log p > 0$ anyway.\n\nTo get [729]. You still take $f(M) = \\lfloor c \\log M \\rfloor$. But now you want $c_2 \\log M/\\log p \\ge v_p(f(M)!)$ for all primes $p \\ge p_\\min(c)$. Now $v_p(f(M)!) \\sim c \\log M/(p-1)$. Hence this holds for $p$ large, with threshold depending only "
+    },
+    {
+      "author": "natso26",
+      "text": "Follow up: the LHS there is perhaps more intuitive as\n$$ v_p(\\binom{2m}{m}) - v_p(\\binom{m+f(M)}{m}) \\ge c_2 \\frac{\\log M}{\\log p} \\cdot [p \\le 2k]. $$\nAlso, \"there is $m \\in [M, (1+\\varepsilon)M]$\" can be upgraded to \"for all $m \\in [M, (1+\\varepsilon)M]$ with $o(M)$ exceptions\".\n\nWe can also get Pomerance's result: the set of $n$ with\n$$ (n+1)(n+2)\\dots (n+k) | \\binom{2n}{n} $$\nhas asymptotic density $1$, for fixed $k$ or \"$k$ that grows slowly\" (not explicitly worked out by Pomerance).\n\nIn our language, with $k=f(M)$, we again want $c_2 \\log M/\\log p \\ge v_p(f(M)!)$. (The difference with [729] is now we want all primes, not just large primes.) This works out to be $f(M) \\le c \\log M$ for some (small) constant $c > 0$. So Pomerance's result holds with $k \\le c \\log n$ for some $c > 0$.\n\nIn conclusion: this formulation unifies at least 3 results, [728], [729], and Pomerance's, each with slightly different arguments!"
+    },
+    {
+      "author": "natso26",
+      "text": "Second follow up: from the formulation in the Pomerance's latest note, I see that this can be cleaned up further as follows. (Still using essentially the same argument.)\n\nThere exist absolute constants $c_1, c_2 > 0$ with the following properties. Consider the set $S$ of $m \\in \\mathbb{N}$ such that, for all $0 \\le k \\le  \\exp(c_1 \\sqrt{\\log m})$,\n$$ v_p(\\binom{2m}{m}) - v_p(\\binom{m+k}{m}) \\ge c_2 \\frac{\\log m}{\\log p} \\cdot [p \\le 2k] $$\nfor all primes $p$. Then $S$ has asymptotic density $1$."
+    },
+    {
+      "author": "natso26",
+      "text": "FWIW, continuing on from the conversation I had with GPT-5.2 Pro on [728], I asked it if it could adapt its method to resolve this problem. Sure enough, it has produced this informal proof, which can be viewed as a PDF here. I am currently waiting for Aristotle to hopefully come back with a Lean formalisation. The arguments all look plausibly sound to me, but I am not currently able to find the time to go through all of it closely (it is quite late for me), so I would appreciate it if others could take a look in the meantime. But again, I cannot yet claim full accuracy."
+    },
+    {
+      "author": "Kevin Barreto",
+      "text": "FWIW, ChatGPT thinks, after a small amount of back-and-forth, that the informal proof contains only small gaps that seem to be fixable. This doesn't \"prove\" anything in particular; but it increases my credence that Aristotle might succeed!"
+    },
+    {
+      "author": "natso26",
+      "text": "Thanks natso, I continued off of your ChatGPT conversation and asked GPT-5.2 Pro to fill in the minor things that your instance identified as having room for elaboration, which has produced this PDF. For whatever reason, Aristotle seems to be having a lot of difficulty autoformalising this. I've had to run it a few times in the past 24 hours since it seems to not be making much progress. I've taken a closer look through the PDF, and I am fairly convinced it should be right, so I shall keep trying to get Aristotle to formalise it."
+    },
+    {
+      "author": "Kevin Barreto",
+      "text": "Hmm, I’m not familiar with Lean, but it could be that some things are simply hard to formalize in Lean (but you need someone with more experience to look at it and see how to help Aristotle here). Alternatively, the proof may really contains flaws that we haven’t caught; or Aristotle is simply “bad” at this particular proof for whatever reason.\n\nI think there are also 2 ways to proceed here. You can choose whichever one:\n\n1) Get a proof with maximum AI autonomy. Which means you might not want to start from my ChatGPT conversation, because the more human interaction there is, the more complex the workflow becomes and the more you could argue that we need humans to “unblock” the process.\n\n2) Get the best proof with maximum human-AI collaboration. Which means we do any tinkering that we think will help carry the process to the finish line.\n\nActually given that we want to (scientifically) test out AI autonomy, I kind of want to go with 1) for now… but your choice. But if we really seem to "
+    },
+    {
+      "author": "natso26",
+      "text": "FWIW, I have actually found something that I think is managing to make a bit more progress: Aristotle performs much better if you give it a Lean file directly with provided solutions on each sorried lemma statement, as opposed to giving it the full TeX paper. I gave GPT-5.2 Pro Aristotle's prior Lean formalisation attempt, and asked it to add the remaining lemma statements, sorried and with provided solution sketches in the format shown here. It seems to have allowed Aristotle to be making more progress and is still currently trying to fill in all the sorries, but it hasn't terminated quickly like before.\n\nTo be clear, this is still technically all AI-generated; my only involvement was in telling GPT-5.2 Pro to lay some of the Lean file foundations for Aristotle. Hopefully I should have a formalisation back from it within a few hours.\n\nBut yeah, I’m definitely trying to go end-to-end on 1) for scientific purposes. I’m sure I could probably manually formalise things if I tried. If all f"
+    },
+    {
+      "author": "Kevin Barreto",
+      "text": "Ok, I agree this workflow still constitutes full AI autonomy. (Since human part does not involve mathematical judgment, complex strategies, or things that resemble human-specific cognitive process.) Let’s hope that works!"
+    },
+    {
+      "author": "natso26",
+      "text": "Okay update: After many attempts, Aristotle has produced this mess of spaghetti Lean code between it and GPT-5.2 Pro. The issue now seems to be in this \"exists_good_m_medium_primes\" lemma, for which Aristotle is unable to find a proof for. I am currently trying to look into what is going on there. It is likely that GPT-5.2 misformalised the statement as opposed to there being an actual issue in the TeX informal proof."
+    },
+    {
+      "author": "Kevin Barreto",
+      "text": "The informal proof (or something very close to it) is definitely correct. What Aristotle produced seems to almost be correct. The main issue seems to be it took the threshold $t_p$ twice as large as in the informal proof and that caused problems. GPT-5.2 Pro set it up correctly there. I wonder if there is something we're missing that spooked Aristotle into making that change. It's possible there's something wrong with the threshold in the informal version, but I don't see it. Apparently $\\lceil 10 \\log \\log M\\rceil$ works in any case."
+    },
+    {
+      "author": "DanielLarsen",
+      "text": "Ok, Thanks both of you! I see that Kevin wants to test out autonomy, so just a friendly reminder to do record all the parts of the workflow. If you're unsure if the workflow is autonomous, maybe you can ask here beforehand (just to be safe - in case someone disagrees)."
+    },
+    {
+      "author": "natso26",
+      "text": "FINALLY, after many, many attempts, Aristotle has managed to autoformalise it, starting from fresh just being provided the TeX proof and nothing more (including *no* Lean file foundations by GPT-5.2 Pro). Please see here. I believe we agree that this should be a fully AI-generated resolution to the problem.\n\nI was originally also providing Aristotle the context of its Lean file for [728], in hopes that it would be able to copy identical lemmas from there, but that seemed to confuse it. Just providing the TeX file for GPT-5.2 Pro's informal proof seems to have helped it massively.\n      \n      \n      \n(The site has been updated to address this comment.)"
+    },
+    {
+      "author": "Kevin Barreto",
+      "text": "Can you describe the workflow?  In particular, would you categorize this more as a Section 1 result or a Section 4 result, as per the classification on the wiki?  Also, in case it is a Section 2 result, someone should report the outcome of a literature search on this problem."
+    },
+    {
+      "author": "TerenceTao",
+      "text": "Definitely a Section 1 result as in [728] (assuming no one can uncover previous literature solving the problem). Just directly the TeX proof that I replied to natso's original first comment with, directly being given to Aristotle and nothing more (maybe someone from Harmonic can corroborate my claim). I believe it was having difficulty because I was also originally providing its work for 728, which just confused it, instead of helping as I expected."
+    },
+    {
+      "author": "Kevin Barreto",
+      "text": "> maybe someone from Harmonic can corroborate my claim\n\nYes, here are the records.\n\n> I believe it was having difficulty because I was also providing its work for 728, which just confused it, instead of helping as I expected.\n\nIt's interesting to know that context can throw off Aristotle. This is helpful for us, thanks!"
+    },
+    {
+      "author": "llllvvuu",
+      "text": "Thanks!"
+    },
+    {
+      "author": "Kevin Barreto",
+      "text": "I ran a ChatGPT Deep research query.  One new relevant reference was located: a paper of Ulas and Schinzel from 2013, numerically exploring a large number of related binomial coefficient divisibility problems raised by Erdos-Straus and Erdos-Graham (including #376, #389, and #396).  However, strangely enough, neither #728 or #729 are mentioned in this paper.  So while it does appear there is no prior literature on these problems, this is more an indication that these problems have somehow been neglected by the literature, as opposed to having been studied without significant progress.\n\nEDIT: On rereading [ErGr80] I came across problem #401, which appears to be Erdos and Graham's revised version of the problems #728, #729 (which comes from the earlier paper [EGRS75]): compare in particular the \"If we disregard the small primes then the situation probably changes\" from [ErGr80, p. 78] with the \"it is possible that this is due only to the small primes\" from [EGRS75, p. 90].  Perhaps this "
+    },
+    {
+      "author": "TerenceTao",
+      "text": "I would expect that (it would be very strange otherwise).\n\nIf a problem has been significantly studied and still open, it must be hard. I don't expect AI to solve hard problems yet, so more likely: 1) the problem is not significantly studied, or 2) the problem is not open (has prior literature)."
+    },
+    {
+      "author": "natso26",
+      "text": "Congrats 🎉!"
+    },
+    {
+      "author": "natso26",
+      "text": "Thanks. Now we have to wait to see if it passes the KoishiChan test."
+    },
+    {
+      "author": "Kevin Barreto",
+      "text": "I have done several rounds of literature searches in the past few days, examining every paper that google scholar and mathscinet linked to [ERGS75] and [ErGr80]. I also examined every paper of Erdos with binomial coefficient or factorial in the title.\n\nSo far nothing has turned up beyond what Tao has found. However I can think of several remaining possibilities: 1) PhD thesis or books, 2) notes uploaded to personal websites that never got published and 3) problems in magazines as in the original a! b! | n! problem.\n\nI also know one instance where an Erdos problem was solved in a paper that does not cite the original paper. Not sure if this can be the case here. I suggest sending an email to Carl Pomerance and see if he knows anything. If anyone can reach Rusza, might worth checking with him as well."
+    },
+    {
+      "author": "KoishiChan",
+      "text": "I asked Carl about this, will update if I hear back."
+    },
+    {
+      "author": "TerenceTao",
+      "text": "I heard back from Carl.  He confirmed that \"it seems fairly easy to follow the ideas in my 2015 paper to\nprove that for infinitely many $n$ there is a value of $k = \\exp((\\log n)^{1/2+o(1)})$ with $\\binom{n+k}{k} | \\binom{2n}{n}$\", by using the lemma $\\nu_p(\\binom{n+k}{k}) \\leq \\max \\{ \\nu_p(n+i): 0 < i \\leq k\\}$ which he imagined would be known to Erdos, but was not aware of any followup work where this observation was already made in print.  This is essentially also the argument provided by GPT. So it appears that the solutions to #728, #729 are technically new to the literature, but would have been well within reach of experts if they had devoted any non-trivial attention to the questions."
+    },
+    {
+      "author": "TerenceTao",
+      "text": "Yep, this was my expectation. 728 and 729 seemed definitely in reach of Pomerance, say, but just no one bothered to push on it. At least it is neat that the AI systems are beginning to be able to construct such arguments, though."
+    },
+    {
+      "author": "Kevin Barreto",
+      "text": "I think this 728/729 case is interesting in the sense that the argument, when written up, appears “presentable” in and of itself. In contrast, for 205, which I also just deformalized, the content does not appear interesting at the level of publishable material, even though that’s also new.\n\nSo, to think about these things early, there seems to be many levels of mathematics contributions:\n\n1) Routine, not new\n2) New, not that interesting <- I believe most AI contributions will fall here currently.\n3) Interesting, but not hard (for experts) <- seems rare currently, but we have one example.\n4) Hard, but doable with effort <- this looks like something to watch out; a contribution at this level is probably near regular human-mathematician level.\n5) More than that <- speculative; I can’t properly imagine what this will be like yet, but we should be aware that the possibility exists."
+    },
+    {
+      "author": "natso26",
+      "text": "Thanks for all your hard work in increasing community trust in the novelty of the solution! (Although of course this work can never be perfect.)"
+    },
+    {
+      "author": "natso26",
+      "text": "Oh, while I was going through the GPT-5.2 Pro's writeup (which is not that easy to follow) to determine whether it's correct, I instead found a proof by adapting the argument in my writeup in [728].\n\nI thought it's valuable to record it here, even if Aristotle succeeds later.\n\nSo in GPT-5.2 Pro's writeup, we are reduced to: $W_p(m) \\le \\kappa_p(m)$ for every $K(C) \\le p \\le 2k$. The part up to here is correct. (We must show such $K := K(C)$ exists for any $C > 0$.)\n\nNow in my [728]'s writeup, we are reduced to: $V_p(m) \\le \\kappa_p(m)$ for every $p \\le 2k$. Difference: no lower bound for $p$, and change $W$ to $V$.\n\nIn GPT-5.2 Pro's writeup, there is a bound $W_p(m) \\le k/(p-1) + V_p(m)$ which I think is correct (there's also a similar bound in my [728]'s writeup).\n\nSo to adapt, we must accommodate the extra $k/(p-1)$ thing. Now we're not going to touch the (more complicated) probabilistic argument, but we're zooming in on the Lemma 7 (threshold inequality). This is part of the final c"
+    },
+    {
+      "author": "natso26",
+      "text": "Thx, Kevin. Good that you did not mention chatgpt or LLM in the pdf. I asked Gemini 3 Pro for its opinion. And a midsize followup discussion turned to the question whether E-729 would be suited for a Bachelor exam or a Master thesis project.  \nhttps://gemini.google.com/share/c95e39d6949a"
+    },
+    {
+      "author": "old-bielefelder",
+      "text": "If I may suggest, there are certain \"hidden assumptions\" in the way you interact with Gemini which makes its output less reliable.\n\nFor example, the first prompt: \"read the pdf carefully and list strengths and weaknesses. strict math mode.\" quietly *assumes* that the pdf is correct. Gemini will think it's correct and will not consider that it could be incorrect.\n\nMoreover, you explicitly asked \"Can you formulate the problem and your examples in a way that it may serve as exercise in a bachelor exam in math?\" which assumes that such an exercise is suitable (it may not be!). Then you asked later: \"Would this topic (Erdos 729) suit for a master thesis in math (for candidates who might also want to go a PhD track)?\". This latter question cannot get a good answer at all because you already use \"bachelor exam\" as a baseline!"
+    }
+  ]
+}

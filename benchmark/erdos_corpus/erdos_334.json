@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_334",
+  "problem": [
+    "Find the best function f(n) such that every n can be written as n=a+b where both a,b are f(n)-smooth (that is, are not divisible by any prime p>f(n).)"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 334,
+  "status": "open",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Find the best function $f(n)$ such that every $n$ can be written as $n=a+b$ where both $a,b$ are $f(n)$-smooth (that is, are not divisible by any prime $p>f(n)$.)",
+  "additional_context": "Erdős originally asked if even f(n)≤ n^{1/3} is true. This is known, and the best bound is due to Balog \\cite{Ba89} who proved thatf(n) \\ll_\\epsilon n^{(4)/(9\\sqrt{e)}+\\epsilon}for all \\epsilon>0. (Note (4)/(9\\sqrt{e)}=0.2695\\ldots.)\n\nIt is likely that f(n)≤ n^{o(1)}, or even f(n)≤ e^{O(\\sqrt{\\log n})}.\n\nSee also Problem 59 on Green's open problems list.\n\nReferences\n\n[Ba89] Balog, A., On additive representation of integers. Acta Math. Hungar. (1989), 297-301.",
+  "reference_proof_hint": "Let (P^{+}(m)) denote the largest prime factor of $m$ [[nomath]](with $P^{+}(1)=1$)[[/nomath]].\nYour question asks for the smallest possible function $f(n)$ [[nomath]](as $n\\to\\infty$)[[/nomath]] such that for every $n$ there exist integers (a,b\\ge 1) with\n[\nn=a+b,\\qquad P^{+}(a)\\le f(n),\\ \\ P^{+}(b)\\le f(n),\n]\ni.e. $a$ and $b$ are $f(n)$-smooth.\n\n## What is known (best current general upper bound)\n\nThe true optimal order of magnitude of $f(n)$ is **not known**. The best general theorem currently available is due to **A. Balog (1989)**:\n\nThere is a constant\n[\n\\alpha_0=\\frac{4}{9\\sqrt e}=0.2695\\ldots\n]\nsuch that for every (\\varepsilon>0), every sufficiently large integer $N$ can be written as\n[\nN=n_1+n_2\n]\nwith both (n_1,n_2) being (N^{\\alpha_0+\\varepsilon})-smooth. Equivalently,\n[\nf(N)\\ \\ll_{\\varepsilon}\\ N^{\\alpha_0+\\varepsilon}.\n]\nThis exponent (\\alpha_0\\approx 0.2695) is still the record. ([erdosproblems.com][1])\n\nSo, the **best currently proved** “smooth Goldbach” function is essen"
+}

@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_821",
+  "problem": [
+    "Let g(n) count the number of m such that \\phi(m)=n. Is it true that, for every \\epsilon>0, there exist infinitely many n such thatg(n) > n^{1-\\epsilon}?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 821,
+  "status": "open",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $g(n)$ count the number of $m$ such that $\\phi(m)=n$. Is it true that, for every $\\epsilon>0$, there exist infinitely many $n$ such that\\[g(n) > n^{1-\\epsilon}?\\]",
+  "additional_context": "Pillai proved that \\limsup g(n)=∞ and Erdős \\cite{Er35b} proved that there exists some constant c>0 such that g(n) >n^c for infinitely many n.\n\nThis conjecture would follow if we knew that, for every \\epsilon>0, there are \\gg_\\epsilon (x)/(\\log x) many primes p<x such that all prime factors of p-1 are <p^\\epsilon.\n\nThe best known bound is that there are infinitely many n such thatg(n) > n^{0.71568\\cdots},obtained by Lichtman \\cite{Li22} as a consequence of proving that there are ≥ (x)/((\\log x)^{O(1))} many primes p≤ x such that all prime factors of p-1 are ≤ x^{0.2843\\cdots} (which improves a number of previous exponents, most recently Baker and Harman \\cite{BaHa98}).\n\nThe average size of g(n) was investigated by Luca and Pollack \\cite{LuPo11}.\n\nSee also [416].\n\nReferences\n\n[BaHa98] Baker, R. C. and Harman, G., Shifted primes without large prime factors. Acta Arith. (1998), 331--361.\n\n[Er35b] Erdős, P., On the normal number of prime factors of p-1 and some related problems concerning Euler's \\varphi-function. Quart. J. Math. (1935), 205-213.\n\n[Li22] J. D. Lichtman, Primes in arithmetic progressions to large moduli and shifted primes without large prime factors. arXiv:2211.09641 (2022).\n\n[LuPo11] Luca, Florian and Pollack, Paul, An arithmetic function arising from {C}armichael's conjecture. J. Th\\'{e}or. Nombres Bordeaux (2011), 697--714.",
+  "reference_proof_hint": "This is **open**.\n\nIf we write (A(n):=|\\\\{m:\\varphi(m)=n\\\\}|), then your (g(n)=A(n)). What you are asking is whether\n\n[\n\\forall \\varepsilon>0,\\ \\text{infinitely many }n\\ \\text{satisfy }A(n) > n^{,1-\\varepsilon},\n]\n\ni.e. whether the multiplicity of totients can be as large as (n^{1-o(1)}).\n\n### What is known\n\n* Erdős proved long ago that **some fixed positive exponent** is achievable: there are infinitely many totients $n$ with (A(n) > n^{c}) for some (c>0).\n* Erdős also **conjectured** that the exponent can be taken **arbitrarily close to $1$** (equivalently, your statement holds). Ford’s paper explicitly states this conjecture in exactly this “(c<1) admissible” form. \n\n### Best unconditional exponent to date\n\nThe best currently available unconditional result does **not** reach (1-\\varepsilon) for arbitrary (\\varepsilon), but it does give a substantial power:\n\n* Lichtman (2022) proves there are infinitely many totients $m$ such that (m=\\varphi(n)) has at least (m^{0.7156}) solutions $n"
+}

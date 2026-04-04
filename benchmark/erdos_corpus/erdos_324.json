@@ -1,0 +1,19 @@
+{
+  "uuid": "erdos_324",
+  "problem": [
+    "Does there exist a polynomial f(x)∈ℤ[x] such that all the sums f(a)+f(b) with a<b nonnegative integers are distinct?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 324,
+  "status": "open",
+  "tags": [
+    "number theory",
+    "powers"
+  ],
+  "prize": "no",
+  "formalized_on_site": true,
+  "original_latex": "Does there exist a polynomial $f(x)\\in\\mathbb{Z}[x]$ such that all the sums $f(a)+f(b)$ with $a<b$ nonnegative integers are distinct?",
+  "additional_context": "Erdős and Graham describe this problem as 'very annoying'. Probably f(x)=x^5 should work. The Lander, Parkin, and Selfridge conjecture would imply that f(x)=x^n has this property for all n≥ 5.",
+  "reference_proof_hint": "This is a famous open problem in additive number theory.\n\nYour condition says that the sequence\n[\nA={f(0),f(1),f(2),\\dots}\n]\nhas **distinct pairwise sums** $f(a)+f(b)$ for all (a<b). In the standard language, this asks whether the values of some **integer-coefficient polynomial** can form a **Sidon set / (B_2)-sequence** [[nomath]](in the “$a<b$” sense)[[/nomath]]. ([Wikipedia][1])\n\n### What is known\n\n* **No linear polynomial works** (trivially): if (f(n)=\\alpha n+\\beta), then\n  [\n  f(a)+f(b)=\\alpha(a+b)+2\\beta\n  ]\n  depends only on $a+b$, so many different pairs $(a,b)$ give the same sum.\n\n* **No quadratic polynomial works**, and in fact it is “easy to show” that neither linear nor quadratic integer polynomials generate such a Sidon set. ([Erdős Problems][2])\n\n* **No cubic polynomial works**, by a theorem of Dubickas and Novikas: they prove that for every (f\\in\\mathbb Z[x]) of degree (\\le 3), there are infinitely many solutions in **pairwise distinct** positive integers (m,n,r,s) of\n ",
+  "ground_truth_lean": "/-\nCopyright 2025 The Formal Conjectures Authors.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    https://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n-/\n\nimport FormalConjectures.Util.ProblemImports\n\n/-!\n# Erdős Problem 324\n\n*Reference:* [erdosproblems.com/324](https://www.erdosproblems.com/324)\n-/\n\nopen scoped Polynomial\n\nnamespace Erdos324\n\n/--\nDoes there exist a polynomial $f(x)\\in\\mathbb{Z}[x]$ such that all the sums $f(a)+f(b)$ with\n$a < b$ nonnegative integers are distinct?\n-/\n@[category research open, AMS 11]\ntheorem erdos_324 : answer(sorry) ↔\n    ∃ f : ℤ[X], {(a, b) : ℕ × ℕ | a < b}.InjOn fun (a, b) => f.eval (a : ℤ) + f.eval (b : ℤ) := by\n  sorry\n\n/--\nProbably $f(x) = x^5$ has the property that the sums $f(a)+f(b)$ with\n$a < b$ nonnegative integers are distinct.\n-/\n@[category research open, AMS 11]\ntheorem erdos_324.variants.quintic : {(a, b) : ℕ × ℕ | a < b}.InjOn fun (a, b) => a ^ 5 + b ^ 5 := by\n  sorry\n\nend Erdos324\n"
+}

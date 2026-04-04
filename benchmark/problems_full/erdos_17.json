@@ -1,0 +1,11 @@
+{
+  "uuid": "erdos_17",
+  "problem": [
+    "Are there infinitely many primes p such that every even number n≤ p-3 can be written as a difference of primes n=q_1-q_2 where q_1,q_2≤ p?",
+    "The first prime without this property is 97. The sequence of such primes is A038133 in the OEIS. These are called cluster primes.\n\nBlecksmith, Erdős, and Selfridge \\cite{BES99} proved that the number of such primes is\\ll_A (x)/((\\log x)^A)for every A>0, and Elsholtz \\cite{El03} improved this to\\ll x\\exp(-c(\\log\\log x)^2)for every c<1/8.\n\nThis is discussed in problem C1 of Guy's collection \\cite{Gu04}.\n\nReferences\n\n[BES99] Blecksmith, Richard and Erdős, Paul and Selfridge, J. L., Cluster primes. Amer. Math. Monthly (1999), 43--48.\n\n[El03] Elsholtz, Christian, On cluster primes. Acta Arith. (2003), 281--284.\n\n[Gu04] Guy, Richard K., Unsolved problems in number theory.  (2004), xviii+437."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 17,
+  "original_latex": "Are there infinitely many primes $p$ such that every even number $n\\leq p-3$ can be written as a difference of primes $n=q_1-q_2$ where $q_1,q_2\\leq p$?",
+  "reference_proof_hint": "This is an **open problem** (asked by Erdős). Primes $p$ with your property are called **cluster primes**: an odd prime $p$ such that every even (k\\le p-3) can be written as (k=q_1-q_2) with primes (q_1,q_2\\le p). ([Wikipedia][1])\n\nWhat is known:\n\n* **It is not known whether there are infinitely many such primes $p$.** ([Wikipedia][1])\n* The **first prime that fails** the property is $97$. ([Erdős Problems][2])\n  [[nomath]](Equivalently: the first 23 odd primes up to $89$ are cluster primes; $97"
+}

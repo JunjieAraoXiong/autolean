@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_983",
+  "problem": [
+    "Let n≥ 2 and \\pi(n)<k≤ n. Let f(k,n) be the smallest integer r such that in any A⊆ \\{1,\\ldots,n\\} of size | A|=k there exist primes p_1,\\ldots,p_r such that at least r many a∈ A are only divisible by primes from \\{p_1,\\ldots,p_r\\}.\n\nIs it true that2\\pi(n^{1/2})-f(\\pi(n)+1,n)→ ∞as n→ ∞?\n\nIn general, estimate f(k,n), particularly when \\pi(n)+1<k=o(n)."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 983,
+  "status": "open",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $n\\geq 2$ and $\\pi(n)<k\\leq n$. Let $f(k,n)$ be the smallest integer $r$ such that in any $A\\subseteq \\{1,\\ldots,n\\}$ of size $\\lvert A\\rvert=k$ there exist primes $p_1,\\ldots,p_r$ such that at least $r$ many $a\\in A$ are only divisible by primes from $\\{p_1,\\ldots,p_r\\}$.\n\nIs it true that\\[2\\pi(n^{1/2})-f(\\pi(n)+1,n)\\to \\infty\\]as $n\\to \\infty$?\n\nIn general, estimate $f(k,n)$, particularly when $\\pi(n)+1<k=o(n)$.",
+  "additional_context": "It is trivial that f(k,n)≤ \\pi(n). Erdős and Straus \\cite{Er70b} proved thatf(\\pi(n)+1,n)=2\\pi(n^{1/2})+o_A\\left(\\frac{n^{1/2}}{(\\log n)^A}\\right)for any A>0 and, for any constant c>0,f(cn,n)=\\log\\log n+(c_1+o(1))\\sqrt{2\\log\\log n},wherec=(1)/(\\sqrt{2\\pi)}∈t_{-∞}^{c_1}e^{-x^2/2}\\mathrm{d}x.\n\nReferences\n\n[Er70b] Erdős, P., Some applications of graph theory to number theory. Proc. Second Chapel Hill Conf. on Combinatorial Mathematics and its Applications (Univ. North Carolina, Chapel Hill, N.C., 1970) (1970), 136-145.",
+  "reference_proof_hint": "There is a small (but important) mismatch between your definition and the classical Erdős–Straus one.\n\n* In Erdős’s 1970 paper, $f(k,x)$ is defined with **“more than $r$”** [[nomath]](i.e. $\\ge r+1$)[[/nomath]] integers supported on $r$ primes. ([Renyi Institute][1])\n* Your version uses **“at least $r$”** supported integers, which is strictly weaker. Many of the sharp results and the specific benchmark (2\\pi(\\sqrt n)) are tied to the “(>r)” version. [[nomath]](I’ll answer for the classical “$>r$” version, and briefly comment on the “$\\ge r$” variant at the end.)[[/nomath]]\n\nBelow I write $f$ for the Erdős–Straus function [[nomath]](the “$>r$” one)[[/nomath]].\n\n---\n\n## 1) The limit (2\\pi(\\sqrt n)-f(\\pi(n)+1,n)\\to\\infty) is **false**\n\nErdős and Straus conjectured exactly this divergence [[nomath]](it appears as $18$ in Erdős’s paper)[[/nomath]]. ([Renyi Institute][1])\n\nHowever, Carl Pomerance showed that this conjecture is **false**: he proves that the upper-bound inequality can be met w"
+}

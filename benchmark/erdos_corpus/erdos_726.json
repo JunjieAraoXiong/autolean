@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_726",
+  "problem": [
+    "As n→ ∞ ranges over integers∑_{p≤ n}1_{n∈ (p/2,p)\\pmod{p}}(1)/(p)\\sim (\\log\\log n)/(2)."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 726,
+  "status": "open",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "As $n\\to \\infty$ ranges over integers\\[\\sum_{p\\leq n}1_{n\\in (p/2,p)\\pmod{p}}\\frac{1}{p}\\sim \\frac{\\log\\log n}{2}.\\]",
+  "additional_context": "A conjecture of Erdős, Graham, Ruzsa, and Straus \\cite{EGRS75}. For comparison the classical estimate of Mertens states that∑_{p≤ n}(1)/(p)\\sim \\log\\log n.By n∈ (p/2,p)\\pmod{p} we mean n\\equiv r\\pmod{p} for some integer r with p/2<r<p.\n\nReferences\n\n[EGRS75] Erdős, P. and Graham, R. L. and Ruzsa, I. Z. and Straus, E. G., On the prime factors of (\\sp{2n}\\sb{n}). Math. Comp. (1975), 83-92.",
+  "reference_proof_hint": "Let\n[\nS(n):=\\sum_{p\\le n}\\frac1p\\mathbf 1_{{n\\bmod p\\in(p/2,p)}}.\n]\n[[nomath]](So the indicator is $1$ exactly when the residue $r=n\\bmod p$ lies in the “upper half” ${(p+1)/2,\\dots,p-1}$ for odd $p$; for $p=2$ it is always $0$.)[[/nomath]]\n\nA clean way to make sense of the asymptotic is: **for a set of integers $n$ of natural density $1$** [[nomath]](equivalently: if you pick $n$ uniformly at random from $\\\\{1,\\dots,N\\\\}$ and let $N\\to\\infty$, the statement holds with probability $\\to1$)[[/nomath]]. Under that interpretation one indeed has\n[\nS(n)\\sim \\frac12\\log\\log n.\n]\n\nHere is a proof.\n\n---\n\n## 1) Fix the prime cutoff and compute the mean\n\nFor a parameter (y\\ge 3), define the truncated sum\n[\nS_y(n):=\\sum_{p\\le y}\\frac1p\\mathbf 1_{{n\\bmod p\\in(p/2,p)}}.\n]\n\nFor an odd prime $p$, exactly $(p-1)/2$ residue classes mod $p$ lie in $(p/2,p)$, so\n[\n\\mathbb E\\Big[\\mathbf 1_{{n\\bmod p\\in(p/2,p)}}\\Big]=\\frac{p-1}{2p}\n\\qquad (p\\text{ odd}),\n]\nand for (p=2) the expectation is $0$.\n\nThus\n[\n\\mu_y"
+}

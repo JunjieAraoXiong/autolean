@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_320",
+  "problem": [
+    "Let S(N) count the number of distinct sums of the form ∑_{n∈ A}(1)/(n) for A⊆ \\{1,\\ldots,N\\}. Estimate S(N)."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 320,
+  "status": "open",
+  "tags": [
+    "number theory",
+    "unit fractions"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $S(N)$ count the number of distinct sums of the form $\\sum_{n\\in A}\\frac{1}{n}$ for $A\\subseteq \\{1,\\ldots,N\\}$. Estimate $S(N)$.",
+  "additional_context": "Bleicher and Erdős \\cite{BlEr75} proved the lower bound\\log S(N)≥ (N)/(\\log N)\\left(\\log 2∏_{i=3}^k\\log_iN\\right),valid for k≥ 4 and \\log_kN≥ k, and also \\cite{BlEr76b} proved the upper bound\\log S(N)≤ (N)/(\\log N)\\left(\\log_r N ∏_{i=3}^r \\log_iN\\right),valid for r≥ 1 and \\log_{2r}N≥ 1. (In these bounds \\log_in denotes the i-fold iterated logarithm.)\n\nBettin, Greni\\'{e}, Molteni, and Sanna \\cite{BGMS25} improved the lower bound to\\log S(N) ≥  (N)/(\\log N)\\left(2\\log 2\\left(1-(3/2)/(\\log_kN)\\right)∏_{i=3}^k\\log_iN\\right),valid for k≥ 4 and \\log_kN≥ 3/2. (In particular this goes to infinity faster than the lower bound of Bleicher and Erdős.)\n\nSee also [321].\n\nReferences\n\n[BGMS25] S. Bettin, L. Greni\\'{e}, G. Molteni, and C. Sanna, A lower bound for the number of Egyptian fractions. arXiv:2509.10030 (2025).\n\n[BlEr75] Bleicher, M. N. and Erdős, P., The number of distinct subsums of ∑ \\sb{1}\\spN\\,1/i. Math. Comp. (1975), 29-42.\n\n[BlEr76b] Bleicher, Michael N. and Erdős, Paul, Denominators of Egyptian fractions. II. Illinois J. Math. (1976), 598-613.",
+  "reference_proof_hint": "Write\n[\nS(N)=|\\\\{\\sum_{n\\in A}\\frac1n:;A\\subseteq{1,2,\\dots,N}\\\\}|.\n]\nThis is exactly the number of *distinct* Egyptian-fraction values whose denominators are (\\le N) (each denominator used at most once), i.e. the size of the set (E_N) in the Egyptian-fraction literature. ([arXiv][1])\n\n## Easy bounds (to calibrate)\n\n* Trivially (S(N)\\le 2^N), since there are (2^N) subsets.\n* A simple (but weak) lower bound comes from restricting to primes: if (A,B) are distinct subsets of primes (\\le N), then (\\sum_{p\\in A}1/p\\ne \\sum_{p\\in B}1/p) [[nomath]](multiply by $\\prod_{p\\in A\\cup B}p$ and reduce mod a prime in the symmetric difference)[[/nomath]]. Hence\n  [\n  S(N)\\ge 2^{\\pi(N)}=\\exp!\\Big((\\log 2+o(1))\\frac{N}{\\log N}\\Big).\n  ]\n  This already shows $S(N)$ grows faster than any power of $N$, but it’s far from best known results.\n\n## Best-known general bounds (iterated logarithms)\n\nLet (\\log_1 N=\\log N) and (\\log_{j+1}N=\\log(\\log_j N)) denote iterated natural logarithms.\n\n### Upper bounds (Bleich"
+}

@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_479",
+  "problem": [
+    "Is it true that, for all k≠ 1, there are infinitely many n such that 2^n\\equiv k\\pmod{n}?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 479,
+  "status": "open",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": true,
+  "original_latex": "Is it true that, for all $k\\neq 1$, there are infinitely many $n$ such that $2^n\\equiv k\\pmod{n}$?",
+  "additional_context": "A conjecture of Graham. It is easy to see that 2^n\\not\\equiv 1\\mod{n} for all n>1, so the restriction k≠ 1 is necessary. Erdős and Graham report that Graham, Lehmer, and Lehmer have proved this for k=2^i for i≥ 1, or if k=-1, but I cannot find such a paper. Tang has written a short note giving a proof for this case.\n\nAs an indication of the difficulty, when k=3 the smallest n such that 2^n\\equiv 3\\pmod{n} is n=4700063497.\n\nThe minimal such n for each k is A036236 in the OEIS.",
+  "reference_proof_hint": "Not known in general — this is an open problem.\n\n### Why $k=1$ is special\n\nIf (2^n \\equiv 1 \\pmod n) with (n>1), let $p$ be the smallest prime divisor of $n$. Then (2^n\\equiv 1\\pmod p), so the multiplicative order (\\operatorname{ord}_p(2)) divides $n$. But (\\operatorname{ord}_p(2)\\mid (p-1)), hence (\\operatorname{ord}_p(2)<p). Since $p$ is the smallest prime factor of $n$, the only way a positive integer (<p) can divide $n$ is if it equals $1$. Thus (\\operatorname{ord}_p(2)=1), i.e. (2\\equiv 1\\pmod p), impossible. So there is **no** solution for (n>1). ([OEIS][1])\n\n[[nomath]](So excluding $k=1$ is necessary.)[[/nomath]]\n\n### The general statement is a conjecture (open)\n\nYour question is exactly **Erdős Problem #479**, attributed to a conjecture of Ron Graham:\n\n> For every (k\\neq 1), are there infinitely many $n$ with (2^n\\equiv k\\pmod n)?\n\nThis is currently listed as **open**. ([Erdős Problems][2])\n\nA nice indication of how hard it is: for $k=3$, the *smallest* (n>1) with (2^n\\equiv 3\\",
+  "ground_truth_lean": "/-\nCopyright 2025 The Formal Conjectures Authors.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    https://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n-/\n\nimport FormalConjectures.Util.ProblemImports\n\n/-!\n# Erdős Problem 479\n\n*Reference:* [erdosproblems.com/479](https://www.erdosproblems.com/479)\n-/\n\nnamespace Erdos479\n\n/--\nIs it true that, for all $k\\neq 1$, there are infinitely many $n$ such that\n$2^n\\equiv k\\pmod{n}$?\n-/\n@[category research open, AMS 11]\ntheorem erdos_479 : answer(sorry) ↔ ∀ᵉ (k > 1), { n | 2 ^ n ≡ k [MOD n]}.Infinite := by\n  sorry\n\nend Erdos479\n"
+}

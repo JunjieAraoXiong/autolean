@@ -1,0 +1,19 @@
+{
+  "uuid": "erdos_348",
+  "problem": [
+    "For what values of 0≤ m<n is there a complete sequence A=\\{a_1≤ a_2≤ \\cdots\\} of integers such that\n{UL}\n{LI} A remains complete after removing any m elements, but {/LI}\n{LI} A is not complete after removing any n elements? {/LI}\n{/UL}"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 348,
+  "status": "open",
+  "tags": [
+    "number theory",
+    "complete sequences"
+  ],
+  "prize": "no",
+  "formalized_on_site": true,
+  "original_latex": "For what values of $0\\leq m<n$ is there a complete sequence $A=\\{a_1\\leq a_2\\leq \\cdots\\}$ of integers such that\n{UL}\n{LI} $A$ remains complete after removing any $m$ elements, but {/LI}\n{LI} $A$ is not complete after removing any $n$ elements? {/LI}\n{/UL}",
+  "additional_context": "The Fibonacci sequence 1,1,2,3,5,\\ldots shows that m=1 and n=2 is possible. The sequence of powers of 2 shows that m=0 and n=1 is possible. The case m=2 and n=3 is not known.\n\nvan Doorn has shown that no such sequence exists for 2≤ m<n if we interpret complete in the strong sense that\\left\\{ ∑_{n∈ B}n : \\textrm{ for all finite }B⊂ A\\right\\}=ℕ.Erdős and Graham most likely meant the weaker notion of completeness which allows finitely many exceptions, however.",
+  "reference_proof_hint": "Let (A\\subseteq \\mathbb N) be written as a nondecreasing sequence (a_1\\le a_2\\le\\cdots), and write\n[\nP(A)=\\\\{\\sum_{x\\in B}x:;B\\subseteq A\\text{ finite}\\\\}\n]\nfor the set of finite subset sums. On the Erdős–Graham “complete sequence” convention, **$A$ is complete** if $P(A)$ contains **all sufficiently large** integers. ([Erdős Problems][1])\n\nTwo monotonicity facts to keep in mind:\n\n* If (A\\setminus S) is complete and (T\\subseteq S), then (A\\setminus T) is also complete (removing fewer elements can only help).\n* If (A\\setminus S) is *not* complete and (S\\subseteq T), then (A\\setminus T) is also *not* complete (removing more elements can’t restore missing subset sums).\n\nSo, for example, if a sequence is “not complete after removing **any 2** elements”, then it is automatically “not complete after removing **any (n\\ge 2)** elements”.\n\n## Existence for (m=0) and any (n\\ge 1)\n\nTake\n[\nA={1,2,4,8,\\dots}={2^k:k\\ge 0}.\n]\n\n* $A$ is (strongly) complete: every integer has a binary expansion as a su",
+  "ground_truth_lean": "/-\nCopyright 2025 The Formal Conjectures Authors.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    https://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n-/\n\nimport FormalConjectures.Util.ProblemImports\n\n/-!\n# Erdős Problem 348\n\n*Reference:* [erdosproblems.com/348](https://www.erdosproblems.com/348)\n-/\n\nnamespace Erdos348\n\nopen Erdos348\n\n/--\nFor what values of $0 \\leq m < n$ is there a complete sequence\n$A = \\{a_1 \\leq a_2 \\leq \\cdots\\}$ of integers such that\n 1. $A$ remains complete after removing any $m$ elements, but\n 2. $A$ is not complete after removing any $n$ elements.\n-/\n@[category research open, AMS 11]\ntheorem erdos_348 :\n    { (m, n) | (m) (n) (_ : m < n) (a : ℕ → ℕ) (_ : Monotone a)\n      (_ : ∀ s, s.card = m → IsAddComplete (Set.range (Function.updateFinset a s 0)))\n        (_ : ∀ t, t.card = n → ¬IsAddComplete (Set.range (Function.updateFinset a t 0))) } =\n    answer(sorry) := by\n  sorry\n\nend Erdos348\n"
+}

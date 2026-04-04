@@ -1,0 +1,15 @@
+{
+  "uuid": "erdos_434",
+  "problem": [
+    "Erdős Problem #434"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 434,
+  "status": "proved (Lean)",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": true,
+  "ground_truth_lean": "/-\nCopyright 2025 The Formal Conjectures Authors.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    https://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n-/\n\nimport FormalConjectures.Util.ProblemImports\n\n/-!\n# Erdős Problem 434\n\n*Reference:* [erdosproblems.com/434](https://www.erdosproblems.com/434)\n-/\n\nnamespace Erdos434\n\nopen Erdos434 Finset\n\n/--\nA natural $n$ is representable as a set $A$ if it can be\nwritten as the sum of finitely many elements of $A$\n(with repetition allowed).\n-/\nabbrev Nat.IsRepresentableAs (n : ℕ) (A : Set ℕ) :=\n    ∃ (S : Multiset ℕ), (∀ a ∈ S, a ∈ A) ∧ S.sum = n\n\n/--\nThe number of naturals that cannot be written as the sum of\nfinitely many elements of the set $A$, with repetition allowed.\n-/\nnoncomputable abbrev Nat.NcardUnrepresentable (A : Set ℕ) :=\n    { n : ℕ | ¬n.IsRepresentableAs A }.ncard\n\n/--\nLet $k \\le n$. What choice of $A\\subseteq\\{1, \\dots, n\\}$ (with $\\text{gcd}(A) = 1$) of size $|A| = k$\nmaximises the number of integers not representable as the sum of finitely\nmany elements from $A$ (with repetitions allowed)?\nIs it $\\{n, n - 1, \\dots, n - k + 1\\}$?\n-/\n@[category research open, AMS 11]\ntheorem erdos_434.parts.i (n k : ℕ) (hn : 1 ≤ n) (hk : 1 ≤ k) (h : k ≤ n) :\n    IsGreatest\n      { Nat.NcardUnrepresentable S | (S : Finset ℕ) (_ : S ⊆ Finset.Icc 1 n)\n        (_ : #S = k) (_ : S.gcd id = 1) }\n      (Nat.NcardUnrepresentable <| answer(sorry)) := by\n  sorry\n\n/--\nLet $k \\le n$. Out of all $A\\subseteq\\{1, \\dots, n\\}$ (with $\\text{gcd}(A) = 1$) of size $|A| = k$,\ndoes $A = \\{n, n - 1, \\dots, n - k + 1\\}$ maximise the number of integers\nnot representable as the sum of finitely many elements from $A$ (with repetitions allowed)?\n-/\n@[category research open, AMS 11]\ntheorem erdos_434.parts.ii : answer(sorry) ↔ ∀ᵉ (n ≥ 1) (k ≥ 1), k ≤ n →\n    IsGreatest\n      { Nat.NcardUnrepresentable S | (S : Finset ℕ) (_ : S ⊆ Finset.Icc 1 n)\n        (_ : #S = k) (_ : S.gcd id = 1)}\n      (Nat.NcardUnrepresentable <| Set.Icc (n - k + 1 : ℕ) n) := by\n  sorry\n\nend Erdos434\n"
+}

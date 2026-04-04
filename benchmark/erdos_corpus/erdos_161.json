@@ -1,0 +1,19 @@
+{
+  "uuid": "erdos_161",
+  "problem": [
+    "Let \\alpha∈[0,1/2) and n,t≥ 1. Let F^{(t)}(n,\\alpha) be the largest m such that we can 2-colour the edges of the complete t-uniform hypergraph on n vertices such that if X⊆ [n] with | X| ≥ m then there are at least \\alpha \\binom{| X|}{t} many t-subsets of X of each colour.\n\nFor fixed n,t as we change \\alpha from 0 to 1/2 does F^{(t)}(n,\\alpha) increase continuously or are there jumps? Only one jump?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 161,
+  "status": "open",
+  "tags": [
+    "combinatorics",
+    "ramsey theory",
+    "discrepancy"
+  ],
+  "prize": "$500",
+  "formalized_on_site": false,
+  "original_latex": "Let $\\alpha\\in[0,1/2)$ and $n,t\\geq 1$. Let $F^{(t)}(n,\\alpha)$ be the largest $m$ such that we can $2$-colour the edges of the complete $t$-uniform hypergraph on $n$ vertices such that if $X\\subseteq [n]$ with $\\lvert X\\rvert \\geq m$ then there are at least $\\alpha \\binom{\\lvert X\\rvert}{t}$ many $t$-subsets of $X$ of each colour.\n\nFor fixed $n,t$ as we change $\\alpha$ from $0$ to $1/2$ does $F^{(t)}(n,\\alpha)$ increase continuously or are there jumps? Only one jump?",
+  "additional_context": "For \\alpha=0 this is the usual Ramsey function. A conjecture of Erdős, Hajnal, and Rado (see [562]) implies that F^{(t)}(n,0)\\asymp \\log_{t-1} nand results of Erdős and Spencer imply thatF^{(t)}(n,\\alpha) \\gg_\\alpha (\\log n)^{(1)/(t-1)}for all \\alpha>0, and a similar upper bound holds for \\alpha close to 1/2.\n\nErdős believed there might be just one jump, occcurring at \\alpha=0.\n\nConlon, Fox, and Sudakov \\cite{CFS11} have proved that, for any fixed \\alpha>0,F^{(3)}(n,\\alpha) \\ll_\\alpha \\sqrt{\\log n}.Coupled with the lower bound above, this implies that there is only one jump for fixed \\alpha when t=3, at \\alpha=0.\n\nFor all \\alpha>0 it is known thatF^{(t)}(n,\\alpha)\\gg_t (\\log n)^{c_\\alpha}.See also [563].\n\nSee also the entry in the graphs problem collection.\n\nReferences\n\n[CFS11] Conlon, David and Fox, Jacob and Sudakov, Benny, Large almost monochromatic subsets in hypergraphs. Israel J. Math. (2011), 423--432.",
+  "reference_proof_hint": "Write (E=\\binom{n}{t}) for the number of $t$-edges in (K_n^{(t)}), and (as is standard) take (m\\in{1,2,\\dots,n}).\n\n### Under your definition, (F^{(t)}(n,\\alpha)) is essentially determined by $[n]$ alone\n\nIf a colouring works for some (m\\le n), then it must in particular work for the set (X=[n]) [[nomath]](since $|[n]|=n\\ge m$)[[/nomath]]. So we must have, for the whole hypergraph,\n$\n|\\text{red edges}\\| \\ge \\ \\alpha E\n\\qquad\\text{and}\\qquad\n|\\text{blue edges}\\| \\ge \\ \\alpha E.\n$\nEquivalently, the *smaller* colour class must have size at least (\\alpha E).\n\nBut in any 2-colouring of $E$ edges, the smaller colour class has size at most (\\lfloor E/2\\rfloor). Hence a **necessary condition** for *any* (m\\le n) to work is\n$\n\\alpha E \\le \\Big\\lfloor\\frac{E}{2}\\Big\\rfloor\n\\qquad\\Longleftrightarrow\\qquad\n\\alpha \\le \\alpha_* := \\frac{\\lfloor E/2\\rfloor}{E}.\n$\n\nConversely, if (\\alpha\\le \\alpha_*), then we can simply colour exactly (\\lfloor E/2\\rfloor) edges red and the remaining (E-\\lfloor E/2\\rflo"
+}

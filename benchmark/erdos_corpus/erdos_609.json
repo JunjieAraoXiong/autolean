@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_609",
+  "problem": [
+    "Let f(n) be the minimal m such that if the edges of K_{2^n+1} are coloured with n colours then there must be a monochromatic odd cycle of length at most m. Estimate f(n)."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 609,
+  "status": "open",
+  "tags": [
+    "graph theory",
+    "ramsey theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $f(n)$ be the minimal $m$ such that if the edges of $K_{2^n+1}$ are coloured with $n$ colours then there must be a monochromatic odd cycle of length at most $m$. Estimate $f(n)$.",
+  "additional_context": "A problem of Erdős and Graham. The edges of K_{2^n} can be n-coloured to avoid odd cycles of any length. It can be shown that C_5 and C_7 can be avoided for large n.\n\nChung \\cite{Ch97} asked whether f(n)→ ∞ as n→ ∞. Day and Johnson \\cite{DaJo17} proved this is true, and thatf(n)≥ 2^{c\\sqrt{\\log n}}for some constant c>0. The trivial upper bound is 2^n.\n\nGir\\~{a}o and Hunter \\cite{GiHu24} have proved thatf(n) \\ll (2^n)/(n^{1-o(1))}.Janzer and Yip \\cite{JaYi25} have improved this tof(n) \\ll n^{3/2}2^{n/2}.See also the entry in the graphs problem collection.\n\nReferences\n\n[Ch97] Chung, F. R. K., Open problems of {P}aul Erdős in graph theory. J. Graph Theory (1997), 3--36.\n\n[DaJo17] Day, A. Nicholas and Johnson, J. Robert, Multicolour Ramsey numbers of odd cycles. J. Combin. Theory Ser. B (2017), 56-63.\n\n[GiHu24] A. Gir\\~Ao and Z. Hunter, Monochromatic odd cycles in edge-coloured complete graphs. arXiv:2412.07708 (2024).\n\n[JaYi25] O. Janzer and F. Yip, Short monochromatic odd cycles. arXiv:2506.14910 (2025).",
+  "reference_proof_hint": "Write $f(n)$ for the smallest $m$ such that **every** $n$-edge-colouring of (K_{2^n+1}) contains a monochromatic odd cycle of length (\\le m).\n\nA couple of basic facts frame the problem.\n\n* For (K_{2^n}) there is an explicit $n$-colouring in which **every** colour class is bipartite [[nomath]](e.g. label vertices by ${0,1}^n$ and colour an edge by the first coordinate where the labels differ)[[/nomath]], so there are **no** monochromatic odd cycles at all. \n* For (K_{2^n+1}) this is impossible: if each colour class were bipartite, taking the bipartition in each colour gives each vertex an $n$-bit “side-vector”, forcing at most (2^n) distinct vertices. Hence some colour class is non-bipartite and contains an odd cycle. \n\nSo $f(n)$ is finite, and the real question is its growth.\n\n## Best current bounds\n\nThis is an Erdős–Graham problem $1973/75$. The sharp order of growth is **open**; the best known bounds are very far apart.\n\n### Lower bound (Day–Johnson, 2017)\n\nDay and Johnson proved (f("
+}

@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_810",
+  "problem": [
+    "Does there exist some \\epsilon>0 such that, for all sufficiently large n, there exists a graph G on n vertices with at least \\epsilon n^2 many edges such that the edges can be coloured with n colours so that every C_4 receives 4 distinct colours?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 810,
+  "status": "open",
+  "tags": [
+    "graph theory",
+    "ramsey theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Does there exist some $\\epsilon>0$ such that, for all sufficiently large $n$, there exists a graph $G$ on $n$ vertices with at least $\\epsilon n^2$ many edges such that the edges can be coloured with $n$ colours so that every $C_4$ receives $4$ distinct colours?",
+  "additional_context": "A problem of Burr, Erdős, Graham, and S\\'{o}s.\n\nSee also [809].",
+  "reference_proof_hint": "This is not known.\n\nWhat you are asking for is essentially whether there are **dense** graphs on $n$ vertices whose edges admit an edge–coloring with (\\le n) colors in which **every 4‑cycle is rainbow** (all four edges different). In the recent literature, a **proper** edge–coloring with the “every (C_4) is rainbow” property is called a **$B$-coloring**, and (q_B(G)) denotes the minimum number of colors needed. ([ResearchGate][1])\n\n### Why the obvious dense candidates don’t work\n\nFor very dense graphs like (K_n) or (K_{n,n}), the condition is so strong that it forces **all edges to have distinct colors** [[nomath]](because any two edges lie together in some $C_4$)[[/nomath]]. In fact one has\n[\nq_B(K_n)=\\binom{n}{2},\\qquad q_B(K_{n,n})=n^2,\n]\nreflecting exactly this “all edges must be different” phenomenon. ([Repository of the Academy's Library][2])\nSo constant-density examples, if they exist, must be much more structured than complete (bi)partite graphs.\n\n### Status: open, and tied to "
+}

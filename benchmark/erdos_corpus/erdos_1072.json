@@ -1,0 +1,24 @@
+{
+  "uuid": "erdos_1072",
+  "problem": [
+    "For any prime p, let f(p) be the least integer such that f(p)!+1\\equiv 0\\pmod{p}.\n\nIs it true that there are infinitely many p for which f(p)=p-1?\nIs it true that f(p)/p→ 0 for almost all p?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 1072,
+  "status": "open",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": true,
+  "original_latex": "For any prime $p$, let $f(p)$ be the least integer such that $f(p)!+1\\equiv 0\\pmod{p}$.\n\nIs it true that there are infinitely many $p$ for which $f(p)=p-1$?\nIs it true that $f(p)/p\\to 0$ for almost all $p$?",
+  "additional_context": "Questions formulated by Erdős, Hardy, and Subbarao \\cite{HaSu02}, who believed that the number of p≤ x for which f(p)=p-1 is o(x/\\log x).\n\nThese are mentioned in problem A2 of Guy's collection.\n\nReferences\n\n[HaSu02] Hardy, G. E. and Subbarao, M. V., A modified problem of Pillai and some related questions. Amer. Math. Monthly (2002), 554--559.",
+  "reference_proof_hint": "Let $p$ be prime and\n[\nf(p):=\\min{n\\ge 1:\\ n!\\equiv -1 \\pmod p}.\n]\nBy Wilson’s theorem ((p-1)!\\equiv -1\\pmod p), so $f(p)$ is always defined and (f(p)\\le p-1).\n\nIt’s convenient to let\n[\nN(p):=|\\\\{1\\le n\\le p-1:\\ n!\\equiv -1\\pmod p\\\\}|.\n]\nThen (N(p)\\ge 1) always [[nomath]](because $n=p-1$ is a solution)[[/nomath]], and\n[\nf(p)=p-1 \\quad\\Longleftrightarrow\\quad N(p)=1,\n]\ni.e. “$-1$” is hit **only once** by the factorial map (n\\mapsto n!\\pmod p).\n\n## 1) Infinitely many $p$ with (f(p)=p-1)?\n\nAs far as I can tell (as of Jan 2026), this is **not proved**. It sits inside a broader circle of open problems about how “random” the values (1!,2!,\\dots,(p-1)!\\pmod p) look.\n\nA standard benchmark is **Stauduhar’s conjecture**: if $h(p)$ is the number of *distinct* residues among (1!,2!,\\dots,(p-1)!\\pmod p), then\n[\n\\frac{h(p)}{p}\\to 1-\\frac1e.\n]\nThis is explicitly stated (and noted as still unsolved) by Cobeli–Zaharescu. \n\nThey also formulate a stronger “Poisson((\\lambda=1))” refinement:\n\n> **Conjectur",
+  "ground_truth_lean": "/-\nCopyright 2025 The Formal Conjectures Authors.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    https://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n-/\n\nimport FormalConjectures.Util.ProblemImports\n\n/-!\n# Erdős Problem 1072\n\n*Reference:* [erdosproblems.com/1072](https://www.erdosproblems.com/1072)\n-/\n\nopen Nat Filter Finset Set\nopen scoped Topology\n\nnamespace Erdos1072\n\n/-- For any prime $p$, let $f(p)$ be the least integer such that $f(p)! + 1 \\equiv 0 \\mod p$. -/\nnoncomputable def f (p : ℕ) : ℕ := sInf {n | (n)! + 1 ≡ 0 [MOD p]}\n\n/-- Is it true that there are infinitely many $p$ for which $f(p) = p − 1$? -/\n@[category research open, AMS 11]\ntheorem erdos_1072.parts.i : answer(sorry) ↔ Set.Infinite {p | p.Prime ∧ f p = p - 1} := by\n  sorry\n\n/-- Is it true that $f(p)/p \\to 0$ for $p \\to \\infty$ in a density 1 subset of the primes? -/\n@[category research open, AMS 11]\ntheorem erdos_1072.parts.ii :\n    answer(sorry) ↔ ∃ (P : Set ℕ), P ⊆ {p | p.Prime} ∧ P.HasDensity 1 {p | p.Prime} ∧\n      Tendsto (fun p => (f p / p : ℝ)) (atTop ⊓ principal P) (𝓝 0) := by\n  sorry\n/--\nErdős, Hardy, and Subbarao [HaSu02], believed that the number of $p \\le x$ for which $f(p)=p−1$\nis $o(x/\\log x)$.\n\n[HaSu02] Hardy, G. E. and Subbarao, M. V., _A modified problem of Pillai and some related questions._\nAmer. Math. Monthly (2002), 554--559.\n-/\n@[category research open, AMS 11]\ntheorem erdos_1072.variants.littleo :\n    (fun x ↦ (({p | p.Prime ∧ f p = p - 1} ∩ Icc 0 x).ncard : ℝ)) =o[atTop]\n      (fun x ↦ x / Real.log x) := by\n  sorry\n\nend Erdos1072\n",
+  "expert_comments": [
+    {
+      "author": "",
+      "text": "It should be noted that Q1 doesn't work for any other integers. As in, $f(p)=p-a$ implies $p$ divides the integer $(a-1)!+(-1)^a$ by Wilson's Theorem. Also, this paper shows that $\\frac{f(p)}{p}\\le 0.138$ infinitely often."
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "uuid": "erdos_237",
+  "problem": [
+    "Erdős Problem #237"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 237,
+  "status": "proved (Lean)",
+  "tags": [
+    "number theory",
+    "primes"
+  ],
+  "prize": "no",
+  "formalized_on_site": false
+}

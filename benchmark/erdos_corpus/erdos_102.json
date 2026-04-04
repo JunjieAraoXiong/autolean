@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_102",
+  "problem": [
+    "Let c>0 and h_c(n) be such that for any n points in ℝ^2 such that there are ≥ cn^2 lines each containing more than three points, there must be some line containing h_c(n) many points. Estimate h_c(n). Is it true that, for fixed c>0, we have h_c(n)→ ∞?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 102,
+  "status": "open",
+  "tags": [
+    "geometry"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $c>0$ and $h_c(n)$ be such that for any $n$ points in $\\mathbb{R}^2$ such that there are $\\geq cn^2$ lines each containing more than three points, there must be some line containing $h_c(n)$ many points. Estimate $h_c(n)$. Is it true that, for fixed $c>0$, we have $h_c(n)\\to \\infty$?",
+  "additional_context": "A problem of Erdős and Purdy. It is not even known if h_c(n)≥ 5 (see [101]).\n\nIt is easy to see that h_c(n) \\ll_c n^{1/2}, and Erdős at one point \\cite{Er95} suggested that perhaps a similar lower bound h_c(n)\\gg_c n^{1/2} holds. Zach Hunter has pointed out that this is false, even replacing >3 points on each line with >k points: consider the set of points in \\{1,\\ldots,m\\}^d where n\\approx m^d. These intersect any line in \\ll_d n^{1/d} points, and have \\gg_d n^2 many pairs of points each of which determine a line with at least k points. This is a construction in ℝ^d, but a random projection into ℝ^2 preserves the relevant properties.\n\nThis construction shows that h_c(n) \\ll n^{1/\\log(1/c)}.\n\nReferences\n\n[Er95] Erdős, Paul, Some of my favourite problems in number theory, combinatorics, and geometry. Resenhas (1995), 165-186.",
+  "reference_proof_hint": "Let $L$ be the number of distinct lines that contain at least $4$ of the $n$ points, and assume\n[\nL \\ge c n^{2}.\n]\nDefine $h_c(n)$ as the largest function such that **every** such configuration has **some** line containing at least $h_c(n)$ points.\n\n## Two easy bounds you always have\n\n### 1) $c$ cannot be too big\n\nEach line with (\\ge 4) points contains at least (\\binom{4}{2}=6) unordered pairs of points, and different lines contain disjoint sets of pairs (a pair of points determines a unique line). So\n[\n6L \\le \\binom{n}{2} \\sim \\frac{n^{2}}{2}.\n]\nHence\n[\nL \\le \\frac{n(n-1)}{12} \\quad\\text{so necessarily}\\quad c \\le \\frac{1}{12}.\n]\n\nSo the problem is only meaningful for (0<c\\le 1/12).\n\n### 2) Trivial lower bound\n\nSince you already have lines with $>3$ points, you automatically have a line with at least $4$ points. So\n[\nh_c(n)\\ge 4.\n]\n\n## What is known (and what is not)\n\n### Lower bounds: basically nothing beyond $4$\n\nIt is currently **open** to prove even the next step:\n\n> for fixed (c>"
+}

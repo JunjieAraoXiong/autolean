@@ -1,0 +1,19 @@
+{
+  "uuid": "erdos_681",
+  "problem": [
+    "Is it true that for all large n there exists k such that n+k is composite andp(n+k)>k^2,where p(m) is the least prime factor of m?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 681,
+  "status": "open",
+  "tags": [
+    "number theory",
+    "primes"
+  ],
+  "prize": "no",
+  "formalized_on_site": true,
+  "original_latex": "Is it true that for all large $n$ there exists $k$ such that $n+k$ is composite and\\[p(n+k)>k^2,\\]where $p(m)$ is the least prime factor of $m$?",
+  "additional_context": "Related to questions of Erdős, Eggleton, and Selfridge. This may be true with k^2 replaced by k^d for any d.\n\nSee also [680] and [682].",
+  "reference_proof_hint": "This is **currently unknown** (open).\n\nIn fact, your exact question appears as **Erdős Problem #681** and is listed as **OPEN**:\n\n> “Is it true that for all large $n$ there exists $k$ such that $n+k$ is composite and (p(n+k)>k^2)?” ([Erdős Problems][1])\n\n### A couple of useful remarks\n\n* If $n+1$ is composite, then $k=1$ works immediately, since (p(n+1)\\ge 2>1^2). So the only “hard” cases are essentially (n=p-1) with $p$ prime [[nomath]](where $k=1$ is impossible)[[/nomath]].\n\n* If $n+k$ is composite then (p(n+k)\\le \\sqrt{n+k}). Hence (p(n+k)>k^2) forces\n  [\n  k^2 < \\sqrt{n+k}\\quad\\Rightarrow\\quad k^4 < n+k,\n  ]\n  so any search for $k$ only needs to go up to about (k\\lesssim (n+k)^{1/4}). This observation is explicitly noted in OEIS discussions of the problem. ([OEIS][2])\n\n### Computational evidence\n\nOEIS sequence **A389680** records integers $n$ for which **no** (k>1) works [[nomath]](i.e., there is no $i>1$ with $n+i$ composite and $\\operatorname{lpf}(n+i)>i^2$)[[/nomath]]. It commen",
+  "ground_truth_lean": "/-\nCopyright 2025 The Formal Conjectures Authors.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    https://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n-/\n\nimport FormalConjectures.Util.ProblemImports\n\n/-!\n# Erdős Problem 681\n\n*Reference:* [erdosproblems.com/681](https://www.erdosproblems.com/681)\n-/\n\nnamespace Erdos681\n\n/-- `IsLPF p m` says that `p` is the least prime factor of `m`. -/\ndef IsLPF (p m : ℕ) : Prop := p.Prime ∧ p ∣ m ∧ ∀ q, q.Prime ∧ q ∣ m → p ≤ q\n\n/--\n**Erdős problem 681.**\nIs it true that for all large $n$ there exists $k$\nsuch that $n + k$ is composite and $p(n+k) > k^2$,\nwhere $p(m)$ is the least prime factor of $m$ ?\n-/\n@[category research open, AMS 11]\ntheorem erdos_681 : answer(sorry) ↔\n    ∀ᶠ n in .atTop, ∃ k > 0, (n + k).Composite ∧ ∀ p, IsLPF p (n + k) → p > k ^ 2 := by\n  sorry\n\nend Erdos681\n"
+}

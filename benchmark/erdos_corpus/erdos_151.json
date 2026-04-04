@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_151",
+  "problem": [
+    "For a graph G let \\tau(G) denote the minimal number of vertices that include at least one from each maximal clique of G on at least two vertices (sometimes called the clique transversal number).\n\nLet H(n) be maximal such that every triangle-free graph on n vertices contains an independent set on H(n) vertices.\n\nIf G is a graph on n vertices then is\\tau(G)≤ n-H(n)?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 151,
+  "status": "open",
+  "tags": [
+    "graph theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "For a graph $G$ let $\\tau(G)$ denote the minimal number of vertices that include at least one from each maximal clique of $G$ on at least two vertices (sometimes called the clique transversal number).\n\nLet $H(n)$ be maximal such that every triangle-free graph on $n$ vertices contains an independent set on $H(n)$ vertices.\n\nIf $G$ is a graph on $n$ vertices then is\\[\\tau(G)\\leq n-H(n)?\\]",
+  "additional_context": "It is easy to see that \\tau(G) ≤ n-\\sqrt{n}. Note also that if G is triangle-free then trivially \\tau(G)≤ n-H(n).\n\nThis is listed in \\cite{Er88} as a problem of Erdős and Gallai, who were unable to make progress even assuming G is K_4-free. There Erdős remarked that this conjecture is 'perhaps completely wrongheaded'.\n\nIt later appeared as Problem 1 in \\cite{EGT92}.\n\nThe general behaviour of \\tau(G) is the subject of [610].\n\nReferences\n\n[EGT92] Erdős, Paul and Gallai, Tibor and Tuza, Zsolt, Covering the cliques of a graph with vertices. Discrete Math. (1992), 279-289.\n\n[Er88] Erdős, P, Problems and results in combinatorial analysis and graph theory. Discrete Math. (1988), 81-92.",
+  "reference_proof_hint": "This is **not known in general**.\n\nIt is an old question of **Erdős and Gallai** (later appearing with Tuza), and it is still listed as **open**. ([Erdős Problems][1])\n\n### Why it is true for triangle‑free graphs\n\nIf $G$ is triangle‑free, then every clique has size at most $2$, so the maximal cliques are exactly the edges.\nSo a clique transversal is the same thing as a **vertex cover**, and\n[\n\\tau(G)=n-\\alpha(G),\n]\nwhere (\\alpha(G)) is the independence number. Since by definition every triangle‑free (n)-vertex graph has (\\alpha(G)\\ge H(n)), we get (\\tau(G)\\le n-H(n)) in the triangle‑free case (as you noted).\n\n### What is known for general graphs\n\nFor arbitrary graphs, the inequality\n[\n\\tau(G)\\le n-H(n)\n]\nis **open**, and Erdős even commented that it might be “wrongheaded”. ([Erdős Problems][1])\n\nWhat *is* known is a weaker general upper bound. It is “easy to see” that\n[\n\\tau(G)\\le n-\\sqrt{n}.\n]\n([Erdős Problems][1])\n\nAnd Erdős–Gallai–Tuza proved a stronger form\n[\n\\tau(G)\\le n-\\sqrt{2n}"
+}

@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_1013",
+  "problem": [
+    "Let h_3(k) be the minimal n such that there exists a triangle-free graph on n vertices with chromatic number k. Find an asymptotic for h_3(k), and also prove\\lim_{k→ ∞}(h_3(k+1))/(h_3(k))=1."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 1013,
+  "status": "open",
+  "tags": [
+    "graph theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $h_3(k)$ be the minimal $n$ such that there exists a triangle-free graph on $n$ vertices with chromatic number $k$. Find an asymptotic for $h_3(k)$, and also prove\\[\\lim_{k\\to \\infty}\\frac{h_3(k+1)}{h_3(k)}=1.\\]",
+  "additional_context": "It is known that(\\log k)/(\\log\\log k)k^2 \\ll h_3(k) \\ll (\\log k)k^2.The lower bound is due to Graver and Yackel \\cite{GrYa68}, the upper bound follows from Shearer's upper bound for R(3,k) (see [165]).\n\nThe function h_r(k) for r≥ 4 is the subject of [920].\n\nReferences\n\n[GrYa68] Graver, Jack E. and Yackel, James, Some graph theoretic results associated with {R}amsey's\ntheorem. J. Combinatorial Theory (1968), 125--175.",
+  "reference_proof_hint": "Let\n\n[\nh_3(k)=\\min{,n:\\exists\\ \\text{triangle-free }G\\text{ with }|V(G)|=n,\\ \\chi(G)=k,}.\n]\n\nThroughout, (\\log) is the natural logarithm.\n\n## 1. Asymptotic order of (h_3(k))\n\nThe correct order of magnitude is\n\n[\nh_3(k)=\\Theta(k^2\\log k).\n]\n\nIn fact the best-known bounds (as of the current literature) are\n\n[\n\\Big(\\tfrac14-o(1)\\Big)k^2\\log k\\ \\le\\ h_3(k)\\ \\le\\ (4+o(1))k^2\\log k\n\\qquad (k\\to\\infty),\n]\n\nsee e.g. the discussion and references in Kostochka–Sudakov–Verstraëte. ([Mathematics Stack Exchange][1])\n\nI’ll sketch standard proofs of each side, explicitly showing where Ramsey-type inputs enter.\n\n---\n\n### 1a. Upper bound (h_3(k)\\le(4+o(1))k^2\\log k)\n\nKim proved the sharp [[nomath]](up to $1+o(1)$)[[/nomath]] lower bound on the triangle Ramsey number:\n\n[\nR(3,t)\\ \\ge\\ \\Big(\\tfrac14-o(1)\\Big)\\frac{t^2}{\\log t}.\n]\n([Springer][2])\n\nEquivalently: for each large $t$ there exists a triangle-free graph $G$ on\n\n[\nN=\\Big(\\tfrac14-o(1)\\Big)\\frac{t^2}{\\log t}\n]\n\nvertices with (\\alpha(G)<t) [[nomath"
+}

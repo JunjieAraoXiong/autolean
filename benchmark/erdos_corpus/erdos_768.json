@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_768",
+  "problem": [
+    "Let A⊂ℕ be the set of n such that for every prime p\\mid n there exists some d\\mid n with d>1 such that d\\equiv 1\\pmod{p}. Is it true that there exists some constant c>0 such that for all large N(| A∩ [1,N]|)/(N)=\\exp(-(c+o(1))\\sqrt{\\log N}\\log\\log N)."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 768,
+  "status": "open",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $A\\subset\\mathbb{N}$ be the set of $n$ such that for every prime $p\\mid n$ there exists some $d\\mid n$ with $d>1$ such that $d\\equiv 1\\pmod{p}$. Is it true that there exists some constant $c>0$ such that for all large $N$\\[\\frac{\\lvert A\\cap [1,N]\\rvert}{N}=\\exp(-(c+o(1))\\sqrt{\\log N}\\log\\log N).\\]",
+  "additional_context": "Erdős could prove that there exists some constant c>0 such that for all large N\\exp(-c\\sqrt{\\log N}\\log\\log N)≤ (| A∩ [1,N]|)/(N)and(| A∩ [1,N]|)/(N)≤ \\exp(-(1+o(1))\\sqrt{\\log N\\log\\log N}).Erdős asked about this because | A∩ [1,N]| provides an upper bound for the number of integers n≤ N for which there is a non-cyclic simple group of order n.",
+  "reference_proof_hint": "This is **open** (it is Erdős’ Problem #768 in the Erdős Problems database). ([Erdős Problems][1])\n\nWhat *is* known is that Erdős proved two-sided stretched–exponential bounds, but with a gap in the exponent:\n\nLet\n[\nA(N):=\\lvert A\\cap[1,N]\\rvert.\n]\nThen Erdős showed there is an absolute constant (c>0) such that, for all large $N$,\n[\n\\exp\\big(-c\\sqrt{\\log N}\\log\\log N\\big)\\ \\le\\ \\frac{A(N)}{N}\n\\ \\le\\ \\exp!\\big(-(1+o(1))\\sqrt{\\log N,\\log\\log N}\\big).\n]\n([Erdős Problems][1])\n\nSo your proposed asymptotic\n[\n\\frac{A(N)}{N}=\\exp\\big(-(c+o(1))\\sqrt{\\log N},\\log\\log N\\big)\n]\nwould in particular **sharpen** Erdős’ upper bound by a factor of about (\\sqrt{\\log\\log N}) in the exponent, and that sharpening is exactly what is not known.\n\n### Context and related facts\n\n* The condition defining $A$ arises naturally from **Sylow theory** considerations when trying to rule out candidate orders of (non-cyclic) simple groups: one needs, for each prime (p\\mid n), a divisor (>1) of $n$ that is (1\\bmod p). Th"
+}

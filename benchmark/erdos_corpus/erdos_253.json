@@ -1,0 +1,15 @@
+{
+  "uuid": "erdos_253",
+  "problem": [
+    "Erdős Problem #253"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 253,
+  "status": "disproved",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": true,
+  "ground_truth_lean": "/-\nCopyright 2025 The Formal Conjectures Authors.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    https://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n-/\n\nimport FormalConjectures.Util.ProblemImports\n\n/-!\n# Erdős Problem 253\n\n*Reference:* [erdosproblems.com/253](https://www.erdosproblems.com/253)\n-/\n\nnamespace Erdos253\n\nopen scoped Topology\n\n/-- The predicate that `a : ℕ → ℕ` is a strictly monotone sequence such that every infinite\narithmetic progression contains infinitely many integers that are the sum of distinct $a_i$s. -/\n@[inline]\ndef RepresentsAPs (a : ℕ → ℕ) : Prop :=\n    StrictMono a ∧ ∀ l, l.IsAPOfLength ⊤ → (subsetSums (Set.range a) ∩ l).Infinite\n\n/--\nLet $a_1 < a_2 < \\dotsc$ be an infinite sequence of positive integers such that\n$\\frac{a_{i+1}}{a_i} \\to 1$. If every arithmetic progression contains infinitely many\nintegers which are the sum of distinct $a_i$ then every sufficiently large integer is\nthe sum of distinct $a_i$.\n-/\n@[category research solved, AMS 11]\ntheorem erdos_253 : ¬ ∀ a : ℕ → ℕ, 0 < a 0 →\n    RepresentsAPs a → (Filter.atTop.Tendsto (fun n ↦ (a <| n + 1 : ℝ) / a n) (𝓝 1)) →\n      subsetSums (Set.range a) ∈ Filter.cofinite := by\n  sorry\n\nend Erdos253\n"
+}

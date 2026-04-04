@@ -1,0 +1,15 @@
+{
+  "uuid": "erdos_1168",
+  "problem": [
+    "Erdős Problem #1168"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 1168,
+  "status": "open",
+  "tags": [
+    "set theory",
+    "ramsey theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false
+}

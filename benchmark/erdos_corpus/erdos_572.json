@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_572",
+  "problem": [
+    "Show that for k≥ 3\\mathrm{ex}(n;C_{2k})\\gg n^{1+(1)/(k)}."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 572,
+  "status": "open",
+  "tags": [
+    "graph theory",
+    "turan number"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Show that for $k\\geq 3$\\[\\mathrm{ex}(n;C_{2k})\\gg n^{1+\\frac{1}{k}}.\\]",
+  "additional_context": "It is easy to see that \\mathrm{ex}(n;C_{2k+1})=\\lfloor n^2/4\\rfloor for any k≥ 1 (and n>2k+1) (since no bipartite graph contains an odd cycle). Erdős and Klein \\cite{Er38} proved \\mathrm{ex}(n;C_4)\\asymp n^{3/2}.\n\nErdős \\cite{Er64c} and Bondy and Simonovits \\cite{BoSi74} showed that\\mathrm{ex}(n;C_{2k})\\ll kn^{1+(1)/(k)}.Benson \\cite{Be66} has proved this conjecture for k=3 and k=5. Lazebnik, Ustimenko, and Woldar \\cite{LUW95} have shown that, for arbitrary k≥ 3,\\mathrm{ex}(n;C_{2k})\\gg n^{1+(2)/(3k-3+\\nu)},where \\nu=0 if k is odd and \\nu=1 if k is even. See \\cite{LUW99} for further history and references.\n\nSee also [765] and the entry in the graphs problem collection.\n\nReferences\n\n[Be66] Benson, Clark T., Minimal regular graphs of girths eight and twelve. Canadian J. Math. (1966), 1091-1094.\n\n[BoSi74] Bondy, J. A. and Simonovits, M., Cycles of even length in graphs. J. Combinatorial Theory Ser. B (1974), 97-105.\n\n[Er38] P. Erdős, On sequences of integers no one of which divides the product of two others and on related problems. Tomsk. Gos. Univ. Ucen Zap. (1938), 74-82.\n\n[Er64c] Erdős, P., Extremal problems in graph theory. Theory of Graphs and its Applications (Proc. Sympos. Smolenice, 1963) (1964), 29-36.\n\n[LUW95] Lazebnik, F. and Ustimenko, V. A. and Woldar, A. J., A new series of dense graphs of high girth. Bull. Amer. Math. Soc. (N.S.) (1995), 73-79.\n\n[LUW99] Lazebnik, Felix and Ustimenko, Vasiliy A. and Woldar, Andrew\nJ., Polarities and 2k-cycle-free graphs. Discrete Math. (1999), 503-513.",
+  "reference_proof_hint": "The inequality\n[\n\\mathrm{ex}(n;C_{2k})\\gg n^{1+\\frac1k}\\qquad (k\\ge 3)\n]\nis **not known in general**: it is a famous open problem of Erdős (sometimes called the *even cycle problem*). ([Erdős Problems][1])\n\nWhat *is* known is that this lower bound **does hold** for $k=3$ [[nomath]](i.e. $C_6$)[[/nomath]] and $k=5$ [[nomath]](i.e. $C_{10}$)[[/nomath]], via explicit algebraic/finite-geometric constructions (Benson/Wenger; a clean geometric presentation is due to Conlon). ([Erdős Problems][1])\nFor other $k$ [[nomath]](e.g. $k=4$, the $C_8$ case)[[/nomath]], it remains open, and there is evidence it might even be smaller than (n^{1+1/k}) in some cases. ([arXiv][2])\n\nThat said, here is a complete construction/proof giving\n[\n\\mathrm{ex}(n;C_{2k})\\gg n^{1+\\frac1k}\n]\nfor the **known cases $k=3$ and $k=5$**.\n\n---\n\n## Wenger–Conlon construction [[nomath]](works for $C_6$ and $C_{10}$)[[/nomath]]\n\nFix a prime power $q$, and let (\\mathbb F_q) be the field of order $q$.\n\nFor an integer (d\\ge 2), de"
+}

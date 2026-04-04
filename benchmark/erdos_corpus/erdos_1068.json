@@ -1,0 +1,20 @@
+{
+  "uuid": "erdos_1068",
+  "problem": [
+    "Does every graph with chromatic number \\aleph_1 contain a countable subgraph which is infinitely connected?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 1068,
+  "status": "open",
+  "tags": [
+    "graph theory",
+    "set theory",
+    "chromatic number"
+  ],
+  "prize": "no",
+  "formalized_on_site": true,
+  "original_latex": "Does every graph with chromatic number $\\aleph_1$ contain a countable subgraph which is infinitely connected?",
+  "additional_context": "A question of Erdős and Hajnal. We say a graph is infinitely connected if any two vertices are connected by infinitely many pairwise disjoint paths.\n\nSee also [1067].",
+  "reference_proof_hint": "With the standard meaning of **“infinitely connected” = infinitely *vertex*-connected** (i.e. for any two vertices there are infinitely many pairwise vertex‑disjoint paths between them), this is **currently open**.\n\n* This question is explicitly listed as an open problem (Erdős Problems #1068), phrased as: does every graph with (\\chi(G)=\\aleph_1) contain a **countable** infinitely vertex‑connected subgraph? ([Erdős Problems][1])\n* Bowler–Pitz also single it out as an **open remaining version** of the Erdős–Hajnal problem. ([arXiv][2])\n\nWhat *is* known around it:\n\n* You **cannot** in general demand an **uncountable** infinitely connected subgraph [[nomath]](let alone one of chromatic number $\\aleph_1$)[[/nomath]]: Soukup constructed, in ZFC, an uncountably chromatic graph where **every uncountable vertex set** contains two vertices connected by only **finitely** many independent (vertex‑disjoint) paths; Bowler–Pitz give a simpler such construction. ([Erdős Problems][1])\n  So any guarant",
+  "ground_truth_lean": "/-\nCopyright 2026 The Formal Conjectures Authors.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    https://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n-/\n\nimport FormalConjectures.Util.ProblemImports\n\n/-!\n# Erdős Problem 1068\n\n*Reference:* [erdosproblems.com/1068](https://www.erdosproblems.com/1068)\n-/\n\nopen Cardinal SimpleGraph\n\nnamespace Erdos1068\n\n/--\nDoes every graph with chromatic number $\\aleph_1$ contain a countable subgraph which is\ninfinitely connected?\n-/\n@[category research open, AMS 5]\ntheorem erdos_1068 : answer(sorry) ↔\n    ∀ (V : Type) (G : SimpleGraph V), G.chromaticCardinal = ℵ_  1 →\n      ∃ s : Set V, s.Countable ∧ InfinitelyConnected (G.induce s) := by\n  sorry\n\nend Erdos1068\n"
+}

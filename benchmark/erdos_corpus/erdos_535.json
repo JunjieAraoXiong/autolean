@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_535",
+  "problem": [
+    "Let r≥ 3, and let f_r(N) denote the size of the largest subset of \\{1,\\ldots,N\\} such that no subset of size r has the same pairwise greatest common divisor between all elements. Estimate f_r(N)."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 535,
+  "status": "open",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $r\\geq 3$, and let $f_r(N)$ denote the size of the largest subset of $\\{1,\\ldots,N\\}$ such that no subset of size $r$ has the same pairwise greatest common divisor between all elements. Estimate $f_r(N)$.",
+  "additional_context": "Erdős \\cite{Er64} proved thatf_r(N) ≤ N^{(3)/(4)+o(1)},and Abbott and Hanson \\cite{AbHa70} improved this exponent to 1/2. Erdős \\cite{Er64} proved the lower boundf_3(N) > N^{(c)/(\\log\\log N)}for some constant c>0, and conjectured this should also be an upper bound.\n\nErdős writes this is 'intimately connected' with the sunflower problem [20]. Indeed, the conjectured upper bound would follow from the following stronger version of the sunflower problem: estimate the size of the largest set of integers A such that \\omega(n)=k for all n∈ A and there does not exist a_1,\\ldots,a_r∈ A and an integer d such that (a_i,a_j)=d for all i≠ j and (a_i/d,d)=1 for all i. The conjectured upper bound for f_r(N) would follow if the size of such an A must be at most c_r^k. The original sunflower proof of Erdős and Rado gives the upper bound c_r^kk!.\n\nSee also [536].\n\nReferences\n\n[AbHa70] Abbott, H. L. and Hanson, D., An extremal problem in number theory. Bull. London Math. Soc. (1970), 324-326.\n\n[Er64] Erdős, P., On a problem in elementary number theory and a combinatorial problem. Math. Comp. (1964), 644-646.",
+  "reference_proof_hint": "Write (A\\subseteq{1,\\dots,N}).\nA set of $r$ distinct integers ({a_1,\\dots,a_r}\\subset A) has **all pairwise gcd’s equal** iff there is some (d\\ge1) such that\n[\n\\gcd(a_i,a_j)=d\\quad(\\forall i\\ne j).\n]\nEquivalently,\n[\na_i=d,b_i\\quad\\text{and}\\quad \\gcd(b_i,b_j)=1\\ \\ (\\forall i\\ne j),\n]\ni.e. after factoring out the common gcd $d$, the quotients are pairwise coprime.\n\nSo (f_r(N)) is the maximum (|A|) such that **for every $d$**, among the multiples of $d$ in $A$, you cannot find $r$ elements whose quotients are pairwise coprime.\n\n## Known upper bounds\n\nErdős showed\n[\nf_r(N)\\le N^{3/4+o(1)},\n]\nand Abbott–Hanson improved the exponent to $1/2$: for each fixed (r\\ge3),\n[\nf_r(N)\\le N^{1/2+o(1)}.\n]\n([Erdős Problems][1])\n\n(These bounds are the best general published ones recorded in the standard references for this problem.)\n\n## A general lower bound (explicit construction)\n\nThere is a simple construction giving a “subpower” lower bound for every fixed (r\\ge3).\n\nLet $m$ be a parameter (to be chos"
+}

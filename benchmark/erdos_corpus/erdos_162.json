@@ -1,0 +1,19 @@
+{
+  "uuid": "erdos_162",
+  "problem": [
+    "Let \\alpha>0 and n≥ 1. Let F(n,\\alpha) be the largest k such that there exists some 2-colouring of the edges of K_n in which any induced subgraph H on at least k vertices contains more than \\alpha\\binom{| H|}{2} many edges of each colour.\n\nProve that for every fixed 0≤ \\alpha ≤ 1/2, as n→∞,F(n,\\alpha)\\sim c_\\alpha \\log nfor some constant c_\\alpha."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 162,
+  "status": "open",
+  "tags": [
+    "combinatorics",
+    "ramsey theory",
+    "discrepancy"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $\\alpha>0$ and $n\\geq 1$. Let $F(n,\\alpha)$ be the largest $k$ such that there exists some 2-colouring of the edges of $K_n$ in which any induced subgraph $H$ on at least $k$ vertices contains more than $\\alpha\\binom{\\lvert H\\rvert}{2}$ many edges of each colour.\n\nProve that for every fixed $0\\leq \\alpha \\leq 1/2$, as $n\\to\\infty$,\\[F(n,\\alpha)\\sim c_\\alpha \\log n\\]for some constant $c_\\alpha$.",
+  "additional_context": "It is easy to show with the probabilistic method that there exist c_1(\\alpha),c_2(\\alpha) such thatc_1(\\alpha)\\log n < F(n,\\alpha) < c_2(\\alpha)\\log n.",
+  "reference_proof_hint": "There is a problem with the definition as you wrote it.\n\n### 1) With your definition, (F(n,\\alpha)=n) for every fixed (\\alpha<\\tfrac12)\n\nTake (k=n). Then the only induced subgraph (H) with (|H|\\ge k) is (H=K_n) itself.\n\nNow colour the edges of (K_n) so that each colour has about half the edges [[nomath]](for example, colour exactly $\\lfloor \\binom{n}{2}/2\\rfloor$ edges red and the rest blue)[[/nomath]]. Then each colour has (\\ge \\tfrac12\\binom{n}{2}-1) edges, so for any fixed (\\alpha<\\tfrac12) and all large $n$,\n[\ne_{\\text{red}}(K_n)>\\alpha\\binom{n}{2}\\quad\\text{and}\\quad e_{\\text{blue}}(K_n)>\\alpha\\binom{n}{2}.\n]\nSo (k=n) is always achievable, hence (F(n,\\alpha)=n). This cannot be asymptotic to (c_\\alpha\\log n).\n\nSo the statement you want (“(\\sim c_\\alpha\\log n)”) cannot be true for the function as currently defined.\n\n---\n\n### 2) The nontrivial version people study [[nomath]](and which *does* have size $\\Theta(\\log n)$)[[/nomath]]\n\nThe Erdős problem usually meant here is the *threshol"
+}

@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_475",
+  "problem": [
+    "Let p be a prime. Given any finite set A⊆ \\mathbb{F}_p\\backslash \\{0\\}, is there always a rearrangement A=\\{a_1,\\ldots,a_t\\} such that all partial sums ∑_{1≤ k≤ m}a_{k} are distinct, for all 1≤ m≤ t?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 475,
+  "status": "decidable",
+  "tags": [
+    "number theory",
+    "additive combinatorics"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $p$ be a prime. Given any finite set $A\\subseteq \\mathbb{F}_p\\backslash \\{0\\}$, is there always a rearrangement $A=\\{a_1,\\ldots,a_t\\}$ such that all partial sums $\\sum_{1\\leq k\\leq m}a_{k}$ are distinct, for all $1\\leq m\\leq t$?",
+  "additional_context": "A problem of Graham, who proved it when t=p-1. A similar conjecture was made for arbitrary abelian groups by Alspach. Such an ordering is often called a valid ordering.\n\nThis has been proved for t≤ 12 (see Costa and Pellegrini \\cite{CoPe20} and the references therein) and for p-3≤ t≤ p-1 (see Hicks, Ollis, and Schmitt \\cite{HOS19} and the references therein). Kravitz \\cite{Kr24} has proved this fort ≤ (\\log p)/(\\log\\log p).(This was independently earlier observed by Will Sawin in a MathOverflow post.)\n\nBedert and Kravitz \\cite{BeKr24} have now proved this conjecture fort ≤ e^{(\\log p)^{1/4}}.\n\nReferences\n\n[BeKr24] B. Bedert and N. Kravitz, Graham's rearrangement conjecture beyond the rectification barrier. arXiv:2409.07403 (2024).\n\n[CoPe20] Costa, S. and Pellegrini, M. A., Some new results about a conjecture by Brian Alspach. Arch. Math. (Basel) (2020), 479-488.\n\n[HOS19] Hicks, Jacob and Ollis, M. A. and Schmitt, John R., Distinct partial sums in cyclic groups: polynomial method and\nconstructive approaches. J. Combin. Des. (2019), 369-385.\n\n[Kr24] N. Kravitz, Rearranging small sets for distinct partial sums. arXiv:2407.01835 (2024).",
+  "reference_proof_hint": "This is a well-known open problem.\n\nIn the language used in the recent literature, an ordering (a_1,\\dots,a_t) of (A\\subseteq \\mathbb F_p\\setminus{0}) is called **valid** if the partial sums\n[\ns_m:=a_1+\\cdots+a_m\\qquad(1\\le m\\le t)\n]\nare pairwise distinct [[nomath]](equivalently: no nonempty *consecutive* block $a_i+\\cdots+a_j$ with $1<i\\le j\\le t$ sums to $0$)[[/nomath]]. \n\n### Status (January 2026)\n\nThe statement\n\n> For every prime $p$, **every** subset (A\\subseteq \\mathbb F_p\\setminus{0}) has a valid ordering\n\nis known as **Graham’s rearrangement conjecture** (posed by Graham in 1971 and repeated by Erdős–Graham). It is **not proved in full generality**; “the intermediate regime remains open” is explicitly stated in a 2025 paper surveying the current best bounds. ([arXiv][1])\n\n### What *is* known (some representative milestones)\n\n* **Small sets:** the conjecture has been verified for (|A|\\le 12) (via polynomial method/computation, with references collected in later papers). \n\n* **Fi"
+}

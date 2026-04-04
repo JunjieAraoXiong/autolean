@@ -1,0 +1,14 @@
+{
+  "uuid": "erdos_664",
+  "problem": [
+    "Erdős Problem #664"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 664,
+  "status": "disproved",
+  "tags": [
+    "combinatorics"
+  ],
+  "prize": "no",
+  "formalized_on_site": false
+}

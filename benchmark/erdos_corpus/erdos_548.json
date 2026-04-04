@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_548",
+  "problem": [
+    "Let n≥ k+1. Every graph on n vertices with at least (k-1)/(2)n+1 edges contains every tree on k+1 vertices."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 548,
+  "status": "falsifiable",
+  "tags": [
+    "graph theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $n\\geq k+1$. Every graph on $n$ vertices with at least $\\frac{k-1}{2}n+1$ edges contains every tree on $k+1$ vertices.",
+  "additional_context": "A problem of Erdős and S\\'{o}s, who also conjectured that every graph with at least\\max\\left( \\binom{2k-1}{2}+1, (k-1)n-(k-1)^2+\\binom{k-1}{2}+1\\right)many edges contains every forest with k edges. (Erdős and Gallai \\cite{ErGa59} proved that this is the threshold which guarantees containing k independent edges.)\n\nIt can be easily proved by induction that every graph on n vertices with at least n(k-1)+1 edges contains every tree on k+1 vertices.\n\nBrandt and Dobson \\cite{BrDo96} have proved this for graphs of girth at least 5. Wang, Li, and Liu \\cite{WLL00} have proved this for graphs whose complements have girth at least 5. Sacl\\'{e} and Woznik \\cite{SaWo97} have proved this for graphs which contain no cycles of length 4. Yi and Li \\cite{YiLi04} have proved this for graphs whose complements contain no cycles of length 4.\n\nImplies [547] and [557].\n\nSee also the entry in the graphs problem collection.\n\nReferences\n\n[BrDo96] Brandt, Stephan and Dobson, Edward, The Erdős-S\\'{o}s conjecture for graphs of girth\n{5}. Discrete Math. (1996), 411-414.\n\n[ErGa59] Erdős, P. and Gallai, T., On maximal paths and circuits of graphs. Acta Math. Acad. Sci. Hungar. (1959), 337-356 (unbound insert).\n\n[SaWo97] Sacl\\'{e}, Jean-Fran\\cCois and Wo\\'{z}niak, Mariusz, The Erdős-S\\'{o}s conjecture for graphs without\n{C_4}. J. Combin. Theory Ser. B (1997), 367-372.\n\n[WLL00] Wang, Min and Li, Guo-jun and Liu, Ai-de, A result of Erdős-S\\'{o}s conjecture. Ars Combin. (2000), 123-127.\n\n[YiLi04] Yin, Jian-hua and Li, Jiong-sheng, The Erdős-S\\'{o}s conjecture for graphs whose complements contain no {C_4}. Acta Math. Appl. Sin. Engl. Ser. (2004), 397-400.",
+  "reference_proof_hint": "The statement you wrote is exactly the **Erdős–Sós conjecture**:\n\n[\ne(G)>\\frac{k-1}{2}n \\quad \\Longleftrightarrow \\quad \\overline d(G)=\\frac{2e(G)}n>k-1,\n]\nand the conjecture says that **every** $n$-vertex graph of average degree (>k-1) contains **every** tree on $k+1$ vertices [[nomath]](equivalently, every tree with $k$ edges)[[/nomath]]. \n\n## Status (as of early 2026)\n\nThis is **open in full generality**: it is listed as an open Erdős problem (#548) and the literature still treats the general case as unsolved. ([Erdős Problems][1])\n\nThere has long been an **announced proof for sufficiently large $k$** by Ajtai–Komlós–Simonovits–Szemerédi, but it is widely noted as **unpublished / hard to locate**. ([MathOverflow][2])\n\n## Why the bound is “best possible”\n\nYou cannot hope for a smaller coefficient than (\\frac{k-1}{2}), because there are extremal constructions with exactly (\\frac{k-1}{2}n) edges and **no** connected subgraph on $k+1$ vertices:\n\n* If (k\\mid n), take a disjoint union of "
+}

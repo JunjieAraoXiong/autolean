@@ -1,0 +1,14 @@
+{
+  "uuid": "erdos_199",
+  "problem": [
+    "Erdős Problem #199"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 199,
+  "status": "disproved (Lean)",
+  "tags": [
+    "arithmetic progressions"
+  ],
+  "prize": "no",
+  "formalized_on_site": false
+}

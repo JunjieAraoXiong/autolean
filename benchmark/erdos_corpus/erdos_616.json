@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_616",
+  "problem": [
+    "Let r≥ 3. For an r-uniform hypergraph G let \\tau(G) denote the covering number (or transversal number), the minimum size of a set of vertices which includes at least one from each edge in G.\n\nDetermine the best possible t such that, if G is an r-uniform hypergraph G where every subgraph G' on at most 3r-3 vertices has \\tau(G')≤ 1, we have \\tau(G)≤ t."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 616,
+  "status": "open",
+  "tags": [
+    "graph theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $r\\geq 3$. For an $r$-uniform hypergraph $G$ let $\\tau(G)$ denote the covering number (or transversal number), the minimum size of a set of vertices which includes at least one from each edge in $G$.\n\nDetermine the best possible $t$ such that, if $G$ is an $r$-uniform hypergraph $G$ where every subgraph $G'$ on at most $3r-3$ vertices has $\\tau(G')\\leq 1$, we have $\\tau(G)\\leq t$.",
+  "additional_context": "Erdős, Hajnal, and Tuza \\cite{EHT91} proved that this t satisfies(3)/(16)r+(7)/(8)≤ t ≤ (1)/(5)r.\n\nReferences\n\n[EHT91] Erdős, Paul and Hajnal, Andr\\'{a}s and Tuza, Zsolt, Local constraints ensuring small representing sets. J. Combin. Theory Ser. A (1991), 78-84.",
+  "reference_proof_hint": "### Claim (upper bound):  (\\boxed{\\tau(G)\\le r-2})\n\nLet (r\\ge 3) and suppose $G$ is $r$-uniform and satisfies\n\n> (**Local star property**) Every subhypergraph (G') whose vertex set has size (\\le 3r-3) has (\\tau(G')\\le 1).\n> Equivalently: every edge–subfamily whose union has (\\le 3r-3) vertices has a *common* vertex.\n\n---\n\n## Step 1. Any two edges must intersect\n\nIf (e,f\\in E(G)) were disjoint, then the subgraph (G'={e,f}) has\n(|V(G')|=2r\\le 3r-3) for (r\\ge 3), and (\\tau(G')=2), contradicting the hypothesis.\nSo:\n\n[\n\\forall e,f\\in E(G),\\quad e\\cap f\\ne\\varnothing.\n]\n\n---\n\n## Step 2. If (\\tau(G)\\ge r-1), we derive a forbidden configuration\n\nAssume for contradiction that (\\tau(G)\\ge r-1).\nFix an edge (e={v_1,\\dots,v_r}).\n\nFor any pair ({v_i,v_j}\\subset e), consider the ((r-2))-set\n[\nT_{ij}=e\\setminus{v_i,v_j}.\n]\nSince (|T_{ij}|=r-2<\\tau(G)), it does **not** meet all edges, so there exists an edge\n[\nf_{ij}\\in E(G)\\quad\\text{with}\\quad f_{ij}\\cap T_{ij}=\\varnothing.\n]\nHence\n[\nf_{ij}\\cap e\\su"
+}

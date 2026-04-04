@@ -1,0 +1,15 @@
+{
+  "uuid": "erdos_214",
+  "problem": [
+    "Erdős Problem #214"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 214,
+  "status": "proved (Lean)",
+  "tags": [
+    "geometry",
+    "distances"
+  ],
+  "prize": "no",
+  "formalized_on_site": false
+}

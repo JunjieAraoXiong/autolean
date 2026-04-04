@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_478",
+  "problem": [
+    "Let p be a prime andA_p = \\{ k! \\pmod{p} : 1≤ k<p\\}.Is it true that| A_p| \\sim (1-\\tfrac{1}{e})p?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 478,
+  "status": "open",
+  "tags": [
+    "number theory",
+    "factorials"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $p$ be a prime and\\[A_p = \\{ k! \\pmod{p} : 1\\leq k<p\\}.\\]Is it true that\\[\\lvert A_p\\rvert \\sim (1-\\tfrac{1}{e})p?\\]",
+  "additional_context": "Since A_p/A_p=\\{1,\\ldots,p-1\\} it follows that | A_p| \\gg p^{1/2}. The best known lower bound is due to Grebennikov, Sagdeev, Semchankau, and Vasilevskii \\cite{GSSV24},| A_p| ≥ (\\sqrt{2}-o(1))p^{1/2},which follows from proving that | A_pA_p|=(1+o(1))p.\n\nWilson's theorem implies (p-2)!\\equiv 1\\pmod{p}, and hence | A_p|≤ p-2. It is open whether even | A_p|<p-2. This has been verified for all primes p<10^9 (see \\cite{GSSV24}). Results on | A_p| on average were obtained by Klurman and Munsch \\cite{KlMu17}.\n\nIn Hardy and Subbarao \\cite{HaSu02} they raise the question, discussed in conversation with Erdős, of whether | A_p|=p-2 for many values of p. (This is also mentioned in problem A2 of Guy's collection.) Such a prime must be \\equiv 1\\pmod{4}. The answer is surely only finitely many (and probably only p=5, given the data mentioned above).\n\nReferences\n\n[GSSV24] Grebennikov, Alexandr and Sagdeev, Arsenii and Semchankau,\nAliaksei and Vasilevskii, Aliaksei, On the sequence {n! \\bmod p}. Rev. Mat. Iberoam. (2024), 637--648.\n\n[HaSu02] Hardy, G. E. and Subbarao, M. V., A modified problem of Pillai and some related questions. Amer. Math. Monthly (2002), 554--559.\n\n[KlMu17] Klurman, Oleksiy and Munsch, Marc, Distribution of factorials modulo {p}. J. Th\\'{e}or. Nombres Bordeaux (2017), 169--177.",
+  "reference_proof_hint": "No one knows at present.\n\nYour statement is exactly a long‑standing conjecture (usually attributed to Stauduhar, and also appearing in Guy’s *Unsolved Problems in Number Theory*): if\n[\nh(p):=|\\\\{1!,2!,\\dots,(p-1)!\\\\}|\\pmod p=\\lvert A_p\\rvert,\n]\nthen\n[\n\\frac{h(p)}{p}\\ \\longrightarrow\\ 1-\\frac1e\\qquad (p\\to\\infty).\n]\nThis is stated explicitly as **Stauduhar’s Conjecture** in recent work.  It is also recorded as a conjectured asymptotic in the literature on factorials mod $p$, with the remark that “very little seems to be known” about (V(0,p-1)=h(p)) beyond partial bounds. ([Journal de Théorie des Nombres][1])\n\n## Why ((1-1/e)p) is the “natural” guess\n\nHeuristically, the residues (k!\\bmod p) “look random” as $p$ grows. A common strengthening is a **Poisson$1$ occupancy** heuristic: for each fixed (k\\ge 0), the proportion of residue classes hit *exactly* $k$ times by ({1!,\\dots,(p-1)!}) should tend to (\\frac{1}{e,k!}). \n\nIf the multiplicities are asymptotically Poisson with mean $1$, then "
+}

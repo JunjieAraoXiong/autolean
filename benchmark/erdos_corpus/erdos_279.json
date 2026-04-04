@@ -1,0 +1,19 @@
+{
+  "uuid": "erdos_279",
+  "problem": [
+    "Let k≥ 3. Is there a choice of congruence classes a_p\\pmod{p} for every prime p such that all except finitely many integers can be written as a_p+tp for some prime p and integer t≥ k?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 279,
+  "status": "open",
+  "tags": [
+    "number theory",
+    "covering systems",
+    "primes"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $k\\geq 3$. Is there a choice of congruence classes $a_p\\pmod{p}$ for every prime $p$ such that all except finitely many integers can be written as $a_p+tp$ for some prime $p$ and integer $t\\geq k$?",
+  "additional_context": "Even the case k=3 seems difficult. This may be true with the primes replaced by any set A⊆ ℕ such that| A∩ [1,N]| \\gg N/\\log Nand∑_{\\substack{n∈ A\\\\ n≤ N}}(1)/(n) -\\log\\log N→ ∞as N→ ∞.\n\nFor k=1 or k=2 any set A such that ∑_{n∈ A}(1)/(n)=∞ has this property.",
+  "reference_proof_hint": "As of **January 16, 2026**, this is **open for every fixed (k\\ge 3)** [[nomath]](and “even the case $k=3$ seems difficult”)[[/nomath]]. It appears as an Erdős–Graham problem (Erdős Problem #279 in the community database). ([Erdős Problems][1])\n\nA few surrounding facts that are known:\n\n* **(k=1): yes (trivial).**\n  Take (a_p\\equiv 0\\pmod p) for every prime (p).\n  Then every integer (n\\ge 2) is divisible by some prime (p\\mid n), so (n=0+(n/p),p) with (t=n/p\\ge 1). [[nomath]](If $n$ is prime, take $p=n$ and $t=1$.)[[/nomath]]\n\n* **(k=2): yes (nontrivial but known).**\n  In fact, Erdős notes a more general statement: for **any** set (A\\subset\\mathbb N) with (\\sum_{n\\in A}\\frac1n=\\infty), one can choose residue classes (a_n\\pmod n) so that all but finitely many integers are (a_n+t n) with (t\\ge 2). Since (\\sum_p \\frac1p=\\infty), this applies when $A$ is the set of primes. ([Erdős Problems][1])\n\n* **(k\\ge 3): unknown.**\n  No construction (or obstruction) is known that settles the question, ev"
+}

@@ -1,0 +1,19 @@
+{
+  "uuid": "erdos_64",
+  "problem": [
+    "Does every finite graph with minimum degree at least 3 contain a cycle of length 2^k for some k≥ 2?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 64,
+  "status": "falsifiable",
+  "tags": [
+    "graph theory",
+    "cycles"
+  ],
+  "prize": "$1000",
+  "formalized_on_site": true,
+  "original_latex": "Does every finite graph with minimum degree at least 3 contain a cycle of length $2^k$ for some $k\\geq 2$?",
+  "additional_context": "Conjectured by Erdős and Gy\\'{a}rf\\'{a}s, who believed the answer must be negative, and in fact for every r there must be a graph of minimum degree at least r without a cycle of length 2^k for any k≥ 2.\n\nThis was solved in the affirmative if the minimum degree is larger than some absolute constant by Liu and Montgomery \\cite{LiMo20} (therefore disproving the above stronger conjecture of Erdős and Gy\\'{a}rf\\'{a}s). Liu and Montgomery prove a much stronger result: if the average degree of G is sufficiently large then there is some large integer \\ell such that for every even integer m∈ [(\\log \\ell)^8,\\ell], G contains a cycle of length m.\n\nAn infinite tree with minimum degree 3 shows that the answer is trivially false for infinite graphs.\n\nSee also the entry in the graphs problem collection.\n\nReferences\n\n[LiMo20] Liu, Hong and Montgomery, Richard, A solution to Erdős and Hajnal's odd cycle problem. arXiv:2010.15802 (2020).",
+  "reference_proof_hint": "This is **not known in general**.\n\nIt is exactly the **Erdős–Gyárfás conjecture** (posed in 1995): every *finite* graph with minimum degree at least 3 should contain a simple cycle whose length is a power of 2 [[nomath]](so, in your phrasing, some $2^k$ with $k\\ge 2$)[[/nomath]]. ([Wikipedia][1])\n\nWhat *is* known:\n\n* **No counterexample is known**, but computer searches show any counterexample would have to be fairly large: at least **17 vertices**, and if one exists that is **cubic (3-regular)** then it must have at least **30 vertices**; bipartite counterexamples (if any) must have at least **32 vertices**. ([Wikipedia][1])\n* There are “near misses”: e.g. Markström found 24-vertex cubic graphs with **no 4- or 8-cycles**, but they still have a **16-cycle**, so they are *not* counterexamples. ([Wikipedia][1])\n\nAnd the conjecture **has been proved for several special classes**, for example:\n\n* **3-connected cubic planar graphs** satisfy the conjecture. ([Combinatorics][2])\n* Graphs with",
+  "ground_truth_lean": "/-\nCopyright 2025 The Formal Conjectures Authors.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    https://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n-/\n\nimport FormalConjectures.Util.ProblemImports\n\n/-!\n# Erdős Problem 64\n\n*Reference:* [erdosproblems.com/64](https://www.erdosproblems.com/64)\n-/\n\nnamespace Erdos64\n\n/--\nDoes every finite graph with minimum degree at least $3$\ncontain a cycle of length $2^k$ for some $k \\geq 2$?\n-/\n@[category research open, AMS 5]\ntheorem erdos_64 :\n    answer(sorry) ↔ ∀ (V : Type*) (G : SimpleGraph V) [Fintype V] [DecidableRel G.Adj],\n        G.minDegree ≥ 3 → ∃ (k : ℕ) (v : V) (c : G.Walk v v),\n            k ≥ 2 ∧ c.IsCycle ∧ c.length = 2^k := by\n  sorry\n\n-- TODO(firsching): add more context\n\nend Erdos64\n"
+}

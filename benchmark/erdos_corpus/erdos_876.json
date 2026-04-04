@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_876",
+  "problem": [
+    "Let A=\\{a_1<a_2<\\cdots\\}⊂ ℕ be an infinite sum-free set - that is, there are no solutions toa=b_1+\\cdots+b_rwith b_1<\\cdots<b_r<a∈ A. How small can a_{n+1}-a_n be? Is it possible that a_{n+1}-a_n<n?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 876,
+  "status": "open",
+  "tags": [
+    "additive combinatorics"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $A=\\{a_1<a_2<\\cdots\\}\\subset \\mathbb{N}$ be an infinite sum-free set - that is, there are no solutions to\\[a=b_1+\\cdots+b_r\\]with $b_1<\\cdots<b_r<a\\in A$. How small can $a_{n+1}-a_n$ be? Is it possible that $a_{n+1}-a_n<n$?",
+  "additional_context": "Erdős \\cite{Er98} writes that Graham 'recently proved' that there is such a sequence for which a_{n+1}-a_n<n^{1+o(1)}, and that Melfi proved a somewhat weaker result.\n\nErdős \\cite{Er62c} proved that a sum-free set has density zero. Deshouillers, Erdős, and Melfi \\cite{DEM99} constructed a sum-free set that grows like a_n\\sim n^{3+o(1)}.\n\nLuczak and Schoen \\cite{LuSc00} have proved that, for all large N,| A∩ [1,N]|\\ll (N\\log N)^{1/2},and that there exists a sum-free set B such that| B∩ [1,N]| \\gg \\frac{N^{1/2}}{(\\log N)^{1/2+o(1)}}for all large N.\n\nIn \\cite{Er75b} and \\cite{Er77c} Erdős asks to determine the maximum possible value of ∑_{n∈ A}(1)/(n). Erdős had proved this is <100, and Sullivan had shown that this is <4, and Sullivan conjectured the maximum is slightly larger than 2.\n\nSee also [790].\n\nReferences\n\n[DEM99] Deshouillers, Jean-Marc and Erdős, Paul and Melfi,\nGiuseppe, On a question about sum-free sequences. Discrete Math. (1999), 49--54.\n\n[Er62c] Erdős, P\\'{a}l, Some remarks on number theory. {III}. Mat. Lapok (1962), 28--38.\n\n[Er75b] Erdős, Paul, Problems and results in combinatorial number theory. Journ\\'{e}es Arithm\\'{e}tiques de Bordeaux (Conf., Univ. Bordeaux, Bordeaux, 1974) (1975), 295-310.\n\n[Er77c] Erdős, Paul, Problems and results on combinatorial number theory. III. Number theory day (Proc. Conf., Rockefeller Univ.,\nNew York, 1976) (1977), 43-72.\n\n[Er98] Erdős, Paul, Some of my new and almost new problems and results in combinatorial number theory. Number theory (Eger, 1996) (1998), 169-180.\n\n[LuSc00] \\L uczak, Tomasz and Schoen, Tomasz, On the maximal density of sum-free sets. Acta Arith. (2000), 225--229.",
+  "reference_proof_hint": "Your condition is exactly what Erdős called a **sum‑free sequence**: an increasing sequence (a_1 < a_2 < \\cdots) such that **no** term is a sum of **distinct** smaller terms. ([Libra][1])\n\n### What must happen in general\n\n* **The gaps cannot stay bounded.** Erdős proved every such sequence has **zero asymptotic density**, so in particular the gaps $a_{n+1}-a_n$ must be unbounded (otherwise the density would be positive). ([Libra][1])\n\nSo the right question is how *slowly* the gaps can grow.\n\n### Best-known “global” bounds (via the counting function)\n\nLet $A(N)=|A\\cap[1,N]|$. The strongest general quantitative bounds currently on record are due to Łuczak–Schoen:\n\n* **Upper bound (all sequences):**\n  $$\n  A(N)\\ll (N\\log N)^{1/2}\\quad (N\\ \\text{large}),\n  $$\n  so $n=A(a_n)\\ll \\sqrt{a_n\\log a_n}$, hence\n  $$\n  a_n \\gg \\frac{n^2}{\\log n}\n  $$\n  (up to constants). ([Erdős Problems][2])\n\n* **Lower bound (existence):** there exists a sum‑free set $B$ with\n  $$\n  |B\\cap[1,N]|\\gg \\frac{N^{1/2}}{"
+}

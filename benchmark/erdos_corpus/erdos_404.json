@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_404",
+  "problem": [
+    "For which integers a≥ 1 and primes p is there a finite upper bound on those k such that there are a=a_1<\\cdots<a_n withp^k \\mid (a_1!+\\cdots+a_n!)?If f(a,p) is the greatest such k, how does this function behave?\n\nIs there a prime p and an infinite sequence a_1<a_2<\\cdots such that if p^{m_k} is the highest power of p dividing ∑_{i≤ k}a_i! then m_k→ ∞?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 404,
+  "status": "open",
+  "tags": [
+    "number theory",
+    "factorials"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "For which integers $a\\geq 1$ and primes $p$ is there a finite upper bound on those $k$ such that there are $a=a_1<\\cdots<a_n$ with\\[p^k \\mid (a_1!+\\cdots+a_n!)?\\]If $f(a,p)$ is the greatest such $k$, how does this function behave?\n\nIs there a prime $p$ and an infinite sequence $a_1<a_2<\\cdots$ such that if $p^{m_k}$ is the highest power of $p$ dividing $\\sum_{i\\leq k}a_i!$ then $m_k\\to \\infty$?",
+  "additional_context": "See also [403]. Lin \\cite{Li76} has shown that f(2,2) ≤ 254.\n\nReferences\n\n[Li76] Lin, S., On two problems of Erdős concerning sums of distinct factorials. Bell Laboratories internal memorandum (1960).",
+  "reference_proof_hint": "This is **Erdős problem #404** (Erdős–Graham, 1980). In particular, in general it is **not known** which pairs $(a,p)$ give a finite bound and which (if any) give an infinite bound. ([Erdős Problems][1])\n\nThat said, there are some clean “always finite” families, some very large known values, and a useful reformulation of your second question.\n\n---\n\n## Setup and easy monotonicities\n\nFix (a\\ge 1) and a prime $p$. Consider all finite strictly increasing sequences\n$\na=a_1<a_2<\\cdots<a_n\n$\nand the $p$-adic valuation\n$\n\\nu_p!(\\sum_{i=1}^n a_i!).\n$\nBecause (\\nu_p(\\cdot)\\ge k \\implies \\nu_p(\\cdot)\\ge k-1), the set of achievable exponents is an initial segment ({0,1,\\dots,f(a,p)}) if it is bounded. In any case, you always have the trivial lower bound\n$\nf(a,p)\\ \\ge\\ \\nu_p(a!)\\qquad\\text{(take just the single term (a!)).}\n$\n\n---\n\n## A large, completely understood family: (a\\equiv -1 \\pmod p)\n\nLet (t=\\nu_p(a!)). If (a\\equiv -1\\pmod p), i.e. (p\\mid (a+1)), then\n[\n\\nu_p((a+1)!) = \\nu_p(a!)+\\nu_p(a+1"
+}

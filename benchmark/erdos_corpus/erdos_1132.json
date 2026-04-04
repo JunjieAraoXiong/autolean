@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_1132",
+  "problem": [
+    "For x_1,\\ldots,x_n∈ [-1,1] letl_k(x)=\\frac{∏_{i≠ k}(x-x_i)}{∏_{i≠ k}(x_k-x_i)},which are such that l_k(x_k)=1 and l_k(x_i)=0 for i≠ k.\n\nLet x_1,x_2,\\ldots∈ [-1,1] be an infinite sequence, and letL_n(x) = ∑_{1≤ k≤ n}| l_k(x)|,where each l_k(x) is defined above with respect to x_1,\\ldots,x_n.\n\nMust there exist x∈ (-1,1) such thatL_n(x) >(2)/(\\pi)\\log n-O(1)for infinitely many n?\n\nIs it true that\\limsup_{n→ ∞}(L_n(x))/(\\log n)≥ (2)/(\\pi)for almost all x∈ (-1,1)?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 1132,
+  "status": "open",
+  "tags": [
+    "analysis",
+    "polynomials"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "For $x_1,\\ldots,x_n\\in [-1,1]$ let\\[l_k(x)=\\frac{\\prod_{i\\neq k}(x-x_i)}{\\prod_{i\\neq k}(x_k-x_i)},\\]which are such that $l_k(x_k)=1$ and $l_k(x_i)=0$ for $i\\neq k$.\n\nLet $x_1,x_2,\\ldots\\in [-1,1]$ be an infinite sequence, and let\\[L_n(x) = \\sum_{1\\leq k\\leq n}\\lvert l_k(x)\\rvert,\\]where each $l_k(x)$ is defined above with respect to $x_1,\\ldots,x_n$.\n\nMust there exist $x\\in (-1,1)$ such that\\[L_n(x) >\\frac{2}{\\pi}\\log n-O(1)\\]for infinitely many $n$?\n\nIs it true that\\[\\limsup_{n\\to \\infty}\\frac{L_n(x)}{\\log n}\\geq \\frac{2}{\\pi}\\]for almost all $x\\in (-1,1)$?",
+  "additional_context": "A result of Bernstein \\cite{Be31} implies that the set of x∈(-1,1) for which\\limsup_{n→ ∞}(L_n(x))/(\\log n)≥ (2)/(\\pi)is everywhere dense.\n\nErdős \\cite{Er61c} proved that, for any fixed x_1,\\ldots,x_n∈ [-1,1],\\max_{x∈ [-1,1]}∑_{1≤ k≤ n}| l_k(x)|>(2)/(\\pi)\\log n-O(1).See also [1129] for more on L_n(x).\n\nReferences\n\n[Be31] S. Bernstein, Sur la limitation des valeurs d'un polynome P_n(x) de degr\\'{e} n sur tout un segment par ses valeurs en (n+1) points du segment. Izv. Akad. Nauk. SSSR (1931), 1025-1050.\n\n[Er61c] Erdős, P., Problems and results on the theory of interpolation. II. Acta Math. Acad. Sci. Hungar. (1961), 235-244.",
+  "reference_proof_hint": "Let\n[\nL_n(x)=\\sum_{k=1}^n |l_k(x)|\n]\nbe the **Lebesgue function** for Lagrange interpolation at the nodes (x_1,\\dots,x_n), and let\n[\n\\Lambda_n:=\\max_{x\\in[-1,1]}L_n(x)\n]\nbe the **Lebesgue constant**.\n\nA foundational fact is that (\\Lambda_n) must grow at least logarithmically for *every* choice of nodes: Erdős proved\n[\n\\Lambda_n \\ge \\frac{2}{\\pi}\\log n - C\n]\nfor an absolute constant $C$, and this is sharp in order [[nomath]](Chebyshev nodes have $\\Lambda_n\\le \\frac{2}{\\pi}\\log n + O(1)$)[[/nomath]]. \n\nWith that context:\n\n## 1) Existence of a single $x$ with (L_n(x)\\ge \\frac{2}{\\pi}\\log n - O(1)) infinitely often\n\nThis is **open in general**.\n\nIn fact, Erdős already singled out essentially your question in 1961: after discussing Bernstein’s local lower bounds, he wrote that he had claimed a related result, and then stated that the stronger fixed-point statement “is quite possibly true” but that he was “very far” from proving it. \n\nSo, as of the material I can locate (and consistent with "
+}

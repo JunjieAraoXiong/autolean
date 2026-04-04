@@ -1,0 +1,15 @@
+{
+  "uuid": "erdos_8",
+  "problem": [
+    "Erdős Problem #8"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 8,
+  "status": "disproved",
+  "tags": [
+    "number theory",
+    "covering systems"
+  ],
+  "prize": "no",
+  "formalized_on_site": false
+}

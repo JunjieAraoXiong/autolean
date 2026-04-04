@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_687",
+  "problem": [
+    "Let Y(x) be the maximal y such that there exists a choice of congruence classes a_p for all primes p≤ x such that every integer in [1,y] is congruent to at least one of the a_p\\pmod{p}.\n\nGive good estimates for Y(x). In particular, can one prove that Y(x)=o(x^2) or even Y(x)\\ll x^{1+o(1)}?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 687,
+  "status": "open",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "$1000",
+  "formalized_on_site": false,
+  "original_latex": "Let $Y(x)$ be the maximal $y$ such that there exists a choice of congruence classes $a_p$ for all primes $p\\leq x$ such that every integer in $[1,y]$ is congruent to at least one of the $a_p\\pmod{p}$.\n\nGive good estimates for $Y(x)$. In particular, can one prove that $Y(x)=o(x^2)$ or even $Y(x)\\ll x^{1+o(1)}$?",
+  "additional_context": "This function (associated with Jacobsthal) is closely related to the problem of gaps between primes (see [4]). The best known upper bound is due to Iwaniec \\cite{Iw78},Y(x) \\ll x^2.The best lower bound is due to Ford, Green, Konyagin, Maynard, and Tao \\cite{FGKMT18},Y(x) \\gg x(\\log x\\log\\log\\log x)/(\\log\\log x),improving on a previous bound of Rankin \\cite{Ra38}.\n\nMaier and Pomerance have conjectured that Y(x)\\ll x(\\log x)^{2+o(1)}.\n\nIn \\cite{Er80} he writes 'It is not clear who first formulated this problem - probably many of us did it independently. I offer the maximum of \\1000 dollars and 1/2 my total savings for clearing up of this problem.'\n\nIn \\cite{Er80} Erdős also asks about a weaker variant in which all except o(y/\\log y) of the integers in [1,y] are congruent to at least one of the a_p\\pmod{p}$, and in particular asks if the answer is very different.\n\nSee also [688] and [689]. A more general Jacobsthal function is the focus of [970].\n\nReferences\n\n[Er80] Erdős, Paul, A survey of problems in combinatorial number theory. Ann. Discrete Math. (1980), 89-115.\n\n[FGKMT18] Ford, Kevin and Green, Ben and Konyagin, Sergei and Maynard, James and Tao, Terence, Long gaps between primes. J. Amer. Math. Soc. (2018), 65-105.\n\n[Iw78] Iwaniec, Henryk, On the problem of {J}acobsthal. Demonstratio Math. (1978), 225--231.\n\n[Ra38] Rankin, R. A., The Difference between Consecutive Prime Numbers. J. London Math. Soc. (1938), 242-247.",
+  "reference_proof_hint": "Let\n[\nP(x):=\\prod_{p\\le x}p\n]\n[[nomath]](the primorial up to $x$)[[/nomath]]. Your definition is exactly the “Erdős–Rankin/Jacobsthal” quantity that appears in large prime gap constructions.\n\n## 1. Reformulation as Jacobsthal’s function\n\nGiven a choice of residues (a_p \\pmod p) for each prime (p\\le x), the Chinese remainder theorem gives an integer $m$ such that\n[\nm\\equiv -a_p \\pmod p\\qquad(\\forall,p\\le x).\n]\nThen for (1\\le t\\le y), the condition “(t\\equiv a_p\\pmod p) for some (p\\le x)” is equivalent to\n[\nm+t\\equiv 0 \\pmod p\\quad\\text{for some }p\\le x,\n]\ni.e. every integer in ({m+1,\\dots,m+y}) shares a prime factor (\\le x), hence is **not** coprime to $P(x)$. Ford–Green–Konyagin–Maynard–Tao record this equivalence explicitly as\n[\nY(x)=j(P(x))-1,\n]\nwhere $j(n)$ is Jacobsthal’s function [[nomath]](maximal gap between integers coprime to $n$)[[/nomath]]. ([Oxford University Research Archive][1])\n\nSo $Y(x)$ is the length of the longest block of consecutive integers all divisible by at leas"
+}

@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_1133",
+  "problem": [
+    "Let C>0. There exists \\epsilon>0 such that if n is sufficiently large the following holds.\n\nFor any x_1,\\ldots,x_n∈ [-1,1] there exist y_1,\\ldots,y_n∈ [-1,1] such that, if P is a polynomial of degree m<(1+\\epsilon)n with P(x_i)=y_i for at least (1-\\epsilon)n many 1≤ i≤ n, then\\max_{x∈ [-1,1]}| P(x)| >C."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 1133,
+  "status": "open",
+  "tags": [
+    "analysis",
+    "polynomials"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $C>0$. There exists $\\epsilon>0$ such that if $n$ is sufficiently large the following holds.\n\nFor any $x_1,\\ldots,x_n\\in [-1,1]$ there exist $y_1,\\ldots,y_n\\in [-1,1]$ such that, if $P$ is a polynomial of degree $m<(1+\\epsilon)n$ with $P(x_i)=y_i$ for at least $(1-\\epsilon)n$ many $1\\leq i\\leq n$, then\\[\\max_{x\\in [-1,1]}\\lvert P(x)\\rvert >C.\\]",
+  "additional_context": "Erdős proved that, for any C>0, there exists \\epsilon>0 such that if n is sufficiently large and m=\\lfloor (1+\\epsilon)n\\rfloor then for any x_1,\\ldots,x_m∈ [-1,1] there is a polynomial P of degree n such that | P(x_i)|≤ 1 for 1≤ i≤ m and\\max_{x∈ [-1,1]}| P(x)|>C.The conjectured statement would also imply this, but Erdős in \\cite{Er67} says he could not even prove it for m=n.\n\nReferences\n\n[Er67] Erdős, P., Problems and results on the convergence and divergence properties of the Lagrange interpolation polynomials and some extremal problems. Mathematica (Cluj) (1967), 65-73.",
+  "reference_proof_hint": "What you wrote is exactly the conjecture Erdős posed at the end of his 1967 paper on Lagrange interpolation. He explicitly calls it “probably” true and adds: *“I have not even proved it if $m=n$.”* ([Renyi Institute][1])  It is also listed as **open** on the Erdős Problems site. ([Erdős Problems][2])\n\nSo there isn’t a known complete proof in the literature (as of what’s visible from those sources). Still, there is a very close, classical statement that *is* provable and captures the same “choose (y_i) to force blow-up” philosophy; I’ll prove that in full, and then explain precisely where the extra “((1+\\varepsilon)n) degree” and “((1-\\varepsilon)n) matches” makes the conjecture genuinely harder.\n\n## A fully provable cousin: exact interpolation with degree $n-1$\n\nFix $n$ and any points (x_1,\\dots,x_n\\in[-1,1]) (for simplicity assume they are distinct; duplicates only make it easier to force contradictions by choosing incompatible values on equal nodes).\n\nLet $I$ be the Lagrange interpol"
+}

@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_1083",
+  "problem": [
+    "Let d≥ 3, and let f_d(n) be the minimal m such that every set of n points in ℝ^d determines at least m distinct distances. Estimate f_d(n) - in particular, is it true thatf_d(n)=n^{(2)/(d)-o(1)}?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 1083,
+  "status": "open",
+  "tags": [
+    "geometry",
+    "distances"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $d\\geq 3$, and let $f_d(n)$ be the minimal $m$ such that every set of $n$ points in $\\mathbb{R}^d$ determines at least $m$ distinct distances. Estimate $f_d(n)$ - in particular, is it true that\\[f_d(n)=n^{\\frac{2}{d}-o(1)}?\\]",
+  "additional_context": "A generalisation of the distinct distance problem [89] to higher dimensions. Erdős \\cite{Er46b} provedn^{1/d}\\ll_d f_d(n)\\ll_d n^{2/d},the upper bound construction being given by a set of lattice points.\n{UL}\n{LI} Clarkson, Edelsbrunner, Gubias, Sharir, and Welzl \\cite{CEGSW90} proved f_3(n)\\gg n^{1/2}.{/LI}\n{LI}Aronov, Pach, Sharir, and Tardos \\cite{APST04} proved f_d(n)\\gg n^{(1)/(d-90/77)-o(1)} for any d≥ 3 (for example, f_3(n)\\gg n^{0.546}).{/LI}\n{LI}Solymosi and Vu \\cite{SoVu08} proved f_3(n) \\gg n^{3/5} and f_d(n)\\gg_d n^{(2)/(d)-(c)/(d^2)}for all d≥ 4 for some constant c>0. (The result in their paper for d=3 is slightly weaker than stated here, but uses as a black box the bound for distinct distances in 2 dimensions; we have recorded the consequence of combining their method with the work of Guth and Katz on [89].){/LI}\n{/UL}\n\nThe function f_d(n) is essentially the inverse of the function g_d(n) considered in [1089] - with our definitions, g_d(n)>m if and only if f_d(m)<n. The emphasis in this problem is, however, on the behaviour as d is fixed and n→ ∞.\n\nReferences\n\n[APST04] Aronov, Boris and Pach, J\\'anos and Sharir, Micha and Tardos,\nG\\'abor, Distinct distances in three and higher dimensions. Combin. Probab. Comput. (2004), 283--293.\n\n[CEGSW90] Clarkson, Kenneth L. and Edelsbrunner, Herbert and Guibas,\nLeonidas J. and Sharir, Micha and Welzl, Emo, Combinatorial complexity bounds for arrangements of curves and\nspheres. Discrete Comput. Geom. (1990), 99--160.\n\n[Er46b] Erdős, P., On sets of distances of {n} points. Amer. Math. Monthly (1946), 248--250.\n\n[SoVu08] Solymosi, J\\'ozsef and Vu, Van H., Near optimal bounds for the {E}rd\\H{o}s distinct distances\nproblem in high dimensions. Combinatorica (2008), 113--125.",
+  "reference_proof_hint": "Write\n[\nf_d(n)=\\min_{\\substack{P\\subset\\mathbb R^d\\ |P|=n}} \\bigl|{|p-q|:p,q\\in P}\\bigr|\n]\n[[nomath]](the literature often denotes this by $D_d(n)$)[[/nomath]]. For fixed (d\\ge 3) the right “guess” is indeed\n[\nf_d(n)\\stackrel{?}{=}\\Theta\\bigl(n^{2/d}\\bigr),\n]\nbut this is still open.\n\n## What is known (Euclidean distances)\n\n### Upper bound (construction)\n\nA $d$-dimensional integer grid of side length $k$ has (n=k^d) points, and every squared distance is a sum of $d$ squares, each (\\le (k-1)^2), hence is an integer in ([0,d(k-1)^2]). Therefore the grid determines at most (O(k^2)=O(n^{2/d})) distinct distances. This gives\n[\nf_d(n)\\ll_d n^{2/d}.\n]\nThis is the standard Erdős lattice construction and is recorded in modern surveys. \n\n### Lower bounds (hard part)\n\nErdős already showed the general lower bound (f_d(n)\\gg_d n^{1/d}), but much stronger bounds are known now. ([Erdős Problems][1])\n\nThe best general-purpose lower bounds for *unrestricted* point sets in (\\mathbb R^d) come from work of"
+}

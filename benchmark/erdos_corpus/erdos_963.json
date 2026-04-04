@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_963",
+  "problem": [
+    "Let f(n) be the maximal k such that in any set A⊂ ℝ of size n there is a subset B⊆ A of size | B|≥ k which is dissociated that is, the sums ∑_{b∈ S}b are distinct for all S⊆ B. Estimate f(n) - in particular, is it true thatf(n)≥ \\lfloor \\log_2 n\\rfloor?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 963,
+  "status": "open",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $f(n)$ be the maximal $k$ such that in any set $A\\subset \\mathbb{R}$ of size $n$ there is a subset $B\\subseteq A$ of size $\\lvert B\\rvert\\geq k$ which is dissociated that is, the sums $\\sum_{b\\in S}b$ are distinct for all $S\\subseteq B$. Estimate $f(n)$ - in particular, is it true that\\[f(n)\\geq \\lfloor \\log_2 n\\rfloor?\\]",
+  "additional_context": "Erdős noted that the greedy algorithm showed f(n)≥ \\lfloor \\log_3 n\\rfloor.",
+  "reference_proof_hint": "Let\n\n[\nd(A):=\\max{|B|:B\\subseteq A\\text{ is dissociated}},\n\\qquad\nf(n):=\\min_{|A|=n} d(A).\n]\n\n[[nomath]](So $f(n)$ is the **guaranteed** size of a dissociated subset in any $n$-point set.)[[/nomath]]\n\nA finite set (B\\subset \\mathbb R) is dissociated iff the only relation\n(\\sum_{b\\in B}\\varepsilon_b b=0) with (\\varepsilon_b\\in{-1,0,1}) is the trivial one; this is equivalent to the “all subset sums (\\sum_{b\\in S}b) are distinct” definition.\n\n## Unconditional lower bound: (f(n)\\ge \\lfloor \\log_3 n\\rfloor)\n\nTake (B\\subseteq A) **maximal by inclusion** among dissociated subsets of $A$.\nThen for every (a\\in A\\setminus B), the set (B\\cup{a}) is *not* dissociated, so there exist two different subsets (S,T\\subseteq B\\cup{a}) with equal sum, and necessarily $a$ appears on exactly one side. Rearranging gives\n\n[\na=\\sum_{b\\in B}\\varepsilon_b b,\\qquad \\varepsilon_b\\in{-1,0,1}.\n]\n\nThus every element of $A$ lies in the ({-1,0,1})-span of $B$, which contains at most (3^{|B|}) distinct coefficient choic"
+}

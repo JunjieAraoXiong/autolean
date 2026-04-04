@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_670",
+  "problem": [
+    "Let A⊆ ℝ^d be a set of n points such that all pairwise distances differ by at least 1. Is the diameter of A at least (1+o(1))n^2?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 670,
+  "status": "open",
+  "tags": [
+    "geometry",
+    "distances"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $A\\subseteq \\mathbb{R}^d$ be a set of $n$ points such that all pairwise distances differ by at least $1$. Is the diameter of $A$ at least $(1+o(1))n^2$?",
+  "additional_context": "The lower bound of \\binom{n}{2} for the diameter is trivial. Erdős \\cite{Er97f} proved the claim when d=1.\n\nReferences\n\n[Er97f] Erdős, Paul, Some unsolved problems. Combinatorics, geometry and probability (Cambridge, 1993) (1997), 1-10.",
+  "reference_proof_hint": "This is **Erdős Problem #670**. For (d\\ge 2) it is **open**; for $d=1$ it is **true**. ([Erdős Problems][1])\n\nHere’s what is known and what is easy.\n\n## The trivial lower bound is (\\binom n2)\n\nLet the distinct interpoint distances be\n[\n0<r_1<r_2<\\cdots<r_m,\\qquad m=\\binom n2.\n]\nYour hypothesis says (r_{k+1}-r_k\\ge 1) for all $k$.\n\nAlso, when (n\\ge 3), every distance is at least $1$: for any two points $x,y$ and any third point $z$,\n[\n|,|x-z|-|y-z|,|\\le |x-y|\n]\nby the triangle inequality, while (|x-z|\\neq |y-z|) and all distances differ by at least $1$, so (||x-z|-|y-z||\\ge 1), hence (|x-y|\\ge 1).\n\nTherefore (r_1\\ge 1), and\n[\n\\operatorname{diam}(A)\\ge r_m \\ge r_1+(m-1)\\ge 1+(m-1)=m=\\binom n2.\n]\nThis is the “trivial” (\\binom n2) bound mentioned in the problem’s statement. ([Erdős Problems][1])\n\nSo in particular,\n[\n\\operatorname{diam}(A)\\ge \\left(\\tfrac12+o(1)\\right)n^2.\n]\n\n## $d=1$: yes, (\\operatorname{diam}(A)\\ge (1+o(1))n^2)\n\nErdős proved the ((1+o(1))n^2) lower bound in **one dimensio"
+}

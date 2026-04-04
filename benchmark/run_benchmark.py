@@ -39,6 +39,10 @@ class ProblemResult:
     proving_time_s: float = 0.0
     proving_iterations: int = 0
 
+    # GPT-Erdos comparison
+    gpt_erdos_has_lean: bool = False
+    gpt_erdos_has_proof: bool = False
+
     # Overall
     total_time_s: float = 0.0
     failure_reason: str = ""
@@ -55,6 +59,7 @@ class BenchmarkSuite:
     formalized_count: int = 0
     proved_count: int = 0
     results: list[ProblemResult] = field(default_factory=list)
+    problem_data: dict[str, dict] = field(default_factory=dict)
 
     def add(self, result: ProblemResult) -> None:
         self.results.append(result)
@@ -99,6 +104,31 @@ class BenchmarkSuite:
             p_count = sum(1 for r in tier_results if r.proved)
             avg_time = sum(r.total_time_s for r in tier_results) / max(n, 1)
             lines.append(f"**Tier {tier}:** {f_count}/{n} formalized, {p_count}/{n} proved, avg {avg_time:.0f}s")
+
+        # Comparison table: Our Prover vs GPT-5.2 + Aristotle
+        has_gpt_data = any(r.gpt_erdos_has_lean for r in self.results)
+        if has_gpt_data or self.problem_data:
+            lines.extend(["", "## Comparison: Our Prover vs GPT-5.2 + Aristotle", ""])
+            lines.append("| Problem | Ours | GPT-5.2+Aristotle | Ground Truth |")
+            lines.append("|---------|------|--------------------|--------------|")
+            for r in self.results:
+                ours = "Proved" if r.proved else "No"
+                gpt = "Proved" if r.gpt_erdos_has_proof else ("Lean" if r.gpt_erdos_has_lean else "No")
+                pdata = self.problem_data.get(r.uuid, {})
+                gt = "Yes" if pdata.get("ground_truth_lean") else "No"
+                lines.append(f"| {r.uuid} | {ours} | {gpt} | {gt} |")
+
+            # Comparison summary
+            n = len(self.results)
+            ours_proved = sum(1 for r in self.results if r.proved)
+            gpt_proved = sum(1 for r in self.results if r.gpt_erdos_has_proof)
+            has_gt = sum(1 for r in self.results if self.problem_data.get(r.uuid, {}).get("ground_truth_lean"))
+            lines.extend([
+                "",
+                f"Our prover: {ours_proved}/{n} proved",
+                f"GPT-5.2+Aristotle: {gpt_proved}/{n} proved",
+                f"Has ground truth: {has_gt}/{n}",
+            ])
 
         return "\n".join(lines)
 
@@ -231,6 +261,7 @@ def main() -> int:
     parser.add_argument("--max-iters", type=int, default=6, help="Max iterations per problem")
     parser.add_argument("--compile-cmd", type=str, default="lake env lean {file}")
     parser.add_argument("--cwd", type=Path, default=None, help="Compiler working directory")
+    parser.add_argument("--gpt-erdos-solutions", type=Path, default=None, help="Path to gpt-erdos solutions directory")
     args = parser.parse_args()
 
     # Discover problems
@@ -264,8 +295,15 @@ def main() -> int:
         timestamp=time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
     )
 
+    # Load problem JSON data for ground truth checking
+    problem_data_map: dict[str, dict] = {}
+
     # Run each problem
     for pf in problem_files:
+        pf_data = json.loads(pf.read_text(encoding="utf-8"))
+        pf_uuid = pf_data.get("uuid", pf.stem)
+        problem_data_map[pf_uuid] = pf_data
+
         if args.use_mathcode:
             result = run_problem_mathcode(pf, args.use_mathcode, formalizations_dir)
         else:
@@ -275,7 +313,21 @@ def main() -> int:
                 compile_cmd=args.compile_cmd,
                 cwd=args.cwd,
             )
+
+        # Check GPT-Erdos solutions if directory provided
+        if args.gpt_erdos_solutions is not None:
+            number = pf.stem  # problem file stem as folder name
+            candidate = args.gpt_erdos_solutions / number / "candidate_solution.lean"
+            if candidate.exists():
+                result.gpt_erdos_has_lean = True
+                lean_content = candidate.read_text(encoding="utf-8")
+                if "sorry" not in lean_content:
+                    result.gpt_erdos_has_proof = True
+
         suite.add(result)
+
+    # Attach problem data for ground truth checking in markdown output
+    suite.problem_data = problem_data_map
 
     # Write results
     results_json = args.output / f"benchmark_{args.mode}.json"

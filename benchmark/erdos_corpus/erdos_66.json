@@ -1,0 +1,19 @@
+{
+  "uuid": "erdos_66",
+  "problem": [
+    "Is there  A⊆ ℕ such that\\lim_{n→ ∞}(1_A\\ast 1_A(n))/(\\log n)exists and is ≠ 0?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 66,
+  "status": "open",
+  "tags": [
+    "number theory",
+    "additive basis"
+  ],
+  "prize": "$500",
+  "formalized_on_site": true,
+  "original_latex": "Is there  $A\\subseteq \\mathbb{N}$ such that\\[\\lim_{n\\to \\infty}\\frac{1_A\\ast 1_A(n)}{\\log n}\\]exists and is $\\neq 0$?",
+  "additional_context": "A suitably constructed random set has this property if we are allowed to ignore an exceptional set of density zero. The challenge is obtaining this with no exceptional set. Erdős believed the answer should be no. Erdős and S\\'{a}rk\\\"{o}zy proved that(| 1_A\\ast 1_A(n)-\\log n|)/(\\sqrt{\\log n)}→ 0is impossible. Erdős suggests it may even be true that the \\liminf and \\limsup of 1_A\\ast 1_A(n)/\\log n are always separated by some absolute constant.\n\nHorv\\'{a}th \\cite{Ho07} proved that| 1_A\\ast 1_A(n)-\\log n| ≤ (1-\\epsilon)\\sqrt{\\log n}cannot hold for all large n.\n\nReferences\n\n[Ho07] G. Horv\\'{a}th, An improvement of a theorem of Erdős and S\\'{a}rk\\\"{o}zy. Pollack Periodica (2007), 155-161.",
+  "reference_proof_hint": "Write\n[\nr_A(n):=(1_A*1_A)(n)=\\sum_{k=0}^n 1_A(k),1_A(n-k),\n]\nso (r_A(n)) is the **number of ordered representations** (n=a+b) with (a,b\\in A) (up to an $O(1)$ difference from the unordered version).\n\nAs of **January 2026**, the existence of (A\\subseteq\\mathbb N) for which\n[\n\\lim_{n\\to\\infty}\\frac{r_A(n)}{\\log n}\n]\nexists and is nonzero is **open** (it’s listed as Erdős Problem #66, prize $500). ([Erdős Problems][1])\n\nWhat *is* known around this:\n\n* **“Almost everywhere” via random sets:** A suitably constructed random set can make (r_A(n)) behave like a constant multiple of (\\log n) **for all $n$** outside an exceptional set of **density $0$**, but removing the exceptional set entirely (i.e. getting the limit for *every* large $n$) is exactly the hard part. ([Erdős Problems][1])\n\n* **You can hit the (\\log n) scale, but not rigidly:** There exist “economical” additive bases $A$ with (r_A(n)\\asymp \\log n) (two-sided bounds up to constants), e.g. by the Erdős–Tetali theorem (existence). (",
+  "ground_truth_lean": "/-\nCopyright 2025 The Formal Conjectures Authors.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    https://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n-/\n\nimport FormalConjectures.Util.ProblemImports\n\n/-!\n# Erdős Problem 66\n\n*Reference:* [erdosproblems.com/66](https://www.erdosproblems.com/66)\n-/\n\n\nnamespace Erdos66\n\nopen Filter AdditiveCombinatorics\nopen scoped Topology\n\n/--\nIs there and $A \\subset \\mathbb{N}$ is such that\n$$\\lim_{n\\to \\infty}\\frac{1_A\\ast 1_A(n)}{\\log n}$$\nexists and is $\\ne 0$?\n-/\n@[category research open, AMS 11]\ntheorem erdos_66 : answer(sorry) ↔ ∃ (A : Set ℕ) (c : ℝ), c ≠ 0 ∧\n    Tendsto (fun n ↦ (sumRep A n : ℝ) / Real.log n) atTop (𝓝 c) := by\n  sorry\n\n-- TODO(firsching): add the theorems/conjectures for the comments on the page\n\nend Erdos66\n"
+}

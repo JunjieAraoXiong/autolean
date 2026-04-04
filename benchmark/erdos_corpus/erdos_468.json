@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_468",
+  "problem": [
+    "For any n let D_n be the set of sums of the shape d_1,d_1+d_2,d_1+d_2+d_3,\\ldots where 1<d_1<d_2<\\cdots are the divisors of n.\n\nWhat is the size of D_n\\backslash ∪_{m<n}D_m?\n\nIf f(N) is the minimal n such that N∈ D_n then is it true that f(N)=o(N)? Perhaps just for almost all N?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 468,
+  "status": "open",
+  "tags": [
+    "number theory",
+    "divisors"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "For any $n$ let $D_n$ be the set of sums of the shape $d_1,d_1+d_2,d_1+d_2+d_3,\\ldots$ where $1<d_1<d_2<\\cdots$ are the divisors of $n$.\n\nWhat is the size of $D_n\\backslash \\cup_{m<n}D_m$?\n\nIf $f(N)$ is the minimal $n$ such that $N\\in D_n$ then is it true that $f(N)=o(N)$? Perhaps just for almost all $N$?",
+  "reference_proof_hint": "Let\n$\n1<d_1<d_2<\\cdots<d_{k_n}\n$\nbe the divisors of $n$ larger than $1$, and\n$\nD_n={d_1,\\ d_1+d_2,\\ \\ldots,\\ d_1+\\cdots+d_{k_n}}.\n$\n\n## 1) (\\bigl|D_n\\setminus\\bigcup_{m<n}D_m\\bigr|)\n\nIf you define\n$\na(n)\\ :=\\ |D_n\\setminus\\bigcup_{m<n}D_m|,\n$\nthen this is exactly the “number of debut sums” sequence **OEIS A387502**. ([OEIS][1])\n\nThe OEIS entry gives:\n\n* the definition in exactly your language ([OEIS][1])\n* initial values\n  [\n  a(1),a(2),a(3),\\ldots = 0,1,1,1,1,1,1,1,1,1,0,3,1,1,1,1,0,2,\\ldots\n  ]\n  ([OEIS][1])\n* examples [[nomath]](e.g. $a(12)=3$ because $D_{12}={2,5,9,15,27}$ and $9,15,27$ are new)[[/nomath]] ([OEIS][1])\n* computational/observational facts like record indices (2,12,36,144,336,1320,1980,5040,8400,25200,75600,\\dots) ([OEIS][1])\n* the observed average of the first (100000) terms: about (0.8349). ([OEIS][1])\n\nSo at present the “best answer” is: **this size is the value of A387502 at $n$**, and the deeper asymptotic understanding of this sequence is part of an Erdős–Graham"
+}

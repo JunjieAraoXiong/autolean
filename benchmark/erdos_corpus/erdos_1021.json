@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_1021",
+  "problem": [
+    "Is it true that, for every k≥ 3, there is a constant c_k>0 such that\\mathrm{ex}(n,G_k) \\ll n^{3/2-c_k},where G_k is the bipartite graph between \\{y_1,\\ldots,y_k\\} and \\{z_1,\\ldots,z_{\\binom{k}{2}}\\}, with each z_j joined to a unique pair of y_i?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 1021,
+  "status": "proved",
+  "tags": [
+    "graph theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Is it true that, for every $k\\geq 3$, there is a constant $c_k>0$ such that\\[\\mathrm{ex}(n,G_k) \\ll n^{3/2-c_k},\\]where $G_k$ is the bipartite graph between $\\{y_1,\\ldots,y_k\\}$ and $\\{z_1,\\ldots,z_{\\binom{k}{2}}\\}$, with each $z_j$ joined to a unique pair of $y_i$?",
+  "additional_context": "A conjecture of Erdős and Simonovits, who proved (in unpublished work) that in such a result one must have c_k→ 0 as k→ ∞. Erdős \\cite{Er71} could not even prove whether \\mathrm{ex}(n,G_k)=o(n^{3/2}).\n\nWhen k=3 the graph G_3 is the 6-cycle C_6, for which Erdős \\cite{Er64c} and Bondy and Simonovits \\cite{BoSi74} proved \\mathrm{ex}(n,C_6)\\ll n^{7/6} (see [572]).\n\nThe graph G_k is the graph H_k of [926] with the vertex x omitted.\n\nReferences\n\n[BoSi74] Bondy, J. A. and Simonovits, M., Cycles of even length in graphs. J. Combinatorial Theory Ser. B (1974), 97-105.\n\n[Er64c] Erdős, P., Extremal problems in graph theory. Theory of Graphs and its Applications (Proc. Sympos. Smolenice, 1963) (1964), 29-36.\n\n[Er71] Erdős, P., Some unsolved problems in graph theory and combinatorial analysis. Combinatorial Mathematics and its Applications (Proc.\nConf., Oxford, 1969) (1971), 97-109.",
+  "reference_proof_hint": "Yes.\n\nYour (G_k) is exactly the **1‑subdivision of (K_k)**: the (y_i)’s are the original vertices of (K_k), and each (z_{ij}) is the new subdivision vertex inserted on the edge (y_i y_j). In particular, (G_k) is bipartite, every $z$-vertex has degree $2$, and it is (C_4)-free [[nomath]](a $4$-cycle would require two distinct $z$’s joined to the same pair of $y$’s, which doesn’t happen here)[[/nomath]].\n\nConlon and Lee proved a general theorem that directly covers this situation:\n\n* If $H$ is bipartite, has **maximum degree $2$ on one side**, and is **(C_4)-free**, then there exist constants (C,\\delta>0) [[nomath]](depending on $H$)[[/nomath]] such that\n  [\n  \\mathrm{ex}(n,H)\\le C n^{3/2-\\delta}.\n  ]\n\n\nApplying this to (H=G_k) gives exactly your statement: for each fixed (k\\ge 3) there is a (c_k>0) with\n[\n\\mathrm{ex}(n,G_k)\\ll n^{3/2-c_k}.\n]\n\nMoreover, for the specific case (H_t=) the subdivision of (K_t) [[nomath]](which is your $G_t$)[[/nomath]], Conlon–Lee proved an explicit (though "
+}

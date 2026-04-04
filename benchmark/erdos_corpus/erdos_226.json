@@ -1,0 +1,14 @@
+{
+  "uuid": "erdos_226",
+  "problem": [
+    "Erdős Problem #226"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 226,
+  "status": "proved (Lean)",
+  "tags": [
+    "analysis"
+  ],
+  "prize": "no",
+  "formalized_on_site": false
+}

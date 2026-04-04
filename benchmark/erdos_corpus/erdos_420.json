@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_420",
+  "problem": [
+    "If \\tau(n) counts the number of divisors of n then letF(f,n)=(\\tau((n+\\lfloor f(n)\\rfloor)!))/(\\tau(n!)).Is it true that\\lim_{n→ ∞}F((\\log n)^C,n)=∞for large C?\n\nIs it true that F(\\log n,n) is everywhere dense in (1,∞)?\n\nMore generally, if f(n)≤ \\log n is a monotonic function such that f(n)→ ∞ as n→ ∞, then is F(f,n) everywhere dense?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 420,
+  "status": "open",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "If $\\tau(n)$ counts the number of divisors of $n$ then let\\[F(f,n)=\\frac{\\tau((n+\\lfloor f(n)\\rfloor)!)}{\\tau(n!)}.\\]Is it true that\\[\\lim_{n\\to \\infty}F((\\log n)^C,n)=\\infty\\]for large $C$?\n\nIs it true that $F(\\log n,n)$ is everywhere dense in $(1,\\infty)$?\n\nMore generally, if $f(n)\\leq \\log n$ is a monotonic function such that $f(n)\\to \\infty$ as $n\\to \\infty$, then is $F(f,n)$ everywhere dense?",
+  "additional_context": "Erdős and Graham write that it is easy to show that \\lim F(n^{1/2},n)=∞, and in fact the n^{1/2} can be replaced by n^{1/2-c} for some small constant c>0.\n\nErdős, Graham, Ivi\\'{c}, and Pomerance \\cite{EGIP96} have proved that\\liminf F(c\\log n, n) = 1for any c>0, and\\lim F(n^{4/9},n)=∞.(The exponent 4/9 can be improved slightly.) They also prove that, if f(n)=o((\\log n)^2), then for almost all nF(f,n)\\sim 1.van Doorn notes in the comments that the existence of infinitely many bounded prime gaps implies\\limsup_{n→ ∞}F(g(n),n)=∞for any g(n)→ ∞, and that Cram\\'{e}r's conjecture implies\\lim F(g(n)(\\log n)^2, n)=∞for any g(n)→ ∞>\n\nReferences\n\n[EGIP96] Erdős, Paul and Graham, S. W. and Ivi\\'c, Aleksandar and\nPomerance, Carl, On the number of divisors of {n!}.  (1996), 337--355.",
+  "reference_proof_hint": "Write (k=\\lfloor f(n)\\rfloor) and (F_k(n):=\\dfrac{\\tau((n+k)!)}{\\tau(n!)}).  This is exactly the quantity studied by Erdős–Graham–Ivić–Pomerance [[nomath]](they write $d(\\cdot)$ for $\\tau(\\cdot)$)[[/nomath]]. ([Erdős Problems][1])\n\nA key point is that (F_k(n)) is controlled by how “large” the prime factors of the integers (n+1,\\dots,n+k) are.  EGIP introduce\n[\nS(m)=\\text{sum of the prime factors of }m\\text{ counted with multiplicity},\n]\nand prove the very useful two–sided bound\n[\n1+\\frac{S(m)}{2m}\\ \\le\\ \\frac{\\tau(m!)}{\\tau((m-1)!)}\\ \\le\\ 1+\\frac{2S(m)}{m}\\qquad(m\\ge1). \\tag{★}\n]\nSo (\\log F_k(n)) is essentially governed by (\\sum_{i=1}^k \\frac{S(n+i)}{n+i}). ([Dartmouth Math][2])\n\nWith that context, here is what is known about your three questions.\n\n---\n\n## 1) Does (F((\\log n)^C,n)\\to\\infty) for large $C$?\n\n### If (0<C<2): **No**\n\nEGIP show that if (k=k(n)=o((\\log n)^2)), then the **normal order** of (F_k(n)) is $1$: i.e. (F_k(n)\\sim 1) as (n\\to\\infty) through a set of integers of asymp"
+}

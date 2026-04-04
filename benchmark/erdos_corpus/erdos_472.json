@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_472",
+  "problem": [
+    "Given some initial finite sequence of primes q_1<\\cdots<q_m extend it so that q_{n+1} is the smallest prime of the form q_n+q_i-1 for n≥ m. Is there an initial starting sequence so that the resulting sequence is infinite?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 472,
+  "status": "open",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Given some initial finite sequence of primes $q_1<\\cdots<q_m$ extend it so that $q_{n+1}$ is the smallest prime of the form $q_n+q_i-1$ for $n\\geq m$. Is there an initial starting sequence so that the resulting sequence is infinite?",
+  "additional_context": "A problem due to Ulam. For example if we begin with 3,5 then the sequence continues 3,5,7,11,13,17,\\ldots. It is possible that this sequence is infinite.",
+  "reference_proof_hint": "This is a known open problem.\n\nA convenient rephrasing of your rule is:\n\n> once (q_n) is defined, (q_{n+1}) is the *smallest prime* (p>q_n) such that\n> [\n> p-q_n+1\\in{q_1,\\dots,q_n}.\n> ]\n> Indeed (p=q_n+q_i-1\\iff p-q_n+1=q_i).\n\nThis question appears (attributed to Ulam) as **Erdős Problem #472** and is listed there as **OPEN**: it is not currently known whether *any* finite starting list can force the greedy extension to continue forever. ([Erdős Problems][1])\n\n### The “best known” candidate start: $3,5$\n\nIf you start with $3,5$, you get the sequence recorded in OEIS as **A389713**:\n[\n3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61,67,71,73,79,83,89,101,\\dots\n]\nOEIS explicitly notes: **“It is unknown whether this sequence is infinite.”** ([OEIS][2])\n[[nomath]](The first prime missing from this sequence is $97$, as OEIS remarks. $[OEIS][2]$)[[/nomath]]\n\n### It’s not trivially always extendable\n\nSome starts die immediately (or very quickly). For example:\n\n* Start with ((5)): the only can"
+}

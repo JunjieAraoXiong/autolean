@@ -1,0 +1,19 @@
+{
+  "uuid": "erdos_176",
+  "problem": [
+    "Let N(k,\\ell) be the minimal N such that for any f:\\{1,\\ldots,N\\}→\\{-1,1\\} there must exist a k-term arithmetic progression P such that \\left| ∑_{n∈ P}f(n)\\right|≥ \\ell.Find good upper bounds for N(k,\\ell). Is it true that for any c>0 there exists some C>1 such thatN(k,ck)≤ C^k?What aboutN(k,2)≤ C^korN(k,\\sqrt{k})≤ C^k?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 176,
+  "status": "open",
+  "tags": [
+    "additive combinatorics",
+    "arithmetic progressions",
+    "discrepancy"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $N(k,\\ell)$ be the minimal $N$ such that for any $f:\\{1,\\ldots,N\\}\\to\\{-1,1\\}$ there must exist a $k$-term arithmetic progression $P$ such that\\[ \\left\\lvert \\sum_{n\\in P}f(n)\\right\\rvert\\geq \\ell.\\]Find good upper bounds for $N(k,\\ell)$. Is it true that for any $c>0$ there exists some $C>1$ such that\\[N(k,ck)\\leq C^k?\\]What about\\[N(k,2)\\leq C^k\\]or\\[N(k,\\sqrt{k})\\leq C^k?\\]",
+  "additional_context": "When \\ell=k this is the van der Waerden number W(k) (see [138]). Spencer \\cite{Sp73} has proved that if k=2^tm with m odd thenN(k,1)=2^t(k-1)+1.Erdős and Graham write that 'no decent bound' is known even for N(k,2).\n\nErdős \\cite{Er63d} proved that, for every c>0,N(k,ck)> (1+\\alpha_c)^kwhere \\alpha_c→ 0 as c→ 0 and \\alpha_c→ \\sqrt{2}-1 as c→ 1.\n\nReferences\n\n[Er63d] Erdős, P\\'al, On combinatorial questions connected with a theorem of\n{R}amsey and van der {W}aerden. Mat. Lapok (1963), 29--37.\n\n[Sp73] J. Spencer, Problems 185. Bull. Canad. Math. Soc. (1973), 185.",
+  "reference_proof_hint": "It helps to rephrase what you are asking in “discrepancy” language.\n\nFor fixed $k$ and $N$, let (\\mathcal{A}*{k,N}) be the family of all $k$-term arithmetic progressions in ({1,\\dots,N}).\nFor a colouring (f:{1,\\dots,N}\\to{-1,1}) write\n[\nS(P)=\\sum*{n\\in P} f(n).\n]\nThen (N(k,\\ell)) is the smallest $N$ such that **every** $f$ has **some** (P\\in\\mathcal{A}_{k,N}) with (|S(P)|\\ge \\ell).\n\n## General upper bound (the only general one people really have)\n\nIf you can force a **monochromatic** $k$-term progression, you automatically force (|S(P)|=k), hence (|S(P)|\\ge \\ell) for every (\\ell\\le k). So\n[\nN(k,\\ell)\\ \\le\\ W(k,2)\\qquad (1\\le \\ell\\le k),\n]\nwhere (W(k,2)) is the 2-colour van der Waerden number. ([Erdős Problems][1])\n\nThe best published *general* upper bounds for $W(k,2)$ are still enormous (tower-type). One explicit bound quoted in the literature is\n[\nW(k,2)\\ \\le\\ 2^{2^{2^{2^{2^{k+9}}}}}\n]\n[[nomath]](a tower of five 2’s with top exponent $k+9$)[[/nomath]], coming from Gowers’ quantitativ"
+}

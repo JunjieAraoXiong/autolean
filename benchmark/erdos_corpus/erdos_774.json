@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_774",
+  "problem": [
+    "We call A⊂ ℕ dissociated if ∑_{n∈ X}n≠ ∑_{m∈ Y}m for all finite X,Y⊂ A with X≠ Y.\n\nLet A⊂ ℕ be an infinite set. We call A proportionately dissociated if every finite B⊂ A contains a dissociated set of size \\gg | B|.\n\nIs every proportionately dissociated set the union of a finite number of dissociated sets?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 774,
+  "status": "open",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "We call $A\\subset \\mathbb{N}$ dissociated if $\\sum_{n\\in X}n\\neq \\sum_{m\\in Y}m$ for all finite $X,Y\\subset A$ with $X\\neq Y$.\n\nLet $A\\subset \\mathbb{N}$ be an infinite set. We call $A$ proportionately dissociated if every finite $B\\subset A$ contains a dissociated set of size $\\gg \\lvert B\\rvert$.\n\nIs every proportionately dissociated set the union of a finite number of dissociated sets?",
+  "additional_context": "This question appears in a paper of Alon and Erdős \\cite{AlEr85}, although the general topic was first considered by Pisier \\cite{Pi83}, who observed that the converse holds, and proved that being proportionately dissociated is equivalent to being a 'Sidon set' in the harmonic analysis sense; that is, whenever f:A→ \\mathbb{C} there exists some \\theta∈ [0,1] such that\\| f\\|_1 \\ll \\left|∑_{n∈ A} f(n)e(n\\theta)\\right|,where e(x)=e^{2\\pi ix}.\n\nAlon and Erdős write that it 'seems unlikely that [this] is also sufficient'. They also point out the same question can be asked replacing dissociated with Sidon (in the additive combinatorial sense) (see [328]). This latter question was resolved in the negative by Ne\\v{s}et\\v{r}il, R\\\"{o}dl, and Sales \\cite{NRS24}.\n\nReferences\n\n[AlEr85] Alon, Noga and Erdős, P., An application of graph theory to additive number theory. European J. Combin. (1985), 201-203.\n\n[NRS24] Ne\\v set\\v ril, Jaroslav and R\\\"odl, Vojt\\v ech and Sales,\nMarcelo, On {P}isier type theorems. Combinatorica (2024), 1211--1232.\n\n[Pi83] Pisier, Gilles, Arithmetic characterizations of Sidon sets. Bull. Amer. Math. Soc. (N.S.) (1983), 87-89.",
+  "reference_proof_hint": "This is **open** (as of at least **28 Dec 2025**, and still listed open on 18 Jan 2026).\n\n* The question appears (in essentially this form) in work of **Alon–Erdős**, and it is recorded as **Erdős Problem #774**. ([Erdős Problems][1])\n* Pisier showed that being *proportionately dissociated* (often phrased “proportionally quasi‑independent/free”) is **equivalent** to being a **Sidon set in the harmonic analysis sense**. Under this equivalence, your question becomes the classical “Pisier problem”:\n\n  > does $2$ “every finite subset contains a free subset of linear size” imply $1$ “the whole set is a finite union of free (i.e. dissociated) sets”?\n  > This implication is explicitly stated as **still open** in Nešetřil–Rödl–Sales (2024). ([NSF Public Access Repository][2])\n\n### What is known (and why the problem is subtle)\n\n* The forward direction is easy: if (A=\\bigcup_{i=1}^t A_i) with each (A_i) dissociated, then every finite (B\\subset A) has some (B\\cap A_i) of size (\\ge |B|/t), hence c"
+}

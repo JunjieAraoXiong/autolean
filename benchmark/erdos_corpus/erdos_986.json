@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_986",
+  "problem": [
+    "For any fixed k≥ 3,R(k,n) \\gg \\frac{n^{k-1}}{(\\log n)^c}for some constant c=c(k)>0."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 986,
+  "status": "open",
+  "tags": [
+    "graph theory",
+    "ramsey theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "For any fixed $k\\geq 3$,\\[R(k,n) \\gg \\frac{n^{k-1}}{(\\log n)^c}\\]for some constant $c=c(k)>0$.",
+  "additional_context": "Spencer \\cite{Sp77} proved this for k=3 and Mattheus and Verstraete \\cite{MaVe23} proved this for k=4.\n\nThe best general bounds available are(n^{\\frac{k+1)/(2)}}{(\\log n)^{(1)/(k-2)-(k+1)/(2)}}\\ll_k R(k,n) \\ll_k \\frac{n^{k-1}}{(\\log n)^{k-2}}.The lower bound was proved by Bohman and Keevash \\cite{BoKe10}. The upper bound was proved by Ajtai, Koml\\'{o}s, and Szemer\\'{e}di \\cite{AKS80}. Li, Rousseau, and Zang \\cite{LRZ01} have shown that \\ll_k in the upper bound can be improved to ≤ (1+o(1)).\n\nThe special case k=3 is the topic of [165] and k=4 is the topic of [166].\n\nThis problem is #6 in Ramsey Theory in the graphs problem collection.\n\nSee also [920].\n\nReferences\n\n[AKS80] Ajtai, Mikl\\'{o}s and Koml\\'{o}s, J\\'{a}nos and Szemer\\'{e}di, Endre, A note on Ramsey numbers. J. Combin. Theory Ser. A (1980), 354-360.\n\n[BoKe10] Bohman, Tom and Keevash, Peter, The early evolution of the {H}-free process. Invent. Math. (2010), 291--336.\n\n[LRZ01] Li, Yusheng and Rousseau, Cecil C. and Zang, Wenan, Asymptotic upper bounds for {R}amsey functions. Graphs Combin. (2001), 123--128.\n\n[MaVe23] Mattheus, S. and Verstraete, J., The asymptotics of r(4,t). arXiv:2306.04007 (2023).\n\n[Sp77] Spencer, J., Asymptotic lower bounds for Ramsey functions. Discrete Math. (1977), 69-76.",
+  "reference_proof_hint": "Interpreting $R(k,n)$ as the usual **off‑diagonal graph Ramsey number** (r(k,n)=r(K_k,K_n)):\n\n[\nr(k,n)=\\min{N:\\ \\text{every graph on }N\\text{ vertices contains a }K_k\\text{ or an independent set of size }n}.\n]\n\nThen the statement\n\n[\nr(k,n)\\ \\gg\\ \\frac{n^{k-1}}{(\\log n)^{c}}\n\\quad\\text{for some }c=c(k)>0\n]\n\nis **not known for all fixed (k\\ge 3)**. It is exactly (a slightly reparameterized version of) an **Erdős conjecture** for off‑diagonal Ramsey numbers for (k\\ge 4). \n\n## What is known\n\n### $k=3$: true (sharp up to constants)\n\nKim (1995) (building on earlier work) showed that\n[\nr(3,n)=\\Theta\\left(\\frac{n^2}{\\log n}\\right),\n]\nso your inequality holds with (c(3)=1) (and in fact the order of magnitude is known). \n\n### $k=4$: true (major recent breakthrough)\n\nMattheus and Verstraëte proved\n[\nr(4,n)=\\Omega\\left(\\frac{n^3}{\\log^4 n}\\right),\n]\nso your inequality holds for $k=4$ with (c(4)=4). ([Annals of Mathematics][1])\n\n[[nomath]](And the best known upper bound is $r(4,n)\\le O(n^3/\\log^2 n"
+}

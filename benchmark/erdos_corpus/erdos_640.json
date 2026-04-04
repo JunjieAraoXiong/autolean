@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_640",
+  "problem": [
+    "Is there some function f such that for all k≥ 3 if a finite graph G has chromatic number ≥ f(k) then G must contain some odd cycle whose vertices span a graph of chromatic number ≥ k?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 640,
+  "status": "open",
+  "tags": [
+    "graph theory",
+    "chromatic number"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Is there some function $f$ such that for all $k\\geq 3$ if a finite graph $G$ has chromatic number $\\geq f(k)$ then $G$ must contain some odd cycle whose vertices span a graph of chromatic number $\\geq k$?",
+  "additional_context": "A problem of Erdős and Hajnal.",
+  "reference_proof_hint": "This is **open** (at least as of early 2026).\n\nIt’s a problem of **Erdős and Hajnal** (often discussed in the “χ-boundedness”/Gyárfás problem ecosystem) and is listed as **Erdős Problem #640**. ([Erdős Problems][1])\n\n## Equivalent reformulation\n\nLet\n\n[\ns(G)=\\max{\\chi(G[V(C)]) : C\\text{ is an odd cycle of }G},\n]\n\nwhere (G[V(C)]) is the **induced** subgraph on the vertices of the cycle $C$.\n\nYour question asks whether there is a function $f$ such that\n[\n\\chi(G)\\ge f(k)\\quad\\Longrightarrow\\quad s(G)\\ge k.\n]\nEquivalently: **is (\\chi(G)) bounded by a function of $s(G)$?**\n\nMoreover, the Erdős-problems discussion notes that this is *equivalent (up to constant-factor/offset changes in the function)* to the “path” version: requiring a **path** $P$ whose vertex set spans an induced subgraph of chromatic number (\\ge k). ([Erdős Problems][2])\n\n## What is known (partial results)\n\n### 1) The first nontrivial case is already open\n\nFor $k=3$, it’s trivial: (\\chi(G)\\ge 3) forces an odd cycle, and the "
+}

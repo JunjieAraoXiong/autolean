@@ -1,0 +1,15 @@
+{
+  "uuid": "erdos_1167",
+  "problem": [
+    "Erdős Problem #1167"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 1167,
+  "status": "open",
+  "tags": [
+    "set theory",
+    "probability"
+  ],
+  "prize": "no",
+  "formalized_on_site": false
+}

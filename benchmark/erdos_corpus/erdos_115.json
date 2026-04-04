@@ -1,0 +1,15 @@
+{
+  "uuid": "erdos_115",
+  "problem": [
+    "Erdős Problem #115"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 115,
+  "status": "proved (Lean)",
+  "tags": [
+    "polynomials",
+    "analysis"
+  ],
+  "prize": "no",
+  "formalized_on_site": false
+}

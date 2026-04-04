@@ -1,0 +1,19 @@
+{
+  "uuid": "erdos_863",
+  "problem": [
+    "Let r≥ 2 and let A⊆ \\{1,\\ldots,N\\} be a set of maximal size such that there are at most r solutions to n=a+b with a≤ b for any n. (That is, A is a B_2[r] set.)\n\nSimilarly, let B⊆ \\{1,\\ldots,N\\} be a set of maximal size such that there are at most r solutions to n=a-b for any n.\n\nIf | A|\\sim c_rN^{1/2} as N→ ∞ and | B| \\sim c_r'N^{1/2} as N→ ∞ then is it true that c_r≠ c_r' for r≥ 2? Is it true that c_r'<c_r?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 863,
+  "status": "open",
+  "tags": [
+    "number theory",
+    "sidon sets",
+    "additive combinatorics"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $r\\geq 2$ and let $A\\subseteq \\{1,\\ldots,N\\}$ be a set of maximal size such that there are at most $r$ solutions to $n=a+b$ with $a\\leq b$ for any $n$. (That is, $A$ is a $B_2[r]$ set.)\n\nSimilarly, let $B\\subseteq \\{1,\\ldots,N\\}$ be a set of maximal size such that there are at most $r$ solutions to $n=a-b$ for any $n$.\n\nIf $\\lvert A\\rvert\\sim c_rN^{1/2}$ as $N\\to \\infty$ and $\\lvert B\\rvert \\sim c_r'N^{1/2}$ as $N\\to \\infty$ then is it true that $c_r\\neq c_r'$ for $r\\geq 2$? Is it true that $c_r'<c_r$?",
+  "additional_context": "According to Erdős, first formulated in conversation with Berend, and later independently reformulated with Freud.\n\nIt is true that c_1=c_1', and the classical bound on the size of Sidon sets (see [30]) implies c_1=c_1'=1.",
+  "reference_proof_hint": "A small but important normalization first: in the “difference” problem you must **exclude** $n=0$ [[nomath]](or else require $a\\ne b$, equivalently $a>b$ if you only look at positive $n$)[[/nomath]], since (a-b=0) has (|B|) solutions and would force (|B|\\le r), contradicting the asserted (\\asymp N^{1/2}) growth.\n\nWith that understood, the two extremal problems behave quite differently.\n\n## Differences: the constant is known, and it is (\\sqrt r)\n\nLet\n[\nD_r(N):=\\max\\\\{|B|:B\\subseteq [N],\\ |\\\\{(a,b)\\in B^2:\\ a-b=n\\\\}|\\le r\\ \\forall n\\ne 0\\\\}.\n]\nThis is exactly the “bounded difference-representation” extremal function (\\alpha_g(n)) studied in the recent INTEGERS paper [[nomath]](their $g$ is your $r$)[[/nomath]]. They prove\n[\n\\alpha_g(n)=(1+o_g(1))\\sqrt{gn}\\quad(n\\to\\infty),\n]\ni.e. for each fixed $r$,\n[\nD_r(N)=(1+o_r(1))\\sqrt{rN}.\n]\nSo the asymptotic constant **exists** here and is\n[\nc_r'=\\sqrt r.\n]\n\n\n## Sums: for fixed (r\\ge 2), even the existence of (c_r) is (essentially) open\n\nLet\n[\nF_r"
+}

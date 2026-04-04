@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_896",
+  "problem": [
+    "Estimate the maximum of F(A,B) as A,B range over all subsets of \\{1,\\ldots,N\\}, where  F(A,B) counts the number of m such that m=ab has exactly one solution (with a∈ A and b∈ B)."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 896,
+  "status": "open",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Estimate the maximum of $F(A,B)$ as $A,B$ range over all subsets of $\\{1,\\ldots,N\\}$, where  $F(A,B)$ counts the number of $m$ such that $m=ab$ has exactly one solution (with $a\\in A$ and $b\\in B$).",
+  "additional_context": "In the comments van Doorn proves(1+o(1))(N^2)/(\\log N)≤ \\max_{A,B}F(A,B) \\ll (N^2)/((\\log N)^\\delta(\\log\\log N)^{3/2)}where \\delta=1-(1+\\log\\log 2)/(\\log 2)\\approx 0.086.\n\nSee also [490].",
+  "reference_proof_hint": "Let\n[\nr_{A,B}(m):=|\\\\{(a,b)\\in A\\times B:\\ ab=m\\\\}|,\n\\qquad\nF(A,B):=|\\\\{m:\\ r_{A,B}(m)=1\\\\}|,\n]\nand\n[\nM(N):=\\max_{A,B\\subseteq{1,\\dots,N}} F(A,B).\n]\n\n## Lower bound: (M(N)\\ge (1+o(1))\\dfrac{N^2}{\\log N})\n\nTake\n[\nA:={p\\ \\text{prime}:\\ N/\\log N \\le p\\le N},\n]\nand let (B\\subseteq{1,\\dots,N}) be the set of integers **not divisible by any** (p\\in A).\n\n* By the prime number theorem, (|A|=(1+o(1))\\dfrac{N}{\\log N}).\n* The set excluded from $B$ is (\\bigcup_{p\\in A}{n\\le N:\\ p\\mid n}), whose size is at most\n  [\n  \\sum_{p\\in A}\\frac{N}{p}\n  =N\\sum_{p\\in A}\\frac1p\n  =o(N),\n  ]\n  since (\\sum_{p\\in [N/\\log N,N]} \\frac1p = \\log\\log N-\\log\\log(N/\\log N)+o(1)=o(1)).\n  Hence (|B|=(1+o(1))N).\n\nNow if (p\\in A) and (b\\in B), the product $m=pb$ has a **unique** representation in (A\\times B): if (pb=p'b') with (p,p'\\in A) primes, then either (p=p') and (b=b'), or [[nomath]](if $p\\neq p'$)[[/nomath]] we’d have (p\\mid b'), contradicting (b'\\in B). Therefore every element of (AB) is counted, i.e. $F(A,B)=|A||B"
+}

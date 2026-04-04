@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_1053",
+  "problem": [
+    "Call a number k-perfect if \\sigma(n)=kn, where \\sigma(n) is the sum of the divisors of n. Must k=o(\\log\\log n)?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 1053,
+  "status": "open",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Call a number $k$-perfect if $\\sigma(n)=kn$, where $\\sigma(n)$ is the sum of the divisors of $n$. Must $k=o(\\log\\log n)$?",
+  "additional_context": "A question of Erdős, as reported in problem B2 of Guy's collection \\cite{Gu04}. Guy further writes 'It has even been suggested that there may be only finitely many k-perfect numbers with k≥ 3.' The largest k for which a k-perfect number has been found is k=11 - see this page for more information.\n\nThese are known as multiply perfect numbers. When k=2 this is the definition of a perfect number.\n\nReferences\n\n[Gu04] Guy, Richard K., Unsolved problems in number theory.  (2004), xviii+437.",
+  "reference_proof_hint": "This is **open** (it’s an Erdős problem).\n\nWhat *is* known is only the “right” **big‑O** upper bound: since\n[\nk=\\frac{\\sigma(n)}{n},\n]\ngeneral results on the maximal order of (\\sigma(n)/n) imply (k=O(\\log\\log n)). In fact Grönwall proved\n[\n\\limsup_{n\\to\\infty}\\frac{\\sigma(n)}{n\\log\\log n}=e^\\gamma,\n]\nso (\\sigma(n)/n) can get as large as about (e^\\gamma\\log\\log n) along suitable integers $n$. ([MathWorld][1])\n\nMore explicitly, Robin proved an unconditional bound of the shape\n[\n\\frac{\\sigma(n)}{n}\\le e^\\gamma\\log\\log n+\\frac{0.6483}{\\log\\log n}\\quad (n\\ge 3),\n]\nand under the Riemann Hypothesis one can drop the (0.6483/\\log\\log n) term for (n\\ge 5041). ([arXiv][2])\nSo for any $k$-perfect number $n$, one certainly has (k\\ll \\log\\log n) [[nomath]](indeed $k\\lesssim e^\\gamma\\log\\log n$ for large $n$)[[/nomath]]. ([arXiv][2])\n\nThe stronger claim you asked about,\n[\nk=o(\\log\\log n)\\quad\\text{as }n\\to\\infty\\text{ through }k\\text{-perfect numbers},\n]\nis **exactly the conjecture Erdős made** [[nom"
+}

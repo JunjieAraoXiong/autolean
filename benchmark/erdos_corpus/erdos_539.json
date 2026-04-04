@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_539",
+  "problem": [
+    "Let h(n) be such that, for any set A⊆ ℕ of size n, the set\\left\\{ (a)/((a,b)): a,b∈ A\\right\\}has size at least h(n). Estimate h(n)."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 539,
+  "status": "open",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $h(n)$ be such that, for any set $A\\subseteq \\mathbb{N}$ of size $n$, the set\\[\\left\\{ \\frac{a}{(a,b)}: a,b\\in A\\right\\}\\]has size at least $h(n)$. Estimate $h(n)$.",
+  "additional_context": "Erdős and Szemer\\'{e}di proved thatn^{1/2} \\ll h(n) \\ll n^{1-c}for some constant c>0.",
+  "reference_proof_hint": "Write\n[\nQ(A):=\\\\{\\frac a{(a,b)}:\\ a,b\\in A\\\\},\\qquad h(n)=\\min_{|A|=n}|Q(A)|.\n]\n\nThe right order of magnitude is\n\n[\n\\boxed{h(n)=\\Theta\\big(n^{2/3}\\big) } .\n]\n\nBelow is a concrete construction giving the upper bound (h(n)\\ll n^{2/3}), and a (standard) counting/isoperimetric argument giving the matching lower bound (h(n)\\gg n^{2/3}) [[nomath]](so the exponent $2/3$ is best possible up to constants)[[/nomath]].\n\n---\n\n## 1) Upper bound (h(n)\\ll n^{2/3}) (explicit construction)\n\nFix integers (t\\ge1) and (s\\ge0), and set (k=t+s). Define\n[\nA_{t,s}:={2^i3^j:\\ t\\le i+j\\le k,}.\n]\nThis is a “band” of lattice points between the lines (i+j=t) and (i+j=k) in the $(i,j)$-plane.\n\n### Size of (A_{t,s})\n\nFor each (r\\in[t,k]), there are exactly $r+1$ pairs $(i,j)$ with (i,j\\ge0) and (i+j=r). Hence\n[\n|A_{t,s}|=\\sum_{r=t}^{k}(r+1)=\\frac{(k-t+1)(k+t+2)}2\n=\\frac{(s+1)(2t+s+2)}2.\n]\nCall this $n$.\n\n### Size of $Q(A_{t,s})$\n\nFor (a=2^i3^j) and (b=2^{i'}3^{j'}),\n[\n\\frac{a}{(a,b)}=2^{\\max(i-i',0)}3^{\\max(j-j',0)}"
+}

@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_382",
+  "problem": [
+    "Let u≤ v be such that the largest prime dividing ∏_{u≤ m≤ v}m appears with exponent at least 2. Is it true that v-u=v^{o(1)}? Can v-u be arbitrarily large?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 382,
+  "status": "open",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $u\\leq v$ be such that the largest prime dividing $\\prod_{u\\leq m\\leq v}m$ appears with exponent at least $2$. Is it true that $v-u=v^{o(1)}$? Can $v-u$ be arbitrarily large?",
+  "additional_context": "Erdős and Graham report it follows from results of Ramachandra that v-u≤ v^{1/2+o(1)}.\n\nCambie has observed that the first question boils down to some old conjectures on prime gaps.\nBy Cram\\'{er's conjecture}, for every \\epsilon>0, for every u sufficiently large there is a prime between u and u+u^\\epsilon.\nThus for u+u^\\epsilon<v, the largest prime divisor of \\( ∏_{u ≤ m ≤ v} m \\) appears with exponent 1.\nSince this is not the case in the question, \\( v - u = v^{o(1)} \\).\n\nCambie also gives the following heuristic for the second question. The 'probability' that the largest prime divisor of n is <n^{1/2} is 1-\\log 2>0. For any fixed k, there is therefore a positive 'probability' that there are k consecutive integers around q^2 (for a prime q) all of whose prime divisors are bounded above by q, when v-u≥ k. See [383] for a conjecture along these lines. A similar argument applies if we replace multiplicity 2 with multiplicity r, for any fixed r≥ 2.\n\nSee also [380].",
+  "reference_proof_hint": "Let\n[\nA=\\prod_{m=u}^v m,\\qquad p:=P(A)=\\max{ \\text{primes }q: q\\mid A},\n]\nand assume the $p$-adic valuation satisfies (v_p(A)\\ge 2).\n\n### What can be proved unconditionally\n\n1. **You must have (u>v/2) [[nomath]](for $v$ large enough to avoid tiny edge cases)[[/nomath]].**\n\nIf (p>v/2), then the only multiple of $p$ in $[1,v]$ is $p$ itself, and since (p^2>v) it would contribute only exponent $1$ to $A$. So (v_p(A)\\ge2) forces (p\\le v/2).\n\nIf instead (u\\le v/2), then by Bertrand’s postulate there is a prime $q\\in(v/2,v]$. That prime lies in $[u,v]$, hence divides $A$, and it is larger than every prime (\\le v/2), contradicting (p\\le v/2). Therefore (u>v/2).\n\nSo any such interval $[u,v]$ sits in the “top half” $(v/2,v]$ and in particular contains **no primes**.\n\n2. **A “square-root” upper bound:**\n   [\n   v-u<\\sqrt v.\n   ]\n\nWrite (k:=v-u+1) (number of factors). From (u>v/2) we get (u>v-u), hence (u\\ge k). In fact $u=k$ cannot happen for (k>1), because then ([u,v]=[k,2k-1]) contains a prime"
+}

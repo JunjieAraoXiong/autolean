@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_679",
+  "problem": [
+    "Let \\epsilon>0 and \\omega(n) count the number of distinct prime factors of n. Are there infinitely many values of n such that\\omega(n-k) < (1+\\epsilon)(\\log k)/(\\log\\log k)for all k<n which are sufficiently large depending on \\epsilon only?\n\nCan one show the stronger version with\\omega(n-k) < (\\log k)/(\\log\\log k)+O(1)is false?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 679,
+  "status": "open",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $\\epsilon>0$ and $\\omega(n)$ count the number of distinct prime factors of $n$. Are there infinitely many values of $n$ such that\\[\\omega(n-k) < (1+\\epsilon)\\frac{\\log k}{\\log\\log k}\\]for all $k<n$ which are sufficiently large depending on $\\epsilon$ only?\n\nCan one show the stronger version with\\[\\omega(n-k) < \\frac{\\log k}{\\log\\log k}+O(1)\\]is false?",
+  "additional_context": "One can ask similar questions for \\Omega, the number of prime factors with multiplicity, where \\log k/\\log\\log k is replaced by \\log_2k.\n\nSee also [248] and [413].\n\nIn the comments DottedCalculator has disproved the second stronger version, proving that in fact for all large n there exists k<n such that\\omega(n-k)≥ (\\log k)/(\\log\\log k) + c(\\log k)/((\\log\\log k)^2)for some constant c>0.",
+  "reference_proof_hint": "As far as I can tell, your first question [[nomath]](the $(1+\\varepsilon)$-version)[[/nomath]] is **currently open**. It is recorded as Erdős Problems #679 and is listed there as unsolved. ([Erdős Problems][1])\n\nFor the second question: **yes, the stronger bound**\n[\n\\omega(n-k) < \\frac{\\log k}{\\log\\log k}+O(1)\n]\nis **false**, and in fact it fails in a quantitatively stronger way.\n\n## Why the ( \\frac{\\log k}{\\log\\log k}+O(1)) version is false\n\nLet (p_m) be the $m$-th prime and let\n[\nP_m := \\prod_{j\\le m} p_j\n]\nbe the $m$-th primorial.  For a given $n$, choose $m$ so that\n[\nP_{m-1}< n \\le P_m.\n]\nNow set\n[\nk := n - P_{m-1}.\n]\nThen (1\\le k < P_m) and\n[\nn-k = P_{m-1}\\quad\\Longrightarrow\\quad \\omega(n-k)=\\omega(P_{m-1})=m-1.\n]\n\nSo the problem becomes: compare $m-1$ to (\\frac{\\log k}{\\log\\log k}).\n\nSince (k<P_m), we have\n[\n\\log k \\le \\log P_m = \\vartheta(p_m),\n]\nwhere (\\vartheta(x)=\\sum_{p\\le x}\\log p) is Chebyshev’s (\\vartheta)-function [[nomath]](so $\\vartheta(p_m)=\\log P_m$)[[/nomath]]. (["
+}

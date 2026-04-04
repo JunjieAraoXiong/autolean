@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_1120",
+  "problem": [
+    "Let f∈ \\mathbb{C}[z] be a monic polynomial of degree n, all of whose roots satisfy | z|≤ 1. LetE= \\{ z : | f(z)| ≤ 1\\}.What is the shortest length of a path in E joining z=0 to | z| =1?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 1120,
+  "status": "open",
+  "tags": [
+    "analysis"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $f\\in \\mathbb{C}[z]$ be a monic polynomial of degree $n$, all of whose roots satisfy $\\lvert z\\rvert\\leq 1$. Let\\[E= \\{ z : \\lvert f(z)\\rvert \\leq 1\\}.\\]What is the shortest length of a path in $E$ joining $z=0$ to $\\lvert z\\rvert =1$?",
+  "additional_context": "This is Problem 4.22 in \\cite{Ha74}, where it is attributed to Erdős. In \\cite{Ha74} it is reported that Clunie and Netanyahu (personal communication) showed that a path always exists which joins z=0 to | z|=1 in A.\n\nErdős wrote 'presumably this tends to infinity with n, but not too fast'.\n\nThe trivial lower bound for the length of this path is 1, which is achieved for f(z)=z^n. The interesting side of this question is what the worst case behaviour is (as a function of n).\n\nSee also [1041].\n\nReferences\n\n[Ha74] Hayman, W. K., Research problems in function theory: new problems.  (1974), 155--180.",
+  "reference_proof_hint": "Let\n[\n\\ell(f):=\\inf{\\text{(Euclidean) length}(\\gamma):\\ \\gamma\\subset E,\\ \\gamma\\text{ joins }0\\text{ to some point with }|z|=1}.\n]\n\n### What you can say unconditionally\n\n* Any path from $0$ to the unit circle must have length (\\ge 1), simply because the Euclidean distance from $0$ to ({|z|=1}) is $1$.\n* This lower bound is sharp: for (f(z)=z^n) we have (E={ |z^n|\\le 1}={|z|\\le 1}), and the straight segment ([0,1]\\subset E) has length $1$.\n  So **the smallest possible value of (\\ell(f)) over all such polynomials is $1$**.\n\n### If you meant the “worst case” over all such polynomials of degree $n$\n\nThis is the version that appears as an Erdős/Hayman-type research problem: define\n[\nL_n := \\sup{\\ell(f): f \\text{ monic of degree }n,\\ \\text{all zeros of }f\\text{ in }|z|\\le 1}.\n]\nIt is known (Clunie–Netanyahu) that for every such $f$, **some** path in $E$ from $0$ to (|z|=1) exists, so (\\ell(f)<\\infty) always; but **the growth and sharp determination of (L_n) is open**. Erdős explicitly sugge"
+}

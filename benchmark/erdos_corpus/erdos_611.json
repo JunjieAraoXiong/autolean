@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_611",
+  "problem": [
+    "For a graph G let \\tau(G) denote the minimal number of vertices that include at least one from each maximal clique of G (sometimes called the clique transversal number).\n\nIs it true that if all maximal cliques in G have at least cn vertices then \\tau(G)=o_c(n)?\n\nSimilarly, estimate for c>0 the minimal k_c(n) such that if every maximal clique in G has at least k_c(n) vertices then \\tau(G)<(1-c)n."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 611,
+  "status": "open",
+  "tags": [
+    "graph theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "For a graph $G$ let $\\tau(G)$ denote the minimal number of vertices that include at least one from each maximal clique of $G$ (sometimes called the clique transversal number).\n\nIs it true that if all maximal cliques in $G$ have at least $cn$ vertices then $\\tau(G)=o_c(n)$?\n\nSimilarly, estimate for $c>0$ the minimal $k_c(n)$ such that if every maximal clique in $G$ has at least $k_c(n)$ vertices then $\\tau(G)<(1-c)n$.",
+  "additional_context": "A problem of Erdős, Gallai, and Tuza \\cite{EGT92}, who proved for the latter question that k_c(n) ≥ n^{c'/\\log\\log n} for some c'>0, and that if every clique has size least k then \\tau(G) ≤ n-(kn)^{1/2}. Bollob\\'{a}s and Erdős proved that if every maximal clique has at least n+3-2\\sqrt{n} vertices then \\tau(G)=1 (and this threshold is best possible).\n\nSee also [610] and the entry in the graphs problem collection.\n\nReferences\n\n[EGT92] Erdős, Paul and Gallai, Tibor and Tuza, Zsolt, Covering the cliques of a graph with vertices. Discrete Math. (1992), 279-289.",
+  "reference_proof_hint": "These are classical Erdős–Gallai–Tuza questions, and (as far as the public literature indicates) they are still **open in full generality**.\n\nThey appear verbatim as **Erdős Problem #611**. ([Erdős Problems][1])\n\n## 1) If every maximal clique has size at least (cn), must (\\tau(G)=o_c(n))?\n\nThis is **open**. ([Erdős Problems][1])\n\nWhat *is* known is an upper bound of Erdős–Gallai–Tuza: if every (maximal) clique has size at least $k$, then\n[\n\\tau(G)\\ \\le\\ n-\\sqrt{kn}.\n]\n(Here “clique” is used in the older sense “maximal clique” in this line of work.) ([Erdős Problems][1])\n\nPlugging $k=cn$ gives\n[\n\\tau(G)\\ \\le\\ n-\\sqrt{c},n \\ =\\ (1-\\sqrt c),n,\n]\nwhich is **linear** in $n$, not $o(n)$. So currently the best general bound in this direction does *not* reach sublinearity.\n\nA trivial bound you can always note is\n[\n\\tau(G)\\le n-k+1\n]\n[[nomath]](since removing any $k-1$ vertices leaves a set that cannot contain a maximal clique of size $\\ge k$)[[/nomath]], but for $k=cn$ this only gives (\\tau(G)"
+}

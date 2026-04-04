@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_576",
+  "problem": [
+    "Let Q_k be the k-dimensional hypercube graph (so that Q_k has 2^k vertices and k2^{k-1} edges). Determine the behaviour of\\mathrm{ex}(n;Q_k)."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 576,
+  "status": "open",
+  "tags": [
+    "graph theory",
+    "turan number"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $Q_k$ be the $k$-dimensional hypercube graph (so that $Q_k$ has $2^k$ vertices and $k2^{k-1}$ edges). Determine the behaviour of\\[\\mathrm{ex}(n;Q_k).\\]",
+  "additional_context": "Erdős and Simonovits \\cite{ErSi70} proved that(\\tfrac{1}{2}+o(1))n^{3/2}≤ \\mathrm{ex}(n;Q_3) \\ll n^{8/5}.(In \\cite{ErSi70} they mention that Erdős had originally conjectured that  \\mathrm{ex}(n;Q_3)\\gg n^{5/3}.) Erdős and Simonovits also proved that, if G is the graph Q_3 with a missing edge, then \\mathrm{ex}(n;G)\\asymp n^{3/2}.\n\nIn \\cite{Er74c}, \\cite{Er81}, and \\cite{Er93} Erdős asked whether it is \\mathrm{ex}(n;Q_3)\\asymp n^{8/5}.\n\nA theorem of Sudakov and Tomon \\cite{SuTo22} implies\\mathrm{ex}(n;Q_k)=o(n^{2-(1)/(k)}).Janzer and Sudakov \\cite{JaSu22} have improved this to\\mathrm{ex}(n;Q_k)\\ll_k n^{2-(1)/(k-1)+(1)/((k-1)2^{k-1)}}.See also the entry in the graphs problem collection and [1035].\n\nReferences\n\n[Er74c] Erdős, Paul, Extremal problems on graphs and hypergraphs.  (1974), 75-84.\n\n[Er81] Erdős, P., On the combinatorial problems which I would most like to see solved. Combinatorica (1981), 25-42.\n\n[Er93] Erdős, Paul, Some of my favorite solved and unsolved problems in graph\ntheory. Quaestiones Math. (1993), 333-350.\n\n[ErSi70] Erdős, P. and Simonovits, M., Some extremal problems in graph theory. Combinatorial theory and its applications, I-III (Proc. Colloq., Balatonf\\\"{u}red, 1969) (1970), 377-390.\n\n[JaSu22] Janzer, O. and Sudakov, B., On the Tur\\'{a}n number of the hypercube. arXiv:2211.02015 (2024).\n\n[SuTo22] Sudakov, Benny and Tomon, Istv\\'{a}n, The extremal number of tight cycles. Int. Math. Res. Not. IMRN (2022), 9663-9684.",
+  "reference_proof_hint": "Write (\\mathrm{ex}(n,H)) for the usual Turán/extremal number: the maximum number of edges in an $n$-vertex graph containing no (not-necessarily-induced) copy of $H$. For the $k$-dimensional cube (Q_k) [[nomath]](with $v(Q_k)=2^k$, $e(Q_k)=k2^{k-1}$)[[/nomath]], the exact asymptotics are known only for (k\\le 2); for (k\\ge 3) the problem is still open. What *is* known is the following (best current bounds).\n\n## Small dimensions\n\n### $k=2$: (Q_2=C_4)\n\n[\n\\mathrm{ex}(n,Q_2)=\\mathrm{ex}(n,C_4)=\\Big(\\tfrac12+o(1)\\Big)n^{3/2}.\n]\nThis follows from the classical (C_4) upper bound (Kővári–Sós–Turán/Reiman) together with polarity-graph constructions from finite projective planes. ([arXiv][1])\n\n### $k=3$: the cube\n\nErdős–Simonovits proved the best known upper bound\n[\n\\mathrm{ex}(n,Q_3)=O\\left(n^{8/5}\\right),\n]\nand the best known lower bound is\n[\n\\mathrm{ex}(n,Q_3)=\\Omega(n^{3/2}),\n]\ncoming from the fact that (Q_3) contains a $4$-cycle [[nomath]](so any $C_4$-free extremal construction is $Q_3$-free"
+}

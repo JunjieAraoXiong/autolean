@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_293",
+  "problem": [
+    "Let k≥ 1 and let v(k) be the minimal integer which does not appear as some n_i in a solution to1=(1)/(n_1)+\\cdots+(1)/(n_k)with 1≤ n_1<\\cdots <n_k. Estimate the growth of v(k)."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 293,
+  "status": "open",
+  "tags": [
+    "number theory",
+    "unit fractions"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $k\\geq 1$ and let $v(k)$ be the minimal integer which does not appear as some $n_i$ in a solution to\\[1=\\frac{1}{n_1}+\\cdots+\\frac{1}{n_k}\\]with $1\\leq n_1<\\cdots <n_k$. Estimate the growth of $v(k)$.",
+  "additional_context": "Results of Bleicher and Erdős \\cite{BlEr75} imply v(k) \\gg k!. It may be that v(k) grows doubly exponentially in \\sqrt{k} or even k.\n\nAn elementary inductive argument shows that n_k≤ ku_k where u_1=1 and u_{i+1}=u_i(u_i+1), and hencev(k) ≤ kc_0^{2^k},wherec_0=\\lim_n u_n^{1/2^n}=1.26408\\cdotsis the 'Vardi constant' (small improvements on this are possible as in [148]).\n\nvan Doorn and Tang \\cite{vDTa25b} have proved thatv(k)≥ e^{ck^2}for some constant c>0, and noted a close connection to [304]. In particular, if N(b)\\ll \\log\\log b as in [304] then it is likely the methods of \\cite{vDTa25b} prove v(k) ≥ e^{e^{ck}} for some c>0.\n\nReferences\n\n[BlEr75] Bleicher, M. N. and Erdős, P., The number of distinct subsums of ∑ \\sb{1}\\spN\\,1/i. Math. Comp. (1975), 29-42.\n\n[vDTa25b] W. van Doorn and Q. Tang, The smallest denominator not contained in a unit fraction decomposition of 1 with fixed length. arXiv:2512.22083 (2025).",
+  "reference_proof_hint": "Write $D_k$ for the set of all integers $m$ that occur as *some* denominator $n_i$ in at least one $k$-term Egyptian fraction representation\n$\n1=\\frac1{n_1}+\\cdots+\\frac1{n_k},\\qquad 1<n_1<\\cdots<n_k .\n$\n[[nomath]](As you noticed, if $k\\ge 2$ then $1$ can never occur among the $n_i$, so the standard definition is: **$v(k)$ is the smallest integer $>1$ not in $D_k$**.)[[/nomath]] ([arXiv][1])\n\nThe problem of estimating $v(k)$ was posed by Erdős–Graham and remains wide open in the sense that the best known upper and lower bounds are very far apart. The currently best published bounds (as of late 2025) are:\n\n## Best known lower bound [[nomath]](how fast $v(k)$ must grow)[[/nomath]]\n\nThere is an absolute constant $c>0$ such that\n[\nv(k)\\ \\ge\\ e^{c k^2}\\qquad \\text{for all }k\\ge 1.\n]\nEquivalently: every integer $m<e^{c k^2}$ *does* occur as a denominator in some Egyptian-fraction decomposition of $1$ of length $\\le k$, so the smallest “missing” denominator is at least $e^{c k^2}$. ([arXiv][1"
+}

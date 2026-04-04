@@ -1,0 +1,19 @@
+{
+  "uuid": "erdos_956",
+  "problem": [
+    "If C,D⊆ ℝ^2 then the distance between C and D is defined by\\delta(C,D)=∈f_{\\substack{c∈ C\\\\ d∈ D}}\\| c-d\\|.Let h(n) be the maximal number of unit distances between disjoint convex translates. That is, the maximal m such that there is a compact convex set C⊂ ℝ^2 and a set X of size n such that all (C+x)_{x∈ X} are disjoint and there are m pairs x_1,x_2∈ X such that\\delta(C+x_1,C+x_2)=1.Determine h(n) - in particular, prove that there exists a constant c>0 such that h(n)>n^{1+c} for all large n."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 956,
+  "status": "open",
+  "tags": [
+    "geometry",
+    "distances",
+    "convex"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "If $C,D\\subseteq \\mathbb{R}^2$ then the distance between $C$ and $D$ is defined by\\[\\delta(C,D)=\\inf_{\\substack{c\\in C\\\\ d\\in D}}\\| c-d\\|.\\]Let $h(n)$ be the maximal number of unit distances between disjoint convex translates. That is, the maximal $m$ such that there is a compact convex set $C\\subset \\mathbb{R}^2$ and a set $X$ of size $n$ such that all $(C+x)_{x\\in X}$ are disjoint and there are $m$ pairs $x_1,x_2\\in X$ such that\\[\\delta(C+x_1,C+x_2)=1.\\]Determine $h(n)$ - in particular, prove that there exists a constant $c>0$ such that $h(n)>n^{1+c}$ for all large $n$.",
+  "additional_context": "A problem of Erdős and Pach \\cite{ErPa90}, who proved that h(n) \\ll n^{4/3}. They also consider the related function where we consider n disjoint convex sets (not necessarily translates), for which they give an upper bound of \\ll n^{7/5}.\n\nIt is trivial that h(n)≥ f(n), where f(n) is the maximal number of unit distances determined by n points in ℝ^2 (see [90]).\n\nReferences\n\n[ErPa90] Erdős, P. and Pach, J., Variations on the theme of repeated distances. Combinatorica (1990), 261--269.",
+  "reference_proof_hint": "Let (C\\subset\\mathbb R^2) be compact and convex, and let (x,y\\in\\mathbb R^2).  Write\n[\nD:=C-C={c_1-c_2:\\ c_1,c_2\\in C}.\n]\nThen $D$ is compact, convex, and centrally symmetric.\n\n## 1) Reduce (\\delta(C+x,C+y)) to distance from a point to $D$\n\n**Claim.** For all (x,y\\in\\mathbb R^2),\n[\n\\delta(C+x,C+y)=\\operatorname{dist}(y-x,,D),\n]\nwhere (\\operatorname{dist}(v,D)=\\inf_{d\\in D}|v-d|).\n\n**Proof.**\n[\n\\delta(C+x,C+y)\n=\\inf_{c_1,c_2\\in C}|(c_1+x)-(c_2+y)|\n=\\inf_{c_1,c_2\\in C}|(x-y)+(c_1-c_2)|.\n]\nLet (d=c_2-c_1\\in C-C=D). Then (c_1-c_2=-d) and since (D=-D),\n[\n\\inf_{c_1,c_2\\in C}|(x-y)+(c_1-c_2)|\n=\\inf_{d\\in D}|(x-y)-d|\n=\\operatorname{dist}(x-y,D)\n=\\operatorname{dist}(y-x,D),\n]\nusing symmetry of distance. ∎\n\nTherefore, if we define the “unit-distance shell”\n[\n\\Gamma:={v\\in\\mathbb R^2:\\ \\operatorname{dist}(v,D)=1},\n]\nthen for distinct translates (C+x_1) and (C+x_2),\n[\n\\delta(C+x_1,C+x_2)=1 \\iff x_2-x_1\\in \\Gamma.\n]\n\nEquivalently, if we look at the translate family ({\\Gamma+x:\\ x\\in X}), then\n[\nx_2"
+}

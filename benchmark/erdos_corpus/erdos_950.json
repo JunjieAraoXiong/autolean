@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_950",
+  "problem": [
+    "Letf(n) = ∑_{p<n}(1)/(n-p).Is it true that\\liminf f(n)=1and\\limsup f(n)=∞?Is it true that f(n)=o(\\log\\log n) for all n?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 950,
+  "status": "open",
+  "tags": [
+    "number theory",
+    "primes"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let\\[f(n) = \\sum_{p<n}\\frac{1}{n-p}.\\]Is it true that\\[\\liminf f(n)=1\\]and\\[\\limsup f(n)=\\infty?\\]Is it true that $f(n)=o(\\log\\log n)$ for all $n$?",
+  "additional_context": "This function was considered by de Bruijn, Erdős, and Tur\\'{a}n, who showed that∑_{n<x}f(n)\\sim ∑_{n<x}f(n)^2\\sim x.The existence of some c>0 such that there are \\gg n^c/\\log n many primes in [n,n+n^c] implies that \\liminf f(n)>0.\n\nErdős writes that a 'weaker conjecture which is perhaps not quite inaccessible' is that, for every \\epsilon>0, if x is sufficiently large there exists y<x such that\\pi(x)< \\pi(y)+\\epsilon \\pi(x-y).(Compare this to [855].) He notes that if\\pi(x)< \\pi(y)+O\\left((x-y)/(\\log x)\\right)for all y<x-(\\log x)^C for some constant C>0 then f(n)\\ll \\log\\log\\log n.\n\nThe study of f(p) is even harder, and Erdős could not prove that∑_{p<x}f(p)^2\\sim \\pi(x).",
+  "reference_proof_hint": "This is (essentially verbatim) **Erdős’s Problem #950**. Erdős wrote that it is *likely* that\n$\n\\liminf_{n\\to\\infty} f(n)=1,\\qquad \\limsup_{n\\to\\infty} f(n)=\\infty,\n$\nand he also asked whether perhaps (f(n)=o(\\log\\log n)). All of these are **open**. ([Rényi Institute][1])\n\n## What is known unconditionally\n\n### 1) First and second moment: $f(n)$ is typically (\\asymp 1)\n\nDe Bruijn–Erdős–Turán proved the asymptotics\n$\n\\sum_{n<x} f(n) \\sim x,\\qquad \\sum_{n<x} f(n)^2 \\sim x,\n$\nso the mean and mean square of $f(n)$ over (n\\le x) are both asymptotically 1. ([Erdős Problems][2])\nIn particular, “on average” $f(n)$ behaves like 1; but this does not control (\\liminf) or (\\limsup).\n\nA quick corollary of the second moment is that large values are rare in density: for any (T>0),\n[\n|\\\\{n\\le x:\\ f(n)\\ge T\\\\}|\\ \\ll\\ \\frac{x}{T^2}.\n]\n[[nomath]](This is just Markov/Chebyshev using $\\sum_{n\\le x} f(n)^2\\sim x$.)[[/nomath]] ([Erdős Problems][2])\n\n### 2) A general upper bound: (f(n)\\ll \\log\\log n) for all $"
+}

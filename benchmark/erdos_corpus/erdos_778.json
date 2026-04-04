@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_778",
+  "problem": [
+    "Alice and Bob play a game on the edges of K_n, alternating colouring edges by red (Alice) and blue (Bob). Alice goes first, and wins if at the end the largest red clique is larger than any of the blue cliques.\n\nDoes Bob have a winning strategy for n≥ 3? (Erdős believed the answer is yes.)\n\nIf we change the game so that Bob colours two edges after each edge that Alice colours, but now require Bob's largest clique to be strictly larger than Alice's, then does Bob have a winning strategy for n>3?\n\nFinally, consider the game when Alice wins if the maximum degree of the red subgraph is larger than the maximum degree of the blue subgraph. Who wins?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 778,
+  "status": "open",
+  "tags": [
+    "graph theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Alice and Bob play a game on the edges of $K_n$, alternating colouring edges by red (Alice) and blue (Bob). Alice goes first, and wins if at the end the largest red clique is larger than any of the blue cliques.\n\nDoes Bob have a winning strategy for $n\\geq 3$? (Erd\\H{o}s believed the answer is yes.)\n\nIf we change the game so that Bob colours two edges after each edge that Alice colours, but now require Bob's largest clique to be strictly larger than Alice's, then does Bob have a winning strategy for $n>3$?\n\nFinally, consider the game when Alice wins if the maximum degree of the red subgraph is larger than the maximum degree of the blue subgraph. Who wins?",
+  "additional_context": "Malekshahian and Spiro \\cite{MaSp24} have proved that, for the first game, the set of n for which Bob wins has density at least 3/4 - in fact they prove that if Alice wins at n then Bob wins at n+1,n+2,n+3.\n\nSimilarly, for the third game they prove that the set of n for which Bob wins has density at least 2/3, and prove the stronger statement that if Alice wins at n then Bob wins at n+1,n+2.\n\nReferences\n\n[MaSp24] Malekshahian, A. and Spiro, S., On a clique-building game of Erdős. arXiv:2410.18304 (2024).",
+  "reference_proof_hint": "Here’s what’s currently known (as of **Jan 18, 2026**) about these Erdős edge-colouring games on (K_n).\n\n## 1) Largest monochromatic clique: does Bob win for all (n\\ge 3)?\n\nThis is **still open** in full generality.\n\nThis game is now commonly called the **clique-building game** (\\mathrm{Clique}(n)): Alice (Red) and Bob (Blue) alternately claim edges of (K_n) (Alice first), and Alice wins iff\n[\n\\omega(R)>\\omega(B),\n]\notherwise Bob wins (so Bob wins ties).\n\n**Erdős conjectured Bob wins for every (n\\ge 3), but no proof is known.** ([Erdős Problems][1])\n\nWhat *is* known:\n\n* **Bob wins for most $n$:** Malekshahian–Spiro (2024) proved that the set of $n$ for which Bob wins has **asymptotic density at least $3/4$**. ([arXiv][2])\n  In particular, Alice can only win (if at all) on a “sparse” set of values of $n$.\n\n* **Red wins can’t cluster:** They prove “reduction” statements of the form “if Alice wins at $n$, then Bob wins at nearby larger sizes.” For example, they show that if Alice were to "
+}

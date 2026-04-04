@@ -1,0 +1,15 @@
+{
+  "uuid": "erdos_984",
+  "problem": [
+    "Erdős Problem #984"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 984,
+  "status": "proved",
+  "tags": [
+    "arithmetic progressions",
+    "additive combinatorics"
+  ],
+  "prize": "no",
+  "formalized_on_site": false
+}

@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_724",
+  "problem": [
+    "Let f(n) be the maximum number of mutually orthogonal Latin squares of order n. Is it true thatf(n) \\gg n^{1/2}?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 724,
+  "status": "open",
+  "tags": [
+    "combinatorics"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $f(n)$ be the maximum number of mutually orthogonal Latin squares of order $n$. Is it true that\\[f(n) \\gg n^{1/2}?\\]",
+  "additional_context": "Euler conjectured that f(n)=1 when n\\equiv 2\\pmod{4}, but this was disproved by Bose, Parker, and Shrikhande \\cite{BPS60} who proved f(n)≥ 2 for n≥ 7.\n\nChowla, Erdős, and Straus \\cite{CES60} proved f(n) \\gg n^{1/91}. Wilson \\cite{Wi74} proved f(n) \\gg n^{1/17}. Beth \\cite{Be83c} proved f(n) \\gg n^{1/14.8}.\n\nThe sequence of f(n) is A001438 in the OEIS.\n\nReferences\n\n[BPS60] Bose, R. C. and Shrikhande, S. S. and Parker, E. T., Further results on the construction of mutually orthogonal\nLatin squares and the falsity of Euler's conjecture. Canadian J. Math. (1960), 189-203.\n\n[Be83c] Beth, Thomas, Eine Bemerkung zur Absch\\\"{a}tzung der Anzahl orthogonaler\nlateinischer Quadrate mittels Siebverfahren. Abh. Math. Sem. Univ. Hamburg (1983), 284-288.\n\n[CES60] Chowla, S. and Erdős, P. and Straus, E. G., On the maximal number of pairwise orthogonal Latin squares\nof a given order. Canadian J. Math. (1960), 204-208.\n\n[Wi74] Wilson, Richard M., Concerning the number of mutually orthogonal Latin squares. Discrete Math. (1974), 181-198.",
+  "reference_proof_hint": "This is **not known** (at least according to the standard references and the more recent papers/surveys I can find). What *is* known is much weaker.\n\nWrite $N(n)$ for the maximum size of a set of MOLS of order $n$ [[nomath]](this is your $f(n)$)[[/nomath]]. One always has the trivial upper bound\n[\nN(n)\\le n-1\\qquad(n>1),\n]\nand equality holds for prime powers $q$ (via the finite field construction), i.e. $N(q)=q-1$. \nSo along the subsequence of prime powers we certainly have (N(n)\\asymp n), hence (N(n)\\gg n^{1/2}) there. The issue is whether one can guarantee (\\gg \\sqrt n) **uniformly for all** large $n$.\n\nThe **best general asymptotic lower bounds known** are of the form (N(n)\\ge n^{c}) for a small constant (c>0), not anywhere near $1/2$. For example:\n\n* Chowla–Erdős–Straus (1960) proved (N(n)\\to\\infty) and gave an explicit power bound, in particular (N(n) > \\tfrac14 n^{1/91}) for all sufficiently large (n). \n* Wilson (1974) improved this substantially [[nomath]](one formulation in his"
+}

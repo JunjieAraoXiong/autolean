@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_875",
+  "problem": [
+    "Let A=\\{a_1<a_2<\\cdots\\}⊂ ℕ be an infinite set such that the setsS_r = \\{ a_1+\\cdots +a_r : a_1<\\cdots<a_r∈ A\\}are disjoint for distinct r≥ 1. How fast can such a sequence grow? How small can a_{n+1}-a_n be? In particular, for which c is it possible that a_{n+1}-a_n≤ n^{c}?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 875,
+  "status": "open",
+  "tags": [
+    "additive combinatorics"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $A=\\{a_1<a_2<\\cdots\\}\\subset \\mathbb{N}$ be an infinite set such that the sets\\[S_r = \\{ a_1+\\cdots +a_r : a_1<\\cdots<a_r\\in A\\}\\]are disjoint for distinct $r\\geq 1$. How fast can such a sequence grow? How small can $a_{n+1}-a_n$ be? In particular, for which $c$ is it possible that $a_{n+1}-a_n\\leq n^{c}$?",
+  "additional_context": "A problem of Deshouillers and Erdős (an infinite version of [874]). Such sets are sometimes called admissible. Erdős writes 'it [is not] completely trivial to find such a sequence for which a_{n+1}/a_n→ 1'. It is not clear from this whether Deshouillers and Erdős knew of such a sequence.",
+  "reference_proof_hint": "Write the condition in a slightly more invariant way.\nYour hypothesis that the sets\n[\nS_r=\\\\{\\sum_{i\\in I}a_i:\\ I\\subset\\mathbb N,\\ |I|=r\\\\}\n]\nare disjoint for distinct $r$ is equivalent to:\n\n> if two finite subsets (X,Y\\subset A) satisfy (\\sum_{x\\in X}x=\\sum_{y\\in Y}y), then necessarily (|X|=|Y|).\n\nSets with this property are called **admissible** in the Erdős–Straus literature. ([NUMDAM][1])\n\nLet (A(x)=|A\\cap[1,x]|) be the counting function.\n\n## A universal upper bound on density (\\Rightarrow) a universal lower bound on growth\n\nA deep result of Deshouillers–Freiman [[nomath]](proving an Erdős conjecture for large $N$)[[/nomath]] says that for all sufficiently large $N$, every admissible set (B\\subset[1,N]) satisfies\n[\n|B|\\le 2\\sqrt{N+\\tfrac14}-1.\n]\n[[nomath]](They also recall Straus’s exact criterion for when the *top interval* ${N-k+1,\\dots,N}$ is admissible, namely $k\\le 2\\sqrt{N+\\tfrac14}-1$.)[[/nomath]] ([NUMDAM][1])\n\nSince (A\\cap[1,N]) is itself admissible, this gives for any in"
+}

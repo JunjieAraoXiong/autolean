@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_782",
+  "problem": [
+    "Do the squares contain arbitrarily long quasi-progressions? That is, does there exist some constant C>0 such that, for any k, the squares contain a sequence x_1,\\ldots,x_k where, for some d and all 1≤ i<k,x_i+d≤ x_{i+1}≤ x_i+d+C.Do the squares contain arbitrarily large cubesa+\\left\\{ ∑_i \\epsilon_ib_i : \\epsilon_i∈ \\{0,1\\}\\right\\}?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 782,
+  "status": "open",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Do the squares contain arbitrarily long quasi-progressions? That is, does there exist some constant $C>0$ such that, for any $k$, the squares contain a sequence $x_1,\\ldots,x_k$ where, for some $d$ and all $1\\leq i<k$,\\[x_i+d\\leq x_{i+1}\\leq x_i+d+C.\\]Do the squares contain arbitrarily large cubes\\[a+\\left\\{ \\sum_i \\epsilon_ib_i : \\epsilon_i\\in \\{0,1\\}\\right\\}?\\]",
+  "additional_context": "A question of Brown, Erdős, and Freedman \\cite{BEF90}. It is a classical fact that the squares do not contain arithmetic progressions of length 4.\n\nAn affirmative answer to the first question implies an affirmative answer to the second.\n\nSolymosi \\cite{So07} conjectured the answer to the second question is no. Cilleruelo and Granville \\cite{CiGr07} have observed that the answer to the second question is no conditional on the Bombieri-Lang conjecture.\n\nReferences\n\n[BEF90] Brown, T. C. and Erdős, P. and Freedman, A. R., Quasi-progressions and descending waves. J. Combin. Theory Ser. A (1990), 81-95.\n\n[CiGr07] Cilleruelo, Javier and Granville, Andrew, Lattice points on circles, squares in arithmetic progressions\nand sumsets of squares.  (2007), 241-262.\n\n[So07] Solymosi, J\\'{o}zsef, Elementary additive combinatorics.  (2007), 29-38.",
+  "reference_proof_hint": "Both questions are **open** in the sense you ask [[nomath]](with an absolute constant $C$ independent of $k$, and with cube dimension unbounded)[[/nomath]].\n\n## 1) Quasi-progressions in the squares\n\nYour inequality\n[\nx_i+d\\le x_{i+1}\\le x_i+d+C\n]\nis exactly the “$k$-term quasi-progression of diameter $C$” notion introduced by Brown–Erdős–Freedman: the consecutive gaps (x_{i+1}-x_i) all lie in an interval $[N,N+C]$ for some $N$. A set has **property QP** if there exists a *fixed* diameter $C$ for which it contains $k$-term quasi-progressions of that diameter for every $k$. \n\nThe specific question “do the squares have property QP?” is recorded as a problem of Brown–Erdős–Freedman and is listed (as Erdős problem #782) as **unsolved**. ([Erdős Problems][1])\n\n### What *is* known\n\n* The squares contain **no** 4-term *exact* arithmetic progression [[nomath]](so not $k$-QP$0$ for $k\\ge4$)[[/nomath]], but they do contain many 3-term APs. \n* Even though 4-APs do not exist, Brown–Freedman–Shiue s"
+}

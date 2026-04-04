@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_202",
+  "problem": [
+    "Let n_1<\\cdots < n_r≤ N with associated a_i\\pmod{n_i} such that the congruence classes are disjoint (that is, every integer is \\equiv a_i\\pmod{n_i} for at most one 1≤ i≤ r). How large can r be in terms of N?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 202,
+  "status": "open",
+  "tags": [
+    "covering systems"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $n_1<\\cdots < n_r\\leq N$ with associated $a_i\\pmod{n_i}$ such that the congruence classes are disjoint (that is, every integer is $\\equiv a_i\\pmod{n_i}$ for at most one $1\\leq i\\leq r$). How large can $r$ be in terms of $N$?",
+  "additional_context": "Let f(N) be the maximum possible r. Erdős and Stein conjectured that f(N)=o(N), which was proved by Erdős and Szemer\\'{e}di \\cite{ErSz68}, who showed that, for every \\epsilon>0,(N)/(\\exp((\\log N)^{1/2+\\epsilon))} \\ll_\\epsilon f(N) < (N)/((\\log N)^c)for some c>0. Erdős believed the lower bound is closer to the truth.\n\nThese bounds were improved by Croot \\cite{Cr03b} who proved(N)/(L(N)^{\\sqrt{2)+o(1)}}< f(N)<(N)/(L(N)^{1/6-o(1))},where L(N)=\\exp(\\sqrt{\\log N\\log\\log N}). These bounds were further improved by Chen \\cite{Ch05} and then by de la Bret\\'{e}che, Ford, and Vandehey \\cite{BFV13} to(N)/(L(N)^{1+o(1))}<f(N) < (N)/(L(N)^{\\sqrt{3)/2+o(1)}}.The latter authors conjecture that the lower bound here is the truth.\n\nReferences\n\n[BFV13] de la Bret\\'{e}che, R\\'{e}gis and Ford, Kevin and Vandehey,\nJoseph, On non-intersecting arithmetic progressions. Acta Arith. (2013), 381--392.\n\n[Ch05] Chen, Yong-Gao, On disjoint arithmetic progressions. Acta Arith. (2005), 143--148.\n\n[Cr03b] Croot, III, Ernest S., On non-intersecting arithmetic progressions. Acta Arith. (2003), 233--238.\n\n[ErSz68] Erdős, P. and Szemer\\'{e}di, E., On a problem of P. Erdős and S. Stein. Acta Arith. (1968), 85-90.",
+  "reference_proof_hint": "Let $f(N)$ denote the maximum possible $r$.\n\nThis is a classical Erdős problem (“non‑intersecting arithmetic progressions”), and the exact order of growth of $f(N)$ is still **open**. What is known is that $f(N)$ is **sublinear** but only by a *very slowly growing* factor.\n\n## What is known (best current bounds)\n\nErdős and Stein conjectured that (f(N)=o(N)); this was proved by Erdős–Szemerédi. In particular, they showed that for every (\\varepsilon>0),\n[\n\\frac{N}{\\exp\\big((\\log N)^{1/2+\\varepsilon}\\big)} \\ll_{\\varepsilon} f(N)\n<\n\\frac{N}{(\\log N)^c}\n]\nfor some absolute constant (c>0). ([Erdős Problems][1])\n\nMuch sharper bounds are now known. Write\n[\nL(N) := \\exp\\Big(\\sqrt{\\log N\\log\\log N}\\Big).\n]\nDe la Bretèche–Ford–Vandehey proved (as (N\\to\\infty)) the two‑sided estimate\n[\n\\frac{N}{L(N)^{1+o(1)}} \\le f(N) \\le \\frac{N}{L(N)^{\\sqrt3/2+o(1)}}.\n]\nEquivalently,\n[\nN\\exp\\big(-(1+o(1))\\sqrt{\\log N,\\log\\log N}\\big)\n\\le\nf(N)\n\\le\nN\\exp\\big(-(\\tfrac{\\sqrt3}{2}+o(1))\\sqrt{\\log N\\log\\log N}\\big).\n]"
+}

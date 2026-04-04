@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_710",
+  "problem": [
+    "Let f(n) be minimal such that in (n,n+f(n)) there exist distinct integers a_1,\\ldots,a_n such that k\\mid a_k for all 1≤ k≤ n. Obtain an asymptotic formula for f(n)."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 710,
+  "status": "open",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "₹2000",
+  "formalized_on_site": false,
+  "original_latex": "Let $f(n)$ be minimal such that in $(n,n+f(n))$ there exist distinct integers $a_1,\\ldots,a_n$ such that $k\\mid a_k$ for all $1\\leq k\\leq n$. Obtain an asymptotic formula for $f(n)$.",
+  "additional_context": "A problem of Erdős and Pomerance \\cite{ErPo80}, who proved(2/\\sqrt{e}+o(1))n\\left((\\log n)/(\\log\\log n)\\right)^{1/2}≤ f(n)≤ (1.7398\\cdots+o(1))n(\\log n)^{1/2}.In \\cite{Er92c} Erdős offered 2000 rupees for an asymptotic formula; for uniform comparison across prizes I have converted this using the 1992 exchange rates.\n\nSee also [711].\n\nReferences\n\n[Er92c] Erd\\\"{o}s, P., Some of my forgotten problems in number theory. Hardy-Ramanujan J. (1992), 34-50.\n\n[ErPo80] P. Erdős and C. Pomerance, Matching the natural numbers up to n with distinct multiples of another interval. Indigationes Math. (1980), 147-151.",
+  "reference_proof_hint": "Write the condition as a matching problem: for a given $n$ and $F$, consider the bipartite graph with left vertices (1,2,\\dots,n) and right vertices the integers in $(n,n+F)$, joining $k$ to $m$ iff (k\\mid m).  Then (F=f(n)) is the smallest $F$ for which this graph has a matching that covers the left side [[nomath]](i.e. distinct choices $a_k\\in(n,n+F)$ with $k\\mid a_k$)[[/nomath]]. This is exactly the framework of Hall’s marriage theorem.\n\nA full asymptotic formula for $f(n)$ is **not known** (this is an Erdős–Pomerance problem and is still listed as open), but the sharpest known growth bounds are:\n\n[\n\\left(\\frac{2}{\\sqrt e}+o(1)\\right)n\\left(\\frac{\\log n}{\\log\\log n}\\right)^{1/2}\n\\le\nf(n)\n\\le\n\\left(1.7398\\ldots+o(1)\\right)n(\\log n)^{1/2},\n\\qquad (n\\to\\infty)\n]\n(with natural logarithms). ([Erdős Problems][1])\n\nIn particular these imply the commonly-quoted “asymptotic order” statements\n[\n\\frac{f(n)}{n}\\to\\infty\n\\quad\\text{and}\\quad\nf(n)=n(\\log n)^{1/2+o(1)}=n^{1+o(1)}.\n]\n(The first is "
+}

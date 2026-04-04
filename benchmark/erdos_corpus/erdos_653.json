@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_653",
+  "problem": [
+    "Let x_1,\\ldots,x_n∈ ℝ^2 and let R(x_i)=\\#\\{ | x_j-x_i| : j≠ i\\}, where the points are ordered such thatR(x_1)≤ \\cdots ≤ R(x_n).Let g(n) be the maximum number of distinct values the R(x_i) can take. Is it true that g(n) ≥ (1-o(1))n?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 653,
+  "status": "open",
+  "tags": [
+    "geometry",
+    "distances"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $x_1,\\ldots,x_n\\in \\mathbb{R}^2$ and let $R(x_i)=\\#\\{ \\lvert x_j-x_i\\rvert : j\\neq i\\}$, where the points are ordered such that\\[R(x_1)\\leq \\cdots \\leq R(x_n).\\]Let $g(n)$ be the maximum number of distinct values the $R(x_i)$ can take. Is it true that $g(n) \\geq (1-o(1))n$?",
+  "additional_context": "Erdős and Fishburn proved g(n)>(3)/(8)n and Csizmadia proved g(n)>(7)/(10)n. Both groups proved g(n) < n-cn^{2/3} for some constant c>0.",
+  "reference_proof_hint": "This is **open**.\n\nWhat is known is that $g(n)$ is linear in $n$, but the best published lower bound is still bounded away from $n$ by a fixed constant factor:\n\n* Erdős–Fishburn proved (g(n)>\\tfrac{3}{8}n).\n* Csizmadia improved this to (g(n)>\\tfrac{7}{10}n).\n* On the other hand, Erdős–Fishburn and Csizmadia also proved an **upper bound**\n  [\n  g(n) < n - cn^{2/3}\n  ]\n  for some absolute constant (c>0). ([Erdős Problems][1])\n\nSo the conjectured asymptotic\n[\ng(n)\\ge (1-o(1))n\n]\nis **consistent** with the known upper bound [[nomath]](since $n-cn^{2/3} = (1-o(1))n$)[[/nomath]], but it is **not proved**: the gap between the current lower bound (\\tfrac{7}{10}n) and the upper bound (n-cn^{2/3}) remains. ([Erdős Problems][1])\n\n[1]: https://www.erdosproblems.com/653 \"https://www.erdosproblems.com/653\"\n"
+}

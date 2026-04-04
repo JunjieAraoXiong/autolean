@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_990",
+  "problem": [
+    "Let f=a_0+\\cdots+a_dx^d∈ \\mathbb{C}[x] be a polynomial. Is it true that, if f has roots z_1,\\ldots,z_d with corresponding arguments \\theta_1,\\ldots,\\theta_d∈ [0,2\\pi], then for all intervals I⊆ [0,2\\pi]\\left| (\\# \\theta_i ∈ I) - (| I|)/(2\\pi)d\\right| \\ll \\left(n\\log M\\right)^{1/2},where n is the number of non-zero coefficients of f andM=(| a_0|+\\cdots +| a_d|)/((| a_0|| a_d|)^{1/2)}."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 990,
+  "status": "open",
+  "tags": [
+    "analysis"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $f=a_0+\\cdots+a_dx^d\\in \\mathbb{C}[x]$ be a polynomial. Is it true that, if $f$ has roots $z_1,\\ldots,z_d$ with corresponding arguments $\\theta_1,\\ldots,\\theta_d\\in [0,2\\pi]$, then for all intervals $I\\subseteq [0,2\\pi]$\\[\\left\\lvert (\\# \\theta_i \\in I) - \\frac{\\lvert I\\rvert}{2\\pi}d\\right\\rvert \\ll \\left(n\\log M\\right)^{1/2},\\]where $n$ is the number of non-zero coefficients of $f$ and\\[M=\\frac{\\lvert a_0\\rvert+\\cdots +\\lvert a_d\\rvert}{(\\lvert a_0\\rvert\\lvert a_d\\rvert)^{1/2}}.\\]",
+  "additional_context": "Erdős and Tur\\'{a}n \\cite{ErTu50} proved such an upper bound with n replaced by d.\n\nReferences\n\n[ErTu50] Erdős, P. and Tur\\'an, P., On the distribution of roots of polynomials. Ann. of Math. (2) (1950), 105--119.",
+  "reference_proof_hint": "What you wrote is **exactly the classical Erdős–Turán angular discrepancy bound**, except that in the known theorem the parameter under the square root is the **degree** $d$, not the **number $n$ of nonzero coefficients**.\n\n### What is known (true)\n\nLet\n[\nf(z)=a_0+a_1z+\\cdots+a_d z^d,\\qquad a_0a_d\\neq 0,\n]\nand let (z_1,\\dots,z_d) be its roots with arguments (\\theta_i\\in[0,2\\pi)). Define the angular counting function\n[\nN(I):=|\\\\{i:\\theta_i\\in I\\\\}|.\n]\nThen Erdős–Turán proved (and many later authors sharpened constants) that for every interval (I\\subset[0,2\\pi)),\n[\n\\\\|N(I)-\\frac{|I|}{2\\pi}d\\\\|\n\\le C,\\sqrt{,d,\\log\\\\(\\frac{|f|*{\\infty,|z|=1}}{\\sqrt{|a_0a_d|}}\\\\)}\\quad\n\\text{for an absolute constant }C,\n]\nwhere (|f|*{\\infty,|z|=1}=\\max_{|z|=1}|f(z)|). ([Numdam][1])\n\nSince (\\max_{|z|=1}|f(z)|\\le \\sum_{k=0}^d |a_k|), this immediately implies the same bound with your\n[\nM=\\frac{|a_0|+\\cdots+|a_d|}{\\sqrt{|a_0a_d|}}\n]\nin place of (|f|_{\\infty}/\\sqrt{|a_0a_d|}):\n[\n\\\\|N(I)-\\frac{|I|}{2\\pi}d\\\\|;\\ll;"
+}

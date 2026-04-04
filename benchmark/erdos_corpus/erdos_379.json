@@ -1,0 +1,16 @@
+{
+  "uuid": "erdos_379",
+  "problem": [
+    "Erdős Problem #379"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 379,
+  "status": "proved (Lean)",
+  "tags": [
+    "number theory",
+    "binomial coefficients"
+  ],
+  "prize": "no",
+  "formalized_on_site": true,
+  "ground_truth_lean": "/-\nCopyright 2025 The Formal Conjectures Authors.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    https://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n-/\n\nimport FormalConjectures.Util.ProblemImports\n\n/-!\n# Erdős Problem 379\n\n*Reference:* [erdosproblems.com/379](https://www.erdosproblems.com/379)\n-/\n\nnamespace Erdos379\n\nopen Filter\n\nnoncomputable def S (n : ℕ) : ℕ :=\n  sSup {s | ∀ k ∈ Finset.Ico 1 n, ∃ p, p.Prime ∧ p^s ∣n.choose k}\n\n/--\nLet $S(n)$ denote the largest integer such that, for all $1 ≤ k < n$, the binomial coefficient\n$\\binom{n}{k}$ is divisible by $p^S(n)$ for some prime $p$ (depending on $k$).Then\n$\\limsup S(n) = \\infty$.\n\nThis was formalized in Lean by Tao.\n-/\n@[category research solved, AMS 11, formal_proof using lean4 at \"https://github.com/teorth/analysis/blob/main/analysis/Analysis/Misc/erdos_379.lean\"]\ntheorem erdos_379 : atTop.limsup (fun n => (S n : ℕ∞)) = ⊤ := by\n  sorry\n\nend Erdos379\n"
+}

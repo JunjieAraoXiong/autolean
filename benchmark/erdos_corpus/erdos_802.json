@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_802",
+  "problem": [
+    "Is it true that any K_r-free graph on n vertices with average degree t contains an independent set on\\gg_r (\\log t)/(t)nmany vertices?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 802,
+  "status": "open",
+  "tags": [
+    "graph theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Is it true that any $K_r$-free graph on $n$ vertices with average degree $t$ contains an independent set on\\[\\gg_r \\frac{\\log t}{t}n\\]many vertices?",
+  "additional_context": "A conjecture of Ajtai, Erdős, Koml\\'{o}s, and Szemer\\'{e}di \\cite{AEKS81}, who proved that there must exist an independent set on\\gg_r (\\log\\log(t+1))/(t)nmany vertices. Shearer \\cite{Sh95} improved this to\\gg_r (\\log t)/(\\log\\log(t+1)t)n.Ajtai, Koml\\'{o}s, and Szemer\\'{e}di \\cite{AKS80} proved the conjectured bound when r=3. Alon \\cite{Al96b} proved the conjectured bound, but replacing the K_r-free assumption with the stronger assumption that the induced graph on every vertex neighbourhood has chromatic number ≤ r-2.\n\nReferences\n\n[AEKS81] Ajtai, M. and Erdős, P. and Koml\\'{o}s, J. and Szemer\\'{e}di,\nE., On Tur\\'{a}n's theorem for sparse graphs. Combinatorica (1981), 313-317.\n\n[AKS80] Ajtai, Mikl\\'{o}s and Koml\\'{o}s, J\\'{a}nos and Szemer\\'{e}di, Endre, A note on Ramsey numbers. J. Combin. Theory Ser. A (1980), 354-360.\n\n[Al96b] Alon, Noga, Independence numbers of locally sparse graphs and a Ramsey\ntype problem. Random Structures Algorithms (1996), 271-278.\n\n[Sh95] Shearer, James B., On the independence number of sparse graphs. Random Structures Algorithms (1995), 269--271.",
+  "reference_proof_hint": "For **$r=3$** (triangle‑free graphs), **yes**: Ajtai–Komlós–Szemerédi proved that every triangle‑free $n$-vertex graph of average degree $t$ has an independent set of size (\\Omega\\left(\\frac{\\log t}{t}n\\right)) [[nomath]](indeed they state an explicit constant like $0.01\\cdot \\frac{n}{t}\\log t$)[[/nomath]]. \n\nFor **(r\\ge 4)**, the statement you wrote is **a well‑known open problem/conjecture** of Ajtai–Erdős–Komlós–Szemerédi (1981). As summarized in Alon’s 1996 paper (and also tracked as Erdős Problem #802), they proved the weaker bound\n[\n\\alpha(G)\\ \\ge\\ c(r)\\frac{n}{t}\\log\\log(t+1),\n]\nand conjectured the stronger\n[\n\\alpha(G)\\ \\ge\\ c(r)\\frac{n}{t}\\log t.\n]\n\n\nThe **best general bound currently recorded** toward the conjecture is due to **Shearer (1995)**, improving (\\log\\log) to (\\log/\\log\\log):\n[\n\\alpha(G)\\ \\ge\\ c'(r)\\frac{n}{t}\\frac{\\log t}{\\log\\log(t+1)}.\n]\n\n\nThere are also **positive results under stronger “local” assumptions** [[nomath]](stronger than merely $K_r$-free)[[/nomath]],"
+}

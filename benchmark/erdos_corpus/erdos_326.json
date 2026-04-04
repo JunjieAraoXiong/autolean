@@ -1,0 +1,19 @@
+{
+  "uuid": "erdos_326",
+  "problem": [
+    "Let A⊂ ℕ be an additive basis of order 2. Must there exist B=\\{b_1<b_2<\\cdots\\}⊆ A which is also a basis such that\\lim_{k→ ∞}(b_k)/(k^2)does not exist?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 326,
+  "status": "open",
+  "tags": [
+    "number theory",
+    "additive basis"
+  ],
+  "prize": "no",
+  "formalized_on_site": true,
+  "original_latex": "Let $A\\subset \\mathbb{N}$ be an additive basis of order $2$. Must there exist $B=\\{b_1<b_2<\\cdots\\}\\subseteq A$ which is also a basis such that\\[\\lim_{k\\to \\infty}\\frac{b_k}{k^2}\\]does not exist?",
+  "additional_context": "Erdős originally asked whether this was true with A=B, but this was disproved by Cassels \\cite{Ca57}.\n\nThis problem has been formalised in Lean as part of the Google DeepMind Formal Conjectures project.\n\nReferences\n\n[Ca57] Cassels, J. W. S., \\\"{U}ber Basen der nat\\\"{u}rlichen Zahlenreihe. Abh. Math. Sem. Univ. Hamburg (1957), 247-257.",
+  "reference_proof_hint": "This is **open** in general.\n\n* Erdős originally asked the stronger version with **$B=A$**, i.e. whether an additive basis (A={a_k}) of order $2$ must satisfy that (\\lim_{k\\to\\infty} a_k/k^2) **fails to exist**. That stronger statement is **false**: Cassels constructed a basis (C={c_n}) of order $2$ with\n  [\n  c_n=\\lambda n^2+O(n),\n  ]\n  so in particular (\\lim_{n\\to\\infty} c_n/n^2=\\lambda) exists. \n\n* Your question is the **Erdős–Graham** variant: given *any* order‑2 basis (A\\subset\\mathbb N), must there be a **subbasis** (B\\subseteq A) for which (\\lim b_k/k^2) does not exist? This is listed as **Erdős Problem #326** and is currently regarded as **unresolved**. ([Erdős Problems][1])\n\nA bit of context that may help interpret the question:\n\n* If the limit (\\lim_{k\\to\\infty} b_k/k^2) **does** exist for a basis $B$, that limit is often called an **additive eigenvalue** [[nomath]](order $2$ case)[[/nomath]] in the “additive spectrum” literature. Cassels’s construction shows such eigenvalues",
+  "ground_truth_lean": "/-\nCopyright 2025 The Formal Conjectures Authors.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    https://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n-/\n\nimport FormalConjectures.Util.ProblemImports\n\n/-!\n# Erdős Problem 326\n\n*Reference:* [erdosproblems.com/326](https://www.erdosproblems.com/326)\n-/\n\nopen Filter\n\nopen scoped Topology\n\nnamespace Erdos326\n\n/--\nLet $A \\subset \\mathbb{N}$ be an additive basis of order 2.\n\nMust there exist $B = \\{b_1 < b_2 < \\dots\\} \\subseteq A$ which is also a basis such that\n$\\lim_{k\\to\\infty} \\frac{b_k}{k^2}$ does not exist?\n-/\n@[category research open, AMS 5 11]\ntheorem erdos_326 : answer(sorry) ↔ ∀ (A : Set ℕ), A.IsAddBasisOfOrder 2 →\n    ∃ (b : ℕ → ℕ), StrictMono b ∧ ∀ n, b n ∈ A ∧ (Set.range b).IsAddBasis ∧\n      ∀ (x : ℝ), ¬ Tendsto (fun n ↦ (b n : ℝ) / n ^ 2) atTop (𝓝 x) := by\n  sorry\n\n/--\nErdős originally asked whether this was true with `A = B`, but this was disproved by Cassels.\n-/\n-- Formalisation note: This is trivially true for `x = 0` by taking `a = id`. Cassels' proof\n-- shows it for `0 < x` which is more interesting.\n@[category research solved, AMS 5 11]\ntheorem erdos_326.variants.eq :\n    ∃ (a : ℕ → ℕ) (_ : StrictMono a) (_ : Set.range a |>.IsAddBasisOfOrder 2) (x : ℝ) (_ : 0 < x),\n      Tendsto (fun n ↦ (a n : ℝ) / n ^ 2) atTop (𝓝 x) := by\n  sorry\n\nend Erdos326\n"
+}

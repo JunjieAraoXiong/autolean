@@ -1,0 +1,36 @@
+{
+  "uuid": "erdos_1130",
+  "problem": [
+    "For x_1,\\ldots,x_n∈ [-1,1] letl_k(x)=\\frac{∏_{i≠ k}(x-x_i)}{∏_{i≠ k}(x_k-x_i)},which are such that l_k(x_k)=1 and l_k(x_i)=0 for i≠ k.\n\nLet x_0=-1 and x_{n+1}=1 and\\Upsilon(x_1,\\ldots,x_n)=\\min_{0≤ i≤ n}\\max_{x∈[x_i,x_{i+1}]} ∑_k | l_k(x)|.Is it true that\\Upsilon(x_1,\\ldots,x_n)\\ll \\log n?Describe which choice of x_i maximise \\Upsilon(x_1,\\ldots,x_n)."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 1130,
+  "status": "proved",
+  "tags": [
+    "analysis",
+    "polynomials"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "For $x_1,\\ldots,x_n\\in [-1,1]$ let\\[l_k(x)=\\frac{\\prod_{i\\neq k}(x-x_i)}{\\prod_{i\\neq k}(x_k-x_i)},\\]which are such that $l_k(x_k)=1$ and $l_k(x_i)=0$ for $i\\neq k$.\n\nLet $x_0=-1$ and $x_{n+1}=1$ and\\[\\Upsilon(x_1,\\ldots,x_n)=\\min_{0\\leq i\\leq n}\\max_{x\\in[x_i,x_{i+1}]} \\sum_k \\lvert l_k(x)\\rvert.\\]Is it true that\\[\\Upsilon(x_1,\\ldots,x_n)\\ll \\log n?\\]Describe which choice of $x_i$ maximise $\\Upsilon(x_1,\\ldots,x_n)$.",
+  "additional_context": "The functions l_k(x) are sometimes called the fundamental functions of Lagrange interpolation.\n\nErdős \\cite{Er47} could prove\\Upsilon(x_1,\\ldots,x_n)< \\sqrt{n}.Erdős thought that the maximising choice is characterised by the property that the sums\\max_{x∈ [x_i,x_{i+1}]}∑_k | l_k(x)|are all equal for 0≤ i≤ n (where x_0=-1 and x_{n+1}=1), which would be the same (conjectured) characterisation as [1129].\n\nSee also [1129].\n\nReferences\n\n[Er47] Erdős, P., Some remarks on polynomials. Bull. Amer. Math. Soc. (1947), 1169--1176.",
+  "reference_proof_hint": "Write the **Lebesgue function**\n$\n\\Lambda_X(x):=\\sum_{k=1}^n |l_k(x)|,\\qquad X={x_1<\\cdots<x_n}\\subset(-1,1),\n$\nand extend the partition points by (x_0=-1,\\ x_{n+1}=1).\nA basic (and very useful) fact is that (\\Lambda_X) is *piecewise polynomial* and, on each subinterval $(x_i,x_{i+1})$, it has **exactly one** local maximum; if (\\pm1) are not interpolation points, there are also local maxima “at the endpoints” (\\pm1). ([DNB Portal][1])\nSo if we set\n[\n\\lambda_i(X):=\\max_{x\\in[x_i,x_{i+1}]}\\Lambda_X(x)\\qquad (i=0,1,\\dots,n),\n]\nthen your quantity is simply the **smallest local maximum**\n[\n\\Upsilon(X)=\\min_{0\\le i\\le n}\\lambda_i(X).\n]\n\n## 1) Is (\\Upsilon(X)\\ll \\log n) for all $X$?\n\nYes — and the right “reason” is that the **max–min** problem you wrote down is already a classical extremal problem in interpolation theory (Bernstein–Erdős). One formulation (in modern notation) is:\n\n* Let (M(X):=\\max_i \\lambda_i(X)=\\max_{x\\in[-1,1]}\\Lambda_X(x)) be the usual **Lebesgue constant**.\n* Let (m(X):=",
+  "expert_comments": [
+    {
+      "author": "",
+      "text": "@Neel Somani ,is it also relevant for [1131]?"
+    },
+    {
+      "author": "Zeraoulia Rafik",
+      "text": "I do not believe so, and think that the bounds reported there are state of the art. Of course I may be missing some literature."
+    },
+    {
+      "author": "Thomas Bloom",
+      "text": "My colleague Neil Tripathi has run a query in GPT 5.2 Pro that suggests the Bernstein-Erdos conjectures about optimal interpolation nodes were previously proven. When asked for references, the LLM cites T. A. Kilgore (J. Approx. Theory 24 (1978), 273–288) and C. de Boor & A. Pinkus (J. Approx. Theory 24 (1978), 289–303).\n\nA summary is that the optimal canonical node set is unique, symmetric, and the Lebesgue function must \"equioscillate\" (all local maxima equal). Erdos's \"smallest local maximum is maximized by the same set\" inequality is also established: https://chatgpt.com/share/696b1675-eda0-800c-80f9-612b39635436\n\nDoes this count as resolving the characterization? Or is the intention of the problem something more explicit?\n\n(This might also be relevant for [1129].)\n      \n      \n      \n(The site has been updated to address this comment.)"
+    },
+    {
+      "author": "Neel Somani",
+      "text": "Thanks! Yes, I think these references answer Erdős' questions in both this and [1129]."
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_669",
+  "problem": [
+    "Let F_k(n) be minimal such that for any n points in ℝ^2 there exist at most F_k(n) many distinct lines passing through at least k of the points, and f_k(n) similarly but with lines passing through exactly k points.\n\nEstimate f_k(n) and F_k(n) - in particular, determine \\lim F_k(n)/n^2 and \\lim f_k(n)/n^2."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 669,
+  "status": "open",
+  "tags": [
+    "geometry"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $F_k(n)$ be minimal such that for any $n$ points in $\\mathbb{R}^2$ there exist at most $F_k(n)$ many distinct lines passing through at least $k$ of the points, and $f_k(n)$ similarly but with lines passing through exactly $k$ points.\n\nEstimate $f_k(n)$ and $F_k(n)$ - in particular, determine $\\lim F_k(n)/n^2$ and $\\lim f_k(n)/n^2$.",
+  "additional_context": "Trivially f_k(n)≤ F_k(n) and f_2(n)=F_2(n)=\\binom{n}{2}. The problem with k=3 is the classical 'Orchard problem' of Sylvester. Burr, Gr\\\"{u}nbaum, and Sloane \\cite{BGS74} have proved thatf_3(n)=(n^2)/(6)-O(n)andF_3(n)=(n^2)/(6)-O(n).There is a trivial upper bound of F_k(n) ≤ \\binom{n}{2}/\\binom{k}{2}, and hence\\lim F_k(n)/n^2 ≤ (1)/(k(k-1)).See also [101].\n\nReferences\n\n[BGS74] Burr, Stefan A. and Gr\\\"{u}nbaum, Branko and Sloane, N. J. A., The orchard problem. Geometriae Dedicata (1974), 397-424.",
+  "reference_proof_hint": "Let (P\\subset \\mathbb R^2) with (|P|=n).  Write\n[\nt_j(P):=|\\\\{\\text{lines }\\ell:\\ |\\ell\\cap P|=j\\\\}|,\\qquad\nT_k(P):=|\\\\{\\text{lines }\\ell:\\ |\\ell\\cap P|\\ge k\\\\}|=\\sum_{j\\ge k} t_j(P).\n]\nThen your extremal functions are\n[\nf_k(n)=\\max_{|P|=n} t_k(P),\\qquad F_k(n)=\\max_{|P|=n} T_k(P)=\\max_{|P|=n}\\sum_{j\\ge k} t_j(P).\n]\n\n## 1) A universal “pair-counting” upper bound\n\nEvery unordered pair of points determines a unique line, so\n[\n\\sum_{j\\ge 2} t_j(P)\\binom{j}{2}=\\binom{n}{2}.\n]\nIn particular, for (k\\ge 2),\n[\nT_k(P)\\binom{k}{2}\\ \\le\\ \\sum_{j\\ge k} t_j(P)\\binom{j}{2}\\ \\le\\ \\binom{n}{2},\n]\nhence\n[\nF_k(n)\\le \\frac{\\binom{n}{2}}{\\binom{k}{2}}=\\frac{n(n-1)}{k(k-1)}.\n]\nThe same inequality holds for (f_k(n)) since (f_k(n)\\le F_k(n)).\n\nSo, for every fixed $k$,\n[\n\\limsup_{n\\to\\infty}\\frac{F_k(n)}{n^2}\\le \\frac{1}{k(k-1)},\\qquad\n\\limsup_{n\\to\\infty}\\frac{f_k(n)}{n^2}\\le \\frac{1}{k(k-1)}.\n]\n\n## 2) Szemerédi–Trotter gives the correct order (n^2/k^3) (up to constants)\n\nA much stronger bound for “$k$-rich”"
+}

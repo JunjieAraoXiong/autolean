@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_369",
+  "problem": [
+    "Let \\epsilon>0 and k≥ 2. Is it true that, for all sufficiently large n, there is a sequence of k consecutive integers in \\{1,\\ldots,n\\} all of which are n^\\epsilon-smooth?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 369,
+  "status": "proved (Lean)",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $\\epsilon>0$ and $k\\geq 2$. Is it true that, for all sufficiently large $n$, there is a sequence of $k$ consecutive integers in $\\{1,\\ldots,n\\}$ all of which are $n^\\epsilon$-smooth?",
+  "additional_context": "Erdős and Graham state that this is open even for k=2 and 'the answer should be affirmative but the problem seems very hard'.\n\nUnfortunately the problem is trivially true as written (simply taking \\{1,\\ldots,k\\} and n>k^{1/\\epsilon}). There are (at least) two possible variants which are non-trivial, and it is not clear which Erdős and Graham meant. Let P be the sequence of k consecutive integers sought for. The potential strengthenings which make this non-trivial are:\n{UL}\n{LI}Each m∈ P must be m^\\epsilon-smooth. If this is the problem then the answer is yes, which follows from a result of Balog and Wooley \\cite{BaWo98}: for any \\epsilon>0 and k≥ 2 there exist infinitely many m such that m+1,\\ldots,m+k are all m^\\epsilon-smooth.{/LI}\n{LI}Each m∈ P must be in [n/2,n] (say). In this case a positive answer also follows from the result of Balog and Wooley \\cite{BaWo98} for infinitely many n, but the case of all sufficiently large n is open.{/LI}\n{/UL}\n\nSee also [370] and [928].\n\nReferences\n\n[BaWo98] Balog, Antal and Wooley, Trevor D., On strings of consecutive integers with no large prime factors. J. Austral. Math. Soc. Ser. A (1998), 266-276.",
+  "reference_proof_hint": "Yes (in the literal reading of your statement), and for a completely simple reason.\n\nIf (m \\le n^\\epsilon), then $m$ is automatically (n^\\epsilon)-smooth, because every prime divisor of $m$ is (\\le m \\le n^\\epsilon).\n\nNow fix (k\\ge 2). If $n$ is large enough that\n\n* (n \\ge k) [[nomath]](so that $1,2,\\dots,k\\in{1,\\dots,n}$)[[/nomath]], and\n* (n^\\epsilon \\ge k),\n\nthen the block\n[\n1,2,\\dots,k\n]\nis a sequence of $k$ consecutive integers in ({1,\\dots,n}), and each term is (\\le k \\le n^\\epsilon), hence each is (n^\\epsilon)-smooth.\n\nSo taking, for instance,\n[\nN_0 := \\max\\bigl(k,\\ \\lceil k^{1/\\epsilon}\\rceil\\bigr),\n]\nwe have that for every (n\\ge N_0) such a block exists.\n\n---\n\nIf instead you meant something like “$k$ consecutive integers **near $n$** [[nomath]](e.g. in $[n/2,n]$)[[/nomath]] all (n^\\epsilon)-smooth,” that becomes a much more delicate distribution-in-short-intervals question; but as written, the answer is a straightforward “yes” via the initial segment (1,\\dots,k).\n"
+}

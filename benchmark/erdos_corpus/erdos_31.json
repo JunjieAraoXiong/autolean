@@ -1,0 +1,15 @@
+{
+  "uuid": "erdos_31",
+  "problem": [
+    "Erdős Problem #31"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 31,
+  "status": "proved (Lean)",
+  "tags": [
+    "number theory",
+    "additive basis"
+  ],
+  "prize": "no",
+  "formalized_on_site": false
+}

@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_992",
+  "problem": [
+    "Let x_1<x_2<\\cdots be an infinite sequence of integers. Is it true that, for almost all \\alpha ∈ [0,1], the discrepancyD(N)=\\max_{I⊆ [0,1]} | \\#\\{ n≤ N : \\{ \\alpha x_n\\}∈ I\\} - | I| N|satisfiesD(N) \\ll N^{1/2}(\\log N)^{o(1)}?Or evenD(N)\\ll N^{1/2}(\\log\\log N)^{O(1)}?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 992,
+  "status": "disproved",
+  "tags": [
+    "discrepancy"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $x_1<x_2<\\cdots$ be an infinite sequence of integers. Is it true that, for almost all $\\alpha \\in [0,1]$, the discrepancy\\[D(N)=\\max_{I\\subseteq [0,1]} \\lvert \\#\\{ n\\leq N : \\{ \\alpha x_n\\}\\in I\\} - \\lvert I\\rvert N\\rvert\\]satisfies\\[D(N) \\ll N^{1/2}(\\log N)^{o(1)}?\\]Or even\\[D(N)\\ll N^{1/2}(\\log\\log N)^{O(1)}?\\]",
+  "additional_context": "Erdős and Koksma \\cite{ErKo49} and Cassels \\cite{Ca50} independently proved that, for any sequence x_i and almost all \\alpha, the discrepancy satisfiesD(N)\\ll N^{1/2}(\\log N)^{5/2+o(1)}.Baker \\cite{Ba81} improved this toD(N)\\ll N^{1/2}(\\log N)^{3/2+o(1)}.Erdős and G\\'{a}l (unpublished) proved D(N) \\ll N^{1/2}(\\log\\log N)^{O(1)} for almost all \\alpha if the sequence is lacunary - that is, x_{i+1}/x_i > \\lambda>1 for all i.\n\nReferences\n\n[Ba81] No reference found.\n\n[Ca50] Cassels, J. W. S., Some metrical theorems of {D}iophantine approximation. {III}. Proc. Cambridge Philos. Soc. (1950), 219--225.\n\n[ErKo49] Erdős, P. and Koksma, J. F., On the uniform distribution modulo {1} of sequences\n{(f(n,\\theta))}. Nederl. Akad. Wetensch., Proc. (1949), 851--854 = Indagationes Math. 11, 299--302.",
+  "reference_proof_hint": "No—neither bound can hold **uniformly over all increasing integer sequences** ((x_n)).\n\n### A lower-bound counterexample (Berkes–Philipp)\n\nThere exists a strictly increasing sequence of integers ((n_k)) such that for **almost every** (x\\in(0,1)) one has\n[\nN,D_N(x)\\ \\ge\\ c, (N\\log N)^{1/2}\\qquad\\text{for infinitely many }N,\n]\nfor some absolute constant (c>0). ([TU Graz Math][1])\n\nHere (D_N(x)) is the *normalized* discrepancy\n$\nD_N(x_1,\\dots,x_N)=\\sup_{0\\le a<b\\le 1}\\left|\\frac{A(N,a,b)}{N}-(b-a)\\right|,\n$\nso (N D_N) is exactly your **unnormalized** discrepancy\n$\nD(N)=\\sup_{I\\subset[0,1]}\\bigl||\\\\{k\\le N:{\\alpha x_k}\\in I\\\\}|-|I|N\\bigr|\n$\n[[nomath]](with $I$ ranging over intervals)[[/nomath]]. ([TU Graz Math][1])\n\nTranslating the Berkes–Philipp statement to your notation: there is an increasing integer sequence ((x_n)) such that for a.e. (\\alpha),\n[\nD(N)\\ \\ge\\ c\\sqrt{N\\log N}\\qquad\\text{i.o.}\n]\n\n### Why this kills both proposed upper bounds\n\n* (\\sqrt{N\\log N} = \\sqrt{N},(\\log N)^{1/2}), "
+}

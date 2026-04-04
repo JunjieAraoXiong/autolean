@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_828",
+  "problem": [
+    "Is it true that, for any a∈ℤ, there are infinitely many n such that\\phi(n) \\mid n+a?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 828,
+  "status": "open",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": true,
+  "original_latex": "Is it true that, for any $a\\in\\mathbb{Z}$, there are infinitely many $n$ such that\\[\\phi(n) \\mid n+a?\\]",
+  "additional_context": "A conjecture of Graham. Lehmer has conjectured that \\phi(n)\\mid n-1 if and only if n is prime. It is an easy exercise to show that \\phi(n) \\mid n if and only if n=2^a3^b.\n\nThis is discussed in problem B37 of Guy's collection \\cite{Gu04}.\n\nReferences\n\n[Gu04] Guy, Richard K., Unsolved problems in number theory.  (2004), xviii+437.",
+  "reference_proof_hint": "No one currently knows how to prove (or disprove) that this holds **for every** integer $a$.\n\nWhat *is* known is that for many specific $a$ there are easy infinite families, but for some other $a$ the question already runs into difficult, long‑studied problems.\n\n## Easy infinite families for some $a$\n\n* **(a=-1)**: take $n=p$ prime. Then (\\varphi(p)=p-1\\mid p-1=n-1=n+a). So infinitely many $n$.\n\n* **$a=0$**: take (n=2^k). Then (\\varphi(2^k)=2^{k-1}\\mid 2^k=n). So infinitely many $n$.\n\n* **More generally, for many negative $a$**: if (a=-m) with (\\varphi(m)\\mid m), then for any prime (p\\nmid m),\n  [\n  n=mp \\quad\\Rightarrow\\quad \\varphi(n)=\\varphi(m),(p-1)\\mid m(p-1)=mp-m=n+a,\n  ]\n  giving infinitely many solutions. [[nomath]](E.g. $a=-2$ via $n=2p$, $a=-4$ via $n=4p$, etc.)[[/nomath]]\n\nSo the statement is certainly true for lots of $a$.\n\n## But the “for every $a$” claim runs into an open problem [[nomath]](already at $a=1$)[[/nomath]]\n\nTake **$a=1$**. Then you are asking whether there ar",
+  "ground_truth_lean": "/-\nCopyright 2025 The Formal Conjectures Authors.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    https://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n-/\n\nimport FormalConjectures.Util.ProblemImports\n\n/-!\n# Erdős Problem 828\n\n*Reference:* [erdosproblems.com/828](https://www.erdosproblems.com/828)\n-/\n\nnamespace Erdos828\n\nopen scoped Nat\n\n/--\nIs it true that, for any $a \\in \\mathbb{Z}$, there are infinitely many $n$ such that\n$$\\phi(n) | n + a$$?\n-/\n@[category research open, AMS 11]\ntheorem erdos_828 : answer(sorry) ↔ ∀ a : ℤ, Set.Infinite {n : ℕ | ↑(φ n) ∣ n + a} := by\n  sorry\n\n/--\nWhen $n > 1$, Lehmer conjectured that $\\phi(n) | n - 1$ if and only if $n$ is prime.\n-/\n@[category research open, AMS 11]\ntheorem erdos_828.variants.lehmer_conjecture : answer(sorry) ↔ ∀ n > 1, φ n ∣ n - 1 ↔ Prime n := by\n  sorry\n\n/--\nIt is an easy exercise to show that $\\phi(n) | n$ if and only if $n = 0, 1$ or $n = 2^a 3^b$ for\nsome $a > 0$.\n-/\n@[category undergraduate, AMS 11]\ntheorem erdos_828.variants.phi_dvd_self_iff_pow2_pow3 {n : ℕ} :\n    φ n ∣ n ↔ n ≤ 1 ∨ ∃ᵉ (a > 0) (b), n = 2 ^ a * 3 ^ b := by\n  sorry\n\nend Erdos828\n"
+}

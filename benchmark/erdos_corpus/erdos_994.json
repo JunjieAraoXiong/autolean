@@ -1,0 +1,15 @@
+{
+  "uuid": "erdos_994",
+  "problem": [
+    "Erdős Problem #994"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 994,
+  "status": "disproved",
+  "tags": [
+    "analysis",
+    "discrepancy"
+  ],
+  "prize": "no",
+  "formalized_on_site": false
+}

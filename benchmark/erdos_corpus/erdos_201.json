@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_201",
+  "problem": [
+    "Let G_k(N) be such that any set of N integers contains a subset of size at least G_k(N) which does not contain a k-term arithmetic progression. Determine the size of G_k(N). How does it relate to R_k(N), the size of the largest subset of \\{1,\\ldots,N\\} without a k-term arithmetic progression? Is it true that\\lim_{N→ ∞}(R_3(N))/(G_3(N))=1?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 201,
+  "status": "open",
+  "tags": [
+    "additive combinatorics",
+    "arithmetic progressions"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $G_k(N)$ be such that any set of $N$ integers contains a subset of size at least $G_k(N)$ which does not contain a $k$-term arithmetic progression. Determine the size of $G_k(N)$. How does it relate to $R_k(N)$, the size of the largest subset of $\\{1,\\ldots,N\\}$ without a $k$-term arithmetic progression? Is it true that\\[\\lim_{N\\to \\infty}\\frac{R_3(N)}{G_3(N)}=1?\\]",
+  "additional_context": "First asked and investigated by Riddell \\cite{Ri69}. It is trivial that G_k(N)≤ R_k(N), and it is possible that G_k(N) <R_k(N) (for example G_3(5)=3 and R_3(5)=4, and G_3(14)≤ 7 and R_3(14)=8).\n\nKoml\\'{o}s, Sulyok, and Szemer\\'{e}di \\cite{KSS75} have shown that R_k(N) \\ll_k G_k(N).\n\nReferences\n\n[KSS75] Koml\\'{o}s, J. and Sulyok, M. and Szemeredi, E., Linear problems in combinatorial number theory. Acta Math. Acad. Sci. Hungar. (1975), 113-121.\n\n[Ri69] Riddell, J., On sets of numbers containing no l terms in arithmetic progression. Nieuw Arch. Wisk. (3) (1969), 204-209.",
+  "reference_proof_hint": "Write, for a finite set (A\\subset\\mathbb Z),\n[\nr_k(A):=\\max{|B|:B\\subseteq A\\text{ and }B\\text{ contains no }k\\text{-term AP}}.\n]\nThen your quantity is\n[\nG_k(N)=\\min_{\\substack{A\\subset\\mathbb Z\\ |A|=N}} r_k(A),\n]\nwhile\n[\nR_k(N)=r_k({1,2,\\dots,N}).\n]\n\n## Basic comparison with (R_k(N))\n\nBecause ({1,2,\\dots,N}) is one particular set of (N) integers, we immediately have\n[\nG_k(N)\\le R_k(N).\n]\nMoreover, strict inequality can occur already for small (N): Riddell exhibited an (N=5) example (e.g. ({1,3,4,5,7})) showing (G_3(5)=3) but (R_3(5)=4), and also (G_3(14)=7< R_3(14)=8). ([Rényi Institute][1])\n\nSo (G_k(N)) is **not** identically equal to (R_k(N)).\n\n## The Komlós–Sulyok–Szemerédi theorem: same order of magnitude\n\nA deep theorem of Komlós, Sulyok, and Szemerédi (1975) implies that for each fixed $k$ there is a constant (c_k>0) such that\n[\nG_k(N)\\ \\ge\\ c_k,R_k(N)\\qquad\\text{for all }N.\n]\nEquivalently, (R_k(N)\\le C_k,G_k(N)) for some constant (C_k) depending only on $k$. ([Rényi Institute]["
+}

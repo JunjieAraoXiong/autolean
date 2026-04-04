@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_693",
+  "problem": [
+    "Let k≥ 2 and n be sufficiently large depending on k. Let A=\\{a_1<a_2<\\cdots \\} be the set of those integers in [n,n^k] which have a divisor in (n,2n). Estimate\\max_{i} a_{i+1}-a_i.Is this ≤ (\\log n)^{O(1)}?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 693,
+  "status": "open",
+  "tags": [
+    "number theory",
+    "divisors"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $k\\geq 2$ and $n$ be sufficiently large depending on $k$. Let $A=\\{a_1<a_2<\\cdots \\}$ be the set of those integers in $[n,n^k]$ which have a divisor in $(n,2n)$. Estimate\\[\\max_{i} a_{i+1}-a_i.\\]Is this $\\leq (\\log n)^{O(1)}$?",
+  "additional_context": "See also [446].",
+  "reference_proof_hint": "Write $y=n$ and (x=n^{k}) ((k\\ge2)). Then\n[\nA={m\\in[n,x]: \\exists d\\in(y,2y)\\text{ with }d\\mid m}.\n]\nEquivalently, (A\\cap[1,x]) is the “set of multiples of the short interval $(y,2y)$”, and its counting function is the standard quantity\n[\nH(x,y,2y):=|\\\\{m\\le x:\\ \\exists d\\in(y,2y]\\text{ with }d\\mid m\\\\}|.\n]\n\n## What is known unconditionally: size of $A$ and the *average* gap\n\nA theorem of Ford gives (up to multiplicative constants) the order of magnitude of $H(x,y,2y)$ in the regime (3\\le y\\le \\sqrt{x}):\n[\nH(x,y,2y)\\asymp \\frac{x}{(\\log y)^{\\delta}(\\log\\log y)^{3/2}},\n\\qquad\n\\delta = 1-\\frac{1+\\log\\log 2}{\\log 2}=0.086071\\ldots\n]\n([Kevin Ford's Home Page][1])\n\nSince (k\\ge2), we have (y=n\\le \\sqrt{n^{k}}=\\sqrt{x}), so this applies directly with (x=n^k). Therefore\n[\n|A| = H(n^k,n,2n) - O(n)\n\\asymp\n\\frac{n^k}{(\\log n)^{\\delta}(\\log\\log n)^{3/2}}.\n]\n([Kevin Ford's Home Page][1])\n\nHence the **mean spacing** between successive elements of $A$ in $[n,n^k]$ is\n[\n\\frac{n^k}{|A|}\n\\asymp\n(\\log n)"
+}

@@ -1,0 +1,19 @@
+{
+  "uuid": "erdos_469",
+  "problem": [
+    "Let A be the set of all n such that n=d_1+\\cdots+d_k with d_i distinct proper divisors of n, but this is not true for any m\\mid n with m<n. Does∑_{n∈ A}(1)/(n)converge?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 469,
+  "status": "open",
+  "tags": [
+    "number theory",
+    "divisors"
+  ],
+  "prize": "no",
+  "formalized_on_site": true,
+  "original_latex": "Let $A$ be the set of all $n$ such that $n=d_1+\\cdots+d_k$ with $d_i$ distinct proper divisors of $n$, but this is not true for any $m\\mid n$ with $m<n$. Does\\[\\sum_{n\\in A}\\frac{1}{n}\\]converge?",
+  "additional_context": "The integers in A are also known as primitive pseudoperfect numbers and are listed as A006036 in the OEIS.\n\nThe same question can be asked for those n which do not have distinct sums of sets of divisors, but any proper divisor of n does (which are listed as A119425 in the OEIS).\n\nBenkoski and Erdős \\cite{BeEr74} ask about these two sets, and also about the set of n that have a divisor expressible as a distinct sum of other divisors of n, but where no proper divisor of n has this property.\n\nReferences\n\n[BeEr74] Benkoski, S. J. and Erdős, P., On weird and pseudoperfect numbers. Math. Comp. (1974), 617-623.",
+  "reference_proof_hint": "Your set $A$ is exactly the set of **primitive pseudoperfect numbers** (also called *primitive semiperfect* or *irreducible semiperfect* numbers). ([OEIS][1])\n\n### What is known about (\\sum_{n\\in A}\\frac1n)\n\nAs of the current literature indexed online (and as of the most recent public status summaries), **it is not known** whether\n[\n\\sum_{n\\in A}\\frac1n\n]\nconverges.\n\n* Benkoski and Erdős explicitly state that convergence “seems certain,” but that they **could not prove it**. ([Renyi Users][2])\n* The Erdős Problems database lists this as **Erdős problem #469 (OPEN)** (last edited Oct 19, 2025). ([Erdős Problems][3])\n\nSo the honest answer is: **the convergence is an open problem** (in the usual sense: no published proof of convergence or divergence is currently known).\n\n### Some context and partial results\n\n#### 1) $A$ is infinite\n\nBenkoski–Erdős give explicit infinite families of primitive pseudoperfect numbers. One particularly simple family is\n[\nn = 2^k p \\quad\\text{with (p) prime and",
+  "ground_truth_lean": "/-\nCopyright 2025 The Formal Conjectures Authors.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    https://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n-/\n\nimport FormalConjectures.Util.ProblemImports\n\n/-!\n# Erdős Problem 469\n\n*Reference:* [erdosproblems.com/469](https://www.erdosproblems.com/469)\n-/\n\nnamespace Erdos469\n\n/-- The proposition that `n` is a sum of distinct proper divisors. -/\ndef Nat.IsSumDivisors (n : ℕ) : Prop :=\n  ∃ S ⊆ n.properDivisors, ∑ d ∈ S, d = n\n\nopen Erdos469\n\n/--\nLet $A$ be the set of all $n$ such that $n = d_1 + ⋯ + d_k$ with $d_i$ distinct\nproper divisors of $n$, but this is not true for any $m ∣ n$ with $m < n$. Does:\n$$\n  \\sum_{n ∈ A} \\frac 1 n\n$$\nconverge?\n-/\n@[category research open, AMS 11]\ntheorem erdos_469 :\n    letI A := {n : ℕ | 0 < n ∧ n.IsSumDivisors ∧ ∀ m < n, m ∣ n → ¬ m.IsSumDivisors}\n    answer(sorry) ↔ Summable fun n : A ↦ 1 / (n : ℝ) := by\n  sorry\n\nend Erdos469\n"
+}

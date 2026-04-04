@@ -1,0 +1,19 @@
+{
+  "uuid": "erdos_68",
+  "problem": [
+    "Is∑_{n≥ 2}(1)/(n!-1)irrational?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 68,
+  "status": "open",
+  "tags": [
+    "number theory",
+    "irrationality"
+  ],
+  "prize": "no",
+  "formalized_on_site": true,
+  "original_latex": "Is\\[\\sum_{n\\geq 2}\\frac{1}{n!-1}\\]irrational?",
+  "additional_context": "The decimal expansion is A331373 in the OEIS. Weisenberg has observed that this sum can also be written as∑_{k≥ 1}∑_{n≥ 2}(1)/((n!)^k).Erdős \\cite{Er88c} notes that ∑ (1)/(n!+t) should be transcendental for every integer t.\n\nReferences\n\n[Er88c] Erd\\\"{o}s, P., On the irrationality of certain series: problems and results. New advances in transcendence theory (Durham, 1986) (1988), 102-109.",
+  "reference_proof_hint": "No one knows (as of now).\n\nThis exact question is listed as an open Erdős problem (Erdős Problem #68): it asks whether\n[\n\\sum_{n\\ge 2}\\frac{1}{n!-1}\n]\nis irrational, and it is still marked **OPEN**. ([Erdős Problems][1])\n\nTerence Tao also explicitly says this irrationality question is “completely open.” ([What's new][2])\n\nFor reference, the sum is a well-defined constant (it converges fast) and its value is about\n[\n1.2534987556999534716433609379\\ldots\n]\n([OEIS][3])\n\nA useful identity (mentioned in the Erdős problem notes) is that you can rewrite it as a double sum:\n[\n\\sum_{n\\ge 2}\\frac{1}{n!-1}\n=\\sum_{k\\ge 1}\\sum_{n\\ge 2}\\frac{1}{(n!)^k}.\n]\n([Erdős Problems][1])\n\nSo the honest answer is: **it is not proved irrational, and not proved rational either**. ([Erdős Problems][1])\n\n[1]: https://www.erdosproblems.com/68 \"\n  \n    Erdős Problem #68\n  \n\"\n[2]: https://terrytao.wordpress.com/2024/11/27/on-several-irrationality-problems-for-ahmes-series/ \"On several irrationality problems for Ahmes s",
+  "ground_truth_lean": "/-\nCopyright 2025 The Formal Conjectures Authors.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    https://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n-/\n\nimport FormalConjectures.Util.ProblemImports\n\n/-!\n# Erdős Problem 68\n\n*Reference:* [erdosproblems.com/68](https://www.erdosproblems.com/68)\n-/\n\nnamespace Erdos68\n\n/--\nIs\n$$\\sum_{n=2}^\\infty \\frac{1}{n!-1}$$\nirrational?\n-/\n@[category research open, AMS 11]\ntheorem erdos_68 :\n    answer(sorry) ↔ Irrational (∑' n : ℕ, 1 / ((n + 2).factorial - 1 : ℝ)) := by\n  sorry\n\n/--\n$$\\sum_{n=2}^\\infty \\frac{1}{n!-1} = \\sum_{n=2}^\\infty \\sum_{k=1}^\\infty \\frac{1}{(n!)^k}$$\n-/\n@[category undergraduate, AMS 11]\ntheorem sum_factorial_inv_eq_geometric :\n    let f (n k : ℕ) : ℝ := 1 / ((n + 2).factorial : ℝ) ^ (k + 1)\n    ∑' n : ℕ, (1 : ℝ) / ((n + 2).factorial - 1) = ∑' n : ℕ, ∑' k : ℕ, f n k := by\n  sorry\n\nend Erdos68\n"
+}

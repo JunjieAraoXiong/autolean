@@ -1,0 +1,41 @@
+{
+  "uuid": "erdos_1054",
+  "problem": [
+    "Let f(n) be the minimal integer m such that n is the sum of the k smallest divisors of m for some k≥ 1.\n\nIs it true that f(n)=o(n)? Or is this true only for almost all n, and \\limsup f(n)/n=∞?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 1054,
+  "status": "open",
+  "tags": [
+    "number theory",
+    "divisors"
+  ],
+  "prize": "no",
+  "formalized_on_site": true,
+  "original_latex": "Let $f(n)$ be the minimal integer $m$ such that $n$ is the sum of the $k$ smallest divisors of $m$ for some $k\\geq 1$.\n\nIs it true that $f(n)=o(n)$? Or is this true only for almost all $n$, and $\\limsup f(n)/n=\\infty$?",
+  "additional_context": "A question of Erdős reported in problem B2 of Guy's collection \\cite{Gu04}. The function f(n) is undefined for n=2 and n=5, but is likely well-defined for all n≥ 6 (which would follow from a strong form of Goldbach's conjecture).\n\nThe sequence of values of f(n) is given by A167485 in the OEIS.\n\nSee also [468].\n\nThe strong claim that f(n)=o(n) was disproved by Tao in the comments to [468], in which he proves that the upper density of \\{ n : f(n)≤ \\delta n\\} is \\ll \\delta^2.\n\nReferences\n\n[Gu04] Guy, Richard K., Unsolved problems in number theory.  (2004), xviii+437.",
+  "reference_proof_hint": "No — and in fact it fails very strongly.\n\n### 1) Pointwise (f(n)=o(n)) is false\n\nThis question is listed as Erdős Problem #1054, and the “strong claim” (f(n)=o(n)) has been **disproved**. ([Erdős Problems][1])\n\nWhat is proved (in comments by Terence Tao to the related Erdős Problem #468 thread) is a **density bound** of the form\n[\n\\frac{|\\\\{N\\le X:\\ f(N)/N\\le \\delta,\\\\}|}{X}\\ \\ll\\ \\delta^2\n]\nfor all (\\delta>0). ([Erdős Problems][2])\n\nIn words: for small (\\delta), **only $O(\\delta^2)$ of the integers** have (f(N)\\le \\delta N). This is incompatible with (f(n)=o(n)), because if (f(n)=o(n)) then for any fixed small (\\delta) we would have (f(n)\\le \\delta n) for *all sufficiently large* $n$, i.e. the set would have density $1$, not $O(\\delta^2)$. ([Erdős Problems][2])\n\n### 2) It is **not** true “for almost all $n$” either\n\nThe same density estimate immediately rules out any “almost all” version of (f(n)=o(n)): if (f(n)/n\\to 0) on a density‑1 set, then for a small fixed (\\delta) the set ({n: ",
+  "ground_truth_lean": "/-\nCopyright 2025 The Formal Conjectures Authors.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    https://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n-/\n\nimport FormalConjectures.Util.ProblemImports\n\n/-!\n# Erdős Problem 1054\n\n*Reference:* [erdosproblems.com/1054](https://www.erdosproblems.com/1054)\n-/\n\nnamespace Erdos1054\n\nopen Classical Filter Asymptotics\n\n/-- Let $f(n)$ be the minimal integer $m$ such that $n$ is the sum of the $k$ smallest\ndivisors of $m$ for some $k\\geq 1$. -/\nnoncomputable def f (n : ℕ) : ℕ :=\n  if h : ∃ᵉ (m) (k ≥ 1), n = ∑ i < k, Nat.nth (· ∈ m.divisors) i then\n    Nat.find h\n  else 0\n\n/-- Let $f(n)$ be the minimal integer $m$ such that $n$ is the sum of the $k$ smallest divisors\nof $m$ for some $k\\geq 1$. Is it true that $f(n)=o(n)$?-/\n@[category research open, AMS 11]\ntheorem erdos_1054.parts.i : answer(sorry) ↔ (fun n ↦ (f n : ℝ)) =o[atTop] (fun n ↦ (n : ℝ)) := by\n  sorry\n\n/-- Let $f(n)$ be the minimal integer $m$ such that $n$ is the sum of the $k$ smallest divisors\nof $m$ for some $k\\geq 1$. Is it true that $f(n)=o(n)$ for almost all $n$? -/\n@[category research open, AMS 11]\ntheorem erdos_1054.parts.ii : answer(sorry) ↔ ∃ (A : Set ℕ), A.HasDensity 1 ∧\n    (fun (n : A) ↦ (f ↑n : ℝ)) =o[atTop] (fun n ↦ (n : ℝ)) := by\n  sorry\n\n/-- Let $f(n)$ be the minimal integer $m$ such that $n$ is the sum of the $k$ smallest divisors\nof $m$ for some $k\\geq 1$. Is it true that $\\limsup f(n)/n=\\infty$? -/\n@[category research open, AMS 11]\ntheorem erdos_1054.parts.iii : answer(sorry) ↔ ∃ (A : Set ℕ), A.HasDensity 1 ∧\n    atTop.limsup (fun n ↦ (f n : EReal) / n) = ⊤ := by\n  sorry\n\n/-- Let $f(n)$ be the minimal integer $m$ such that $n$ is the sum of the $k$ smallest divisors\nof $m$ for some $k\\geq 1$. Show that $f$ is undefined at $n=2$, i.e. we get the junk value $0$. -/\n@[category high_school, AMS 11]\ntheorem f_undefined_at_2 : f 2 = 0 := by\n  sorry\n\n/-- Let $f(n)$ be the minimal integer $m$ such that $n$ is the sum of the $k$ smallest divisors\nof $m$ for some $k\\geq 1$. Show that $f$ is undefined at $n=5$, i.e. we get the junk value $0$. -/\n@[category high_school, AMS 11]\ntheorem f_undefined_at_3 : f 5 = 0 := by\n  sorry\n\nend Erdos1054\n",
+  "expert_comments": [
+    {
+      "author": "",
+      "text": "This was disproved (quite strongly) by Terry Tao in the comments on [468], where he showed that the upper density of all $\\{n\\in\\mathbb{N} : f(n)\\leq \\delta n\\}$ is $\\ll \\delta^2$ (in a slightly different but equivalent formulation).\n\nNamely, denoting by $\\sigma_k(n)$ the sum of divisors of $n$ excluding the $k$ largest ones, Terry proved that\\[ \\sum_{k\\geq 0} \\sum_{n\\leq x} \\sigma_k(n) \\ll x^2. \\]Therefore, for any $x,C>0$ we get\n\\begin{align*}\n& \\# \\{N\\geq Cx : f(N)\\leq x\\} \\\\\n& \\leq \\# \\{(n,k) : n\\leq x, k\\geq0, \\sigma_k(n)\\geq Cx\\} \\\\\n& = \\sum_k \\# \\{ n\\leq x : \\sigma_k(n)\\geq Cx\\} \\\\\n& \\ll \\frac{1}{Cx} \\sum_{k\\geq0} \\sum_{n\\leq x} \\sigma_k(n) \\ll \\frac{x}{C}.\n\\end{align*}\nFor any $\\delta,t>0$ we choose $C=1/(2\\delta)$, $x=\\delta t$ to obtain\\[ \\# \\{ N\\in [t/2, t] : f(N)\\leq \\delta N \\} \\ll \\delta^2 t . \\]Now split an arbitrary interval $[1,X]$ dyadically, i.e., apply the obtained inequality to $t=X/2^j$, $j=0,1,2,\\ldots$ and sum in $j$ to finally get\\[ \\# \\{ N\\leq X : f(N)\\leq \\de"
+    },
+    {
+      "author": "Vjeko_Kovac",
+      "text": "I agree. Thing is, the function f itself has not been shown to be well-defined, which makes this problem open anyway."
+    },
+    {
+      "author": "Dogmachine",
+      "text": "This is essentially a duplicate of the last question of [468], meaning that the function $f$ defined here is obtained by merely shifting indices by 1 (since here we count 1 as a divisor). I gave some comments and experimental observations on the behavior of $f$ in the last paragraph under [468]. Either this problem is redundant, or the last question from [468] should be moved here, or (if nothing else) the two problems should link to each other."
+    },
+    {
+      "author": "Vjeko_Kovac",
+      "text": "Thanks, well spotted. I think I'll move the second question over here."
+    },
+    {
+      "author": "Thomas Bloom",
+      "text": "\"Only true for almost all n\"\n\nIf the limsup would be $+\\infty$, maybe there are non zero densities of n for which $f(n)>cn$ for $c$ in a certain regime\n\nSo my question; it should have been clear that $f (n)=o(n)$ almost always?\n\n\nIf one checks https://oeis.org/A167485/a167485.png, it seems $f(n)=o(n)$ might be false, since the distribution does not change a lot over these intervals (of course, guessing from small values is always dangerous)"
+    }
+  ]
+}

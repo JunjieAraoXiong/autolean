@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_25",
+  "problem": [
+    "Let n_1<n_2<\\cdots be an arbitrary sequence of integers, each with an associated residue class a_i\\pmod{n_i}. Let A be the set of integers n such that for every i either n<n_i or n\\not\\equiv a_i\\pmod{n_i}. Must the logarithmic density of A exist?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 25,
+  "status": "open",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": true,
+  "original_latex": "Let $n_1<n_2<\\cdots$ be an arbitrary sequence of integers, each with an associated residue class $a_i\\pmod{n_i}$. Let $A$ be the set of integers $n$ such that for every $i$ either $n<n_i$ or $n\\not\\equiv a_i\\pmod{n_i}$. Must the logarithmic density of $A$ exist?",
+  "additional_context": "This is a special case of [486].",
+  "reference_proof_hint": "No one currently knows in full generality.\n\nThis is an Erdős problem (often cited as **Erdős Problem #25**): given arbitrary increasing moduli (n_1<n_2<\\cdots) and residue classes (a_i \\pmod{n_i}), let\n[\nA={n\\in\\mathbb N:\\ \\forall i,\\ \\text{either }n<n_i\\ \\text{or}\\ n\\not\\equiv a_i\\pmod{n_i}}.\n]\nThe question “must $A$ have a logarithmic density?”\n[\n\\lim_{x\\to\\infty}\\frac{1}{\\log x}\\sum_{\\substack{n\\le x\\ n\\in A}}\\frac1n\n]\nis listed as **open**.\n\n### What *is* known\n\n* **Special case (a_i\\equiv 0\\pmod{n_i}) (divisibility / multiples): yes.**\n  Then the forbidden set is a set of multiples, and Davenport–Erdős proved that the logarithmic density exists in this case.\n\n* **Natural density can fail even in the multiples case.**\n  Besicovitch gave examples where the *natural* density does not exist, which is part of why one asks for logarithmic density instead.\n\n* **A straightforward positive case:** if (\\sum_i \\frac1{n_i}<\\infty), then the logarithmic density of $A$ **does** exist [[nomath]]",
+  "ground_truth_lean": "/-\nCopyright 2025 The Formal Conjectures Authors.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    https://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n-/\nimport FormalConjectures.Util.ProblemImports\n\n/-!\n# Erdős Problem 25: Logarithmic density of size-dependent congruences\n\n*Reference:* [erdosproblems.com/25](https://www.erdosproblems.com/25)\n-/\n\nopen Filter Finset Real Nat Set\nopen scoped Topology\nopen Classical\n\nnamespace Erdos25\n\n/--\nLet $n_1 < n_2 < \\dots$ be an arbitrary sequence of integers, each with an associated residue class\n$a_i \\pmod{n_i}$. Let $A$ be the set of integers $n$ such that for every $i$ either $n < n_i$ or\n$n \\not\\equiv a_i \\pmod{n_i}$. Must the logarithmic density of $A$ exist?\n-/\n@[category research open, AMS 11]\ntheorem erdos_25 : answer(sorry) ↔\n    ∀ (seq_n : ℕ → ℕ) (seq_a : ℕ → ℤ), (∀ i, 0 < seq_n i) → StrictMono seq_n →\n      ∃ d, Set.HasLogDensity\n        { x : ℕ | ∀ i, (x : ℤ) < seq_n i ∨ ¬((x : ℤ) ≡ seq_a i [ZMOD seq_n i]) } d := by\n  sorry\n\nend Erdos25\n"
+}

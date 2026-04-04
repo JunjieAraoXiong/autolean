@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_555",
+  "problem": [
+    "Let R(G;k) denote the minimal m such that if the edges of K_m are k-coloured then there is a monochromatic copy of G. Determine the value ofR(C_{2n};k)."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 555,
+  "status": "open",
+  "tags": [
+    "graph theory",
+    "ramsey theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $R(G;k)$ denote the minimal $m$ such that if the edges of $K_m$ are $k$-coloured then there is a monochromatic copy of $G$. Determine the value of\\[R(C_{2n};k).\\]",
+  "additional_context": "A problem of Erdős and Graham. Erdős \\cite{Er81c} gives the boundsk^{1+(1)/(2n)}\\ll R(C_{2n};k)\\ll k^{1+(1)/(n-1)}.Chung and Graham \\cite{ChGr75} showed thatR(C_4;k)>k^2-k+1when k-1 is a prime power andR(C_4;k)≤ k^2+k+1for all k.\n\nThis problem is #24 in Ramsey Theory in the graphs problem collection.\n\nReferences\n\n[ChGr75] Chung, Fan R. K. and Graham, R. L., On multicolor Ramsey numbers for complete bipartite graphs. J. Combinatorial Theory Ser. B (1975), 164-169.\n\n[Er81c] Erdős, Paul, Some new problems and results in graph theory and other branches of combinatorial mathematics. Combinatorics and graph theory (1981), 9-17.",
+  "reference_proof_hint": "Write (R_k(G):=R(G;k)) for the $k$-colour Ramsey number. For even cycles (C_{2n}), the **exact value is only known in a few cases**; in general it is an open problem.\n\n## Exact values that are known\n\n### $k=1$\n\n[\nR(C_{2n};1)=2n.\n]\n\n### $k=2$ (two colours)\n\nA classical theorem of Faudree–Schelp and Rosta yields, for even cycles, that\n[\nR(C_{2n};2)=R(C_{2n},C_{2n})=\n\\begin{cases}\n6,& n=2\\ (C_4),[4pt]\n3n-1,& n\\ge 3.\n\\end{cases}\n]\n([RIT Computer Science][1])\n\n### $k=3$ (three colours)\n\nIt is known that\n[\nR(C_{2n};3)=4n\n\\quad\\text{for all sufficiently large }n,\n]\nbut the exact value is **not known for every specific $n$**; e.g. the first open case listed is (R_3(C_{10})), known only to satisfy (R_3(C_{10})\\ge 20). \n\n## What is known for general (k\\ge 4)\n\nFor general $k$, an exact closed form for $R(C_{2n};k)$ is **not known**. The best general statements are **bounds** (and asymptotics).\n\n### General lower bounds [[nomath]](all $n\\ge 2$)[[/nomath]]\n\nTwo standard lower bounds recorded in the"
+}

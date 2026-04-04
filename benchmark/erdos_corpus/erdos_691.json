@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_691",
+  "problem": [
+    "Given A⊆ ℕ let M_A=\\{ n ≥ 1 : a\\mid n\\textrm{ for some }a∈ A\\} be the set of multiples of A. Find a necessary and sufficient condition on A for M_A to have density 1."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 691,
+  "status": "open",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Given $A\\subseteq \\mathbb{N}$ let $M_A=\\{ n \\geq 1 : a\\mid n\\textrm{ for some }a\\in A\\}$ be the set of multiples of $A$. Find a necessary and sufficient condition on $A$ for $M_A$ to have density $1$.",
+  "additional_context": "A sequence A for which M_A has density 1 is called a Behrend sequence.\n\nIf A is a set of prime numbers (or, more generally, a set of pairwise coprime integers without 1) then a necessary and sufficient condition is that ∑_{p∈ A}(1)/(p)=∞.\n\nThe general situation is more complicated. For example suppose A is the union of (n_k,(1+\\eta_k)n_k)∩ ℤ where 1≤ n_1<n_2<\\cdots is a lacunary sequence. (This construction is sometimes called a block sequence.) If ∑ \\eta_k<∞ then the density of M_A exists and is <1. If \\eta_k=1/k, so ∑ \\eta_k=∞, then the density exists and is <1.\n\nErdős writes it 'seems certain' that there is some threshold \\alpha∈ (0,1) such that, if \\eta_k=k^{-\\beta}, then the density of M_A is 1 if \\beta <\\alpha and the density is <1 if \\beta >\\alpha.\n\nTenenbaum notes in \\cite{Te96} that this is certainly not true as written since if the n_j grow sufficiently quickly then this sequence is never Behrend, for any choice of \\eta_k. He then writes 'we understand from subsequent discussions with Erdős that he had actually in mind a two-sided condition on' n_{j+1}/n_j.\n\nTenenbaum \\cite{Te96} proves this conjecture: if there are constants 1<C_1<C_2 such that C_1<n_{i+1}/n_i<C_2 for all i and \\eta_k=k^{-\\beta} then A is Behrend if \\beta<\\log 2 and not Behrend if \\beta>\\log 2.\n\nReferences\n\n[Te96] Tenenbaum, G., On block {B}ehrend sequences. Math. Proc. Cambridge Philos. Soc. (1996), 355--367.",
+  "reference_proof_hint": "Let (A\\subseteq\\mathbb N) and list its elements in increasing order\n[\nA={a_1<a_2<a_3<\\cdots}.\n]\nFor each (k\\ge 1) let (A_k={a_1,\\dots,a_k}) and consider the finite set of multiples\n[\nM_{A_k}={n\\ge 1:\\ a_i\\mid n\\text{ for some }i\\le k}.\n]\nBecause (A_k) is finite, (M_{A_k}) is a finite union of arithmetic progressions, hence has a (natural) asymptotic density (d(M_{A_k})).\n\nNow define the **sequential densities**\n[\nd_k := d(M_{A_k}).\n]\nThen ((d_k)) is nondecreasing in $k$ (adding more divisors can only add more multiples), so the limit (\\lim_{k\\to\\infty} d_k) exists in $[0,1]$.\n\nA theorem of Davenport–Erdős says that for sets of multiples, this sequential limit equals the lower natural density (and also equals the logarithmic density) of (M_A). ([Wikipedia][1]) In particular, (M_A) has density $1$ exactly when this sequential limit is $1$.\n\n### Necessary and sufficient condition\n\n[\n\\boxed{\\ \\ d(M_A)=1\\ \\Longleftrightarrow\\ \\lim_{k\\to\\infty} d!\\left(M_{{a_1,\\dots,a_k}}\\right)=1\\ \\ }\n]\nEqu"
+}

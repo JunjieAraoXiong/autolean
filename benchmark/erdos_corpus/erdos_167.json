@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_167",
+  "problem": [
+    "If G is a graph with at most k edge disjoint triangles then can G be made triangle-free after removing at most 2k edges?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 167,
+  "status": "falsifiable",
+  "tags": [
+    "graph theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "If $G$ is a graph with at most $k$ edge disjoint triangles then can $G$ be made triangle-free after removing at most $2k$ edges?",
+  "additional_context": "A problem of Tuza. It is trivial that G can be made triangle-free after removing at most 3k edges. The examples of K_4 and K_5 show that 2k would be best possible.\n\nThe trivial bound of ≤ 3k was improved to ≤ (3-(3)/(23)+o(1))k by Haxell \\cite{Ha99}.\n\nKahn and Park \\cite{KaPa22} have proved this is true for random graphs.\n\nReferences\n\n[Ha99] Haxell, P. E., Packing and covering triangles in graphs. Discrete Math. (1999), 251--254.\n\n[KaPa22] Kahn, Jeff and Park, Jinyoung, Tuza's conjecture for random graphs. Random Structures Algorithms (2022), 235--249.",
+  "reference_proof_hint": "Let\n\n* (\\nu(G)) = the **largest** number of **edge-disjoint** triangles in $G$,\n* (\\tau(G)) = the **smallest** number of edges you must delete to make $G$ **triangle-free** (an edge set that hits every triangle).\n\nYour question is exactly:\n\n[\n\\text{If } \\nu(G)\\le k,\\ \\text{must we have } \\tau(G)\\le 2k?\n]\n\nThis statement is known as **Tuza’s conjecture**. It is **not proved** and **not disproved** for all graphs (so the general answer is: **we do not know**). ([Matroid Union][1])\n\nWhat *is* known:\n\n* A trivial bound is (\\tau(G)\\le 3\\nu(G)): take a maximum packing of at most $k$ edge-disjoint triangles and delete all edges in those triangles, so you delete at most $3k$ edges. ([Matroid Union][1])\n* The best known general bound improves $3$ to (\\frac{66}{23}\\approx 2.8696):\n  [\n  \\tau(G)\\le \\frac{66}{23}\\nu(G)\\le \\frac{66}{23},k.\n  ]\n\n* The “(2)” would be best possible if true: for example (K_5) has (\\nu(K_5)=2) but needs (\\tau(K_5)=4=2\\nu(K_5)). ([Matroid Union][1])\n* The conjecture **is"
+}

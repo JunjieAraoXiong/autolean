@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_1005",
+  "problem": [
+    "Let (a_1)/(b_1),(a_2)/(b_2),\\ldots be the Farey fractions of order n≥ 4. Let f(n) be the largest integer such that if 1≤ k<l≤ k+f(n) then (a_k)/(b_k) and (a_l)/(b_l) are similarly ordered - in other words,(a_k-a_l)(b_k-b_l)≥ 0.Estimate f(n) - in particular, is there a constant c>0 such that f(n)=(c+o(1))n for all large n?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 1005,
+  "status": "open",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $\\frac{a_1}{b_1},\\frac{a_2}{b_2},\\ldots$ be the Farey fractions of order $n\\geq 4$. Let $f(n)$ be the largest integer such that if $1\\leq k<l\\leq k+f(n)$ then $\\frac{a_k}{b_k}$ and $\\frac{a_l}{b_l}$ are similarly ordered - in other words,\\[(a_k-a_l)(b_k-b_l)\\geq 0.\\]Estimate $f(n)$ - in particular, is there a constant $c>0$ such that $f(n)=(c+o(1))n$ for all large $n$?",
+  "additional_context": "The function f(n) was first considered by Mayer \\cite{Ma42}, who proved f(n)→ ∞ as n→ ∞. Erdős \\cite{Er43} proved f(n)\\gg n.\n\nvan Doorn \\cite{vD25b} has proved that\\left((1)/(12)-o(1)\\right)n≤ f(n) ≤ (1)/(4)n+O(1),and conjectures that the upper bound is optimal.\n\nReferences\n\n[Er43] Erdős, P., A note on {F}arey series. Quart. J. Math. Oxford Ser. (1943), 82--85.\n\n[Ma42] Mayer, A. E., A mean value theorem concerning {F}arey series. Quart. J. Math. Oxford Ser. (1942), 48--57.\n\n[vD25b] W. van Doorn, Improved bounds for the Mayer-Erdős phenomenon on similarly ordered Farey fractions. arXiv:2509.00121 (2025).",
+  "reference_proof_hint": "Let (F_n=\\\\{\\frac{a_1}{b_1}<\\frac{a_2}{b_2}<\\cdots\\\\}) be the Farey sequence of order $n$, and recall that (\\frac{a_k}{b_k},\\frac{a_\\ell}{b_\\ell}) are *similarly ordered* iff\n[\n(a_\\ell-a_k)(b_\\ell-b_k)\\ge 0,\n]\ni.e. the numerators and denominators move in the same direction (weakly).\n\nThis is a classical problem (Mayer–Erdős phenomenon), and there has been a major recent improvement.\n\n## Best currently known bounds\n\nA 2025 preprint of Wouter van Doorn proves sharp **linear** bounds of the form\n[\n\\left(\\frac{1}{12}-o(1)\\right)n \\ \\le\\ f(n)\\ \\le\\ \\frac14 n+O(1).\n]\nMore precisely:\n\n* **Upper bound (explicit):** for every (n\\ge 4),\n  [\n  f(n)\\ \\le\\ \\Big\\lfloor \\frac n4\\Big\\rfloor + d,\n  \\qquad d=\n  \\begin{cases}\n  1,& n\\equiv 0\\pmod 4\\\n  2,& n\\equiv 1\\pmod 4\\\n  2,& n\\equiv 2\\pmod 4\\\n  4,& n\\equiv 3\\pmod 4~,\n  \\end{cases}\n  ]\n  obtained by constructing a pair of Farey fractions at distance (\\asymp n/4) that are **not** similarly ordered. ([arXiv][1])\n\n* **Lower bound (explicit):** if (a_k/b_"
+}

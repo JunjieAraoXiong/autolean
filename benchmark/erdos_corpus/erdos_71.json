@@ -1,0 +1,15 @@
+{
+  "uuid": "erdos_71",
+  "problem": [
+    "Erdős Problem #71"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 71,
+  "status": "proved",
+  "tags": [
+    "graph theory",
+    "cycles"
+  ],
+  "prize": "no",
+  "formalized_on_site": false
+}

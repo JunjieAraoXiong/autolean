@@ -1,0 +1,11 @@
+{
+  "uuid": "erdos_9",
+  "problem": [
+    "Let A be the set of all odd integers not of the form p+2^{k}+2^l (where k,l≥ 0 and p is prime). Is the upper density of A positive?",
+    "In \\cite{Er77c} Erdős credits Schinzel with proving that there are infinitely many odd integers not of this form, but gives no reference. Crocker \\cite{Cr71} has proved there are \\gg\\log\\log N such integers in \\{1,…,N\\}. Pan \\cite{Pa11} improved this to \\gg_\\epsilon N^{1-\\epsilon} for any \\epsilon>0. Erdős believed this cannot be proved by covering systems, i.e. integers of the form p+2^k+2^l exist in every infinite arithmetic progression.\n\nThe sequence of such numbers is A006286 in the OEIS.\n\nSee also [10], [11], and [16].\n\nThis is discussed in problem A19 of Guy's collection \\cite{Gu04}.\n\nReferences\n\n[Cr71] Crocker, Roger, On the sum of a prime and of two powers of two. Pacific J. Math. (1971), 103-107.\n\n[Er77c] Erdős, Paul, Problems and results on combinatorial number theory. III. Number theory day (Proc. Conf., Rockefeller Univ.,\nNew York, 1976) (1977), 43-72.\n\n[Gu04] Guy, Richard K., Unsolved problems in number theory.  (2004), xviii+437.\n\n[Pa11] Pan, Hao, On the integers not of the form {p+2^a+2^b}. Acta Arith. (2011), 55-61."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 9,
+  "original_latex": "Let $A$ be the set of all odd integers not of the form $p+2^{k}+2^l$ (where $k,l\\geq 0$ and $p$ is prime). Is the upper density of $A$ positive?",
+  "reference_proof_hint": "This is **still open** (as of the last publicly curated status updates in late 2025).\n\nLet\n[\nA={,n\\ \\text{odd}:\\ n\\neq p+2^k+2^\\ell\\ \\text{for all primes }p\\text{ and }k,\\ell\\ge 0,}.\n]\nThe question is whether the **upper asymptotic density**\n[\n\\overline d(A)=\\limsup_{x\\to\\infty}\\frac{|A\\cap[1,x]|}{x}\n]\nis (>0).\n\n### What is known\n\n* **Infinitely many exceptions exist.**\n  Roger Crocker proved in 1971 that there are infinitely many positive odd integers **not** representable as “prime + two power"
+}

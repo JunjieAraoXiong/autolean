@@ -1,0 +1,15 @@
+{
+  "uuid": "erdos_419",
+  "problem": [
+    "Erdős Problem #419"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 419,
+  "status": "solved (Lean)",
+  "tags": [
+    "number theory",
+    "factorials"
+  ],
+  "prize": "no",
+  "formalized_on_site": false
+}

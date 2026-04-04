@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_1087",
+  "problem": [
+    "Let f(n) be minimal such that every set of n points in ℝ^2 contains at most f(n) many sets of four points which are 'degenerate' in the sense that some pair are the same distance apart. Estimate f(n) - in particular, is it true that f(n)≤ n^{3+o(1)}?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 1087,
+  "status": "open",
+  "tags": [
+    "geometry",
+    "distances"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $f(n)$ be minimal such that every set of $n$ points in $\\mathbb{R}^2$ contains at most $f(n)$ many sets of four points which are 'degenerate' in the sense that some pair are the same distance apart. Estimate $f(n)$ - in particular, is it true that $f(n)\\leq n^{3+o(1)}$?",
+  "additional_context": "A question of Erdős and Purdy \\cite{ErPu71}, who provedn^3\\log n \\ll f(n) \\ll n^{7/2}.\n\nReferences\n\n[ErPu71] Erdős, Paul and Purdy, George, Some extremal problems in geometry. J. Combinatorial Theory Ser. A (1971), 246--252.",
+  "reference_proof_hint": "Write (D_4(P)) for the number of **4-point subsets** (S\\subset P) ((|P|=n)) for which the six pairwise distances among the points of $S$ are **not all distinct** (i.e. some two of the six distances are equal). Your $f(n)$ is then\n[\nf(n)=\\max_{|P|=n} D_4(P).\n]\n\n## What is known (classical bounds)\n\nThis is an old Erdős–Purdy problem. Erdős records that Erdős–Purdy proved\n[\nn^3\\log n \\ \\ll\\ f(n)\\ \\ll\\ n^{7/2},\n]\nand they conjectured a bound of the form (n^{3+\\varepsilon}). ([Springer][1])\n\nSo in particular, the proposed upper bound (f(n)\\le n^{3+o(1)}) is **consistent** with the known lower bound, since (n^3\\log n = n^{3+o(1)}). ([Springer][1])\n\n## A clean modern decomposition: two ways to be “degenerate”\n\nA 4-set is degenerate iff **some pair of its six segments have equal length**. Any such equality either\n\n1. **shares a vertex** (an isosceles triangle witness): (|pq_1|=|pq_2|) for three of the points, or\n2. is between **two disjoint pairs**: (|p_1p_2|=|q_1q_2|) with four distinct point"
+}

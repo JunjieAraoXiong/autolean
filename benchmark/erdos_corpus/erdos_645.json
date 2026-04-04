@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_645",
+  "problem": [
+    "Erdős Problem #645"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 645,
+  "status": "proved (Lean)",
+  "tags": [
+    "number theory",
+    "additive combinatorics",
+    "ramsey theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": true,
+  "ground_truth_lean": "/-\nCopyright 2025 The Formal Conjectures Authors.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    https://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n-/\n\nimport FormalConjectures.Util.ProblemImports\n\n/-!\n# Erdős Problem 645\n\n*References:*\n- [erdosproblems.com/645](https://www.erdosproblems.com/645)\n- [BrLa99] Brown, Tom C. and Landman, Bruce M., Monochromatic arithmetic progressions with large\n  differences. Bull. Austral. Math. Soc. (1999), 21--35.\n-/\n\n\nnamespace Erdos645\n\n/--\nIf ℕ is $2$-coloured then there must exist a monochromatic three-term arithmetic progression\n$x,x+d,x+2d$ such that $d>x$.\n\nThis was first proved by Brown and Landman [BrLa99], who in fact show that this is always possible\nwith $d>f(x)$ for any increasing function $f$.\n\nThis was formalized in Lean by Alexeev using Aristotle and ChatGPT.\n-/\n@[category research solved, AMS 5 11, formal_proof using lean4 at \"https://github.com/plby/lean-proofs/blob/main/src/v4.24.0/ErdosProblems/Erdos645.lean\"]\ntheorem erdos_645 (c : ℕ → Bool) : ∃ x d, 0 < x ∧ x < d ∧\n    (∃ C, c x = C ∧ c (x + d) = C ∧ c (x + 2 * d) = C) := by\n  sorry\n\nend Erdos645\n"
+}

@@ -1,0 +1,15 @@
+{
+  "uuid": "erdos_135",
+  "problem": [
+    "Erdős Problem #135"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 135,
+  "status": "disproved",
+  "tags": [
+    "distances",
+    "geometry"
+  ],
+  "prize": "$250",
+  "formalized_on_site": false
+}

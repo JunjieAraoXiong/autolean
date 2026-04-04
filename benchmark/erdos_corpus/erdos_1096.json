@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_1096",
+  "problem": [
+    "Let 1<q<1+\\epsilon and consider the set of numbers of the shape ∑_{i∈ S}q^i (for all finite S), ordered by size as 0=x_1<x_2<\\cdots.\n\nIs it true that, provided \\epsilon>0 is sufficiently small, x_{k+1}-x_k → 0?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 1096,
+  "status": "open",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $1<q<1+\\epsilon$ and consider the set of numbers of the shape $\\sum_{i\\in S}q^i$ (for all finite $S$), ordered by size as $0=x_1<x_2<\\cdots$.\n\nIs it true that, provided $\\epsilon>0$ is sufficiently small, $x_{k+1}-x_k \\to 0$?",
+  "additional_context": "A problem of Erdős and Jo\\'{o} posed in the 1991 problem session of Great Western Number Theory.\n\nThey speculate that the threshold may be q_0, where q_0\\approx 1.3247 is the real root of x^3=x+1, and is the smallest Pisot-Vijayaraghavan number.\n\nIn \\cite{EJK90} Erd\\H{o}, Jo\\'{o}, and Komornik prove that any Pisot-Vijayaraghavan number cannot have this property, and also prove that, for any 1<q≤ 2,  x_{k+1}-x_k≤ 1 for all k.\n\nThe sequence always begins 0,1,q.\n\nBugeaud \\cite{Bu96} proved that 1<q≤ 2 is a Pisot-Vijayaraghavan number if and only if\\liminf (x_{k+1}^m-x_k^m)>0for all m≥ 1, where x_k^m is the set of those numbers which can be written as a finite sum ∑_{n≥ 0}c_nq^n for some c_n∈ \\{0,\\ldots,m\\} (so that the sequence in the question is x_k^1). Erdős, Jo\\'{o}, and Schnitzer \\cite{EJS96} improved this to show that, if 1<q<(1+\\sqrt{5})/2, then q is a Pisot-Vijayaraghavan number if and only if\\liminf (x_{k+1}^2-x_k^2)>0.\n\nReferences\n\n[Bu96] Bugeaud, Y., On a property of {P}isot numbers and related questions. Acta Math. Hungar. (1996), 33--39.\n\n[EJK90] Erdős, P\\'al and Jo\\'o, Istv\\'an and Komornik, Vilmos, Characterization of the unique expansions\n{1=∑^∞_{i=1}q^{-n_i}} and related problems. Bull. Soc. Math. France (1990), 377--390.\n\n[EJS96] Erdős, P. and Jo\\'o, I. and Schnitzer, F. J., On {P}isot numbers. Ann. Univ. Sci. Budapest. E\\\"otv\\\"os Sect. Math. (1996), 95--99.",
+  "reference_proof_hint": "Assuming [[nomath]](as your notation $0=x_1<x_2<\\cdots$ forces)[[/nomath]] that the exponents are **nonnegative integers**—i.e. you are looking at\n[\nX(q):=\\\\{\\sum_{i\\in S} q^i:\\ S\\subset{0,1,2,\\dots}\\ \\text{finite}\\\\},\n]\nand ((x_k)) is the increasing enumeration of $X(q)$,\n\nthen **yes**: for $q$ sufficiently close to $1$ one has (x_{k+1}-x_k\\to 0).\n\nIn fact, Akiyama–Komornik study exactly this “spectrum” (X_1(q)=X(q)) and define\n[\nL_1(q):=\\limsup_{k\\to\\infty}\\bigl(x_{k+1}-x_k\\bigr).\n]\nThey prove [[nomath]](Theorem 1.4$i$)[[/nomath]] that if (1<q<2) is **not** a Pisot number and\n[\n1<q\\le 2^{1/3}\\approx 1.2599,\n]\nthen\n[\nL_1(q)=0.\n]\nThat is, (\\limsup_{k\\to\\infty}(x_{k+1}-x_k)=0). ([arXiv][1])\n\nSince each gap (x_{k+1}-x_k\\ge 0), having (\\limsup=0) forces the actual limit to be $0$, i.e.\n[\nx_{k+1}-x_k \\longrightarrow 0.\n]\n\nMoreover, the **smallest Pisot number** is (P_1\\approx 1.32). ([arXiv][1])\nBecause (2^{1/3}\\approx 1.2599 < P_1), *every* $q\\in(1,2^{1/3}]$ is automatically non‑Pisot, so"
+}

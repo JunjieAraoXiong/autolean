@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_462",
+  "problem": [
+    "Let p(n) denote the least prime factor of n. There is a constant c>0 such that∑_{\\substack{n<x\\\\ n\\textrm{ not prime}}}(p(n))/(n)\\sim c\\frac{x^{1/2}}{(\\log x)^2}.Is it true that there exists a constant C>0 such that∑_{x≤ n≤ x+Cx^{1/2}(\\log x)^2}(p(n))/(n) \\gg 1for all large x?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 462,
+  "status": "open",
+  "tags": [
+    "number theory",
+    "primes"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $p(n)$ denote the least prime factor of $n$. There is a constant $c>0$ such that\\[\\sum_{\\substack{n<x\\\\ n\\textrm{ not prime}}}\\frac{p(n)}{n}\\sim c\\frac{x^{1/2}}{(\\log x)^2}.\\]Is it true that there exists a constant $C>0$ such that\\[\\sum_{x\\leq n\\leq x+Cx^{1/2}(\\log x)^2}\\frac{p(n)}{n} \\gg 1\\]for all large $x$?",
+  "reference_proof_hint": "This is **open** (as of Jan 2026). It is listed as Erdős Problem **#462** (Erdős–Graham, p. 92) and currently marked **OPEN** with no known resolution. ([Erdős Problems][1])\n\nA key subtlety (noted by Terence Tao) is that your second display is **ambiguous** about whether primes are excluded. ([Erdős Problems][1])\n\n## If primes are included in the short-interval sum\n\nFor a prime $n$, (p(n)=n), so (\\frac{p(n)}{n}=1). Therefore\n[\n\\sum_{x\\le n\\le x+C\\sqrt{x}(\\log x)^2}\\frac{p(n)}{n}\\gg 1\n]\nwould follow as soon as **every** such interval contains **at least one prime**. Tao remarks that, interpreted this way, it is “basically a weaker version of Legendre’s conjecture.” ([Erdős Problems][1])\n\nUnconditionally, this is still out of reach: the best “for all sufficiently large $x$” prime-in-short-interval results only guarantee primes in intervals of length (x^\\theta) with (\\theta>1/2). For example, a recent refinement (Runbo Li) proves that for all sufficiently large $x$, the interval $[x-x^{0."
+}

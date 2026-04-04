@@ -1,0 +1,19 @@
+{
+  "uuid": "erdos_597",
+  "problem": [
+    "Let G be a graph on at most \\aleph_1 vertices which contains no K_4 and no K_{\\aleph_0,\\aleph_0} (the complete bipartite graph with \\aleph_0 vertices in each class). Is it true that\\omega_1^2 → (\\omega_1\\omega, G)^2?What about finite G?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 597,
+  "status": "open",
+  "tags": [
+    "graph theory",
+    "ramsey theory",
+    "set theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $G$ be a graph on at most $\\aleph_1$ vertices which contains no $K_4$ and no $K_{\\aleph_0,\\aleph_0}$ (the complete bipartite graph with $\\aleph_0$ vertices in each class). Is it true that\\[\\omega_1^2 \\to (\\omega_1\\omega, G)^2?\\]What about finite $G$?",
+  "additional_context": "Erdős and Hajnal proved that \\omega_1^2 → (\\omega_1\\omega,3)^2. Erdős originally asked this with just the assumption that G is K_4-free, but Baumgartner proved that  \\omega_1^2 \\not→ (\\omega_1\\omega, K_{\\aleph_0,\\aleph_0})^2.",
+  "reference_proof_hint": "Let me first unpack the notation the way it is usually meant in this part of partition calculus.\n\n* (\\omega_1^2) is the ordinal product (\\omega_1\\cdot\\omega_1) [[nomath]](lexicographic order on $\\omega_1\\times\\omega_1$)[[/nomath]].\n* (\\omega_1\\omega) is (\\omega_1\\cdot\\omega) [[nomath]](a countable concatenation of $\\omega_1$-blocks)[[/nomath]].\n* (\\alpha\\to(\\beta,G)^2) (graph version) means: for every 2–coloring (c:[\\alpha]^2\\to{0,1}), either there is a set (H\\subseteq\\alpha) of order type (\\beta) such that all pairs from $H$ have color $0$, **or** there is an embedding (f:V(G)\\hookrightarrow \\alpha) such that every edge ({u,v}\\in E(G)) is sent to a pair colored $1$ [[nomath]](non-edges of $G$ may go to either color)[[/nomath]].\n\nWith that understood, here’s what is definitely known and what (as far as I can tell from accessible sources) remains unsettled.\n\n## What is known\n\nEven very nearby statements are independent of ZFC. In particular, Baumgartner–Hajnal showed that **CH implies**"
+}

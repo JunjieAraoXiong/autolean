@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_51",
+  "problem": [
+    "Is there an infinite set A⊂ ℕ such that for every a∈ A there is an integer n such that \\phi(n)=a, and yet if n_a is the smallest such integer then n_a/a→ ∞ as a→∞?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 51,
+  "status": "open",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": true,
+  "original_latex": "Is there an infinite set $A\\subset \\mathbb{N}$ such that for every $a\\in A$ there is an integer $n$ such that $\\phi(n)=a$, and yet if $n_a$ is the smallest such integer then $n_a/a\\to \\infty$ as $a\\to\\infty$?",
+  "additional_context": "Carmichael has asked whether there is an integer t for which \\phi(n)=t has exactly one solution. Erdős has proved that if such a t exists then there must be infinitely many such t.\n\nSee also [694].\n\nThis is discussed in problems B36 and B39 of Guy's collection \\cite{Gu04}.\n\nReferences\n\n[Gu04] Guy, Richard K., Unsolved problems in number theory.  (2004), xviii+437.",
+  "reference_proof_hint": "This is **open**.\n\nIf you write\n[\ng(a)\\ :=\\ \\min\\\\{n:\\ \\varphi(n)=a\\\\}\\qquad(a\\ \\text{a totient}),\n]\nthen your question is asking whether there are infinitely many totients $a$ with\n[\n\\frac{g(a)}{a}\\ \\to\\ \\infty\\quad\\text{along an infinite set}.\n]\nEquivalently, it asks whether for **every** constant (C>1) there exists a totient $m$ such that **every** solution of (\\varphi(x)=m) satisfies (x>Cm) [[nomath]](because all solutions are $\\ge g(m)$)[[/nomath]]. This is recorded as **Erdős Problem #51** and is listed as open. ([Erdős Problems][1])\n\nWhat is known is mainly “if one example exists, then many exist” type results:\n\n* A 2025 open-problems note (quoting Kevin Ford) states explicitly that Erdős’s question is **“wide open, even for (C=3)”**. In other words, it is not currently known whether there even exists a totient $m$ whose *smallest* preimage exceeds $3m$, let alone a sequence with (g(m)/m\\to\\infty). \n\n* Ford’s 1998 work implies a strong density phenomenon: **if** there is *one* t",
+  "ground_truth_lean": "/-\nCopyright 2025 The Formal Conjectures Authors.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    https://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n-/\n\nimport FormalConjectures.Util.ProblemImports\n\n/-!\n# Erdős Problem 51\n\n*Reference:* [erdosproblems.com/51](https://www.erdosproblems.com/51)\n-/\n\nopen Filter\nopen scoped Nat\n\nnamespace Erdos51\n\n/--\nIs there an infinite set $A \\subset \\mathbb{N}$ such that for every $a \\in A$,\nthere is an integer n such that $\\phi(n)=a$, and\nyet if $n_a$ is the smallest such integer, then $\\frac{n_a}{a} → \\infty$ as $a → ∞$?\n-/\n@[category research open, AMS 11]\ntheorem erdos_51 : answer(sorry) ↔ ∃ A : Set ℕ, ∃ n : A → ℕ,\n      A.Infinite ∧\n      (∀ a : A, IsLeast (φ ⁻¹' {(a : ℕ)}) (n a)) ∧\n      Tendsto (fun a : A => (n a : ℝ) / (a : ℝ)) atTop atTop := by\n  sorry\n\n/-\nThe remarks from the erdosproblems site are the same as those in\n[erdosproblems.com/694](https://www.erdosproblems.com/694).\n-/\n\nend Erdos51\n"
+}

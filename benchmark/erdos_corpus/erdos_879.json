@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_879",
+  "problem": [
+    "Call a set S⊆ \\{1,\\ldots,n\\} admissible if (a,b)=1 for all a≠ b∈ S. LetG(n) = \\max_{S⊆ \\{1,\\ldots,n\\}} ∑_{a∈ S}aandH(n)=∑_{p<n}p+ n\\pi(n^{1/2}).Is it true thatG(n) >H(n)-n^{1+o(1)}?Is it true that, for every k≥ 2, if n is sufficiently large then the admissible set which maximises G(n) contains at least one integer with at least k prime factors?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 879,
+  "status": "open",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Call a set $S\\subseteq \\{1,\\ldots,n\\}$ admissible if $(a,b)=1$ for all $a\\neq b\\in S$. Let\\[G(n) = \\max_{S\\subseteq \\{1,\\ldots,n\\}} \\sum_{a\\in S}a\\]and\\[H(n)=\\sum_{p<n}p+ n\\pi(n^{1/2}).\\]Is it true that\\[G(n) >H(n)-n^{1+o(1)}?\\]Is it true that, for every $k\\geq 2$, if $n$ is sufficiently large then the admissible set which maximises $G(n)$ contains at least one integer with at least $k$ prime factors?",
+  "additional_context": "Erdős and Van Lint proved thatH(n)-n^{3/2-o(1)}<G(n)<H(n)and(H(n)-G(n))/(n)→ ∞.They proved that G(n)>H(n)-n^{1+o(1)} assuming 'plausible (but hopeless) assumptions about the distribution of primes'. They also prove the second claim when k=2.\n\nSee also [878].",
+  "reference_proof_hint": "Both questions are **open** as stated (this is **Erdős problem #879**). What *is* known is the following. ([Erdős Problems][1])\n\n## 1) Is (G(n) > H(n)-n^{1+o(1)}) true?\n\n### Status\n\nUnconditionally, this is **not known**. Erdős and van Lint proved the best general bounds recorded in the literature summary:\n\n[\nH(n)-n^{3/2-o(1)} < G(n) < H(n),\n\\qquad\\text{and}\\qquad\n\\frac{H(n)-G(n)}{n}\\to\\infty.\n]\n([Erdős Problems][1])\n\nThey also proved the desired-looking lower bound\n[\nG(n)>H(n)-n^{1+o(1)}\n]\n**conditionally**, assuming what they describe as “plausible (but hopeless)” hypotheses on prime distribution. ([Erdős Problems][1])\n\n### Why $H(n)$ is the “right” upper bound\n\nEvery composite (a\\le n) has some prime divisor (\\le \\sqrt n). In an admissible set, each prime can divide at most one chosen element, so for each prime (p\\le\\sqrt n) there is at most one chosen number divisible by $p$, and it contributes (\\le n). Summing that over (p\\le\\sqrt n) gives the (n\\pi(\\sqrt n)) term. The remaining a"
+}

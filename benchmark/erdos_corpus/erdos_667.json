@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_667",
+  "problem": [
+    "Let p,q≥ 1 be fixed integers. We define H(n)=H(N;p,q) to be the largest m such that any graph on n vertices where every set of p vertices spans at least q edges must contain a complete graph on m vertices.\nIsc(p,q)=\\liminf (\\log H(n))/(\\log n)a strictly increasing function of q for 1≤ q≤ \\binom{p-1}{2}+1?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 667,
+  "status": "open",
+  "tags": [
+    "graph theory",
+    "ramsey theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $p,q\\geq 1$ be fixed integers. We define $H(n)=H(N;p,q)$ to be the largest $m$ such that any graph on $n$ vertices where every set of $p$ vertices spans at least $q$ edges must contain a complete graph on $m$ vertices.\nIs\\[c(p,q)=\\liminf \\frac{\\log H(n)}{\\log n}\\]a strictly increasing function of $q$ for $1\\leq q\\leq \\binom{p-1}{2}+1$?",
+  "additional_context": "A problem of Erdős, Faudree, Rousseau, and Schelp.\n\nWhen q=1 this corresponds exactly to the classical Ramsey problem, and hence for example(1)/(p-1)≤ c(p,1) ≤ (2)/(p+1).It is easy to see that if q=\\binom{p-1}{2}+1 then c(p,q)=1. Erdős, Faudree, Rousseau, and Schelp have shown that c(p,\\binom{p-1}{2})≤ 1/2.",
+  "reference_proof_hint": "For fixed $p$, the condition “every $p$-set spans at least $q$ edges” gets stronger as $q$ increases, so\n\n[\nH(n;p,q_2)\\ge H(n;p,q_1)\\quad\\text{whenever }q_2\\ge q_1,\n]\n\nand therefore $c(p,q)$ is **nondecreasing** in $q$.\n\nThe **strict** monotonicity you ask about is (still) an **open problem** in general: it is posed as a conjecture of Erdős–Faudree–Rousseau–Schelp and is listed as open (Erdős Problems #667), with only partial endpoint information known. ([Erdős Problems][1])\n\n### What is known (and shows at least one strict jump)\n\n* **$q=1$** is exactly the classical off-diagonal Ramsey setting [[nomath]](“no independent set of size $p$”)[[/nomath]], and one gets bounds such as\n  [\n  \\frac{1}{p-1}\\le c(p,1)\\le \\frac{2}{p+1}.\n  ]\n  ([Erdős Problems][1])\n\n* **(q=\\binom{p-1}{2}+1)** forces (c(p,q)=1) [[nomath]](a clique linear in $n$)[[/nomath]]. ([Erdős Problems][1])\n  [[nomath]](One quick way to see why: in $\\overline G$, any $p$-set spans at most $p-2$ edges, so $\\overline G$ cannot ha"
+}

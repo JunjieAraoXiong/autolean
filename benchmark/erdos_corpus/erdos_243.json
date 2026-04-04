@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_243",
+  "problem": [
+    "Let a_1<a_2<\\cdots be a sequence of integers such that\\lim_{n→ ∞}(a_n)/(a_{n-1)^2}=1and ∑(1)/(a_n)∈ ℚ. Then, for all sufficiently large n≥ 1, a_n = a_{n-1}^2-a_{n-1}+1."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 243,
+  "status": "open",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": true,
+  "original_latex": "Let $a_1<a_2<\\cdots$ be a sequence of integers such that\\[\\lim_{n\\to \\infty}\\frac{a_n}{a_{n-1}^2}=1\\]and $\\sum\\frac{1}{a_n}\\in \\mathbb{Q}$. Then, for all sufficiently large $n\\geq 1$,\\[ a_n = a_{n-1}^2-a_{n-1}+1.\\]",
+  "additional_context": "Erdős and Straus \\cite{ErSt64} proved that if \\lim a_n/a_{n-1}^2=1 and ∑ (1)/(a_n) is rational, and a_n does not satisfy the recurrence, then\\limsup_{n→ ∞} ([a_1,\\ldots,a_n])/(a_{n+1)}\\left((a_n^2)/(a_{n+1)}-1\\right)>0.A sequence satisfying the reucrrence a_n = a_{n-1}^2-a_{n-1}+1 is known as Sylvester's sequence.\n\nThis problem has been formalised in Lean as part of the Google DeepMind Formal Conjectures project.\n\nReferences\n\n[ErSt64] Erdős, P. and Straus, E. G., On the irrationality of certain {A}hmes series. J. Indian Math. Soc. (N.S.) (1964), 129--133.",
+  "reference_proof_hint": "What you wrote is **exactly Erdős Problem #243**. As of **January 2026**, it is regarded as **open**: no general proof (or counterexample) is known that the two hypotheses\n\n[\n\\lim_{n\\to\\infty}\\frac{a_n}{a_{n-1}^2}=1,\n\\qquad\n\\sum_{n=1}^\\infty \\frac1{a_n}\\in\\mathbb{Q}\n]\n\nforce the eventual Sylvester-type recursion\n\n[\na_n=a_{n-1}^2-a_{n-1}+1\\quad\\text{for all large }n.\n]\n\nThis open status is recorded explicitly on the Erdős Problems website. ([Erdős Problems][1])\n\nThat said, there is substantial **partial progress** and a very clear picture of *why* the recursion is the only “stable” way to get a rational sum with such fast (almost squaring) growth.\n\n---\n\n## 1) The proved theorem under a stronger hypothesis (Erdős–Straus 1964)\n\nErdős and Straus proved a theorem of the same flavor: if ((n_k)) is increasing and the denominators grow fast **and** a certain “least common multiple vs. next term” ratio stays bounded, then rationality forces the Sylvester recursion eventually.\n\nIn their paper *O",
+  "ground_truth_lean": "/-\nCopyright 2025 The Formal Conjectures Authors.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    https://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n-/\n\nimport FormalConjectures.Util.ProblemImports\n\n/-!\n# Erdős Problem 243\n\n*Reference:* [erdosproblems.com/243](https://www.erdosproblems.com/243)\n-/\n\nopen Filter\n\nopen scoped Topology\n\nnamespace Erdos243\n\n/--\nLet $a_1 < a_2 < \\dots$ be a sequence of integers such that\n$\\lim_{n\\to\\infty} \\frac{a_n}{a_{n-1}^2} = 1$ and $\\sum \\frac{1}{a_n} \\in \\mathbb{Q}$.\n\nThen, for all sufficiently large $n \\ge 1$, $a_n = a_{n-1}^2 - a_{n-1} + 1$.\n-/\n@[category research open, AMS 40]\ntheorem erdos_243 (a : ℕ → ℕ) (ha₀ : StrictMono a)\n    (ha₁ : Tendsto (fun n ↦ (a n : ℝ) / a (n - 1) ^ 2) atTop (𝓝 1))\n    (ha₂ : Summable ((1 : ℚ) / a ·)) :\n      ∀ᶠ n in atTop, a n = a (n - 1) ^ 2 - a (n - 1) + 1 := by\n  sorry\n\nend Erdos243\n"
+}

@@ -1,0 +1,19 @@
+{
+  "uuid": "erdos_111",
+  "problem": [
+    "If G is a graph let h_G(n) be defined such that any subgraph of G on n vertices can be made bipartite after deleting at most h_G(n) edges.\n\nWhat is the behaviour of h_G(n)? Is it true that h_G(n)/n→ ∞ for every graph G with chromatic number \\aleph_1?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 111,
+  "status": "open",
+  "tags": [
+    "graph theory",
+    "chromatic number",
+    "set theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "If $G$ is a graph let $h_G(n)$ be defined such that any subgraph of $G$ on $n$ vertices can be made bipartite after deleting at most $h_G(n)$ edges.\n\nWhat is the behaviour of $h_G(n)$? Is it true that $h_G(n)/n\\to \\infty$ for every graph $G$ with chromatic number $\\aleph_1$?",
+  "additional_context": "A problem of Erdős, Hajnal, and Szemer\\'{e}di \\cite{EHS82}. Every G with chromatic number \\aleph_1 must have h_G(n)\\gg n since G must contain, for some r, \\aleph_1 many vertex disjoint odd cycles of length 2r+1.\n\nOn the other hand, Erdős, Hajnal, and Szemer\\'{e}di proved that there is a G with chromatic number \\aleph_1 such that h_G(n)\\ll n^{3/2}. In \\cite{Er81} Erdős conjectured that this can be improved to \\ll n^{1+\\epsilon} for every \\epsilon>0.\n\nSee also [74].\n\nReferences\n\n[EHS82] Erdős, P. and Hajnal, A. and Szemer\\'{e}di, E., On almost bipartite large chromatic graphs. Theory and practice of combinatorics (1982), 117-123.\n\n[Er81] Erdős, P., On the combinatorial problems which I would most like to see solved. Combinatorica (1981), 25-42.",
+  "reference_proof_hint": "Let me rewrite your definition in a standard way.\n\nFor a finite graph $H$, write\n[\n\\tau(H):=\\min{|F|:F\\subseteq E(H)\\ \\text{and}\\ H-F\\ \\text{is bipartite}}.\n]\n(this is the minimum number of edges you must delete to kill all odd cycles).\n\nThen your function is\n[\nh_G(n)=\\max\\bigl{\\tau(H): H\\subseteq G,\\ |V(H)|=n\\bigr}.\n]\nBecause (\\tau(\\cdot)) is monotone in the edge set (adding edges cannot make a graph *easier* to make bipartite), the “worst” choice on a fixed $n$-set of vertices is the **induced** subgraph $G[A]$. So you can also view it as\n[\nh_G(n)=\\max\\bigl{\\tau(G[A]): A\\subseteq V(G),\\ |A|=n\\bigr}.\n]\n\n### Basic bounds for any $G$\n\nFor any finite $H$ with $m=e(H)$ edges,\n[\n\\tau(H)= m-\\mathrm{maxcut}(H),\n]\nsince keeping a maximum bipartite subgraph is the same as taking a maximum cut.\n\nAlso (\\mathrm{maxcut}(H)\\ge m/2) for every graph (a random bipartition cuts half the edges on average), so\n[\n\\tau(H)\\le m/2.\n]\nSince (m\\le \\binom{n}{2}), you get the crude universal bound\n[\n0\\le h_G(n)\\"
+}

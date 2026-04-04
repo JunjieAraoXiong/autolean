@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_574",
+  "problem": [
+    "Is it true that, for k≥ 2,\\mathrm{ex}(n;\\{C_{2k-1},C_{2k}\\})=(1+o(1))(n/2)^{1+(1)/(k)}."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 574,
+  "status": "disproved",
+  "tags": [
+    "graph theory",
+    "turan number"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Is it true that, for $k\\geq 2$,\\[\\mathrm{ex}(n;\\{C_{2k-1},C_{2k}\\})=(1+o(1))(n/2)^{1+\\frac{1}{k}}.\\]",
+  "additional_context": "A problem of Erdős and Simonovits.\n\nSee also [573] for the specific case of k=2 and the entry in the graphs problem collection.",
+  "reference_proof_hint": "No one currently knows this in general, and it is **open already for $k=2$**.\n\n### Why $k=2$ already blocks a “yes”\n\nFor $k=2$ your statement becomes\n[\n\\mathrm{ex}(n;{C_3,C_4})=(1+o(1))(n/2)^{3/2},\n]\ni.e. the extremal number of graphs with **no triangle and no 4‑cycle** (girth at least 5). This is a long–standing open problem: recent work explicitly notes that the conjectured asymptotic ((n/2)^{3/2}+o(n^{3/2})) is still “widely open.” ([Cambridge University Press & Assessment][1])\n\nWhat *is* known for $k=2$ is only a range of possible leading constants:\n[\n\\frac{1}{2\\sqrt2}\\ \\le\\ \\liminf_{n\\to\\infty}\\frac{\\mathrm{ex}(n;{C_3,C_4})}{n^{3/2}}\n\\ \\le\\\n\\limsup_{n\\to\\infty}\\frac{\\mathrm{ex}(n;{C_3,C_4})}{n^{3/2}}\n\\ \\le\\ \\frac12,\n]\nand the exact asymptotic constant is unknown. \n\nThere has also been recent progress showing (\\mathrm{ex}(n;{C_3,C_4})) can exceed the “balanced bipartite” benchmark by a **superlinear** additive term [[nomath]](still lower order than $n^{3/2}$)[[/nomath]], which show"
+}

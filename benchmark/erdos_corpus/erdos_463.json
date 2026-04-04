@@ -1,0 +1,19 @@
+{
+  "uuid": "erdos_463",
+  "problem": [
+    "Is there a function f with f(n)→ ∞ as n→ ∞ such that, for all large n, there is a composite number m such thatn+f(n)<m<n+p(m)?(Here p(m) is the least prime factor of m.)"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 463,
+  "status": "open",
+  "tags": [
+    "number theory",
+    "primes"
+  ],
+  "prize": "no",
+  "formalized_on_site": true,
+  "original_latex": "Is there a function $f$ with $f(n)\\to \\infty$ as $n\\to \\infty$ such that, for all large $n$, there is a composite number $m$ such that\\[n+f(n)<m<n+p(m)?\\](Here $p(m)$ is the least prime factor of $m$.)",
+  "additional_context": "In \\cite{Er92e} Erdős asks aboutF(n)=\\min_{m>n}(m-p(m)),and whether n-F(n)\\sim cn^{1/2} for some c>0.\n\nSee also [385].\n\nReferences\n\n[Er92e] Erdős, P\\'{a}l, Some Unsolved problems in Geometry, Number Theory and Combinatorics. Eureka (1992), 44-48.",
+  "reference_proof_hint": "This is **open** (no proof or disproof is known).\n\nIt appears as **Erdős Problem #463** (attributed to Erdős–Graham and later Erdős again), and the Erdős Problems database currently lists it as open. ([Erdős Problems][1])\n\n### A couple of useful reformulations\n\nWrite $p(m)$ for the least prime factor of $m$, and set (d:=m-n>0).\nYour inequality\n$\nn+f(n)<m<n+p(m)\n$\nis equivalent to the existence [[nomath]](for each large $n$)[[/nomath]] of a **composite** (m=n+d) with\n$\nf(n)< d < p(m).\n$\nSo you are asking whether one can force (d\\to\\infty) **uniformly for all large $n$**, while still having (d<p(m)).\n\nAlso note that\n[\nm<n+p(m)\\quad\\Longleftrightarrow\\quad m-p(m)<n.\n]\nErdős asked in [Er92e] about the related function\n[\nF(n)=\\min_{m>n}(m-p(m)),\n]\nand whether (n-F(n)\\sim c,n^{1/2}) for some (c>0). ([Erdős Problems][1])\n\n### A necessary growth restriction on $f$\n\nIf $m$ is composite then (p(m)\\le \\sqrt m). So from (m-n < p(m)) we get\n[\nm-n < \\sqrt m \\sim \\sqrt n,\n]\nwhich means any such $f$ (",
+  "ground_truth_lean": "/-\nCopyright 2025 The Formal Conjectures Authors.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    https://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n-/\n\nimport FormalConjectures.Util.ProblemImports\n\n/-!\n# Erdős Problem 463\n\n*Reference:* [erdosproblems.com/463](https://www.erdosproblems.com/463)\n-/\n\nopen Filter\n\nnamespace Erdos463\n\n/--\nIs there a function $f$ with $f(n)\\to\\infty$ as $n\\to\\infty$ such that,\nfor all large $n$, there is a composite number $m$ such that\n$$\nn + f(n) < m < n + p(m)\n$$\nHere $p(m)$ is the least prime factor of $m$.\n-/\n@[category research open, AMS 11]\ntheorem erdos_463 : answer(sorry) ↔ ∃ (f : ℕ → ℕ) (_ : Tendsto f atTop atTop),\n    ∀ᶠ n in atTop,\n      ∃ m, m.Composite ∧\n        n + f n < m ∧ m < n + m.minFac := by\n  sorry\n\nend Erdos463\n"
+}

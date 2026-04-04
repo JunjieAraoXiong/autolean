@@ -1,0 +1,15 @@
+{
+  "uuid": "erdos_53",
+  "problem": [
+    "Erdős Problem #53"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 53,
+  "status": "proved",
+  "tags": [
+    "number theory",
+    "additive combinatorics"
+  ],
+  "prize": "no",
+  "formalized_on_site": false
+}

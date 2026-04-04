@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_545",
+  "problem": [
+    "Let G be a graph with m edges and no isolated vertices. Is the Ramsey number R(G) maximised when G is 'as complete as possible'? That is, if m=\\binom{n}{2}+t edges with 0≤ t<n then isR(G)≤ R(H),where H is the graph formed by connecting a new vertex to t of the vertices of K_n?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 545,
+  "status": "open",
+  "tags": [
+    "graph theory",
+    "ramsey theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $G$ be a graph with $m$ edges and no isolated vertices. Is the Ramsey number $R(G)$ maximised when $G$ is 'as complete as possible'? That is, if $m=\\binom{n}{2}+t$ edges with $0\\leq t<n$ then is\\[R(G)\\leq R(H),\\]where $H$ is the graph formed by connecting a new vertex to $t$ of the vertices of $K_n$?",
+  "additional_context": "A question of Erdős and Graham. The weaker question of whetherR(G) ≤ 2^{O(m^{1/2})}is the subject of [546]. (This is true, and was proved by Sudakov \\cite{Su11}.)\n\nLouisD in the comments has noted this fails for small m (in particular for 2≤ m≤ 5 and 7≤ m≤ 9).\n\nThis problem is #10 in Ramsey Theory in the graphs problem collection.\n\nReferences\n\n[Su11] Sudakov, Benny, A conjecture of Erdős on graph Ramsey numbers. Adv. Math. (2011), 601-609.",
+  "reference_proof_hint": "No — the statement is false as written (even with “no isolated vertices”).\n\nA concrete counterexample already occurs for **$m=3$**:\n\n* Here (m=\\binom{3}{2}+0), so your “as complete as possible” graph is (H=K_{3}), and (R(H)=R(K_{3})=6). \n* Let $G$ be the **matching** (3K_{2}) (three disjoint edges). It has $m=3$ edges and no isolated vertices. Cockayne–Lorimer determined the Ramsey numbers of matchings; in particular for two colours,\n  [\n  R(rK_{2})=3r-1,\n  ]\n  so (R(3K_{2})=8). \n\nThus\n[\nR(G)=8 > 6 = R(H),\n]\ncontradicting the proposed inequality.\n\nThis is not just a one-off: the same matching family (mK_2) gives further small-$m$ counterexamples, and the general “is the colex/quasi-clique extremal?” question is recorded as an Erdős–Graham problem; it is known to fail for various small $m$ but is open in general for large $m$. ([erdosproblems.com][1])\n\n[1]: https://www.erdosproblems.com/forum/thread/545 \"\n\n    Erdős Problem #545 - Discussion thread\n\n\"\n"
+}

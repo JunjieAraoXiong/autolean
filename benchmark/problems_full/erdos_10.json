@@ -1,0 +1,11 @@
+{
+  "uuid": "erdos_10",
+  "problem": [
+    "Is there some k such that every integer is the sum of a prime and at most k powers of 2?",
+    "Erdős described this as 'probably unattackable'. In \\cite{ErGr80} Erdős and Graham suggest that no such k exists. Gallagher \\cite{Ga75} has shown that for any \\epsilon>0 there exists k(\\epsilon) such that the set of integers which are the sum of a prime and at most k(\\epsilon) many powers of 2 has lower density at least 1-\\epsilon.\n\nGranville and Soundararajan \\cite{GrSo98} have conjectured that at most 3 powers of 2 suffice for all odd integers, and hence at most 4 powers of 2 suffice for all even integers. (The restriction to odd integers is important here - for example, Bogdan Grechuk has observed that 1117175146 is not the sum of a prime and at most 3 powers of 2, and pointed out that parity considerations, coupled with the fact that there are many integers not the sum of a prime and 2 powers of 2 (see [9]) suggest that there exist infinitely many even integers which are not the sum of a prime and at most 3 powers of 2).\n\nSee also [9], [11], and [16].\n\nThis problem has been formalised in Lean as part of the Google DeepMind Formal Conjectures project.\n\nReferences\n\n[ErGr80] Erdős, P. and Graham, R., Old and new problems and results in combinatorial number theory. Monographies de L'Enseignement Mathematique (1980).\n\n[Ga75] Gallagher, P. X., Primes and powers of 2. Invent. Math. (1975), 125-142.\n\n[GrSo98] Granville, A. and Soundararajan, K., A Binary Additive Problem of Erdős and the Order of 2 mod p^2. The Ramanujan Journal (1998), 283-298."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 10,
+  "original_latex": "Is there some $k$ such that every integer is the sum of a prime and at most $k$ powers of 2?",
+  "reference_proof_hint": "This is **open**.\n\nIt’s an Erdős problem (often listed as “Erdős Problem #10”): whether there exists an absolute constant $k$ such that **every** integer $n$ can be written\n[\nn = p + 2^{a_1}+\\cdots+2^{a_j}\\qquad (j\\le k),\n]\nwith $p$ prime [[nomath]](and typically $a_i\\ge 0$, so $1=2^0$ is allowed)[[/nomath]]. ([Erdős Problems][1])\n\n### What is known\n\n* **For (k=1)** (prime + one power of 2): false.\n  Polignac’s old conjecture in this direction has counterexamples; for instance $127$ and $331$ ar"
+}

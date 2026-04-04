@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_173",
+  "problem": [
+    "In any 2-colouring of ℝ^2, for all but at most one triangle T, there is a monochromatic congruent copy of T."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 173,
+  "status": "open",
+  "tags": [
+    "geometry",
+    "ramsey theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "In any $2$-colouring of $\\mathbb{R}^2$, for all but at most one triangle $T$, there is a monochromatic congruent copy of $T$.",
+  "additional_context": "For some colourings a single equilateral triangle has to be excluded, considering the colouring by alternating strips. Shader \\cite{Sh76} has proved this is true if we just consider a single right-angled triangle.\n\nReferences\n\n[Sh76] Shader, L., All right triangles are Ramsey in \\mathbbE^2!. J. Comb. Th. A (1976), 385-389.",
+  "reference_proof_hint": "This is **an open problem** in Euclidean Ramsey theory (it is listed as Erdős Problem #173). ([Erdős Problems][1])\n\n### Why the “at most one triangle” part is needed\n\nThere are 2-colourings of the plane that **avoid a monochromatic copy of one fixed equilateral triangle**. A standard example is a “striped” colouring: colour the plane in alternating parallel strips of width (\\sqrt{3}/2); this avoids a monochromatic **unit** equilateral triangle. \n\nSo you cannot hope for “every triangle $T$ always appears”; you really may have to allow one exception.\n\n### What is known\n\n* **Every right triangle is forced.**\n  Shader proved that for **any fixed right triangle** $T$, every 2-colouring of (\\mathbb{R}^2) contains a monochromatic congruent copy of $T$. ([Computer Science at UMD][2])\n\n* There are results for “nice” colourings (with some regularity in the boundary between the two colours).\n  For example, for a partition into a **closed** set and an **open** set, you always get a monochromatic c"
+}

@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_278",
+  "problem": [
+    "Let A=\\{n_1<\\cdots<n_r\\} be a finite set of integers. What is the maximum density of integers covered by a suitable choice of congruences a_i\\pmod{n_i}?\n\nIs the minimum density achieved when all the a_i are equal?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 278,
+  "status": "open",
+  "tags": [
+    "number theory",
+    "covering systems"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $A=\\{n_1<\\cdots<n_r\\}$ be a finite set of integers. What is the maximum density of integers covered by a suitable choice of congruences $a_i\\pmod{n_i}$?\n\nIs the minimum density achieved when all the $a_i$ are equal?",
+  "additional_context": "Simpson \\cite{Si86} has observed that the density of integers covered is at least∑_i (1)/(n_i)-∑_{i<j}(1)/([n_i,n_j])+∑_{i<j<k}(1)/([n_i,n_j,n_k])-\\cdot(where [\\cdots] denotes the least common multiple) which is achieved when all a_i are equal, settling the second question.\n\nReferences\n\n[Si86] Simpson, R. J., Exact coverings of the integers by arithmetic progressions. Discrete Math. (1986), 181--190.",
+  "reference_proof_hint": "Fix moduli (A={n_1<\\cdots<n_r}) and choose residue classes\n[\nC_i={m\\in\\mathbb Z:m\\equiv a_i\\pmod{n_i}}.\n]\nLet (U(a_1,\\dots,a_r)=\\bigcup_{i=1}^r C_i). If (L=\\mathrm{lcm}(n_1,\\dots,n_r)), then (U) is periodic mod (L), hence it has a (natural) density and\n$\nd(U(a_1,\\dots,a_r))=\\frac{|{0\\le x<L:\\exists i,\\ x\\equiv a_i\\ (\\mathrm{mod}\\ n_i)}|}{L}.\n$\n\n## The minimum density\n\nYes: the minimum density is achieved when all the (a_i) are equal [[nomath]](equivalently, when the classes $a_i\\pmod{n_i}$ have a common integer in their intersection, i.e. the system $x\\equiv a_i\\ (\\mathrm{mod}\\ n_i)$ is simultaneously solvable)[[/nomath]].\n\nMore precisely, Simpson proved (and Sun cites it as Lemma 2.3 of Simpson) that for any choice of residues (a_i),\n[\nd!\\left(\\bigcup_{i=1}^r a_i(n_i)\\right)\\ \\ge\\ d!\\left(\\bigcup_{i=1}^r 0(n_i)\\right),\n]\nso the union is *smallest* when the residue classes are “aligned” (all equal up to a global shift). ([ResearchGate][1])\n\nWhen all residues are equal [[nomath]](say $a"
+}

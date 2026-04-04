@@ -1,0 +1,19 @@
+{
+  "uuid": "erdos_218",
+  "problem": [
+    "Let d_n=p_{n+1}-p_n. The set of n such that d_{n+1}≥ d_n has density 1/2, and similarly for d_{n+1}≤ d_n. Furthermore, there are infinitely many n such that d_{n+1}=d_n."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 218,
+  "status": "open",
+  "tags": [
+    "number theory",
+    "primes"
+  ],
+  "prize": "no",
+  "formalized_on_site": true,
+  "original_latex": "Let $d_n=p_{n+1}-p_n$. The set of $n$ such that $d_{n+1}\\geq d_n$ has density $1/2$, and similarly for $d_{n+1}\\leq d_n$. Furthermore, there are infinitely many $n$ such that $d_{n+1}=d_n$.",
+  "additional_context": "In \\cite{Er85c} Erdős also conjectures that d_n=d_{n+1}=\\cdots=d_{n+k} is solvable for every k (which is equivalent to k consecutive primes in arithmetic progression, see [141]).\n\nReferences\n\n[Er85c] Erdős, P., On some of my problems in number theory I would most like to see solved. Number theory (Ootacamund, 1984) (1985), 74-84.",
+  "reference_proof_hint": "What you wrote is *exactly* **Erdős Problem #218** on consecutive prime gaps, and it is currently listed as **open**. ([Erdős Problems][1])\n\nSo at present:\n\n* The **density $1/2$** claims for\n  ({n : d_{n+1}\\ge d_n}) and ({n : d_{n+1}\\le d_n}) are **conjectural**. ([Erdős Problems][1])\n* The statement “**infinitely many** $n$ with (d_{n+1}=d_n)” is also **not proved** [[nomath]](and Erdős even conjectured much longer runs $d_n=\\cdots=d_{n+k}$)[[/nomath]]. ([Erdős Problems][1])\n\nWhat *is* known unconditionally is weaker but nontrivial:\n\n## Known: both directions occur infinitely often\n\nAlready in 1948, Erdős–Turán proved that\n[\nd_{n+1}-d_n\n]\nchanges sign infinitely often; i.e. there are infinitely many $n$ with (d_{n+1}>d_n) and infinitely many with (d_{n+1}<d_n). ([arXiv][2])\n\nMore generally, the Erdős–Pólya–Turán conjecture on sign changes of *linear combinations* of consecutive prime gaps was proved by Pintz (using Maynard–Tao technology). ([arXiv][2])\n\nNone of this gives density $1/",
+  "ground_truth_lean": "/-\nCopyright 2025 The Formal Conjectures Authors.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    https://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n-/\n\nimport FormalConjectures.Util.ProblemImports\n\n/-!\n# Erdős Problem 218\n\n*Reference:* [erdosproblems.com/218](https://www.erdosproblems.com/218)\n-/\n\nnamespace Erdos218\n\n/--\nThe set of indices $n$ for which a prime gap is followed by a larger or equal prime gap has a\nnatural density of $\\frac 1 2$.\n-/\n@[category research open, AMS 11]\ntheorem erdos_218.variants.le : {n | primeGap n ≤ primeGap (n + 1)}.HasDensity <| 1 / 2 := by\n  sorry\n\n/--\nThe set of indices $n$ for which a prime gap is preceeded by a larger or equal prime gap has a\nnatural density of $\\frac 1 2$.\n-/\n@[category research open, AMS 11]\ntheorem erdos_218.variants.ge : {n | primeGap (n + 1) ≤ primeGap n}.HasDensity <| 1 / 2 := by\n  sorry\n\n/--\nThere are infintely many indices $n$ such that the prime gap at $n$ is equal to the prime gap\nat $n+1$. This is equivalent to the existence of infinitely many arithmetic progressions of\nlength $3$, see `erdos_141.variants.infinite_three`.\n-/\n@[category research open, AMS 11]\ntheorem erdos_218.variants.infinite_equal_prime_gap : {n | primeGap n = primeGap (n + 1)}.Infinite := by\n  sorry\n\nend Erdos218\n"
+}

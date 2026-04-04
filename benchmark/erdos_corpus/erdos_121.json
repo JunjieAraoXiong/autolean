@@ -1,0 +1,15 @@
+{
+  "uuid": "erdos_121",
+  "problem": [
+    "Erdős Problem #121"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 121,
+  "status": "disproved",
+  "tags": [
+    "number theory",
+    "squares"
+  ],
+  "prize": "no",
+  "formalized_on_site": false
+}

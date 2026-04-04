@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_838",
+  "problem": [
+    "Let f(n) be maximal such that any n points in ℝ^2, with no three on a line, determine at least f(n) different convex subsets. Estimate f(n) - in particular, does there exist a constant c such that\\lim (\\log f(n))/((\\log n)^2)=c?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 838,
+  "status": "open",
+  "tags": [
+    "geometry",
+    "convex"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $f(n)$ be maximal such that any $n$ points in $\\mathbb{R}^2$, with no three on a line, determine at least $f(n)$ different convex subsets. Estimate $f(n)$ - in particular, does there exist a constant $c$ such that\\[\\lim \\frac{\\log f(n)}{(\\log n)^2}=c?\\]",
+  "additional_context": "A question of Erdős and Hammer. Erdős proved in \\cite{Er78c} that there exist constants c_1,c_2>0 such thatn^{c_1\\log n}<f(n)< n^{c_2\\log n}.See also [107].\n\nReferences\n\n[Er78c] Erdős, P., Some more problems on elementary geometry. Austral. Math. Soc. Gaz. (1978), 52-54.",
+  "reference_proof_hint": "Take an $n$-point set (P\\subset\\mathbb R^2) in **general position** (no three collinear). A “convex subset” here means a subset (Q\\subseteq P) whose points are in **convex position** [[nomath]](equivalently: $Q$ is convexly independent; every point of $Q$ is a vertex of $\\operatorname{conv}(Q)$)[[/nomath]]. This is the same as counting convex $k$-gons with vertices in $P$, over all (k\\ge 3) (plus the trivial small subsets, which are negligible asymptotically). This is the Erdős–Hammer question. ([Erdős Problems][1])\n\nLet\n[\nF(P):=|\\\\{Q\\subseteq P:\\ Q\\text{ is in convex position}\\\\}|,\n\\qquad\nf(n):=\\min_{|P|=n}F(P).\n]\n\n## What is known about $f(n)$\n\nErdős proved that $f(n)$ is **quasi-polynomial**, more precisely\n[\nf(n)=\\exp(\\Theta((\\log n)^2)),\n]\nand this order of magnitude is **best possible**. ([Pure][2])\n\nEquivalently, there exist constants (c_1,c_2>0) such that\n[\nn^{c_1\\log n} < f(n) < n^{c_2\\log n}.\n]\n([Erdős Problems][1])\n\nSo (\\log f(n)) really is (\\Theta((\\log n)^2)).\n\n## Quantita"
+}

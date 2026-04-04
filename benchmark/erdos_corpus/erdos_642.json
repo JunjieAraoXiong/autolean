@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_642",
+  "problem": [
+    "Let f(n) be the maximal number of edges in a graph on n vertices such that all cycles have more vertices than diagonals. Is it true that f(n)\\ll n?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 642,
+  "status": "open",
+  "tags": [
+    "graph theory",
+    "cycles"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $f(n)$ be the maximal number of edges in a graph on $n$ vertices such that all cycles have more vertices than diagonals. Is it true that $f(n)\\ll n$?",
+  "additional_context": "A problem of Hamburger and Szegedy.\n\nChen, Erdős, and Staton \\cite{CES96} proved f(n) \\ll n^{3/2}. Dragani\\'{c}, Methuku, Munh\\'{a} Correia, and Sudakov \\cite{DMMS24} have improved this tof(n) \\ll n(\\log n)^8.\n\nReferences\n\n[CES96] Chen, Guantao and Erdős, Paul and Staton, William, Proof of a conjecture of {B}ollob\\'as on nested cycles. J. Combin. Theory Ser. B (1996), 38--43.\n\n[DMMS24] Dragani\\'c, Nemanja and Methuku, Abhishek and Munh\\'a{}\nCorreia, David and Sudakov, Benny, Cycles with many chords. Random Structures Algorithms (2024), 3--16.",
+  "reference_proof_hint": "Interpreting “diagonals” in the usual way (i.e. **chords** of a cycle: edges joining two nonconsecutive vertices on that cycle), your condition is\n\n[\n\\text{for every cycle }C,\\quad |\\text{chords}(C)|<|V(C)|.\n]\n\nEquivalently, the vertex set of any cycle spans (<2|V(C)|) edges (cycle edges + chords).\n\nWith that interpretation, the answer to “is (f(n)\\ll n)?” is:\n\n**This is open.** It is Erdős’ Problem #642 (attributed there to Hamburger–Szegedy). ([Erdős Problems][1])\n\nWhat is known is that $f(n)$ is *almost* linear up to polylog factors:\n\n* Chen–Erdős–Staton (1996) proved the first superlinear-forcing result, which translates to\n  [\n  f(n)\\ll n^{3/2}.\n  ]\n  ([Erdős Problems][1])\n* Draganić–Methuku–Munhá Correia–Sudakov (2024) greatly improved this, showing that every $n$-vertex graph with at least (n\\log^{8}n) edges contains a cycle with at least (|C|) chords [[nomath]](so graphs satisfying your condition have $O(n\\log^{8}n)$ edges)[[/nomath]]:\n  [\n  f(n)\\ll n(\\log n)^8.\n  ]\n  ([Erdős P"
+}

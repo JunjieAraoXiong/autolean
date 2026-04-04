@@ -1,0 +1,15 @@
+{
+  "uuid": "erdos_845",
+  "problem": [
+    "Erdős Problem #845"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 845,
+  "status": "disproved (Lean)",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": true,
+  "ground_truth_lean": "/-\nCopyright 2025 The Formal Conjectures Authors.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    https://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n-/\n\nimport FormalConjectures.Util.ProblemImports\n\n/-!\n# Erdős Problem 845\n\n*Reference:* [erdosproblems.com/845](https://www.erdosproblems.com/845)\n-/\n\nnamespace Erdos845\n\n/--\nLet $C > 0$. Is it true that the set of integers of the form $n = b_1 + \\cdots + b_t$,\nwith $b_1 < \\cdots < b_t$, where $b_i = 2^{k_i}3^{l_i}$ for $1 \\leq i\\leq t$ and\n$b_t \\leq Cb_1$ has density $0$?\n\nvan Doorn and Everts \\cite{vDEv25} have disproved this with $C=6$ - in fact, they prove that all\nintegers can be written as such a sum in which $b_t<6b_1$.\n\nThis was formalized in Lean by Alexeev using Aristotle.\n-/\n@[category research solved, AMS 11, formal_proof using lean4 at \"https://github.com/plby/lean-proofs/blob/main/src/v4.24.0/ErdosProblems/Erdos845.lean\"]\ntheorem erdos_845 :\n    answer(False) ↔\n      ∀ᵉ (C : ℝ) (hC : 0 < C),\n        let f : ℕ × ℕ → ℕ := fun (k, l) ↦ 2 ^ k * 3 ^ l\n        { ∑ x ∈ B, f x | (B : Finset (ℕ × ℕ)) (h : B.Nonempty)\n          (hB : B.sup f ≤ C * B.inf' h f) }.HasDensity 0 := by\n  sorry\n\nend Erdos845\n"
+}
