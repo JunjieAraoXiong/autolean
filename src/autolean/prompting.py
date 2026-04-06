@@ -68,6 +68,7 @@ def build_prompts(
     formalization_only: bool = True,
     prior_subproblems: Optional[list[dict]] = None,
     prior_formalizations: Optional[list[tuple[str, str]]] = None,
+    retrieved_premises_block: Optional[str] = None,
 ) -> PromptBundle:
     """Build deterministic prompts from an authoritative JSON problem object."""
     uuid = problem_json.get("uuid")
@@ -158,55 +159,84 @@ Return plain text with these sections:
 
     initial = f"""You are given a single math problem encoded as JSON.
 
+<context>
 The JSON object is authoritative. Do not invent content.
 Do not merge or split problems.
 
 Interpretation rules:
-- \"problem\" is an array of natural-language statements; concatenate them in order.
-- Ignore \"solution\", \"remark\", \"reference\", \"figures\", and other non-required fields.
+- "problem" is an array of natural-language statements; concatenate them in order.
+- Ignore "solution", "remark", "reference", "figures", and other non-required fields.
+</context>
 
-Lean output rules:
+<file_header>
 - Output a complete Lean 4 file.
 - Use `import Mathlib`.
 - Put everything in namespace `Formalizations`.
-- Main theorem name MUST be exactly: `{theorem_name}`.
 - The Lean file path (for reference) is: `{lean_path.as_posix()}`.
+</file_header>
+
+<do_not_change>
+- Main theorem name MUST be exactly: `{theorem_name}`.
 - No Markdown, no explanations.
-- Do NOT weaken the statement: never replace it with `True`/`False`, or use `by trivial`, `by decide`, or `by exact`.
-- The theorem must formalize the original problem: it must mention the core objects (e.g., `Set`, `Real`, `Metric`, `∀`/`∃`) instead of an empty shell.
+- Do NOT weaken the statement to True/False. Do NOT use by trivial/by decide. The theorem MUST formalize the original mathematical content.
+- The theorem must mention the core objects (e.g., `Set`, `Real`, `Metric`, `∀`/`∃`) instead of an empty shell.
 - If the problem has multiple sub-questions, combine them into a single theorem using `∧` for all parts.
 {proof_policy}
+</do_not_change>
 
+<task>
 Return ONLY a JSON object:
 {{"lean": "<Lean 4 source code>"}}
+</task>
 
-Here is the JSON input:
+<theorem>
 {json_blob}
+</theorem>
 """
+    if retrieved_premises_block:
+        initial += f"\n<retrieved_premises>\n{_escape_format_braces(retrieved_premises_block)}\n</retrieved_premises>\n"
     if prior_context_block:
         initial += f"\n\n{prior_context_block}\n"
 
+    retrieved_premises_for_format = (
+        _escape_format_braces(retrieved_premises_block)
+        if retrieved_premises_block
+        else ""
+    )
     repair_template = f"""The following Lean file does not compile.
 
-Original JSON problem (authoritative):
+<theorem>
 {json_blob_for_format}
+</theorem>
 
-Previous Lean file:
+<failing_proof>
 {{prev_lean}}
+</failing_proof>
 
-Lean compiler output (verbatim):
+<compiler_error_excerpt>
 {{compile_output}}
+</compiler_error_excerpt>
 
-Task:
-- Fix the Lean file so it compiles.
+<goal_state_near_failure>
+Inspect the compiler output above for unsolved goals or type mismatches near the failure site.
+</goal_state_near_failure>
+
+<do_not_change>
 - Do not change the meaning of the theorem.
 - Keep the theorem name exactly: `{theorem_name}`.
-- Return ONLY JSON: {{{{"lean": "<Lean 4 source code>"}}}}.
-- Do NOT weaken the statement: never replace it with `True`/`False`, or use `by trivial`, `by decide`, or `by exact`.
-- The theorem must formalize the original problem: it must mention the core objects (e.g., `Set`, `Real`, `Metric`, `∀`/`∃`) instead of an empty shell.
+- Do NOT weaken the statement to True/False. Do NOT use by trivial/by decide. The theorem MUST formalize the original mathematical content.
+- The theorem must mention the core objects (e.g., `Set`, `Real`, `Metric`, `∀`/`∃`) instead of an empty shell.
 - If the problem has multiple sub-questions, combine them into a single theorem using `∧` for all parts.
 {proof_policy}
+</do_not_change>
+
+<task>
+- Fix the Lean file so it compiles.
+- Return ONLY JSON: {{{{"lean": "<Lean 4 source code>"}}}}.
+</task>
 """
+    if retrieved_premises_for_format:
+        repair_template += f"\n<retrieved_premises>\n{retrieved_premises_for_format}\n</retrieved_premises>\n"
     if prior_context_block_for_format:
         repair_template += f"\n\n{prior_context_block_for_format}\n"
 
@@ -218,3 +248,67 @@ Task:
         initial_prompt=initial,
         repair_prompt_template=repair_template,
     )
+
+
+def build_sketch_prompt(
+    problem_json: dict,
+    theorem_name: str,
+    lean_path: Path,
+    formalization_only: bool = True,
+    retrieved_premises_block: Optional[str] = None,
+) -> str:
+    """Build a sketch prompt that asks for a proof outline using ``have ... := by sorry`` holes.
+
+    The sketch contains at most 5 sorry-holes, each representing a key
+    intermediate lemma.  The caller can later fill these holes individually.
+    """
+    json_blob = json.dumps(problem_json, ensure_ascii=False, indent=2)
+
+    if formalization_only:
+        body_instruction = (
+            "Leave the top-level theorem body as `by sorry` but add up to 5 "
+            "`have <name> : <type> := by sorry` lines inside the proof block to "
+            "outline the key intermediate steps."
+        )
+    else:
+        body_instruction = (
+            "Structure the proof with up to 5 `have <name> : <type> := by sorry` "
+            "holes for the key intermediate lemmas, then close the main goal using those."
+        )
+
+    prompt = f"""You are given a math problem encoded as JSON. Produce a Lean 4 proof *sketch*.
+
+<context>
+The JSON object is authoritative. Do not invent content.
+</context>
+
+<file_header>
+- Output a complete Lean 4 file.
+- Use `import Mathlib`.
+- Put everything in namespace `Formalizations`.
+- The Lean file path (for reference) is: `{lean_path.as_posix()}`.
+</file_header>
+
+<do_not_change>
+- Main theorem name MUST be exactly: `{theorem_name}`.
+- No Markdown, no explanations.
+- Do NOT weaken the statement to True/False. Do NOT use by trivial/by decide. The theorem MUST formalize the original mathematical content.
+- The theorem must mention the core objects (e.g., `Set`, `Real`, `Metric`, `∀`/`∃`) instead of an empty shell.
+- Maximum 5 sorry-holes.
+</do_not_change>
+
+<task>
+{body_instruction}
+
+Return ONLY a JSON object:
+{{"lean": "<Lean 4 source code>"}}
+</task>
+
+<theorem>
+{json_blob}
+</theorem>
+"""
+    if retrieved_premises_block:
+        prompt += f"\n<retrieved_premises>\n{_escape_format_braces(retrieved_premises_block)}\n</retrieved_premises>\n"
+
+    return prompt
