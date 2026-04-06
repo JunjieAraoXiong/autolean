@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_302",
+  "problem": [
+    "Let f(N) be the size of the largest A⊆ \\{1,\\ldots,N\\} such that there are no solutions to(1)/(a)= (1)/(b)+(1)/(c)with distinct a,b,c∈ A?\n\nEstimate f(N). In particular, is f(N)=(\\tfrac{1}{2}+o(1))N?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 302,
+  "status": "open",
+  "tags": [
+    "number theory",
+    "unit fractions"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $f(N)$ be the size of the largest $A\\subseteq \\{1,\\ldots,N\\}$ such that there are no solutions to\\[\\frac{1}{a}= \\frac{1}{b}+\\frac{1}{c}\\]with distinct $a,b,c\\in A$?\n\nEstimate $f(N)$. In particular, is $f(N)=(\\tfrac{1}{2}+o(1))N$?",
+  "additional_context": "The colouring version of this is [303], which was solved by Brown and R\\\"{o}dl \\cite{BrRo91}. One can take either A to be all odd integers in [1,N] or all integers in [N/2,N] to show f(N)≥ (1/2+o(1))N.\n\nWouter van Doorn has proved (see this note) thatf(N) ≤ (9/10+o(1))N.Stijn Cambie has observed thatf(N)≥ (5/8+o(1))N,taking A to be all odd integers ≤ N/4 and all integers in [N/2,N].\n\nStijn Cambie has also observed that, if we allow b=c, then there is a solution to this equation when | A| ≥ (\\tfrac{2}{3}+o(1))N, since then there must exist some n,2n∈ A.\n\nSee also [301] and [327].\n\nReferences\n\n[BrRo91] Brown, Tom C. and R\\\"{o}dl, Voijtech, Monochromatic solutions to equations with unit fractions. Bull. Austral. Math. Soc. (1991), 387-392.",
+  "reference_proof_hint": "Write the equation as\n$\n\\frac1a=\\frac1b+\\frac1c=\\frac{b+c}{bc}\n\\qquad\\Longleftrightarrow\\qquad\na(b+c)=bc\n\\qquad\\Longleftrightarrow\\qquad\n(b-a)(c-a)=a^2.\n$\nIn particular, in any solution with positive integers we automatically have (a<b) and (a<c) [[nomath]](since $\\tfrac1a>\\tfrac1b$ and $\\tfrac1a>\\tfrac1c$)[[/nomath]], so $a$ is the *smallest* of the triple.\n\n## A very useful easy lemma: any solution in $[N]$ has (a\\le N/2)\n\nIf (1\\le a<b,c\\le N) solve ((b-a)(c-a)=a^2), then\n$\nb-a\\le N-a,\\qquad c-a\\le N-a\n$\nso\n$\na^2=(b-a)(c-a)\\le (N-a)^2 ;\\Longrightarrow; a\\le N-a ;\\Longrightarrow; a\\le \\frac N2.\n$\nThis already gives the classical lower bound\n$\nf(N)\\ge (|(\\\\{(\\lfloor\\frac N2)\\rfloor+1,\\dots,N)\\\\})|\\sim \\frac N2,\n$\nsince any solution would need its smallest element (a\\le N/2), which that “top half” set omits.\n\n## But $f(N)$ is definitely **larger** than $N/2$: a $5N/8$ construction\n\nConsider\n$\nA={,\\text{odd } n\\le N/4,}\\ \\cup\\ [N/2,N]\\cap \\mathbb Z.\n$\nThen (|A|=\\frac N2+\\frac N8+o(N)=\\bi"
+}

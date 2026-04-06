@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_776",
+  "problem": [
+    "Let r≥ 2 and A_1,\\ldots,A_m⊆ \\{1,\\ldots,n\\} be such that A_i\\not⊆ A_j for all i≠ j and for any t if there exists some i with | A_i|=t then there must exist at least r sets of that size.\n\nHow large must n be (as a function of r) to ensure that there is such a family which achieves n-3 distinct sizes of sets?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 776,
+  "status": "open",
+  "tags": [
+    "combinatorics"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $r\\geq 2$ and $A_1,\\ldots,A_m\\subseteq \\{1,\\ldots,n\\}$ be such that $A_i\\not\\subseteq A_j$ for all $i\\neq j$ and for any $t$ if there exists some $i$ with $\\lvert A_i\\rvert=t$ then there must exist at least $r$ sets of that size.\n\nHow large must $n$ be (as a function of $r$) to ensure that there is such a family which achieves $n-3$ distinct sizes of sets?",
+  "additional_context": "A problem of Erdős and Trotter. For r=1 and n>3 the maximum possible is n-2. For r>1 and n sufficiently large n-3 is achievable, but n-2 is never achievable.",
+  "reference_proof_hint": "Let me first restate the combinatorial object in a standard way:\n\n* You are asking for an **antichain** (\\mathcal F\\subseteq 2^{[n]}) [[nomath]](i.e. no $A,B\\in\\mathcal F$ with $A\\subsetneq B$)[[/nomath]],\n* with the **multiplicity condition**: whenever (\\mathcal F) contains a set of size $t$, it contains **at least $r$** sets of size $t$,\n* and you want (\\mathcal F) to realize **$n-3$ distinct set-sizes**.\n\nSince there are $n+1$ possible sizes (0,1,\\dots,n), realizing $n-3$ sizes means you are missing exactly **4** sizes.\n\n---\n\n# ✅ Key structural observations (hard constraints)\n\n### 1) Sizes $0$ and $n$ cannot appear [[nomath]](for $r\\ge 2$)[[/nomath]]\n\nBecause there is only one empty set and one full set. So those 2 sizes are automatically among the 4 missing sizes.\n\nSo you can only “choose” 2 more sizes to omit among (1,\\dots,n-1).\n\n### 2) For large $r$, you are essentially forced to omit sizes $1$ and $n-1$\n\nBecause:\n[\n\\binom{n}{1}=n,\\qquad \\binom{n}{n-1}=n\n]\nso if (r>n), you *cann"
+}

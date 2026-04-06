@@ -1,0 +1,24 @@
+{
+  "uuid": "erdos_1065",
+  "problem": [
+    "Are there infinitely many primes p such that p=2^kq+1 for some prime q and k≥ 0? Or p=2^k3^lq+1?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 1065,
+  "status": "open",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": true,
+  "original_latex": "Are there infinitely many primes $p$ such that $p=2^kq+1$ for some prime $q$ and $k\\geq 0$? Or $p=2^k3^lq+1$?",
+  "additional_context": "This is mentioned in problem B46 of Guy's collection \\cite{Gu04}.\n\nReferences\n\n[Gu04] Guy, Richard K., Unsolved problems in number theory.  (2004), xviii+437.",
+  "reference_proof_hint": "For $k=0$, (p=2^{0}q+1=q+1) is even for every odd prime $q$, so the only case is (q=2\\Rightarrow p=3). So the real question is for (k\\ge 1).\n\n## 1) Primes $p$ with (p-1=2^{k}q) [[nomath]]($q$ prime)[[/nomath]]\n\nThis asks for primes $p$ such that the **odd part** of $p-1$ is prime [[nomath]](equivalently, $p-1$ has no odd prime factors besides one prime $q$)[[/nomath]].\n\nThis is **open**. Already the special case $k=1$ is exactly the “safe prime / Sophie Germain prime” problem: (p=2q+1) with $q$ prime. It is conjectured there are infinitely many Sophie Germain primes (equivalently, safe primes), but this is not proved. ([Wikipedia][1])\n\nEven the next fixed case $k=2$, i.e. primes of the form (p=4q+1) with $q$ prime, is explicitly described as unknown in expository work by Murty (with Jensen) on sieve methods and Artin’s conjecture: they remark that it is “at present unknown” whether there are infinitely many primes with (p-1=4q) and $q$ prime. ([womengovtcollegevisakha.ac.in][2])\n\nSo, w",
+  "ground_truth_lean": "/-\nCopyright 2025 The Formal Conjectures Authors.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    https://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n-/\n\nimport FormalConjectures.Util.ProblemImports\n\n/-!\n# Erdős Problem 1065\n\n*Reference:* [erdosproblems.com/1065](https://www.erdosproblems.com/1065)\n-/\n\nnamespace Erdos1065\n\n/--\nAre there infinitely many primes $p$ such that $p = 2^k * q + 1$\nfor some prime $q$ and $k ≥ 0$?\n\nThis is mentioned as B46\nin [Unsolved Problems in Number Theory](https://doi.org/10.1007/978-0-387-26677-0)\nby *Richard K. Guy*\n -/\n@[category research open, AMS 11]\ntheorem erdos_1065.parts.i :\n    answer(sorry) ↔ Set.Infinite {p | ∃ q k, p.Prime ∧ q.Prime ∧ p = 2^k * q + 1} := by\n  sorry\n\n/--\nAre there infinitely many primes $p$ such that $p = 2^k 3^l q + 1$\nfor some prime $q$ and $k ≥ 0$, $l ≥ 0$?\n-/\n@[category research open, AMS 11]\ntheorem erdos_1065.parts.ii : answer(sorry) ↔\n    Set.Infinite {p | ∃ q k l, p.Prime ∧ q.Prime ∧ p = 2^k * 3^l * q + 1} := by\n  sorry\n\nend Erdos1065\n",
+  "expert_comments": [
+    {
+      "author": "",
+      "text": "By the Bateman–Horn conjecture, the answer should be yes for every fixed combination of $k>0$ and $\\ell.$\nIn particular, the number of Sophie-Germaine primes is expected to be infinite.\n\nIn the other direction, $q=271129$ is an example for which no $2^n\\cdot q+1$ is prime.\nSee [SierpinskiNumbers]."
+    }
+  ]
+}

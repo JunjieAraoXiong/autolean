@@ -1,0 +1,15 @@
+{
+  "uuid": "erdos_871",
+  "problem": [
+    "Erdős Problem #871"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 871,
+  "status": "disproved (Lean)",
+  "tags": [
+    "number theory",
+    "additive basis"
+  ],
+  "prize": "no",
+  "formalized_on_site": false
+}

@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_159",
+  "problem": [
+    "There exists some constant c>0 such that\n\nR(C_4,K_n) \\ll n^{2-c}."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 159,
+  "status": "open",
+  "tags": [
+    "graph theory",
+    "ramsey theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "There exists some constant $c>0$ such that\n\n$$R(C_4,K_n) \\ll n^{2-c}.$$",
+  "additional_context": "The current bounds are \\frac{n^{3/2}}{(\\log n)^{3/2}}\\ll R(C_4,K_n)\\ll (n^2)/((\\log n)^2).The upper bound is due to Szemer\\'{e}di (mentioned in \\cite{EFRS78}), and the lower bound is due to Spencer \\cite{Sp77}.\n\nThis problem is #17 in Ramsey Theory in the graphs problem collection.\n\nReferences\n\n[EFRS78] Erdős, Paul and Faudree, R. J. and Rousseau, C. C. and Schelp, R. H., On cycle-complete graph Ramsey numbers. J. Graph Theory (1978), 53-64.\n\n[Sp77] Spencer, J., Asymptotic lower bounds for Ramsey functions. Discrete Math. (1977), 69-76.",
+  "reference_proof_hint": "What you wrote is **exactly Erdős’s 1981 challenge**, and it is **still open**.\n\nThe best general bounds currently known are of the form\n[\nc_1,\\frac{n^{3/2}}{\\log n}\\ \\le\\ R(C_4,K_n)\\ \\le\\ c_2\\Big(\\frac{n}{\\log n}\\Big)^2,\n]\nfor absolute constants (c_1,c_2>0). \n\nSo we do have a **subquadratic saving by a (\\log^2 n)** factor on the upper bound,\n[\nR(C_4,K_n)=O!\\left(\\frac{n^2}{\\log^2 n}\\right),\n]\noriginally credited to an unpublished result of **Szemerédi** (and later written up by Caro–Li–Rousseau–Zhang), with a refined asymptotic form\n[\nR(C_4,K_n)\\le (1+o(1))\\Big(\\frac{n}{\\log n}\\Big)^2\n]\nproved by **Liu–Li (2021)**. \n\nBut **no one knows how to improve the exponent (2) by any fixed amount**:\n\n> Erdős asked for a proof that (R(C_4,K_n) < n^{2-\\varepsilon}) for some (\\varepsilon>0); **to date, no such proof is known.** \n\nThis is also stated explicitly in Erdős–Faudree–Rousseau–Schelp (1984): Erdős “strongly believes” such an (n^{2-\\varepsilon}) bound, but it was already noted there that o"
+}

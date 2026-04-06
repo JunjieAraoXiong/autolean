@@ -1,0 +1,14 @@
+{
+  "uuid": "erdos_395",
+  "problem": [
+    "Erdős Problem #395"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 395,
+  "status": "proved",
+  "tags": [
+    "analysis"
+  ],
+  "prize": "no",
+  "formalized_on_site": false
+}

@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_531",
+  "problem": [
+    "Let F(k) be the minimal N such that if we two-colour \\{1,\\ldots,N\\} there is a set A of size k such that all subset sums ∑_{a∈ S}a (for \\emptyset≠ S⊆ A) are monochromatic. Estimate F(k)."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 531,
+  "status": "open",
+  "tags": [
+    "number theory",
+    "ramsey theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $F(k)$ be the minimal $N$ such that if we two-colour $\\{1,\\ldots,N\\}$ there is a set $A$ of size $k$ such that all subset sums $\\sum_{a\\in S}a$ (for $\\emptyset\\neq S\\subseteq A$) are monochromatic. Estimate $F(k)$.",
+  "additional_context": "The existence of F(k) was established by Sanders and Folkman, and it also follows from Rado's theorem. It is commonly known as Folkman's theorem.\n\nErdős and Spencer \\cite{ErSp89} proved thatF(k) ≥ 2^{ck^2/\\log k}for some constant c>0. Balogh, Eberhrad, Narayanan, Treglown, and Wagner \\cite{BENTW17} have improved this toF(k) ≥ 2^{2^{k-1}/k}.\n\nReferences\n\n[BENTW17] Balogh, J\\'{o}zsef and Eberhard, Sean and Narayanan, Bhargav and Treglown, Andrew and Wagner, Adam Zsolt, An improved lower bound for Folkman's theorem. Bull. Lond. Math. Soc. (2017), 745-747.\n\n[ErSp89] Erdős, Paul and Spencer, Joel, Monochromatic sumsets. J. Combin. Theory Ser. A (1989), 162-163.",
+  "reference_proof_hint": "Write\n[\n\\Sigma^*(A):=\\\\{\\sum_{a\\in S}a:\\ \\emptyset\\neq S\\subseteq A\\\\}\n]\n(the nonempty subset–sums / finite sums set). Your $F(k)$ is exactly the **two–colour Folkman number for finite sums** (a finite version of Hindman/Folkman–Rado–Sanders). Its existence is guaranteed by **Folkman’s theorem**. ([Combinatorics][1])\n\nWhat is known quantitatively is very far from sharp: the best lower bound is already *doubly exponential*, while the best upper bound is still *tower-type*.\n\n## Best known bounds (two colours)\n\n**Lower bound (Balogh–Eberhard–Narayanan–Treglown–Wagner, 2017).**\nThey proved\n[\nF(k)\\ \\ge\\ 2^{2^{k-1}/k}.\n]\nEquivalently, (\\log_2 F(k)\\ge 2^{k-1}/k), so $F(k)$ is at least (2^{2^{(1-o(1))k}}). ([arXiv][2])\n\n**Upper bound (A. Taylor, 1980; “tower-type”).**\nThe best known general upper bound is an **exponentiation tower** of height linear in $k$. One convenient way it is stated in the literature is\n[\nF(k)\\ \\le\\ 2^{2^{3^{2^{3^{\\cdot^{\\cdot^{3}}}}}}}\n\\qquad\\text{(a power tower of tota"
+}

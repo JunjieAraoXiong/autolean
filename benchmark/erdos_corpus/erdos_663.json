@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_663",
+  "problem": [
+    "Let k≥ 2 and q(n,k) denote the least prime which does not divide ∏_{1≤ i≤ k}(n+i). Is it true that, if k is fixed and n is sufficiently large, we haveq(n,k)<(1+o(1))\\log n?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 663,
+  "status": "open",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $k\\geq 2$ and $q(n,k)$ denote the least prime which does not divide $\\prod_{1\\leq i\\leq k}(n+i)$. Is it true that, if $k$ is fixed and $n$ is sufficiently large, we have\\[q(n,k)<(1+o(1))\\log n?\\]",
+  "additional_context": "A problem of Erdős and Pomerance.\n\nThe bound q(n,k)<(1+o(1))k\\log n is easy. It may be true this improved bound holds even up to k=o(\\log n).\n\nA heuristic argument in favour of this is provided by Tao in the comments.\n\nSee also [457].",
+  "reference_proof_hint": "This is **open** as far as current literature/status-tracking goes (it is listed as Erdős problem **#663**, attributed to **Erdős and Pomerance**). ([Erdős Problems][1])\n\n### What *is* known unconditionally (easy upper bound)\n\nWrite\n[\nA(n,k)=\\prod_{i=1}^k (n+i),\n\\qquad\nq(n,k)=\\min{p\\text{ prime}: p\\nmid A(n,k)}.\n]\nA standard “primorial” argument gives the **general bound**\n[\nq(n,k);<;(1+o(1)),k\\log n \\qquad (n\\to\\infty,\\ \\text{uniformly in fixed }k),\n]\nand Erdős explicitly records this as a “clearly very crude” estimate. \n\nSketch of the argument: if (q(n,k)>y), then every prime (p\\le y) divides $A(n,k)$, hence the primorial (\\prod_{p\\le y}p) divides $A(n,k)$. Taking logs,\n[\n\\sum_{p\\le y}\\log p \\le \\log A(n,k)\\le k\\log(n+k)=k\\log n+O_k(1).\n]\nBy the prime number theorem [[nomath]](Chebyshev $\\vartheta(y)\\sim y$)[[/nomath]], (\\sum_{p\\le y}\\log p=(1+o(1))y), yielding (y\\le (1+o(1))k\\log n), i.e. $q(n,k)\\le (1+o(1))k\\log n$.\n\n### The conjectured improvement to ((1+o(1))\\log n)\n\nYour inequal"
+}

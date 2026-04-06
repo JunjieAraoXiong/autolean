@@ -1,0 +1,27 @@
+{
+  "uuid": "erdos_1109",
+  "problem": [
+    "Let f(N) be the size of the largest subset A⊆ \\{1,\\ldots,N\\} such that every n∈ A+A is squarefree. Estimate f(N). In particular, is it true that f(N)≤ N^{o(1)}, or even f(N) ≤ (\\log N)^{O(1)}?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 1109,
+  "status": "open",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $f(N)$ be the size of the largest subset $A\\subseteq \\{1,\\ldots,N\\}$ such that every $n\\in A+A$ is squarefree. Estimate $f(N)$. In particular, is it true that $f(N)\\leq N^{o(1)}$, or even $f(N) \\leq (\\log N)^{O(1)}$?",
+  "additional_context": "First studied by Erdős and S\\'{a}rk\\\"{o}zy \\cite{ErSa87}, who proved\\log N \\ll f(N) \\ll N^{3/4}\\log N,and guessed the lower bound is nearer the truth. S\\'{a}rk\\\"{o}zy \\cite{Sa92c} extended this to consider the case of A+B and also looking for sumsets which are k-power-free.\n\nGyarmati \\cite{Gy01} gave an alternative proof of f(N)\\gg \\log N, and also gave new bounds for the case of A+B. Konyagin \\cite{Ko04} improved this to \\log\\log N(\\log N)^2\\ll f(N) \\ll N^{11/15+o(1)}.The infinite analogue of this problem is [1103]. (In particular upper bounds for this f(N) directly imply lower bounds for the size of the a_j considered there.)\n\nReferences\n\n[ErSa87] Erdős, P. and S\\'ark\\\"ozy, A., On divisibility properties of integers of the form {a+a'}. Acta Math. Hungar. (1987), 117--122.\n\n[Gy01] Gyarmati, Katalin, On divisibility properties of integers of the form {ab+1}. Period. Math. Hungar. (2001), 71--79.\n\n[Ko04] Konyagin, S. V., Problems of the set of square-free numbers. Izv. Ross. Akad. Nauk Ser. Mat. (2004), 63--90.\n\n[Sa92c] S\\'ark\\\"ozy, G. N., On a problem of {P}. {E}rd\\H{o}s. Acta Math. Hungar. (1992), 271--282.",
+  "reference_proof_hint": "Write $f(N)$ for the maximum size of (A\\subseteq{1,\\dots,N}) with the property that\n[\na+a'\\ \\text{is squarefree for all }a,a'\\in A\n]\n[[nomath]](i.e. every element of $A+A$ is squarefree, including the “diagonal” sums $2a$)[[/nomath]].\n\n### Quick necessary structure (easy, but very restrictive)\n\nBecause (2a\\in A+A) must be squarefree, every (a\\in A) must be **odd** and **squarefree** [[nomath]](if $a$ were even then $4\\mid 2a$, and if $p^2\\mid a$ then $p^2\\mid 2a$)[[/nomath]].\nAlso, since sums of two odd numbers are even, (a+a') being squarefree forces (a+a'\\not\\equiv 0\\pmod 4), so (a+a'\\equiv 2\\pmod 4). That implies **all elements of $A$ lie in the same odd residue class mod $4$** [[nomath]](all $\\equiv 1\\pmod 4$ or all $\\equiv 3\\pmod 4$)[[/nomath]].\n\nThese constraints are nowhere near enough to determine $f(N)$, but they illustrate why the problem is highly arithmetic.\n\n### Best known quantitative bounds (as of 2025)\n\nThis problem is recorded as an Erdős problem (#1109), and the sharp",
+  "expert_comments": [
+    {
+      "author": "",
+      "text": "I computed $f(N)$ for $1 \\le N \\le 250$.\n\nMethod: The vertices are odd squarefree integers $a \\le N$ (even or non-squarefree $a$ fail since $2a$ is not squarefree), with an edge between distinct $a,b$ if $a+b$ is not squarefree. Then $f(N)$ is the maximum independent set size. I used branch-and-bound with bitsets, cross-checked against brute-force for small $N$.\n\n$$\\begin{aligned}\n  1   &\\le N \\le 4      &:\\qquad f(N) &= 1\\\\\n  5   &\\le N \\le 18    &:\\qquad f(N) &= 2\\\\\n 19  &\\le N \\le 22    &:\\qquad f(N) &= 3\\\\\n 23  &\\le N \\le 36    &:\\qquad f(N) &= 4\\\\\n 37  &\\le N \\le 40    &:\\qquad f(N) &= 5\\\\\n 41  &\\le N \\le 58    &:\\qquad f(N) &= 6\\\\\n 59  &\\le N \\le 86    &:\\qquad f(N) &= 7\\\\\n 87  &\\le N \\le 100  &:\\qquad f(N) &= 8\\\\\n101 &\\le N \\le 104  &:\\qquad f(N) &= 9\\\\\n105 &\\le N \\le 112  &:\\qquad f(N) &= 10\\\\\n113 &\\le N \\le 130  &:\\qquad f(N) &= 11\\\\\n131 &\\le N \\le 150  &:\\qquad f(N) &= 12\\\\\n151 &\\le N \\le 158  &:\\qquad f(N) &= 13\\\\\n159 &\\le N \\le 166  &:\\qquad f(N) &= 14\\\\\n167 &\\le N \\le 194 "
+    },
+    {
+      "author": "AlexisOlson",
+      "text": "This latter sequence looks suitable for submission to the OEIS to me."
+    }
+  ]
+}

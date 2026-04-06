@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_131",
+  "problem": [
+    "Let F(N) be the maximal size of A⊆\\{1,\\ldots,N\\} such that no a∈ A divides the sum of any distinct elements of A\\backslash\\{a\\}. Estimate F(N). In particular, is it true thatF(N) > N^{1/2-o(1)}?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 131,
+  "status": "open",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $F(N)$ be the maximal size of $A\\subseteq\\{1,\\ldots,N\\}$ such that no $a\\in A$ divides the sum of any distinct elements of $A\\backslash\\{a\\}$. Estimate $F(N)$. In particular, is it true that\\[F(N) > N^{1/2-o(1)}?\\]",
+  "additional_context": "This was studied by Erdős, Lev, Rauzy, S\\'{a}ndor, and S\\'{a}rk\\\"{o}zy \\cite{ELRSS99}, where they call such a property 'non-dividing', and prove the explicit boundF(N)<3N^{1/2}+1.In \\cite{Er97b} Erdős credits Csaba with a construction that proves F(N) \\gg N^{1/5}. Such a construction was also given in \\cite{ELRSS99}, where it is linked to the problem of non-averaging sets (see [186]).\n\nIndeed, every such set is non-averaging, and hence the result of Pham and Zakharov \\cite{PhZa24} impliesF(N) ≤ N^{1/4+o(1)}.This shows the answer to the original question is no, but the general question of the correct growth of F(N) remains open.\n\nIn \\cite{Er75b} Erdős writes that he originally thought F(N) <(\\log N)^{O(1)}, but that Straus proved thatF(N) > \\exp((\\sqrt{\\tfrac{2}{\\log 2}}+o(1))\\sqrt{\\log N}).See also [13].\n\nThis is discussed in problem C16 of Guy's collection \\cite{Gu04}.\n\nReferences\n\n[ELRSS99] Erdős, P. and Lev, V. and Rauzy, G. and S\\'andor, C. and\nS\\'ark\\\"ozy, A., Greedy algorithm, arithmetic progressions, subset sums and\ndivisibility. Discrete Math. (1999), 119--135.\n\n[Er75b] Erdős, Paul, Problems and results in combinatorial number theory. Journ\\'{e}es Arithm\\'{e}tiques de Bordeaux (Conf., Univ. Bordeaux, Bordeaux, 1974) (1975), 295-310.\n\n[Er97b] Erdős, Paul, Some old and new problems in various branches of combinatorics. Discrete Math. (1997), 227-231.\n\n[Gu04] Guy, Richard K., Unsolved problems in number theory.  (2004), xviii+437.\n\n[PhZa24] Pham, H. T. and Zakharov, D., Sharp bound for the Erdős-Straus non-averaging set problem. arXiv:2410.14624 (2024).",
+  "reference_proof_hint": "People usually call such a set **non‑dividing**.\n\n### What is known now\n\nWrite $F(N)$ for the largest (|A|\\subseteq{1,\\dots,N}) with the property that for every (a\\in A), **no sum of distinct elements from (A\\setminus\\\\{a\\\\})** is divisible by $a$.\n\n#### A very strong upper bound [[nomath]](so the $\\sqrt N$ guess is false)[[/nomath]]\n\nIf (a\\in A) were the average of some other distinct elements (x_1,\\dots,x_t\\in A\\setminus\\\\{a\\\\}) [[nomath]](with $t\\ge 2$)[[/nomath]], then\n\n$$\nx_1+\\cdots+x_t = ta,\n$$\n\nso (a\\mid(x_1+\\cdots+x_t)), which is forbidden.\nSo **every non‑dividing set is automatically non‑averaging**.\n\nPham and Zakharov (2024; published 2025) proved that the largest non‑averaging subset of $[N]$ has size\n$$\nN^{1/4+o(1)}.\n$$\nTherefore,\n$$\nF(N)\\ \\le\\ N^{1/4+o(1)}.\n$$\nSo the proposed lower bound\n$$\nF(N) > N^{1/2-o(1)}\n$$\nis **not true**. ([arXiv][1])\n\n#### Lower bound (polynomial constructions exist)\n\nThere are explicit constructions (credited by Erdős to Csaba, and also given in "
+}

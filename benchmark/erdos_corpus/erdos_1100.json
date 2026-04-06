@@ -1,0 +1,28 @@
+{
+  "uuid": "erdos_1100",
+  "problem": [
+    "If 1=d_1<\\cdots<d_{\\tau(n)}=n are the divisors of n, then let \\tau_\\perp(n) count the number of i for which (d_i,d_{i+1})=1.\n\nIs it true that \\tau_\\perp(n)/\\omega(n)→ ∞ for almost all n? Is it true that\\tau_\\perp(n)< \\exp((\\log n)^{o(1)})for all n?\n\nLetg(k) = \\max_{\\omega(n)=k}\\tau_\\perp(n),where \\omega(n) counts the number of distinct prime divisors of n, and n is restricted to squarefree integers. Determine the growth of g(k)."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 1100,
+  "status": "open",
+  "tags": [
+    "number theory",
+    "divisors"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "If $1=d_1<\\cdots<d_{\\tau(n)}=n$ are the divisors of $n$, then let $\\tau_\\perp(n)$ count the number of $i$ for which $(d_i,d_{i+1})=1$.\n\nIs it true that $\\tau_\\perp(n)/\\omega(n)\\to \\infty$ for almost all $n$? Is it true that\\[\\tau_\\perp(n)< \\exp((\\log n)^{o(1)})\\]for all $n$?\n\nLet\\[g(k) = \\max_{\\omega(n)=k}\\tau_\\perp(n),\\]where $\\omega(n)$ counts the number of distinct prime divisors of $n$, and $n$ is restricted to squarefree integers. Determine the growth of $g(k)$.",
+  "additional_context": "The function \\tau_\\perp(n) was considered by Erdős and Hall \\cite{ErHa78}. It is trivial that \\tau_\\perp(n)≥ \\omega(n) (with equality for infinitely many n). Erdős and Hall prove, for all \\epsilon>0 and sufficiently large x,\\max_{n<x} \\tau_\\perp(n) > \\exp((\\log\\log x)^{2-\\epsilon}).Erdős and Simonovits (see \\cite{Er81h}) proved(2^{1/2}+o(1))^k < g(k) < (2-c)^kfor some constant c>0.\n\nReferences\n\n[Er81h] Erdős, P., Some problems and results on additive and multiplicative\nnumber theory. Analytic number theory (Philadelphia, Pa., 1980) (1981), 171-182.\n\n[ErHa78] Erdős, P. and Hall, R. R., On some unconventional problems on the divisors of integers. J. Austral. Math. Soc. Ser. A (1978), 479--485.",
+  "reference_proof_hint": "Let me write (f(n):=\\tau_\\perp(n)); this is exactly the function studied by Erdős–Hall in 1978. ([users.renyi.hu][1])\n\n## Basic reformulation (squarefree case)\n\nIf (n=\\prod_{j=1}^k p_j) is squarefree, then every divisor corresponds to a subset (A\\subseteq{1,\\dots,k}) via\n[\nd_A=\\prod_{j\\in A}p_j,\\qquad \\log d_A=\\sum_{j\\in A}\\log p_j.\n]\nOrdering divisors increasingly is the same as ordering these subset sums (\\sum_{j\\in A}x_j) where (x_j:=\\log p_j). For squarefree $n$,\n[\n(d_A,d_B)=1\\iff A\\cap B=\\varnothing.\n]\nSo $g(k)$ is equivalent to the following additive/combinatorial problem (stated by Erdős in 1981): choose (0<x_1<\\cdots<x_k) with all (2^k) subset sums distinct, order subsets by increasing subset sum, and maximize the number of adjacent pairs $(A_i,A_{i+1})$ with (A_i\\cap A_{i+1}=\\varnothing). \n\n## 1) Does (\\tau_\\perp(n)/\\omega(n)\\to\\infty) for almost all $n$?\n\nThis is **open** (it is essentially Erdős–Hall’s question). Erdős–Hall note the trivial lower bound\n[\n\\tau_\\perp(n)\\ge \\om",
+  "expert_comments": [
+    {
+      "author": "",
+      "text": "Related but not identical OEIS sequence:\n\nA325864: Number of subsets of {1..n} of which every subset has a different sum.\n      \n      \n      \n(The site has been updated to address this comment.)"
+    },
+    {
+      "author": "AlexisOlson",
+      "text": "A few remarks, perhaps to whet some appetite.\n1) Of course $\\tau_\\perp(n) < \\tau(n)$, and since $\\tau(n) < \\exp\\left(\\frac{c \\log n}{\\log \\log n}\\right)$, this is an upper bound for $\\tau_\\perp(n)$ as well. As far as I know it is not even known whether $\\tau_\\perp(n) = \\exp\\left(o(\\frac{\\log n}{\\log \\log n})\\right)$ holds, which feels at least plausibly doable.\n\n2) The equality $\\tau_\\perp(n) = \\omega(n)$ holds whenever $n = p_1p_2 \\cdots p_k$ with $p_j > p_1p_2 \\cdots p_{j-1}$ for all $j$ with $2 \\le j \\le k$. Indeed, this latter equality makes it so that all divisors $d$ of $n$ with $p_{j-1} \\le d < p_j$ are divisible by $p_{j-1}$.\n\n3) The proofs of the Erdős-Simonovits bounds on $g(k)$ do not appear in [Er81h]. Perhaps it would be worthwhile to recreate them. They do state that these bounds are based on the following claim: let $A = \\{a_1, a_2, \\ldots, a_k\\}$ be a set for which all subset sums are distinct. Order the subsets $A_1, A_2, \\ldots, A_{2^k}$ of $A$ such that $\\sum_{a \\in "
+    }
+  ]
+}

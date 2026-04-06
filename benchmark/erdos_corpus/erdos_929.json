@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_929",
+  "problem": [
+    "Let k≥ 2 be large and let S(k) be the minimal x such that there is a positive density set of n wheren+1,n+2,\\ldots,n+kare all divisible by primes ≤ x.\n\nEstimate S(k) - in particular, is it true that S(k)≥ k^{1-o(1)}?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 929,
+  "status": "open",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $k\\geq 2$ be large and let $S(k)$ be the minimal $x$ such that there is a positive density set of $n$ where\\[n+1,n+2,\\ldots,n+k\\]are all divisible by primes $\\leq x$.\n\nEstimate $S(k)$ - in particular, is it true that $S(k)\\geq k^{1-o(1)}$?",
+  "additional_context": "It follows from Rosser's sieve that S(k)> k^{1/2-o(1)}.\n\nIt is trivial that S(k)≤ k+1 since, for example, one can take n\\equiv 1\\pmod{(k+1)!}. The best bound on large gaps between primes due to Ford, Green, Konyagin, Maynard, and Tao \\cite{FGKMT18} (see [4]) impliesS(k) \\ll k (\\log\\log\\log k)/(\\log\\log k\\log\\log\\log\\log k).\n\nReferences\n\n[FGKMT18] Ford, Kevin and Green, Ben and Konyagin, Sergei and Maynard, James and Tao, Terence, Long gaps between primes. J. Amer. Math. Soc. (2018), 65-105.",
+  "reference_proof_hint": "I’m going to read “$n+i$ is divisible by primes (\\le x)” as: **each** (n+1,\\dots,n+k) has **at least one** prime divisor (\\le x) [[nomath]](equivalently, none of them is coprime to the primorial $\\prod_{p\\le x}p$)[[/nomath]]. Under that interpretation, your $S(k)$ is essentially the inverse of the **primorial Jacobsthal function**.\n\n## 1) Reformulation via the primorial and Jacobsthal’s function\n\nLet\n[\nP(x):=\\prod_{p\\le x} p\n]\n[[nomath]](the primorial up to $x$)[[/nomath]]. Then\n[\n(\\exists,p\\le x: p\\mid (n+i))\\quad\\Longleftrightarrow\\quad \\gcd(n+i,,P(x))>1.\n]\nSo your condition is\n[\n\\gcd(n+1,P(x))>1,;\\gcd(n+2,P(x))>1,;\\dots,;\\gcd(n+k,P(x))>1.\n]\n\nCrucially, this depends only on (n \\bmod P(x)). Hence:\n\n* either there is **no** such $n$, giving density $0$;\n* or there is at least one residue class (n\\equiv a\\pmod{P(x)}) that works, giving a **positive density** set [[nomath]](density $\\ge 1/P(x)$)[[/nomath]].\n\nSo “positive density” is equivalent to “there exists at least one solution resid"
+}

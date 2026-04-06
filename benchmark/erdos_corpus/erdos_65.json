@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_65",
+  "problem": [
+    "Let G be a graph with n vertices and kn edges, and a_1<a_2<\\cdots  be the lengths of cycles in G. Is it true that∑(1)/(a_i)\\gg \\log k?Is the sum ∑(1)/(a_i) minimised when G is a complete bipartite graph?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 65,
+  "status": "open",
+  "tags": [
+    "graph theory",
+    "cycles"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $G$ be a graph with $n$ vertices and $kn$ edges, and $a_1<a_2<\\cdots $ be the lengths of cycles in $G$. Is it true that\\[\\sum\\frac{1}{a_i}\\gg \\log k?\\]Is the sum $\\sum\\frac{1}{a_i}$ minimised when $G$ is a complete bipartite graph?",
+  "additional_context": "A problem of Erdős and Hajnal.\n\nGy\\'{a}rf\\'{a}s, Koml\\'{o}s, and Szemer\\'{e}di \\cite{GKS84} have proved that this sum is \\gg \\log k, so that only the second question remains. Liu and Montgomery \\cite{LiMo20} have proved the asymptotically sharp lower bound of ≥ (\\tfrac{1}{2}-o(1))\\log k.\n\nSee also the entry in the graphs problem collection.\n\nSee also [57].\n\nReferences\n\n[GKS84] Gy\\'{a}rf\\'{a}s, A. and Koml\\'{o}s, J. and Szemer\\'{e}di, E., On the distribution of cycle lengths in graphs. J. Graph Theory (1984), 441-462.\n\n[LiMo20] Liu, Hong and Montgomery, Richard, A solution to Erdős and Hajnal's odd cycle problem. arXiv:2010.15802 (2020).",
+  "reference_proof_hint": "Yes.\n\nWrite (\\mathcal C(G)={a_1<a_2<\\cdots}) for the *set* of cycle lengths in $G$, and let (m=|E(G)|=kn). Then the average degree is\n[\nd(G)=\\frac{2m}{n}=2k.\n]\n\n### Lower bound (\\sum 1/a_i \\gg \\log k)\n\nGyárfás–Komlós–Szemerédi (1984) proved that for a graph of average degree $d$,\n[\n\\sum_{\\ell\\in \\mathcal C(G)}\\frac1\\ell = \\Omega(\\log d),\n]\nso in your notation (\\sum_i \\frac1{a_i}\\gg \\log k) since (d=2k). \n\nMoreover, Liu–Montgomery proved the asymptotically sharp form: if $G$ has average degree (d\\to\\infty), then\n[\n\\sum_{\\ell\\in \\mathcal C(G)}\\frac1\\ell \\ge\\Bigl(\\tfrac12-o_d(1)\\Bigr)\\log d.\n]\n\n\nTranslating (d=2k), this gives\n[\n\\sum_i\\frac1{a_i}\\ge\\Bigl(\\tfrac12-o_k(1)\\Bigr)\\log(2k)\n=\\Bigl(\\tfrac12-o_k(1)\\Bigr)\\log k + O(1),\n]\nso not only is (\\sum 1/a_i\\gg \\log k) true, but the best possible leading constant is $1/2$ [[nomath]](as $k\\to\\infty$)[[/nomath]].\n\n### Why the constant $1/2$ is best possible\n\nFor the complete balanced bipartite graph (K_{t,t}) [[nomath]](average degree $d=t$)[[/n"
+}

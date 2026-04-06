@@ -1,0 +1,14 @@
+{
+  "uuid": "erdos_443",
+  "problem": [
+    "Erdős Problem #443"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 443,
+  "status": "proved (Lean)",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false
+}

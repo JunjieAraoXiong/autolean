@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_706",
+  "problem": [
+    "Let L(r) be such that if G is a graph formed by taking a finite set of points P in ℝ^2 and some set A⊂ (0,∞) of size r, where the vertex set is P and there is an edge between two points if and only if their distance is a member of A, then \\chi(G)≤ L(r).\n\nEstimate L(r). In particular, is it true that L(r)≤ r^{O(1)}?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 706,
+  "status": "open",
+  "tags": [
+    "graph theory",
+    "chromatic number"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $L(r)$ be such that if $G$ is a graph formed by taking a finite set of points $P$ in $\\mathbb{R}^2$ and some set $A\\subset (0,\\infty)$ of size $r$, where the vertex set is $P$ and there is an edge between two points if and only if their distance is a member of $A$, then $\\chi(G)\\leq L(r)$.\n\nEstimate $L(r)$. In particular, is it true that $L(r)\\leq r^{O(1)}$?",
+  "additional_context": "The case r=1 is the Hadwiger-Nelson problem, for which it is known that 5≤ L(1)≤ 7.\n\nSee also [508], [704], and [705].",
+  "reference_proof_hint": "Write (G_A(P)) for the finite graph on (P\\subset\\mathbb R^2) with an edge $xy$ iff (|x-y|\\in A), where (|A|=r). Your $L(r)$ is exactly the “$r$-distance chromatic number of the plane”\n[\nL(r)=\\bar\\chi(\\mathbb R^2;r):=\\max_{|A|=r}\\chi(\\mathbb R^2,A),\n]\nwhere (\\chi(\\mathbb R^2,A)) is the chromatic number of the infinite distance graph on all of (\\mathbb R^2) with forbidden distances $A$. [[nomath]](By the de Bruijn–Erdős theorem, $\\chi(\\mathbb R^2,A)$ is the supremum of chromatic numbers of its finite subgraphs, so this is the same extremal quantity as in your definition.)[[/nomath]] ([arXiv][1])\n\n## General bounds (best known asymptotics)\n\n### Upper bound: exponential (7^r)\n\nThe standard $7$-coloring of the plane avoiding a single forbidden distance (via a hexagon tiling) gives (\\chi(\\mathbb R^2,{d})\\le 7) for every (d>0). ([arXiv][2])\nFor (A={d_1,\\dots,d_r}), take $r$ such $7$-colorings, scaled appropriately for each (d_i), and color each point by the $r$-tuple of its colors. This yield"
+}

@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_130",
+  "problem": [
+    "Let A⊂ℝ^2 be an infinite set which contains no three points on a line and no four points on a circle. Consider the graph with vertices the points in A, where two vertices are joined by an edge if and only if they are an integer distance apart.\n\nHow large can the chromatic number and clique number of this graph be? In particular, can the chromatic number be infinite?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 130,
+  "status": "open",
+  "tags": [
+    "graph theory",
+    "chromatic number"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $A\\subset\\mathbb{R}^2$ be an infinite set which contains no three points on a line and no four points on a circle. Consider the graph with vertices the points in $A$, where two vertices are joined by an edge if and only if they are an integer distance apart.\n\nHow large can the chromatic number and clique number of this graph be? In particular, can the chromatic number be infinite?",
+  "additional_context": "Asked by Andr\\'{a}sfai and Erdős. Erdős \\cite{Er97b} also asked where such a graph could contain an infinite complete graph, but this is impossible by an earlier result of Anning and Erdős \\cite{AnEr45}.\n\nSee also [213].\n\nReferences\n\n[AnEr45] Anning, Norman H. and Erdős, Paul, Integral distances. Bull. Amer. Math. Soc. (1945), 598-600.\n\n[Er97b] Erdős, Paul, Some old and new problems in various branches of combinatorics. Discrete Math. (1997), 227-231.",
+  "reference_proof_hint": "Let $G(A)$ be your graph.\n\n## Clique number (\\omega(G(A)))\n\nA clique in $G(A)$ is exactly a set of points whose **pairwise distances are all integers** (an “integral point set”).\n\n* **It cannot be infinite.** A classical theorem of Erdős–Anning (stated in modern form in later work) says that any set of points in the Euclidean plane with all pairwise distances integers is **either finite or collinear**. ([DROPS][1])\n  Since your $A$ has **no three collinear**, every clique must be **finite**.\n\n* **It can be at least 7.** Kreisel and Kurz exhibited **7 points** in the plane with\n\n  * no three on a line,\n  * no four on a circle,\n  * and all pairwise distances integers. ([arXiv][2])\n    So (\\omega(G(A)) \\ge 7) is achievable (and therefore (\\chi(G(A))\\ge 7) is achievable too).\n\n* **Whether it can be (\\ge 8) is open.** A 2021 survey-style paper explicitly says that **no example with 8 points in general position** (no three collinear and no four concyclic) is known. ([arXiv][3])\n\nSo, with you"
+}

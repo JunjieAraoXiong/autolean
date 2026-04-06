@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_575",
+  "problem": [
+    "If \\mathcal{F} is a finite set of finite graphs then \\mathrm{ex}(n;\\mathcal{F}) is the maximum number of edges a graph on n vertices can have without containing any subgraphs from \\mathcal{F}. Note that it is trivial that \\mathrm{ex}(n;\\mathcal{F})≤ \\mathrm{ex}(n;G) for every G∈\\mathcal{F}.\n\nIs it true that, for every \\mathcal{F}, if there is a bipartite graph in \\mathcal{F} then there exists some bipartite G∈\\mathcal{F} such that\\mathrm{ex}(n;G)\\ll_{\\mathcal{F}}\\mathrm{ex}(n;\\mathcal{F})?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 575,
+  "status": "open",
+  "tags": [
+    "graph theory",
+    "turan number"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "If $\\mathcal{F}$ is a finite set of finite graphs then $\\mathrm{ex}(n;\\mathcal{F})$ is the maximum number of edges a graph on $n$ vertices can have without containing any subgraphs from $\\mathcal{F}$. Note that it is trivial that $\\mathrm{ex}(n;\\mathcal{F})\\leq \\mathrm{ex}(n;G)$ for every $G\\in\\mathcal{F}$.\n\nIs it true that, for every $\\mathcal{F}$, if there is a bipartite graph in $\\mathcal{F}$ then there exists some bipartite $G\\in\\mathcal{F}$ such that\\[\\mathrm{ex}(n;G)\\ll_{\\mathcal{F}}\\mathrm{ex}(n;\\mathcal{F})?\\]",
+  "additional_context": "A problem of Erdős and Simonovits.\n\nSee also [180] and the entry in the graphs problem collection.",
+  "reference_proof_hint": "No.\n\nA simple counterexample uses only **bipartite forests**. Let\n\n* (H_1 = K_{1,2}) [[nomath]](a 2-edge star, i.e. a path $P_3$)[[/nomath]], and\n* (H_2 = 2K_2) (a matching of two disjoint edges), and set (\\mathcal F={H_1,H_2}).\n\n### Step 1: (\\mathrm{ex}(n;\\mathcal F)=1)\n\nAny graph with at least **two** edges contains either\n\n* two edges sharing a vertex, which gives a copy of (K_{1,2}), or\n* two vertex-disjoint edges, which gives a copy of (2K_2).\n\nSo an (\\mathcal F)-free graph can have **at most one edge**, hence\n[\n\\mathrm{ex}(n;\\mathcal F)=1 \\qquad (n\\ge 2).\n]\nThis exact observation appears explicitly in Wigderson’s note. \n\n### Step 2: each bipartite member has (\\Theta(n)) extremal number\n\n* For (H_1=K_{1,2}): an (H_1)-free graph has maximum degree (\\le 1), so it is a matching, hence\n  [\n  \\mathrm{ex}(n;K_{1,2})=\\left\\lfloor \\frac n2\\right\\rfloor = \\Theta(n).\n  ]\n* For (H_2=2K_2): being (2K_2)-free means the matching number is (\\le 1); the star (K_{1,n-1}) is (2K_2)-free and has $n-"
+}

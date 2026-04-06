@@ -1,0 +1,14 @@
+{
+  "uuid": "erdos_154",
+  "problem": [
+    "Erdős Problem #154"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 154,
+  "status": "proved (Lean)",
+  "tags": [
+    "sidon sets"
+  ],
+  "prize": "no",
+  "formalized_on_site": false
+}

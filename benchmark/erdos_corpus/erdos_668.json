@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_668",
+  "problem": [
+    "Is it true that the number of incongruent sets of n points in ℝ^2 which maximise the number of unit distances tends to infinity as n→∞? Is it always >1 for n>3?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 668,
+  "status": "open",
+  "tags": [
+    "geometry",
+    "distances"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Is it true that the number of incongruent sets of $n$ points in $\\mathbb{R}^2$ which maximise the number of unit distances tends to infinity as $n\\to\\infty$? Is it always $>1$ for $n>3$?",
+  "additional_context": "In fact this is =1 also for n=4, the unique example given by two equilateral triangles joined by an edge.\n\nComputational evidence of Engel, Hammond-Lee, Su, Varga, and Zs\\'{a}mboki \\cite{EHSVZ25} and Alexeev, Mixon, and Parshall \\cite{AMP25} suggests that this count is =1 for various other 5≤ n≤ 21 (although these calculations were checking only up to graph isomorphism, rather than congruency).\n\nThe actual maximal number of unit distances is the subject of [90].\n\nReferences\n\n[AMP25] B. Alexeev, D. Mixon, and H. Parshall, The Erdős unit distance problem for small point sets. arXiv:2412.11914 (2025).\n\n[EHSVZ25] P. Engel, O. Hammond-Lee, Y. Su, D. Varga, and P. Zs\\'{a}mboki, Diverse beam search to find densest-known planar unit distance graphs. arXiv:2406.15317 (2025).",
+  "reference_proof_hint": "Let $u(n)$ be the maximum possible number of unit distances determined by an $n$-point set in (\\mathbb R^2), and let\n[\ng(n)=|\\\\{\\text{congruence classes of }n\\text{-point sets achieving }u(n)\\\\}|.\n]\n\n### Does (g(n)\\to\\infty) as (n\\to\\infty)?\n\nThis is **open** (it’s explicitly posed as an Erdős problem, #668). ([Erdős Problems][1])\n\nA big reason it’s hard is that even the underlying extremal quantity $u(n)$ is not known in general, so proving *anything* definitive about the *set of maximisers* is currently out of reach in full generality.\n\nWhat *is* known computationally: Alexeev–Mixon–Parshall (arXiv v2, Feb 12, 2025) determine the exact value of $u(n)$ for all (n\\le 21) and enumerate (up to graph isomorphism) all **densest unit-distance graphs** in these cases. ([arXiv][2])\nThose enumerations show that for some (n\\le 21) there is only one densest unit-distance graph up to isomorphism, while for other $n$ there are several [[nomath]](e.g. multiple isomorphism types already at $n=6$, an"
+}

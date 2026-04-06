@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_265",
+  "problem": [
+    "How fast can a_n→ ∞ grow if∑(1)/(a_n)\\quad\\textrm{and}\\quad∑(1)/(a_n-1)are both rational?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 265,
+  "status": "open",
+  "tags": [
+    "irrationality"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "How fast can $a_n\\to \\infty$ grow if\\[\\sum\\frac{1}{a_n}\\quad\\textrm{and}\\quad\\sum\\frac{1}{a_n-1}\\]are both rational?",
+  "additional_context": "Cantor observed that a_n=\\binom{n}{2} is such a sequence. If we replace -1 by a different constant then higher degree polynomials can be used - for example if we consider ∑_{n≥ 2}(1)/(a_n) and ∑_{n≥ 2}(1)/(a_n-12) then a_n=n^3+6n^2+5n is an example of both series being rational.\n\nErdős believed that a_n^{1/n}→ ∞ is possible, but a_n^{1/2^n}→ 1 is necessary.\n\nThis has been almost completely solved by Kova\\v{c} and Tao \\cite{KoTa24}, who prove that such a sequence can grow doubly exponentially. More precisely, there exists such a sequence such that a_n^{1/\\beta^n}→ ∞ for some \\beta >1.\n\nIt remains open whether one can achieve\\limsup a_n^{1/2^n}>1.A folklore result states that ∑ (1)/(a_n) is irrational whenever \\lim a_n^{1/2^n}=∞, and hence such a sequence cannot grow faster than doubly exponentially - the remaining question is the precise exponent possible.\n\nReferences\n\n[KoTa24] Kova\\vC, V. and Tao T., On several irrationality problems for Ahmes series. arXiv:2406.17593 (2024).",
+  "reference_proof_hint": "This is Erdős’s “simultaneous rational Ahmes series” problem (#265). Two key points are known now:\n\n### 1) It can grow at least polynomially (explicit example)\n\nDavid Cantor observed that taking\n[\na_n=\\binom{n}{2}=\\frac{n(n-1)}2 \\qquad (n\\ge 3)\n]\nworks. ([Erdős Problems][1])\n\nIndeed,\n[\n\\sum_{n=3}^\\infty \\frac1{a_n}\n=\\sum_{n=3}^\\infty \\frac{2}{n(n-1)}\n=2\\sum_{n=3}^\\infty\\Bigl(\\frac1{n-1}-\\frac1n\\Bigr)\n=2\\cdot\\frac12=1,\n]\nand\n[\n\\sum_{n=3}^\\infty \\frac1{a_n-1}\n=\\sum_{n=3}^\\infty \\frac{1}{\\frac{n(n-1)}2-1}\n=\\sum_{n=3}^\\infty \\frac{2}{n(n-1)-2}\n=\\sum_{n=3}^\\infty \\frac{2}{(n-2)(n+1)}.\n]\nUsing partial fractions\n[\n\\frac{2}{(n-2)(n+1)}=\\frac{2}{3}\\Bigl(\\frac1{n-2}-\\frac1{n+1}\\Bigr),\n]\nso the series telescopes to\n[\n\\sum_{n=3}^\\infty \\frac1{a_n-1}\n=\\frac{2}{3}\\Bigl(1+\\frac12+\\frac13\\Bigr)=\\frac{11}{9}.\n]\n\nSo (a_n) can grow as slowly as (O(n^2)) and still satisfy the condition.\n\n### 2) It cannot grow faster than “doubly exponential” (upper bound)\n\nAlready from the single requirement that (\\sum 1/"
+}

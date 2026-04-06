@@ -1,0 +1,16 @@
+{
+  "uuid": "erdos_337",
+  "problem": [
+    "Erdős Problem #337"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 337,
+  "status": "disproved (Lean)",
+  "tags": [
+    "number theory",
+    "additive combinatorics",
+    "additive basis"
+  ],
+  "prize": "no",
+  "formalized_on_site": false
+}

@@ -1,0 +1,16 @@
+{
+  "uuid": "erdos_1177",
+  "problem": [
+    "Erdős Problem #1177"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 1177,
+  "status": "open",
+  "tags": [
+    "set theory",
+    "chromatic number",
+    "hypergraphs"
+  ],
+  "prize": "no",
+  "formalized_on_site": false
+}

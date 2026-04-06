@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_62",
+  "problem": [
+    "If G_1,G_2 are two graphs with chromatic number \\aleph_1 then must there exist a graph G whose chromatic number is 4 (or even \\aleph_0) which is a subgraph of both G_1 and G_2?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 62,
+  "status": "open",
+  "tags": [
+    "graph theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "If $G_1,G_2$ are two graphs with chromatic number $\\aleph_1$ then must there exist a graph $G$ whose chromatic number is $4$ (or even $\\aleph_0$) which is a subgraph of both $G_1$ and $G_2$?",
+  "additional_context": "Erdős also asked \\cite{Er87} about finding a common subgraph H (with chromatic number either 4 or \\aleph_0) in any finite collection of graphs with chromatic number \\aleph_1.\n\nEvery graph with chromatic number \\aleph_1 contains all sufficiently large odd cycles (which have chromatic number 3), see [594]. This was proved by Erdős, Hajnal, and Shelah \\cite{EHS74}. Erdős wrote \\cite{Er87} that 'probably' every graph with chromatic number \\aleph_1 contains as subgraphs all graphs with chromatic number 4 with sufficiently large girth.\n\nReferences\n\n[EHS74] Erdős, P. and Hajnal, A. and Shelah, S., On some general properties of chromatic numbers. Topics in topology (Proc. Colloq., Keszthely, 1972) (1974), 243-255.\n\n[Er87] Erdős, P., Some problems on finite and infinite graphs. Logic and combinatorics (Arcata, Calif., 1985) (1987), 223-228.",
+  "reference_proof_hint": "This is **open** (in ZFC), and it’s a well-known Erdős–Hajnal problem.\n\nMore precisely, Erdős asked whether **every two** graphs (G_1,G_2) with (\\chi(G_1)=\\chi(G_2)=\\aleph_1) must contain a **common** subgraph [[nomath]](i.e., a graph $H$ that embeds as a subgraph into each of $G_1$ and $G_2$)[[/nomath]] with\n\n* (\\chi(H)=4), or even\n* (\\chi(H)=\\aleph_0).\n\nAs of the problem lists/surveys, this remains unresolved. ([Erdős Problems][1])\n\n## What *is* known\n\n### A common 3-chromatic subgraph always exists\n\nYes for (\\chi=3): Erdős–Hajnal–Shelah proved (and Thomassen independently) that **every graph of uncountable chromatic number** contains **all sufficiently long odd cycles**. Consequently, if (\\chi(G_1)=\\chi(G_2)=\\aleph_1), then there is some odd $k$ large enough so that **both** contain (C_k), giving a common 3-chromatic subgraph. \n\n### Every uncountably chromatic graph contains all finite bipartite graphs\n\nErdős and Hajnal also determined that the finite graphs that must occur (as subg"
+}

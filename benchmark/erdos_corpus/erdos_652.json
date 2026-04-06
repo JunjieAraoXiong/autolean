@@ -1,0 +1,44 @@
+{
+  "uuid": "erdos_652",
+  "problem": [
+    "Let x_1,\\ldots,x_n∈ ℝ^2 and let R(x_i)=\\#\\{ | x_j-x_i| : j≠ i\\}, where the points are ordered such thatR(x_1)≤ \\cdots ≤ R(x_n).Let \\alpha_k be minimal such that, for all large enough n, there exists a set of n points with R(x_k)<\\alpha_kn^{1/2}. Is it true that \\alpha_k→ ∞ as k→ ∞?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 652,
+  "status": "proved",
+  "tags": [
+    "geometry",
+    "distances"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $x_1,\\ldots,x_n\\in \\mathbb{R}^2$ and let $R(x_i)=\\#\\{ \\lvert x_j-x_i\\rvert : j\\neq i\\}$, where the points are ordered such that\\[R(x_1)\\leq \\cdots \\leq R(x_n).\\]Let $\\alpha_k$ be minimal such that, for all large enough $n$, there exists a set of $n$ points with $R(x_k)<\\alpha_kn^{1/2}$. Is it true that $\\alpha_k\\to \\infty$ as $k\\to \\infty$?",
+  "additional_context": "It is trivial that R(x_1)=1 is possible, and that R(x_2) \\ll n^{1/2} is also possible, but we always haveR(x_1)R(x_2)\\gg n.Erdős originally conjectured that R(x_3)/n^{1/2}→ ∞ as n→ ∞, but Elekes proved that for every k and n sufficiently large there exists some set of n points with R(x_k)\\ll_k n^{1/2}.",
+  "reference_proof_hint": "Yes.\n\nIn fact one can show a quantitative statement: there is an absolute constant (c>0) such that\n[\n\\alpha_k \\ge c\\sqrt{k}\\qquad\\text{for all }k,\n]\nso in particular (\\alpha_k\\to\\infty) as (k\\to\\infty).\n\n---\n\n## Why (\\alpha_k) must grow\n\nFix $n$ and a set (P={x_1,\\dots,x_n}\\subset\\mathbb R^2).\nFor a parameter (t\\ge1), call a point **$t$-good** if (R(p)\\le t). Let\n[\nG={p\\in P:\\ R(p)\\le t},\\qquad g:=|G|.\n]\n\n### Step 1: $t$-good points generate many point–circle incidences\n\nFor each (p\\in G), consider the family of circles centered at $p$ whose radii are exactly the distinct distances from $p$ to the other points of $P$. There are (R(p)\\le t) such circles for each $p$, so the total number of circles is\n[\nM \\le \\sum_{p\\in G} R(p) \\le g,t.\n]\n\nNow note: for each fixed (p\\in G), *every* other point (q\\in P\\setminus{p}) lies on exactly one of these circles [[nomath]](the one of radius $|pq|$)[[/nomath]]. Hence the number of incidences between the $n$ points and these circles satisfies\n[\nI \\ge ",
+  "expert_comments": [
+    {
+      "author": "",
+      "text": "is there a reference for this result of Elekes? also, in the discussion below the question, the assumption of \"$n$ sufficiently large\" is not necessary at all."
+    },
+    {
+      "author": "zach hunter",
+      "text": "Sadly not - in [Er97e] he just writes 'Elekes just proved that...' and gives no reference, so I assume Erdős heard this through personal communication. I can't see any obvious candidate papers of Elekes, but haven't read them all, so this construction might appear in one of them (perhaps in disguised form)."
+    },
+    {
+      "author": "Thomas Bloom",
+      "text": "Section 2 of this Mathialagan paper describes his construction. It acheives $\\alpha_k = O(\\sqrt{k})$. Thus we have $\\alpha_k = \\Theta(k^{1/2})$!"
+    },
+    {
+      "author": "zach hunter",
+      "text": "The website by Mehmet Mars Seven (academic homepage, X) linked from the forum and the community database includes an attack on this problem by ChatGPT 5.2-Pro.\n\nChatGPT claims that a positive solution to this problem follows from \"Theorem 14 from Mathialagan\".  As best as I can tell, that is a reference to Theorem 1.4 here.  The theorem is applied with $\\mathcal{P}$ consisting of $x_1,\\ldots,x_k$ (and $\\mathcal{Q}$ the complement).\n      \n      \n      \n(The site has been updated to address this comment.)"
+    },
+    {
+      "author": "BorisAlexeev",
+      "text": "For what it's worth, Gemini Deepthink confirms the solution, while ChatGPT DeepResearch did not turn up any significant references beyond the reference [El1995] already cited as well as the literature for the sister problems #653 and #654, as well as this 2013 paper of Sharir and Solymosi addressing a question of Erdos, Lovasz, and Vesztergombi which may not yet be on this site.  I'll start reading it myself now.\n\nEDIT: OK, that wasn't actually that hard.  It's actually Theorem 3.6 of Mathialagan which is relevant (a strengthening of Theorem 1.4), which asserts that given a set ${\\mathcal P}$ of $m$ points and a set ${\\mathcal Q}$ of $n$ points with $2 \\leq m \\leq n^{1/3}$, one of the points in ${\\mathcal P}$ determines $\\gg \\sqrt{mn}$ distances to points in ${\\mathcal Q}$. In the current notation, setting ${\\mathcal P}$ to be the first $k$ points, this gives $R_k(n) \\gg \\sqrt{kn}$ for $2 \\leq k \\leq n^{1/3}$, which solves the problem.\n\nFormalizing the derivation of this problem from T"
+    },
+    {
+      "author": "TerenceTao",
+      "text": "And that is indeed Theorem 14 in the published version in EJC. Sorry for a little misdirection."
+    }
+  ]
+}

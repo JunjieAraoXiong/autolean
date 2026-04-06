@@ -1,0 +1,15 @@
+{
+  "uuid": "erdos_67",
+  "problem": [
+    "Erdős Problem #67"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 67,
+  "status": "proved",
+  "tags": [
+    "discrepancy"
+  ],
+  "prize": "$500",
+  "formalized_on_site": true,
+  "ground_truth_lean": "/-\nCopyright 2025 The Formal Conjectures Authors.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    https://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n-/\n\nimport FormalConjectures.Util.ProblemImports\n\n/-!\n# Erdős Problem 67\n\n*References:*\n- [erdosproblems.com/67](https://www.erdosproblems.com/66)\n- [Ta16] Tao, Terence, The Erdős discrepancy problem. Discrete Anal. (2016), Paper No. 1, 29.\n-/\nopen Filter\n\nnamespace Erdos67\n\n/--\n**The Erdős discrepancy problem**\n\nIf $f\\colon \\mathbb N \\rightarrow \\{-1, +1\\}$ then is it true that for every $C>0$ there\nexist $d, m \\ge 1$ such that $$\\left\\lvert \\sum_{1\\leq k\\leq m}f(kd)\\right\\rvert > C?$$\nThis is true, and was proved by Tao [Ta16]\n-/\n@[category research solved, AMS 11]\ntheorem erdos_67 (f : ℕ → ({-1, 1} : Finset ℝ)) (C : ℝ) (hC : 0 < C) : ∃ᵉ (d ≥ 1) (m ≥ 1),\n    C < |∑ k ∈ Finset.Icc 1 m, (f (k * d)).1| := by\n  sorry\n\n/--\n**The Erdős discrepancy problem (complex variant)**\n\nIf $f\\colon \\mathbb N \\rightarrow S^1 ⊆ ℂ$ then is it true that for every $C>0$ there\nexist $d, m \\ge 1$ such that $$\\left\\lvert \\sum_{1\\leq k\\leq m}f(kd)\\right\\rvert > C?$$\nThis is true, and was proved by Tao [Ta16]\n-/\n@[category research solved, AMS 11]\ntheorem erdos_67.variants.complex (f : ℕ → Metric.sphere (0 : ℂ) 1) (C : ℝ) (hC : 0 < C) :\n    ∃ᵉ (d ≥ 1) (m ≥ 1), C < ‖∑ k ∈ Finset.Icc 1 m, (f (k * d)).1‖  := by\n  sorry\n\n\nend Erdos67\n"
+}

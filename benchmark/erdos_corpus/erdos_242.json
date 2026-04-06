@@ -1,0 +1,19 @@
+{
+  "uuid": "erdos_242",
+  "problem": [
+    "For every n>2 there exist distinct integers 1≤ x<y<z such that(4)/(n) = (1)/(x)+(1)/(y)+(1)/(z)."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 242,
+  "status": "falsifiable",
+  "tags": [
+    "number theory",
+    "unit fractions"
+  ],
+  "prize": "no",
+  "formalized_on_site": true,
+  "original_latex": "For every $n>2$ there exist distinct integers $1\\leq x<y<z$ such that\\[\\frac{4}{n} = \\frac{1}{x}+\\frac{1}{y}+\\frac{1}{z}.\\]",
+  "additional_context": "The Erd\\H{os-Straus conjecture}. The existence of a representation of 4/n as the sum of at most four distinct unit fractions follows trivially from a greedy algorithm.\n\nSchinzel conjectured the generalisation that, for any fixed a, if n is sufficiently large in terms of a then there exist distinct integers 1≤ x<y<z such that(a)/(n) = (1)/(x)+(1)/(y)+(1)/(z).This problem has been formalised in Lean as part of the Google DeepMind Formal Conjectures project.",
+  "reference_proof_hint": "What you wrote is (essentially) the **Erdős–Straus conjecture**:\n\n[\n\\frac{4}{n}=\\frac1x+\\frac1y+\\frac1z\\qquad (n\\ge2,\\ x,y,z\\in\\mathbb Z_{>0}).\n]\n\nAs of the most recent standard references, it is **still unproven in full generality** [[nomath]](so it’s not currently a theorem that this holds for *every* $n>2$)[[/nomath]]. ([Wikipedia][1])\n\n### About the “distinct” condition\n\nFor (n\\ge 3), requiring $x,y,z$ to be **distinct** does **not** really change the problem: if any solution has repeated unit fractions, there is a standard way to “split” duplicates into two different unit fractions and iterate until all are distinct. ([Wikipedia][2])\nSo your statement is the conjecture in a common “Egyptian fraction / distinct denominators” form.\n\n---\n\n## What *is* known: explicit constructions for large families of $n$\n\nEven though the full statement is open, there are clean identities that prove it for many infinite classes of $n$. Here are some classic, fully explicit ones [[nomath]](and they a",
+  "ground_truth_lean": "/-\nCopyright 2025 The Formal Conjectures Authors.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    https://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n-/\n\nimport FormalConjectures.Util.ProblemImports\n\n/-!\n# Erdős Problem 242\n\n*References:*\n- [erdosproblems.com/242](https://www.erdosproblems.com/242)\n- [Si56] Sierpiński, W., Sur les décompositions de nombres rationnels en fractions primaires.\n  Mathesis (1956), 16--32.\n-/\n\nopen scoped Topology\n\nnamespace Erdos242\n\n/--\nFor every $n>2$ there exist distinct integers $1 ≤ x < y < z$\nsuch that $\\frac 4 n = \\frac 1 x + \\frac 1 y + \\frac 1 z$.\n-/\n@[category research open, AMS 11]\ntheorem erdos_242 (n : ℕ) (hn : 2 < n) :\n    ∃ x y z : ℕ, 1 ≤ x ∧ x < y ∧ y < z ∧\n      (4 / n : ℚ) = 1 / x + 1 / y + 1 / z := by\n  sorry\n\n/--\nSchinzel conjectured (see [Si56]) the generalisation that, for any fixed $a$, if $n$ is sufficiently\nlarge in terms of $a$ then there exist distinct integers $1\\leq x < y < z$ such that\n$\\frac{a}{n} = \\frac{1}{x}+\\frac{1}{y}+\\frac{1}{z}.$\n-/\n@[category research open, AMS 11]\ntheorem erdos_242.variants.schinzel_generalization\n    (a : ℕ) (ha : 0 < a) :\n    ∀ᶠ (n : ℕ) in Filter.atTop, ∃ x y z : ℕ, 1 ≤ x ∧ x < y ∧ y < z ∧\n      (a / n : ℚ) = 1 / x + 1 / y + 1 / z := by\n  sorry\n\nend Erdos242\n"
+}

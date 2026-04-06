@@ -1,0 +1,24 @@
+{
+  "uuid": "erdos_1061",
+  "problem": [
+    "How many solutions are there to\\sigma(a)+\\sigma(b)=\\sigma(a+b)with a+b≤ x, where \\sigma is the sum of divisors function? Is it \\sim cx for some constant c>0?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 1061,
+  "status": "open",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": true,
+  "original_latex": "How many solutions are there to\\[\\sigma(a)+\\sigma(b)=\\sigma(a+b)\\]with $a+b\\leq x$, where $\\sigma$ is the sum of divisors function? Is it $\\sim cx$ for some constant $c>0$?",
+  "additional_context": "A question of Erdős reported in problem B15 of Guy's collection \\cite{Gu04}.\n\nReferences\n\n[Gu04] Guy, Richard K., Unsolved problems in number theory.  (2004), xviii+437.",
+  "reference_proof_hint": "Short answer: **mostly open**.\n\nMore precisely:\n\n* **Concrete / proved:**\n  There is a **positive linear lower bound**. One can rigorously show\n  [\n  N(x)\\ge c,x\n  ]\n  for some explicit (c>0) [[nomath]](for example $c=2/9$ from the family $(n,2n)$ with $(n,6)=1$)[[/nomath]].\n\n* **Open:**\n  It is **not known** whether\n  [\n  N(x)\\sim c,x\n  ]\n  for any constant (c>0). In fact, it is not even known whether (N(x)/x) stays bounded.\n\n* **Heuristic / numerical:**\n  Computations strongly suggest **superlinear growth**, plausibly\n  [\n  N(x)\\asymp \\kappa,x\\log x,\n  ]\n  but there is **no proof** of an (x\\log x) asymptotic (or even a matching upper bound of that order).\n\nSo the current state is:\n\n> **Linear lower bound: concrete.\n> Exact order of growth [[nomath]](linear vs. $x\\log x$, existence of an asymptotic)[[/nomath]]: open.**\n\nIf you want, I can sketch what a proof of (x\\log x) would likely require, or explain why standard multiplicative-function techniques don’t yet seem to be enough.\n",
+  "ground_truth_lean": "/-\nCopyright 2026 The Formal Conjectures Authors.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    https://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n-/\n\nimport FormalConjectures.Util.ProblemImports\n\n/-!\n# Erdős Problem 1061\n\n*References:*\n - [erdosproblems.com/1061](https://www.erdosproblems.com/1061)\n - [Gu04] Guy, Richard K., _Unsolved problems in number theory_. (2004), Problem B15.\n-/\n\nopen Filter Asymptotics\nopen scoped ArithmeticFunction.sigma\n\nnamespace Erdos1061\n\n/-- Let `S x` count the number of **ordered** pairs of positive integers `(a, b)` with `a + b ≤ x`\nsuch that `σ(a) + σ(b) = σ(a + b)`, where `σ` is the sum of divisors function.\n\nIn particular, `(a, b)` and `(b, a)` are counted separately; an unordered variant could be obtained\nby additionally requiring `a ≤ b`. -/\nnoncomputable abbrev S (x : ℝ) : ℝ :=\n  ((Finset.Icc 1 ⌊x⌋₊ ×ˢ Finset.Icc 1 ⌊x⌋₊).filter fun (a, b) ↦\n      a + b ≤ x ∧ σ 1 a + σ 1 b = σ 1 (a + b)).card\n\n/--\nHow many (ordered) solutions are there to `σ(a) + σ(b) = σ(a + b)` with `a + b ≤ x`?\nIs it true that this number is asymptotic to `c * x` for some constant `c > 0`?\n-/\n@[category research open, AMS 11]\ntheorem erdos_1061 : answer(sorry) ↔ ∃ c : ℝ, 0 < c ∧ S ~[atTop] (fun x : ℝ ↦ c * x) := by\n  sorry\n\nend Erdos1061\n",
+  "expert_comments": [
+    {
+      "author": "",
+      "text": "I would have expected the number of primitive solutions (with $a,b$ coprime) to be comparable to $x$ from naive probabilistic heuristics, which would morally imply that the total number of solutions should grow like $x \\log x$."
+    }
+  ]
+}

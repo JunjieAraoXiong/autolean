@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_456",
+  "problem": [
+    "Let p_n be the smallest prime \\equiv 1\\pmod{n} and let m_n be the smallest integer such that n\\mid \\phi(m_n).\n\nIs it true that m_n<p_n for almost all n? Does p_n/m_n→ ∞ for almost all n? Are there infinitely many primes p such that p-1 is the only n for which m_n=p?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 456,
+  "status": "open",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $p_n$ be the smallest prime $\\equiv 1\\pmod{n}$ and let $m_n$ be the smallest integer such that $n\\mid \\phi(m_n)$.\n\nIs it true that $m_n<p_n$ for almost all $n$? Does $p_n/m_n\\to \\infty$ for almost all $n$? Are there infinitely many primes $p$ such that $p-1$ is the only $n$ for which $m_n=p$?",
+  "additional_context": "Linnik's theorem implies that p_n≤ n^{O(1)}. It is trivial that m_n≤ p_n always.\n\nIf n=q-1 for some prime q then m_n=p_n. Erdős \\cite{Er79e} writes it is 'easy to show' that for infinitely many n we have m_n <p_n, and that m_n/n→ ∞ for almost all n.\n\nvan Doorn in the comments has noted that if n=2^{2k+1} then m_n≤ 2n and p_n≥ 2n+1.\n\nReferences\n\n[Er79e] Erdős, Paul, Some unconventional problems in number theory. Ast\\'{e}risque (1979), 73-82.",
+  "reference_proof_hint": "Let me rename (m_n) as $E(n)$, since this is exactly the **Euler minimum function**\n[\nE(n):=\\min{k\\ge 1:\\ n\\mid \\varphi(k)},\n]\nintroduced/studied by Moree–Roskam and Sándor. \nYour (p_n) is the least prime (p\\equiv 1\\pmod n).\n\n### Basic facts and two infinite families\n\n1. **Always (m_n\\le p_n).**\n   Indeed (\\varphi(p_n)=p_n-1) is divisible by $n$, so (p_n) is an admissible candidate in the definition of (m_n). (This is the “trivial” inequality noted in the Erdős problem statement.) ([Erdős Problems][1])\n\n2. **Infinitely many $n$ with equality (m_n=p_n).**\n   If (n=q-1) for a prime $q$, then (m_n=q). A quick proof: (\\varphi(q)=q-1=n), so (m_n\\le q); but for any (m<q) we have (\\varphi(m)\\le m-1<q-1=n), so (\\varphi(m)) cannot be a positive multiple of $n$. Hence (m_n=q). Also (p_n=q) because (q\\equiv 1\\pmod{q-1}) and no smaller prime can be (1\\pmod{q-1}). [[nomath]](Sándor records the identity $E(p-1)=p$ for primes $p$.)[[/nomath]] ([Erdős Problems][1])\n\nSo the strict inequality (m_n<p_n) "
+}

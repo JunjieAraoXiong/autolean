@@ -1,0 +1,14 @@
+{
+  "uuid": "erdos_506",
+  "problem": [
+    "Erdős Problem #506"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 506,
+  "status": "decidable",
+  "tags": [
+    "geometry"
+  ],
+  "prize": "no",
+  "formalized_on_site": false
+}

@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_1040",
+  "problem": [
+    "Let F⊆ \\mathbb{C} be a closed infinite set, and let \\mu(F) be the infimum of| \\{ z: | f(z)| < 1\\}|,as f ranges over all polynomials of the shape ∏ (z-z_i) with z_i∈ F.\n\nIs \\mu(F) determined by the transfinite diameter of F? In particular, is \\mu(F)=0 whenever the transfinite diameter of F is ≥ 1?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 1040,
+  "status": "open",
+  "tags": [
+    "analysis"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $F\\subseteq \\mathbb{C}$ be a closed infinite set, and let $\\mu(F)$ be the infimum of\\[\\lvert \\{ z: \\lvert f(z)\\rvert < 1\\}\\rvert,\\]as $f$ ranges over all polynomials of the shape $\\prod (z-z_i)$ with $z_i\\in F$.\n\nIs $\\mu(F)$ determined by the transfinite diameter of $F$? In particular, is $\\mu(F)=0$ whenever the transfinite diameter of $F$ is $\\geq 1$?",
+  "additional_context": "A problem of Erdős, Herzog, and Piranian \\cite{EHP58}, who show that the answer is yes if F is a line segment or disc, and that if the transfinite diameter is <1 then \\{ z: | f(z)| < 1\\} always contains a disc of radius \\gg_F 1.\n\nErdős and Netanyahu \\cite{ErNe73} proved that if F is also bounded and connected, with transfinite diameter 0<c<1, then \\{ z: | f(z)| < 1\\} always contains a disc of radius \\gg_c 1.\n\nThe transfinite diameter of F, also known as the logarithmic capacity, is defined by\\rho(F)=\\lim_{n→ ∞}\\sup_{z_1,\\ldots,z_n∈ F}\\left(∏_{i<j}| z_i-z_j|\\right)^{1/\\binom{n}{2}}.\n\nReferences\n\n[EHP58] Erdős, P. and Herzog, F. and Piranian, G., Metric properties of polynomials. J. Analyse Math. (1958), 125-148.\n\n[ErNe73] Erdős, P. and Netanyahu, E., A remark on polynomials and the transfinite diameter. Israel J. Math. (1973), 23--25.",
+  "reference_proof_hint": "Write\n[\n\\mu(F)=\\inf\\\\{\\mathrm{area}\\bigl({z\\in\\mathbb C:\\ |p(z)|<1}\\bigr):p(z)=\\prod_{j=1}^n (z-z_j),\\ z_j\\in F,\\ n\\ge 1\\\\},\n]\n(where “area” is planar Lebesgue measure). For compact $F$, the transfinite diameter $d(F)$ agrees with the logarithmic capacity (\\mathrm{cap}(F)).\n\n### 1) If $F$ is unbounded, then (\\mu(F)=0) [[nomath]](so $d(F)=\\infty$ implies $\\mu(F)=0$)[[/nomath]]\n\nThis is easy and does **not** require potential theory: if $F$ contains points (\\pm R) with (R\\to\\infty), take\n[\np_R(z)=(z-R)(z+R)=z^2-R^2.\n]\nThen ({|p_R|<1}) consists of two tiny components near (\\pm R), each of radius (\\asymp 1/R), hence total area (\\asymp 1/R^2\\to 0). So (\\mu(F)=0) for any unbounded closed infinite $F$.\n\nThe real issue is the **bounded/compact** case.\n\n### 2) What is known when (d(F)<1)\n\nA classical theorem of Erdős–Netanyahu (building on Erdős–Herzog–Piranian) says:\n\n> If $D$ is bounded, closed, **connected** and (d(D)=1-c) with (0<c<1), then for every monic polynomial (f(z)=\\prod_{v=1}^n (z-"
+}

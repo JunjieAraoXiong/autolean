@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_554",
+  "problem": [
+    "Let R(G;k) denote the minimal m such that if the edges of K_m are k-coloured then there is a monochromatic copy of G. Show that\\lim_{k→ ∞}\\frac{R(C_{2n+1};k)}{R(K_3;k)}=0for any n≥ 2."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 554,
+  "status": "open",
+  "tags": [
+    "graph theory",
+    "ramsey theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $R(G;k)$ denote the minimal $m$ such that if the edges of $K_m$ are $k$-coloured then there is a monochromatic copy of $G$. Show that\\[\\lim_{k\\to \\infty}\\frac{R(C_{2n+1};k)}{R(K_3;k)}=0\\]for any $n\\geq 2$.",
+  "additional_context": "A problem of Erdős and Graham. The problem is open even for n=2.\n\nThis problem is #23 in Ramsey Theory in the graphs problem collection.",
+  "reference_proof_hint": "There’s a notational mismatch here.\n\n* In **two‑colour Ramsey theory**, it’s very common to write\n  [\n  R(G;k):=R(G,K_k),\n  ]\n  i.e. the least $m$ such that **every red/blue colouring** of $E(K_m)$ contains a red copy of $G$ or a blue (K_k) [[nomath]](equivalently: every $m$-vertex graph contains $G$ or an independent set of size $k$)[[/nomath]].\n  With this convention, the statement you ask for is a standard (known) consequence of known asymptotics/bounds.\n\n* Under your written definition [[nomath]](“edges of $K_m$ are **$k$-coloured**”)[[/nomath]], $R(K_3;k)$ is the *multicolour triangle Ramsey number*, whose growth is tied to the difficult Schur–Erdős problem; the ratio you ask about is not something I can justify from currently standard, established bounds alone.\n\nSo below I give the proof under the **standard two‑colour** meaning (R(G;k)=R(G,K_k)), which is the setting where the limit is known and the proof is short.\n\n---\n\n## Proof for (R(G;k)=R(G,K_k)) (two colours)\n\nFix (n\\ge 2)"
+}

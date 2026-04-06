@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_655",
+  "problem": [
+    "Let x_1,\\ldots,x_n∈ ℝ^2 be such that no circle whose centre is one of the x_i contains three other points. Are there at least(1+c)(n)/(2)distinct distances determined between the x_i, for some constant c>0 and all n sufficiently large?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 655,
+  "status": "open",
+  "tags": [
+    "geometry",
+    "distances"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $x_1,\\ldots,x_n\\in \\mathbb{R}^2$ be such that no circle whose centre is one of the $x_i$ contains three other points. Are there at least\\[(1+c)\\frac{n}{2}\\]distinct distances determined between the $x_i$, for some constant $c>0$ and all $n$ sufficiently large?",
+  "additional_context": "A problem of Erdős and Pach. It is easy to see that this assumption implies that there are at least (n-1)/(2) distinct distances determined by every point.\n\nZach Hunter has observed that taking n points equally spaced on a circle disproves this conjecture. In the spirit of related conjectures of Erdős and others, presumably some kind of assumption that the points are in general position (e.g. no three on a line and no four on a circle) was intended.",
+  "reference_proof_hint": "No.\n\nLet $D$ be the number of distinct distances among the (\\binom n2) pairs.\n\n### 1) A universal lower bound is only (\\approx n/2)\n\nFix a distance value $d$. Make a graph (G_d) on vertex set ({1,\\dots,n}) where $ij$ is an edge iff (|x_i-x_j|=d).\n\nYour condition says: for each $i$, there are **not** three points (x_j,x_k,x_\\ell) all at the same distance from (x_i). Equivalently, for each fixed $d$,\n[\n\\deg_{G_d}(i)\\le 2 \\quad \\text{for every vertex } i.\n]\nHence\n[\n2|E(G_d)|=\\sum_i \\deg_{G_d}(i)\\le 2n \\quad\\Rightarrow\\quad |E(G_d)|\\le n.\n]\nNow sum over all distinct distances $d$:\n[\n\\binom n2 = \\sum_{d} |E(G_d)| \\le D\\cdot n,\n]\nso\n[\nD \\ge \\frac{\\binom n2}{n}=\\frac{n-1}{2}.\n]\nSince $D$ is an integer, this gives (D\\ge \\left\\lceil\\frac{n-1}{2}\\right\\rceil=\\left\\lfloor\\frac n2\\right\\rfloor).\n\nSo the condition forces at least (\\sim n/2) distances, but this argument alone cannot give ((1+c)\\frac n2).\n\n### 2) A configuration achieving only (\\left\\lfloor\\frac n2\\right\\rfloor) distances exists\n\nTak"
+}

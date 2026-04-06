@@ -1,0 +1,19 @@
+{
+  "uuid": "erdos_773",
+  "problem": [
+    "What is the size of the largest Sidon subset A⊆\\{1,2^2,\\ldots,N^2\\}? Is it N^{1-o(1)}?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 773,
+  "status": "open",
+  "tags": [
+    "number theory",
+    "sidon sets",
+    "squares"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "What is the size of the largest Sidon subset $A\\subseteq\\{1,2^2,\\ldots,N^2\\}$? Is it $N^{1-o(1)}$?",
+  "additional_context": "A question of Alon and Erdős \\cite{AlEr85}, who proved | A| ≥ N^{2/3-o(1)} is possible (via a random subset), and observed that| A| \\ll (N)/((\\log N)^{1/4)},since (as shown by Landau) the density of the sums of two squares decays like (\\log N)^{-1/2}. The lower bound was improved to| A| \\gg N^{2/3}by Lefmann and Thiele \\cite{LeTh95}.\n\nReferences\n\n[AlEr85] Alon, Noga and Erdős, P., An application of graph theory to additive number theory. European J. Combin. (1985), 201-203.\n\n[LeTh95] Lefmann, Hanno and Thiele, Torsten, Point sets with distinct distances. Combinatorica (1995), 379--408.",
+  "reference_proof_hint": "Let\n[\nS_N:={1^2,2^2,\\dots,N^2},\\qquad F(N):=\\max{|A|:A\\subseteq S_N\\ \\text{is Sidon}},\n]\nwhere “Sidon” means (a+b=c+d) with (a,b,c,d\\in A) forces ({a,b}={c,d}).\n\n### Best known bounds (as of now)\n\nThe problem is open, with the best published bounds\n[\nF(N)\\ \\gg\\ N^{2/3}\n\\qquad\\text{and}\\qquad\nF(N)\\ \\ll\\ \\frac{N}{(\\log N)^{1/4}}.\n]\n([Erdős Problems][1])\n\n### Why the upper bound is (N/(\\log N)^{1/4})\n\nIf (|A|=m), then Sidon implies all (\\binom{m+1}{2}) sums $a+b$ [[nomath]](with $a\\le b$)[[/nomath]] are distinct and lie in $[2,2N^2]$. Every such sum is a sum of two squares.\n\nLandau’s theorem (a.k.a. the Landau–Ramanujan theorem) says the count of integers (\\le x) representable as a sum of two squares is (\\asymp x/\\sqrt{\\log x}). In particular the number of *possible distinct* sums of two squares up to (2N^2) is (O\\left(N^2/\\sqrt{\\log N}\\right)). Thus\n[\n\\binom{m+1}{2}\\ \\le\\ O\\left(\\frac{N^2}{\\sqrt{\\log N}}\\right)\n\\quad\\Rightarrow\\quad\nm\\ \\ll\\ \\frac{N}{(\\log N)^{1/4}}.\n]\nThis is exactly the"
+}

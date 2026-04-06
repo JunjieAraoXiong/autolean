@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_787",
+  "problem": [
+    "Let g(n) be maximal such that given any set A⊂ ℝ with | A|=n there exists some B⊆ A of size | B|≥ g(n) such that b_1+b_2\\not∈ A for all b_1≠ b_2∈ B.\n\nEstimate g(n)."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 787,
+  "status": "open",
+  "tags": [
+    "additive combinatorics"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $g(n)$ be maximal such that given any set $A\\subset \\mathbb{R}$ with $\\lvert A\\rvert=n$ there exists some $B\\subseteq A$ of size $\\lvert B\\rvert\\geq g(n)$ such that $b_1+b_2\\not\\in A$ for all $b_1\\neq b_2\\in B$.\n\nEstimate $g(n)$.",
+  "additional_context": "This function was considered by Erdős and Moser. Choi observed that, without loss of generality, one can assume that A⊂ ℤ.\n\nKlarner proved g(n) \\gg \\log n (indeed, a greedy construction suffices). Choi \\cite{Ch71} proved g(n) \\ll n^{2/5+o(1)}. The current best bounds known are(\\log n)^{1+c} \\ll g(n) \\ll \\exp(\\sqrt{\\log n})for some constant c>0, the lower bound due to Sanders \\cite{Sa21} and the upper bound due to Ruzsa \\cite{Ru05}. Beker \\cite{Be25} has proved(\\log n)^{1+\\tfrac{1}{68}+o(1)} \\ll g(n).\n\nReferences\n\n[Be25] A. Beker, The Erdős-Moser sum-free set problem via improved bounds for k-configurations. arXiv:2501.10203 (2025).\n\n[Ch71] Choi, S. L. G., On a combinatorial problem in number theory. Proc. London Math. Soc. (3) (1971), 629-642.\n\n[Ru05] Ruzsa, Imre Z., Sum-avoiding subsets. Ramanujan J. (2005), 77-82.\n\n[Sa21] Sanders, Tom, The Erdős-Moser sum-free set problem. Canad. J. Math. (2021), 63-107.",
+  "reference_proof_hint": "This parameter is studied in additive combinatorics under the name\n\n* **“sum-free with respect to $A$”** / **“sum-avoiding in $A$”**, and\n* the extremal function is usually written (\\varphi(n)).\n\nYour $g(n)$ is exactly this (\\varphi(n)): the minimum, over all (|A|=n), of the largest (|B|\\subseteq A) with no **restricted** sum (b_1+b_2) [[nomath]](with $b_1\\neq b_2$)[[/nomath]] landing back in $A$. ([arXiv][1])\nMoreover, although you stated (A\\subset\\mathbb R), the integer and real versions are equivalent for this problem (one can transfer the additive relations), so results for (A\\subset\\mathbb Z) apply. \n\n## A clean, elementary lower bound: (g(n)\\gtrsim \\log n)\n\nHere is the standard (Erdős–Moser/Turán-type) argument.\n\n1. From (A\\subset\\mathbb R) with (|A|=n), at least $n/2$ elements are **positive** or at least $n/2$ are **negative**. Work with whichever has size (m\\ge n/2). If they are negative, multiply by (-1) [[nomath]](this preserves the “sum in $A$” relations within that sign cl"
+}

@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_584",
+  "problem": [
+    "Let G be a graph with n vertices and \\delta n^{2} edges. Are there subgraphs H_1,H_2⊆ G such that\n{UL}\n{LI}H_1 has \\gg \\delta^3n^2 edges and every two edges in H_1 are contained in a cycle of length at most 6, and furthermore if two edges share a vertex they are on a cycle of length 4, and\n{LI}H_2 has \\gg \\delta^2n^2 edges and every two edges in H_2 are contained in a cycle of length at most 8.\n{/UL}"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 584,
+  "status": "open",
+  "tags": [
+    "graph theory",
+    "cycles"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $G$ be a graph with $n$ vertices and $\\delta n^{2}$ edges. Are there subgraphs $H_1,H_2\\subseteq G$ such that\n{UL}\n{LI}$H_1$ has $\\gg \\delta^3n^2$ edges and every two edges in $H_1$ are contained in a cycle of length at most $6$, and furthermore if two edges share a vertex they are on a cycle of length $4$, and\n{LI}$H_2$ has $\\gg \\delta^2n^2$ edges and every two edges in $H_2$ are contained in a cycle of length at most $8$.\n{/UL}",
+  "additional_context": "A problem of Erdős, Duke, and R\\\"{o}dl. Duke and Erdős \\cite{DuEr83}, who proved the first if n is sufficiently large depending on \\delta. The real challenge is to prove this when \\delta=n^{-c} for some c>0. Duke, Erdős, and R\\\"{o}dl \\cite{DER84} proved the first statement with a \\delta^5 in place of a \\delta^3.\n\nFox and Sudakov \\cite{FoSu08b} have proved the second statement when \\delta >n^{-1/5}.\n\nSee also the entry in the graphs problem collection.\n\nReferences\n\n[DER84] Duke, Richard and Erdős, Paul and R\\\"{o}dl, Vojt\\vEch, More results on subgraphs with many short cycles. Proceedings of the fifteenth Southeastern conference on\ncombinatorics, graph theory and computing (Baton Rouge,\nLa., 1984) (1984), 295-300.\n\n[DuEr83] No reference found.\n\n[FoSu08b] Fox, Jacob and Sudakov, Benny, On a problem of Duke-Erdős-R\\\"{o}dl on cycle-connected subgraphs. J. Combin. Theory Ser. B (2008), 1056-1062.",
+  "reference_proof_hint": "This is a well-known open Erdős–Duke–Rödl problem (it appears as Erdős Problem #584). As stated, **the full pair of assertions is not known in complete generality**, but there are strong partial results. ([Erdős Problems][1])\n\n## The (H_1) statement [[nomath]](cycles $\\le 6$, and incident edges on a $4$-cycle)[[/nomath]]\n\n* **For graphs of constant density** [[nomath]](i.e. $\\delta$ is a fixed positive constant)[[/nomath]], Duke–Erdős proved that for all sufficiently large $n$ one can find a subgraph (H\\subseteq G) with (\\Theta(n^2)) edges in which **every pair of edges lies on a cycle of length $4$ or $6$** and **every pair of incident edges lies on a $4$-cycle**. ([Renyi Users][2])\n\n* **In the sparse regime (\\delta=n^{-\\varepsilon}) [[nomath]](with fixed $0<\\varepsilon<1/2$)[[/nomath]]**, Duke–Erdős–Rödl (1984) showed:\n\n  * If you **do not** insist on the “incident edges on a $4$-cycle” strengthening, then the (\\delta^3 n^2) bound is essentially *right*: they obtain a subgraph with ("
+}

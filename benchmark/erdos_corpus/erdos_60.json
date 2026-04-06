@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_60",
+  "problem": [
+    "Does every graph on n vertices with >\\mathrm{ex}(n;C_4) edges contain \\gg n^{1/2} many copies of C_4?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 60,
+  "status": "open",
+  "tags": [
+    "graph theory",
+    "cycles"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Does every graph on $n$ vertices with $>\\mathrm{ex}(n;C_4)$ edges contain $\\gg n^{1/2}$ many copies of $C_4$?",
+  "additional_context": "Conjectured by Erdős and Simonovits, who could not even prove that at least 2 copies of C_4 are guaranteed.\n\nThe behaviour of \\mathrm{ex}(n;C_4) is the subject of [765].\n\nHe, Ma, and Yang \\cite{HeMaYa21} have proved this conjecture when n=q^2+q+1 for some even integer q.\n\nReferences\n\n[HeMaYa21] He, J. and Ma, J. and Yang, T., Some extremal results on 4-cycles. Journal of Combinatorial Theory B (2021).",
+  "reference_proof_hint": "Not known in full generality.\n\nA standard way to phrase your question is to define\n$$\nh(n) := \\min\\\\{ |\\{ H \\subseteq G : H \\cong C_4 \\}| \\mid |V(G)| = n,\\ e(G) = \\mathrm{ex}(n,C_4)+1 \\\\}.\n$$\nsince (#C_4) is monotone in the edge set, so the worst case for “(> \\mathrm{ex}(n,C_4))” is exactly (\\mathrm{ex}(n,C_4)+1).\n\n## What is conjectured\n\nErdős and Simonovits conjectured that\n[\nh(n)\\ \\ge\\ (1+o(1))\\sqrt n,\n]\nso in particular (h(n)\\gg \\sqrt n). \n\nThis is the “(C_4)-analogue” of Rademacher’s theorem for triangles, but it is much harder because (C_4) is bipartite.\n\n## Why (\\sqrt n) would be the right order (sharpness)\n\nFor infinitely many $n$, extremal (C_4)-free graphs come from **polarity graphs** (finite geometry). If $G$ is a polarity graph of order $q$ and you add one missing edge $uv$, then the resulting graph (G\\cup{uv}) contains **only** $q-1$, $q$, or $q+1$ copies of (C_4). \n\nWhen (n=q^2+q+1), we have (q\\sim \\sqrt n), so this gives constructions with only (\\Theta(\\sqrt n)) many $4"
+}

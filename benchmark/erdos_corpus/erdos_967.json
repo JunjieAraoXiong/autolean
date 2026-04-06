@@ -1,0 +1,15 @@
+{
+  "uuid": "erdos_967",
+  "problem": [
+    "Erdős Problem #967"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 967,
+  "status": "disproved (Lean)",
+  "tags": [
+    "number theory",
+    "analysis"
+  ],
+  "prize": "no",
+  "formalized_on_site": false
+}

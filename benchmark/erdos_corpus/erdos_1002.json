@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_1002",
+  "problem": [
+    "For any 0<\\alpha<1, letf(\\alpha,n)=(1)/(\\log n)∑_{1≤ k≤ n}(\\tfrac{1}{2}-\\{ \\alpha k\\}).Does f(\\alpha,n) have an asymptotic distribution function?\n\nIn other words, is there a non-decreasing function g such that g(-∞)=0, g(∞)=1,\nand\\lim_{n→ ∞}| \\{ \\alpha∈ (0,1): f(\\alpha,n)≤ c\\}|=g(c)?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 1002,
+  "status": "open",
+  "tags": [
+    "analysis",
+    "diophantine approximation"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "For any $0<\\alpha<1$, let\\[f(\\alpha,n)=\\frac{1}{\\log n}\\sum_{1\\leq k\\leq n}(\\tfrac{1}{2}-\\{ \\alpha k\\}).\\]Does $f(\\alpha,n)$ have an asymptotic distribution function?\n\nIn other words, is there a non-decreasing function $g$ such that $g(-\\infty)=0$, $g(\\infty)=1$,\nand\\[\\lim_{n\\to \\infty}\\lvert \\{ \\alpha\\in (0,1): f(\\alpha,n)\\leq c\\}\\rvert=g(c)?\\]",
+  "additional_context": "Kesten \\cite{Ke60} proved that iff(\\alpha,\\beta,n)=(1)/(\\log n)∑_{1≤ k≤ n}(\\tfrac{1}{2}-\\{\\beta+\\alpha k\\})then f(\\alpha,\\beta,n) has asymptotic distribution functiong(c)=(1)/(\\pi)∈t_{-∞}^{\\rho c}(1)/(1+t^2)\\mathrm{d}t,where \\rho>0 is an explicit constant.\n\nReferences\n\n[Ke60] Kesten, Harry, Uniform distribution {{\\rm mod}\\,1}. Ann. of Math. (2) (1960), 445--471.",
+  "reference_proof_hint": "Write\n[\nS_n(\\alpha):=\\sum_{k=1}^n\\bigl({k\\alpha}-\\tfrac12\\bigr),\n\\qquad\\text{so that}\\qquad\nf(\\alpha,n)= -,\\frac{S_n(\\alpha)}{\\log n}.\n]\nSo your question is: does (S_n(\\alpha)/\\log n) [[nomath]](with $\\alpha$ distributed by Lebesgue measure on $(0,1)$)[[/nomath]] converge in distribution as (n\\to\\infty)?\n\n### What is known [[nomath]](and gives a candidate $g$)[[/nomath]]\n\nA classical theorem of Kesten proves a **Cauchy limit law** once one also randomizes the *starting point* of the rotation. Concretely, if $(\\alpha,\\beta)$ is uniform on ([0,1]^2), then\n[\n\\frac{1}{\\sigma',\\log N}\\sum_{n=1}^N\\bigl({n\\alpha+\\beta}-\\tfrac12\\bigr)\\ \\xrightarrow{d}\\ \\mathrm{Cauchy},\n]\nand Borda computes the constant for this “sawtooth” observable as\n[\n\\sigma'=\\frac1{4\\pi}.\n]\nMoreover, Borda explicitly notes that this is the same classical Kesten limit law for (f(x)={x}-\\tfrac12). ([arXiv][1])\n\nBecause the Cauchy law is symmetric, replacing ({n\\alpha+\\beta}-\\tfrac12) by (\\tfrac12-{n\\alpha+\\beta}) does not ch"
+}

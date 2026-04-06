@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_602",
+  "problem": [
+    "Let (A_i) be a family of sets with | A_i|=\\aleph_0 for all i, such that for any i≠ j we have | A_i∩ A_j| finite and ≠ 1. Is there a 2-colouring of ∪ A_i such that no A_i is monochromatic?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 602,
+  "status": "open",
+  "tags": [
+    "combinatorics",
+    "set theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $(A_i)$ be a family of sets with $\\lvert A_i\\rvert=\\aleph_0$ for all $i$, such that for any $i\\neq j$ we have $\\lvert A_i\\cap A_j\\rvert$ finite and $\\neq 1$. Is there a $2$-colouring of $\\cup A_i$ such that no $A_i$ is monochromatic?",
+  "additional_context": "A problem of Komj\\'{a}th. The existence of such a 2-colouring is sometimes known as Property B.",
+  "reference_proof_hint": "Yes.\n\nLet $I$ be the index set and put (X=\\bigcup_{i\\in I}A_i).  Fix a well-ordering (I={i_\\alpha:\\alpha<\\kappa}) (Choice).\n\n### Key lemma\n\nSuppose (c:X\\to{0,1}) is a 2-coloring and (A_i) is monochromatic under $c$. Pick any (x\\in A_i) and define a new coloring (c') by flipping $x$’s color and leaving all other points unchanged:\n[\nc'(x)=1-c(x),\\qquad c'(y)=c(y)\\ (y\\neq x).\n]\nThen **no other** (A_j) ((j\\neq i)) becomes monochromatic under (c').\n\n**Proof.** If some (A_j) ((j\\neq i)) were monochromatic under (c'), then (x\\in A_j) [[nomath]](since only $x$ changed)[[/nomath]]. Also (A_j) cannot be monochromatic in color $c(x)$, because (c'(x)=1-c(x)). Hence (A_j) would have to be monochromatic in color (1-c(x)) under (c'), which means that under the old coloring $c$,\n\n* $x$ had color $c(x)$, and\n* every element of (A_j\\setminus{x}) had color (1-c(x)).\n\nBut in (A_i) every element has color $c(x)$ [[nomath]](since $A_i$ was monochromatic)[[/nomath]]. Therefore, if there were any (y\\in(A_i\\ca"
+}

@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_282",
+  "problem": [
+    "Let A⊆ ℕ be an infinite set and consider the following greedy algorithm for a rational x∈ (0,1): choose the minimal n∈ A such that n≥ 1/x and repeat with x replaced by x-(1)/(n). If this terminates after finitely many steps then this produces a representation of x as the sum of distinct unit fractions with denominators from A.\n\nDoes this process always terminate if x has odd denominator and A is the set of odd numbers? More generally, for which pairs x and A does this process terminate?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 282,
+  "status": "open",
+  "tags": [
+    "number theory",
+    "unit fractions"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $A\\subseteq \\mathbb{N}$ be an infinite set and consider the following greedy algorithm for a rational $x\\in (0,1)$: choose the minimal $n\\in A$ such that $n\\geq 1/x$ and repeat with $x$ replaced by $x-\\frac{1}{n}$. If this terminates after finitely many steps then this produces a representation of $x$ as the sum of distinct unit fractions with denominators from $A$.\n\nDoes this process always terminate if $x$ has odd denominator and $A$ is the set of odd numbers? More generally, for which pairs $x$ and $A$ does this process terminate?",
+  "additional_context": "In 1202 Fibonacci observed that this process terminates for any x when A=ℕ. The problem when A is the set of odd numbers is due to Stein.\n\nGraham \\cite{Gr64b} has shown that (m)/(n) is the sum of distinct unit fractions with denominators \\equiv a\\pmod{d} if and only if\\left((n)/((n,(a,d))),(d)/((a,d))\\right)=1.Does the greedy algorithm always terminate in such cases?\n\nGraham \\cite{Gr64c} has also shown that x is the sum of distinct unit fractions with square denominators if and only if x∈ [0,\\pi^2/6-1)∪ [1,\\pi^2/6). Does the greedy algorithm for this always terminate? Erdős and Graham believe not - indeed, perhaps it fails to terminate almost always.\n\nSee also [206].\n\nReferences\n\n[Gr64b] Graham, R. L., On finite sums of unit fractions. Proc. London Math. Soc. (3) (1964), 193-207.\n\n[Gr64c] Graham, R. L., On finite sums of reciprocals of distinct nth powers. Pacific J. Math. (1964), 85-92.",
+  "reference_proof_hint": "What you describe is the usual Fibonacci–Sylvester greedy Egyptian‑fraction algorithm, but with the allowed denominators restricted to an infinite set $A$. When (A=\\mathbb N) Fibonacci already observed (and it is easy to prove) that the process always terminates for rational (x\\in(0,1)). ([Wikipedia][1])\n\n## The case (A={\\text{odd numbers}})\n\nThis is the **odd greedy algorithm** / **odd greedy expansion** problem.\n\n### 1) If $x$ has even denominator, it cannot terminate\n\nIf the algorithm terminates using only odd denominators, you would have\n[\nx=\\sum_{i=1}^k \\frac1{n_i}\\qquad(n_i\\ \\text{odd}).\n]\nLet (N=\\prod_i n_i), which is odd. Writing everything over the common denominator $N$, the sum equals $m/N$ for some integer $m$, so after reduction the denominator must still be odd (a divisor of an odd number). Therefore no rational with **even** denominator can have a *finite* odd‑denominator Egyptian fraction expansion, so your process cannot terminate in that case. ([Wikipedia][2])\n\n[[noma"
+}

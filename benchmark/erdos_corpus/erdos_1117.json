@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_1117",
+  "problem": [
+    "Let f(z) be an entire function which is not a monomial. Let \\nu(r) count the number of z with | z|=r such that | f(z)|=\\max_{| z|=r}| f(z)|. (This is a finite quantity if f is not a monomial.)\n\nIs it possible for\\limsup \\nu(r)=∞?Is it possible for\\liminf \\nu(r)=∞?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 1117,
+  "status": "open",
+  "tags": [
+    "analysis"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $f(z)$ be an entire function which is not a monomial. Let $\\nu(r)$ count the number of $z$ with $\\lvert z\\rvert=r$ such that $\\lvert f(z)\\rvert=\\max_{\\lvert z\\rvert=r}\\lvert f(z)\\rvert$. (This is a finite quantity if $f$ is not a monomial.)\n\nIs it possible for\\[\\limsup \\nu(r)=\\infty?\\]Is it possible for\\[\\liminf \\nu(r)=\\infty?\\]",
+  "additional_context": "This is Problem 2.16 in \\cite{Ha74}, where it is attributed to Erdős.\n\nThe answer to the first question is yes, as shown by Herzog and Piranian \\cite{HePi68}. The second question is still open, although an 'approximate' affirmative answer is given by Gl\\\"{u}cksam and Pardo-Sim\\'{o}n \\cite{GlPa24}.\n\nReferences\n\n[GlPa24] Gl\\\"ucksam, Adi and Pardo-Sim\\'on, Leticia, An approximate solution to {E}rd\\H{o}s' maximum modulus points\nproblem. J. Math. Anal. Appl. (2024), Paper No. 127768, 20.\n\n[Ha74] Hayman, W. K., Research problems in function theory: new problems.  (1974), 155--180.\n\n[HePi68] Herzog, F. and Piranian, G., The counting function for points of maximum modulus.  (1968), 240--243.",
+  "reference_proof_hint": "Write (M(r)=\\max_{|z|=r}|f(z)|) and\n[\n\\nu(r)=|\\\\{z:\\ |z|=r,\\ |f(z)|=M(r)\\\\}|.\n]\nFor non‑monomial entire $f$, (\\nu(r)) is finite for each (r>0). \n\n### (\\displaystyle \\limsup_{r\\to\\infty}\\nu(r)=\\infty)?\n\nYes.\n\nThis is exactly part $a$ of a question posed by Erdős. Herzog and Piranian (1968) constructed a transcendental entire $f$ for which\n[\n\\nu(n)=n\\quad\\text{for every integer }n\\in\\mathbb N,\n]\nso in particular (\\limsup_{r\\to\\infty}\\nu(r)=\\infty). \n\n[[nomath]](Their construction does not give simple control of $\\nu(r)$ for *non-integer* $r$, which is relevant for the next part.)[[/nomath]] \n\n### (\\displaystyle \\liminf_{r\\to\\infty}\\nu(r)=\\infty)?\n\nAs of the most recent sources I can find (up through the 2024 journal version of the arXiv preprint below), this remains **open**.\n\nGlücksam and Pardo‑Simón explicitly state Erdős’ part $b$ as asking whether (\\nu(r)\\to\\infty) [[nomath]](equivalently $\\liminf_{r\\to\\infty}\\nu(r)=\\infty$)[[/nomath]], and they note that this “has eluded an answer t"
+}

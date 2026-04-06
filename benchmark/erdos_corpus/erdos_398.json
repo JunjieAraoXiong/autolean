@@ -1,0 +1,19 @@
+{
+  "uuid": "erdos_398",
+  "problem": [
+    "Are the only solutions ton!=x^2-1when n=4,5,7?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 398,
+  "status": "falsifiable",
+  "tags": [
+    "number theory",
+    "factorials"
+  ],
+  "prize": "no",
+  "formalized_on_site": true,
+  "original_latex": "Are the only solutions to\\[n!=x^2-1\\]when $n=4,5,7$?",
+  "additional_context": "The Brocard-Ramanujan conjecture. Erdős and Graham describe this as an old conjecture, and write it 'is almost certainly true but it is intractable at present'.\n\nOverholt \\cite{Ov93} has shown that this has only finitely many solutions assuming a weak form of the ABC conjecture.\n\nThere are no other solutions below 10^9 (see the OEIS page).\n\nReferences\n\n[Ov93] Overholt, Marius, The Diophantine equation n!+1=m^2. Bull. London Math. Soc. (1993), 104.",
+  "reference_proof_hint": "Your equation\n[\nn!=x^2-1\n]\nis equivalent to\n[\nn!+1=x^2,\n]\ni.e. “when is $n!+1$ a perfect square?” This is the **Brocard–Ramanujan equation** (often called **Brocard’s problem**). ([Wikipedia][1])\n\n### Known integer solutions\n\nThe only **known** values of $n$ giving an integer $x$ are\n[\n4!+1=25=5^2,\\qquad 5!+1=121=11^2,\\qquad 7!+1=5041=71^2,\n]\nso in terms of $(n,x)$ the known solutions are\n[\n(n,x)=(4,\\pm 5),\\ (5,\\pm 11),\\ (7,\\pm 71).\n]\n([Wikipedia][1])\n\n### Are these the *only* solutions?\n\nNo proof is known. It is **conjectured** that there are no other positive-integer solutions beyond (n=4,5,7), but this remains **open**. ([Wikipedia][1])\n\nWhat *is* known is that extensive computations have found no further solutions in large ranges. For example, a standard cited result is that there are no other solutions with (n<10^9). \n\nSo: **the only solutions currently known are at (n=4,5,7), but it is not known (proved) that these are the only ones.**\n\n[1]: https://en.wikipedia.org/wiki/Brocard%",
+  "ground_truth_lean": "/-\nCopyright 2025 The Formal Conjectures Authors.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    https://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n-/\n\nimport FormalConjectures.Util.ProblemImports\n\n/-!\n# Erdős Problem 398\n\n*References:*\n - [erdosproblems.com/398](https://www.erdosproblems.com/398)\n - [Wikipedia: Brocard's problem](https://en.wikipedia.org/wiki/Brocard%27s_problem)\n-/\n\nopen Nat\n\nnamespace Erdos398\n\n/--\n**Brocard's Problem**\nDoes $n! + 1 = m^2$ have integer solutions other than $n = 4, 5, 7$?\n-/\n@[category research open, AMS 11]\ntheorem erdos_398 : answer(sorry) ↔ {n | ∃ m, n ! + 1 = m ^ 2} = {4, 5, 7} := by\n  sorry\n\nend Erdos398\n"
+}

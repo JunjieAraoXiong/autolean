@@ -1,0 +1,16 @@
+{
+  "uuid": "erdos_392",
+  "problem": [
+    "Erdős Problem #392"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 392,
+  "status": "proved (Lean)",
+  "tags": [
+    "number theory",
+    "factorials"
+  ],
+  "prize": "no",
+  "formalized_on_site": true,
+  "ground_truth_lean": "/-\nCopyright 2025 The Formal Conjectures Authors.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    https://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n-/\n\nimport FormalConjectures.Util.ProblemImports\n\n/-!\n# Erdős Problem 392\n\n*Reference:* [erdosproblems.com/392](https://www.erdosproblems.com/392)\n-/\n\nopen Filter\n\nopen scoped Nat\n\nnamespace Erdos392\n\n/--\nLet $A(n)$ denote the least value of $t$ such that\n$$\n  n! = a_1 \\cdots a_t\n$$\nwith $a_1 \\leq \\cdots \\leq a_t\\leq n^2$. Then\n$$\n  A(n) = \\frac{n}{2} - \\frac{n}{2\\log n} + o\\left(\\frac{n}{\\log n}\\right).\n$$\n-/\n@[category research solved, AMS 11, formal_proof using lean4 at \"https://github.com/AlexKontorovich/PrimeNumberTheoremAnd/blob/main/PrimeNumberTheoremAnd/Erdos392.lean\"]\ntheorem erdos_392 (A : ℕ → ℕ) (h : ∀ n > 0,\n    IsLeast { t + 1 | (t) (_ : ∃ a : Fin (t + 1) → ℕ, (n)! = ∏ i, a i ∧\n      Monotone a ∧ a (Fin.last t) ≤ n ^ 2) } (A n)) :\n    ((fun (n : ℕ) => (A n - n / 2 + n / (2 * Real.log n) : ℝ)) =o[atTop] fun n => n / Real.log n)\n  := by\n  sorry\n\n/--\nIf we change the condition to $a_t \\leq n$ it can be shown that\n$$\n  A(n) = n - \\frac{n}{\\log n} + o\\left(\\frac{n}{\\log n}\\right)\n$$\n-/\n@[category research solved, AMS 11]\ntheorem erdos_392.variants.lower (A : ℕ → ℕ)\n    (hA : ∀ n > 0, IsLeast\n      { t + 1 | (t) (_ : ∃ a : Fin (t + 1) → ℕ, (n)! = ∏ i, a i ∧\n        Monotone a ∧ a (Fin.last t) ≤ n) } (A n)) :\n    (fun (n : ℕ) => (A n - n + n / Real.log n : ℝ)) =o[atTop] fun n => n / Real.log n := by\n  sorry\n\n/--\nCambie has observed that a positive answer follows from the result above with $a_t \\leq n$, simply\nby pairing variables together, e.g. taking $a'_i = a_{2i-1}a_{2i}$ (and the lower bound follows from\nStirling's approximation).\n-/\n@[category research solved, AMS 11]\ntheorem erdos_392.variants.implication (h : type_of% erdos_392) :\n    type_of% erdos_392.variants.lower := by\n  sorry\n\nend Erdos392\n"
+}

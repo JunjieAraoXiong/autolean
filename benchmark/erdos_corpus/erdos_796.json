@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_796",
+  "problem": [
+    "Let k≥ 2 and let g_k(n) be the largest possible size of A⊆ \\{1,\\ldots,n\\} such that every m has <k solutions to m=a_1a_2 with a_1<a_2∈ A.\n\nIs it true thatg_3(n)=(\\log\\log n)/(\\log n)n+(c+o(1))(n)/((\\log n)^2)for some constant c?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 796,
+  "status": "open",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $k\\geq 2$ and let $g_k(n)$ be the largest possible size of $A\\subseteq \\{1,\\ldots,n\\}$ such that every $m$ has $<k$ solutions to $m=a_1a_2$ with $a_1<a_2\\in A$.\n\nIs it true that\\[g_3(n)=\\frac{\\log\\log n}{\\log n}n+(c+o(1))\\frac{n}{(\\log n)^2}\\]for some constant $c$?",
+  "additional_context": "Erdős \\cite{Er64d} proved that if 2^{r-1}<k≤ 2^r theng_k(n) \\sim \\frac{(\\log\\log n)^{r-1}}{(r-1)!\\log n}n(which is the asymptotic count of those integers ≤ n with r distinct prime factors).\n\nIn particular the asymptotics of g_k(n) are known; in \\cite{Er69b} Erdős discussed the second order terms, and this question is implicit (especially when compared to the explicit question [425] he asked on several occasions). For k=3 he could prove the existence of some 0<c_1≤ c_2 such that(\\log\\log n)/(\\log n)n+c_1(n)/((\\log n)^2)≤ g_3(n)≤ (\\log\\log n)/(\\log n)n+c_2(n)/((\\log n)^2).The special case k=2 is the subject of [425].\n\nReferences\n\n[Er64d] P. Erdős, On the multiplicative representation of integers. Israel Journal of Mathematics (1964).\n\n[Er69b] Erdős, P., Problems and results in chromatic graph theory. Proof Techniques in Graph Theory (Proc. Second Ann\nArbor Graph Theory Conf., Ann Arbor, Mich.,\n1968) (1969), 27-35.",
+  "reference_proof_hint": "No.\n\nHere is a concrete construction that already forces a **second term of order (n/\\log n)** [[nomath]](so it cannot be pushed down to order $n/(\\log n)^2$)[[/nomath]].\n\n## A large valid set for $k=3$\n\nLet $n$ be large and define\n$\nA := {\\text{primes } \\le n}\\cup{pq\\le n:\\ p\\le \\sqrt n<q,\\ p,q \\text{ primes}}.\n$\nSo $A$ consists of **all primes**, plus **semiprimes with one prime factor (>\\sqrt n)**.\n\n### Claim: every $m$ has (<3) representations (m=a_1a_2) with (a_1<a_2\\in A).\n\nAny composite element of $A$ is of the form (pq) with (q>\\sqrt n), so it has a **unique** prime factor (>\\sqrt n).\n\nNow consider a representation $m=ab$ with (a<b\\in A). There are only three types:\n\n1. **prime (\\times) prime**: unique by unique factorization.\n\n2. **prime (\\times) semiprime**: write the semiprime as (pQ) with (Q>\\sqrt n).\n   Then (m = r\\cdot pQ).\n   If (r\\le \\sqrt n), then $Q$ is the unique prime factor (>\\sqrt n) in $m$, so the only possible semiprimes in $A$ dividing $m$ are (pQ) and (rQ), gi"
+}

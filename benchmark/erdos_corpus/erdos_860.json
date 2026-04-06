@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_860",
+  "problem": [
+    "Let h(n) be such that, for any m≥ 1, in the interval (m,m+h(n)) there exist distinct integers a_i for 1≤ i≤ \\pi(n) such that p_i\\mid a_i, where p_i denotes the ith prime.\n\nEstimate h(n)."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 860,
+  "status": "open",
+  "tags": [
+    "number theory",
+    "primes"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $h(n)$ be such that, for any $m\\geq 1$, in the interval $(m,m+h(n))$ there exist distinct integers $a_i$ for $1\\leq i\\leq \\pi(n)$ such that $p_i\\mid a_i$, where $p_i$ denotes the $i$th prime.\n\nEstimate $h(n)$.",
+  "additional_context": "A problem of Erdős and Pomerance \\cite{ErPo80}, who proved thath(n) \\ll \\frac{n^{3/2}}{(\\log n)^{1/2}}.Erdős and Selfridge proved h(n)>(3-o(1))n, and Ruzsa proved h(n)/n→ ∞.\n\nThis is discussed in problem B32 of Guy's collection \\cite{Gu04}.\n\nSee also [375].\n\nReferences\n\n[ErPo80] P. Erdős and C. Pomerance, Matching the natural numbers up to n with distinct multiples of another interval. Indigationes Math. (1980), 147-151.\n\n[Gu04] Guy, Richard K., Unsolved problems in number theory.  (2004), xviii+437.",
+  "reference_proof_hint": "Write (P(n)={p\\le n:\\ p\\ \\text{prime}}); then (|P(n)|=\\pi(n)), and the condition says:\n\n> for every integer (m\\ge 1), among the integers in $(m,m+h(n)$) one can choose (\\pi(n)) **distinct** integers, one for each prime (p\\le n), such that the chosen integer for $p$ is divisible by $p$.\n\nEquivalently, if (I=(m,m+h)\\cap\\mathbb Z), we want an injection\n[\n\\phi:P(n)\\hookrightarrow I,\\qquad p\\mid \\phi(p).\n]\nThe quantity $h(n)$ is the least $h$ that works uniformly for all $m$.\n\n## What is known about the size of $h(n)$\n\nThis problem (in essentially this form) is due to Erdős and Pomerance; it is listed as Erdős problem #860 and also appears as Problem B32 in Guy’s collection. The precise order of growth of $h(n)$ is **not known**; what is known are the following bounds:\n\n* **Upper bound (Erdős–Pomerance):**\n  [\n  h(n)\\ \\ll\\ \\frac{n^{3/2}}{\\sqrt{\\log n}}.\n  ]\n  ([Erdős Problems][1])\n\n* **Lower bounds:**\n\n  * Erdős and Selfridge proved a **linear** lower bound in the limsup sense:\n    [\n    h("
+}

@@ -1,0 +1,19 @@
+{
+  "uuid": "erdos_660",
+  "problem": [
+    "Let x_1,\\ldots,x_n∈ ℝ^3 be the vertices of a convex polyhedron. Are there at least(1-o(1))(n)/(2)many distinct distances between the x_i?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 660,
+  "status": "open",
+  "tags": [
+    "geometry",
+    "distances",
+    "convex"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $x_1,\\ldots,x_n\\in \\mathbb{R}^3$ be the vertices of a convex polyhedron. Are there at least\\[(1-o(1))\\frac{n}{2}\\]many distinct distances between the $x_i$?",
+  "additional_context": "For the similar problem in ℝ^2 there are always at least n/2 distances, as proved by Altman \\cite{Al63} (see [93]). In \\cite{Er75f} Erdős claims that Altman proved that the vertices determine \\gg n many distinct distances, but gives no reference.\n\nReferences\n\n[Al63] Altman, E., On a problem of P. Erdős. Amer. Math. Monthly (1963), 148-157.\n\n[Er75f] Erdős, Paul, On some problems of elementary and combinatorial geometry. Ann. Mat. Pura Appl. (4) (1975), 99-108.",
+  "reference_proof_hint": "This is **open** (as of the most recent public updates I can find, including an Erdős-problems catalogue entry last edited **Jan 1, 2026**). ([Erdős Problems][1])\n\n### Why “$n/2$” is the right scale\n\nYou **cannot** hope for a lower bound asymptotically larger than $n/2$, because there are convex polyhedra with only about $n/2$ distinct distances.\n\nA standard example is an $(n!-!2)$-gonal **bipyramid** (double pyramid): take a regular $(n-2)$-gon as a base and add two apices above and below the base plane. (A bipyramid is exactly “two pyramids glued base-to-base.”) ([Wikipedia][2])\n\n* The distances among the base vertices are just the chord lengths of a regular $(n-2)$-gon, giving (\\lfloor (n-2)/2\\rfloor) distinct distances.\n* The distance from an apex to any base vertex is a single value (by symmetry), and by choosing the height appropriately you can make this coincide with one of the base chord lengths, so it introduces **no new distance**.\n* The apex–apex distance contributes at most"
+}

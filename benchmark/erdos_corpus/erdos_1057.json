@@ -1,0 +1,27 @@
+{
+  "uuid": "erdos_1057",
+  "problem": [
+    "Let C(x) count the number of Carmichael numbers in the interval [1,x]. Is it true that C(x)=x^{1-o(1)}?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 1057,
+  "status": "open",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $C(x)$ count the number of Carmichael numbers in the interval $[1,x]$. Is it true that $C(x)=x^{1-o(1)}$?",
+  "additional_context": "Erdős \\cite{Er56c} provedC(x) < x \\exp\\left(-c (\\log x\\log\\log\\log x)/(\\log\\log x)\\right)for some constant c>0. Pomerance \\cite{Po89} gave a heuristic suggesting that this is the true order of growth, and in factC(x)= x \\exp\\left(-(1+o(1))(\\log x\\log\\log\\log x)/(\\log\\log x)\\right).Alford, Granville, and Pomerance \\cite{AGP94} proved that C(x)→ ∞, and in fact C(x)>x^{2/7} for large x. The best-known lower bound to date isC(x)> x^{0.33336704},due to Harman \\cite{Ha08}.\n\nKorselt observed that n being a Carmichael number is equivalent to n being squarefree and p-1\\mid n-1 for all primes p\\mid n.\n\nThis is discussed in problem A13 of Guy's collection \\cite{Gu04}.\n\nReferences\n\n[AGP94] Alford, W. R. and Granville, Andrew and Pomerance, Carl, There are infinitely many {C}armichael numbers. Ann. of Math. (2) (1994), 703--722.\n\n[Er56c] Erdős, P., On pseudoprimes and {C}armichael numbers. Publ. Math. Debrecen (1956), 201--206.\n\n[Gu04] Guy, Richard K., Unsolved problems in number theory.  (2004), xviii+437.\n\n[Ha08] Harman, Glyn, Watt's mean value theorem and {C}armichael numbers. Int. J. Number Theory (2008), 241--248.\n\n[Po89] Pomerance, Carl, Two methods in elementary analytic number theory.  (1989), 135--161.",
+  "reference_proof_hint": "This is **open**.\n\nBecause trivially (C(x)\\le x), the assertion\n[\nC(x)=x^{1-o(1)}\n]\nis really a **lower-bound** question: it asks whether for every fixed (\\varepsilon>0) one eventually has (C(x)\\ge x^{1-\\varepsilon}).\n\n## What is conjectured\n\n* This is essentially an old conjectural picture going back to Erdős, and it is listed as an open Erdős problem. ([Erdős Problems][1])\n* A much more precise conjecture (often called **Pomerance’s Carmichael density conjecture**) predicts\n  [\n  C(x)=x\\exp\\left(-(1+o(1))\\frac{\\log x,\\log\\log\\log x}{\\log\\log x}\\right),\n  ]\n  which **does imply** (C(x)=x^{1-o(1)}) [[nomath]](since that exponential factor is $x^{-o(1)}$)[[/nomath]]. \n\n## What is proved unconditionally (best known lower bounds)\n\nThe best unconditional results are still far from exponent $1$:\n\n* Alford–Granville–Pomerance (1994): (C(x)\\ge x^{2/7}) for $x$ sufficiently large. \n* Harman (2008): (C(x)\\ge x^{0.3336704}). \n* Lichtman (2022): improved to (C(x)\\ge x^{0.3389}) [[nomath]](for $x$",
+  "expert_comments": [
+    {
+      "author": "",
+      "text": "Some small updates on lower bounds:\n1. Lichtman (arXiv:2211.09641v1), Corollary 1.2, improves Harman [Ha08] by proving that $C(x) > x^{0.3389}$ for large $x$.\n2. Li (arXiv:2308.04458v8), Theorem 10, claims a slightly stronger exponent $C(x) > x^{0.34}$, though I have not verified the details of this preprint.\n      \n      \n      \n(The site has been updated to address this comment.)"
+    },
+    {
+      "author": "Quanyu Tang",
+      "text": "Thanks. I have added Licthman's exponent, but I believe there is some doubt over the work of Li you mention, and hence I'll leave this out until this has been independently verified."
+    }
+  ]
+}

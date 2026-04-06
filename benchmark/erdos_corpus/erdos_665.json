@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_665",
+  "problem": [
+    "Is there some constant c such that for every n there are A_1,\\ldots,A_m⊆ \\{1,\\ldots,n\\} such that | A_i| >n^{1/2}-c for all i, and | A_i∩ A_j| ≤ 1 for all i≠ j, and every pair 1≤ x<y≤ n has \\{x,y\\}⊆ A_i for some i?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 665,
+  "status": "open",
+  "tags": [
+    "combinatorics"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Is there some constant $c$ such that for every $n$ there are $A_1,\\ldots,A_m\\subseteq \\{1,\\ldots,n\\}$ such that $\\lvert A_i\\rvert >n^{1/2}-c$ for all $i$, and $\\lvert A_i\\cap A_j\\rvert \\leq 1$ for all $i\\neq j$, and every pair $1\\leq x<y\\leq n$ has $\\{x,y\\}\\subseteq A_i$ for some $i$?",
+  "additional_context": "A problem of Erdős and Larson \\cite{ErLa82}.\n\nShrikhande and Singhi \\cite{ShSi85} have proved that the answer is no conditional on the conjecture that the order of every projective plane is a prime power (see [723]), by proving that every pairwise balanced design on n points in which each block is of size ≥ n^{1/2}-c can be embedded in a projective plane of order n+i for some i≤ c+2, if n is sufficiently large.\n\nErdős asks if this is false for constant, for which functions h(n) will the condition | A_i| ≥ n^{1/2}-h(n) make the conjecture true?\n\nReferences\n\n[ErLa82] Erdős, P. and Larson, J., On pairwise balanced block designs with the sizes of blocks as uniform as possible. Annals of Discrete Mathematics (1982), 129-134.\n\n[ShSi85] S. S. Shrikhande and N. M. Singhi, On a problem of Erdős and Larson. Combinatorica (1985), 351-358.",
+  "reference_proof_hint": "Yes — as stated, the problem is *trivial* because you are allowed to take $m=1$.\n\nFor every $n$, let\n[\nm=1,\\qquad A_1={1,2,\\dots,n}.\n]\nThen:\n\n* (|A_1|=n). For any fixed constant (c>0) (e.g. (c=1)), we have\n  [\n  n > \\sqrt{n}-c\n  ]\n  for all (n\\ge 1) [[nomath]](since $n\\ge \\sqrt n$, and the inequality is strict once $c>0$)[[/nomath]].\n* The condition (|A_i\\cap A_j|\\le 1) for (i\\ne j) is **vacuously true** because there are no distinct indices when $m=1$.\n* Every pair ({x,y}\\subseteq{1,\\dots,n}) is contained in (A_1) by construction.\n\nSo **any** constant (c>0) works [[nomath]](for example $c=1$)[[/nomath]].\n[[nomath]](If you intended $n\\ge 2$, then even $c=0$ works with the same construction.)[[/nomath]]\n\n---\n\nIf you meant an additional restriction such as “(|A_i|) is *also* at most (\\sqrt n + O(1))” or “(m\\ge 2)”, then the question becomes a much more interesting design-theory / clique-decomposition problem (related to projective planes and pairwise balanced designs).\n"
+}

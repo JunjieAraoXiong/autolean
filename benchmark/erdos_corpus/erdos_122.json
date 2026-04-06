@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_122",
+  "problem": [
+    "For which number theoretic functions f is it true that, for any F(n) such that f(n)/F(n)→ 0 for almost all n, there are infinitely many x such that\\frac{\\#\\{ n∈ ℕ : n+f(n)∈ (x,x+F(x))\\}}{F(x)}→ ∞?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 122,
+  "status": "open",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "For which number theoretic functions $f$ is it true that, for any $F(n)$ such that $f(n)/F(n)\\to 0$ for almost all $n$, there are infinitely many $x$ such that\\[\\frac{\\#\\{ n\\in \\mathbb{N} : n+f(n)\\in (x,x+F(x))\\}}{F(x)}\\to \\infty?\\]",
+  "additional_context": "Asked by Erdős, Pomerance, and S\\'{a}rk\\\"{o}zy \\cite{EPS97} who prove that this is true when f is the divisor function or the number of distinct prime divisors of n, but Erdős believed it is false when f(n)=\\phi(n) or \\sigma(n).\n\nReferences\n\n[EPS97] Erdős, Paul and Pomerance, Carl and S\\'{a}rk\\\"{o}zy, Andr\\'{a}s, On locally repeated values of certain arithmetic functions. IV. Ramanujan J. (1997), 227-241.",
+  "reference_proof_hint": "Write $a(n)=n+f(n)$. Then the numerator is just the number of indices $n$ whose value $a(n)$ falls in the interval $(x,x+F(x))$. Equivalently,\n[\n#\\\\{n:\\ a(n)\\in(x,x+F(x))\\\\}=\\sum_{y=x+1}^{x+F(x)-1} m(y),\n]\nwhere $m(y)=#\\\\{n:\\ a(n)=y\\\\}$ is the “multiplicity” of the value $y$.\n\n## If (f(n)\\ge 0) eventually, the property is never true\n\nThis covers the usual meaning of “number theoretic function” in many places [[nomath]](values in $\\mathbb N$)[[/nomath]], and it also covers most standard arithmetic functions once you put them in the form $n+f(n)$ with (f\\ge 0).\n\nTake\n[\nF(x)=x^2+f(x)^2.\n]\nThen for every $x$,\n[\n\\frac{f(x)}{F(x)}=\\frac{f(x)}{x^2+f(x)^2}\\le \\min\\Big(\\frac{f(x)}{x^2},\\frac1{f(x)}\\Big)\\xrightarrow[x\\to\\infty]{}0,\n]\nso in particular (f(x)/F(x)\\to 0) [[nomath]](indeed, for all $x$, hence also “for almost all $x$”)[[/nomath]].\n\nNow assume (f(n)\\ge 0). If (a(n)=n+f(n)\\in(x,x+F(x))), then (n<a(n)<x+F(x)), so (n<x+F(x)). Hence\n[\n#\\\\{n:\\ a(n)\\in(x,x+F(x))\\\\}\\le x+F(x),\n]\nand therefor"
+}

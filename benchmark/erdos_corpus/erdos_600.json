@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_600",
+  "problem": [
+    "Let e(n,r) be minimal such that every graph on n vertices with at least e(n,r) edges, each edge contained in at least one triangle, must have an edge contained in at least r triangles. Let r≥ 2. Is it true thate(n,r+1)-e(n,r)→ ∞as n→ ∞? Is it true that(e(n,r+1))/(e(n,r))→ 1as n→ ∞?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 600,
+  "status": "open",
+  "tags": [
+    "graph theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $e(n,r)$ be minimal such that every graph on $n$ vertices with at least $e(n,r)$ edges, each edge contained in at least one triangle, must have an edge contained in at least $r$ triangles. Let $r\\geq 2$. Is it true that\\[e(n,r+1)-e(n,r)\\to \\infty\\]as $n\\to \\infty$? Is it true that\\[\\frac{e(n,r+1)}{e(n,r)}\\to 1\\]as $n\\to \\infty$?",
+  "additional_context": "Ruzsa and Szemer\\'{e}di \\cite{RuSz78} proved that e(n,r)=o(n^2) for any fixed r.\n\nSee also [80].\n\nReferences\n\n[RuSz78] Ruzsa, I. Z. and Szemer\\'{e}di, E., Triple systems with no six points carrying three triangles. Combinatorics (Proc. Fifth Hungarian Colloq.,\nKeszthely, 1976), Vol. II (1978), 939-945.",
+  "reference_proof_hint": "Let\n[\nf(n,r):=\\max{|E(G)|:\\ |V(G)|=n,\\ \\text{every edge of }G\\text{ lies in a triangle, and every edge lies in }\\le r-1\\text{ triangles}}.\n]\nThen by definition (e(n,r)=f(n,r)+1).\n\n### What is known about the size of $e(n,r)$\n\n* For every fixed (r\\ge 2), one has\n  [\n  e(n,r)=o(n^2)\\qquad (n\\to\\infty),\n  ]\n  proved by Ruzsa and Szemerédi. ([Erdős Problems][1])\n\n* The case $r=2$ is exactly the classical **Ruzsa–Szemerédi (6,3)-problem**: graphs in which *every edge belongs to a unique triangle* (equivalently, every edge is in at least one triangle and no edge is in two). ([Wikipedia][2])\n  For this case [[nomath]](hence for every $r\\ge 2$, since such graphs also avoid having an edge in $\\ge r$ triangles)[[/nomath]], the best general bounds are of the form\n  [\n  \\frac{n^2}{\\exp(O(\\sqrt{\\log n}))}\\ \\lesssim\\ e(n,2)\\ \\lesssim\\ \\frac{n^2}{\\exp(\\Omega(\\log^* n))}.\n  ]\n  The lower bound comes from Behrend-type 3AP-free set constructions, and the upper bound from Fox’s improved graph/triangle re"
+}

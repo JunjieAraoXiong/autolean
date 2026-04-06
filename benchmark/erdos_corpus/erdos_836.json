@@ -1,0 +1,19 @@
+{
+  "uuid": "erdos_836",
+  "problem": [
+    "Let r≥ 2 and G be a r-uniform hypergraph with chromatic number 3 (that is, there is a 3-colouring of the vertices of G such that no edge is monochromatic).\n\nSuppose any two edges of G have a non-empty intersection. Must G contain O(r^2) many vertices? Must there be two edges which meet in \\gg r many vertices?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 836,
+  "status": "open",
+  "tags": [
+    "graph theory",
+    "hypergraphs",
+    "chromatic number"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $r\\geq 2$ and $G$ be a $r$-uniform hypergraph with chromatic number $3$ (that is, there is a $3$-colouring of the vertices of $G$ such that no edge is monochromatic).\n\nSuppose any two edges of $G$ have a non-empty intersection. Must $G$ contain $O(r^2)$ many vertices? Must there be two edges which meet in $\\gg r$ many vertices?",
+  "additional_context": "A problem of Erdős and Shelah. The Fano geometry gives an example where there are no two edges which meet in r-1 vertices. Are there any other examples?\n\nErdős and Lov\\'{a}sz \\cite{ErLo75} proved that there must be two edges which meet in \\gg (r)/(\\log r) many vertices.\n\nAlon has provided the following counterexample to the first question: as vertices take two sets X and Y of sizes 2r-2 and (1)/(2)\\binom{2r-2}{r-1} respectively, where Y corresponds to all partitions of X into two equal parts. The edges are all subsets of X of size r, and also all sets consisting of a subset of X of size r-1 together with the unique element of Y corresponding to the induced partition of X.\n\nThis hypergraph is intersecting, its chromatic number is 3, and it has \\asymp 4^r/\\sqrt{r} many vertices.\n\nReferences\n\n[ErLo75] Erdős, P. and Lov\\'{a}sz, L., Problems and results on {3}-chromatic hypergraphs and some\nrelated questions.  (1975), 609--627.",
+  "reference_proof_hint": "As stated, the “$3$-colouring exists” condition is actually **automatic** from pairwise intersection: if $G$ is intersecting, pick one edge $e$, 2‑colour the vertices of $e$ with colours 1 and 2 (using both), and colour every other vertex with colour 3. Every edge meets $e$, so no edge is monochromatic. In particular, every intersecting hypergraph has (\\chi(G)\\le 3). ([ETH Zurich Math People][1])\n\nSo the only interesting reading is the standard one: **(\\chi(G)=3)**, i.e. $G$ is intersecting but **not** 2‑colourable (does not have property B). ([ETH Zurich Math People][1])\nUnder that interpretation:\n\n## 1) Must (|V(G)|=O(r^2))?\n\n**No.** Noga Alon gave an explicit counterexample with **exponentially** many vertices, about (\\asymp 4^r/\\sqrt r). ([Erdős Problems][2])\n\nHere is the construction (as recorded on the Erdős problems page). ([Erdős Problems][2])\n\n* Let $X$ be a set of size (|X|=2r-2).\n* Let $Y$ be a set whose elements correspond to all **unordered** partitions of $X$ into two equ"
+}

@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_731",
+  "problem": [
+    "Find some reasonable function f(n) such that, for almost all integers n, the least integer m such that m\\nmid \\binom{2n}{n} satisfiesm\\sim f(n)."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 731,
+  "status": "open",
+  "tags": [
+    "number theory",
+    "binomial coefficients"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Find some reasonable function $f(n)$ such that, for almost all integers $n$, the least integer $m$ such that $m\\nmid \\binom{2n}{n}$ satisfies\\[m\\sim f(n).\\]",
+  "additional_context": "A problem of Erdős, Graham, Ruzsa, and Straus \\cite{EGRS75}, who say it is 'not hard to show that', for almost all n, the minimal such m satisfiesm=\\exp((\\log n)^{1/2+o(1)}).\n\nReferences\n\n[EGRS75] Erdős, P. and Graham, R. L. and Ruzsa, I. Z. and Straus, E. G., On the prime factors of (\\sp{2n}\\sb{n}). Math. Comp. (1975), 83-92.",
+  "reference_proof_hint": "Let\n[\nM(n):=\\min{m\\ge 2:\\ m\\nmid \\binom{2n}{n}}.\n]\n\n### 1) Reduce to prime powers\n\nWrite (v_p(\\cdot)) for the $p$-adic valuation. If (m\\nmid \\binom{2n}{n}), then for some prime (p\\mid m) we have (v_p(m)>v_p!\\binom{2n}{n}). Hence\n[\np^{,v_p\\left(\\binom{2n}{n}\\right)+1}\\nmid \\binom{2n}{n},\n\\qquad\\text{and}\\qquad\np^{,v_p\\left(\\binom{2n}{n}\\right)+1}\\le m.\n]\nSo the *least* nondivisor must actually be a prime power, and in fact\n[\nM(n)=\\min_{p\\ \\text{prime}} p^{,v_p\\left(\\binom{2n}{n}\\right)+1}.\n]\nFor “typical” $n$, this minimum is almost always attained already at exponent $1$, i.e. $M(n)$ is (typically) the **least prime** $p$ with (p\\nmid \\binom{2n}{n}). [[nomath]](The cases where a small square like $9$ or $25$ wins have density $0$ as $n\\to\\infty$.)[[/nomath]]\n\nSo it is natural to focus on the least prime $p$ such that (p\\nmid \\binom{2n}{n}).\n\n### 2) Kummer’s theorem gives a digit condition\n\nKummer’s theorem says\n[\nv_p!\\binom{2n}{n}=\\text{(number of carries when adding }n+n\\text{ in base"
+}

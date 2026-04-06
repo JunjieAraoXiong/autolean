@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_190",
+  "problem": [
+    "Let H(k) be the smallest N such that in any finite colouring of \\{1,\\ldots,N\\} (into any number of colours) there is always either a monochromatic k-term arithmetic progression or a rainbow arithmetic progression (i.e. all elements are different colours). Estimate H(k). Is it true thatH(k)^{1/k}/k → ∞as k→∞?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 190,
+  "status": "open",
+  "tags": [
+    "additive combinatorics",
+    "arithmetic progressions"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $H(k)$ be the smallest $N$ such that in any finite colouring of $\\{1,\\ldots,N\\}$ (into any number of colours) there is always either a monochromatic $k$-term arithmetic progression or a rainbow arithmetic progression (i.e. all elements are different colours). Estimate $H(k)$. Is it true that\\[H(k)^{1/k}/k \\to \\infty\\]as $k\\to\\infty$?",
+  "additional_context": "This type of problem belongs to 'canonical' Ramsey theory. The existence of H(k) follows from Szemer\\'{e}di's theorem, and it is easy to show that H(k)^{1/k}→∞.",
+  "reference_proof_hint": "Write $W(k,r)$ for the usual van der Waerden number: the least $N$ such that every $r$-colouring of $[N]=\\\\{1,\\dots,N\\\\}$ contains a monochromatic $k$-term arithmetic progression.\n\nYour $H(k)$ is the corresponding **canonical** number: every colouring of $[H(k)]$ (with any number of colours) forces a $k$-AP whose colour pattern is either\n\n* **monochromatic**, or\n* **rainbow** (all $k$ colours distinct).\n\nThis is exactly the “canonical van der Waerden theorem” of Erdős–Graham. ([cs.umd.edu][1])\n\n## Existence and an explicit (but huge) upper bound scheme\n\nErdős–Graham note that the existence of such an $H(k)$ follows from Szemerédi’s theorem, and they already point out that getting good growth estimates is difficult. ([Rényi Institute][2])\n\nA later elementary proof (Rödl–Prömel), nicely exposited by Gasarch, gives a concrete way to bound (H(k)) from above in terms of a 2‑dimensional Gallai–Witt number. The key points from that proof are: ([cs.umd.edu][1])\n\n* Define a **finite** colouring"
+}

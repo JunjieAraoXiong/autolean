@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_558",
+  "problem": [
+    "Let R(G;k) denote the minimal m such that if the edges of K_m are k-coloured then there is a monochromatic copy of G. DetermineR(K_{s,t};k)where K_{s,t} is the complete bipartite graph with s vertices in one component and t in the other."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 558,
+  "status": "open",
+  "tags": [
+    "graph theory",
+    "ramsey theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $R(G;k)$ denote the minimal $m$ such that if the edges of $K_m$ are $k$-coloured then there is a monochromatic copy of $G$. Determine\\[R(K_{s,t};k)\\]where $K_{s,t}$ is the complete bipartite graph with $s$ vertices in one component and $t$ in the other.",
+  "additional_context": "Chung and Graham \\cite{ChGr75} prove the general bounds(2\\pi\\sqrt{st})^{(1)/(s+t)}\\left((s+t)/(e^2)\\right)k^{(st-1)/(s+t)}≤ R(K_{s,t};k)≤ (t-1)(k+k^{1/s})^sand determinedR(K_{2,2},k)=(1+o(1))k^2.Alon, R\\'{o}nyai, and Szab\\'{o} \\cite{ARS99} have proved thatR(K_{3,3},k)=(1+o(1))k^3and that if s≥ (t-1)!+1 thenR(K_{s,t},k)\\asymp k^t.This problem is #27 in Ramsey Theory in the graphs problem collection.\n\nReferences\n\n[ARS99] Alon, Noga and R\\'{o}nyai, Lajos and Szab\\'{o}, Tibor, Norm-graphs: variations and applications. J. Combin. Theory Ser. B (1999), 280-290.\n\n[ChGr75] Chung, Fan R. K. and Graham, R. L., On multicolor Ramsey numbers for complete bipartite graphs. J. Combinatorial Theory Ser. B (1975), 164-169.",
+  "reference_proof_hint": "Because (K_{s,t}\\cong K_{t,s}), we may assume (1\\le s\\le t).  In general, $R(K_{s,t};k)$ is **not known exactly**; what is known are sharp results in some special cases and general upper/lower bounds.\n\n## Exact case $s=1$ (stars)\n\nHere (K_{1,t}) is a star on $t+1$ vertices. Burr–Roberts (as quoted by Chung–Graham) give the exact multicolour value\n[\nR(K_{1,t};k)=\n\\begin{cases}\nk(t-1)+1,&\\text{if }k\\equiv t\\equiv 0\\pmod 2,\\\nk(t-1)+2,&\\text{otherwise.}\n\\end{cases}\n]\n([fanchung.ucsd.edu][1])\n\n## General bounds for (s\\ge 2)\n\nChung and Graham proved the general upper bound [[nomath]](for $k>1$ and $t>s>2$)[[/nomath]]\n[\nR(K_{s,t};k)\\ \\le\\ (t-1)\\bigl(k+k^{1/s}\\bigr)^s.\n]\nIn particular, as (k\\to\\infty) with fixed (s,t), this is ((t-1+o(1))k^s). ([fanchung.ucsd.edu][1])\n\nThey also proved a general probabilistic lower bound\n[\n(2\\pi\\sqrt{st})^{\\frac1{s+t}}\\\\(\\frac{s+t}{e^2}\\\\)k^{\\frac{st-1}{s+t}}\n\\ \\le\\ R(K_{s,t};k),\n]\nso for fixed (s,t) one always has at least polynomial growth in $k$ with expone"
+}

@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_943",
+  "problem": [
+    "Let A be the set of powerful numbers (if p\\mid n then p^2\\mid n). Is it true that1_A\\ast 1_A(n)=n^{o(1)}for every n?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 943,
+  "status": "open",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": true,
+  "original_latex": "Let $A$ be the set of powerful numbers (if $p\\mid n$ then $p^2\\mid n$). Is it true that\\[1_A\\ast 1_A(n)=n^{o(1)}\\]for every $n$?",
+  "reference_proof_hint": "Interpreting (\\ast) as **Dirichlet convolution** (the usual meaning for arithmetic functions),\n[\n(1_A\\ast 1_A)(n)=\\sum_{d\\mid n} 1_A(d),1_A(n/d)\n]\ncounts the number of (ordered) factorizations $n=ab$ with (a,b\\in A) (both powerful).\n\nSince (1_A(\\cdot)\\in{0,1}), every summand is (\\le 1), so trivially\n[\n(1_A\\ast 1_A)(n)\\le \\sum_{d\\mid n}1=\\tau(n),\n]\nwhere (\\tau(n)) is the divisor function.\n\nIt is standard that\n[\n\\tau(n)=n^{o(1)} \\qquad (n\\to\\infty),\n]\ni.e. for every (\\varepsilon>0) we have (\\tau(n)\\ll_\\varepsilon n^\\varepsilon) for all sufficiently large $n$.\nA quick proof sketch: write (n=n_{\\le y},n_{>y}) where (n_{\\le y}) has only prime factors (\\le y:=e^{1/\\varepsilon}), and (n_{>y}) has only primes (>y). Then\n\n* (\\tau(n_{\\le y})\\le (\\log n)^{\\pi(y)}) since there are only (\\pi(y)) such primes and each exponent is (\\le \\log n/\\log 2);\n* for (p^a|n_{>y}) one has (a+1\\le e^{a}\\le e^{a\\varepsilon\\log p}=p^{a\\varepsilon}) [[nomath]](because $\\log p\\ge 1/\\varepsilon$)[[/nomath]], hence\n  (",
+  "ground_truth_lean": "/-\nCopyright 2025 The Formal Conjectures Authors.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    https://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n-/\n\nimport FormalConjectures.Util.ProblemImports\n\n/-!\n# Erdős Problem 943\n\n*Reference:* [erdosproblems.com/943](https://www.erdosproblems.com/943)\n-/\n\nopen AdditiveCombinatorics Nat Filter\n\nnamespace Erdos943\n\n/--\nLet $A$ be the set of powerful numbers. Is is true that $1_A\\ast 1_A(n)=n^{o(1)}$ for every $n$?\n-/\n@[category research open, AMS 11]\ntheorem erdos_943 : answer(sorry) ↔\n    ∃ (o : ℕ → ℝ), o =o[atTop] (1 : ℕ → ℝ) ∧ ∀ᶠ n in atTop, (sumRep Powerful n) ≤ (n : ℝ)^(o n) := by\n  sorry\n\nend Erdos943\n"
+}

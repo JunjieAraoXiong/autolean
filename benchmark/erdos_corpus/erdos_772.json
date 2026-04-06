@@ -1,0 +1,16 @@
+{
+  "uuid": "erdos_772",
+  "problem": [
+    "Erdős Problem #772"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 772,
+  "status": "proved",
+  "tags": [
+    "number theory",
+    "sidon sets",
+    "additive combinatorics"
+  ],
+  "prize": "no",
+  "formalized_on_site": false
+}

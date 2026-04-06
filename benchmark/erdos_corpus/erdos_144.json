@@ -1,0 +1,15 @@
+{
+  "uuid": "erdos_144",
+  "problem": [
+    "Erdős Problem #144"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 144,
+  "status": "proved",
+  "tags": [
+    "number theory",
+    "divisors"
+  ],
+  "prize": "$250",
+  "formalized_on_site": false
+}

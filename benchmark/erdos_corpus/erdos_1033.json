@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_1033",
+  "problem": [
+    "Let h(n) be such that every graph on n vertices with >n^2/4 many edges contains a triangle whose vertices have degrees summing to at least h(n). Estimate h(n). In particular, is it true thath(n)≥ (2(\\sqrt{3}-1)-o(1))n?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 1033,
+  "status": "open",
+  "tags": [
+    "graph theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $h(n)$ be such that every graph on $n$ vertices with $>n^2/4$ many edges contains a triangle whose vertices have degrees summing to at least $h(n)$. Estimate $h(n)$. In particular, is it true that\\[h(n)\\geq (2(\\sqrt{3}-1)-o(1))n?\\]",
+  "additional_context": "Erdős and Laskar \\cite{ErLa85} proved2(\\sqrt{3}-1)n ≥ h(n) ≥ (1+c)nfor some c>0. The lower bound was improved to (21)/(16)n by Fan \\cite{Fa88}.\n\nReferences\n\n[ErLa85] Erdős, Paul and Laskar, Renu, A note on the size of a chordal subgraph. Congr. Numer. (1985), 81--86.\n\n[Fa88] Fan, Genghua, Degree sum for a triangle in a graph. J. Graph Theory (1988), 249--263.",
+  "reference_proof_hint": "Let $G$ be an $n$-vertex graph and write\n[\nS_G(\\triangle)=d_G(u)+d_G(v)+d_G(w)\n]\nfor the degree–sum of a triangle (\\triangle=uvw). Then your $h(n)$ is exactly\n$\nh(n)=\\min{\\ \\max_{\\triangle\\subseteq G} S_G(\\triangle)\\ :\\ |V(G)|=n,\\ e(G)>\\tfrac{n^2}{4}\\}.\n$\n[[nomath]](So $h(n)$ is the *best guaranteed* “large degree–sum triangle” once we cross Mantel’s threshold.)[[/nomath]]\n\n## What is known about the size of $h(n)$?\n\nIt is known that $h(n)$ is linear in $n$, and the best published general bounds (that I could find) are\n[\n\\Big(\\frac{21}{16}-o(1)\\Big)n\\ \\le\\ h(n)\\ \\le\\ \\big(2(\\sqrt3-1)+o(1)\\big)n,\n]\ni.e.\n[\n1.3125,n\\ \\lesssim\\ h(n)\\ \\lesssim\\ 1.4641,n.\n]\nThe **upper bound** comes from a concrete construction of Erdős–Laskar giving graphs with (e(G)=n^2/4+1) in which *every* triangle has degree–sum at most (\\big(2(\\sqrt3-1)+o(1)\\big)n). ([Erdős Problems][1])\nThe **lower bound** (h(n)\\ge \\frac{21}{16}n) is due to Fan (improving an earlier linear lower bound). ([Erdős Problems][1])\n\nSo at pr"
+}

@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_81",
+  "problem": [
+    "Let G be a chordal graph on n vertices - that is, G has no induced cycles of length greater than 3. Can the edges of G be partitioned into n^2/6+O(n) many cliques?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 81,
+  "status": "open",
+  "tags": [
+    "graph theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $G$ be a chordal graph on $n$ vertices - that is, $G$ has no induced cycles of length greater than $3$. Can the edges of $G$ be partitioned into $n^2/6+O(n)$ many cliques?",
+  "additional_context": "Asked by Erdős, Ordman, and Zalcstein \\cite{EOZ93}, who proved an upper bound of (1/4-\\epsilon)n^2 many cliques (for some very small \\epsilon>0). The example of all edges between a complete graph on n/3 vertices and an empty graph on 2n/3 vertices show that n^2/6+O(n) is sometimes necessary.\n\nA split graph is one where the vertices can be split into a clique and an independent set. Every split graph is chordal. Chen, Erdős, and Ordman \\cite{CEO94} have shown that any split graph can be partitioned into (3)/(16)n^2+O(n) many cliques.\n\nSee also [1017].\n\nReferences\n\n[CEO94] Chen, Guan-Tao and Erdős, Paul and Ordman, Edward T., Clique partitions of split graphs. Combinatorics, graph theory, algorithms and applications\n(Beijing, 1993) (1994), 21-30.\n\n[EOZ93] Erdős, Paul and Ordman, Edward T. and Zalcstein, Yechezkel, Clique partitions of chordal graphs. Combin. Probab. Comput. (1993), 409-415.",
+  "reference_proof_hint": "This exact question is **open** (in the literature, and still listed as open as of late **2025**). It was asked by **Erdős–Ordman–Zalcstein** in their paper *Clique Partitions of Chordal Graphs*; they explicitly state that it is unknown whether (n^{2}/6+O(n)) cliques always suffice. ([Cambridge University Press & Assessment][1])\n\n### Why (n^2/6) is the “right” constant to hope for\n\nThere is a **chordal** example (in fact a **split/threshold** graph) that already **forces** (\\frac{n^{2}}{6}+O(n)) cliques, so you cannot hope for a smaller leading constant.\n\nTake (n=3k). Let $A$ be a clique of size $k$ and $B$ an independent set of size $2k$, and join **every** vertex of $B$ to **every** vertex of $A$. This graph is chordal (indeed split). Erdős–Ordman–Zalcstein point out that this construction shows (\\frac{n^{2}}{6}+O(n)) cliques can be **necessary**. ([Erdős Problems][2])\n\nOne can check it in this case more explicitly: the minimum number of cliques in an edge-partition is\n[\n\\frac{k(k-1)"
+}

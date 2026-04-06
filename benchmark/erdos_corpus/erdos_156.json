@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_156",
+  "problem": [
+    "Does there exist a maximal Sidon set A⊂ \\{1,\\ldots,N\\} of size O(N^{1/3})?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 156,
+  "status": "open",
+  "tags": [
+    "sidon sets"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Does there exist a maximal Sidon set $A\\subset \\{1,\\ldots,N\\}$ of size $O(N^{1/3})$?",
+  "additional_context": "A question of Erdős, S\\'{a}rk\\\"{o}zy, and S\\'{o}s \\cite{ESS94}. It is easy to prove that the greedy construction of a maximal Sidon set in \\{1,\\ldots,N\\} has size \\gg N^{1/3}. Ruzsa \\cite{Ru98b} constructed a maximal Sidon set of size \\ll (N\\log N)^{1/3}.\n\nSee also [340].\n\nReferences\n\n[ESS94] Erdős, P. and S\\'{a}rk\\\"{o}zy, A. and S\\'{o}s, T., On Sum Sets of Sidon Sets, I. Journal of Number Theory (1994), 329-347.\n\n[Ru98b] Ruzsa, Imre Z., A small maximal Sidon set. Ramanujan J. (1998), 55-58.",
+  "reference_proof_hint": "Not known in general — this is a classical open problem of Erdős–Sárközy–Sós.\n\nLet $m(N)$ denote the **minimum** possible size of a **maximal (by inclusion)** Sidon set (A\\subseteq [N]:={1,\\dots,N}). Problem 15 in Erdős–Sárközy–Sós (1994) asks exactly whether (m(N)=O(N^{1/3})). ([Academy's Library Repository][1])\n\nWhat is known is that $m(N)$ is pinned down up to a ((\\log N)^{1/3}) factor:\n\n### Lower bound: every maximal Sidon set has (\\Omega(N^{1/3})) elements\n\nSketch (standard “coverage” argument). If (A\\subseteq[N]) is Sidon and **maximal**, then for every (x\\in [N]\\setminus A), adding $x$ must create a nontrivial additive collision. Under the usual Sidon definition [[nomath]](all sums $a+b$ with $a\\le b$ are distinct)[[/nomath]], that means either\n\n* $x+a=b+c$ for some $a,b,c\\in A$ [[nomath]](allowing $b=c$)[[/nomath]], i.e. (x\\in (A+A-A)), or\n* (2x=a+b) for some (a,b\\in A), i.e. (x\\in (A+A)/2).\n\nHence\n[\n[N]\\subseteq A \\ \\cup\\ (A+A-A)\\ \\cup\\ (A+A)/2.\n]\nCrude counting gives (|A+A-A|"
+}

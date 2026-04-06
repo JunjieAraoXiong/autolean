@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_738",
+  "problem": [
+    "If G has infinite chromatic number and is triangle-free (contains no K_3) then must G contain every tree as an induced subgraph?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 738,
+  "status": "open",
+  "tags": [
+    "graph theory",
+    "chromatic number"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "If $G$ has infinite chromatic number and is triangle-free (contains no $K_3$) then must $G$ contain every tree as an induced subgraph?",
+  "additional_context": "A conjecture of Gy\\'{a}rf\\'{a}s.",
+  "reference_proof_hint": "Not known in general (for **finite** trees). This is a well‑known open problem of Erdős, attributed to a conjecture of Gyárfás. ([Erdős Problems][1])\n\n### What’s the precise “interesting” formulation?\n\nIf you interpret “every tree” literally as **all** trees (including uncountable ones), then the statement is trivially false for size reasons: a countable graph cannot contain an uncountable tree as an induced subgraph.\n\nThe standard interpretation in this area is:\n\n> For every **finite** tree $T$, does there exist an integer $f(T)$ such that every **triangle‑free** graph $G$ with (\\chi(G)\\ge f(T)) contains an **induced** copy of $T$?\n\nGyárfás–Szemerédi–Tuza state exactly this conjecture in their 1980 paper. \n\nIf that conjecture were true, then your statement for “(\\chi(G)) infinite” would follow immediately, because an infinite chromatic number is larger than any fixed finite $f(T)$.\n\nAs of the current literature, this conjecture **remains open** in full generality. ([Erdős Problems][1]"
+}

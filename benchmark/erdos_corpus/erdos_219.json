@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_219",
+  "problem": [
+    "Erdős Problem #219"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 219,
+  "status": "proved",
+  "tags": [
+    "number theory",
+    "additive combinatorics",
+    "primes",
+    "arithmetic progressions"
+  ],
+  "prize": "no",
+  "formalized_on_site": true,
+  "ground_truth_lean": "/-\nCopyright 2025 The Formal Conjectures Authors.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    https://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n-/\n\nimport FormalConjectures.Util.ProblemImports\n\n/-!\n# Erdős Problem 219\n\n*Reference:* [erdosproblems.com/219](https://www.erdosproblems.com/219)\n-/\n\nnamespace Erdos219\n\n/--\nThe set of arithmetic progressions of primes\n-/\ndef primeArithmeticProgressions : Set (Set ℕ) :=\n  {s | (∀ p ∈ s, p.Prime) ∧ ∃ l > 0, s.IsAPOfLength l}\n\n@[category test, AMS 5 11]\ntheorem primeArithmeticProgression_3_5_7 : {3, 5, 7} ∈ primeArithmeticProgressions := by\n  simp only [primeArithmeticProgressions, gt_iff_lt, Set.IsAPOfLength, Set.IsAPOfLengthWith,\n    smul_eq_mul, exists_prop, exists_and_left, existsAndEq, true_and, Set.mem_setOf_eq,\n    Set.mem_insert_iff, Set.mem_singleton_iff, forall_eq_or_imp, forall_eq,\n    ENat.card_eq_coe_fintype_card, Fintype.card_ofFinset, Set.toFinset_insert,\n    Set.toFinset_singleton, Finset.mem_insert, Nat.reduceEqDiff, Finset.mem_singleton, or_self,\n    not_false_eq_true, Finset.card_insert_of_notMem, Finset.card_singleton, Nat.reduceAdd,\n    Nat.cast_ofNat, Nat.ofNat_pos, Nat.cast_lt_ofNat]\n  refine ⟨by norm_num, ⟨3, 2, Set.ext fun x => ?_⟩⟩\n  refine ⟨?_, fun ⟨w, ⟨hl, hr⟩⟩ => by interval_cases w <;> simp_all⟩\n  rintro (rfl | rfl | rfl)\n  · simp\n  · simpa using ⟨1, by simp⟩\n  · simpa using ⟨2, by simp⟩\n\n@[category test, AMS 5 11]\ntheorem not_primeArithmeticProgression_1_2 : ¬{1, 2} ∈ primeArithmeticProgressions := by\n  simp [primeArithmeticProgressions]\n  norm_num\n\n@[category API, AMS 5 11]\ntheorem empty_not_primeArithmeticProgression : ∅ ∉ primeArithmeticProgressions := by\n  simpa [primeArithmeticProgressions] using fun _ hl ↦ Set.not_isAPOfLength_empty hl\n\n@[category API, AMS 5 11]\nlemma singleton_mem_primeArithmeticProgressions\n    {p : ℕ} (hp : p.Prime) : {p} ∈ primeArithmeticProgressions := by\n  simpa [primeArithmeticProgressions, hp] using ⟨1, one_pos, by simp⟩\n\n@[category API, AMS 5 11]\nlemma pair_mem_primeArithmeticProgressions\n    {p q : ℕ} (hp : p.Prime) (hq : q.Prime) (hpq : p < q) :\n    {p, q} ∈ primeArithmeticProgressions := by\n  let ⟨n, h⟩ := Nat.exists_eq_add_of_lt hpq\n  simpa [primeArithmeticProgressions, hp, hq] using ⟨2, by norm_num, Nat.isAPOfLength_pair hpq⟩\n\n/--\nAre there arbitrarily long arithmetic progressions of primes?\nSolution: yes.\nRef: Green, Ben and Tao, Terence, _The primes contain arbitrarily long arithmetic progressions_\n-/\n\n@[category research solved, AMS 5 11]\ntheorem erdos_219 : answer(True) ↔ ∀ N : ℕ, ∃ l ∈ primeArithmeticProgressions, N ≤ ENat.card l := by\n  sorry\n\nend Erdos219\n"
+}

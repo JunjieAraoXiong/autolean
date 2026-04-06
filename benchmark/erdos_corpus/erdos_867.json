@@ -1,0 +1,14 @@
+{
+  "uuid": "erdos_867",
+  "problem": [
+    "Erdős Problem #867"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 867,
+  "status": "disproved",
+  "tags": [
+    "additive combinatorics"
+  ],
+  "prize": "no",
+  "formalized_on_site": false
+}

@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_809",
+  "problem": [
+    "Let k≥ 3 and define F_k(n) to be the minimal r such that there is a graph G on n vertices with \\lfloor n^2/4\\rfloor+1 many edges such that the edges can be r-coloured so that every subgraph isomorphic to C_{2k+1} has no colour repeating on the edges.\n\nIs it true thatF_k(n)\\sim n^2/8?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 809,
+  "status": "open",
+  "tags": [
+    "graph theory",
+    "ramsey theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $k\\geq 3$ and define $F_k(n)$ to be the minimal $r$ such that there is a graph $G$ on $n$ vertices with $\\lfloor n^2/4\\rfloor+1$ many edges such that the edges can be $r$-coloured so that every subgraph isomorphic to $C_{2k+1}$ has no colour repeating on the edges.\n\nIs it true that\\[F_k(n)\\sim n^2/8?\\]",
+  "additional_context": "A problem of Burr, Erdős, Graham, and S\\'{o}s, who proved thatF_k(n)\\gg n^2.See also [810].",
+  "reference_proof_hint": "What you are calling (F_k(n)) is exactly the “strong chromatic number” extremal function studied by Burr–Erdős–Graham–Sós in their 1989 paper: they define\n[\nxs(n,e,L)=\\min_{G:|V(G)|=n,\\ |E(G)|=e}\\ xs(G,L),\n]\nwhere $xs(G,L)$ is the minimum number of edge‐colours needed so that **every** copy of $L$ in $G$ is *totally multicoloured* (i.e. rainbow). ([users.renyi.hu][1])\nYour (F_k(n)) is $xs(n,\\lfloor n^2/4\\rfloor+1,C_{2k+1})$.\n\nA key point is that for any fixed odd cycle (C_{2k+1}), for $n$ large enough one has\n[\n\\mathrm{ex}(n,C_{2k+1})=t_2(n)=\\\\\\lfloor\\frac{n^2}{4}\\\\\\rfloor,\n]\nso your edge count (t_2(n)+1) is exactly “one over extremal”, hence (C_{2k+1}) is forced and the condition is not vacuous. ([users.renyi.hu][1])\n\n## Status of the asymptotic (F_k(n)\\sim n^2/8)\n\nAs far as the standard references indicate, this is **open**.\n\n* Burr–Erdős–Graham–Sós prove that for **odd cycles other than (C_3) and (C_5)** [[nomath]](in particular for all odd $C_{2k+1}$ with $2k+1\\ge 7$)[[/nomath]], t"
+}

@@ -1,0 +1,15 @@
+{
+  "uuid": "erdos_1090",
+  "problem": [
+    "Erdős Problem #1090"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 1090,
+  "status": "proved (Lean)",
+  "tags": [
+    "geometry",
+    "ramsey theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false
+}

@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_129",
+  "problem": [
+    "Let R(n;k,r) be the smallest N such that if the edges of K_N are r-coloured then there is a set of n vertices which does not contain a copy of K_k in at least one of the r colours. Prove that there is a constant C=C(r)>1 such thatR(n;3,r) < C^{\\sqrt{n}}."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 129,
+  "status": "open",
+  "tags": [
+    "graph theory",
+    "ramsey theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $R(n;k,r)$ be the smallest $N$ such that if the edges of $K_N$ are $r$-coloured then there is a set of $n$ vertices which does not contain a copy of $K_k$ in at least one of the $r$ colours. Prove that there is a constant $C=C(r)>1$ such that\\[R(n;3,r) < C^{\\sqrt{n}}.\\]",
+  "additional_context": "Conjectured by Erdős and Gy\\'{a}rf\\'{a}s, who proved the existence of some C>1 such that R(n;3,r)>C^{\\sqrt{n}}. Note that when r=k=2 we recover the classic Ramsey numbers. Erdős thought it likely that for all r,k≥ 2 there exists some C_1,C_2>1 (depending only on r) such that C_1^{n^{1/k-1}}< R(n;k,r) < C_2^{n^{1/k-1}}.Antonio Girao has pointed out that this problem as written is easily disproved, and indeed R(n;3,2) ≥ C^{n}:\n\nThe obvious probabilistic construction (randomly colour the edges red/blue independently uniformly at random) yields a 2-colouring of the edges of K_N such every set on n vertices contains a red triangle and a blue triangle (using that every set of n vertices contains \\gg n^2 edge-disjoint triangles), provided N ≤ C^n for some absolute constant C>1. This implies R(n;3,2) ≥ C^{n}, contradicting the conjecture.\n\nPerhaps Erdős had a different problem in mind, but it is not clear what that might be. It would presumably be one where the natural probabilistic argument would deliver a bound like C^{\\sqrt{n}} as Erdős and Gy\\'{a}rf\\'{a}s claim to have achieved via the probabilistic method.",
+  "reference_proof_hint": "The inequality you ask for is **not true** (with your definition of (R(n;k,r))). In fact, already for (r=2) one can build 2‑colourings where **every** (n)-set contains **both** a red triangle and a blue triangle, as long as (N) is of the form (C^n). So (R(n;3,2)) grows at least exponentially in (n), and therefore it cannot be (<C^{\\sqrt n}). This observation is recorded in the discussion of this Erdős–Gyárfás problem. ([Erdős Problems][1])\n\nBelow is a clean probabilistic proof (and it works for every fixed (r\\ge 2), not just (r=2)).\n\n---\n\n## Step 1: A packing of many edge-disjoint triangles in (K_n)\n\n**Lemma.** The complete graph (K_n) contains at least\n[\nm ;\\ge; \\frac{n(n-2)}{12}\n]\n**edge-disjoint** triangles.\n\n**Proof.** Start with (K_n). Repeatedly do this: if the current graph contains a triangle, pick one triangle and delete its 3 edges. Continue until no triangle remains. At the end we have a triangle‑free graph (H) on (n) vertices.\n\nBy Mantel’s theorem, any triangle‑free graph o"
+}

@@ -1,0 +1,15 @@
+{
+  "uuid": "erdos_21",
+  "problem": [
+    "Erdős Problem #21"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 21,
+  "status": "proved",
+  "tags": [
+    "combinatorics",
+    "intersecting family"
+  ],
+  "prize": "$500",
+  "formalized_on_site": false
+}

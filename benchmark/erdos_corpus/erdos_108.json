@@ -1,0 +1,20 @@
+{
+  "uuid": "erdos_108",
+  "problem": [
+    "For every r≥ 4 and k≥ 2 is there some finite f(k,r) such that every graph of chromatic number ≥ f(k,r) contains a subgraph of girth ≥ r and chromatic number ≥ k?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 108,
+  "status": "open",
+  "tags": [
+    "graph theory",
+    "chromatic number",
+    "cycles"
+  ],
+  "prize": "no",
+  "formalized_on_site": true,
+  "original_latex": "For every $r\\geq 4$ and $k\\geq 2$ is there some finite $f(k,r)$ such that every graph of chromatic number $\\geq f(k,r)$ contains a subgraph of girth $\\geq r$ and chromatic number $\\geq k$?",
+  "additional_context": "Conjectured by Erdős and Hajnal. R\\\"{o}dl \\cite{Ro77} has proved the r=4 case (see [923]). The infinite version (whether every graph of infinite chromatic number contains a subgraph of infinite chromatic number whose girth is >k) is also open.\n\nIn \\cite{Er79b} Erdős also asks whether\\lim_{k→ ∞}(f(k,r+1))/(f(k,r))=∞.See also the entry in the graphs problem collection and [740] for the infinitary version.\n\nReferences\n\n[Er79b] Erdős, Paul, Problems and results in graph theory and combinatorial analysis. Graph theory and related topics (Proc. Conf., Univ. Waterloo, Waterloo, Ont., 1977) (1979), 153-163.\n\n[Ro77] R\\\"{o}dl, V., On the chromatic number of subgraphs of a given graph. Proc. Amer. Math. Soc. (1977), 370-371.",
+  "reference_proof_hint": "This is **open in general**. It is a well‑known conjecture of **Erdős and Hajnal** (sometimes called the Erdős–Hajnal conjecture on large‑girth, large‑chromatic subgraphs) that such a function $f(k,r)$ should exist for **all** (k,r), but it is only proved in a few cases. ([Erdős Problems][1])\n\n### What is known\n\n* **(k=2)**: trivial. Any graph with (\\chi(G)\\ge 2) contains an edge, and an edge (or any forest) has no cycles, so its girth is (\\infty\\ge r). Thus (f(2,r)=2) works.\n\n* **(k=3)**: also **true** (with a simple explicit bound). A classical theorem of Erdős–Hajnal implies that if a finite graph has chromatic number (>2j), then it must contain an odd cycle of length at least $2j+1$. \n  Equivalently: every finite graph (G) with (\\chi(G)=t\\ge 3) contains an odd cycle of length at least $t-1$. Taking that odd cycle as a subgraph gives chromatic number $3$ and girth equal to its length. Hence one can take, for example,\n  [\n  f(3,r)\\le r+2\n  ]\n  (or $r+1$ when $r$ is odd).\n\n* **(r=4)**",
+  "ground_truth_lean": "/-\nCopyright 2025 The Formal Conjectures Authors.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    https://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n-/\n\nimport FormalConjectures.Util.ProblemImports\n\n/-!\n# Erdős Problem 108\n\n*Reference:* [erdosproblems.com/108](https://www.erdosproblems.com/108)\n-/\n\nuniverse u\n\nnamespace Erdos108\n\nopen Erdos108\n\n/--\nFor every r ≥ 4 and k ≥ 2 is there some finite f(k,r) such that every graph of chromatic number ≥ f(k,r)\ncontains a subgraph of girth ≥ r and chromatic number ≥ k?\n-/\n@[category research open, AMS 5]\ntheorem erdos_108 :\n    answer(sorry) ↔ ∀ r ≥ 4, ∀ k ≥ (2 : ℕ), ∃ (f : ℕ),\n    ∀ (V : Type u) (G : SimpleGraph V) (_ : Nonempty V)\n      (hchro : f ≤ SimpleGraph.chromaticNumber G),\n    ∃ (H : G.Subgraph), (SimpleGraph.girth H.coe ≥ r) ∧\n    (SimpleGraph.chromaticNumber H.coe ≥ k) := by\n  sorry\n\n-- TODO: Proof for the case r=4 and statement for the infinite case\n\nend Erdos108\n"
+}

@@ -1,0 +1,14 @@
+{
+  "uuid": "erdos_1161",
+  "problem": [
+    "Erdős Problem #1161"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 1161,
+  "status": "solved",
+  "tags": [
+    "group theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false
+}

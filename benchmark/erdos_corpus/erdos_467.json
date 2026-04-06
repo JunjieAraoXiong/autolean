@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_467",
+  "problem": [
+    "Prove the following for all large x: there is a choice of congruence classes a_p for all primes p≤ x and a decomposition \\{p≤ x\\}=A\\sqcup B into two non-empty sets such that, for all n<x, there exist some p∈ A and q∈ B such that n\\equiv a_p\\pmod{p} and n\\equiv a_q\\pmod{q}."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 467,
+  "status": "open",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Prove the following for all large $x$: there is a choice of congruence classes $a_p$ for all primes $p\\leq x$ and a decomposition $\\{p\\leq x\\}=A\\sqcup B$ into two non-empty sets such that, for all $n<x$, there exist some $p\\in A$ and $q\\in B$ such that $n\\equiv a_p\\pmod{p}$ and $n\\equiv a_q\\pmod{q}$.",
+  "additional_context": "This is what I assume the intended problem is, although the presentation in \\cite{ErGr80} is missing some crucial quantifiers, so I may have misinterpreted it.\n\nReferences\n\n[ErGr80] Erdős, P. and Graham, R., Old and new problems and results in combinatorial number theory. Monographies de L'Enseignement Mathematique (1980).",
+  "reference_proof_hint": "Let me start with an important point about the *status* of this statement.\n\nThis is (essentially) **Erdős–Graham problem 467** in *Old and New Problems and Results in Combinatorial Number Theory*, and it is listed as **open** (no known published proof) on the Erdős problems archive. ([Erdős Problems][1])\n\nSo I can’t honestly give you a complete, settled proof that is known to be correct in the literature. What I *can* do right now is:\n\n1. show you the clean reformulation that makes the difficulty transparent, and\n2. prove a strong **“almost all (n<x)”** variant by a probabilistic argument (which is standard and genuinely provable), and\n3. explain what a proof of the full statement would have to overcome.\n\n---\n\n## 1) Reformulation via CRT: one global shift\n\nFix $x$ and let\n[\nP:=\\prod_{p\\le x} p.\n]\nGiven any choice of residues ({a_p}_{p\\le x}), the Chinese remainder theorem gives a unique residue class (m \\pmod P) such that\n[\nm \\equiv a_p \\pmod p \\quad\\text{for every prime }p\\le x.\n]\nThe"
+}

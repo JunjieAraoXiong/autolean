@@ -1,0 +1,15 @@
+{
+  "uuid": "erdos_1028",
+  "problem": [
+    "Erdős Problem #1028"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 1028,
+  "status": "solved (Lean)",
+  "tags": [
+    "graph theory",
+    "discrepancy"
+  ],
+  "prize": "no",
+  "formalized_on_site": false
+}

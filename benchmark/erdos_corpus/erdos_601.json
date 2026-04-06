@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_601",
+  "problem": [
+    "For which limit ordinals \\alpha is it true that if G is a graph with vertex set \\alpha then G must have either an infinite path or independent set on a set of vertices with order type \\alpha?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 601,
+  "status": "open",
+  "tags": [
+    "graph theory",
+    "set theory"
+  ],
+  "prize": "$500",
+  "formalized_on_site": false,
+  "original_latex": "For which limit ordinals $\\alpha$ is it true that if $G$ is a graph with vertex set $\\alpha$ then $G$ must have either an infinite path or independent set on a set of vertices with order type $\\alpha$?",
+  "additional_context": "A problem of Erdős, Hajnal, and Milner \\cite{EHM70}, who proved this is true for \\alpha < \\omega_1^{\\omega+2}.\n\nIn \\cite{Er82e} Erdős offers \\250 for showing what happens when \\alpha=\\omega_1^{\\omega+2} and \\500 for settling the general case.\n\nLarson \\cite{La90} proved this is true for all \\alpha<2^{\\aleph_0} assuming Martin's axiom.\n\nReferences\n\n[EHM70] Erdős, P. and Hajnal, A. and Milner, E. C., Set mappings and polarized partition relations. Combinatorial theory and its applications, I-III (Proc.\nColloq., Balatonf\\\"{u}red, 1969) (1970), 327-363.\n\n[Er82e] Erdős, Paul, Some of my favourite problems which recently have been solved.  (1982), 59--79.\n\n[La90] Larson, Jean A., Martin's axiom and ordinal graphs: large independent sets or infinite paths. Ann. Pure Appl. Logic (1990), 31-39.",
+  "reference_proof_hint": "Write the statement as the (graph‑theoretic) partition relation\n[\n\\alpha\\ \\to\\ (\\alpha,\\ \\text{infinite path})^{2},\n]\nmeaning: **every** graph $G$ on vertex set (\\alpha) has either\n\n* an **infinite (one‑way) path** (v_0,v_1,\\dots) with ({v_i,v_{i+1}}\\in E(G)) for all $i$, or\n* an **independent** set (I\\subseteq \\alpha) whose induced order has **order type (\\alpha)**.\n\nHere is what is known.\n\n## Things that are settled in ZFC\n\n### 1) Successor ordinals are excluded for a reason\n\nIf (\\alpha=\\beta+1), the statement fails: take the star with center (\\beta) adjacent to every (\\xi<\\beta). This graph has no infinite path, and any independent set of order type (\\beta+1) would have to include (\\beta), which is impossible. [[nomath]](So restricting to **limit** $\\alpha$ is essential.)[[/nomath]] \n\n### 2) Every infinite cardinal (\\kappa) (as an initial ordinal) works\n\nIf (\\alpha=\\kappa) is an infinite cardinal (i.e. an initial ordinal), then ZFC proves the desired dichotomy: by the Erdős–Dushnik–"
+}

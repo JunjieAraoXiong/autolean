@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_98",
+  "problem": [
+    "Let h(n) be such that any n points in ℝ^2, with no three on a line and no four on a circle, determine at least h(n) distinct distances. Does h(n)/n→ ∞?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 98,
+  "status": "open",
+  "tags": [
+    "geometry",
+    "distances"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $h(n)$ be such that any $n$ points in $\\mathbb{R}^2$, with no three on a line and no four on a circle, determine at least $h(n)$ distinct distances. Does $h(n)/n\\to \\infty$?",
+  "additional_context": "Erdős could not even prove h(n)≥ n. Pach has shown h(n)<n^{\\log_23}. Erdős, F\\\"{u}redi, and Pach \\cite{EFPR93} have improved this toh(n) < n\\exp(c\\sqrt{\\log n})for some constant c>0.\n\nReferences\n\n[EFPR93] Erdős, Paul and F\\\"{u}redi, Zolt\\'{a}n and Pach, J\\'{a}nos and\nRuzsa, Imre Z., The grid revisited. Discrete Math. (1993), 189--196.",
+  "reference_proof_hint": "This is **still open**.\n\nPeople usually write your function as\n[\nD_{\\text{gen}}(n)=\\min{#\\text{distinct distances determined by }n\\text{ points in }\\mathbb R^2\\text{ in general position}},\n]\nwhere “general position” means **no three collinear and no four cocircular** (same as in your question). It is *not known* whether (D_{\\text{gen}}(n)) is (\\Theta(n)) or grows faster than linear. \n\n### What is known (roughly)\n\n**Lower bound (what you can always guarantee):**\nBecause your sets have **no three on a line**, one can prove a linear bound\n[\nh(n)\\ \\ge\\ \\left\\lceil\\frac{n-1}{3}\\right\\rceil.\n]\nThis comes from a counting argument about isosceles triangles / perpendicular bisectors (Szemerédi’s argument, presented in surveys). \n\nSo at least we know (h(n) = \\Omega(n)). But that does **not** force (h(n)/n \\to \\infty); it only says $h(n)/n$ stays above a positive constant. \n\n**Upper bound (there exist “bad” examples with not too many distances):**\nThere are explicit constructions of $n$ points in"
+}

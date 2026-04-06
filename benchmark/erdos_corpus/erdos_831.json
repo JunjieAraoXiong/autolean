@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_831",
+  "problem": [
+    "Let h(n) be maximal such that in any n points in ℝ^2 (with no three on a line and no four on a circle) there are at least h(n) many circles of different radii passing through three points. Estimate h(n)."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 831,
+  "status": "open",
+  "tags": [
+    "geometry"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $h(n)$ be maximal such that in any $n$ points in $\\mathbb{R}^2$ (with no three on a line and no four on a circle) there are at least $h(n)$ many circles of different radii passing through three points. Estimate $h(n)$.",
+  "additional_context": "See also [104] and [506].",
+  "reference_proof_hint": "Let $P$ be a set of $n$ points in the plane in *general position* (no three collinear and no four concyclic), and let\n[\nR(P)=|\\\\{\\text{distinct radii of circumcircles of triples of }P\\\\}|.\n]\nThen your $h(n)$ is exactly\n[\nh(n)=\\min_{|P|=n} R(P),\n]\ni.e. the minimum possible number of distinct circumradii among the (\\binom{n}{3}) circles determined by triples of points. Erdős explicitly asked to “estimate or determine $h(n)$” in this general-position setting. ([Renyi Users][1])\n\n## A clean universal lower bound: (h(n)\\ge \\lceil (n-2)/2\\rceil)\n\nFix a radius (\\rho). Let (T_\\rho) be the number of triangles (ABC\\subset P) whose circumradius equals (\\rho).\n\nCount *edge–triangle incidences* among these triangles:\n\n* Each triangle contributes **3** incidences (its 3 edges), so total incidences for radius (\\rho) equals (3T_\\rho).\n* Fix an unordered pair ({A,B}). For a **fixed** (\\rho), there are at most **two** circles of radius (\\rho) through $A$ and $B$ [[nomath]](centers are the two intersecti"
+}

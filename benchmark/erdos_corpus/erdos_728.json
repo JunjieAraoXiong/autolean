@@ -1,0 +1,366 @@
+{
+  "uuid": "erdos_728",
+  "problem": [
+    "Erdős Problem #728"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 728,
+  "status": "proved (Lean)",
+  "tags": [
+    "number theory",
+    "factorials"
+  ],
+  "prize": "no",
+  "formalized_on_site": true,
+  "ground_truth_lean": "/-\nCopyright 2025 The Formal Conjectures Authors.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    https://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n-/\n\nimport FormalConjectures.Util.ProblemImports\n\n/-!\n# Erdős Problem 728\n\n*Reference:* [erdosproblems.com/728](https://www.erdosproblems.com/728)\n-/\n\nopen Real\nopen scoped Nat Topology\n\nnamespace Erdos728\n\n/--\nLet $\\varepsilon$ be sufficiently small and $C, C' > 0$. Are there integers $a, b, n$ such that\n$$a, b > \\varepsilon n\\quad a!\\, b! \\mid n!\\, (a + b - n)!, $$\nand\n$$C \\log n < a + b - n < C' \\log n ?$$\n\nNote that the website currently displays a simpler (trivial) version of this problem because\n$a + b$ isn't assumed to be in the $n + O(\\log n)$ regime.\n\nBarreto and ChatGPT-5.2 have proved that, for any $0 < C_1 < C_2$, there are infinitely many\n$a, b, n$ with $b = n/2$, $a = n/2 + O(\\log n)$, and $C_1 \\log n < a + b - n < C_2 \\log n$ such\nthat $a! b! \\mid n! (a + b - n)!$\n\nThis appears to answer the question in the spirit it was intended.\n\nThis was formalized in Lean by Alexeev using Aristotle.\n-/\n@[category research solved, AMS 11, formal_proof using lean4 at \"https://github.com/plby/lean-proofs/blob/main/src/v4.24.0/ErdosProblems/Erdos728p.lean\"]\ntheorem erdos_728 :\n    answer(True) ↔\n      ∀ᶠ ε : ℝ in 𝓝[>] 0, ∀ C > (0 : ℝ), ∀ C' > C,\n        ∃ a b n : ℕ,\n          0 < n ∧\n          ε * n < a ∧\n          ε * n < b ∧\n          a ! * b ! ∣ n ! * (a + b - n)! ∧\n          a + b > n + C * log n ∧\n          a + b < n + C' * log n := by\n  sorry\n\n-- TODO(firsching): Use Legendre's formula to test divisibility in terms of p-adic valuations.\n\nend Erdos728\n",
+  "expert_comments": [
+    {
+      "author": "",
+      "text": "Some references to related recent work, obtained by more good old-fashioned bibliographic search:\n\n1.  Ford, Kevin; Konyagin, Sergei Divisibility of the central binomial coefficient $\\binom{2n}{n}$,  Trans. Am. Math. Soc. 374, No. 2, 923-953 (2021).  Builds upon the Pomerance paper, for instance by determining the density of $n$ for which $n^\\ell | \\binom{2n}{n}$, although the emphasis is on the regime where $\\ell$ is fixed and $n$ goes to infinity.\n2.  Croot, Ernie; Mousavi, Hamed; Schmidt, Maxie, On a conjecture of Graham on the p-divisibility of central binomial coefficients\nMathematika 70, No. 3, Article ID e12249, 29 p. (2024).  This is more to do with #376, studying the situation where the number of small prime factors of $\\binom{2n}{n}$ is unexpectedly small (which is the opposite of the situation here where we want the number of such factors to be large).  I'll also make a note of this reference at that problem page. EDIT: there is even more recent work by Bloom and Croot here."
+    },
+    {
+      "author": "TerenceTao",
+      "text": "Thanks! I'm working on checking the writeup and improving up to roughly the level of something suitable for journal submission. Probably won't actually submit, but it seems \"responsible\" to not leave it hanging in the present state..."
+    },
+    {
+      "author": "natso26",
+      "text": "If time permits, why not submitting it to a journal so it could be formally recognized? I think this also leaves a historical record of time where machines begun to transform mathematics. You don't have to put your own name as an author if you don't feel like it."
+    },
+    {
+      "author": "bulletproof-suspended",
+      "text": "This is already on arxiv which serves as a historical record.\n\nFor journal submission, I do need to put my own name as an author, so that part is inaccurate.\n\nJournal submission process takes time, could be months or years. Moreover, many people do not currently accept AI-generated solutions, especially this [728] one, as novel or significant. So I'm not going to fight the battle here."
+    },
+    {
+      "author": "natso26",
+      "text": "Carl Pomerance's writeup \"A remark on the middle binomial coefficient\" has been formalized by Aristotle.  Type-check it online!\n\nThere's not necessarily anything exciting in this formalization, but it *did* help generate feedback for the writeup itself, in particular informing the specific constants in the theorems.  It is also one of the longest files I've posted (I didn't do any cleanup), perhaps out of proportion with the difficulty of the arguments?  Or at least the de Bruijn factor is higher than usual."
+    },
+    {
+      "author": "BorisAlexeev",
+      "text": "From this I+ChatGPT found that Pomerance's note may have a gap in proof of Lemma 2.1. The heuristic used there is that with probability roughly $1/2$, a base-$p$ digit is $\\ge p/2$. But e.g. for $p=3$, this probability is only $1/3$ which is not close to $1/2$. Fortunately the probability that \"a carry occurs\" indeed is close to $1/2$; Aristotle shows this by Markov chain transition matrix. This is related to how I wasn't matching Pomerance's constants earlier. This is likely the reason you get high de Brujin factor. I have emailed Pomerance regarding this."
+    },
+    {
+      "author": "natso26",
+      "text": "Pomerance just updated his note to address this. He did not prove the probability $1/2$ specifically, but used weaker approximation in base $27$. (This still works because $p=2$ is strictest, so other $p$ have some wiggle room.)"
+    },
+    {
+      "author": "natso26",
+      "text": "In the latest version of the writeup on arxiv, I’ve added another appendix discussing the generalization which has [728], [729], [401] as corollaries. Also, in Carl Pomerance’s latest preprint, this also gives slightly weaker results than his Theorem 1 and Theorem 2 (my bounds are ineffective while Pomerance’s bounds are effective). I’ve also emailed Carl Pomerance directly regarding this update!"
+    },
+    {
+      "author": "natso26",
+      "text": "I have worked with ChatGPT (which has been very useful in this session) to obtain an effective version of the theorem as well. It turns out that while [Po]'s Theorem 1.2 matches exactly, [Po]'s Theorem 1.1 remains a little stronger than my version. This could be due to the fact that [Po] does the two Theorems separately, while I do one unified Theorem. Will be updating this in the arxiv..."
+    },
+    {
+      "author": "natso26",
+      "text": "Update: I can now match constants exactly, but need results about Markov chains which are a bit more sophisticated. Still, it works out!"
+    },
+    {
+      "author": "natso26",
+      "text": "I have obtained the following result.\n\nLet\\[\nc_*:=\\sqrt{\\log 2},\n\\qquad\nI(\\delta):=\\frac12\\Big((1-\\delta)\\log(1-\\delta)+(1+\\delta)\\log(1+\\delta)\\Big)\n\\qquad(0<\\delta<1).\n\\]Fix constants $0<c<c_p<c_*$ and choose $\\delta\\in(0,1)$ such that $c_p^2<I(\\delta)$. Define\\[\nK(m):=\\Big\\lfloor \\exp\\!\\big(c\\sqrt{\\log m}\\big)\\Big\\rfloor,\n\\qquad\nP(m):=\\Big\\lfloor \\exp\\!\\big(c_p\\sqrt{\\log m}\\big)\\Big\\rfloor.\n\\]Let $S$ be the set of $m\\in\\mathbb{N}$ such that, for all integers $k$ with $0\\le k\\le K(m)$,\\[\n\\nu_p\\!\\left(\\binom{2m}{m}\\right)-\\nu_p\\!\\left(\\binom{m+k}{m}\\right)\n\\ \\ge\\\n\\frac{1-\\delta}{2}\\,\\frac{\\log m}{\\log p}\n\\cdot [\\,p\\le P(m)\\,]\n\\]for all primes $p$. Then $S$ has asymptotic density $1$.\n\nThis unifies all related results so far. Moreover, the constant $\\sqrt{\\log 2}$ (and hence the form $\\exp(c \\sqrt{\\log m})$) is plausibly optimal by a heuristic argument, but I can't prove this at present.\n\nThe proof will be on the updated version on arxiv announced Wed; I'll ping here again then."
+    },
+    {
+      "author": "natso26",
+      "text": "What's a heuristic for $\\sqrt{\\log 2}$?"
+    },
+    {
+      "author": "BorisAlexeev",
+      "text": "Right, the arxiv was announced today!\n\nYou can find it in the last page in the arxiv.\n\nComments welcome, etc."
+    },
+    {
+      "author": "natso26",
+      "text": "Carl Pomerance has just uploaded to his web site a brief note explaining how the methods of his paper can resolve this question (with $a+b-n$ as large as $\\exp(\\log^{1/2} n)$), with some brief remarks on potential further improvements beyond this."
+    },
+    {
+      "author": "TerenceTao",
+      "text": "Is the result in the note stronger in 4 ways?  Asymptotic density 1; not including the $(a+b-n)!$ factor on the right hand side (in the notation of this problem, or the $k!$ in the denominator in notation of the note); the larger bound; and also the part about \"for every $k\\le\\cdots$\"?"
+    },
+    {
+      "author": "BorisAlexeev",
+      "text": "The second point was a typo on Carl's part (the preprint will be revised to accommodate this).  The other three strengthenings are however legitimate, though I think the first and third had been more or less noticed in past discussion.\n\nIt's interesting by the way to compare the writing style of a human domain expert to that of an AI; both are informative, but in different ways."
+    },
+    {
+      "author": "TerenceTao",
+      "text": "Thanks to Pomerance for continuing his work on this! I’ll compare this result to the writeup and the generalization I extracted further in [729]. At a glance, this looks like essentially the same as the argument we have (down to the hypothesis details and such things). I think Pomerance’s thinking is “clearer” - this is expected because I wouldn’t compare Aristotle to Pomerance currently!\n\nRegarding writing style, I would argue it’s not a “style” but a way of thinking. (Writing just reflects thinking.) If Pomerance generally thinks at a higher level, his writing will have a different quality. In contrast a human who thinks less clearly than AI (many exist) will write arguments that are less “informative”. It’s not about human or AI, but the way of thinking of each individual in each domain."
+    },
+    {
+      "author": "natso26",
+      "text": "Some comments on Carl Pomerance's most recent note:\n\nI see that the structure of the argument is remarkably similar. Since Pomerance's work is independent of Aristotle, I can only assume this is a natural way to solve the problem.\n\n[Po] = Pomerance's note; [So] = My writeup.\n\n[Po] Lemma 2.1: this is the key probabilistic/counting input. This is comparable to [So] Lemma 11 (Bad-carry count). The proofs are slightly different: [Po] uses direct binomial expansion, while [So] consults Chernoff bound, but I don't think the difference is significant.\n\n[Po] Corollary 2.2: this is the union bound from [Po] Lemma 2.1. In [So], it's part of Lemma 13 (Bad set size) corresponding to BadCarry.\n\n[Po] Lemma 2.3: this is [So] Lemma 4, exactly.\n\n[Po] Lemma 2.4: this is spike control. In [So], it's part of Lemma 13 (Bad set size) corresponding to BadSpike.\n\n[Po] finishing step: follows the same route. For $p>2k$, does the same thing as [So] Lemma 5 (Large prime lemma). Now assume $p \\le 2k$. Then do Lem"
+    },
+    {
+      "author": "natso26",
+      "text": "Carl has updated his preprint to correct the previous issue and discuss what happens with and without the $k!$ denominator."
+    },
+    {
+      "author": "TerenceTao",
+      "text": "Thanks again to Pomerance for further work! This is now even closer to my formulation in [729].\n\nIn light of this I think I probably should update my writeup to acknowledge Pomerance's further work and explicitly put in the formulation I identify in [729] (to help with making connections, not to compete in any way). Will work on this!"
+    },
+    {
+      "author": "natso26",
+      "text": "After some grueling work (although made much lighter with ChatGPT), I have produced a complete paper containing a writeup of Aristotle's proof. This means it's on an exact same level as a journal submission, sidestepping the difficulty of how to treat \"half-finished paper\" that I produced earlier.\n\nThis means several things:\n\n1) I went thorough all mathematics myself. In particular, any inaccuracy or awkward statement written by ChatGPT are all corrected using the usual standard for human mathematicians.\n\n2) I checked the Lean file correspondence as best as I can. Admittedly this is the weakest point (because I don't know Lean), but I did ask ChatGPT to correct/improve anything that looks off to me.\n\n3) I looked at all the literature cited and ensure that the description is accurate. (ChatGPT's original and even subsequent versions are often a bit off - this may be its limit in understanding, though it does understand many things and produces many useful statements.)\n\n4) I wrote our st"
+    },
+    {
+      "author": "natso26",
+      "text": "Nice! I could have also typed this up formally and in a publishable state, but felt for the sake of demonstration, to leave it as an end-to-end AI generation. This is a good write-up on the milestone."
+    },
+    {
+      "author": "Kevin Barreto",
+      "text": "Normally a \"publishable\" writeup takes time to produce. (I put that in quotes because that term may be debatable...? just to be safe.) The public interest is now. But both things complement - I do see some skepticism online on whether this is just some \"trivial\" math being done. (Which is reasonable to ask because some Erdos problems do have trivial formulations.)\n\nPersonally, after all that cleanup, I do think it's nice result. Obviously not groundbreaking or even classified as having new techniques, but the application of existing techniques that comes together to produce the result seems like solid mathematics. I believe currently the idea of AI being able to do \"solid mathematics\" in this sense is on the \"highly doubtful\" side, so this is a strong update on the consensus."
+    },
+    {
+      "author": "natso26",
+      "text": "Very nice paper draft. Very interesting for me is the paragraph on the history of the process, (\"The story of this Proof\") on pages 11 and 12. \n\nI asked ChatGPT to write a more smooth version of this paragraph, like a short story. Here you can read the answer:\n\nhttps://chatgpt.com/share/696202aa-e614-800c-a993-2d8abc734eb7\n\nOf course, it is not Pulitzer prize calibre. But I like it. Would it be fine with the actors of the proof, if I made this short story public, for instance under the new title \"Erdos 728 - Story of a Proof\"? Comments may also be sent to me via email to <first name>.<family name>-at-uni-jena.de\n\nAre there questions or doubts concerning the content?"
+    },
+    {
+      "author": "old-bielefelder",
+      "text": "I think it's a good story! At least it feels like the public can more easily appreciate the whole process (both human and AI parts).\n\nFor my part, I would do minor revision on these things before posting:\n\n\"Participants pointed out the ambiguity again and again.\" -> a bit too much emphasis (what happened is just in a short amount of time). Maybe remove \"again and again\".\n\n\"Around this time, a misunderstanding spread.\" -> this is again a bit too much emphasis. It's just a misunderstanding from pharsing that's quickly corrected. Maybe change \"spread\" to \"formed\"."
+    },
+    {
+      "author": "natso26",
+      "text": "I just submitted to arxiv; will update when announced."
+    },
+    {
+      "author": "natso26",
+      "text": "It’s now on arxiv! Note this is slightly different from the earlier version above, so if you want to send it to someone else, use the arxiv version."
+    },
+    {
+      "author": "natso26",
+      "text": "Some comments on the text.  In the abstract, one should impose $\\varepsilon n \\leq a,b \\leq (1-\\varepsilon) n$ or something similar in the main claim, to exclude the degenerate solutions.\n\nSome plots of key functions, e.g., $v_p(\\binom{m+k}{k})$ and $\\kappa_p(m)$ for $m$ in some range $[M,2M]$, some fixed $k$, and a few ranges of $p$, would be helpful to the reader, and easy to generate with modern LLMs (one should of course disclose the use of such tools if doing so, of course).\n\nThe tenses in the appendix are inconsistent, switching between present and past tense.  I would recommend both a human rereading and an AI grammar check here."
+    },
+    {
+      "author": "TerenceTao",
+      "text": "Thanks! Sorry I already submitted before seeing this review here. Will update with improvements shortly."
+    },
+    {
+      "author": "natso26",
+      "text": "I have made these improvements.\n\n1. I imposed $\\varepsilon n \\le a,b\\le (1-\\varepsilon)n$ where $0<\\varepsilon<1/2$. Thanks for catching that.\n\n2. I made 2 plots. It turns out to be a bit hard to read, but I have picked some values that make it look reasonable. Done.\n\n3. I went through the appendix and fixed some grammar.\n\nJust re-submitted!"
+    },
+    {
+      "author": "natso26",
+      "text": "Just a minor comment. There are many cases where Erdős's name is misspelled as \"Erdos\" (without hungarumlaut)"
+    },
+    {
+      "author": "pisoir",
+      "text": "Haha, thanks. I fixed that now."
+    },
+    {
+      "author": "natso26",
+      "text": "The updated version is now on arxiv."
+    },
+    {
+      "author": "natso26",
+      "text": "Tao said regarding Aristotle's proofs:\n\n\"In the future there may need to be an additional stage of the research process once a technically correct proof is generated, in order to streamline and round out the proof with the type of remarks and observations that tend to organically surround such proofs when written by humans.\"\n\nI have now tried to envision what that \"future\" looks like. Starting from Boris's improved Lean file (which supposedly improves upon the original Aristotle's proof), I have attempted to produce a writeup from the Lean file at the level of a regular mathematics article. The approach is multiple rounds of iterations between me and ChatGPT, where I give comments and suggests things to do/improve in each conversation turn. This includes things like reorganization, checking correctness and correspondence with Lean, working out connections with literature, and various kinds of exposition issues regarding flow of ideas.\n\nThe total conversation has 16 turns; ChatGPT did s"
+    },
+    {
+      "author": "natso26",
+      "text": "Thanks for this experiment.  This is certainly a more satisfying read than the initial AI-generated proof, precisely because of all the additional context and commentary provided, and shows that the way in which AI-generated text is prompted and interacted with makes a significant difference in how pleasant the outcome is; I think a significant portion of the criticism about \"AI slop\" comes from the tendency to use default prompt settings (and minimize human interaction) when generating the output.\n\nI still think a certain amount of serendipity is still lost though even in this improved paradigm, as the human has less direct experience with the writing process and so may miss some of the improvements that they might otherwise notice if they were manually writing up the results.  For instance, one question that occurred to me while reading the manuscript is how large one can take $k$ as a function of $M$ and still have the argument work.  Because of the better structuring of this note, "
+    },
+    {
+      "author": "TerenceTao",
+      "text": "Thanks! I've always believed that LLMs can do this (provide \"understanding\" - even at research-ish level), but this ability is not readily apparent. The \"AI slop\" is real - the underlying cause seems to be that LLMs are currently RlHF'ed \"to death\" to be some kind of assistant who can provide output on anything. Of course, this is unrealistic, and instead trains them to \"please\" users in ways we don't actually want.\n\nPart of why I have extended conversation is to 1) set the right expectation that you *can't* do everything, and you still need multiple revisions to get something good; 2) there are genuine \"cognitive gaps\" even in the best models, and a human can readily supply these quite easily if he/she is \"part of the loop\".\n\nAbout serendipity: this is unfortunately lost precisely because neither I nor this instance of ChatGPT is the original author of the argument! Under normal circumstances, I wouldn't be able to write anything up at all; but here I was able to produce something, ev"
+    },
+    {
+      "author": "natso26",
+      "text": "With an argument from GPT-5.2, Harmonic's Aristotle appears to formalise a positive answer to this question, *even with the additional constraint $a,b\\leq(1-\\epsilon)n$ imposed*. I would appreciate if others could take a look here. Note that this is the direct output from Aristotle, so it is not very readable currently, but one can at least check the main statement (the relevant lines being 863 and 1792). \n\nI would also greatly appreciate it if others could perform any further literature search on this. Despite my best efforts, I have been unable to locate any other works, which may be suggestive of novelty of the proof, despite being very classical in the machinery involved. It is, of course, hard to tell when the problem statement is a bit ambiguous in intent."
+    },
+    {
+      "author": "Kevin Barreto",
+      "text": "I have not done a literature search, but on a similar front I just wanted to mention that AlphaProof and Aristotle have both seemingly found examples for most versions of this problem. I see the state of the problem as \"it's unclear what a/the good question here is\"."
+    },
+    {
+      "author": "BorisAlexeev",
+      "text": "I agree, but this attempt at least addresses the \"some condition such as $a,b\\leq(1-\\epsilon)n$\" comment."
+    },
+    {
+      "author": "Kevin Barreto",
+      "text": "FWIW, here is a writeup of Aristotle's proof in natural language by ChatGPT.\n\nI have not read it, but it does not seem to be trivial, at least not in the sense of the AlphaProof attempt in the problem description.\n\nI also think that Boris' comment about \"found examples for most versions\" doesn't include this $a,b \\le (1-\\varepsilon)n$ version."
+    },
+    {
+      "author": "natso26",
+      "text": "Apologies for not previously linking to GPT-5.2's argument; it was run by a friend of mine, who asked me to take a look. He has a business account, and those don't allow for chat conversation sharing. I asked him to send me the text responses from the model, and I asked an instance of GPT-5.2 Pro on my side to format it as a LaTeX document. I have now edited my original response to include that conversation, and generated a PDF directly from ChatGPT's response, which can be viewed here. I do not claim accuracy of its informal response."
+    },
+    {
+      "author": "Kevin Barreto",
+      "text": "FWIW, here is an improved writeup I was able to coax from ChatGPT.\n\nI think I at least get a sense of the proof's overall strategy from it, so it's not a bad writeup (to be read independently of the Lean file).\n\nI also feel like it's slightly more sophisticated/detailed than the original ChatGPT writeup shared by Barreto. An explanation could be that the original ChatGPT's argument contains some gaps and these are later filled in by Aristotle.\n\nSo I feel like an extraction from the Aristotle's proof like this is a good \"map\" to follow (i.e. fewer gaps) in case e.g. one wants to improve the argument and such!"
+    },
+    {
+      "author": "natso26",
+      "text": "Thanks!\n\nI think, as Boris says, this problem is just very vaguely stated, and has probably not been considered by anyone seriously since [EGRS75]. Even in that paper, it is more of an idle remark at the end than a formal conjecture. For full context, they write:\n\n\"There is one curious problem here. As stated before $n!/a!b!$ cannot be an integer for $a+b\\geq n+c\\log n$. It is possible that this is due only to the small primes...[description of [729]...Also, suppose $a>\\epsilon n$, $b>\\epsilon n$, and $a+b>n+c\\log n$. Can it happen that $n!(a+b-n)!/a!b!$ is an integer?\"\n\nNow from context (given the whole paper is about binomial coefficients) I think Tao's formulation of this as $\\binom{N}{k}\\mid \\binom{N}{a}$ where $\\epsilon N\\leq a\\leq (1-\\epsilon) N$ and $k\\asymp \\log N$ captures the spirit of this question. But a crucial point is the quantifier on $C$ - again, in the paper it is imprecise, but I think they intended to ask this for all constant $C$ (provided $n$ is sufficiently large"
+    },
+    {
+      "author": "Thomas Bloom",
+      "text": "Got it, thanks Thomas. I’ll leave my response there to at least somewhat address another weaker version of the problem. I agree that the problem is basically unresolved by nature of being too ambiguous."
+    },
+    {
+      "author": "Kevin Barreto",
+      "text": "I think that if your construction could handle $C=k/\\log N$ arbitrarily large (rather than $C<\\frac{1}{3\\log 3}$ as what seems to be limit of that argument) then that would probably be as close to a resolution as one could hope for. But I think that things become a lot harder trying to do similar tricks with $k/\\log N\\to \\infty$."
+    },
+    {
+      "author": "Thomas Bloom",
+      "text": "I would agree, and would classify this new result as a partial result showing that the answer to the question is positive if $k \\asymp c \\log N$ for a small constant $c>0$, but does not indicate what is going on in the more interesting regime where $k \\asymp C \\log N$ for a large $C$.\n\nOn reading the ChatGPT version of the proof, the main issue is to enforce the constraints $\\nu_p( \\binom{N}{k} ) \\leq \\nu_p( \\binom{N}{a} )$ for the small primes $p \\leq 2k$.  From Kummer's theorem and general heuristics, the left-hand side is typically* of size $k / (p-1)$ and the right-hand side is typically of size $\\frac{\\log N}{2 \\log p}$, and as long as $k \\asymp c \\log N$ one has a good chance of making the former smaller than the latter.  But for $k \\asymp C \\log N$ with $C$ large the left-hand side is usually larger at small primes such as $p = 2,3,5$.  Indeed the problem now resembles an upside-down version of #376.\n\np.s. on looking at the commentary for #396 it seems that the paper Pomerance, "
+    },
+    {
+      "author": "TerenceTao",
+      "text": "I agree that this should be classified as a partial result, which indicates a positive answer when $C$ is small, and that the answer for general $C$ is still unknown.\n\nI would caution against classifying large $C$ as \"more interesting regime\" right of the bat. As far as I can tell, ChatGPT/Aristotle's argument is in fact rather sophisticated; and even getting $k$ larger than $O(1)$ feels like an achievement given e.g. the result of Pomerance.\n\nI feel like a good rule of thumb for gauging AI's contribution is to assume in your mind the author is human, and then replace that with AI in writing. For example, something like \"a formal argument by Aristotle based on an informal argument by GPT-5.2 shows that this is true for $C < 1/(3 \\log 3)$\" seems appropriate."
+    },
+    {
+      "author": "natso26",
+      "text": "I was classifying large $C$ as more interesting based on the context of [EGRS75] - I think it's clear that they were asking about whether the bound $a+b\\leq n+O(\\log n)$ still holds under these weaker conditions, so the interesting regime from that point of view is whether one can have $a+b=n+C\\log n$ for arbitrarily large $C>0$.\n\nAlso it's not true that Pomerance's paper is 'just' about the same question when $k=O(1)$ - it's related certainly, but it's about e.g. the set of $n$ for which $n+k\\mid \\binom{2n}{n}$ for fixed $k$, proving that this set has density $1$, which is a much more precise question. (In particular it's not the case that GPT's argument for this problem is strictly harder/doing more than Pomerance's proof.)"
+    },
+    {
+      "author": "Thomas Bloom",
+      "text": "On the edit: I had noticed that as well prior to your edit and had asked GPT-5.2 if it could be fixed, and it said that, quote: \"If we instead use $k!$ that is already present in $(2m)! k!$, then the main $k/(p-1)$ contribution cancels and you only need carries to beat an $O(\\log k)$ (plus rare \"spike\") error\". I asked it to produce a new PDF with this correction, and it has given the following here. Again, I do not claim accuracy of this informal paper, and Aristotle is still in the process of attempting to formalise GPT-5.2's new attempt."
+    },
+    {
+      "author": "Kevin Barreto",
+      "text": "Wow, that was fast.\n\nI see that one challenge of working with AI (esp. directly asking for a proof!) is \"mass production\" of ideas that may or may not be correct/valuable, and it could be hard to extract value from such a process.\n\nLet's see how we (as the community) handle it in this case; this could be valuable experience!"
+    },
+    {
+      "author": "natso26",
+      "text": "In the currently uncertain case (I would very much appreciate KoishiChan to search the literature for this problem, haha), this turns out to be the first case of an LLM entirely solving an open Erdos problem on its own that no human previously solved, for real this time, I want to voice the following concern:\n\nThis was a primarily scientific experiment to see how far the models could be pushed and what is currently within their reach. It is quite clear that future models will be more capable than GPT-5.2. I support AI assistance, not full-on AI replacement. Whilst I believe there will always be a role for human mathematicians, there is, of course, concern that love for the art may dwindle in the years ahead, which I do not want."
+    },
+    {
+      "author": "Kevin Barreto",
+      "text": "Yes, and this is an interesting case, but as usual there are caveats, in particular that this is perhaps better phrased as a community interpretation of what Erdős and co-authors might have had in mind, and so is an Erdős problem in the broad sense that this site uses. \n\nAs you say, there may also be more literature on the question of $\\binom{N}{k}\\mid \\binom{N}{a}$ for various ranges of $a$ and $k$ that might already resolve this.\n\nIt's curious to note which problems on this site AI is doing particularly well on - they seem to mostly be those belonging to elementary number theory. I expect that there are other problems (e.g. in graph theory) which are also low-hanging fruit but it seems to not as well on these."
+    },
+    {
+      "author": "Thomas Bloom",
+      "text": "KoishiChan might find it!\n\nI think it's good you're thinking about it now.\n\nLet me be clear.\n\nHumans' values do not depend on what they can do, or whether they are the best entities in the world for doing certain things.\n\nSuppose AI can indeed do mathematics better than humans in every way. Suppose this is as much a difference as Terence Tao to a layman, or even more.\n\nThis doesn't diminish our value, or our \"love for the art\".\n\nA good analogy might be that you wouldn't be concerned if we have 10,000 clones of Terence Tao (or another mathematician) who surpasses you in solving Erdos problems (or other problems). Your love for mathematics wouldn't dwindle just because we have mass-produced Terence Tao, even if that means there are fewer problems for you to solve.\n\nBut really: don't worry about it. It is what it is!"
+    },
+    {
+      "author": "natso26",
+      "text": "Right, sure, I agree with that. It is definitely a nuanced topic. If people want to talk about it more, I suggest moving that discussion to the AI Contributions thread. Currently, I am waiting for Aristotle to come back, hopefully with a formalisation, and would appreciate others having a look at the updated PDF I posted in the meantime."
+    },
+    {
+      "author": "Kevin Barreto",
+      "text": "Aristotle has successfully formalised GPT-5.2's new attempt here. It takes a long time to compile and is not very readable, so I am currently working on making things more readable. \n\nI believe we have reached a consensus that this should constitute a non-trivial, full resolution to the problem.\n      \n      \n      \n(The site has been updated to address this comment.)"
+    },
+    {
+      "author": "Kevin Barreto",
+      "text": "Nice!  There are the usual Aristotle eccentricities, such as the use of 'exact?', but this looks to be a legitimate proof nevertheless. As mentioned before, by taking advantage of the additional denominator of $k!$, the expected size of the $p$-valuation of $\\binom{n}{k}$ drops from $\\sim k/(p-1)$ to something more like $\\log k / \\log p$, which remains favorable even if $k$ exceeds a large multiple of $\\log M$ (restricting $n$ to a range $n \\asymp M$).\n\nThe informal proof has a few slight gaps - for instance it is not enough to prove Lemma 8 or Lemma 9 for $k$ fixed and \"sufficiently large $M$\", because $k$ is also growing logarithmically with $M$ - but it appears that the formal proof addresses this issue (by explicitly taking $k$ to be logarithmic in $M$).  Interestingly it seems that $\\log M$ is not the threshold after all; the argument still seems to work well with $k$ somewhat larger (at least of quasipolynomial size $\\exp(\\log^c M)$ for some $c>0$, maybe a bit more than this), du"
+    },
+    {
+      "author": "TerenceTao",
+      "text": "> In the future there may need to be an additional stage of the research process once a technically correct proof is generated, in order to streamline ...\n\nFWIW, I totally agree! With Claude 4.5 Opus, I've been working on that since posting this one, and I almost have a Lean formalisation that should be a lot easier to read for this particular problem. I wonder when autoformalisers will be able to write Lean code that looks more human. For demonstration purposes, I wanted to show something end-to-end, fully AI-generated without human intervention.\n\nIt is unfortunately possible that perhaps GPT-5.2 got to the proof from having seen Pomerance's paper in its training. At least, there is a clear trend that the models can identify problems that are very similar to classical results, unsurprisingly."
+    },
+    {
+      "author": "Kevin Barreto",
+      "text": "More human-readable formalisation, directly from Claude after being given Aristotle's formalisation, can be viewed here."
+    },
+    {
+      "author": "Kevin Barreto",
+      "text": "Just a very general comment: I believe research generally progresses in stages.\n\nFor example, it is often the case the first proof discovered for a result is complicated, because the efforts are directed at making it work. (This is the first Aristotle' proof.)\n\nThen a later cleanup can reveal a simplification in many places. (This is your second Claude's proof.)\n\nI would caution against trying to pick out differences in humans and AI here; most likely the differences are just that the AI \"agent\" doesn't have enough \"general stages\" to cover everything we do as mathematicians.\n\nAlthough: I believe while this is mainly AI-generated contribution, there is in fact a key observation (by Tao I believe). So I would classify this as a \"collaboration\" between different AIs, and Tao/Barreto. The argument is that without Tao, it is highly plausible we wouldn't reach this result, for example! So human also has credit here as well.\nBIG EDIT: Barreto has clarified this is not due to Tao but autonomo"
+    },
+    {
+      "author": "natso26",
+      "text": "> The argument is that without Tao, it is highly plausible we wouldn't reach this result …\n\nThere seems to be some confusion on this so let me clear this up. No, after the model gave its original response, I then proceeded to ask it if it could solve the problem with $C=k/\\log N$ arbitrarily large. It then identified *for itself* what both I and Tao noticed about it throwing away $k!$, and subsequently repaired its proof. I did not need to provide that observation."
+    },
+    {
+      "author": "Kevin Barreto",
+      "text": "Oh, thanks!\n\nI have changed this in the wiki.\n\nTell me if you think the contribution should be changed for this problem in any other way!"
+    },
+    {
+      "author": "natso26",
+      "text": "FWIW, I think it is fine for it to be in section 2 as it does seem inspired by Pomerance’s work. I would rather not celebrate a fake win for LLMs."
+    },
+    {
+      "author": "Kevin Barreto",
+      "text": "Wait, I think we have a real win here! Pomerance (which I just read to compare) is only similar in *approach*. \"Inspiration\" may be a correct word, but in any case the details of the argument differ substantially. It also doesn't \"feel\" like copying to me - the similarities seem to be due to such approaches being natural for this problem! That section 2 seems to be reserved for exact collisions (which unfortunately has occurred 4 times). But a real win is a real win!\n\n(Note sect 1 isn't for \"important\" problems - it's just for what the title says: \"AI-generated solutions, partial solutions, or negative results for previously open problems\")\n\nName fixed."
+    },
+    {
+      "author": "natso26",
+      "text": "FWIW, I think it is safest to go with Tao’s original placing, with Pomerance’s work as a partial result on the problem. Whilst it’s true the model reached a full resolution to this problem that no prior human did in full, it is unclear how much inspiration was taken from Pomerance’s work/other currently unfound literature solving special cases like Bloom described. Moreover, I think it was definitely in reach of Pomerance.\n\nGranted, this begs the equal question about how novel we should consider works of human mathematicians that essentially just extend on some previous literature work and are heavily inspired by said work to get to a slightly stronger result."
+    },
+    {
+      "author": "Kevin Barreto",
+      "text": "I won't do that (unless Tao convinced me otherwise).\n\nFor a human mathematician, this is considered novel enough. That seems like a superhuman bar, which doesn't make sense."
+    },
+    {
+      "author": "natso26",
+      "text": "This discussion is veering off topic into \"how should we compare AI and human achievements\". Please move this to the AI thread."
+    },
+    {
+      "author": "Thomas Bloom",
+      "text": "I think the Section 1 placing is appropriate, but I have placed a comment in the outcomes field to the effect that the arguments here are similar to those of Pomerance.  Here we encounter the interpretability issue of AI; whereas one could query a human to ask whether their arguments were inspired in any way by previous work such as the Pomerance paper, there isn't a reliable way to query an AI for the provenance of the ideas used in their proof.  This suggests to me that one needs to apply higher scrutiny regarding citation of relevant past work when it comes to AI-generated arguments compared to human-generated ones, as there is less organic disclosure of the use of such sources as \"inspiration\"."
+    },
+    {
+      "author": "TerenceTao",
+      "text": "> In the future there may need to be an additional stage of the research process once a technically correct proof is generated, in order to streamline and round out the proof with the type of remarks and observations that tend to organically surround such proofs when written by humans.\n\nI think this is an important comment, even though it seems \"minor\".\n\nI think the goal of mathematics is not to produce proofs per se, but to produce \"understanding\". Once we view it this way, it's clear that these remarks/observations are \"central\" to math itself and not just something \"nice to have\".\n\nNow there's an interesting limitation of LLMs that they're (mostly) stateless, so they don't \"ruminate\" over results and try to produce understanding in their heads over long periods of time. Hence it would seem that LLMs should face challenges in producing \"understanding\" in this manner.\n\nHowever, in practice I find that iterations help. For example, in my attempt to produce a human-readable writeup from"
+    },
+    {
+      "author": "natso26",
+      "text": "[Post deleted]"
+    },
+    {
+      "author": "Unknown",
+      "text": "I think you're referring to the phenomenon that past context influences future responses.\n\nThis is a standard \"in-context learning\" phenomenon which is well studied (although I think the mechanism is still poorly understood). It is indeed surprising when first discovered!\n\nI think this goes back to GPT-3, in \"Language Models are Few-Shot Learners\" paper.\n\nBut: this is already accepted as standard in today's AI discourse. No one doubts that LLMs can learn in-context!\n\nWhat I'm pointing at is something of a greater kind; possibly akin to what we call in human \"creativity\".\n\nThere is, indeed, great debate whether LLMs have such potential. If I'm right, there is at least a possibility."
+    },
+    {
+      "author": "natso26",
+      "text": "Please move this discussion over to the AI Contributions thread, since it is no longer specifically about this problem or its solution."
+    },
+    {
+      "author": "Thomas Bloom",
+      "text": "This is really fascinating work! I was wondering if you could share a bit more about how the work was divided between you and the AI during the process. My understanding is that there were at least two distinct phases: first getting the proof to work in the small c regime, and then refining it to incorporate your feedback to reach the more general result. I would be very interested to hear roughly how you prompted the model at each stage, and also which specific variant you were using for the informal proof generation, whether it was the standard GPT-5.2, the Thinking version, or the Pro version."
+    },
+    {
+      "author": "None",
+      "text": "We attempt a meaningful interpretation of the questions here: \nhttps://github.com/google-deepmind/formal-conjectures/blob/8118a00c2280b3dbdb0286e3ce0685744a14a9f0/FormalConjectures/ErdosProblems/728.lean#L40\nIf this one is also trivially solvable, please let us know!"
+    },
+    {
+      "author": "Moritz Firsching",
+      "text": "Hey! As you asked for an update, 5.2 has resolved the problem! You can check Kevin's comment for the Lean version."
+    },
+    {
+      "author": "Liam Price",
+      "text": "I ran Aristotle even more on the already-Aristotled proof in order to simplify it.  This differs from the version posted by Kevin Barreto in a few ways: (a) it's about a third shorter, (b) compiles pretty clean with no warnings, and (c) it also includes a proof of the exact statement from the Formal Conjectures project.  Nonetheless, it is entirely based upon that previous file, and includes many proofs directly from it.  Type-check it online!"
+    },
+    {
+      "author": "BorisAlexeev",
+      "text": "Very nice! This should be useful for the project."
+    },
+    {
+      "author": "Liam Price",
+      "text": "I am too exhaused to do a thorough literature search, but I noticed that a few lines above the original appearance of this problem in https://users.renyi.hu/~p_erdos/1975-27.pdf, it is noted that \"or all n with the exception of a sequence of density 0, (2n)!/n! [n + c log n] ! is an integer. We do not give the details of any of these\nresults (the proofs are fairly simple) \". Isn't this essentially what people proved?"
+    },
+    {
+      "author": "KoishiChan",
+      "text": "Sorry if I am grossly mistaking what people are claiming here, I am very unfamiliar with this problem."
+    },
+    {
+      "author": "KoishiChan",
+      "text": "In fact i think a complete proof to this claim is published here https://www.e-periodica.ch/digbib/view?pid=edm-001%3A1968%3A23%3A%3A119, pp. 112-113, under Losung der 2 of Aufgabe 557 (this is cited in the original paper, and i used chatgpt to translate this.) I am not sure how the GPT's proof relates to this."
+    },
+    {
+      "author": "KoishiChan",
+      "text": "Wow, nice find!  These results pertain to the stronger claim $a! b! | n!$ and are only valid for sufficiently small $c$ (see the crucial phrase \"for... some $c>0$\" in the Erdos-Graham paper or \"fur ein genügend kleines C\" in page 113 of your other article, or \"Es gibt eine absolute Konstante $C_2$\" in the original formulation of Erdos), matching the initial GPT argument (and also subsuming the Pomerance argument, though the Pomerance proof is closer to the GPT proof than the solutions provided in this German article).  The version with $a! b! | n! (a+b-n)!$ and $C$ large is the one obtained by the latter GPT argument and appears to be new, though still similar in proof technique to the other results that have been found in the literature. (As observed by Erdos and Graham, or in the first part of the problem in the German article, the $a! b! | n!$ version cannot hold for $C$ large.)"
+    },
+    {
+      "author": "TerenceTao",
+      "text": "This one is the original “$n!/(a!b!)$ is integer” type. The question is “$n!(a+b-n)!/(a!b!)$ is integer” type. (It’s sort of related in motivation as in the problem description.)\n\nThanks in advance for performing literature search on this!"
+    },
+    {
+      "author": "natso26",
+      "text": "I second that! Thanks for performing the literature search! It makes me much more confident now that it has passed the KoishiChan test."
+    },
+    {
+      "author": "Kevin Barreto",
+      "text": "Ahh i see the difference. Thanks to Terry for a nice explanation!"
+    },
+    {
+      "author": "KoishiChan",
+      "text": "Ah, it’s only true for some $c$ (“there is an absolute constant $c$”), but the problem is any $c$."
+    },
+    {
+      "author": "natso26",
+      "text": "I was about to post a response similar to the explanation from Terry before refreshing the page to see he had already done so. Thanks for checking things!"
+    },
+    {
+      "author": "Kevin Barreto",
+      "text": "Yeah the small prime factors are the obstables here, and multiplying by $(a + b -n)!$ gets rid of that. Well done!"
+    },
+    {
+      "author": "KoishiChan",
+      "text": "ChatGPT DeepResearch was not of too much help resolving this ambiguity, but did point out this MathOverflow question, which in turn led to this other MathOverflow question which at least gave a very short proof of the [Er68c] result.\n\nIn addition to the proposed solution of imposing $a,b \\leq (1-\\varepsilon) n$, one other option is to require $n + C \\log n < a+b \\leq n + C' \\log n$ for some given $0 < C < C'$.  My guess is that EGRS were thinking primarily about the $a+b = n + O(\\log n)$ regime and forgot to check whether their question admits trivial solutions outside of this regime.\n\nA minor remark: the condition $a!b!|n!(a+b-n)!$ can be rewritten as $\\binom{N}{k}|\\binom{N}{a}$ where $N=a+b$ and $k=a+b-n$.  It seems the intent is to have $a$ in the bulk region $\\varepsilon N \\leq a \\leq (1-\\varepsilon) N$ and $k$ smaller than this, e.g. $k \\asymp \\log N$."
+    }
+  ]
+}

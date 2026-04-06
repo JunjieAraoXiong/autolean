@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_528",
+  "problem": [
+    "Let f(n,k) count the number of self-avoiding walks of n steps (beginning at the origin) in ℤ^k (i.e. those walks which do not intersect themselves). DetermineC_k=\\lim_{n→∞}f(n,k)^{1/n}."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 528,
+  "status": "open",
+  "tags": [
+    "geometry"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $f(n,k)$ count the number of self-avoiding walks of $n$ steps (beginning at the origin) in $\\mathbb{Z}^k$ (i.e. those walks which do not intersect themselves). Determine\\[C_k=\\lim_{n\\to\\infty}f(n,k)^{1/n}.\\]",
+  "additional_context": "The constant C_k is sometimes known as the connective constant. Hammersley and Morton \\cite{HM54} showed that this limit exists, and it is trivial that k≤ C_k≤ 2k-1.\n\nKesten \\cite{Ke63} proved that C_k=2k-1-1/2k+O(1/k^2), and more precise asymptotics are given by Clisby, Liang, and Slade \\cite{CLS07}.\n\nConway and Guttmann \\cite{CG93} showed that C_2≥ 2.62 and Alm \\cite{Al93} showed that C_2≤ 2.696. Jacobsen, Scullard, and Guttmann \\cite{JSG16} have computed the first few decimal places of C_2, showing thatC_2 = 2.6381585303279\\cdots.See also [529].\n\nReferences\n\n[Al93] Alm, Sven Erick, Upper bounds for the connective constant of self-avoiding\nwalks. Combin. Probab. Comput. (1993), 115-136.\n\n[CG93] Conway, A. R. and Guttmann, A. J., Lower bound on the connective constant for square lattice\nself-avoiding walks. J. Phys. A (1993), 3719-3724.\n\n[CLS07] Clisby, Nathan and Liang, Richard and Slade, Gordon, Self-avoiding walk enumeration via the lace expansion. J. Phys. A (2007), 10973-11017.\n\n[HM54] Hammersley, J. M. and Morton, K. W., Poor man's Monte Carlo. J. Roy. Statist. Soc. Ser. B (1954), 23-38; discussion 61-75.\n\n[JSG16] Jacobsen, Jesper Lykke and Scullard, Christian R. and\nGuttmann, Anthony J., On the growth constant for square-lattice self-avoiding walks. J. Phys. A (2016), 494004, 18.\n\n[Ke63] Kesten, Harry, On the number of self-avoiding walks. J. Mathematical Phys. (1963), 960-969.",
+  "reference_proof_hint": "Write (c_n=f(n,k)) for the number of $n$-step self–avoiding walks (SAWs) in (\\mathbb Z^k) starting at the origin.\n\n## 1) The limit exists\n\nTake any $(m+n)$-step SAW (\\omega=(\\omega_0,\\omega_1,\\dots,\\omega_{m+n})) with (\\omega_0=0). Split it at time $m$:\n\n* the prefix $(\\omega_0,\\dots,\\omega_m)$ is an $m$-step SAW from the origin;\n* the suffix $(\\omega_m,\\omega_{m+1},\\dots,\\omega_{m+n})$, translated by (-\\omega_m), becomes an $n$-step SAW from the origin.\n\nThus each ((m+n))-step SAW determines a **pair** $(\\text{prefix},\\text{translated suffix})\\in {\\text{SAWs of length }m}\\times{\\text{SAWs of length }n}$, and this mapping is injective. Hence\n[\nc_{m+n}\\le c_m,c_n \\qquad (m,n\\ge 0).\n]\nSo (\\log c_n) is subadditive. By Fekete’s lemma,\n[\n\\lim_{n\\to\\infty}\\frac1n\\log c_n=\\inf_{n\\ge 1}\\frac1n\\log c_n,\n]\nand therefore\n[\nC_k=\\lim_{n\\to\\infty}c_n^{1/n}\n]\n**exists**, and equals\n[\nC_k=\\inf_{n\\ge 1} c_n^{1/n}.\n]\nThis constant (C_k) is the **connective constant** (\\mu(\\mathbb Z^k)). ([MathWorld][1])"
+}

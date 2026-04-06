@@ -1,0 +1,15 @@
+{
+  "uuid": "erdos_109",
+  "problem": [
+    "Erdős Problem #109"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 109,
+  "status": "proved",
+  "tags": [
+    "additive combinatorics"
+  ],
+  "prize": "no",
+  "formalized_on_site": true,
+  "ground_truth_lean": "/-\nCopyright 2026 The Formal Conjectures Authors.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    https://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n-/\n\nimport FormalConjectures.Util.ProblemImports\n\n/-!\n# Erdős Problem 109\n\n*References:*\n- [erdosproblems.com/109](https://www.erdosproblems.com/109)\n- [MRR19] J. Moreira, F.K. Richter, and D. Robertson, A proof of a sumset conjecture of Erdős,\n  Annals of Math. 189 (2019), 605-652.\n-/\n\nopen Pointwise\n\nnamespace Erdos109\n\n/--\nAny $A\\subseteq \\mathbb{N}$ of positive upper density contains a sumset $B+C$ where both $B$ and $C$\nare infinite.\n\nThe Erdős sumset conjecture. Proved by Moreira, Richter, and Robertson [MRR19].\n-/\n@[category research solved, AMS 5]\ntheorem erdos_109 (A : Set ℕ) (h : A.upperDensity > 0) :\n    ∃ B C : Set ℕ, B.Infinite ∧ C.Infinite ∧ B + C ⊆ A := by\n  sorry\n\nend Erdos109\n"
+}

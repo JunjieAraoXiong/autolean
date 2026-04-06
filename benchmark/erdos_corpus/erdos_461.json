@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_461",
+  "problem": [
+    "Let s_t(n) be the t-smooth component of n - that is, the product of all primes p (with multiplicity) dividing n such that p<t. Let f(n,t) count the number of distinct possible values for s_t(m) for m∈ [n+1,n+t]. Is it true thatf(n,t)\\gg t(uniformly, for all t and n)?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 461,
+  "status": "open",
+  "tags": [
+    "number theory",
+    "primes"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $s_t(n)$ be the $t$-smooth component of $n$ - that is, the product of all primes $p$ (with multiplicity) dividing $n$ such that $p<t$. Let $f(n,t)$ count the number of distinct possible values for $s_t(m)$ for $m\\in [n+1,n+t]$. Is it true that\\[f(n,t)\\gg t\\](uniformly, for all $t$ and $n$)?",
+  "additional_context": "Erdős and Graham report they can showf(n,t) \\gg (t)/(\\log t).",
+  "reference_proof_hint": "As far as I can tell from the literature that’s easy to locate, this is **still open** in the fully uniform form you stated.\n\nIt is explicitly listed as an open Erdős–Graham problem (Erdős & Graham, *Old and New Problems and Results in Combinatorial Number Theory*, 1980, p. 92), and the best unconditional lower bound that is routinely cited there is\n[\nf(n,t)\\ \\gg\\ \\frac{t}{\\log t}\n]\nuniformly in (n,t). ([Erdős Problems][1])\n\nSo, at present:\n\n* **Known (unconditional):** (f(n,t)\\gg t/\\log t). ([Erdős Problems][1])\n* **Open:** whether one can improve this to a **linear** bound (f(n,t)\\gg t) uniformly in (n,t). ([Erdős Problems][1])\n\nA small structural observation that’s often useful when thinking about the problem (and explains why the linear bound feels plausible) is:\n\n* If (s_t(m)\\ge t), then that value can occur **at most once** among (m\\in[n+1,n+t]).\n  Indeed, if (s_t(m_1)=s_t(m_2)=d\\ge t), then (d\\mid (m_1-m_2)), but (|m_1-m_2|<t), forcing (m_1=m_2).\n\nSo any proof of (f(n,t)\\gg t) w"
+}

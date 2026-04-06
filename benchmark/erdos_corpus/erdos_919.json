@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_919",
+  "problem": [
+    "Is there a graph G with vertex set \\omega_2^2 and chromatic number \\aleph_2 such that every subgraph whose vertices have a lesser type has chromatic number ≤ \\aleph_0?\n\nWhat if instead we ask for G to have chromatic number \\aleph_1?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 919,
+  "status": "open",
+  "tags": [
+    "graph theory",
+    "chromatic number"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Is there a graph $G$ with vertex set $\\omega_2^2$ and chromatic number $\\aleph_2$ such that every subgraph whose vertices have a lesser type has chromatic number $\\leq \\aleph_0$?\n\nWhat if instead we ask for $G$ to have chromatic number $\\aleph_1$?",
+  "additional_context": "This question was inspired by a theorem of Babai, that if G is a graph on a well-ordered set with chromatic number ≥ \\aleph_0 there is a subgraph on vertices with order-type \\omega with chromatic number \\aleph_0.\n\nErdős and Hajnal showed this does not generalise to higher cardinals - they (see \\cite{Er69b}) constructed a set on \\omega_1^2 with chromatic number \\aleph_1 such that every strictly smaller subgraph has chromatic number ≤ \\aleph_0 as follows: the vertices of G are the pairs (x_\\alpha,y_\\beta) for 1≤ \\alpha,\\beta <\\omega_1, ordered lexicographically. We connect (x_{\\alpha_1},y_{\\beta_1}) and (x_{\\alpha_2},y_{\\beta_2}) if and only if \\alpha_1<\\alpha_2 and \\beta_1<\\beta_2.\n\nA similar construction produces a graph on \\omega_2^2 with chromatic number \\aleph_2 such that every smaller subgraph has chromatic number ≤ \\aleph_1.\n\nReferences\n\n[Er69b] Erdős, P., Problems and results in chromatic graph theory. Proof Techniques in Graph Theory (Proc. Second Ann\nArbor Graph Theory Conf., Ann Arbor, Mich.,\n1968) (1969), 27-35.",
+  "reference_proof_hint": "This is (essentially verbatim) **Erdős’ problem #919**, and as far as I can verify it is **still open**. ([Erdős Problems][1])\n\n## What is known\n\n### The ω₁² precedent (Erdős–Hajnal)\n\nErdős and Hajnal gave a graph on a vertex set of order type (\\omega_1^2) which is **uncountably chromatic**, but every subgraph whose vertex set has **smaller order type** is **countably chromatic**.\n\nOne convenient formulation (in ordinal-coded form) is:\n\n* Vertex set\n  [\n  V=\\bigcup_{\\alpha\\in\\omega_1}V_\\alpha,\\qquad\n  V_\\alpha=[,\\omega_1\\cdot\\alpha+\\alpha,\\ \\omega_1\\cdot(\\alpha+1),)\n  ]\n* Edge relation: for vertices (\\omega_1\\cdot\\alpha+\\beta) and (\\omega_1\\cdot\\alpha'+\\beta'),\n  [\n  {\\omega_1\\cdot\\alpha+\\beta,\\ \\omega_1\\cdot\\alpha'+\\beta'}\\in E\n  \\iff (\\alpha<\\alpha'\\ \\wedge\\ \\beta>\\beta').\n  ]\n  This graph is uncountably chromatic, and **every set of order type (\\omega_1)** induces a **countably chromatic** subgraph [[nomath]](and hence, by a simple decomposition argument, every set of order type $<\\"
+}

@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_644",
+  "problem": [
+    "Let f(k,r) be minimal such that if A_1,A_2,\\ldots is a family of sets, all of size k, such that for every collection of r of the A_is there is some pair \\{x,y\\} which intersects all of the A_j, then there is some set of size f(k,r) which intersects all of the sets A_i. Is it true thatf(k,7)=(1+o(1))(3)/(4)k?Is it true that for any r≥ 3 there exists some constant c_r such thatf(k,r)=(1+o(1))c_rk?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 644,
+  "status": "open",
+  "tags": [
+    "combinatorics"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $f(k,r)$ be minimal such that if $A_1,A_2,\\ldots$ is a family of sets, all of size $k$, such that for every collection of $r$ of the $A_is$ there is some pair $\\{x,y\\}$ which intersects all of the $A_j$, then there is some set of size $f(k,r)$ which intersects all of the sets $A_i$. Is it true that\\[f(k,7)=(1+o(1))\\frac{3}{4}k?\\]Is it true that for any $r\\geq 3$ there exists some constant $c_r$ such that\\[f(k,r)=(1+o(1))c_rk?\\]",
+  "additional_context": "A problem of Erdős, Fon-Der-Flaass, Kostochka, and Tuza \\cite{EFKT92}, who proved that f(k,3)=2k and f(k,4)=\\lfloor 3k/2\\rfloor and f(k,5)=\\lfloor 5k/4\\rfloor, and further that f(k,6)=k.\n\nReferences\n\n[EFKT92] Erd\\\"{o}s, P. and Fon-Der-Flaass, D. and Kostochka, A. V. and\nTuza, Zs., Small transversals in uniform hypergraphs. Siberian Adv. Math. (1992), 82-88.",
+  "reference_proof_hint": "Write your family (\\mathcal H={A_i}) as a $k$-uniform hypergraph and let (\\tau(\\mathcal H)) be its transversal (hitting) number. Your hypothesis is exactly that **every subhypergraph on $r$ edges has (\\tau\\le 2)** [[nomath]](often called “property $(r,2)$” in the Erdős–Hajnal–Tuza / Erdős–Fon-Der-Flaass–Kostochka–Tuza notation)[[/nomath]]. Then $f(k,r)$ is the **maximum possible** (\\tau(\\mathcal H)) over all such $k$-uniform (\\mathcal H).\n\n## The case $r=7$\n\nAs far as the published literature I can access, the asymptotic\n[\nf(k,7)=(1+o(1))\\frac34,k\n]\nis **not known**.\n\nWhat *is* known is that $f(k,7)$ is sandwiched between linear bounds with constants $3/4$ and $7/8$:\n\n* **Lower bound (\\ge (3/4)k - O(1))**: Fon-Der-Flaass, Kostochka, and Woodall construct examples with $k$ divisible by $4$ showing\n  [\n  f(4m,7)\\ge 3m+1 \\qquad (m\\ge 10),\n  ]\n  i.e. $f(k,7)\\ge \\tfrac34k+1$ for (k\\equiv 0\\pmod 4) and $k$ large. ([Kostochka Lab][1])\n  [[nomath]](They also point out the complete $k$-uniform "
+}

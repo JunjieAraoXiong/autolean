@@ -1,0 +1,19 @@
+{
+  "uuid": "erdos_684",
+  "problem": [
+    "For 0≤ k≤ n write\\binom{n}{k} = uvwhere the only primes dividing u are in [2,k] and the only primes dividing v are in (k,n].\n\nLet f(n) be the smallest k such that u>n^2. Give bounds for f(n)."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 684,
+  "status": "open",
+  "tags": [
+    "number theory",
+    "primes",
+    "binomial coefficients"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "For $0\\leq k\\leq n$ write\\[\\binom{n}{k} = uv\\]where the only primes dividing $u$ are in $[2,k]$ and the only primes dividing $v$ are in $(k,n]$.\n\nLet $f(n)$ be the smallest $k$ such that $u>n^2$. Give bounds for $f(n)$.",
+  "additional_context": "A classical theorem of Mahler states that for any \\epsilon>0 and integers k and l then, writing(n+1)\\cdots (n+k) = abwhere the only primes dividing a are ≤ l and the only primes dividing b are >l, we have a < n^{1+\\epsilon} for all sufficiently large (depending on \\epsilon,k,l) n.\n\nMahler's theorem implies f(n)→ ∞ as n→ ∞, but is ineffective, and so gives no bounds on the growth of f(n).\n\nOne can similarly ask for estimates on the smallest integer f(n,k) such that if m is the factor of \\binom{n}{k} containing all primes ≤ f(n,k) then m > n^2.",
+  "reference_proof_hint": "Let\n[\n\\binom{n}{k}=u(n,k),v(n,k),\n]\nwhere every prime factor of $u(n,k)$ is (\\le k) and every prime factor of $v(n,k)$ is (>k). Equivalently, $u(n,k)$ is the “$k$-smooth part” of (\\binom{n}{k}).\n\nDefine\n[\nf(n)=\\min{k: u(n,k)>n^2},\n]\n[[nomath]](with the convention “no such $k$” for very small $n$; OEIS records this as $0$ for those $n$)[[/nomath]]. ([OEIS][1])\n\n---\n\n## A general explicit upper bound: (f(n)\\le \\lfloor n/2\\rfloor) for all sufficiently large $n$\n\nTake (k=\\lfloor n/2\\rfloor). Then all primes counted in $v(n,k)$ lie in $(k,n]\\subset (n/2,n]$. In particular, if $p\\in (n/2,n]$, then $2p>n$, so $p$ appears in $n!$ with exponent $1$, and does not appear in $k!$ or ((n-k)!). Hence each such prime can occur in (\\binom{n}{k}) with exponent at most $1$, and\n$\nv(n,k)\\ \\Big|\\ \\prod_{n/2<p\\le n} p.\n$\nIntroduce Chebyshev’s function (\\vartheta(x)=\\sum_{p\\le x}\\log p); then\n$\n\\prod_{n/2<p\\le n} p=\\exp(\\vartheta(n)-\\vartheta(n/2)),\n$\nso\n$\n\\log v(n,k)\\le \\vartheta(n)-\\vartheta(n/2).\n$\n\nOn t"
+}

@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_383",
+  "problem": [
+    "Is it true that for every k there are infinitely many primes p such that the largest prime divisor of∏_{0≤ i≤ k}(p^2+i)is p?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 383,
+  "status": "open",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": true,
+  "original_latex": "Is it true that for every $k$ there are infinitely many primes $p$ such that the largest prime divisor of\\[\\prod_{0\\leq i\\leq k}(p^2+i)\\]is $p$?",
+  "additional_context": "A positive answer to this would give an answer to the second part of [382]. Heuristically, the 'probability' that n has no prime divisors ≥ n^{1/2} is 1-\\log 2>0, so standard heuristics predict the answer to this is yes.",
+  "reference_proof_hint": "Let $P(n)$ denote the largest prime divisor of $n$.\nYour condition\n[\nP\\left(\\prod_{i=0}^{k}(p^2+i)\\right)=p\n]\nis equivalent to\n[\nP(p^2+i)\\le p\\quad\\text{for every }i=1,2,\\dots,k,\n]\nsince the $i=0$ factor is (p^2), so $p$ certainly divides the product and hence the largest prime divisor is (\\ge p).\n\nSo the question is asking: for each fixed $k$, are there infinitely many primes $p$ such that all the integers\n[\np^2+1,p^2+2,\\dots,p^2+k\n]\nare **$p$-smooth** [[nomath]](have no prime factor $>p$)[[/nomath]]?\n\n## What is known\n\nAs far as I can tell, this is **not proved** for any fixed (k\\ge 1), and it is treated as open in closely related discussions. In particular, even the *existence* question for the stronger symmetric block ({p^2-k,\\dots,p^2+k}) is only supported by heuristic reasoning and computation in the standard reference discussion I found. ([Mathematics Stack Exchange][1])\n\n## Why people expect “yes” (heuristic)\n\nThere is a classical notion (Greene–Knuth) of an **unusual number**:",
+  "ground_truth_lean": "/-\nCopyright 2025 The Formal Conjectures Authors.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    https://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n-/\n\nimport FormalConjectures.Util.ProblemImports\n\n/-!\n# Erdős Problem 383\n\n*Reference:* [erdosproblems.com/383](https://www.erdosproblems.com/383)\n-/\n\nnamespace Erdos383\n\n/--\nIs it true that for every $k$ there are infinitely many primes $p$ such that the largest prime\ndivisor of\n$$\n  \\prod_{i = 0}^k (p ^ 2 + i)\n$$\nis $p$?\n-/\n@[category research open, AMS 11]\ntheorem erdos_383 : answer(sorry) ↔\n    ∀ k, {p : ℕ | p.Prime ∧ Nat.maxPrimeFac (∏ i ∈ Finset.Icc 0 k, (p ^ 2 + i)) = p}.Infinite := by\n  sorry\n\nend Erdos383\n"
+}

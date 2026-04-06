@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_938",
+  "problem": [
+    "Let A=\\{n_1<n_2<\\cdots\\} be the sequence of powerful numbers  (if p\\mid n then p^2\\mid n).\n\nAre there only finitely many three-term progressions of consecutive terms n_k,n_{k+1},n_{k+2}?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 938,
+  "status": "open",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": true,
+  "original_latex": "Let $A=\\{n_1<n_2<\\cdots\\}$ be the sequence of powerful numbers  (if $p\\mid n$ then $p^2\\mid n$).\n\nAre there only finitely many three-term progressions of consecutive terms $n_k,n_{k+1},n_{k+2}$?",
+  "additional_context": "Erdős also conjectured (see [364]) that there are no triples of powerful numbers of the shape n,n+1,n+2.",
+  "reference_proof_hint": "This is (as far as I can tell) **still open**.\n\nIt appears explicitly as an Erdős problem (Erdős Problem **#938**) in the formulation you wrote: for the increasing sequence of powerful (squareful) numbers (n_1<n_2<\\cdots), are there only finitely many indices $k$ with\n[\nn_{k+1}-n_k = n_{k+2}-n_{k+1},?\n]\nErdosproblems.com currently lists it as **OPEN**. ([Erdős Problems][1])\n\n### Some concrete data (examples exist)\n\nThere *are* examples of three **consecutive powerful numbers** in an arithmetic progression. The smallest ones include\n\n* $(1728,1764,,1800)$ with common difference $36$,\n* $(6912,7056,,7200)$ with common difference $144$.\n\nI also did a quick computation [[nomath]](by enumerating all powerful numbers $\\le 10^{12}$ via the standard representation $n=a^2 b^3$ with $b$ squarefree)[[/nomath]] and found **10** such consecutive-term 3-APs up to (10^{12}):\n[\n\\begin{aligned}\n&(1728,1764,1800),\\ (6912,7056,7200),\\\n&(729000,729316,729632),\\ (1458000,1458632,1459264),\\\n&(2916000,291726",
+  "ground_truth_lean": "/-\nCopyright 2025 The Formal Conjectures Authors.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    https://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n-/\n\nimport FormalConjectures.Util.ProblemImports\n\n/-!\n# Erdős Problem 938\n\n*Reference:* [erdosproblems.com/938](https://www.erdosproblems.com/938)\n-/\nopen Nat\n\nnamespace Erdos938\n\n/--\nLet $A=\\{n_1 < n_2 < \\cdots\\}$ be the sequence of powerful numbers (if $p\\mid n$ then $p^2\\mid n$).\nAre there only finitely many three-term progressions of consecutive terms $n_k,n_{k+1},n_{k+2}$?\n-/\n@[category research open, AMS 11]\ntheorem erdos_938 : answer(sorry) ↔ {P : Finset ℕ | (P : Set ℕ).IsAPOfLength 3 ∧ ∃ k,\n    P = {nth Powerful k, nth Powerful (k + 1), nth Powerful (k + 2)}}.Finite := by\n  sorry\n\nend Erdos938\n"
+}

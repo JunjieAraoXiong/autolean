@@ -1,0 +1,19 @@
+{
+  "uuid": "erdos_244",
+  "problem": [
+    "Let C>1. Does the set of integers of the form p+\\lfloor C^k\\rfloor, for some prime p and k≥ 0, have density >0?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 244,
+  "status": "open",
+  "tags": [
+    "number theory",
+    "primes"
+  ],
+  "prize": "no",
+  "formalized_on_site": true,
+  "original_latex": "Let $C>1$. Does the set of integers of the form $p+\\lfloor C^k\\rfloor$, for some prime $p$ and $k\\geq 0$, have density $>0$?",
+  "additional_context": "Originally asked to Erdős by Kalm\\'{a}r. Erdős believed the answer is yes. Romanoff \\cite{Ro34} proved that the answer is yes if C is an integer.\n\nDing \\cite{Di25} has proved that this is true for almost all C>1.\n\nReferences\n\n[Di25] Y. Ding, On a Romanoff type problem of Erdős and Kalm\\'{a}r. arXiv:2503.22700 (2025).\n\n[Ro34] Romanoff, N. P., \\\"{U}ber einige S\\\"Atze der additiven Zahlentheorie. Math. Ann. (1934), 668-678.",
+  "reference_proof_hint": "Let\n[\nR_C:={,n\\in\\mathbb N:\\ n=p+\\lfloor C^k\\rfloor\\ \\text{for some prime }p\\text{ and }k\\ge 0,}.\n]\nInterpreting “density” in the usual Erdős/Romanoff sense as **positive lower asymptotic density**\n[\n\\underline d(R_C):=\\liminf_{x\\to\\infty}\\frac{|R_C\\cap[1,x]|}{x}>0,\n]\nthe current state of knowledge is:\n\n* **If $C$ is an integer (\\ge 2)**, then **yes**: this is exactly a case of **Romanov/Romanoff’s theorem**, which says that for a fixed integer base (b>1), the set of integers of the form (p+b^k) has positive lower asymptotic density. ([Wikipedia][1])\n\n* **For a general fixed real (C>1)**, the problem is **open**. It is recorded as an Erdős problem (originally asked by Kalmár), and it is not known in full generality whether (\\underline d(R_C)>0) holds for every single (C>1). ([Erdős Problems][2])\n\n* **What is known beyond the integer case:** Ding (2025) proved that the answer is **yes for almost all (C>1)** in the sense of **Lebesgue measure**—i.e. for all $C$ outside a measure‑zero exc",
+  "ground_truth_lean": "/-\nCopyright 2025 The Formal Conjectures Authors.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    https://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n-/\n\nimport FormalConjectures.Util.ProblemImports\n\n/-!\n# Erdős Problem 244\n\n*Reference:* [erdosproblems.com/244](https://www.erdosproblems.com/244)\n-/\n\nnamespace Erdos244\n\n/-- Let $C > 1$. Does the set of integers of the form $p + \\lfloor C^k \\rfloor$,\nfor some prime $p$ and $k\\geq 0$, have density $>0$? -/\n@[category research open, AMS 11]\ntheorem erdos_244 : answer(sorry) ↔\n    ∀ C > (1 : ℝ), 0 < { p + ⌊C ^ k⌋₊ | (p) (k) (_ : p.Prime) }.lowerDensity := by\n  sorry\n\n/-- Romanoff [Ro34] proved that the answer is yes if $C$ is an integer.\n\n[Ro34] Romanoff, N. P., _Über einige Sätze der additiven Zahlentheorie_.\nMath. Ann. (1934), 668-678. -/\n@[category research solved, AMS 11]\ntheorem erdos_244.variants.Romanoff {C : ℕ} (hC : 1 < C) :\n    0 < { p + ⌊C ^ k⌋₊ | (p) (k) (_ : p.Prime) }.lowerDensity := by\n  sorry\n\nend Erdos244\n"
+}

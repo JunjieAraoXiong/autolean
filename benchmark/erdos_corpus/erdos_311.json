@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_311",
+  "problem": [
+    "What is the minimal value of | 1-∑_{n∈ A}(1)/(n)| as A ranges over all subsets of \\{1,\\ldots,N\\} which contain no S such that ∑_{n∈ S}(1)/(n)=1? Is ite^{-(c+o(1))N}for some constant c∈ (0,1)?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 311,
+  "status": "open",
+  "tags": [
+    "number theory",
+    "unit fractions"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "What is the minimal value of $\\lvert 1-\\sum_{n\\in A}\\frac{1}{n}\\rvert$ as $A$ ranges over all subsets of $\\{1,\\ldots,N\\}$ which contain no $S$ such that $\\sum_{n\\in S}\\frac{1}{n}=1$? Is it\\[e^{-(c+o(1))N}\\]for some constant $c\\in (0,1)$?",
+  "additional_context": "It is trivially at least 1/[1,\\ldots,N].",
+  "reference_proof_hint": "Let\n\n[\n\\delta(N)\\ :=\\ \\min\\\\{|1-\\sum_{n\\in A}\\frac1n|\\ :\\ A\\subseteq{1,\\dots,N}\\\\}\\cap(0,\\infty).\n]\n\nThis is the same quantity as in the Erdős–Graham formulation with the extra condition that $A$ contain no (S\\subseteq A) with (\\sum_{n\\in S}1/n=1): if $A$ contains such a *proper* subset $S$, then\n[\n\\sum_{n\\in A}\\frac1n-1=\\sum_{n\\in A\\setminus S}\\frac1n \\ge \\frac1N,\n]\nso such sets can only ever produce an error (\\ge 1/N), which is not relevant once (\\delta(N)\\ll 1/N); moreover this equivalence is explicitly noted in the discussion of the problem. ([Erdős Problems][1])\n\n### What is known\n\n**1) Trivial (but essentially best-possible in form) lower bound.**\nEvery (\\sum_{n\\in A}1/n) is a rational with denominator dividing ([1,\\dots,N]) (the lcm), hence (\\delta(N)\\ge 1/[1,\\dots,N]). Using (\\log [1,\\dots,N]=(1+o(1))N), this gives\n[\n\\delta(N)\\ \\ge\\ \\frac{1}{[1,\\dots,N]}\\ =\\ e^{-(1+o(1))N}.\n]\n([Erdős Problems][1])\n\n**2) Best current upper bound (as of Jan 2026).**\nQuanyu Tang obtained the first"
+}

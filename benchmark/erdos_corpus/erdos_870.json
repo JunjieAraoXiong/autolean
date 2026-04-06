@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_870",
+  "problem": [
+    "Let k≥ 3 and A be an additive basis of order k. Does there exist a constant c=c(k)>0 such that if r(n)≥ c\\log n for all large n then A must contain a minimal basis of order k? (Here r(n) counts the number of representations of n as the sum of at most k elements from A.)"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 870,
+  "status": "open",
+  "tags": [
+    "number theory",
+    "additive basis"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $k\\geq 3$ and $A$ be an additive basis of order $k$. Does there exist a constant $c=c(k)>0$ such that if $r(n)\\geq c\\log n$ for all large $n$ then $A$ must contain a minimal basis of order $k$? (Here $r(n)$ counts the number of representations of $n$ as the sum of at most $k$ elements from $A$.)",
+  "additional_context": "A question of Erdős and Nathanson \\cite{ErNa79}, who proved that this is true for k=2 if 1_A\\ast 1_A(n) > (\\log (4)/(3))^{-1}\\log n for all large n.\n\nHärtter \\cite{Ha56} and Nathanson \\cite{Na74} proved that there exist additive bases which do not contain any minimal additive bases.\n\nSee also [868].\n\nReferences\n\n[ErNa79] Erdős, Paul and Nathanson, Melvyn B., Systems of distinct representatives and minimal bases in\nadditive number theory.  (1979), 89--107.\n\n[Ha56] H\\\"{a}rtter, Erich, Ein Beitrag zur {T}heorie der {M}inimalbasen. J. Reine Angew. Math. (1956), 170--204.\n\n[Na74] Nathanson, Melvyn B., Minimal bases and maximal nonbases in additive number theory. J. Number Theory (1974), 324--333.",
+  "reference_proof_hint": "As of **January 2026**, this is **open for every (k\\ge 3)**: there is **no known** constant (c(k)>0) that forces an additive basis $A$ of order $k$ with (r(n)\\ge c(k)\\log n) [[nomath]](for all large $n$)[[/nomath]] to contain a **minimal** basis of order $k$. ([Erdős Problems][1])\n\nWhat *is* known [[nomath]](and why $\\log n$ shows up)[[/nomath]] is roughly:\n\n* **Order $2$ is special.** Erdős–Nathanson proved that if $A$ is an asymptotic basis of order $2$ and its 2-term representation function satisfies\n  [\n  r_{2,A}(n)>\\frac{1}{\\log(4/3)}\\log n\n  \\quad\\text{for all sufficiently large }n,\n  ]\n  then $A$ **does** contain a minimal asymptotic basis of order $2$. ([arXiv][2])\n  [[nomath]](Even in order $2$, the appearance/optimality of the constant $1/\\log(4/3)$ is not fully understood.)[[/nomath]] ([arXiv][2])\n\n* **For (k\\ge 3)**, Erdős already noted that the *method of proof* for the $k=2$ result “seems to work only in the case $h=2$,” and that for (h>2) it was not known even whether a "
+}

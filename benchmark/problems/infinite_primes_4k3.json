@@ -1,0 +1,12 @@
+{
+  "uuid": "infinite_primes_4k3",
+  "problem": [
+    "Prove that there are infinitely many prime numbers of the form 4k+3, i.e., infinitely many primes p such that p ≡ 3 (mod 4)."
+  ],
+  "tier": 1,
+  "mathlib_status": "formalized",
+  "mathlib_declaration": "Nat.infinite_setOf_prime_and_eq_mod",
+  "mathlib_module": "Mathlib/NumberTheory/LSeries/PrimesInAP",
+  "proof_strategy": "Specialization of Dirichlet's theorem (or elementary Euclid-mod-4 argument)",
+  "expected_difficulty": "easy_to_medium"
+}

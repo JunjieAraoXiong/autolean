@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_857",
+  "problem": [
+    "Let m=m(n,k) be minimal such that in any collection of sets A_1,\\ldots,A_m⊆ \\{1,\\ldots,n\\} there must exist a sunflower of size k - that is, some collection of k of the A_i which pairwise have the same intersection.\n\nEstimate m(n,k), or even better, give an asymptotic formula."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 857,
+  "status": "open",
+  "tags": [
+    "combinatorics"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $m=m(n,k)$ be minimal such that in any collection of sets $A_1,\\ldots,A_m\\subseteq \\{1,\\ldots,n\\}$ there must exist a sunflower of size $k$ - that is, some collection of $k$ of the $A_i$ which pairwise have the same intersection.\n\nEstimate $m(n,k)$, or even better, give an asymptotic formula.",
+  "additional_context": "Related to [536] and [856]. In \\cite{Er70} Erdős asks this in the equivalent formulation with intersection replaced by union.\n\nThis is sometimes known as the weak sunflower problem (see [20] for the strong sunflower problem).\n\nWhen k=3 this is strongly connected to the cap set problem (finding the maximal size of subsets of \\mathbb{F}_3^n with no three-term arithmetic progressions), as observed by Alon, Shpilka, and Umans \\cite{ASU13}). Naslund and Sawin \\cite{NaSa17} have proved thatm(n,3) ≤ (3/2^{2/3})^{(1+o(1))n}.\n\nReferences\n\n[ASU13] Alon, Noga and Shpilka, Amir and Umans, Christopher, On sunflowers and matrix multiplication. Comput. Complexity (2013), 219--243.\n\n[Er70] Erdős, Paul, Some extremal problems in combinatorial number theory. Mathematical Essays Dedicated to A. J. Macintyre (1970), 123-133.\n\n[NaSa17] Naslund, Eric and Sawin, Will, Upper bounds for sunflower-free sets. Forum Math. Sigma (2017), Paper No. e15, 10.",
+  "reference_proof_hint": "Write ([n]={1,\\dots,n}), and let\n\n[\nF_k(n):=\\max{|\\mathcal F|:\\ \\mathcal F\\subseteq 2^{[n]}\\text{ contains no (k)-sunflower}}.\n]\n\nThen your $m(n,k)$ is simply\n[\nm(n,k)=F_k(n)+1,\n]\nsince $m(n,k)$ is “one more than the largest $k$-sunflower–free family”. [[nomath]](One usually assumes the $A_i$ are distinct; repeats only make it easier to find a sunflower.)[[/nomath]] ([arXiv][1])\n\nA convenient way to package the asymptotics is via the **$k$-sunflower-free capacity**\n[\n\\mu_k^{\\mathrm S}:=\\lim_{n\\to\\infty} F_k(n)^{1/n},\n]\nwhich exists (tensor-power argument). In terms of this,\n[\nF_k(n)=(\\mu_k^{\\mathrm S}+o(1))^n,\\qquad m(n,k)=(\\mu_k^{\\mathrm S}+o(1))^n.\n]\nDetermining (\\mu_k^{\\mathrm S}) [[nomath]](or even showing $\\mu_k^{\\mathrm S}<2$)[[/nomath]] is the heart of the problem. ([arXiv][1])\n\n## General lower bound [[nomath]](all $k\\ge 3$)[[/nomath]]\n\nA standard Erdős–Szemerédi construction gives an explicit exponential lower bound.\n\nAssume (n=m(k-1)) and partition ([n]=R_1\\sqcup\\cdots\\sqcup "
+}

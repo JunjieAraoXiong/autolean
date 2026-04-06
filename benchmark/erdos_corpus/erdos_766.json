@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_766",
+  "problem": [
+    "Let f(n;k,l)=\\min \\mathrm{ex}(n;G), where G ranges over all graphs with k vertices and l edges.\n\nGive good estimates for f(n;k,l) in the range k<l≤ k^2/4. For fixed k and large n is f(n;k,l) a strictly monotone function of l?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 766,
+  "status": "open",
+  "tags": [
+    "graph theory",
+    "turan number"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $f(n;k,l)=\\min \\mathrm{ex}(n;G)$, where $G$ ranges over all graphs with $k$ vertices and $l$ edges.\n\nGive good estimates for $f(n;k,l)$ in the range $k<l\\leq k^2/4$. For fixed $k$ and large $n$ is $f(n;k,l)$ a strictly monotone function of $l$?",
+  "additional_context": "Dirac and Erdős proved independently that when l=\\lfloor k^2/4\\rfloor+1f(n;k,l)≤ \\lfloor n^2/4\\rfloor+1.",
+  "reference_proof_hint": "Write (f(n;k,\\ell)=\\min{\\mathrm{ex}(n;G): |V(G)|=k,\\ |E(G)|=\\ell}). [[nomath]](I’ll use $\\ell$ for the number of edges to avoid confusion with $l$.)[[/nomath]]\n\n## 1. Easy structural reductions\n\n* **Isolated vertices don’t matter [[nomath]](for $n\\ge k$)[[/nomath]].**\n  If $G$ has isolated vertices, deleting them gives (G') with (\\mathrm{ex}(n;G)=\\mathrm{ex}(n;G')) once (n\\ge k), because any copy of (G') can be extended to a copy of $G$ by mapping isolated vertices to unused vertices. So in minimizing, one may as well assume $G$ has no isolates.\n\n* **In your range (,k<\\ell\\le k^2/4), the minimizer is bipartite [[nomath]](for large $n$)[[/nomath]].**\n  Since (\\ell\\le k^2/4), there exist bipartite graphs on $k$ vertices with (\\ell) edges. Any non‑bipartite forbidden graph has (\\mathrm{ex}(n;G)=\\Theta(n^2)) (Erdős–Stone–Simonovits), whereas bipartite forbidden graphs have (\\mathrm{ex}(n;G)=o(n^2)). Thus for fixed (k,\\ell) and large $n$, the minimum will be attained by a bipartite $G$.\n\n##"
+}

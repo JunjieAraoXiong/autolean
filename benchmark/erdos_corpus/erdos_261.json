@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_261",
+  "problem": [
+    "Are there infinitely many n such that there exists some t≥ 2 and distinct integers a_1,\\ldots,a_t≥ 1 such that(n)/(2^n)=∑_{1≤ k≤ t}(a_k)/(2^{a_k)}?Is this true for all n? Is there a rational x such thatx = ∑_{k=1}^∞ (a_k)/(2^{a_k)}has at least 2^{\\aleph_0} solutions?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 261,
+  "status": "open",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Are there infinitely many $n$ such that there exists some $t\\geq 2$ and distinct integers $a_1,\\ldots,a_t\\geq 1$ such that\\[\\frac{n}{2^n}=\\sum_{1\\leq k\\leq t}\\frac{a_k}{2^{a_k}}?\\]Is this true for all $n$? Is there a rational $x$ such that\\[x = \\sum_{k=1}^\\infty \\frac{a_k}{2^{a_k}}\\]has at least $2^{\\aleph_0}$ solutions?",
+  "additional_context": "Related to [260].\n\nIn \\cite{Er88c} Erdős notes that Cusick had a simple proof that there do exist infinitely many such n. Erdős does not record what this was, but a later paper by Borwein and Loring \\cite{BoLo90} provides the following proof: for every positive integer m and n=2^{m+1}-m-2 we have(n)/(2^n)=∑_{n<k≤ n+m}(k)/(2^k).Tengely, Ulas, and Zygadlo \\cite{TUZ20} have verified that all n≤ 10000 have the required property.\n\nIn \\cite{Er88c} Erdős weakens the second question to asking for the existence of a rational x which has two solutions.\n\nReferences\n\n[BoLo90] Borwein, Peter and Loring, Terry A., Some questions of {E}rd\\H{o}s and {G}raham on numbers of the\nform {∑ g_n/2^{g_n}}. Math. Comp. (1990), 377--394.\n\n[Er88c] Erd\\\"{o}s, P., On the irrationality of certain series: problems and results. New advances in transcendence theory (Durham, 1986) (1988), 102-109.\n\n[TUZ20] Tengely, Szabolcs and Ulas, Maciej and Zygad\\l o, Jakub, On a {D}iophantine equation of {E}rd\\H{o}s and {G}raham. J. Number Theory (2020), 445--459.",
+  "reference_proof_hint": "Let (f(m)=\\dfrac{m}{2^{m}}).\n\n## 1) Infinitely many $n$ in the finite-sum equation\n\nYes. There is an explicit infinite family:\n\nFor any integer (m\\ge 2), set\n[\nn =2^{m+1}-m-2.\n]\nThen\n[\n\\frac{n}{2^{n}}\n=\n\\sum_{k=1}^{m}\\frac{n+k}{2^{n+k}},\n]\nso you can take (t=m) and (a_k=n+k) [[nomath]](distinct, and $\\ge1$)[[/nomath]]. ([Jagiellonian University Repository][1])\n\nA quick derivation: compute\n[\n\\sum_{k=1}^{m}\\frac{n+k}{2^{n+k}}\n=\\frac1{2^{n}}\\sum_{k=1}^{m}\\frac{n+k}{2^{k}}\n=\\frac1{2^{n}}\\left(\nn\\sum_{k=1}^{m}\\frac1{2^{k}}\n+\\sum_{k=1}^{m}\\frac{k}{2^{k}}\n\\right).\n]\nUsing the standard finite sums\n[\n\\sum_{k=1}^{m}2^{-k}=1-2^{-m},\\qquad\n\\sum_{k=1}^{m}k2^{-k}=2-\\frac{m+2}{2^{m}},\n]\nthis becomes\n[\n\\frac1{2^{n}}\\left(n(1-2^{-m})+2-\\frac{m+2}{2^{m}}\\right)\n\n\\frac1{2^{n}}\\left(n+2-\\frac{n+m+2}{2^{m}}\\right).\n]\nThis equals (\\dfrac{n}{2^{n}}) exactly when\n[\nn+2-\\frac{n+m+2}{2^{m}}=n\n\\quad\\Longleftrightarrow\\quad\n\\frac{n+m+2}{2^{m}}=2\n\\quad\\Longleftrightarrow\\quad\nn=2^{m+1}-m-2.\n]\n\nThis produces (n=4,1"
+}

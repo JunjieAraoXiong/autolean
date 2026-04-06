@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_183",
+  "problem": [
+    "Let R(3;k) be the minimal n such that if the edges of K_n are coloured with k colours then there must exist a monochromatic triangle. Determine\\lim_{k→ ∞}R(3;k)^{1/k}."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 183,
+  "status": "open",
+  "tags": [
+    "graph theory",
+    "ramsey theory"
+  ],
+  "prize": "$250",
+  "formalized_on_site": false,
+  "original_latex": "Let $R(3;k)$ be the minimal $n$ such that if the edges of $K_n$ are coloured with $k$ colours then there must exist a monochromatic triangle. Determine\\[\\lim_{k\\to \\infty}R(3;k)^{1/k}.\\]",
+  "additional_context": "Erdős offers \\100 for showing that this limit is finite. An easy pigeonhole argument shows thatR(3;k)≤ 2+k(R(3;k-1)-1),from which R(3;k)≤ \\lceil e k!\\rceil immediately follows. The best-known upper bounds are all of the form ck!+O(1), and arise from this type of inductive relationship and computational bounds for R(3;k) for small k. The best-known lower bound (coming from lower bounds for Schur numbers) isR(3,k)≥ (380)^{k/5}-O(1),due to Ageron, Casteras, Pellerin, Portella, Rimmel, and Tomasik \\cite{ACPPRT21} (improving previous bounds of Exoo \\cite{Ex94} and Fredricksen and Sweet \\cite{FrSw00}). Note that 380^{1/5}\\approx 3.2806$.\n\nSee also [483].\n\nThis problem is #21 in Ramsey Theory in the graphs problem collection.\n\nReferences\n\n[ACPPRT21] R. Ageron, P. Casteras, T. Pellerin, Y. Portella, A. Rimmel, and J. Tomasik, New lower bounds for Schur and weak Schur numbers. arXiv:2112.03175 (2021).\n\n[Ex94] Exoo, G., A lower bound for Schur numbers and multicolor Ramsey numbers. Electronic J. of Combinatorics (1994).\n\n[FrSw00] Fredricksen, Harold and Sweet, Melvin M., Symmetric sum-free partitions and lower bounds for {S}chur\nnumbers. Electron. J. Combin. (2000), Research Paper 32, 9.",
+  "reference_proof_hint": "Let $R(3;k)$ be the $k$-colour Ramsey number for triangles, i.e. the least $n$ such that every $k$-edge-colouring of (K_n) contains a monochromatic (K_3).\n\n### 1) The limit exists (possibly (+\\infty))\n\nSet\n[\na_k:=R(3;k)-1,\n]\nso (a_k) is the largest $n$ for which there **exists** a $k$-colouring of (K_n) with **no** monochromatic triangle.\n\n**Product (supermultiplicativity) construction.**\nGiven a “good” $k$-colouring of (K_{a_k}) and a “good” (\\ell)-colouring of (K_{a_\\ell}), build a ((k+\\ell))-colouring on the vertex set ([a_k]\\times [a_\\ell]) by colouring the edge between $(i,j)$ and $(i',j')$ as follows:\n\n* if $i=i'$, colour it by the (\\ell)-colouring rule on $\\\\{j,j'\\\\}$ [[nomath]](use colours $1,\\dots,\\ell$)[[/nomath]];\n* if (i\\neq i'), colour it by the $k$-colouring rule on $\\\\{i,i'\\\\}$ [[nomath]](use colours $\\ell+1,\\dots,\\ell+k$)[[/nomath]].\n\nThen no triangle can be monochromatic:\n\n* triangles inside one “fiber” ({i}\\times[a_\\ell]) are controlled by the (\\ell)-colouring;\n* any "
+}

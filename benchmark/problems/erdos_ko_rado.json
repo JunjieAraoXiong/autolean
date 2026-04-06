@@ -1,0 +1,12 @@
+{
+  "uuid": "erdos_ko_rado",
+  "problem": [
+    "Prove the Erdős-Ko-Rado theorem: for natural numbers n and r with r ≤ n/2, if F is a family of r-element subsets of an n-element set such that every two sets in F intersect, then |F| ≤ C(n-1, r-1)."
+  ],
+  "tier": 1,
+  "mathlib_status": "formalized",
+  "mathlib_declaration": "Finset.erdos_ko_rado",
+  "mathlib_module": "Mathlib/Combinatorics/SetFamily/KruskalKatona",
+  "proof_strategy": "Kruskal-Katona via colex initial segments and UV-compressions",
+  "expected_difficulty": "easy_with_retrieval"
+}

@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_374",
+  "problem": [
+    "For any m∈ ℕ, let F(m) be the minimal k≥ 2 (if it exists) such that there are a_1<\\cdots <a_k=m with a_1!\\cdots a_k! a square. Let D_k=\\{ m : F(m)=k\\}. What is the order of growth of | D_k∩\\{1,\\ldots,n\\}| for 3≤ k≤ 6? For example, is it true that | D_6∩ \\{1,\\ldots,n\\}| \\gg n?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 374,
+  "status": "open",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "For any $m\\in \\mathbb{N}$, let $F(m)$ be the minimal $k\\geq 2$ (if it exists) such that there are $a_1<\\cdots <a_k=m$ with $a_1!\\cdots a_k!$ a square. Let $D_k=\\{ m : F(m)=k\\}$. What is the order of growth of $\\lvert D_k\\cap\\{1,\\ldots,n\\}\\rvert$ for $3\\leq k\\leq 6$? For example, is it true that $\\lvert D_6\\cap \\{1,\\ldots,n\\}\\rvert \\gg n$?",
+  "additional_context": "Studied by Erdős and Graham \\cite{ErGr76} (see also \\cite{LSS14}). It is known, for example, that:\n{UL}\n{LI}no D_k contains a prime,{/LI}\n{LI}D_2=\\{ n^2 : n>1\\},{/LI}\n{LI} | D_3∩ \\{1,\\ldots,n\\}| = o(| D_4∩ \\{1,\\ldots,n\\}|),{/LI}\n{LI} the least element of D_6 is 527, and{/LI}\n{LI} D_k=\\emptyset for k>6.{/LI}\n{/UL}\n\nReferences\n\n[ErGr76] Erdős, P. and Graham, R. L., On products of factorials. Bull. Inst. Math. Acad. Sinica (1976), 337-355.\n\n[LSS14] Luca, F. and Saradha, N. and Shorey, T. N., Squares and factorials in products of factorials. Monatsh. Math. (2014), 385-400.",
+  "reference_proof_hint": "Write\n[\nD_k(n):=\\lvert D_k\\cap{1,\\dots,n}\\rvert.\n]\n\nA few basic structural facts (due to Erdős–Graham):\n\n* $F(m)$ **exists for every composite** $m$, and in fact **every composite $m$ lies in (F_6)** [[nomath]](so $F(m)\\le 6$ for composites)[[/nomath]].\n* If $m$ is **prime**, then no such product can be a square [[nomath]](the prime $m$ occurs to exponent $1$ coming only from $m!$)[[/nomath]]. [[nomath]](This is implicit in their partition of “all integers excluding primes and squares” into $D_3,D_4,D_5,D_6$.)[[/nomath]]\n* In particular, (D_k=\\varnothing) for (k>6).\n\nBelow are the best unconditional growth statements I’m aware of for (3\\le k\\le 6), together with the main conjectures.\n\n---\n\n## $k=3$: (D_3(n)) is sublinear; conjecturally (\\asymp \\sqrt n)\n\n### Unconditional lower bound: (D_3(n)\\gg \\sqrt n)\n\nThere is an explicit infinite family giving a square with three factorials. For (m=2t^2) [[nomath]](with $t\\ge2$)[[/nomath]],\n[\n2!(m-1)!m! = 2(m-1)!^2\\cdot m = 2(m-1)!^2\\cdot 2t^2 = \\b"
+}

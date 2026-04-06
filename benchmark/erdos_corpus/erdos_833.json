@@ -1,0 +1,16 @@
+{
+  "uuid": "erdos_833",
+  "problem": [
+    "Erdős Problem #833"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 833,
+  "status": "proved",
+  "tags": [
+    "graph theory",
+    "hypergraphs",
+    "chromatic number"
+  ],
+  "prize": "no",
+  "formalized_on_site": false
+}

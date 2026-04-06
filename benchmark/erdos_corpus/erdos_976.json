@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_976",
+  "problem": [
+    "Let f∈ ℤ[x] be an irreducible polynomial of degree d≥ 2. Let F_f(n) be maximal such that there exists 1≤ m≤ n with f(m) is divisible by a prime ≥ F_f(n). Equivalently, F_f(n) is the greatest prime divisor of∏_{1≤ m≤ n}f(m).Estimate F_f(n). In particular, is it true that F_f(n)\\gg n^{1+c} for some constant c>0? Or even \\gg n^d?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 976,
+  "status": "open",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $f\\in \\mathbb{Z}[x]$ be an irreducible polynomial of degree $d\\geq 2$. Let $F_f(n)$ be maximal such that there exists $1\\leq m\\leq n$ with $f(m)$ is divisible by a prime $\\geq F_f(n)$. Equivalently, $F_f(n)$ is the greatest prime divisor of\\[\\prod_{1\\leq m\\leq n}f(m).\\]Estimate $F_f(n)$. In particular, is it true that $F_f(n)\\gg n^{1+c}$ for some constant $c>0$? Or even $\\gg n^d$?",
+  "additional_context": "Nagell and Ricci \\cite{Na22} proved thatF_f(n) \\gg n\\log n,which Erdős \\cite{Er52c} improved toF_f(n) \\gg n(\\log n)^{\\log\\log\\log n}.In \\cite{Er65b} he claimed a proof ofF_f(n) \\gg n\\exp((\\log n)^c)for some constant c>0, but said he had never published the proof, which was 'fairly complicated'. This seems to have been flawed, since Erdős and Schinzel \\cite{ErSc90} later published a weaker bound. A proof of the stronger bound above was finally provided by Tenenbaum \\cite{Te90}.\n\nReferences\n\n[Er52c] Erdős, P., On the greatest prime factor of {∏^x_{k=1}f(k)}. J. London Math. Soc. (1952), 379--384.\n\n[Er65b] Erdős, Paul, Some recent advances and current problems in number theory. Lectures on Modern Mathematics, Vol. III (1965), 196-244.\n\n[ErSc90] Erdős, P. and Schinzel, A., On the greatest prime factor of {∏^x_{k=1}f(k)}. Acta Arith. (1990), 191--200.\n\n[Na22] No reference found.\n\n[Te90] Tenenbaum, G\\'{e}rald, Sur une question d'{E}rd\\H{o}s et {S}chinzel.  (1990), 405--443.",
+  "reference_proof_hint": "Write (P^+(N)) for the largest prime factor of a nonzero integer (N). Then your quantity is\n[\nF_f(n)=P^+!\\Big(\\prod_{m\\le n}f(m)\\Big)=\\max_{m\\le n}P^+(f(m)).\n]\n\n## Trivial upper bound\n\nSince (|f(m)|\\asymp m^d) and (m\\le n),\n[\nF_f(n)\\le \\max_{m\\le n}|f(m)|\\ll_f n^d.\n]\nSo (\\gg n^d) is the “largest possible” scale, up to constants.\n\n## Best unconditional *general* lower bounds (all irreducible (f), degree (d\\ge2))\n\nThis problem (for general polynomials) is classical and is often grouped under “Chebyshev’s problem” / “Erdős–Schinzel” type questions about the largest prime factor of (\\prod_{m\\le n}f(m)).\n\n### (1) A baseline bound: (F_f(n)\\gg n\\log n)\n\nAlready Nagell (1921) proved a general lower bound of the shape\n[\nF_f(n)\\gg n\\log n,\n]\nas quoted in Erdős’ 1952 paper. \n\n### (2) The current best general bound: (F_f(n)=n^{1+o(1)}), explicitly (n\\exp((\\log n)^{0.6137\\ldots+o(1)}))\n\nErdős–Schinzel gave a lower bound for the largest prime divisor of (\\prod_{m\\le x}F(m)) (here (F) is a polynomial"
+}

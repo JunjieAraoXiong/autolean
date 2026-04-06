@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_934",
+  "problem": [
+    "Let h_t(d) be minimal such that every graph G with h_t(d) edges and maximal degree ≤ d contains two edges whose shortest path between them has length ≥ t.\n\nEstimate h_t(d)."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 934,
+  "status": "open",
+  "tags": [
+    "graph theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $h_t(d)$ be minimal such that every graph $G$ with $h_t(d)$ edges and maximal degree $\\leq d$ contains two edges whose shortest path between them has length $\\geq t$.\n\nEstimate $h_t(d)$.",
+  "additional_context": "A problem of Erdős and Ne\\v{s}et\\v{r}il. Erdős \\cite{Er88} wrote 'This problem seems to be interesting only if there is a nice expression for h_t(d).'\n\nIt is easy to see that h_t(d)≤ 2d^t always and h_1(d)=d+1.\n\nErdős and Ne\\v{s}et\\v{r}il and Bermond, Bond, Paoli, and Peyrat \\cite{BBPP83} independently conjectured that h_2(d) ≤ \\tfrac{5}{4}d^2+1, with equality for even d (see [149]). This was proved by Chung, Gy\\'{a}rf\\'{a}s, Tuza, and Trotter \\cite{CGTT90}.\n\nCambie, Cames van Batenburg, de Joannis de Verclos, and Kang \\cite{CCJK22} conjectured thath_3(d) ≤ d^3-d^2+d+2,with equality if and only if d=p^k+1 for some prime power p^k, and proved that h_3(3)=23. They also conjecture that, for all t≥ 3, h_t(d)≥ (1-o(1))d^t for infinitely many d and h_t(d)≤ (1+o(1))d^t for all d (where the o(1) term → 0 as d→ ∞).\n\nThe same authors prove that, if t is large, then there are infinitely many d such that h_t(d) ≥ 0.629^td^t, and that for all t≥ 1 we haveh_t(d) ≤ \\tfrac{3}{2}d^t+1.\n\nReferences\n\n[BBPP83] Bermond, J.-C. and Bond, J. and Paoli, M. and Peyrat, C., Graphs and interconnection networks: diameter and\nvulnerability.  (1983), 1--30.\n\n[CCJK22] Cambie, Stijn and Cames van Batenburg, Wouter and de Joannis\nde Verclos, R\\'{e}mi and Kang, Ross J., Maximizing line subgraphs of diameter at most {t}. SIAM J. Discrete Math. (2022), 939--950.\n\n[CGTT90] Chung, F. R. K. and Gy\\'arf\\'as, A. and Tuza, Z. and Trotter,\nW. T., The maximum number of edges in {2K_2}-free graphs of bounded\ndegree. Discrete Math. (1990), 129--135.\n\n[Er88] Erdős, P, Problems and results in combinatorial analysis and graph theory. Discrete Math. (1988), 81-92.",
+  "reference_proof_hint": "Interpret the “distance” between two edges (e={a,b}) and (f={c,d}) as\n[\n\\operatorname{dist}(e,f):=\\min{\\operatorname{dist}_G(x,y):x\\in{a,b},\\ y\\in{c,d}},\n]\ni.e. the length of the shortest *vertex-path* joining an endpoint of one edge to an endpoint of the other [[nomath]](so incident edges have distance $0$)[[/nomath]]. With this convention, Erdős noted (and it is standard) that the condition “no two edges are at distance (\\ge t)” is equivalent to saying the **line graph** $L(G)$ has diameter at most $t$. \nSo\n[\nh_t(d)-1=\\max\\\\{|E(G)|:\\ \\Delta(G)\\le d,\\ \\operatorname{diam}(L(G))\\le t\\\\}.\n]\n\n## Order of magnitude\n\nFor each fixed $t$, one has\n[\nh_t(d)=\\Theta(d^t)\\qquad(d\\to\\infty),\n]\nand the best general bound currently known is\n[\nh_t(d)\\ \\le\\ \\frac{3}{2},d^t+1.\n]\nThis is Theorem 6 of Cambie–Cames van Batenburg–de Joannis de Verclos–Kang $2021/22$. \n[[nomath]](They also remark the easy bound $h_t(d)\\le 2d^t$. )[[/nomath]]\n\nOn the lower-bound side, for large $t$ they give an unconditional "
+}

@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_750",
+  "problem": [
+    "Let f(m) be some function such that f(m)→ ∞ as m→ ∞. Does there exist a graph G of infinite chromatic number such that every subgraph on m vertices contains an independent set of size at least (m)/(2)-f(m)?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 750,
+  "status": "open",
+  "tags": [
+    "graph theory",
+    "chromatic number"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $f(m)$ be some function such that $f(m)\\to \\infty$ as $m\\to \\infty$. Does there exist a graph $G$ of infinite chromatic number such that every subgraph on $m$ vertices contains an independent set of size at least $\\frac{m}{2}-f(m)$?",
+  "additional_context": "In \\cite{Er69b} Erdős conjectures this for f(m)=\\epsilon m for any fixed \\epsilon>0. This follows from a result of Erdős, Hajnal, and Szemer\\'{e}di \\cite{EHS82}, as described by msellke in the comments.\n\nIn \\cite{ErHa67b} Erdős and Hajnal prove this for f(m)≥ cm for all c>1/4.\n\nSee also [75].\n\nReferences\n\n[EHS82] Erdős, P. and Hajnal, A. and Szemer\\'{e}di, E., On almost bipartite large chromatic graphs. Theory and practice of combinatorics (1982), 117-123.\n\n[Er69b] Erdős, P., Problems and results in chromatic graph theory. Proof Techniques in Graph Theory (Proc. Second Ann\nArbor Graph Theory Conf., Ann Arbor, Mich.,\n1968) (1969), 27-35.\n\n[ErHa67b] Erdős, P. and Hajnal, Andr\\'as, On chromatic graphs. Mat. Lapok (1967), 1--4.",
+  "reference_proof_hint": "This is an Erdős problem and, in the full generality you stated [[nomath]](allowing $f(m)\\to\\infty$ *arbitrarily slowly*)[[/nomath]], it is **still open**. ([Erdős Problems][1])\n\nA bit of context and what *is* known:\n\n## Reformulation\n\nLet (\\alpha(H)) be the independence number of a (finite) subgraph $H$. Your condition is\n[\n\\alpha(H)\\ \\ge\\ \\frac{|V(H)|}{2}-f(|V(H)|)\\quad\\text{for every finite subgraph }H\\subseteq G.\n]\nEquivalently,\n[\n|V(H)|-2\\alpha(H)\\ \\le\\ 2f(|V(H)|),\n]\nso every finite subgraph is “almost half-stable” (almost bipartite in a coarse sense).\n\n## What is known: linear error works\n\nErdős–Hajnal–Szemerédi proved that for every (\\varepsilon>0) and every target chromatic number, there are graphs with arbitrarily large chromatic number whose every $n$-vertex subgraph contains a **bipartite induced subgraph on at least ((1-\\varepsilon)n) vertices**. \n\nFrom such a bipartite induced subgraph you get an independent set of size at least half of it, i.e.\n[\n\\alpha(H)\\ \\ge\\ \\frac{(1-"
+}

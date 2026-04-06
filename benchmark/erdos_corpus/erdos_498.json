@@ -1,0 +1,15 @@
+{
+  "uuid": "erdos_498",
+  "problem": [
+    "Erdős Problem #498"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 498,
+  "status": "proved (Lean)",
+  "tags": [
+    "combinatorics",
+    "analysis"
+  ],
+  "prize": "no",
+  "formalized_on_site": false
+}

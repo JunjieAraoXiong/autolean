@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_169",
+  "problem": [
+    "Let k≥ 3 and f(k) be the supremum of ∑_{n∈ A}(1)/(n) as A ranges over all sets of positive integers which do not contain a k-term arithmetic progression. Estimate f(k).\n\nIs\\lim_{k→ ∞}(f(k))/(\\log W(k))=∞where W(k) is the van der Waerden number?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 169,
+  "status": "open",
+  "tags": [
+    "additive combinatorics",
+    "arithmetic progressions"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $k\\geq 3$ and $f(k)$ be the supremum of $\\sum_{n\\in A}\\frac{1}{n}$ as $A$ ranges over all sets of positive integers which do not contain a $k$-term arithmetic progression. Estimate $f(k)$.\n\nIs\\[\\lim_{k\\to \\infty}\\frac{f(k)}{\\log W(k)}=\\infty\\]where $W(k)$ is the van der Waerden number?",
+  "additional_context": "Berlekamp \\cite{Be68} proved f(k) ≥ (\\log 2)/(2)k. Gerver \\cite{Ge77} provedf(k) ≥ (1-o(1))k\\log k.It is trivial that(f(k))/(\\log W(k))≥ (1)/(2),but improving the right-hand side to any constant >1/2 is open.\n\nGerver also proved (see the comments for an alternative argument of Tao) that [3] is equivalent to f(k) being finite for all k.\n\nThe current record for f(3) is f(3)≥ 3.00849, due to Wr\\'{o}blewski \\cite{Wr84}. Walker \\cite{Wa25} proved f(4)≥ 4.43975.\n\nWalker \\cite{Wa25} has shown that it suffices to consider Kempner sets (that is, sets of integers defined as all those whose base b digits are contained in some S⊂ \\{0,\\ldots,b-1\\} for fixed b and S), in the sense that for any k≥ 3 and \\epsilon>0 there is a Kempner set A lacking k-term arithmetic progressions such that∑_{n∈ A}(1)/(n)≥ f(k)-\\epsilon.\n\nReferences\n\n[Be68] Berlekamp, E. R., A construction for partitions which avoid long arithmetic progressions. Canad. Math. Bull. (1968), 409-414.\n\n[Ge77] Gerver, Joseph L., The sum of the reciprocals of a set of integers with no\narithmetic progression of {k} terms. Proc. Amer. Math. Soc. (1977), 211--214.\n\n[Wa25] A. Walker, Integer sets of large harmonic sum which avoid long arithmetic progressions. arXiv:2203.06045 (2025).\n\n[Wr84] No reference found.",
+  "reference_proof_hint": "Let\n\n[\nf(k)\\ :=\\ \\sup\\\\{\\sum_{n\\in A}\\frac1n:\\ A\\subset\\mathbb N,\\ A\\text{ contains no }k\\text{-term arithmetic progression}\\\\}.\n]\n\nTwo different issues are mixed into “estimate $f(k)$”:\n\n1. **Is $f(k)$ even finite?**\n2. **If it is finite, how fast does it grow with $k$?**\n\n## 1) Finiteness\n\n* For **(k=3)** it is known that (f(3)<\\infty). This follows from Bloom–Sisask’s “logarithmic barrier” improvement to Roth’s theorem: if (A\\subset{1,\\dots,N}) has no nontrivial 3-term AP, then (|A|\\ll N/(\\log N)^{1+c}) for some absolute (c>0). That exponent (>1) is strong enough to force (\\sum_{n\\in A}1/n) to converge for every 3-AP-free (A). ([arXiv][1])\n\n* For **(k\\ge 4)**, the finiteness of (f(k)) is **open**. In fact, “(f(k)<\\infty) for every (k)” is equivalent to the classical Erdős–Turán (Erdős) conjecture that any set with (\\sum_{n\\in A}1/n=\\infty) must contain arbitrarily long arithmetic progressions. ([arXiv][2])\n\nSo at the moment:\n\n* $f(3)$ is finite, but not known precisely.\n* For (k\\ge "
+}

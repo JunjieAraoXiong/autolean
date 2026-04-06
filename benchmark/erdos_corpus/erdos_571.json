@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_571",
+  "problem": [
+    "Show that for any rational \\alpha ∈ [1,2) there exists a bipartite graph G such that\\mathrm{ex}(n;G)\\asymp n^{\\alpha}."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 571,
+  "status": "open",
+  "tags": [
+    "graph theory",
+    "turan number"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Show that for any rational $\\alpha \\in [1,2)$ there exists a bipartite graph $G$ such that\\[\\mathrm{ex}(n;G)\\asymp n^{\\alpha}.\\]",
+  "additional_context": "A problem of Erdős and Simonovits.\n\nBukh and Conlon \\cite{BuCo18} proved that this holds if we weaken asking for the extremal number of a single graph to asking for the extremal number of a finite family of graphs.\n\nA rational \\alpha∈ [1,2) for which this holds is known as a Tur\\'{a}n exponent. Known Tur\\'{a}n exponents are:\n{UL}\n{LI} (3)/(2)-(1)/(2s) for s≥ 2 (Conlon, Janzer, and Lee \\cite{CJL21}).{/LI}\n{LI} (4)/(3)-(1)/(3s) and (5)/(4)-(1)/(4s) for s≥ 2 (Jiang and Qiu \\cite{JiQi20}).{/LI}\n{LI} 2-(a)/(b) for \\lfloor b/a\\rfloor^3 ≤ a≤ (b)/(\\lfloor b/a\\rfloor+1)+1 (Jiang, Jiang, and Ma \\cite{JJM20}).{/LI}\n{LI} 2-(a)/(b) with b>a≥ 1 and b\\equiv \\pm 1\\pmod{a} (Kang, Kim, and Liu \\cite{KKL21}).{/LI}\n{LI} 1+a/b with b>a^2 (Jiang and Qiu \\cite{JiQi23}),{/LI}\n{LI} 2-(2)/(2b+1) for b≥ 2 or 7/5 (Jiang, Ma, and Yepremyan \\cite{JMY22}).{/LI}\n{LI} 2-a/b with b≥ (a-1)^2 (Conlon and Janzer \\cite{CoJa22}).{/LI}\n{/UL}\n\nSee also [713] and the entry in the graphs problem collection.\n\nReferences\n\n[BuCo18] Bukh, Boris and Conlon, David, Rational exponents in extremal graph theory. J. Eur. Math. Soc. (JEMS) (2018), 1747-1757.\n\n[CJL21] Conlon, David and Janzer, Oliver and Lee, Joonkyung, More on the extremal number of subdivisions. Combinatorica (2021), 465-494.\n\n[CoJa22] Conlon, David and Janzer, Oliver, Rational exponents near two. Adv. Comb. (2022), Paper No. 9, 10.\n\n[JJM20] Jiang, Tao and Jiang, Zilin and Ma, Jie, Negligible obstructions and Tur\\'{a}n exponents. arXiv:2007.02975 (2020).\n\n[JMY22] Jiang, Tao and Ma, Jie and Yepremyan, Liana, On Tur\\'{a}n exponents of bipartite graphs. Combin. Probab. Comput. (2022), 333-344.\n\n[JiQi20] Jiang, Tao and Qiu, Yu, Tur\\'{a}n numbers of bipartite subdivisions. SIAM J. Discrete Math. (2020), 556-570.\n\n[JiQi23] Jiang, Tao and Qiu, Yu, Many Tur\\'{a}n exponents via subdivisions. Combin. Probab. Comput. (2023), 134-150.\n\n[KKL21] Kang, Dong Yeap and Kim, Jaehoon and Liu, Hong, On the rational Tur\\'{a}n exponents conjecture. J. Combin. Theory Ser. B (2021), 149-172.",
+  "reference_proof_hint": "As written, your statement for a **single forbidden bipartite graph** is exactly the *inverse rational exponents conjecture* of Erdős–Simonovits, and it is **still open** in that “single graph” form. What *is* known (and is often what exercises intend) is the following slightly weaker but very strong theorem of **Bukh–Conlon**: every rational exponent in $[1,2)$ occurs as the Turán exponent of a **finite family** of **bipartite** graphs. ([advancesincombinatorics.com][1])\n\nI’ll show that statement (and point out where the “family” enters).\n\n---\n\n## Step 0: Extremal number for a family\n\nFor a (finite) family (\\mathcal F) of graphs, (\\mathrm{ex}(n,\\mathcal F)) is the maximum number of edges in an $n$-vertex graph containing **no** member of (\\mathcal F) as a subgraph. [[nomath]](Your notation $\\mathrm{ex}(n;G)$ is commonly also used for multiple forbidden graphs, i.e. a finite family.)[[/nomath]]\n\n---\n\n## Step 1: Rooted trees and their “powers”\n\nBukh–Conlon work with a rooted tree $(T,R)"
+}

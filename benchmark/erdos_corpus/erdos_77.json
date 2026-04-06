@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_77",
+  "problem": [
+    "If R(k) is the Ramsey number for K_k, the minimal n such that every 2-colouring of the edges of K_n contains a monochromatic copy of K_k, then find the value of\\lim_{k→ ∞}R(k)^{1/k}."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 77,
+  "status": "open",
+  "tags": [
+    "graph theory",
+    "ramsey theory"
+  ],
+  "prize": "$250",
+  "formalized_on_site": false,
+  "original_latex": "If $R(k)$ is the Ramsey number for $K_k$, the minimal $n$ such that every $2$-colouring of the edges of $K_n$ contains a monochromatic copy of $K_k$, then find the value of\\[\\lim_{k\\to \\infty}R(k)^{1/k}.\\]",
+  "additional_context": "Erdős offered \\100 for just a proof of the existence of this constant, without determining its value. He also offered \\1000 for a proof that the limit does not exist, but says 'this is really a joke as [it] certainly exists'. (In \\cite{Er88} he raises this prize to \\10000). Erdős proved\\sqrt{2}≤ \\liminf_{k→ ∞}R(k)^{1/k}≤ \\limsup_{k→ ∞}R(k)^{1/k}≤ 4.The upper bound has been improved to 4-\\tfrac{1}{128} by Campos, Griffiths, Morris, and Sahasrabudhe \\cite{CGMS23}. This was improved to 3.7992\\cdots by Gupta, Ndiaye, Norin, and Wei \\cite{GNNW24}.\n\nA shorter and simpler proof of an upper bound of the strength 4-c for some constant c>0 (and a generalisation to the case of more than two colours) was given by Balister, Bollob\\'{a}s, Campos, Griffiths, Hurley, Morris, Sahasrabudhe, and Tiba \\cite{BBCGHMST24}.\n\nIn \\cite{Er93} Erdős writes 'I have no idea what the value of \\lim R(k)^{1/k} should be, perhaps it is 2 but we have no real evidence for this.'\n\nThis problem is #3 in Ramsey Theory in the graphs problem collection.\n\nSee also [1029] for a problem concerning a lower bound for R(k)$ and discussion of lower bounds in general.\n\nReferences\n\n[BBCGHMST24] Balister, P. and Bollob\\'{a}s, B. and Campos, M. and Griffiths, S. and Hurley, E.\nand Morris, R. and Sahasrabudhe, J. and Tiba, M., Upper bounds for multicolour Ramsey numbers. arXiv:2410.17197 (2024).\n\n[CGMS23] Campos, Marcelo and Griffiths, Simon and Morris, Robert and Sahasrabudhe, Julian, An exponential improvement for diagonal Ramsey. arXiv:2303.09521 (2023).\n\n[Er88] Erdős, P, Problems and results in combinatorial analysis and graph theory. Discrete Math. (1988), 81-92.\n\n[Er93] Erdős, Paul, Some of my favorite solved and unsolved problems in graph\ntheory. Quaestiones Math. (1993), 333-350.\n\n[GNNW24] Gupta, P. and Ndiaye, N. and Norin, S. and Wei, L., Optimizing the CGMS upper bound on Ramsey numbers. arXiv:2407.19026 (2024).",
+  "reference_proof_hint": "This limit is **not known**. It is a famous open problem of Erdős (even proving that the limit exists is open). ([Erdős Problems][1])\n\nWhat we do know are bounds.\n\n### Lower bound\n\nA classic probabilistic argument of Erdős (later improved by Spencer) gives an exponential lower bound of the shape\n[\nR(k,k);\\ge; (1+o(1))\\cdot \\text{(poly in }k)\\cdot 2^{k/2}.\n]\nSo after taking the $k$-th root, the polynomial factor disappears, and we get\n[\n\\liminf_{k\\to\\infty} R(k,k)^{1/k};\\ge; 2^{1/2}=\\sqrt2.\n]\n\n\n### Upper bound\n\nThe classical Erdős–Szekeres bound implies (R(k,k)\\le 4^k), hence\n[\n\\limsup_{k\\to\\infty} R(k,k)^{1/k}\\le 4.\n]\nMore recently there was a breakthrough: Campos–Griffiths–Morris–Sahasrabudhe proved an exponential improvement (R(k,k)\\le (4-\\varepsilon)^k) for some (\\varepsilon>0). ([arXiv][2])\n\nThis was then optimized further by Gupta–Ndiaye–Norin–Wei, who obtain in particular\n[\nR(k,k)\\le (3.7992\\ldots)^{k+o(k)},\n]\nso\n[\n\\limsup_{k\\to\\infty} R(k,k)^{1/k}\\le 3.7992\\ldots\n]\n\n\n### What th"
+}

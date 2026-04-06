@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_854",
+  "problem": [
+    "Let n_k denote the kth primorial, i.e. the product of the first k primes.\n\nIf 1=a_1<a_2<\\cdots a_{\\phi(n_k)}=n_k-1 is the sequence of integers coprime to n_k, then estimate the smallest even integer not of the form a_{i+1}-a_i. Are there\\gg \\max_i (a_{i+1}-a_i)many even integers of the form a_{j+1}-a_j?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 854,
+  "status": "open",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $n_k$ denote the $k$th primorial, i.e. the product of the first $k$ primes.\n\nIf $1=a_1<a_2<\\cdots a_{\\phi(n_k)}=n_k-1$ is the sequence of integers coprime to $n_k$, then estimate the smallest even integer not of the form $a_{i+1}-a_i$. Are there\\[\\gg \\max_i (a_{i+1}-a_i)\\]many even integers of the form $a_{j+1}-a_j$?",
+  "additional_context": "This was asked by Erdős in Oberwolfach (most likely in 1986). Clearly all differences a_{i+1}-a_i are even. Erdős first thought that (for large enough k) all even t≤ \\max(a_{i+1}-a_i) can be written as t=a_{j+1}-a_j for some j, but in \\cite{Ob1} writes 'perhaps this is false', and reports some computations of Lacampagne and Selfridge that this fails for n_k=2\\cdot 3\\cdot 5\\cdot 7\\cdot 11\\cdot 13 which 'show some doubt on [his] conjecture', and says it could fail for all or infinitely many k.\n\nIn \\cite{Ob1} he also asks about the set of j for which a_{j+1}-a_j=\\max(a_{i+1}-a_i), and in particular asks for estimates on the number of such j and the minimal value of such a j.\n\nReferences\n\n[Ob1] No reference found.",
+  "reference_proof_hint": "Let (n_k=p_k#=\\prod_{i\\le k}p_i). Since (2\\mid n_k), every (a_i) is odd, hence every gap\n[\ng_i:=a_{i+1}-a_i\n]\nis even.\n\nIt is convenient to package this in the standard “Jacobsthal/primorial” notation. Let $D(k)$ be the set of differences between consecutive integers coprime to (p_k#). Ziller shows that the **maximum** such difference is exactly the primorial Jacobsthal value $h(k)$ [[nomath]](in his convention $h(k)=N_{\\max}(k)$, the largest gap)[[/nomath]]. \n\n## 1) Smallest even integer not of the form (a_{i+1}-a_i)\n\nDefine (as in Ziller) (N_{\\min}(k)) to be the largest even number such that **every** even (2,4,\\dots,N_{\\min}(k)) occurs as a difference of consecutive coprimes to (p_k#). Then the “first missing even gap” is\n[\nm_k = N_{\\min}(k)+2.\n]\nZiller proves in particular the unconditional bounds\n[\n2k \\le N_{\\min}(k)\\le h(k),\n]\nhence\n[\n2k+2 \\le m_k \\le h(k)+2.\n]\nThe lower bound (2k\\le N_{\\min}(k)) comes from a constructive existence/pro-pagation argument for restricted coverings ["
+}

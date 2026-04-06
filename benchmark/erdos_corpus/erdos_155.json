@@ -1,0 +1,19 @@
+{
+  "uuid": "erdos_155",
+  "problem": [
+    "Let F(N) be the size of the largest Sidon subset of \\{1,\\ldots,N\\}. Is it true that for every k≥ 1 we haveF(N+k)≤ F(N)+1for all sufficiently large N?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 155,
+  "status": "open",
+  "tags": [
+    "additive combinatorics",
+    "sidon sets"
+  ],
+  "prize": "no",
+  "formalized_on_site": true,
+  "original_latex": "Let $F(N)$ be the size of the largest Sidon subset of $\\{1,\\ldots,N\\}$. Is it true that for every $k\\geq 1$ we have\\[F(N+k)\\leq F(N)+1\\]for all sufficiently large $N$?",
+  "additional_context": "This may even hold with k\\approx \\epsilon N^{1/2}.",
+  "reference_proof_hint": "For (k=1), **yes**, and it is true for **every** $N$ (no “large $N$” needed).\n\n* Take any Sidon set (A\\subseteq{1,\\dots,N+1}).\n* If (N+1\\notin A), then (|A|\\le F(N)).\n* If (N+1\\in A), then (A\\setminus{N+1}\\subseteq{1,\\dots,N}) is still Sidon, so (|A|-1\\le F(N)), i.e. (|A|\\le F(N)+1).\n\nSo (F(N+1)\\le F(N)+1) for all $N$.\n\nFor **fixed (k\\ge 2)**, the statement you wrote is, as far as is known, **open** (it is an Erdős problem). It appears explicitly as Erdős Problem #155 and is marked open there. ([Erdős Problems][1])\n\n### What is known around it\n\n* Globally, one knows the right scale:\n  [\n  F(N) = (1+o(1))N^{1/2}\n  ]\n  and classical bounds of Erdős–Turán / Singer type give\n  [\n  F(N)\\le \\sqrt N + O(N^{1/4}),\\qquad F(N)\\ge \\sqrt N - O(N^{1/4})\n  ]\n  (in the standard $[0,n-1]$ normalisation, which is the same up to shifting). ([TAU Mathematics][2])\n  This makes the conjecture *plausible*: “typically” $F(N)$ only increases by $1$ after $N$ grows by about (2\\sqrt N), which is much bigger tha",
+  "ground_truth_lean": "/-\nCopyright 2025 The Formal Conjectures Authors.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    https://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n-/\n\nimport FormalConjectures.Util.ProblemImports\n\n/-!\n# Erdős Problem 155\n\n*Reference:* [erdosproblems.com/155](https://www.erdosproblems.com/155)\n-/\n\nopen Filter\n\nnamespace Erdos155\n\n/--\nLet $F(N)$ be the size of the largest Sidon subset of $\\{1, \\dots, N\\}$.\n-/\nnoncomputable abbrev F (N : ℕ) : ℕ := Finset.maxSidonSubsetCard (Finset.Icc 1 N)\n\n/--\nIs it true that for every $k \\geq 1$ we have\n$$\nF(N + k) \\leq F(N) + 1\n$$\nfor all sufficiently large $N$?\n-/\n@[category research open, AMS 5]\ntheorem erdos_155 : answer(sorry) ↔ ∀ k ≥ 1, ∀ᶠ N in atTop, F (N + k) ≤ F N + 1 := by\n  sorry\n\n-- TODO: This may even hold with $k \\approx ε * N ^ (1 / 2)$.\n\nend Erdos155\n"
+}

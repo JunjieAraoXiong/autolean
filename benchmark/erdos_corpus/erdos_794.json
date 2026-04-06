@@ -1,0 +1,16 @@
+{
+  "uuid": "erdos_794",
+  "problem": [
+    "Erdős Problem #794"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 794,
+  "status": "disproved (Lean)",
+  "tags": [
+    "graph theory",
+    "hypergraphs",
+    "turan number"
+  ],
+  "prize": "no",
+  "formalized_on_site": false
+}

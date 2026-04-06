@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_869",
+  "problem": [
+    "If A_1,A_2 are disjoint additive bases of order 2 (i.e. A_i+A_i contains all large integers) then must A=A_1∪ A_2 contain a minimal additive basis of order 2 (one such that deleting any element creates infinitely many n\\not∈ A+A)?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 869,
+  "status": "open",
+  "tags": [
+    "number theory",
+    "additive basis"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "If $A_1,A_2$ are disjoint additive bases of order $2$ (i.e. $A_i+A_i$ contains all large integers) then must $A=A_1\\cup A_2$ contain a minimal additive basis of order $2$ (one such that deleting any element creates infinitely many $n\\not\\in A+A$)?",
+  "additional_context": "A question of Erdős and Nathanson \\cite{ErNa88}.\n\nHärtter \\cite{Ha56} and Nathanson \\cite{Na74} proved that there exist additive bases which do not contain any minimal additive bases.\n\nReferences\n\n[ErNa88] Erdős, Paul and Nathanson, Melvyn B., Partitions of bases into disjoint unions of bases. J. Number Theory (1988), 1--9.\n\n[Ha56] H\\\"{a}rtter, Erich, Ein Beitrag zur {T}heorie der {M}inimalbasen. J. Reine Angew. Math. (1956), 170--204.\n\n[Na74] Nathanson, Melvyn B., Minimal bases and maximal nonbases in additive number theory. J. Number Theory (1974), 324--333.",
+  "reference_proof_hint": "As far as I can tell, this is **still open**.\n\nIt is explicitly posed by **Erdős–Nathanson (1988)** in their paper on partitioning bases into disjoint unions, in exactly the form you wrote: if (A_1,A_2) are disjoint asymptotic bases of order $2$, does (A=A_1\\cup A_2) necessarily **contain** a minimal asymptotic basis of order $2$? \n\nAnd it is currently listed as **open** (Erdős Problem #869) in the Erdős Problems database (accessed Jan 18, 2026). ([Erdős Problems][1])\n\nSome context for why this isn’t automatic:\n\n* The general statement “every asymptotic basis contains a minimal asymptotic basis” is **false**: Härtter (1956) and Nathanson (1974) constructed asymptotic bases that contain **no** minimal asymptotic basis. \n  [[nomath]](A particularly strong modern formulation of this phenomenon appears in Nathanson’s survey: there exists an order‑2 asymptotic basis $A$ such that $A\\setminus S$ is an order‑2 asymptotic basis **iff** $S$ is finite—so removing a single element never kills the"
+}

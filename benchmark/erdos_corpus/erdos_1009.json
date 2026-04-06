@@ -1,0 +1,14 @@
+{
+  "uuid": "erdos_1009",
+  "problem": [
+    "Erdős Problem #1009"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 1009,
+  "status": "proved",
+  "tags": [
+    "graph theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false
+}

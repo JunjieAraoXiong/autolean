@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_501",
+  "problem": [
+    "For every x∈ℝ let A_x⊂ ℝ be a bounded set with outer measure <1. Must there exist an infinite independent set, that is, some infinite X⊆ ℝ such that x\\not∈ A_y for all x≠ y∈ X?\n\nIf the sets A_x are closed and have measure <1, then must there exist an independent set of size 3?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 501,
+  "status": "open",
+  "tags": [
+    "combinatorics",
+    "set theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "For every $x\\in\\mathbb{R}$ let $A_x\\subset \\mathbb{R}$ be a bounded set with outer measure $<1$. Must there exist an infinite independent set, that is, some infinite $X\\subseteq \\mathbb{R}$ such that $x\\not\\in A_y$ for all $x\\neq y\\in X$?\n\nIf the sets $A_x$ are closed and have measure $<1$, then must there exist an independent set of size $3$?",
+  "additional_context": "Erdős and Hajnal \\cite{ErHa60} proved the existence of arbitrarily large finite independent sets (under the assumptions in the first problem).\n\nGladysz \\cite{Gl62} proved the existence of an independent set of size 2 under the assumptions of the the second question.\n\nHechler \\cite{He72} has shown the answer to the first question is no, assuming the continuum hypothesis.\n\nNewelski, Pawlikowski, and Seredy\\'{n}ski \\cite{NPS87} proved the answer to the first question is yes, under the additional assumption that the A_x are closed.\n\nReferences\n\n[ErHa60] Erdős, P. and Hajnal, A., Some remarks on set theory. VIII. Michigan Math. J. (1960), 187-191.\n\n[Gl62] G\\l adysz, S., Bemerkungen \\\"uber die {U}nabh\\\"{a}ngigkeit der {P}unkte in\n{B}ezug auf mengenwertige {F}unktionen. Acta Math. Acad. Sci. Hungar. (1962), 199--201.\n\n[He72] Hechler, S. H., On two problems in combinatorial set theory. Bull. Acad. Polon. Sci. S\\'{e}r. Sci. Math. Astronom. Phys. (1972), 429-431.\n\n[NPS87] Newelski, Ludomir and Pawlikowski, Janusz and Seredy\\'nski,\nWitold, Infinite free set for small measure set mappings. Proc. Amer. Math. Soc. (1987), 335--339.",
+  "reference_proof_hint": "Let (F(x)=A_x). Your “independent set” is what set theorists usually call a **free set** for the set mapping $F$: a set (X\\subseteq\\mathbb R) such that for all distinct (x,y\\in X), (x\\notin F(y)).\n\n## 1) Bounded sets of outer measure (<1): must there be an infinite independent set?\n\nAs far as is currently recorded in the literature/problem lists, this is **not settled in ZFC** (so one cannot say “yes” in absolute generality), and in fact it is **consistent that the answer is no**:\n\n* **Erdős–Hajnal (1960)** proved that under your hypotheses one can always find **arbitrarily large finite** independent sets. ([Erdős Problems][1])\n  [[nomath]](So for every $n\\in\\mathbb N$ there is an independent set of size $n$.)[[/nomath]]\n\n* **Hechler (1972)** showed that **assuming the Continuum Hypothesis (CH)**, the answer to your first question can be **negative**: there is a family ({A_x}_{x\\in\\mathbb R}) of bounded sets of outer measure (<1) with **no** infinite independent set [[nomath]](indeed, "
+}

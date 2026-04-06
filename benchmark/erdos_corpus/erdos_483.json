@@ -1,0 +1,19 @@
+{
+  "uuid": "erdos_483",
+  "problem": [
+    "Let f(k) be the minimal N such that if \\{1,\\ldots,N\\} is k-coloured then there is a monochromatic solution to a+b=c. Estimate f(k). In particular, is it true that f(k) < c^k for some constant c>0?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 483,
+  "status": "open",
+  "tags": [
+    "number theory",
+    "additive combinatorics",
+    "ramsey theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $f(k)$ be the minimal $N$ such that if $\\{1,\\ldots,N\\}$ is $k$-coloured then there is a monochromatic solution to $a+b=c$. Estimate $f(k)$. In particular, is it true that $f(k) < c^k$ for some constant $c>0$?",
+  "additional_context": "The values of f(k) are known as Schur numbers. The best-known bounds for large k are(380)^{k/5}-O(1)≤ f(k) ≤ \\lfloor(e-\\tfrac{1}{24}) k!\\rfloor-1.The lower bound is due to Ageron, Casteras, Pellerin, Portella, Rimmel, and Tomasik \\cite{ACPPRT21} (improving previous bounds of Exoo \\cite{Ex94} and Fredricksen and Sweet \\cite{FrSw00}) and the upper bound is due to Whitehead \\cite{Wh73}. Note that 380^{1/5}\\approx 3.2806.\n\nThe known values of f are f(1)=2, f(2)=5, f(3)=14, f(4)=45, and f(5)=161 (see A030126). (The equality f(5)=161 was established by Heule \\cite{He17}).\n\nSee also [183] (in particular a folklore observation gives f(k)≤ R(3;k)-1).\n\nReferences\n\n[ACPPRT21] R. Ageron, P. Casteras, T. Pellerin, Y. Portella, A. Rimmel, and J. Tomasik, New lower bounds for Schur and weak Schur numbers. arXiv:2112.03175 (2021).\n\n[Ex94] Exoo, G., A lower bound for Schur numbers and multicolor Ramsey numbers. Electronic J. of Combinatorics (1994).\n\n[FrSw00] Fredricksen, Harold and Sweet, Melvin M., Symmetric sum-free partitions and lower bounds for {S}chur\nnumbers. Electron. J. Combin. (2000), Research Paper 32, 9.\n\n[He17] M. Heuele, Schur Number Five. arXiv:1711.08076 (2017).\n\n[Wh73] Whitehead, Jr., Earl Glen, The {R}amsey number {N(3,\\,3,\\,3,\\,3;\\,2)}. Discrete Math. (1973), 389--396.",
+  "reference_proof_hint": "Your $f(k)$ is exactly the **$k$-th Schur number** [[nomath]](often denoted $S(k)$ in the “minimal $N$” convention)[[/nomath]]: the least $N$ such that every $k$-coloring of ({1,\\dots,N}) contains a monochromatic **Schur triple** (a+b=c) [[nomath]](with $a,b$ not necessarily distinct)[[/nomath]]. ([Wikipedia][1])\n\nEquivalently, $f(k)-1$ is the **largest** $n$ for which $[1,n]$ can be partitioned into $k$ sum-free sets [[nomath]](no $x,y,z$ in the same part with $x+y=z$)[[/nomath]]. ([MathWorld][2])\n\n## Known exact values\n\nOnly the first few are known exactly:\n[\nf(1)=2,\\quad f(2)=5,\\quad f(3)=14,\\quad f(4)=45,\\quad f(5)=161.\n]\nMoreover (f(5)=161) was established computationally (announced 2017). ([Wikipedia][1])\n\n## General bounds (what we currently know asymptotically)\n\n### Lower bound (explicit construction)\n\nSchur’s original construction gives\n[\nf(k)\\ \\ge\\ \\frac{3^k+1}{2}.\n]\nSo $f(k)$ is **at least exponential** in $k$, with base at least $3$. ([Amites Sarkar's Homepage][3])\n\nMore re"
+}

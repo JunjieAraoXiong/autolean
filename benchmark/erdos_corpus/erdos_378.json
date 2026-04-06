@@ -1,0 +1,15 @@
+{
+  "uuid": "erdos_378",
+  "problem": [
+    "Erdős Problem #378"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 378,
+  "status": "proved",
+  "tags": [
+    "number theory",
+    "binomial coefficients"
+  ],
+  "prize": "no",
+  "formalized_on_site": false
+}

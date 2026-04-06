@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_529",
+  "problem": [
+    "Let d_k(n) be the expected distance from the origin after taking n random steps from the origin in ℤ^k (conditional on no self intersections) - that is, a self-avoiding walk. Is it true that\\lim_{n→ ∞}(d_2(n))/(n^{1/2)}= ∞?Is it true thatd_k(n)\\ll n^{1/2}for k≥ 3?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 529,
+  "status": "open",
+  "tags": [
+    "geometry",
+    "probability"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $d_k(n)$ be the expected distance from the origin after taking $n$ random steps from the origin in $\\mathbb{Z}^k$ (conditional on no self intersections) - that is, a self-avoiding walk. Is it true that\\[\\lim_{n\\to \\infty}\\frac{d_2(n)}{n^{1/2}}= \\infty?\\]Is it true that\\[d_k(n)\\ll n^{1/2}\\]for $k\\geq 3$?",
+  "additional_context": "Slade \\cite{Sl87} proved that, for k sufficiently large, d_k(n)\\sim Dn^{1/2} for some constant D>0 (independent of k). Hara and Slade (\\cite{HaSl91} and \\cite{HaSl92}) proved this for all k≥ 5.\n\nFor k=2 Duminil-Copin and Hammond \\cite{DuHa13} have proved that d_2(n)=o(n).\n\nIt is now conjectured that d_k(n)\\ll n^{1/2} is false for k=3 and k=4, and more precisely (see for example Section 1.4 of \\cite{MaSl93}) that d_2(n)\\sim Dn^{3/4}, d_3(n)\\sim n^{\\nu} where \\nu\\approx 0.59, and d_4(n)\\sim D(\\log n)^{1/8}n^{1/2}.\n\nMadras and Slade \\cite{MaSl93} have a monograph on the topic of self-avoiding walks.\n\nSee also [528].\n\nReferences\n\n[DuHa13] Duminil-Copin, Hugo and Hammond, Alan, Self-avoiding walk is sub-ballistic. Comm. Math. Phys. (2013), 401--423.\n\n[HaSl91] Hara, Takashi and Slade, Gordon, Critical behaviour of self-avoiding walk in five or more\ndimensions. Bull. Amer. Math. Soc. (N.S.) (1991), 417--423.\n\n[HaSl92] Hara, Takashi and Slade, Gordon, Self-avoiding walk in five or more dimensions. {I}. {T}he\ncritical behaviour. Comm. Math. Phys. (1992), 101--136.\n\n[MaSl93] Madras, Neal and Slade, Gordon, The self-avoiding walk.  (1993), xiv+425.\n\n[Sl87] Slade, Gordon, The diffusion of self-avoiding random walk in high dimensions. Comm. Math. Phys. (1987), 661--683.",
+  "reference_proof_hint": "Let (\\mathrm{SAW}*n) be the uniform measure on $n$-step self‑avoiding walks (\\omega=(\\omega(0),\\dots,\\omega(n))) in (\\mathbb Z^k) with (\\omega(0)=0), and write (X_n=\\omega(n)). Your quantity is\n[\nd_k(n)=\\mathbb E*{\\mathrm{SAW}_n}\\big[|X_n|*2\\big].\n]\nMuch of the rigorous literature instead studies the **root mean square** displacement\n[\nR_n := \\Big(\\mathbb E*{\\mathrm{SAW}_n}|X_n|_2^2\\Big)^{1/2},\n]\nsince it is technically more accessible. Of course (d_k(n)\\le R_n) by Cauchy–Schwarz.\n\nA standard conjectural picture is that (R_n) [[nomath]](and hence also $d_k(n)$)[[/nomath]] has a power‑law (n^\\nu) (“metric exponent”) depending on the dimension $k$. Predicted values are\n[\n\\nu=\n\\begin{cases}\n3/4 & k=2,\\\n0.588\\ldots & k=3,\\\n1/2\\ \\text{with logarithmic corrections} & k=4,\\\n1/2 & k\\ge 5,\n\\end{cases}\n]\nand in particular in $k=2$ one expects (d_2(n)) to be of order (n^{3/4}), so (d_2(n)/n^{1/2}) should grow like (n^{1/4}\\to\\infty). ([Institut Henri Poincaré][1])\n\n## Your first question: $k=2$\n\n"
+}

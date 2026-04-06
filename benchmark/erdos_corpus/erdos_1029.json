@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_1029",
+  "problem": [
+    "If R(k) is the Ramsey number for K_k, the minimal n such that every 2-colouring of the edges of K_n contains a monochromatic copy of K_k, then(R(k))/(k2^{k/2)}→ ∞."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 1029,
+  "status": "open",
+  "tags": [
+    "graph theory",
+    "ramsey theory"
+  ],
+  "prize": "$100",
+  "formalized_on_site": false,
+  "original_latex": "If $R(k)$ is the Ramsey number for $K_k$, the minimal $n$ such that every $2$-colouring of the edges of $K_n$ contains a monochromatic copy of $K_k$, then\\[\\frac{R(k)}{k2^{k/2}}\\to \\infty.\\]",
+  "additional_context": "In \\cite{Er93} Erdős offers \\100 for a proof of this and \\1000 for a disproof, but says 'this last offer is to some extent phoney: I am sure that [this] is true (but I have been wrong before).'\n\nErdős  and Szekeres \\cite{ErSz35} provedk2^{k/2} \\ll R(k) ≤ \\binom{2k-1}{k-1}.One of the first applications of the probabilistic method pioneered by Erdős givesR(k) ≥ (1+o(1))(1)/(\\sqrt{2)e}k2^{k/2},which Spencer \\cite{Sp75} improved by a factor of 2 toR(k) ≥ (1+o(1))\\frac{\\sqrt{2}}{e}k2^{k/2}.See also [77] for a more general problem concerning \\lim R(k)^{1/k}, and discussion of upper bounds for R(k).\n\nReferences\n\n[Er93] Erdős, Paul, Some of my favorite solved and unsolved problems in graph\ntheory. Quaestiones Math. (1993), 333-350.\n\n[ErSz35] Erdős, P. and Szekeres, G., A combinatorial problem in geometry. Compos. Math. (1935), 463-470.\n\n[Sp75] Spencer, Joel, Ramsey's theorem---a new lower bound. J. Combinatorial Theory Ser. A (1975), 108--115.",
+  "reference_proof_hint": "Let (R(k)=r(k,k)) be the usual *diagonal* Ramsey number [[nomath]](the least $n$ such that every red/blue colouring of $E(K_n)$ contains a monochromatic $K_k$)[[/nomath]].\n\n### What we know\n\nThe best general **lower bound** (Spencer, via the Lovász local lemma) is\n[\nR(k)\\ge (1-o(1))\\frac{\\sqrt2}{e}k2^{k/2}\\qquad (k\\to\\infty),\n]\nso\n[\n\\frac{R(k)}{k2^{k/2}} \\ge (1-o(1))\\frac{\\sqrt2}{e},\n]\ni.e. the ratio is bounded below by a positive constant. \n\nOn the **upper bound** side, the classical Erdős–Szekeres (4^k) bound has been improved: Conlon proved\n[\nR(k)\\le k^{-c\\log k/\\log\\log k}4^k\n]\nfor some absolute (c>0),  and more recently Campos–Griffiths–Morris–Sahasrabudhe proved an *exponential* improvement\n[\nR(k)\\le (4-\\varepsilon)^k\n]\nfor some (\\varepsilon>0). ([arXiv][1])\n\n### Status of your limit claim\n\nYour statement\n[\n\\frac{R(k)}{k2^{k/2}}\\to\\infty\n]\nis **not currently known**.\n\nIn fact, it is open even to beat Spencer’s lower bound by any *fixed constant factor*: Conlon–Fox–Sudakov explici"
+}

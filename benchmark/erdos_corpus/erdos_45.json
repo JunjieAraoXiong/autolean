@@ -1,0 +1,16 @@
+{
+  "uuid": "erdos_45",
+  "problem": [
+    "Erdős Problem #45"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 45,
+  "status": "proved",
+  "tags": [
+    "number theory",
+    "unit fractions",
+    "ramsey theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false
+}

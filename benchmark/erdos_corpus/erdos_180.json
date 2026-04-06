@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_180",
+  "problem": [
+    "If \\mathcal{F} is a finite set of finite graphs then \\mathrm{ex}(n;\\mathcal{F}) is the maximum number of edges a graph on n vertices can have without containing any subgraphs from \\mathcal{F}. Note that it is trivial that \\mathrm{ex}(n;\\mathcal{F})≤ \\mathrm{ex}(n;G) for every G∈\\mathcal{F}.\n\nIs it true that, for every \\mathcal{F}, there exists G∈\\mathcal{F} such that\\mathrm{ex}(n;G)\\ll_{\\mathcal{F}}\\mathrm{ex}(n;\\mathcal{F})?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 180,
+  "status": "open",
+  "tags": [
+    "graph theory",
+    "turan number"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "If $\\mathcal{F}$ is a finite set of finite graphs then $\\mathrm{ex}(n;\\mathcal{F})$ is the maximum number of edges a graph on $n$ vertices can have without containing any subgraphs from $\\mathcal{F}$. Note that it is trivial that $\\mathrm{ex}(n;\\mathcal{F})\\leq \\mathrm{ex}(n;G)$ for every $G\\in\\mathcal{F}$.\n\nIs it true that, for every $\\mathcal{F}$, there exists $G\\in\\mathcal{F}$ such that\\[\\mathrm{ex}(n;G)\\ll_{\\mathcal{F}}\\mathrm{ex}(n;\\mathcal{F})?\\]",
+  "additional_context": "A problem of Erdős and Simonovits.\n\nThis is trivially true if \\mathcal{F} does not contain any bipartite graphs, since by the Erdős-Stone theorem if H∈\\mathcal{F} has minimal chromatic number r≥ 2 then\\mathrm{ex}(n;H)=\\mathrm{ex}(n;\\mathcal{F})=\\left((r-2)/(r-1)+o(1)\\right)\\binom{n}{2}.Erdős and Simonovits observe that this is false for infinite families \\mathcal{F}, e.g. the family of all cycles.\n\nHunter has provided the following 'folklore counterexample': if \\mathcal{F}=\\{H_1,H_2\\} where H_1 is a star and H_2 is a matching, both with at least two edges, then \\mathrm{ex}(n;\\mathcal{F})\\ll 1, but \\mathrm{ex}(n;H_i)\\asymp n for 1≤ i≤ 2. This  conjecture may still hold for all other \\mathcal{F}.\n\nSee also [575] and the entry in the graphs problem collection.",
+  "reference_proof_hint": "No.\n\nA very small counterexample is\n[\n\\mathcal F={K_{1,2},,2K_2},\n]\nwhere (K_{1,2}) is a “cherry” (two edges sharing a vertex) and (2K_2) is a matching of two disjoint edges.\n\n**Step 1: (\\mathrm{ex}(n;\\mathcal F)=1).**\nAny graph with at least two edges has either\n\n* two edges sharing a vertex (\\Rightarrow) it contains (K_{1,2}), or\n* two vertex-disjoint edges (\\Rightarrow) it contains (2K_2).\n\nSo an (\\mathcal F)-free graph can have at most one edge, hence (\\mathrm{ex}(n;\\mathcal F)=1). \n\n**Step 2: each single forbidden graph still allows (\\Theta(n)) edges.**\n\n* If you only forbid (K_{1,2}), then no vertex can have degree (\\ge 2), so the graph is a matching and\n  [\n  \\mathrm{ex}(n;K_{1,2})=\\left\\lfloor\\frac n2\\right\\rfloor.\n  ]\n* If you only forbid (2K_2), then the graph has matching number $1$, and for $n$ large the star (K_{1,n-1}) is allowed, giving\n  [\n  \\mathrm{ex}(n;2K_2)\\ge n-1,\n  ]\n  so (\\mathrm{ex}(n;2K_2)=\\Theta(n)). \n\nTherefore, for every (G\\in\\mathcal F) we have (\\mathrm{ex}"
+}

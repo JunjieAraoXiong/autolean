@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_883",
+  "problem": [
+    "For A⊆ \\{1,\\ldots,n\\} let G(A) be the graph with vertex set A, where two integers are joined by an edge if they are coprime.\n\nIs it true that if| A| >\\lfloor\\tfrac{n}{2}\\rfloor+\\lfloor\\tfrac{n}{3}\\rfloor-\\lfloor\\tfrac{n}{6}\\rfloorthen G(A) contains all odd cycles of length ≤ (n)/(3)+1?\n\nIs it true that, for every \\ell≥ 1, if n is sufficiently large and| A| >\\lfloor\\tfrac{n}{2}\\rfloor+\\lfloor\\tfrac{n}{3}\\rfloor-\\lfloor\\tfrac{n}{6}\\rfloorthen G(A) must contain a complete (1,\\ell,\\ell) triparite graph on 2\\ell+1 vertices?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 883,
+  "status": "open",
+  "tags": [
+    "number theory",
+    "graph theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "For $A\\subseteq \\{1,\\ldots,n\\}$ let $G(A)$ be the graph with vertex set $A$, where two integers are joined by an edge if they are coprime.\n\nIs it true that if\\[\\lvert A\\rvert >\\lfloor\\tfrac{n}{2}\\rfloor+\\lfloor\\tfrac{n}{3}\\rfloor-\\lfloor\\tfrac{n}{6}\\rfloor\\]then $G(A)$ contains all odd cycles of length $\\leq \\frac{n}{3}+1$?\n\nIs it true that, for every $\\ell\\geq 1$, if $n$ is sufficiently large and\\[\\lvert A\\rvert >\\lfloor\\tfrac{n}{2}\\rfloor+\\lfloor\\tfrac{n}{3}\\rfloor-\\lfloor\\tfrac{n}{6}\\rfloor\\]then $G(A)$ must contain a complete $(1,\\ell,\\ell)$ triparite graph on $2\\ell+1$ vertices?",
+  "additional_context": "A problem of Erdős and S\\'{a}rk\\H{o}zy \\cite{ErSa97}, who prove that if| A| >\\lfloor\\tfrac{n}{2}\\rfloor+\\lfloor\\tfrac{n}{3}\\rfloor-\\lfloor\\tfrac{n}{6}\\rfloorthen G(A) contains all odd cycles of length ≤ cn for some constant c>0.\n\nThis threshold is the best possible, since one could take A to be the set of m≤ n which are divisible by either 2 or 3, in which case G(A) contains no triangles.\n\nThe second question was solved by S\\'{a}rk\\\"{o}zy \\cite{Sa99} who proved that, for large n, if | A| exceeds the given threshold then G(A) contains a complete (1,\\ell,\\ell) triparite graph with\\ell \\gg (\\log n)/(\\log\\log n).\n\nReferences\n\n[ErSa97] Erdős, Paul and Sarkozy, Gabor N., On cycles in the coprime graph of integers. Electron. J. Combin. (1997), Research Paper 8, approx. 11.\n\n[Sa99] S\\'ark\\\"ozy, G\\'abor N., Complete tripartite subgraphs in the coprime graph of\nintegers. Discrete Math. (1999), 227--238.",
+  "reference_proof_hint": "Let\n[\nf(n,2):=\\Big\\lfloor\\frac n2\\Big\\rfloor+\\Big\\lfloor\\frac n3\\Big\\rfloor-\\Big\\lfloor\\frac n6\\Big\\rfloor,\n]\nwhich is exactly the number of integers (m\\le n) divisible by $2$ or $3$ (inclusion–exclusion).\n\n## 1) Odd cycles up to (\\frac n3+1)\n\nThis is **open** as stated.\n\nWhat is known is the 1997 theorem of Erdős–Sárközy: there exist constants (c>0) and (n_0) such that for all (n\\ge n_0), if (|A|>f(n,2)), then $G(A)$ contains **every odd cycle**\n[\nC_{2\\ell+1}\\quad\\text{for all integers }\\ell\\le c n.\n]\nSo one gets “all odd cycle lengths” up to a **linear** fraction of $n$, but the best possible constant $c$ is not determined. \n\nMoreover, Erdős–Sárközy explicitly note that determining the best $c$ is interesting, and they suggest that perhaps (c=1/6) is optimal; (c\\le 1/6) is a natural upper bound [[nomath]](for $6\\mid n$)[[/nomath]] coming from a simple construction. \n\nYour bound “all odd cycles of length (\\le \\frac n3+1)” corresponds exactly to taking (\\ell\\le n/6), i.e. to the conjec"
+}

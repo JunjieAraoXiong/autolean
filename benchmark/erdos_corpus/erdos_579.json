@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_579",
+  "problem": [
+    "Let \\delta>0. If n is sufficiently large and G is a graph on n vertices with no K_{2,2,2} and at least \\delta n^2 edges then G contains an independent set of size \\gg_\\delta n."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 579,
+  "status": "open",
+  "tags": [
+    "graph theory",
+    "turan number"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $\\delta>0$. If $n$ is sufficiently large and $G$ is a graph on $n$ vertices with no $K_{2,2,2}$ and at least $\\delta n^2$ edges then $G$ contains an independent set of size $\\gg_\\delta n$.",
+  "additional_context": "A problem of Erdős, Hajnal, S\\'{o}s, and Szemer\\'{e}di, who could prove this is true for \\delta>1/8.\n\nSee also [533] and the entry in the graphs problem collection.",
+  "reference_proof_hint": "What you wrote is **exactly** the classical Erdős–Hajnal–Sós–Szemerédi question for the **octahedron** (K_{2,2,2}), and in full generality it is **still open**.\n\n* In the language of Ramsey–Turán theory, your statement for *every* (\\delta>0) is essentially equivalent to asking whether the Ramsey–Turán density (\\theta(K_{2,2,2})) is $0$. This is repeatedly singled out as one of the simplest major open cases. ([Erdős Problems][1])\n* What *is* known is that the statement **does hold for sufficiently large (\\delta)**: Erdős–Hajnal–Sós–Szemerédi proved it for (\\delta>1/8) [[nomath]](in the form “if $e(G)\\ge (1/8+\\varepsilon)n^2$ then $\\alpha(G)\\ge c(\\varepsilon)n$”)[[/nomath]]. ([Erdős Problems][1])\n\nSo: **as stated for arbitrary fixed (\\delta>0), it’s a conjecture/open problem** (not a theorem), but there are important special cases and partial ranges where one can prove it. Below are a couple of clean “you can prove it right now” regimes, and then how the general problem is framed.\n\n---\n\n"
+}

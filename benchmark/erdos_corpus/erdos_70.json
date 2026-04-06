@@ -1,0 +1,19 @@
+{
+  "uuid": "erdos_70",
+  "problem": [
+    "Let \\mathfrak{c} be the ordinal of the real numbers, \\beta be any countable ordinal, and 2≤ n<\\omega. Is it true that \\mathfrak{c}→ (\\beta, n)_2^3?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 70,
+  "status": "open",
+  "tags": [
+    "graph theory",
+    "ramsey theory",
+    "set theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $\\mathfrak{c}$ be the ordinal of the real numbers, $\\beta$ be any countable ordinal, and $2\\leq n<\\omega$. Is it true that $\\mathfrak{c}\\to (\\beta, n)_2^3$?",
+  "additional_context": "Erdős and Rado proved that \\mathfrak{c}→ (\\omega+n,4)_2^3 for any 2≤ n<\\omega.",
+  "reference_proof_hint": "Take the usual meaning of the arrow:\n\n[\n\\mathfrak c\\to(\\beta,n)^3_2\n]\n\nmeans: for every coloring (c:[\\mathfrak c]^3\\to{0,1}), either there is a set (H\\subseteq\\mathfrak c) of order type (\\beta) with all triples from $H$ colored $0$, or there is a set (K\\subseteq\\mathfrak c) of size $n$ with all triples from $K$ colored $1$.\n\nWith that interpretation:\n\n* For (n\\le 3) the statement is essentially trivial [[nomath]](for $n=2$ it is vacuous; for $n=3$ a single triple of color 1 already gives the second alternative)[[/nomath]].\n* For the first nontrivial case (n=4) (and larger $n$), the general statement **is open**.\n\nMore precisely, this is listed as **Erdős Problem #70**, and its current status is *open*: it is not known in ZFC whether (\\mathfrak c\\to(\\beta,n)^3_2) holds for **every** countable (\\beta) and every finite (n\\ge 4). ([Erdős Problems][1])\n\n### What is known (partial positive results)\n\n* Erdős and Rado proved the following special case:\n  [\n  \\mathfrak c\\to(\\omega+n,4)^3_2 \\qua"
+}

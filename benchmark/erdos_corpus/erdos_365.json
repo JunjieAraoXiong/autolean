@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_365",
+  "problem": [
+    "Do all pairs of consecutive powerful numbers n and n+1 come from solutions to Pell equations? In other words, must either n or n+1 be a square?\n\nIs the number of such n≤ x bounded by (\\log x)^{O(1)}?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 365,
+  "status": "open",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Do all pairs of consecutive powerful numbers $n$ and $n+1$ come from solutions to Pell equations? In other words, must either $n$ or $n+1$ be a square?\n\nIs the number of such $n\\leq x$ bounded by $(\\log x)^{O(1)}$?",
+  "additional_context": "Erdős originally asked Mahler whether there are infinitely many pairs of consecutive powerful numbers, but Mahler immediately observed that the answer is yes from the infinitely many solutions to the Pell equation x^2=2^3y^2+1.\n\nThe list of n such that n and n+1 are both powerful is A060355 in the OEIS.\n\nThe answer to the first question is no: Golomb \\cite{Go70} observed that both 12167=23^3 and 12168=2^33^213^2 are powerful. Walker \\cite{Wa76} proved that the equation7^3x^2=3^3y^2+1has infinitely many solutions, giving infinitely many counterexamples.\n\nSee also [364].\n\nThis is discussed in problem B16 of Guy's collection \\cite{Gu04}.\n\nReferences\n\n[Go70] Golomb, S. W., Powerful numbers. Amer. Math. Monthly (1970), 848-855.\n\n[Gu04] Guy, Richard K., Unsolved problems in number theory.  (2004), xviii+437.\n\n[Wa76] Walker, David T., Consecutive integer pairs of powerful numbers and related\nDiophantine equations. Fibonacci Quart. (1976), 111-116.",
+  "reference_proof_hint": "No.\n\nThere are **consecutive powerful (squarefull) numbers where neither term is a square**. The smallest “Type II” example (in Golomb’s terminology) is\n[\n12167 = 23^3,\\qquad 12168 = 2^3\\cdot 3^2\\cdot 13^2,\n]\nand **Walker proved there are infinitely many such pairs** by showing that\n[\n7^3x^2 = 3^3y^2 + 1\n]\nhas infinitely many integer solutions, producing infinitely many consecutive powerful pairs with neither term a square. ([Erdős Problems][1])\n\nThat said, there is an important nuance about “Pell”:\n\n* If by “Pell equation” you mean the **classical** form (X^2 - DY^2 = 1), then the resulting consecutive powerful pairs always have a square term (X^2). Your “in other words” interpretation (“must one be a square?”) matches this classical setup, and the answer is **no** by the examples above. ([Erdős Problems][1])\n\n* If instead you allow the **generalized Brahmagupta–Pell equation**\n  [\n  dX^2 - bY^2 = 1\\qquad (b,d\\ \\text{squarefree}),\n  ]\n  then in fact **every** pair of consecutive power"
+}

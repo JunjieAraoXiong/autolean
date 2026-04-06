@@ -1,0 +1,15 @@
+{
+  "uuid": "erdos_286",
+  "problem": [
+    "Erdős Problem #286"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 286,
+  "status": "proved",
+  "tags": [
+    "number theory",
+    "unit fractions"
+  ],
+  "prize": "no",
+  "formalized_on_site": false
+}

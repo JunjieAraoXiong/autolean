@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_635",
+  "problem": [
+    "Let t≥ 1 and A⊆ \\{1,\\ldots,N\\} be such that whenever a,b∈ A with b-a≥ t we have b-a\\nmid b. How large can | A| be? Is it true that| A| ≤ \\left((1)/(2)+o_t(1)\\right)N?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 635,
+  "status": "open",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $t\\geq 1$ and $A\\subseteq \\{1,\\ldots,N\\}$ be such that whenever $a,b\\in A$ with $b-a\\geq t$ we have $b-a\\nmid b$. How large can $\\lvert A\\rvert$ be? Is it true that\\[\\lvert A\\rvert \\leq \\left(\\frac{1}{2}+o_t(1)\\right)N?\\]",
+  "additional_context": "Asked by Erdős in a letter to Ruzsa in around 1980. Erdős observes that when t=1 the maximum possible is| A|=\\left\\lfloor(N+1)/(2)\\right\\rfloor,achieved by taking A to be all odd numbers in \\{1,\\ldots,N\\}. He also observes that when t=2 there exists such an A with| A| ≥ (N)/(2)+c\\log Nfor some constant c>0: take A to be the union of all odd numbers together with numbers of the shape 2^k with k odd.",
+  "reference_proof_hint": "Write (F_t(N)) for the maximum size of a set (A\\subseteq{1,\\dots,N}) with the property\n\n[\n(\\forall, a<b\\in A,\\ b-a\\ge t)\\qquad (b-a)\\nmid b.\n]\n\nA useful rephrasing is:\n\n**Lemma (equivalence).** A pair (a<b) violates the condition iff there exist integers (d\\ge t) and (k\\ge 1) such that\n[\na=kd,\\qquad b=(k+1)d.\n]\nIndeed, if (d=b-a\\mid b) then (b=(k+1)d) and (a=b-d=kd). Conversely, any such consecutive multiples violate since (b-a=d\\mid b).\n\nSo the condition is exactly:\n\n> For every integer (d\\ge t), the set $A$ contains **no two consecutive multiples of $d$** [[nomath]](i.e. never both $kd$ and $(k+1)d$)[[/nomath]].\n\n---\n\n## Lower bounds\n\n### A universal (\\frac12 N) construction\n\nTake all odd numbers:\n[\nA_{\\text{odd}}={1\\le n\\le N:\\ n\\text{ odd}}.\n]\nThen for any (a<b) in (A_{\\text{odd}}), the difference $b-a$ is even, while $b$ is odd, so ((b-a)\\nmid b). Hence\n[\nF_t(N)\\ \\ge\\ \\left\\lceil \\frac N2\\right\\rceil\n]\nfor every (t\\ge 1).\n\n### For (t\\ge 2), you can beat (\\frac12N) by (\\gg \\log N)\n"
+}

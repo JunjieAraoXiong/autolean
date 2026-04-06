@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_417",
+  "problem": [
+    "LetV'(x)=\\#\\{\\phi(m) : 1≤ m≤ x\\}andV(x)=\\#\\{\\phi(m) ≤ x : 1≤ m\\}.Does \\lim V(x)/V'(x) exist? Is it >1?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 417,
+  "status": "open",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": true,
+  "original_latex": "Let\\[V'(x)=\\#\\{\\phi(m) : 1\\leq m\\leq x\\}\\]and\\[V(x)=\\#\\{\\phi(m) \\leq x : 1\\leq m\\}.\\]Does $\\lim V(x)/V'(x)$ exist? Is it $>1$?",
+  "additional_context": "It is trivial that V'(x) ≤ V(x). In \\cite{Er98} Erdős suggests the limit may be infinite. See also [416].\n\nReferences\n\n[Er98] Erdős, Paul, Some of my new and almost new problems and results in combinatorial number theory. Number theory (Eger, 1996) (1998), 169-180.",
+  "reference_proof_hint": "Write\n[\nV'(x)=|\\\\{\\varphi(n):1\\le n\\le x\\\\}|,\\qquad\nV(x)=|\\\\{m\\le x:\\exists n\\ \\varphi(n)=m\\\\}|.\n]\nSo $V(x)$ counts **totient values (\\le x)** [[nomath]](“totients up to $x$”)[[/nomath]], while $V'(x)$ counts the **range of (\\varphi)** on $[1,x]$.\n\n### What is known unconditionally\n\n1. **Trivial inequality**\n   [\n   V'(x)\\le V(x)\\quad\\text{for all }x,\n   ]\n   because (\\varphi(n)\\le n), so every value (\\varphi(n)) with (n\\le x) is itself a totient (\\le x). Hence\n   [\n   \\frac{V(x)}{V'(x)}\\ge 1.\n   ]\n\n2. **Both functions have essentially the same (very precise) order of growth**, but that still does *not* determine their ratio.\n\nFord proved a very sharp “true order” for the totient-counting function $V(x)$:\n[\nV(x)=\\frac{x}{\\log x}\\exp!\\Big(C(\\log_3 x-\\log_4 x)^2+D\\log_3 x-(D+\\tfrac12-2C)\\log_4 x+O(1)\\Big),\n]\nwith explicit constants (C=0.8178146\\ldots) and (D=2.1769687\\ldots). ([arXiv][1])\n\nFor the “range up to $x$” function (V'(x)) [[nomath]](often denoted $W(x)$ in the literature)[[/nom",
+  "ground_truth_lean": "/-\nCopyright 2026 The Formal Conjectures Authors.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    https://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n-/\n\nimport FormalConjectures.Util.ProblemImports\n\n/-!\n# Erdős Problem 417\n\n*References:*\n- [erdosproblems.com/417](https://www.erdosproblems.com/417)\n- [Er98] Erdős, Paul, Some of my new and almost new problems and results in combinatorial number\n  theory. Number theory (Eger, 1996) (1998), 169-180.\n-/\n\nopen Nat Set Filter\nopen scoped Topology\n\nnamespace Erdos417\n\n/--\nLet\\[V'(x)=\\#\\{\\phi(m) : 1\\leq m\\leq x\\}\\]and\\[V(x)=\\#\\{\\phi(m) \\leq x : 1\\leq m\\}.\\]\nDoes $\\lim V(x)/V'(x)$ exist?\n\nFormalization note: We formalize the limit of the inverse fraction V'(x)/V(x)\nto ensure the limit is finite (bounded between 0 and 1).\n-/\n@[category research open, AMS 11]\ntheorem erdos_417.parts.i :\n    answer(sorry) ↔ ∃ L : ℝ, Tendsto (fun x ↦\n      ((totient '' { m | 1 ≤ m ∧ (m : ℝ) ≤ x }).ncard : ℝ) /\n      ({ k | k ∈ range totient ∧ (k : ℝ) ≤ x }.ncard : ℝ))\n      atTop (𝓝 L) := by\n  sorry\n\n/--\nIs it $>1$?\n-/\n@[category research open, AMS 11]\ntheorem erdos_417.parts.ii :\n    answer(sorry) ↔ ∃ L < 1, Tendsto (fun x ↦\n      ((totient '' { m | 1 ≤ m ∧ (m : ℝ) ≤ x }).ncard : ℝ) /\n      ({ k | k ∈ range totient ∧ (k : ℝ) ≤ x }.ncard : ℝ))\n      atTop (𝓝 L) := by\n  sorry\n\nend Erdos417\n"
+}

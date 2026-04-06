@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_80",
+  "problem": [
+    "Let c>0 and let f_c(n) be the maximal m such that every graph G with n vertices and at least cn^2 edges, where each edge is contained in at least one triangle, must contain a book of size m, that is, an edge shared by at least m different triangles.\n\nEstimate f_c(n). In particular, is it true that f_c(n)>n^{\\epsilon} for some \\epsilon>0? Or f_c(n)\\gg \\log n?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 80,
+  "status": "open",
+  "tags": [
+    "graph theory",
+    "ramsey theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $c>0$ and let $f_c(n)$ be the maximal $m$ such that every graph $G$ with $n$ vertices and at least $cn^2$ edges, where each edge is contained in at least one triangle, must contain a book of size $m$, that is, an edge shared by at least $m$ different triangles.\n\nEstimate $f_c(n)$. In particular, is it true that $f_c(n)>n^{\\epsilon}$ for some $\\epsilon>0$? Or $f_c(n)\\gg \\log n$?",
+  "additional_context": "A problem of Erdős and Rothschild.  Alon and Trotter showed that, provided c<1/4, f_c(n)\\ll_c n^{1/2}. Szemer\\'{e}di observed that his regularity lemma implies that f_c(n)→ ∞.\n\nEdwards (unpublished) and Khadziivanov and Nikiforov \\cite{KhNi79} proved independently that f_c(n) ≥ n/6 when c>1/4 (see [905]).\n\nFox and Loh \\cite{FoLo12} proved thatf_c(n) ≤ n^{O(1/\\log\\log n)}for all c<1/4, disproving the first conjecture of Erdős.\n\nThe best known lower bounds for f_c(n) are those from Szemer\\'{e}di's regularity lemma, and as such remain very poor.\n\nSee also [600] and the entry in the graphs problem collection.\n\nReferences\n\n[FoLo12] Fox, Jacob and Loh, Po-Shen, On a problem of Erdős and {R}othschild on edges in\ntriangles. Combinatorica (2012), 619--628.\n\n[KhNi79] Had\\v ziivanov, N. G. and Nikiforov, S. V., Solution of a problem of {P}. Erdős about the maximum\nnumber of triangles with a common edge in a graph. C. R. Acad. Bulgare Sci. (1979), 1315--1318.",
+  "reference_proof_hint": "This is a well‑known Erdős–Rothschild problem. Most papers write your $f_c(n)$ as $h(n,c)$. \n\n## What is known\n\n### 1) There is a sharp change at (c=\\tfrac14)\n\n#### If (c>\\tfrac14), then (f_c(n)) is linear in $n$\n\nA classical result of Edwards (unpublished) and independently Khadžiivanov–Nikiforov says that any $n$-vertex graph with more than $n^2/4$ edges has an edge contained in at least $n/6$ triangles. So for every fixed (c>\\tfrac14),\n[\nf_c(n)\\ge \\frac{n}{6}.\n]\n\n\nIn fact there is a stronger “for all (m>n^2/4)” inequality (stated as a corollary by Bollobás–Nikiforov):\n[\nbk(G)\\ \\ge\\ \\frac{2m}{n}-\\frac{n}{3}\\qquad (m>n^2/4),\n]\nso with (m=cn^2) this gives\n[\nf_c(n)\\ \\ge\\ (2c-\\tfrac13)n \\qquad (c>\\tfrac14).\n]\n\n\nSo in this range you really have\n[\nf_c(n)=\\Theta(n).\n]\n\n#### If (0<c<\\tfrac14), then $f_c(n)$ can be *subpolynomial*\n\nFox and Loh constructed graphs with edge density arbitrarily close to $1/4$, **every edge in a triangle**, but with **no edge in more than (n^{O(1/\\log\\log n)})** "
+}

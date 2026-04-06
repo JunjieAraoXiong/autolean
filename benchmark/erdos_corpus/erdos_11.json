@@ -1,0 +1,65 @@
+{
+  "uuid": "erdos_11",
+  "problem": [
+    "Is every odd n the sum of a squarefree number and a power of 2?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 11,
+  "status": "open",
+  "tags": [
+    "number theory",
+    "additive basis"
+  ],
+  "prize": "no",
+  "formalized_on_site": true,
+  "original_latex": "Is every odd $n$ the sum of a squarefree number and a power of 2?",
+  "additional_context": "Odlyzko has checked this up to 10^7. Hercher \\cite{He24b} has verified this is true for all odd integers up to 2^{50}\\approx 1.12\\times 10^{15}.\n\nGranville and Soundararajan \\cite{GrSo98} have proved that this is very related to the problem of finding Wieferich primes, which are p for which 2^{p-1}\\equiv 1\\pmod{p^2} - for example, if every odd integer is the sum of a squarefree number and a power of 2 then a positive proportion of primes are non-Wieferich primes.\n\nErdős often asked this under the weaker assumption that n is not divisible by 4. Erdős thought that proving this with two powers of 2 is perhaps easy, and could prove that it is true (with a single power of two) for almost all n.\n\nSee also [9], [10], and [16].\n\nThis is mentioned in problem A19 of Guy's collection \\cite{Gu04}.\n\nReferences\n\n[GrSo98] Granville, A. and Soundararajan, K., A Binary Additive Problem of Erdős and the Order of 2 mod p^2. The Ramanujan Journal (1998), 283-298.\n\n[Gu04] Guy, Richard K., Unsolved problems in number theory.  (2004), xviii+437.\n\n[He24b] C. Hercher, On the Sum of Squarefree Integers and a Power of Two. arXiv:2411.01964 (2024).",
+  "reference_proof_hint": "This is **not known** in full generality. It’s an **Erdős conjecture** (often listed as “Erdős Problem #11”): for every **odd** integer (n>1), there should exist an integer (k\\ge 0) such that\n[\nn = s + 2^k\n]\nwith $$s$$ **squarefree**. \n\nWhat *is* known is strong computational evidence:\n\n* Odlyzko checked the conjecture for all odd (n\\le 10^7), and McCranie extended this to (1.4\\times 10^9) (as reported in later literature). \n* Much more recently, Christian Hercher verified it for **all odd (n<2^{50}\\approx 1.12\\times 10^{15})**. \n  Moreover, in that entire range, every such (n) had a representation with a **small** power of two: (1\\le k\\le 13) (so (2^k\\le 8192)). \n\nWhy people believe it’s true: squarefree integers have positive density ((6/\\pi^2\\approx 0.608)), so among the (\\sim \\log_2 n) candidates (n-2^k) one expects many to be squarefree. Hercher also computes (heuristically) that the probability that *none* of (n-2^1,\\dots,n-2^6) is squarefree is already tiny ((\\approx 2.7\\times 1",
+  "ground_truth_lean": "/-\nCopyright 2025 The Formal Conjectures Authors.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    https://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n-/\n\nimport FormalConjectures.Util.ProblemImports\n\n/-!\n# Erdős Problem 11\n\n*Reference:* [erdosproblems.com/11](https://www.erdosproblems.com/11)\n-/\n\nnamespace Erdos11\n\n/--\nIs every odd $n > 1$ the sum of a squarefree number and a power of 2?\n-/\n@[category research open, AMS 11]\ntheorem erdos_11 (n : ℕ) (hn : Odd n) (hn' : 1 < n) :\n    ∃ k l : ℕ, Squarefree k ∧ n = k + 2 ^ l := by\n  sorry\n\n/--\nErdős often asked this under the weaker assumption that $n > 1$\nis not divisible by 4.\n-/\n@[category research open, AMS 11]\ntheorem erdos_11.variants.not_four_dvd (n : ℕ) (hn : ¬ 4 ∣ n) (hn' : 1 < n) :\n    ∃ k l : ℕ , Squarefree k ∧ n = k + 2^l := by\n  sorry\n\n/--\nIs every odd $n > 1$ the sum of a squarefree number and two powers of 2?\n-/\n@[category research open, AMS 11]\ntheorem erdos_11.variants.two_pow_two (n : ℕ) (hn : Odd n) (hn' : 1 < n) :\n    ∃ k l m : ℕ , Squarefree k ∧ n = k + 2^l + 2^m := by\n  sorry\n\n/--\nEvery odd $1 < n < 10^7$ is the sum of a squarefree number and a power of 2.\n-/\n@[category research solved, AMS 11]\ntheorem erdos_11.variants.finite_bound1 (n : ℕ) (hn : Odd n) (h : n < 10^7) (hn' : 1 < n) :\n    ∃ k l : ℕ , Squarefree k ∧ n = k + 2^l := by\n  sorry\n\n/--\nEvery odd $1 < n < 2^50$ is the sum of a squarefree number and a power of 2.\n-/\n@[category research solved, AMS 11]\ntheorem erdos_11.variants.finite_bound2 (n : ℕ) (hn : Odd n) (h : n < 2^50) (hn' : 1 < n) :\n    ∃ k l : ℕ , Squarefree k ∧ n = k + 2^l := by\n  sorry\n\n/--\nSuppose that every odd $n$ is the sum of a squarefree number and a power of 2. Then the set of primes\n$p$ such that $2 ^ p ≡ 2 \\mod p ^ 2$ is infinite. This is Theorem 1 in [GrSo98].\n[GrSo98] Granville, A. and Soundararajan, K., A Binary Additive Problem of Erdős and the Order of $2$ mod $p^2$. The Ramanujan Journal (1998), 283-298.\n-/\n@[category research solved, AMS 11]\ntheorem erdos_11.variants.granville_soundararajan (H : type_of% erdos_11) :\n    {p : ℕ | p.Prime ∧ 2 ^ p ≡ 2 [MOD p ^ 2]}.Infinite := by\n  sorry\n\nend Erdos11\n",
+  "expert_comments": [
+    {
+      "author": "",
+      "text": "Inspired by the recent advances, I + ChatGPT + Aristotle recently worked through this problem independently, and I wanted to leave a brief record of what came out of that exploration.\n\nWe did not obtain any new number-theoretic bounds, nor resolve the conjecture. What we did was to isolate and formalize a precise conditional reduction that seems to be implicit in earlier work (notably Granville-Soundararajan and related discussions), but not written down as a standalone statement.\n\nConcretely, the obstruction to writing an odd integer $n$ as a squarefree number plus a power of two can be organized via the sets\\[\nA_p(n) := \\{ k \\in \\mathbb{N} : 2^k \\equiv n \\pmod{p^2} \\},\n\\]and one can show rigorously that, for odd $n$, each nonempty $A_p(n)$ is contained in a single residue class modulo $\\operatorname{ord}_{p^2}(2)$, hence has upper asymptotic density at most $1/\\operatorname{ord}_{p^2}(2)$. From this, one obtains the clean conditional implication that the conjecture holds provided\\[\n\\"
+    },
+    {
+      "author": "soumya1729",
+      "text": "Ok, I'm recording this as \"did not find viable approach\" in the wiki.\n\nI think everybody is new (regarding AI use at this level). I also think we're currently mostly ahead of others in using AI in math, so any experimentation welcome! (As long as it doesn't clutter - but Bloom will likely flag it himself in that case and then you'll know.)"
+    },
+    {
+      "author": "natso26",
+      "text": "Slowly getting the hang of it, thanks! Not my research area, but the problem seemed too interesting not to try and your writeup of #728 helped!"
+    },
+    {
+      "author": "soumya1729",
+      "text": "Nat, do you think a write-up for Arxiv documenting this is plausible here? Could connect over email."
+    },
+    {
+      "author": "soumya1729",
+      "text": "Thanks! In general you can write up about anything you find interesting? Yes, feel free email me if you have any questions!"
+    },
+    {
+      "author": "natso26",
+      "text": "There are various links between the sum that you mention and this problem in the paper of Granville and Soundararajan. \n\nThe implication you state is not one of them, however, and I do not believe you have a proof - certainly Granville and Soundararajan could not find one. For example, even assuming that the sum is $<1$, Granville and Soundararajan are only able to prove that almost all integers $n\\leq x$ can be written as the sum of a squarefree number and a power of $2$. (Assuming just the convergence of this sum, they could prove that almost all odd integers are the sum of a power of $2$ and the product of a squarefree number and a bounded powerful number.)\n\nI assume that the implication you state was given to you by ChatGPT, which is wrongly paraphrasing the work of Granville and Soundararajan.\n\nI suggest that you do not write this up and submit it to the arXiv, since there does not seem to be anything new or correct here. It is great that you are taking an interest in this problem"
+    },
+    {
+      "author": "Thomas Bloom",
+      "text": "Given what Bloom said, you may want to share a draft here first. I can scrutinize whether there's some kind of misunderstanding. (Both have happened in the forum - that a result that looks good from AI turns out wrong, or turns out right.)"
+    },
+    {
+      "author": "natso26",
+      "text": "For soumya: I+ChatGPT mostly agrees with Bloom, in that there are links with G-S, but the conditional result seems unlikely to be easily obtainable.\n\nIn particular, your comment that there is no further combinatorial difficulty seems unlikely given G-S's identification of covering system in Theorem 5 as a key combinatorial consideration.\n\nI've changed the wiki to \"incorrect claim made\". You're welcome to challenge this further e.g. if you believe it's correct and write up something I'll take a look.\n\nBut don't be discouraged! I'd still encourage any comment that you think have value, provided some checks are performed and you're reasonably confident."
+    },
+    {
+      "author": "natso26",
+      "text": "Thanks to both Nat and Professor Bloom for your invaluable feedback. I understand the shortcomings of the argument, will think about this further!"
+    },
+    {
+      "author": "soumya1729",
+      "text": "I forgot to mention It, but the paragraph relating this problem to Wieferich primes has a typo. As It is written, It suggests this problem implies there are arbitrarily many Wieferich primes, when in fact It implies that there are arbitrarily many Non-Wieferich primes.\n      \n      \n      \n(The site has been updated to address this comment.)"
+    },
+    {
+      "author": "Dogmachine",
+      "text": "While the answer is most certainly affirmative, this is still mostly a computational problem, since we lack methods to decide such questions."
+    }
+  ]
+}

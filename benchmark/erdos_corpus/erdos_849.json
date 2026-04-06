@@ -1,0 +1,19 @@
+{
+  "uuid": "erdos_849",
+  "problem": [
+    "Is it true that, for every integer t≥ 1, there is some integer a such that\\binom{n}{k}=a(with 1≤ k≤ n/2) has exactly t solutions?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 849,
+  "status": "open",
+  "tags": [
+    "number theory",
+    "binomial coefficients"
+  ],
+  "prize": "no",
+  "formalized_on_site": true,
+  "original_latex": "Is it true that, for every integer $t\\geq 1$, there is some integer $a$ such that\\[\\binom{n}{k}=a\\](with $1\\leq k\\leq n/2$) has exactly $t$ solutions?",
+  "additional_context": "Erdős \\cite{Er96b} credits this to himself and Gordon 'many years ago', but it is more commonly known as Singmaster's conjecture. For t=3 one could take a=120, and for t=4 one could take a=3003. There are no known examples for t≥ 5.\n\nBoth Erdős and Singmaster believed the answer to this question is no, and in fact that there exists an absolute upper bound on the number of solutions.\n\nMatomäki, Radziwill, Shao, Tao, and Teräväinen \\cite{MRSTT22} have proved that there are always at most two solutions if we restrict k tok≥ \\exp((\\log n)^{2/3+\\epsilon}),assuming a is sufficiently large depending on \\epsilon>0.\n\nReferences\n\n[Er96b] Erd\\\"{o}s, Paul, Some problems I presented or planned to present in my short\ntalk. Analytic number theory, Vol. 1 (Allerton Park, IL, 1995) (1996), 333-335.\n\n[MRSTT22] Matom\\\"{a}ki, Kaisa and Radziwi\\l\\l, Maksym and Shao, Xuancheng\nand Tao, Terence and Ter\\\"{a}v\\\"{a}inen, Joni, Singmaster's conjecture in the interior of {P}ascal's\ntriangle. Q. J. Math. (2022), 1137--1177.",
+  "reference_proof_hint": "Let\n[\nN(a)=|\\\\{(n,k)\\in\\mathbb Z_{\\ge 1}^2:\\ 1\\le k\\le n/2,\\ \\binom{n}{k}=a\\\\}|.\n]\nYour question asks whether **every** (t\\ge 1) occurs as $N(a)$ for some integer $a$.\n\n### What is known\n\n* **$t=1$** is easy: take $a=2$.\n  Then (\\binom{n}{k}=2) with (1\\le k\\le n/2) forces ((n,k)=(2,1)), so (N(2)=1).\n\n* **$t=2$**: take $a=6$.\n  [\n  6=\\binom{6}{1}=\\binom{4}{2},\n  ]\n  and there are no other solutions with (k\\ge 3) because the smallest value with $k=3$ and (k\\le n/2) is (\\binom{6}{3}=20>6). Hence (N(6)=2).\n\n* **$t=3$**: take $a=120$.\n  [\n  120=\\binom{120}{1}=\\binom{16}{2}=\\binom{10}{3}.\n  ]\n  To see there are no more: for $k=4$, the values jump from (\\binom{8}{4}=70) to (\\binom{9}{4}=126), so 120 is not (\\binom{n}{4}); and for (k\\ge 5), the minimum (\\binom{2k}{k}) is already (\\binom{10}{5}=252>120). Thus (N(120)=3). ([Erdős Problems][1])\n\n* **$t=4$**: take $a=3003$.\n  [\n  3003=\\binom{3003}{1}=\\binom{78}{2}=\\binom{15}{5}=\\binom{14}{6}.\n  ]\n  And there are no other solutions in the half-tria",
+  "ground_truth_lean": "/-\nCopyright 2025 The Formal Conjectures Authors.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    https://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n-/\nimport FormalConjectures.Util.ProblemImports\n\n/-!\n# Erdős Problem 849\n\n*Reference:* [erdosproblems.com/849](https://www.erdosproblems.com/849)\n-/\n\nopen Nat\n\nnamespace Erdos849\n\n/--\nIs it true that, for every integer $t\\geq1$, there is some integer $a$ such that ${n \\choose k} = a$\nwith $1\\leq k \\le \\frac{n}{2}$ has exactly $t$ solutions?\n-/\n@[category research open, AMS 11]\ntheorem erdos_849 : answer(sorry) ↔\n    ∀ t ≥ 1, ∃ a : ℕ,\n      {n : ℕ | ∃ k ≥ 1, 2 * k ≤ n ∧ choose n k = a}.ncard = t := by\n  sorry\n\nend Erdos849\n"
+}

@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_713",
+  "problem": [
+    "Is it true that, for every bipartite graph G, there exists some \\alpha∈ [1,2) and c>0 such that\\mathrm{ex}(n;G)\\sim cn^\\alpha?Must \\alpha be rational?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 713,
+  "status": "open",
+  "tags": [
+    "graph theory",
+    "turan number"
+  ],
+  "prize": "$500",
+  "formalized_on_site": false,
+  "original_latex": "Is it true that, for every bipartite graph $G$, there exists some $\\alpha\\in [1,2)$ and $c>0$ such that\\[\\mathrm{ex}(n;G)\\sim cn^\\alpha?\\]Must $\\alpha$ be rational?",
+  "additional_context": "A problem of Erdős and Simonovits. Erdős sometimes asked this in the weaker version with just\\mathrm{ex}(n;G)\\asymp n^{\\alpha}.Erdős \\cite{Er67d} had initially conjectured that, for any bipartite graph G, \\mathrm{ex}(n;G)\\sim cn^{\\alpha} for some constant c>0 and \\alpha of the shape 1+(1)/(k) or 2-(1)/(k) for some integer k≥ 2. This was disproved by Erdős and Simonovits \\cite{ErSi70}.\n\nThe analogous statement is not true for hypergraphs, as shown by Frankl and F\\\"{u}redi \\cite{FrFu87}, who proved that if G is the 5-uniform hypergraph on 8 vertices with edges \\{12346,12457,12358\\} then \\mathrm{ex}(n;G)=o(n^5) but \\mathrm{ex}(n;G)≠ O(n^c) for any c<5.\n\nA simplified proof was given by F\\\"{u}redi and Gerbner \\cite{FuGe21}, who extended it to a counterexample for all k≥ 5. It remains open whether it is true for k=3 and k=4 (though F\\\"{u}redi and Gerbner conjecture it is not).\n\nSee also [571].\n\nReferences\n\n[Er67d] Erdős, P., Some recent results on extremal problems in graph theory.\n{R}esults.  (1967), 117--123 (English); pp. 124--130 (French).\n\n[ErSi70] Erdős, P. and Simonovits, M., Some extremal problems in graph theory. Combinatorial theory and its applications, I-III (Proc. Colloq., Balatonf\\\"{u}red, 1969) (1970), 377-390.\n\n[FrFu87] Frankl, P. and F\\\"uredi, Z., Exact solution of some {T}ur\\'an-type problems. J. Combin. Theory Ser. A (1987), 226--262.\n\n[FuGe21] F\\\"uredi, Zolt\\'an and Gerbner, D\\'aniel, Hypergraphs without exponents. J. Combin. Theory Ser. A (2021), Paper No. 105517, 9.",
+  "reference_proof_hint": "Not known in general.\n\nWhat you wrote is (essentially) the **Erdős–Simonovits “degenerate Turán numbers” conjecture**: for every *bipartite* forbidden graph (more generally, every finite family of graphs of chromatic number 2), there should be an exponent and a limiting constant so that\n[\n\\frac{\\mathrm{ex}(n;G)}{n^\\alpha}\\to c>0,\n]\nand Erdős–Simonovits even conjectured that the exponent can be taken **rational**. This conjecture is stated explicitly in the literature and is described as *wide open*. \n\nTo give a sense of how open it is: even for very concrete bipartite graphs, we often don’t know whether the normalized ratio converges. For example, Füredi–Naor–Verstraëte (2006) give explicit lower/upper constants for (C_6) of the form\n[\n0.5338,n^{4/3} \\lesssim \\mathrm{ex}(n,C_6)\\lesssim 0.6272,n^{4/3},\n]\nand they remark that there isn’t much evidence either way for the existence of (\\lim_{n\\to\\infty}\\mathrm{ex}(n,C_6)/n^{4/3}). ([Princeton Math][1])\nSo even in cases where the *exponent*"
+}

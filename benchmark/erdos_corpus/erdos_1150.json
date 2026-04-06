@@ -1,0 +1,16 @@
+{
+  "uuid": "erdos_1150",
+  "problem": [
+    "Erdős Problem #1150"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 1150,
+  "status": "open",
+  "tags": [
+    "analysis",
+    "polynomials"
+  ],
+  "prize": "no",
+  "formalized_on_site": true,
+  "ground_truth_lean": "/-\nCopyright 2026 The Formal Conjectures Authors.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    https://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n-/\n\nimport FormalConjectures.Util.ProblemImports\n\n/-!\n# Erdős Problem 1150\n\n*Reference:* [erdosproblems.com/1150](https://www.erdosproblems.com/1150)\n-/\n\nopen scoped Polynomial\n\nnamespace Erdos1150\n\n/--\nIs there some constant $c > 0$ such that, for all large enough $n$ and all polynomials $P$ of\ndegree $n$ with coefficients in $\\{-1, 1\\}$,\n$$\\max_{|z|=1} |P(z)| > (1 + c) \\sqrt{n}?$$\n-/\n@[category research open, AMS 12 30]\ntheorem erdos_1150 :\n    answer(sorry) ↔ ∃ c > 0, ∀ᶠ n in Filter.atTop,\n      ∀ P : ℂ[X],  (∀ i ≤ P.natDegree, P.coeff i = - 1 ∨ P.coeff i = 1) → P.natDegree = n →\n        ⨆ z : Metric.sphere (0 : ℂ) 1, ‖P.eval (z : ℂ)‖ > (1 + c) * Real.sqrt n := by\n  sorry\n\n/--\nThe trivial lower bound from Parseval's identity: for any polynomial $P$ of degree $n$ with\ncoefficients in $\\{-1, 1\\}$, we have $\\max_{|z|=1} |P(z)| \\geq \\sqrt{n+1}$.\n\nThis follows from Parseval's identity:\n$$\\frac{1}{2\\pi} \\int_0^{2\\pi} |P(e^{i\\theta})|^2 d\\theta = \\sum_{k=0}^{n} |a_k|^2 = n+1$$\nsince each $|a_k|^2 = 1$.\n-/\n@[category graduate, AMS 12 30]\ntheorem erdos_1150.variants.parseval_lower_bound (P : ℂ[X]) (n : ℕ)\n    (hcoeff : ∀ i ≤ P.natDegree, P.coeff i = -1 ∨ P.coeff i = 1)\n    (hdeg : P.natDegree = n) :\n    ⨆ z : Metric.sphere (0 : ℂ) 1, ‖P.eval (z : ℂ)‖ ≥ Real.sqrt (n + 1) := by\n  sorry\n\nend Erdos1150\n"
+}

@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_165",
+  "problem": [
+    "Give an asymptotic formula for R(3,k)."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 165,
+  "status": "open",
+  "tags": [
+    "graph theory",
+    "ramsey theory"
+  ],
+  "prize": "$250",
+  "formalized_on_site": false,
+  "original_latex": "Give an asymptotic formula for $R(3,k)$.",
+  "additional_context": "It is known that there exists some constant c>0 such that for large k(c+o(1))(k^2)/(\\log k)≤ R(3,k) ≤ (1+o(1))(k^2)/(\\log k).The lower bound is due to Kim \\cite{Ki95}, the upper bound is due to Shearer \\cite{Sh83}, improving an earlier bound of Ajtai, Koml\\'{o}s, and Szemer\\'{e}di \\cite{AKS80}.\n\nThe value of c in the lower bound has seen a number of improvements. Kim's original proof gave c≥ 1/162. The bound c≥ 1/4 was proved independently by Bohman and Keevash \\cite{BoKe21} and Pontiveros, Griffiths and Morris \\cite{PGM20}. The latter collection of authors conjecture that this lower bound is the true order of magnitude.\n\nThis was, however, improved by Campos, Jenssen, Michelen, and Sahasrabudhe \\cite{CJMS25} to c≥ 1/3, and further by Hefty, Horn, King, and Pfender \\cite{HHKP25} to c≥ 1/2. Both of these papers conjecture that c=1/2 is the correct asymptotic.\n\nSee also [544], and [986] for the general case. See [1013] for a related function.\n\nReferences\n\n[AKS80] Ajtai, Mikl\\'{o}s and Koml\\'{o}s, J\\'{a}nos and Szemer\\'{e}di, Endre, A note on Ramsey numbers. J. Combin. Theory Ser. A (1980), 354-360.\n\n[BoKe21] Bohman, Tom and Keevash, Peter, Dynamic concentration of the triangle-free process. Random Structures Algorithms (2021), 221-293.\n\n[CJMS25] M. Campos, M. Jenssen, M. Michelen, and J. Sahasrabudhe, A new lower bound for the Ramsey numbers R(3,k). arXiv:2505.13371 (2025).\n\n[HHKP25] Z. Hefty, P. Horn, D. King, and F. Pfender, Improving R(3,k) in just two bites. arXiv:2510.19718 (2025).\n\n[Ki95] Kim, J. H., The Ramsey number R(3,t) has order of magnitude t^2/\\log t. Random Structures and Algorithms (1995), 173-207.\n\n[PGM20] Fiz Pontiveros, Gonzalo and Griffiths, Simon and Morris, Robert, The triangle-free process and the Ramsey number R(3,k). Mem. Amer. Math. Soc. (2020), v+125.\n\n[Sh83] Shearer J., A note on the independence number of triangle-free graphs. Discrete Math. (1983), 83-87.",
+  "reference_proof_hint": "Let (R(3,k)) be the least (n) such that every red/blue colouring of (E(K_n)) contains either a red triangle or a blue (K_k) (equivalently: every triangle‑free graph on (n) vertices has an independent set of size (k)). ([arXiv][1])\n\nAs (k\\to\\infty) (with (\\log) denoting the natural logarithm), the known asymptotics are\n[\nR(3,k)=\\Theta!\\left(\\frac{k^2}{\\log k}\\right),\n]\nand more precisely the best current bounds are\n[\n\\left(\\frac12+o(1)\\right)\\frac{k^2}{\\log k}\\ \\le\\ R(3,k)\\ \\le\\ (1+o(1))\\frac{k^2}{\\log k},.\n]\n([arXiv][1])\n\n* The **upper bound** (R(3,k)\\le (1+o(1)),k^2/\\log k) is due to **Shearer (1983)** (building on Ajtai–Komlós–Szemerédi), via lower bounds on the independence number of triangle‑free graphs. ([arXiv][2])\n* The **lower bound** (R(3,k)\\ge (\\tfrac12+o(1)),k^2/\\log k) was proved very recently by **Hefty–Horn–King–Pfender (2025)** by constructing triangle‑free graphs with unusually small independence number. ([arXiv][1])\n\nSo the growth rate is settled up to a factor (2+o(1)"
+}

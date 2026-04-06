@@ -1,0 +1,15 @@
+{
+  "uuid": "erdos_646",
+  "problem": [
+    "Erdős Problem #646"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 646,
+  "status": "proved (Lean)",
+  "tags": [
+    "number theory",
+    "factorials"
+  ],
+  "prize": "no",
+  "formalized_on_site": false
+}

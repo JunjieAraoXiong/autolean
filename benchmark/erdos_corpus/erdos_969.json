@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_969",
+  "problem": [
+    "Let Q(x) count the number of squarefree integers in [1,x]. Determine the order of magnitude in the error term in the asymptoticQ(x)=(6)/(\\pi^2)x+E(x)."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 969,
+  "status": "open",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $Q(x)$ count the number of squarefree integers in $[1,x]$. Determine the order of magnitude in the error term in the asymptotic\\[Q(x)=\\frac{6}{\\pi^2}x+E(x).\\]",
+  "additional_context": "It is elementary to prove E(x)\\ll x^{1/2}, and the prime number theorem implies o(x^{1/2}). The best known unconditional upper bound is of the shape x^{1/2-o(1)}, due to Walfisz \\cite{Wa63}. Evelyn and Linfoot \\cite{EvLi31} proved thatE(x) \\gg x^{1/4},and this is likely the true order of magnitude. The Riemann Hypothesis would follow from E(x)\\ll x^{1/4}.\n\nThe true order of magnitude is unknown even assuming the Riemann Hypothesis. Conditional on this assumption, the best known upper bound isE(x)\\ll x^{(11)/(35)+o(1)},due to Liu \\cite{Li16}.\n\nReferences\n\n[EvLi31] Evelyn, C. J. A. and Linfoot, E. H., On a problem in the additive theory of numbers. Ann. of Math. (2) (1931), 261--270.\n\n[Li16] Liu, H.-Q., On the distribution of squarefree numbers. J. Number Theory (2016), 202--222.\n\n[Wa63] Walfisz, Arnold, Weylsche {E}xponentialsummen in der neueren {Z}ahlentheorie.  (1963), 231.",
+  "reference_proof_hint": "Write the squarefree indicator as (\\mu^2(n)), so\n[\nQ(x)=\\sum_{n\\le x}\\mu^2(n).\n]\nUse the standard identity\n[\n\\mu^2(n)=\\sum_{d^2\\mid n}\\mu(d),\n]\nbecause if $n$ has a squared prime factor then the sum cancels to $0$, and if $n$ is squarefree then only $d=1$ contributes.\n\nThen\n[\nQ(x)=\\sum_{n\\le x}\\ \\sum_{d^2\\mid n}\\mu(d)\n=\\sum_{d^2\\le x}\\mu(d)\\sum_{\\substack{n\\le x\\ d^2\\mid n}}1\n=\\sum_{d\\le \\sqrt x}\\mu(d)\\\\\\lfloor \\frac{x}{d^2}\\\\\\rfloor.\n]\nNow split off the main term by replacing (\\lfloor x/d^2\\rfloor) with (x/d^2):\n[\nQ(x)=\\sum_{d\\le\\sqrt x}\\mu(d)\\left(\\frac{x}{d^2}+O(1)\\right)\n= x\\sum_{d\\le\\sqrt x}\\frac{\\mu(d)}{d^2}+O!\\left(\\sum_{d\\le\\sqrt x}1\\right).\n]\nThe error from the floors is $O(\\sqrt x)$.\n\nFor the main sum,\n[\n\\sum_{d\\le\\sqrt x}\\frac{\\mu(d)}{d^2}\n=\\sum_{d=1}^\\infty\\frac{\\mu(d)}{d^2}+O\\left(\\sum_{d>\\sqrt x}\\frac1{d^2}\\right)\n=\\frac{1}{\\zeta(2)}+O!\\left(\\frac1{\\sqrt x}\\right)\n=\\frac{6}{\\pi^2}+O!\\left(\\frac1{\\sqrt x}\\right).\n]\nMultiplying by $x$ gives an additional $O(\\sqrt x)$ contri"
+}

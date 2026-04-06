@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_388",
+  "problem": [
+    "Can one classify all solutions of∏_{1≤ i≤ k_1}(m_1+i)=∏_{1≤ j≤ k_2}(m_2+j)where k_1,k_2>3 and m_1+k_1≤ m_2? Are there only finitely many solutions?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 388,
+  "status": "open",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Can one classify all solutions of\\[\\prod_{1\\leq i\\leq k_1}(m_1+i)=\\prod_{1\\leq j\\leq k_2}(m_2+j)\\]where $k_1,k_2>3$ and $m_1+k_1\\leq m_2$? Are there only finitely many solutions?",
+  "additional_context": "More generally, if k_1>2 then for fixed a and ba∏_{1≤ i≤ k_1}(m_1+i)=b∏_{1≤ j≤ k_2}(m_2+j)should have only a finite number of solutions.\n\nSee also [363] and [931].",
+  "reference_proof_hint": "Write the equation as a “factorial–ratio” identity:\n[\n\\prod_{i=1}^{k_1}(m_1+i)=\\frac{(m_1+k_1)!}{m_1!},\\qquad\n\\prod_{j=1}^{k_2}(m_2+j)=\\frac{(m_2+k_2)!}{m_2!},\n]\nso your equation is\n[\n\\frac{(m_1+k_1)!}{m_1!}=\\frac{(m_2+k_2)!}{m_2!}\n\\quad\\Longleftrightarrow\\quad\n(m_1+k_1)!,m_2!=(m_2+k_2)!,m_1!.\n]\nThe condition (m_1+k_1\\le m_2) means the two blocks\n$[m_1+1,m_1+k_1]$ and $[m_2+1,m_2+k_2]$ are **disjoint** and the second block lies entirely to the right.\n\n## If (m_1,m_2) are arbitrary integers: there are infinitely many solutions\n\nThere is a simple infinite family coming from the symmetry (x\\mapsto -x).\nFor any **even** (k\\ge 4) and any integer (u\\ge 0), set\n[\nk_1=k_2=k,\\qquad m_2=u,\\qquad m_1=-u-k-1.\n]\nThen the two blocks are\n[\nm_1+1,\\dots,m_1+k=-(u+k),\\dots,-(u+1),\n]\n[\nm_2+1,\\dots,m_2+k=u+1,\\dots,u+k,\n]\nwhich are negatives of each other, so their products are equal [[nomath]](because $k$ is even)[[/nomath]]. Also\n[\nm_1+k=-(u+1)\\le u=m_2\n]\nso your spacing condition holds. Hence **infinite"
+}

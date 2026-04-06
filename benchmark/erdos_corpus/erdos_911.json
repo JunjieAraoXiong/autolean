@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_911",
+  "problem": [
+    "Let \\hat{R}(G) denote the size Ramsey number, the minimal number of edges m such that there is a graph H with m edges that is Ramsey for G.\n\nIs there a function f such that f(x)/x→ ∞ as x→ ∞ such that, for all large C, if G is a graph with n vertices and e≥ Cn edges then\\hat{R}(G) > f(C) e?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 911,
+  "status": "open",
+  "tags": [
+    "graph theory",
+    "ramsey theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $\\hat{R}(G)$ denote the size Ramsey number, the minimal number of edges $m$ such that there is a graph $H$ with $m$ edges that is Ramsey for $G$.\n\nIs there a function $f$ such that $f(x)/x\\to \\infty$ as $x\\to \\infty$ such that, for all large $C$, if $G$ is a graph with $n$ vertices and $e\\geq Cn$ edges then\\[\\hat{R}(G) > f(C) e?\\]",
+  "reference_proof_hint": "This exact question is (as far as I can tell from the current literature) **open**. It appears as **Erdős problem #911** on the Erdős Problems website, with the same formulation in terms of graphs with (e(G)\\ge C,v(G)) and asking for a lower bound (\\hat R(G)\\ge f(C),e(G)) with (f(C)/C\\to\\infty). ([Erdős Problems][1])\n\nThat said, there are a couple of standard reductions/partial pieces of information that help frame what would be needed to answer it.\n\n## 1) You can reduce to minimum degree (\\ge C)\n\nIf $G$ has $n$ vertices and $e(G)\\ge Cn$, then by repeatedly deleting vertices of degree (<C), you cannot delete all vertices: each deletion removes (<C) edges, so deleting all $n$ vertices would remove (<Cn) edges, contradicting $e(G)\\ge Cn$. Hence $G$ contains a nonempty subgraph (G'\\subseteq G) with\n[\n\\delta(G')\\ge C.\n]\nSince (\\hat R(G)\\ge \\hat R(G')), any universal lower bound in your question would in particular have to hold for graphs with **minimum degree at least $C$**.\n\nSo the heart "
+}

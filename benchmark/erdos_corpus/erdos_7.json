@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_7",
+  "problem": [
+    "Is there a covering system all of whose moduli are odd?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 7,
+  "status": "verifiable",
+  "tags": [
+    "number theory",
+    "covering systems"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Is there a covering system all of whose moduli are odd?",
+  "additional_context": "Asked by Erdős and Selfridge (sometimes also with Schinzel). They also asked whether there can be a covering system such that all the moduli are odd and squarefree. The answer to this stronger question is no, proved by Balister, Bollob\\'{a}s, Morris, Sahasrabudhe, and Tiba \\cite{BBMST22}.\n\nHough and Nielsen \\cite{HoNi19} proved that at least one modulus must be divisible by either 2 or 3. A simpler proof of this fact was provided by Balister, Bollob\\'{a}s, Morris, Sahasrabudhe, and Tiba \\cite{BBMST22}, who also prove that if an odd covering system exists then the least common multiple of its moduli must be divisible by 9 or 15.\n\nSelfridge has shown (as reported in \\cite{Sc67}) that such a covering system exists if a covering system exists with moduli n_1,\\ldots,n_k such that no n_i divides any other n_j (but the latter has been shown not to exist, see [586]).\n\nFilaseta, Ford, and Konyagin \\cite{FFK00} report that Erdős, 'convinced that an odd covering does exist, offered \\25 for a proof that no odd covering exists; Selfridge,  convinced (at that point) that no odd covering exists, offered \\300 for the first explicit example...no award was promised to someone who gave a non-constructive proof that an odd covering of the integers exists...Selfridge (private communication) has informed us that he is now increasing his award to \\$2000.'\n\nReferences\n\n[BBMST22] Balister, Paul and Bollob\\'{a}s, B\\'{e}la and Morris, Robert\nand Sahasrabudhe, Julian and Tiba, Marius, On the Erdős covering problem: the density of the uncovered set. Invent. Math. (2022), 377-414.\n\n[FFK00] Filaseta, M. and Ford, K. and Konyagin, S., On an irreducibility theorem of {A}. {S}chinzel associated\nwith coverings of the integers. Illinois J. Math. (2000), 633--643.\n\n[HoNi19] Hough, Robert D. and Nielsen, Pace P., Covering systems with restricted divisibility. Duke Math. J. (2019), 3261-3295.\n\n[Sc67] Schinzel, A., Reducibility of polynomials and covering systems of congruences. Acta Arith. (1967/68), 91-101.",
+  "reference_proof_hint": "It depends on whether you require the moduli to be **distinct** (which is the nontrivial version people usually mean).\n\n### If repeated moduli are allowed: **Yes (trivially).**\n\nFor example,\n[\n{ 0 \\mod 3, 1 \\mod 3, 2 \\mod 3}\n]\ncovers every integer, and all moduli are the odd number $3$. More generally, for any odd (m>1), the full set of residue classes\n[\n{ 0 \\mod m, 1 \\mod m, \\dots, (m-1) \\mod m }\n]\nis a covering system with all moduli equal to $m$. ([Wikipedia][1])\n\n### If the moduli must be **distinct** and (>1): **Open problem.**\n\nThis is the classical **Erdős–Selfridge “odd covering” problem**: does there exist a *distinct* covering system whose moduli are all odd? As of the current literature, this is still **unknown** (no example and no impossibility proof). ([Erdős Problems][2])\n\nWhat *is* known includes (among other restrictions):\n\n* If you also require the moduli to be **square-free**, then such an all-odd distinct covering system **cannot exist** (there must be an even modulu"
+}

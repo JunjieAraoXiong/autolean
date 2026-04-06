@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_826",
+  "problem": [
+    "Are there infinitely many n such that, for all k≥ 1,\\tau(n+k)\\ll k?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 826,
+  "status": "open",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": true,
+  "original_latex": "Are there infinitely many $n$ such that, for all $k\\geq 1$,\\[\\tau(n+k)\\ll k?\\]",
+  "additional_context": "A stronger form of [248].",
+  "reference_proof_hint": "Interpreting “(\\ll)” in the usual analytic-number-theory way [[nomath]](an **absolute** implied constant, independent of both $n$ and $k$)[[/nomath]], this is **open**.\n\nIt is listed as **Erdős Problem #826** (source [Er74b]) and currently marked **OPEN** on the Erdős Problems website. ([Erdős Problems][1])\n\nA few remarks for context:\n\n* The condition means: there exists an absolute constant (C>0) such that for infinitely many $n$,\n  [\n  \\tau(n+k)\\le Ck\\quad\\text{for every }k\\ge1.\n  ]\n* It is explicitly noted there that this problem is “a stronger form” of another Erdős problem (#248). ([Erdős Problems][1])\n* The **weaker** prime-factor-count version (#248), where (\\tau) is replaced by (\\omega) (number of distinct prime divisors), *has* been resolved: Tao and Teräväinen proved that there is an absolute $C$ and infinitely many $n$ such that [[nomath]](\\omega$n+k$\\le Ck)[[/nomath]] for all (k\\ge1). ([Erdős Problems][2])\n  But this does **not** settle the (\\tau)-version (#826), which rema",
+  "ground_truth_lean": "/-\nCopyright 2025 The Formal Conjectures Authors.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    https://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n-/\n\nimport FormalConjectures.Util.ProblemImports\n\n/-!\n# Erdős Problem 826\n\n*Reference:* [erdosproblems.com/826](https://www.erdosproblems.com/826)\n-/\n\nopen scoped ArithmeticFunction.sigma\n\nnamespace Erdos826\n\n/--\nAre there infinitely many $n$ such that, for all $k\\geq 1$\n$$\n  \\tau(n + k) \\ll k?\n$$\n-/\n@[category research open, AMS 11]\ntheorem erdos_826 : answer(sorry) ↔\n    ∃ C > (0 : ℝ), { n | ∀ k ≥ 1, σ 0 (n + k) ≤ C * k }.Infinite := by\n  sorry\n\nend Erdos826\n"
+}

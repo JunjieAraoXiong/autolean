@@ -1,0 +1,14 @@
+{
+  "uuid": "erdos_270",
+  "problem": [
+    "Erdős Problem #270"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 270,
+  "status": "disproved",
+  "tags": [
+    "irrationality"
+  ],
+  "prize": "no",
+  "formalized_on_site": false
+}

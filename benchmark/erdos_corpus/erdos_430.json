@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_430",
+  "problem": [
+    "Fix some integer n and define a decreasing sequence in [1,n) by a_1=n-1 and, for k≥ 2, letting a_k be the greatest integer in [1,a_{k-1}) such that all of the prime factors of a_k are >n-a_k.\n\nIs it true that, for sufficiently large n, not all of this sequence can be prime?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 430,
+  "status": "open",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Fix some integer $n$ and define a decreasing sequence in $[1,n)$ by $a_1=n-1$ and, for $k\\geq 2$, letting $a_k$ be the greatest integer in $[1,a_{k-1})$ such that all of the prime factors of $a_k$ are $>n-a_k$.\n\nIs it true that, for sufficiently large $n$, not all of this sequence can be prime?",
+  "additional_context": "Erdős and Graham write 'preliminary calculations made by Selfridge indicate that this is the case but no proof is in sight'. For example if n=8 we have a_1=7 and a_2=5 and then must stop.\n\nSarosh Adenwalla has observed that this problem is equivalent to (the first part of) [385]. Indeed, assuming a positive answer to that, for all large n, there exists a composite m<n such that all primes dividing m are >n-m. It follows that such an m is equal to some a_i in the sequence defined for [1,n), and m is composite by assumption.",
+  "reference_proof_hint": "If you literally follow the rule all the way down, the sequence always ends with $1$ [[nomath]](since $1$ has no prime factors, it vacuously satisfies the condition)[[/nomath]], so in that literal sense “all terms are prime” is impossible for any $n$.\n\nWhat Erdős and Graham (and almost everyone who discusses this) mean is:\n\n> must there be a **composite** term (>1) somewhere in the sequence for all sufficiently large $n$?\n\nWith that interpretation, your question is a well-known open problem.\n\n## A clean reformulation\n\nLet $p(m)$ denote the least prime divisor of $m$ [[nomath]](and one can set $p(1)=\\infty$)[[/nomath]].\nYour condition “all prime factors of $m$ are (> n-m)” is equivalent to\n[\np(m) > n-m.\n]\nIndeed, if the smallest prime factor exceeds $n-m$, then all prime factors do; conversely if all do, then in particular the smallest does.\n\nSo the sequence (a_1>a_2>\\dots) is simply the list, in decreasing order, of all (m\\in[1,n)) such that (p(m)>n-m).\n\nFor a **composite** $m$, the co"
+}

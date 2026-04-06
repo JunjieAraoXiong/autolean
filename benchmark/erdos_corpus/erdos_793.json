@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_793",
+  "problem": [
+    "Let F(n) be the maximum possible size of a subset A⊆\\{1,\\ldots,n\\} such that a\\nmid bc whenever a,b,c∈ A with a≠ b and a≠ c. Is there a constant C such thatF(n)=\\pi(n)+(C+o(1))n^{2/3}(\\log n)^{-2}?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 793,
+  "status": "open",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $F(n)$ be the maximum possible size of a subset $A\\subseteq\\{1,\\ldots,n\\}$ such that $a\\nmid bc$ whenever $a,b,c\\in A$ with $a\\neq b$ and $a\\neq c$. Is there a constant $C$ such that\\[F(n)=\\pi(n)+(C+o(1))n^{2/3}(\\log n)^{-2}?\\]",
+  "additional_context": "Erdős \\cite{Er38} proved there exist constants 0<c_1≤ c_2 such that\\pi(n)+c_1n^{2/3}(\\log n)^{-2}≤ F(n) ≤ \\pi(n)+c_2n^{2/3}(\\log n)^{-2}.Erdős \\cite{Er69} gave a simple proof that F(n) ≤ \\pi(n)+n^{2/3}: define a graph with vertex set the union of those integers in [1,n^{2/3}] with all primes p∈ (n^{2/3},n]. We have an edge u\\sim v if and only if uv∈ A. It is easy to see that every m≤ n can be written as uv where u≤ n^{2/3} and v is either prime or ≤ n^{2/3}, and hence there are ≥ | A| many edges. This graph contains no path of length 3 and hence must be a tree and have fewer edges than vertices, and we are done. This can be improved to give the upper bound mentioned by using a subset of integers in [1,n^{2/3}].\n\nMore generally, one can ask for such an asymptotic for the size of sets such that no a∈ A divides the product of r distinct other elements of A, with the exponent 2/3 replaced by (2)/(r+1).\n\nFor further discussion and references concerning this generalisation to r≥ 3 see the comment by Wouter van Doorn.\n\nSee also [425].\n\nReferences\n\n[Er38] P. Erdős, On sequences of integers no one of which divides the product of two others and on related problems. Tomsk. Gos. Univ. Ucen Zap. (1938), 74-82.\n\n[Er69] Erdős, Paul, Some applications of graph theory to number theory. The Many Facets of Graph Theory (Proc. Conf.,\nWestern Mich. Univ., Kalamazoo, Mich., 1968) (1969), 77-82.",
+  "reference_proof_hint": "This is essentially Erdős’s “property (P_2)” extremal problem [[nomath]](sometimes phrased as the maximum size of a $2$-primitive subset of $[n]$)[[/nomath]], where one forbids a divisibility relation (a_0\\mid a_1a_2) among (distinct) elements. In the standard formulation one requires (a_0,a_1,a_2) to be *all distinct*; your condition is slightly stronger because you also forbid the case $b=c$ [[nomath]](since you require only $a\\neq b$ and $a\\neq c$)[[/nomath]]. In particular, any set satisfying your condition also satisfies the standard (P_2) condition, so your $F(n)$ is (\\le) the usual extremal function.\n\nWhat is known is that the extremal size has main term (\\pi(n)), and the best general results pin down the “error term” only up to *constant factors*:\n[\nF(n)=\\pi(n)+\\Theta\\left(\\frac{n^{2/3}}{(\\log n)^2}\\right),\n]\nin the standard (P_2) setting. This is explicitly summarized in later work: Erdős determined that the maximum size is (\\pi(n)+\\Theta(n^{2/3}/(\\log n)^2)) (i.e., he got the"
+}

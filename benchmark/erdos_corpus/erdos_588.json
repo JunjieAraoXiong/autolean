@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_588",
+  "problem": [
+    "Let f_k(n) be minimal such that if n points in ℝ^2 have no k+1 points on a line then there must be at most f_k(n) many lines containing at least k points. Is it true thatf_k(n)=o(n^2)for k≥ 4?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 588,
+  "status": "open",
+  "tags": [
+    "geometry"
+  ],
+  "prize": "$100",
+  "formalized_on_site": false,
+  "original_latex": "Let $f_k(n)$ be minimal such that if $n$ points in $\\mathbb{R}^2$ have no $k+1$ points on a line then there must be at most $f_k(n)$ many lines containing at least $k$ points. Is it true that\\[f_k(n)=o(n^2)\\]for $k\\geq 4$?",
+  "additional_context": "A generalisation of [101] (which asks about k=4).\n\nThe restriction to k≥ 4 is necessary since Sylvester has shown that f_3(n)= n^2/6+O(n). (See also Burr, Gr\\\"{u}nbaum, and Sloane \\cite{BGS74} and F\\\"{u}redi and Pal\\'{a}sti \\cite{FuPa84} for constructions which show that f_3(n)≥(1/6+o(1))n^2.)\n\nFor k≥ 4, K\\'{a}rteszi \\cite{Ka63} provedf_k(n)\\gg_k n\\log n(resolving a conjecture of Erdős that f_k(n)/n→ ∞). Gr\\\"{u}nbaum \\cite{Gr76} provedf_k(n) \\gg_k n^{1+(1)/(k-2)}.Erdős speculated this may be the correct order of magnitude, but Solymosi and Stojakovi\\'{c} \\cite{SoSt13} give a construction which showsf_k(n)\\gg_k n^{2-O_k(1/\\sqrt{\\log n})}\n\nReferences\n\n[BGS74] Burr, Stefan A. and Gr\\\"{u}nbaum, Branko and Sloane, N. J. A., The orchard problem. Geometriae Dedicata (1974), 397-424.\n\n[FuPa84] F\\\"{u}redi, Z. and Pal\\'{a}sti, I., Arrangements of lines with a large number of triangles. Proc. Amer. Math. Soc. (1984), 561-566.\n\n[Gr76] Gr\\\"{u}nbaum, Branko, New views on some old questions of combinatorial geometry. Colloquio Internazionale sulle Teorie Combinatorie\n(Roma, 1973), Tomo I (1976), 451-468.\n\n[Ka63] F. K\\'{a}rteszi, Sylvester egy t\\'{e}tel\\'{e}r\\H{o}l \\'{e}s Erdős egy sejt\\'{e}s\\'{e}r\\H{o}l. Matematikai Lapok (1963), 3-10.\n\n[SoSt13] Solymosi, J\\'{o}zsef and Stojakovi\\'C, Milo\\vS, Many collinear {k}-tuples with no {k+1} collinear points. Discrete Comput. Geom. (2013), 811-820.",
+  "reference_proof_hint": "No one knows at present [[nomath]](even for $k=4$)[[/nomath]].\n\nA few remarks to connect your (f_k(n)) to the standard formulations:\n\n* Under the hypothesis “no $k+1$ points on a line”, every line that contains (\\ge k) points in fact contains **exactly $k$** points. So (f_k(n)) is the same as the extremal function “maximum number of $k$-point lines determined by $n$ planar points with no $(k+1)$-point line”.\n\n* This is an Erdős problem: Erdős conjectured that for fixed (r>k>3) the maximum number of $k$-point lines in an $n$-point set with no $r$ collinear points is $o(n^2)$; your case is (r=k+1). \n\n### Status\n\n* The statement (f_k(n)=o(n^2)) for (k\\ge 4) is **open** (this is explicitly listed as Erdős Problem #588). ([Erdős Problems][1])\n* Even the first new case $k=4$ (“no five collinear, count 4-point lines”) is open (Erdős Problem #101). ([Erdős Problems][2])\n\n### What is known\n\n**1) Trivial upper bounds (still quadratic).**\nA simple double-counting of pairs gives\n[\nf_k(n)\\binom{k}{"
+}

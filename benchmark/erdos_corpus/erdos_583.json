@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_583",
+  "problem": [
+    "Every connected graph on n vertices can be partitioned into at most \\lceil n/2\\rceil edge-disjoint paths."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 583,
+  "status": "falsifiable",
+  "tags": [
+    "graph theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Every connected graph on $n$ vertices can be partitioned into at most $\\lceil n/2\\rceil$ edge-disjoint paths.",
+  "additional_context": "A problem of Erdős and Gallai. Lov\\'{a}sz \\cite{Lo68} proved that every graph on n vertices can be partitioned into at most \\lfloor n/2\\rfloor edge-disjoint paths and cycles, which implies that every graph can be partitioned into at most n-1 paths.\n\nChung \\cite{Ch78} proved that every connected graph on n vertices can be partitioned into at most \\lceil n/2\\rceil edge-disjoint trees. Pyber \\cite{Py96} has shown that every connected graph on n vertices can be covered by at most n/2+O(n^{3/4}) paths.\n\nIf we drop the edge-disjoint condition then this conjecture was proved by Fan \\cite{Fa02}.\n\nHajos \\cite{Lo68} has conjectured that if G has all degrees even then G can be partitioned into at most \\lfloor n/2\\rfloor edge-disjoint cycles.\n\nSee also [184] for an analogous problem decomposing into edges and cycles and [1017] for decomposing into complete graphs. See also the entry in the graphs problem collection.\n\nReferences\n\n[Ch78] Chung, F. R. K., On partitions of graphs into trees. Discrete Math. (1978), 23-30.\n\n[Fa02] Fan, Genghua, Subgraph coverings and edge switchings. J. Combin. Theory Ser. B (2002), 54-83.\n\n[Lo68] Lov\\'{a}sz, L., On covering of graphs. Theory of Graphs (Proc. Colloq., Tihany, 1966) (1968), 231-236.\n\n[Py96] Pyber, L., Covering the edges of a connected graph by paths. J. Combin. Theory Ser. B (1996), 152-159.",
+  "reference_proof_hint": "What you wrote is **exactly Gallai’s path decomposition conjecture** (1968):\n\n> every connected graph $G$ on $n$ vertices has an edge-partition into at most (\\left\\lceil \\frac n2\\right\\rceil) (edge-disjoint) paths. ([labri.fr][1])\n\nAs far as the current literature indicates, **this conjecture is still open in full generality** (i.e., no general proof or counterexample is known). \n\n## What *is* known (general best bound)\n\nLet $p(G)$ be the minimum number of paths in a path decomposition of $G$. The best general bound currently known is\n\n[\np(G)\\ \\le\\ \\Big\\lfloor \\frac{2n}{3}\\Big\\rfloor,\n]\n\nproved by Dean–Kouider and independently by Yan (as summarized in recent surveys/papers). \n\nA more refined version bounds $p(G)$ in terms of the numbers of odd- and even-degree vertices; the resulting worst-case bound in terms of $n$ alone gives the (\\lfloor 2n/3\\rfloor) type estimate. ([labri.fr][1])\n\n## A closely related theorem that *is* proved\n\nLovász (1968) proved a weaker but foundational result:"
+}

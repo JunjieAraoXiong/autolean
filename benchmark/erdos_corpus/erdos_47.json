@@ -1,0 +1,15 @@
+{
+  "uuid": "erdos_47",
+  "problem": [
+    "Erdős Problem #47"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 47,
+  "status": "proved (Lean)",
+  "tags": [
+    "number theory",
+    "unit fractions"
+  ],
+  "prize": "$100",
+  "formalized_on_site": false
+}

@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_423",
+  "problem": [
+    "Let a_1=1 and a_2=2 and for k≥ 3 we choose a_k to be the least integer >a_{k-1} which is the sum of at least two consecutive terms of the sequence. What is the asymptotic behaviour of this sequence?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 423,
+  "status": "open",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $a_1=1$ and $a_2=2$ and for $k\\geq 3$ we choose $a_k$ to be the least integer $>a_{k-1}$ which is the sum of at least two consecutive terms of the sequence. What is the asymptotic behaviour of this sequence?",
+  "additional_context": "Asked by Hofstadter (although in \\cite{Er77c} Erdős says this question was originally due to Ulam). The sequence begins 1,2,3,5,6,8,10,11,\\ldots and is A005243 in the OEIS.\n\nReferences\n\n[Er77c] Erdős, Paul, Problems and results on combinatorial number theory. III. Number theory day (Proc. Conf., Rockefeller Univ.,\nNew York, 1976) (1977), 43-72.",
+  "reference_proof_hint": "This is **Hofstadter’s “consecutive-sum” greedy sequence**, listed as **OEIS A005243**. It was posed by Hofstadter and recorded by Erdős (who explicitly asked for its asymptotic behaviour). \n\n### What is known rigorously (as of January 2026)\n\nLet\n[\nb_n:=a_n-n.\n]\nBecause ({a_1,\\dots,a_n}) consists of $n$ distinct integers in ({1,2,\\dots,a_n}), we have the *exact* interpretation\n[\nb_n = |\\\\{m\\le a_n:\\ m\\notin {a_k}\\\\}|,\n]\ni.e. (b_n) counts how many **positive integers are missing** from the sequence up to (a_n). The missing integers form the complementary sequence **OEIS A048973**. ([OEIS][1])\n\nThe main new qualitative fact is:\n\n* **Infinitely many integers never appear** in the sequence [[nomath]](so $b_n$ is **unbounded**)[[/nomath]]. This was proved independently by **Quanyu Tang** and **Matthew Bolan** (notes linked from the Erdős Problems database/discussion). ([Erdős Problems][2])\n  In particular, the sequence is **not** eventually of the form (a_n=n+B) for some constant $B$. ([Erd"
+}

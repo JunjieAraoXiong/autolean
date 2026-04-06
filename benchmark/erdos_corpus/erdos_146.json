@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_146",
+  "problem": [
+    "If H is bipartite and is r-degenerate, that is, every induced subgraph of H has minimum degree ≤ r, then\\mathrm{ex}(n;H) \\ll n^{2-1/r}."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 146,
+  "status": "open",
+  "tags": [
+    "graph theory",
+    "turan number"
+  ],
+  "prize": "$500",
+  "formalized_on_site": false,
+  "original_latex": "If $H$ is bipartite and is $r$-degenerate, that is, every induced subgraph of $H$ has minimum degree $\\leq r$, then\\[\\mathrm{ex}(n;H) \\ll n^{2-1/r}.\\]",
+  "additional_context": "Conjectured by Erdős and Simonovits  \\cite{ErSi84}. Open even for r=2. Alon, Krivelevich, and Sudakov \\cite{AKS03} have proved\\mathrm{ex}(n;H) \\ll n^{2-1/4r}.They also prove the full Erdős-Simonovits conjectured bound if H is bipartite and the maximum degree in one side of the bipartition is r.\n\nSee also [113] and [147].\n\nSee also the entry in the graphs problem collection.\n\nReferences\n\n[AKS03] Alon, Noga and Krivelevich, Michael and Sudakov, Benny, Tur\\'{a}n numbers of bipartite graphs and related\nRamsey-type questions. Combin. Probab. Comput. (2003), 477-494.\n\n[ErSi84] Erdős, P. and Simonovits, M., Cube-supersaturated graphs and related problems. Progress in graph theory (Waterloo, Ont., 1982) (1984), 203-218.",
+  "reference_proof_hint": "What you wrote is **not known in that generality**.\n\nIt is a famous **open conjecture** (usually credited to Erdős / Erdős–Simonovits): if $H$ is bipartite and $r$-degenerate, then\n[\n\\mathrm{ex}(n,H)=O\\left(n^{2-1/r}\\right).\n]\nIt is listed as open **even for (r=2)**. ([Erdős Problems][1])\n\n## What is actually proved\n\n### 1) Proven special case (this matches the exponent you wrote)\n\nIf $H$ is bipartite with parts $(X,Y)$ and **every vertex in one side** (say $X$) has degree at most $r$, then\n[\n\\mathrm{ex}(n,H)=O\\left(n^{2-1/r}\\right).\n]\nThis is due to Füredi, with a later proof using **dependent random choice** by Alon–Krivelevich–Sudakov. ([Princeton University][2])\n\n### 2) Best general bound for $r$-degenerate bipartite $H$\n\nFor a general $r$-degenerate bipartite graph $H$, Alon–Krivelevich–Sudakov proved a weaker bound, for example of the form\n[\n\\mathrm{ex}(n,H)=O\\left(n^{2-\\frac{1}{4r}}\\right),\n]\nand more generally (n^{2-c/r}) for some absolute (c>0). ([Erdős Problems][1])\n\n### 3) M"
+}

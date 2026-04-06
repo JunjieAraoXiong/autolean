@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_544",
+  "problem": [
+    "Show thatR(3,k+1)-R(3,k)→∞as k→ ∞. Similarly, prove or disprove thatR(3,k+1)-R(3,k)=o(k)."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 544,
+  "status": "open",
+  "tags": [
+    "graph theory",
+    "ramsey theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Show that\\[R(3,k+1)-R(3,k)\\to\\infty\\]as $k\\to \\infty$. Similarly, prove or disprove that\\[R(3,k+1)-R(3,k)=o(k).\\]",
+  "additional_context": "A problem of Erdős and S\\'{o}s.\n\nThis problem is #8 in Ramsey Theory in the graphs problem collection.\n\nSee also [165] and [1014].",
+  "reference_proof_hint": "Let\n[\n\\Delta_k:=R(3,k+1)-R(3,k)\\qquad(k\\ge 2).\n]\n\n## What is known (and why your two questions are hard)\n\nBoth of your questions are exactly the **Erdős–Sós problem (1980)** for the off–diagonal Ramsey numbers $R(3,k)$: they asked whether\n[\n\\Delta_k \\xrightarrow[k\\to\\infty]{}\\infty\n\\quad\\text{and whether}\\quad\n\\frac{\\Delta_k}{k}\\xrightarrow[k\\to\\infty]{}0.\n]\nThis is stated explicitly in Zhu–Xu–Radziszowski (“A step forwards on the Erdős–Sós problem…”) as the open problem [[nomath]](their display $5$)[[/nomath]]. ([arXiv][1])\n\nMoreover, the same paper emphasizes that even for “consecutive” values $R(3,s)$ and $R(3,s-1)$, in general **only very crude bounds are known**:\n[\n3\\le \\Delta_s \\le s.\n]\n([arXiv][1])\n\nSo:\n\n* **Your first statement** (\\Delta_k\\to\\infty) is **open** (not proved or disproved).\n* **Your second statement** (\\Delta_k=o(k)) is **also open** (not proved or disproved). ([arXiv][1])\n\nThat said, there are meaningful *weaker* statements we can prove from the known asymptotics"
+}

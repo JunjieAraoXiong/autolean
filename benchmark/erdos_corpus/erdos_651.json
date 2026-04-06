@@ -1,0 +1,15 @@
+{
+  "uuid": "erdos_651",
+  "problem": [
+    "Erdős Problem #651"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 651,
+  "status": "disproved",
+  "tags": [
+    "geometry",
+    "convex"
+  ],
+  "prize": "no",
+  "formalized_on_site": false
+}

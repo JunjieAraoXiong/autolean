@@ -1,0 +1,19 @@
+{
+  "uuid": "erdos_592",
+  "problem": [
+    "Determine which countable ordinals \\beta have the property that, if \\alpha=\\omega^{^\\beta}, then in any red/blue colouring of the edges of K_\\alpha there is either a red K_\\alpha or a blue K_3."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 592,
+  "status": "open",
+  "tags": [
+    "set theory",
+    "ramsey theory"
+  ],
+  "prize": "$1000",
+  "formalized_on_site": true,
+  "original_latex": "Determine which countable ordinals $\\beta$ have the property that, if $\\alpha=\\omega^{^\\beta}$, then in any red/blue colouring of the edges of $K_\\alpha$ there is either a red $K_\\alpha$ or a blue $K_3$.",
+  "additional_context": "This property holds for \\beta=2 and not for 3≤ \\beta <\\omega (Specker \\cite{Sp57}) and for \\beta=\\omega (Chang \\cite{Ch72}).\n\nThe first open case is \\beta=\\omega^2 (see [591]). Galvin and Larson \\cite{GaLa74} have shown that if \\beta≥ 3 has this property then \\beta must be 'additively indecomposable', so that in particular \\beta=\\omega^\\gamma for some \\gamma<\\omega_1. Galvin and Larson conjecture that every \\beta≥ 3 of this form has this property.\n\nSee also [590].\n\nReferences\n\n[Ch72] Chang, C. C., A partition theorem for the complete graph on {\\omega\\sp{\\omega }}. J. Combinatorial Theory Ser. A (1972), 396-452.\n\n[GaLa74] Galvin, Fred and Larson, Jean, Pinning countable ordinals. Fund. Math. (1974/75), 357-361.\n\n[Sp57] Specker, Ernst, Teilmengen von Mengen mit Relationen. Comment. Math. Helv. (1957), 302-314.",
+  "reference_proof_hint": "Write the statement in arrow notation as\n[\n\\omega^\\beta \\to (\\omega^\\beta,3)^2,\n]\ni.e. every red/blue colouring of ([\\omega^\\beta]^2) yields either a red-homogeneous set of order type (\\omega^\\beta) [[nomath]](a red $K_{\\omega^\\beta}$)[[/nomath]] or a blue-homogeneous set of size $3$ (a blue triangle).\n\nWhat is known for **countable** (\\beta) is:\n\n## Values of (\\beta) where it holds\n\n* (\\beta=1) [[nomath]](so $\\alpha=\\omega$)[[/nomath]]: holds by the infinite Ramsey theorem (\\omega\\to(\\omega,3)^2).\n* (\\beta=2) [[nomath]](so $\\alpha=\\omega^2$)[[/nomath]]: **holds** [[nomath]](Specker, 1957; in fact $\\omega^2\\to(\\omega^2,m)^2$ for all finite $m$)[[/nomath]]. ([Erdős Problems][1])\n* (\\beta=\\omega) [[nomath]](so $\\alpha=\\omega^\\omega$)[[/nomath]]: **holds** [[nomath]](Chang, 1972; with extensions to $\\omega^\\omega\\to(\\omega^\\omega,m)^2$ for finite $m$)[[/nomath]]. ([Erdős Problems][1])\n\n[[nomath]](Trivially, $\\beta=0$ gives $\\alpha=1$, where a red $K_1$ always exists.)[[/nomath]]\n\n## Value",
+  "ground_truth_lean": "/-\nCopyright 2025 The Formal Conjectures Authors.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    https://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n-/\n\nimport FormalConjectures.Util.ProblemImports\n\n/-!\n# Erdős Problem 592\n\n*Reference:* [erdosproblems.com/592](https://www.erdosproblems.com/592)\n-/\n\nopen Cardinal Ordinal\n\nnamespace Erdos592\n\nuniverse u\n\n/--\nDetermine which countable ordinals $β$ have the property that, if $α = \\omega^β$, then in any\nred/blue colouring of the edges of $K_α$ there is either a red $K_α$ or a blue $K_3$.\n-/\n@[category research open, AMS 3]\ntheorem erdos_592 (β : Ordinal.{u}) : β.card ≤ ℵ₀ →\n    OrdinalCardinalRamsey (ω ^ β) (ω ^ β) 3 ↔ (answer(sorry) : Ordinal.{u} → Prop) β := by\n  sorry\n\n-- TODO(firsching): add condition by Galvin and Larson.\n\nend Erdos592\n"
+}

@@ -1,0 +1,14 @@
+{
+  "uuid": "erdos_1124",
+  "problem": [
+    "Erdős Problem #1124"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 1124,
+  "status": "proved",
+  "tags": [
+    "geometry"
+  ],
+  "prize": "no",
+  "formalized_on_site": false
+}

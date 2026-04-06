@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_550",
+  "problem": [
+    "Let m_1≤\\cdots≤ m_k and n be sufficiently large. If T is a tree on n vertices and G is the complete multipartite graph with vertex class sizes m_1,\\ldots,m_k then prove thatR(T,G)≤ (\\chi(G)-1)(R(T,K_{m_1,m_2})-1)+m_1."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 550,
+  "status": "open",
+  "tags": [
+    "graph theory",
+    "ramsey theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $m_1\\leq\\cdots\\leq m_k$ and $n$ be sufficiently large. If $T$ is a tree on $n$ vertices and $G$ is the complete multipartite graph with vertex class sizes $m_1,\\ldots,m_k$ then prove that\\[R(T,G)\\leq (\\chi(G)-1)(R(T,K_{m_1,m_2})-1)+m_1.\\]",
+  "additional_context": "Chv\\'{a}tal \\cite{Ch77} proved that R(T,K_m)=(m-1)(n-1)+1.\n\nThis problem is #16 in Ramsey Theory in the graphs problem collection.\n\nReferences\n\n[Ch77] Chv\\'{a}tal, V., Tree-complete graph Ramsey numbers. J. Graph Theory (1977), 93.",
+  "reference_proof_hint": "Let (m_1\\le \\cdots \\le m_k) and let\n[\nG=K_{m_1,m_2,\\dots,m_k}\n]\nbe the complete $k$-partite graph with vertex-class sizes (m_1,\\dots,m_k). Then (\\chi(G)=k), and the smallest color class in a proper $k$-coloring of $G$ has size\n[\n\\sigma(G)=m_1.\n]\n\nSet\n[\nr:=R\\left(T,K_{m_1,m_2}\\right).\n]\n\nWe will prove\n[\nR(T,G)\\le (\\chi(G)-1),(r-1)+m_1.\n]\n\n---\n\n## Step 1: A standard “tree vs fixed graph” upper bound for large $n$\n\nA theorem of Chvátal–Rödl–Szemerédi–Trotter (settling Burr’s conjecture for trees) says:\n\n> For every fixed graph $H$, there exists (n_0(H)) such that for every tree $T$ on (n\\ge n_0(H)) vertices,\n> $ R(T,H)=(n-1)(\\chi(H)-1)+\\sigma(H) $\n> In particular,\n> $R(T,H)\\le (n-1)(\\chi(H)-1)+\\sigma(H)$\n\nApply this with $H=G$. Since (\\chi(G)=k) and (\\sigma(G)=m_1), for $n$ sufficiently large we get\n[\nR(T,G)\\le (n-1)(k-1)+m_1.\n]\nEquivalently,\n[\nR(T,G)\\le (\\chi(G)-1)(n-1)+m_1.\n]\n\n---\n\n## Step 2: The trivial lower bound (R(T,K_{m_1,m_2})\\ge n)\n\nWe claim (r\\ge n). Indeed, consider (K_{n-1}) "
+}

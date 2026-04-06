@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_1011",
+  "problem": [
+    "Let f_r(n) be minimal such that every graph on n vertices with ≥ f_r(n) edges and chromatic number ≥ r contains a triangle. Determine f_r(n)."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 1011,
+  "status": "open",
+  "tags": [
+    "graph theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $f_r(n)$ be minimal such that every graph on $n$ vertices with $\\geq f_r(n)$ edges and chromatic number $\\geq r$ contains a triangle. Determine $f_r(n)$.",
+  "additional_context": "Tur\\'{a}n's theorem implies f_2(n)=\\lfloor n^2/4\\rfloor+1. Erdős and Gallai \\cite{Er62d} proved f_3(n)=\\lfloor (1)/(4)(n-1)^2\\rfloor+2.\n\nSimonovits showed in his PhD thesis (see the discussion on p. 358 of \\cite{Si74}) thatf_r(n)=(n^2)/(4)-(g(r))/(2){n}+O(1),where g(r) is the largest m such that, for any triangle-free graph with chromatic number ≥ r, at least m vertices of G need to be removed to obtain a bipartite graph. Simonovits \\cite{Si74} notes(\\log r)/(\\log\\log r)r^2 \\ll g(r) \\ll (\\log r)^2r^2.Hunter in the comments has noted that other results imply g(r)\\asymp r^2\\log r - in fact(1/2-o(1))r^2\\log r≤ g(r)≤ (2+o(1))r^2\\log r.The lower bound follows from work of Davies and Illingworth \\cite{DaIl22} (see [1104]). The upper bound follows from work of Hefty, Horn, King, and Pfender \\cite{HHKP25} on R(3,k).\n\nRen, Wang, Wang, and Yang \\cite{RWWY24} showed that, for n≥ 150,f_4(n)=\\left\\lfloor((n-3)^2)/(4)\\right\\rfloor+6.\n\nReferences\n\n[DaIl22] Davies, Ewan and Illingworth, Freddie, The {\\chi}-{R}amsey problem for triangle-free graphs. SIAM J. Discrete Math. (2022), 1124--1134.\n\n[Er62d] Erdős, P., On a theorem of {R}ademacher-{T}ur\\'an. Illinois J. Math. (1962), 122--127.\n\n[HHKP25] Z. Hefty, P. Horn, D. King, and F. Pfender, Improving R(3,k) in just two bites. arXiv:2510.19718 (2025).\n\n[RWWY24] S. Ren, J. Wang, S. Wang, and W. Yang, Extremal triangle-free graphs with chromatic number at least four. arXiv:2404.07486 (2024).\n\n[Si74] Simonovits, M., Extermal graph problems with symmetrical extremal graphs.\n{A}dditional chromatic conditions. Discrete Math. (1974), 349--376.",
+  "reference_proof_hint": "Let\n[\nM_r(n):=\\max{e(G): |V(G)|=n,; G\\text{ is triangle-free},; \\chi(G)\\ge r}.\n]\nThen your (f_r(n)) is exactly\n[\nf_r(n)=M_r(n)+1,\n]\nbecause (f_r(n)) is the first edge threshold above which **no** triangle-free graph with (\\chi\\ge r) can exist.\n\n## Exact values for (r=2,3,4)\n\n### $r=2$\n\nBy Mantel’s theorem, the maximum number of edges in a triangle-free $n$-vertex graph is (\\left\\lfloor n^2/4\\right\\rfloor). Hence\n[\nM_2(n)=\\left\\lfloor \\frac{n^2}{4}\\right\\rfloor\n\\quad\\Longrightarrow\\quad\nf_2(n)=\\left\\lfloor \\frac{n^2}{4}\\right\\rfloor+1.\n]\n([arXiv][1])\n\n### $r=3$\n\nErdős–Gallai (and independently Andrásfai) showed that if a triangle-free graph is **not bipartite** [[nomath]](equivalently $\\chi\\ge 3$)[[/nomath]], then\n[\ne(G)\\le \\left\\lfloor \\frac{(n-1)^2}{4}\\right\\rfloor+1,\n]\nand this is sharp. Therefore\n[\nM_3(n)=\\left\\lfloor \\frac{(n-1)^2}{4}\\right\\rfloor+1\n\\quad\\Longrightarrow\\quad\nf_3(n)=\\left\\lfloor \\frac{(n-1)^2}{4}\\right\\rfloor+2.\n]\n([arXiv][1])\n\n### $r=4$\n\nA recent result of Ren–Wang"
+}

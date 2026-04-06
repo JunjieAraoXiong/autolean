@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_148",
+  "problem": [
+    "Let F(k) be the number of solutions to 1= (1)/(n_1)+\\cdots+(1)/(n_k),where 1≤ n_1<\\cdots<n_k are distinct integers. Find good estimates for F(k)."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 148,
+  "status": "open",
+  "tags": [
+    "number theory",
+    "unit fractions"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $F(k)$ be the number of solutions to\\[ 1= \\frac{1}{n_1}+\\cdots+\\frac{1}{n_k},\\]where $1\\leq n_1<\\cdots<n_k$ are distinct integers. Find good estimates for $F(k)$.",
+  "additional_context": "The current best bounds known are2^{c^{(k)/(\\log k)}}≤ F(k) ≤ c_0^{((1)/(5)+o(1))2^k},where c>0 is some absolute constant and c_0=1.26408\\cdots is the 'Vardi constant'. The lower bound is due to Konyagin \\cite{Ko14} and the upper bound to Elsholtz and Planitzer \\cite{ElPl21}.\n\nReferences\n\n[ElPl21] Elsholtz, Christian and Planitzer, Stefan, Sums of four and more unit fractions and approximate parametrizations. Bull. Lond. Math. Soc. (2021), 695-709.\n\n[Ko14] Konyagin, S. V., Double exponential lower bound for the number of representations of unity by Egyptian fractions. Math. Notes (2014), 277-281.",
+  "reference_proof_hint": "Let\n\n[\nF(k)=#\\\\{(n_1,\\dots,n_k): 1\\le n_1<\\cdots<n_k,;;1=\\sum_{i=1}^k \\frac1{n_i}\\\\}.\n]\n\nThis is a well-studied counting function (it is OEIS A006585). ([OEIS][1])\n\n### Small values (to show the scale)\n\nFor (k=1,\\dots,8),\n\n[\nF(1)=1,F(2)=0,F(3)=1,F(4)=6,;F(5)=72,F(6)=2320,F(7)=245765,F(8)=151182379.\n]\n([OEIS][1])\n\nSo $F(k)$ grows extremely fast once $k$ is a bit large.\n\n---\n\n## Best known general bounds [[nomath]](as $k\\to\\infty$)[[/nomath]]\n\nThe currently best published bounds (in this “distinct denominators, ordered” setting) are\n\n[\n2^{c^{\\frac{k}{\\log k}}}\\ \\le\\ F(k)\\ \\le\\ c_0^{\\left(\\frac15+o(1)\\right)2^k}\n]\nwhere (c>0) is an absolute constant and\n[\nc_0=1.26408\\ldots\n]\nis the **Vardi constant**. ([Erdős Problems][2])\n\nThese are due to:\n\n* **Lower bound**: Konyagin (2014). ([Erdős Problems][2])\n* **Upper bound**: Elsholtz–Planitzer (2021). ([Erdős Problems][2])\n\nA clean way to read these bounds is by taking logs twice.\n\n### What they say in “growth language”\n\nWrite (L(k)=\\log\\log F(k"
+}

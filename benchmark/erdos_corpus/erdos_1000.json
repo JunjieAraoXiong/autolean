@@ -1,0 +1,15 @@
+{
+  "uuid": "erdos_1000",
+  "problem": [
+    "Erdős Problem #1000"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 1000,
+  "status": "proved (Lean)",
+  "tags": [
+    "number theory",
+    "diophantine approximation"
+  ],
+  "prize": "no",
+  "formalized_on_site": false
+}

@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_993",
+  "problem": [
+    "The independent set sequence of any tree or forest is unimodal.\n\nIn other words, if i_k(G) counts the number of independent sets of vertices of size k in a graph G, and T is any tree or forest, then for some m≥ 0\ni_{0}(T)≤ i_{1}(T)≤\\cdots≤ i_{m}(T)≥ i_{m+1}(T)≥ i_{m+2}(T)≥\\cdots."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 993,
+  "status": "falsifiable",
+  "tags": [
+    "graph theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "The independent set sequence of any tree or forest is unimodal.\n\nIn other words, if $i_k(G)$ counts the number of independent sets of vertices of size $k$ in a graph $G$, and $T$ is any tree or forest, then for some $m\\geq 0$\n$$i_{0}(T)\\leq i_{1}(T)\\leq\\cdots\\leq i_{m}(T)\\geq i_{m+1}(T)\\geq i_{m+2}(T)\\geq\\cdots.$$",
+  "additional_context": "A question of Alavi, Erdős, Malde, and Schwenk \\cite{AEMS87}, who showed that this is false for general graphs G (in fact every possible pattern of inequalities is achieved by some graph).\n\nThe sequence which counts the number of independent sets of edges of a given size was proved to be unimodal (for any graph) by Schwenk \\cite{Sc81}. In \\cite{AEMS87} they also ask whether every possible unimodal pattern of inequalities is achieved by some graph.\n\nReferences\n\n[AEMS87] No reference found.\n\n[Sc81] Schwenk, Allen J., On unimodal sequences of graphical invariants. J. Combin. Theory Ser. B (1981), 247--250.",
+  "reference_proof_hint": "What you wrote is exactly the **Alavi–Erdős–Malde–Schwenk (1987)** question/conjecture about **independent set sequences / independence polynomials of trees (and possibly forests)**. It is **not known in general**: as of the current literature, the claim that *every tree or forest has a unimodal independent set sequence* remains **open**. ([Springer][1])\n\nThat said, there is a substantial amount of partial progress and “nearby” results. Here is a clear snapshot of what is known.\n\n## 1) The conjecture is still open (trees and forests)\n\nA recent 2025 paper explicitly restates the conjecture (“any tree or forest is unimodal”) and says it is **still open**. ([Springer][1])\n\nBasit–Galvin (2021) likewise frame it as an open problem and emphasize that the tree question and forest question are distinct. \n\n## 2) Trees vs forests: the forest case does **not** follow from the tree case\n\nIf a forest $F$ has components (T_1,\\dots,T_r), then\n[\nI(F;x)=\\prod_{j=1}^r I(T_j;x),\n]\nso the coefficient sequ"
+}

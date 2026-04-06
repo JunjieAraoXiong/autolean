@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_erdos_gallai",
+  "problem": [
+    "A sequence d_1 >= d_2 >= ... >= d_n of non-negative integers is the degree sequence of a simple graph if and only if the sum d_1 + d_2 + ... + d_n is even and for each k in {1, ..., n}, the inequality sum_{i=1}^{k} d_i <= k(k-1) + sum_{i=k+1}^{n} min(d_i, k) holds."
+  ],
+  "tier": 2,
+  "mathlib_status": "not_in_mathlib",
+  "building_blocks": [
+    "Mathlib.Combinatorics.SimpleGraph.Basic",
+    "Mathlib.Combinatorics.SimpleGraph.DegreeSum",
+    "Mathlib.Combinatorics.SimpleGraph.Finite",
+    "Mathlib.Data.Finset.Sort",
+    "Mathlib.Data.Nat.Parity",
+    "Mathlib.Order.Sort"
+  ],
+  "proof_strategy": "The necessity direction uses the handshaking lemma (even sum) and a double-counting argument bounding how many edges can land among the top-k vertices and between them and the rest. The sufficiency direction proceeds by induction via the Havel-Hakimi algorithm: remove the largest-degree vertex, reduce the degrees of its neighbors, and show the resulting sequence still satisfies the Erdos-Gallai conditions.",
+  "expected_difficulty": "hard"
+}

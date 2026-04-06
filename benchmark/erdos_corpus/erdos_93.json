@@ -1,0 +1,16 @@
+{
+  "uuid": "erdos_93",
+  "problem": [
+    "Erdős Problem #93"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 93,
+  "status": "proved (Lean)",
+  "tags": [
+    "geometry",
+    "convex",
+    "distances"
+  ],
+  "prize": "no",
+  "formalized_on_site": false
+}

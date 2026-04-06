@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_701",
+  "problem": [
+    "Let \\mathcal{F} be a family of sets closed under taking subsets (i.e. if B⊆ A∈\\mathcal{F} then B∈ \\mathcal{F}). There exists some element x such that whenever \\mathcal{F}'⊆ \\mathcal{F} is an intersecting subfamily we have| \\mathcal{F}'| ≤ | \\{ A∈ \\mathcal{F} : x∈ A\\}|."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 701,
+  "status": "open",
+  "tags": [
+    "combinatorics",
+    "intersecting family"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $\\mathcal{F}$ be a family of sets closed under taking subsets (i.e. if $B\\subseteq A\\in\\mathcal{F}$ then $B\\in \\mathcal{F}$). There exists some element $x$ such that whenever $\\mathcal{F}'\\subseteq \\mathcal{F}$ is an intersecting subfamily we have\\[\\lvert \\mathcal{F}'\\rvert \\leq \\lvert \\{ A\\in \\mathcal{F} : x\\in A\\}\\rvert.\\]",
+  "additional_context": "A problem of Chv\\'{a}tal \\cite{Ch74}, who proved it replacing the closed under subsets condition with the (stronger) condition that, assuming all sets in \\mathcal{F} are subsets of \\{1,\\ldots,n\\}, whenever A∈ \\mathcal{F} and there is an injection f:B→ A such that x≤ f(x) for all x∈ B, then B∈ \\mathcal{F}.\n\nSterboul \\cite{St74} proved this when, letting \\mathcal{G} be the maximal sets (under inclusion) in \\mathcal{F}, all sets in \\mathcal{G} have the same size, | A∩ B|≤ 1 for all A≠ B∈ \\mathcal{G}, and at least two sets in \\mathcal{G} have non-empty intersection.\n\nFrankl and Kupavskii \\cite{FrKu23} have proved this when \\mathcal{F} has covering number 2.\n\nBorg \\cite{Bo11} has proposed a weighted generalisation of this conjecture, which he proves under certain additional assumptions.\n\nReferences\n\n[Bo11] Borg, Peter, On Chv\\'{a}tal's conjecture and a conjecture on families of\nsigned sets. European J. Combin. (2011), 140-145.\n\n[Ch74] Chv\\'{a}tal, V., Intersecting families of edges in hypergraphs having the\nhereditary property.  (1974), 61-66.\n\n[FrKu23] Frankl, Peter and Kupavskii, Andrey, Perfect matchings in down-sets. Discrete Math. (2023), Paper No. 113323, 7.\n\n[St74] Sterboul, F., Sur une conjecture de V. Chv\\'{a}tal.  (1974), 152-164.",
+  "reference_proof_hint": "Write (\\mathcal F_x:={A\\in\\mathcal F:x\\in A}) [[nomath]](the “star” at $x$)[[/nomath]].\nYour statement says:\n\n> There is an $x$ such that every intersecting (\\mathcal F'\\subseteq\\mathcal F) satisfies\n> (|\\mathcal F'|\\le |\\mathcal F_x|).\n\n### Finite case\n\nIf (\\mathcal F) is finite [[nomath]](equivalently, the ground set $\\bigcup \\mathcal F$ is finite, since a down-set containing an infinite set would already be infinite)[[/nomath]], then this statement is exactly **Chvátal’s conjecture** (“every downset has the star property”). It is a well-known open problem in general. ([arXiv][1])\nIt is proved in several special cases [[nomath]](e.g. rank $\\le 3$, ground set size $\\le 7$, various compression hypotheses, etc.)[[/nomath]]. ([ScienceDirect][2])\n\n### Infinite case: the statement is **false**\n\nIf you allow infinite down-sets, there are counterexamples. Here is an explicit one (due to Keith Kearnes). ([MathOverflow][3])\n\n#### Construction\n\nLet (\\mathfrak c=2^{\\aleph_0}) be the continuum. C"
+}

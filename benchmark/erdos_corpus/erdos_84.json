@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_84",
+  "problem": [
+    "The cycle set of a graph G on n vertices is a set A⊆ \\{3,\\ldots,n\\} such that there is a cycle in G of length \\ell if and only if \\ell ∈ A. Let f(n) count the number of possible such A.\n\nProve that f(n)=o(2^n).\n\nProve that f(n)/2^{n/2}→ ∞."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 84,
+  "status": "open",
+  "tags": [
+    "graph theory",
+    "cycles"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "The cycle set of a graph $G$ on $n$ vertices is a set $A\\subseteq \\{3,\\ldots,n\\}$ such that there is a cycle in $G$ of length $\\ell$ if and only if $\\ell \\in A$. Let $f(n)$ count the number of possible such $A$.\n\nProve that $f(n)=o(2^n)$.\n\nProve that $f(n)/2^{n/2}\\to \\infty$.",
+  "additional_context": "Conjectured by Erdős and Faudree, who showed that 2^{n/2}<f(n) ≤ 2^{n-2}. The first problem was solved by Verstra\\\"{e}te \\cite{Ve04}, who provedf(n)\\ll 2^{n-n^{1/10}}.This was improved by Nenadov \\cite{Ne25} tof(n) \\ll 2^{n-n^{1/2-o(1)}}.One can also ask about the existence and value of \\lim f(n)^{1/n}.\n\nReferences\n\n[Ne25] R. Nenadov, Improved bound on the number of cycle sets. arXiv:2501.09904 (2025).\n\n[Ve04] Verstra\\\"{e}te, Jacques, On the number of sets of cycle lengths. Combinatorica (2004), 719-730.",
+  "reference_proof_hint": "Let $f(n)$ be the number of sets (A\\subseteq{3,\\dots,n}) that occur as the **cycle set** of some graph on $n$ vertices.\n\n## 1) Proof that $f(n)=o(2^n)$\n\nA result of Nenadov (improving an earlier bound of Verstraëte) says that there is a function (\\varepsilon(n)\\to 0) such that\n[\nf(n)\\ \\le\\ 2^{,n - n^{1/2-\\varepsilon(n)}} .\n]\n([Erdős Problems][1])\n\nDivide by $2^n$:\n[\n\\frac{f(n)}{2^n}\\ \\le\\ 2^{-,n^{1/2-\\varepsilon(n)}}.\n]\nSince (n^{1/2-\\varepsilon(n)}\\to\\infty), the right-hand side tends to $0$. Hence\n[\n\\frac{f(n)}{2^n}\\to 0,\n]\nwhich is exactly $f(n)=o(2^n)$.\n\nThat finishes the first part. ([Erdős Problems][1])\n\n---\n\n## 2) About (\\displaystyle \\frac{f(n)}{2^{n/2}}\\to\\infty)\n\n### What we can prove easily: (f(n)\\ge 2^{\\lfloor n/2\\rfloor})\n\nThis is Faudree’s lower-bound construction (often stated for even $n$; odd $n$ is similar).\n\nAssume $n$ is even. Label vertices (1,2,\\dots,n) and start with the path\n[\n1-2-3-\\cdots-n.\n]\nNow pick any subset\n[\nS\\subseteq\\left{\\frac n2+1,\\frac n2+2,\\dots,n\\"
+}

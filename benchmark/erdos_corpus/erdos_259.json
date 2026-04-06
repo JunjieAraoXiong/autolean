@@ -1,0 +1,15 @@
+{
+  "uuid": "erdos_259",
+  "problem": [
+    "Erdős Problem #259"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 259,
+  "status": "proved",
+  "tags": [
+    "irrationality"
+  ],
+  "prize": "no",
+  "formalized_on_site": true,
+  "ground_truth_lean": "/-\nCopyright 2025 The Formal Conjectures Authors.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    https://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n-/\n\nimport FormalConjectures.Util.ProblemImports\n\n/-!\n# Erdős Problem 259\n\n*Reference:* [erdosproblems.com/259](https://www.erdosproblems.com/259)\n-/\n\nopen scoped ArithmeticFunction.Moebius\n\nnamespace Erdos259\n\n/--\nIs $\\sum_{n} \\mu(n)^2\\frac{n}{2^n}$ irrational?\n\nThis is true, and was proved by Chen and Ruzsa.\n\n[ChRu99] Chen, Yong-Gao and Ruzsa, Imre Z., On the irrationality of certain series. Period. Math. Hungar. (1999), 31--37.\n-/\n@[category research solved, AMS 11]\ntheorem erdos_259 : Irrational (∑' n : ℕ, (μ n) ^ 2 * n / (2 ^ n)) := by\n  sorry\n\nend Erdos259\n"
+}

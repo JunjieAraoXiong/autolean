@@ -1,0 +1,15 @@
+{
+  "uuid": "erdos_899",
+  "problem": [
+    "Erdős Problem #899"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 899,
+  "status": "proved",
+  "tags": [
+    "additive combinatorics"
+  ],
+  "prize": "no",
+  "formalized_on_site": true,
+  "ground_truth_lean": "/-\nCopyright 2025 The Formal Conjectures Authors.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    https://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n-/\n\nimport FormalConjectures.Util.ProblemImports\n\n/-!\n# Erdős Problem 899\n\n*Reference:* [erdosproblems.com/899](https://www.erdosproblems.com/899)\n-/\n\nopen Filter Set\n\nopen scoped Pointwise Topology\n\nnamespace Erdos899\n\nopen Erdos899\n\n/--\nLet $A\\subseteq\\mathbb{N}$ be an infinite set such that $|A\\cap \\{1, ..., N\\}| = o(N)$.\nIs it true that\n$$\n\\limsup_{N\\to\\infty}\\frac{|(A - A)\\cap \\{1, ..., N\\}|}{|A \\cap \\{1, ..., N\\}|} = \\infty?\n$$\n\nThe answer is yes, proved by Ruzsa [Ru78].\n\n[Ru78] Ruzsa, I. Z., _On the cardinality of {$A+A$}\\ and {$A-A$}_. (1978), 933--938.\n-/\n@[category research solved, AMS 5]\ntheorem erdos_899 : answer(True) ↔ ∀ (A : Set ℕ), A.Infinite →\n    Tendsto (fun N => (A ∩ Icc 1 N |>.ncard : ℝ) / N) atTop (𝓝 0) →\n    atTop.limsup (fun N => ((A - A : Set ℕ) ∩ Icc 1 N |>.ncard : EReal) /\n      (A ∩ Icc 1 N).ncard) = ⊤ := by\n  sorry\n\nend Erdos899\n"
+}

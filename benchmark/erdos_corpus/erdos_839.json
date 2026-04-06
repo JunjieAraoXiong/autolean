@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_839",
+  "problem": [
+    "Let 1≤ a_1<a_2<\\cdots be a sequence of integers such that no a_i is the sum of consecutive a_j for j<i. Is it true that\\limsup (a_n)/(n)=∞?Or even\\lim (1)/(\\log x)∑_{a_n<x}(1)/(a_n)=0?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 839,
+  "status": "open",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $1\\leq a_1<a_2<\\cdots$ be a sequence of integers such that no $a_i$ is the sum of consecutive $a_j$ for $j<i$. Is it true that\\[\\limsup \\frac{a_n}{n}=\\infty?\\]Or even\\[\\lim \\frac{1}{\\log x}\\sum_{a_n<x}\\frac{1}{a_n}=0?\\]",
+  "additional_context": "Erdős writes that it is easy to see that \\liminf a_n/n<∞ is possible, and that one can have∑_{a_n< x}(1)/(a_n)\\gg \\log\\log x.The upper density of such a sequence can be 1/2, but Erdős thought it probably could not be >1/2. In fact this is false - Freud \\cite{Fr93} constructed a sequence with upper density 19/36.\n\nSee also [359] and [867].\n\nReferences\n\n[Fr93] R. Freud, Adding numbers - on a problem of P. Erdős. James Cook Mathematical Notes (1993), 6199-6202.",
+  "reference_proof_hint": "This is (to my knowledge) still **open** in the form you stated it: it is listed as Erdős problem **#839** (“no term is the sum of a consecutive block of earlier terms”), and neither of your two limits is presently known to hold in full generality. ([Erdős Problems][1])\n\nThat said, there is a fair amount known about *how dense such sequences can be*, which gives some context for why your two strengthenings are nontrivial.\n\n## What is known\n\nLet (A={a_1<a_2<\\cdots}), and write (A(x)=|{n:\\ a_n\\le x}|). Then:\n\n* Your first question\n  [\n  \\limsup_{n\\to\\infty}\\frac{a_n}{n}=\\infty\n  ]\n  is equivalent to saying the **lower asymptotic density** of $A$ is $0$, i.e.\n  [\n  \\liminf_{x\\to\\infty}\\frac{A(x)}{x}=0\n  ]\n  [[nomath]](since roughly $A(a_n)\\approx n$)[[/nomath]].\n\n* Your second question asks that the **logarithmic density** of $A$ is $0$:\n  $\n  \\lim_{x\\to\\infty}\\frac{1}{\\log x}\\sum_{a_n<x}\\frac1{a_n}=0.\n  $\n\nErdős already observed that one can make the sequence “locally dense” infinitely o"
+}

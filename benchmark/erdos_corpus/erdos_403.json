@@ -1,0 +1,15 @@
+{
+  "uuid": "erdos_403",
+  "problem": [
+    "Erdős Problem #403"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 403,
+  "status": "proved",
+  "tags": [
+    "number theory",
+    "factorials"
+  ],
+  "prize": "no",
+  "formalized_on_site": false
+}

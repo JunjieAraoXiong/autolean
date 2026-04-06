@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_1017",
+  "problem": [
+    "Let f(n,k) be such that every graph on n vertices and k edges can be partitioned into at most f(n,k) edge-disjoint complete graphs. Estimate f(n,k) for k>n^2/4."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 1017,
+  "status": "open",
+  "tags": [
+    "graph theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $f(n,k)$ be such that every graph on $n$ vertices and $k$ edges can be partitioned into at most $f(n,k)$ edge-disjoint complete graphs. Estimate $f(n,k)$ for $k>n^2/4$.",
+  "additional_context": "The function f(n,k) is sometimes called the clique partition number.\n\nErdős, Goodman, and P\\'{o}sa \\cite{EGP66} proved that f(n,k)≤ n^2/4 for all k (and in fact the complete graphs can be taken to be edges and triangles), which is best possible in general, as witnessed for example by a complete bipartite graph. In \\cite{Er71} Erd\\H{o} asks vaguely whether this result can be 'sharpened' for k>n^2/4.\n\nLov\\'{a}sz \\cite{Lo68} proved that every graph on n vertices and k edges is the union of \\binom{n}{2}-k+t complete graphs, where t is maximal such that t^2-t≤ \\binom{n}{2}-k, but without the assumption that the complete graphs are edge disjoint. Lov\\'{a}sz's result is sharp in many cases.\n\nIf k>n^2/4 and the graph contains no K_4 then this is equivalent to finding the minimum number of edge disjoint triangles. This special case was also asked about by Erdős. A complete answer was provided by Gy\\\"{o}ri and Keszegh \\cite{GyKe17}, who proved that every K_4-free graph with n vertices and \\lfloor n^2/4\\rfloor+m edges contins m pairwise edge disjoint triangles.\n\nSee also [184] for an analogous problem decomposing into edges and cycles, and [583] for decomposing into paths. The clique partition problem for chordal graphs is the subject of [81].\n\nReferences\n\n[EGP66] Erdős, Paul and Goodman, A. W. and P\\'{o}sa, Lajos, The representation of a graph by set intersections. Canadian J. Math. (1966), 106-112.\n\n[Er71] Erdős, P., Some unsolved problems in graph theory and combinatorial analysis. Combinatorial Mathematics and its Applications (Proc.\nConf., Oxford, 1969) (1971), 97-109.\n\n[GyKe17] Gy\\H{o}ri, Ervin and Keszegh, Bal\\'azs, On the number of edge-disjoint triangles in {K_4}-free\ngraphs. Combinatorica (2017), 1113--1124.\n\n[Lo68] Lov\\'{a}sz, L., On covering of graphs. Theory of Graphs (Proc. Colloq., Tihany, 1966) (1968), 231-236.",
+  "reference_proof_hint": "Write (\\operatorname{cp}(G)) for the **clique partition number** of $G$: the minimum $t$ such that $E(G)$ can be partitioned into $t$ edge-disjoint complete graphs. Then\n[\nf(n,k)=\\max{\\operatorname{cp}(G): |V(G)|=n,\\ |E(G)|=k}.\n]\n\n### Universal bound [[nomath]](works for all $k$)[[/nomath]]\n\nErdős–Goodman–Pósa proved that every $n$-vertex graph admits an edge-partition into **at most (\\lfloor n^2/4\\rfloor)** cliques (in fact, edges and triangles suffice), and this is tight at (k\\approx n^2/4) [[nomath]](balanced $K_{\\lfloor n/2\\rfloor,\\lceil n/2\\rceil}$)[[/nomath]]. ([Erdős Problems][1])\nSo for all $k$,\n[\nf(n,k)\\le \\left\\lfloor \\frac{n^2}{4}\\right\\rfloor .\n]\n\nThe point of your question is: once (k>n^2/4) (so triangles are forced), how much smaller can the *worst-case* (\\operatorname{cp}(G)) be?\n\n---\n\n## Translating “extra edges” into “triangles” [[nomath]](the $k>n^2/4$ regime)[[/nomath]]\n\nLet\n[\nk=\\left\\lfloor \\frac{n^2}{4}\\right\\rfloor+m,\\qquad m>0.\n]\n\nIf $G$ is (K_4)-free, then every"
+}

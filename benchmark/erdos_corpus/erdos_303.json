@@ -1,0 +1,16 @@
+{
+  "uuid": "erdos_303",
+  "problem": [
+    "Erdős Problem #303"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 303,
+  "status": "proved (Lean)",
+  "tags": [
+    "number theory",
+    "unit fractions"
+  ],
+  "prize": "no",
+  "formalized_on_site": true,
+  "ground_truth_lean": "/-\nCopyright 2025 The Formal Conjectures Authors.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    https://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n-/\n\nimport FormalConjectures.Util.ProblemImports\n\n/-!\n# Erdős Problem 303\n\n*References:*\n- [erdosproblems.com/303](https://www.erdosproblems.com/303)\n- [BrRo91] Brown, Tom C. and Rödl, Voijtech, Monochromatic solutions to equations with unit\n  fractions. Bull. Austral. Math. Soc. (1991), 387-392.\n-/\n\nnamespace Erdos303\n\n/--\nIs it true that in any finite colouring of the integers there exists a monochromatic solution\nto $\\frac 1 a = \\frac 1 b + \\frac 1 c$ with distinct $a, b, c$?\n\nThis is true, as proved by Brown and Rödl [BrRo91].\n\nThis was formalized in Lean by Yuan using Seed-Prover.\n-/\n@[category research solved, AMS 5 11, formal_proof using lean4 at \"https://www.erdosproblems.com/forum/thread/303\"]\ntheorem erdos_303 :\n    answer(True) ↔\n    -- For any finite colouring of the integers\n    ∀ (𝓒 : ℤ → ℤ), (Set.range 𝓒).Finite →\n      -- There exists integers `a, b, c`\n      ∃ (a b c : ℤ),\n      -- that are non-zero and distinct.\n      [a, b, c, 0].Nodup ∧\n      -- `a, b, c` satisfy the equation\n      (1/a : ℝ) = 1/b + 1/c ∧\n      -- `a, b, c` have the same color\n      (𝓒 '' {a, b, c}).Subsingleton := by\n  sorry\n\nend Erdos303\n"
+}

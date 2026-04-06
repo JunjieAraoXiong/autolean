@@ -1,0 +1,39 @@
+{
+  "uuid": "erdos_1103",
+  "problem": [
+    "Let A be an infinite sequence of integers such that every n∈ A+A is squarefree. How fast must A grow?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 1103,
+  "status": "open",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $A$ be an infinite sequence of integers such that every $n\\in A+A$ is squarefree. How fast must $A$ grow?",
+  "additional_context": "Erdős notes there exists such a sequence which grows exponentially, but does not expect such a sequence of polynomial growth.\n\nIn \\cite{Er81h} he asked whether there is an infinite sequence of integers A such that, for every a∈ A and prime p, ifa\\equiv t\\pmod{p^2}then 1≤ t<p^2/2. He noted that such a sequence has the property that every n∈ A+A is squarefree. He wrote 'I am doubtful if such a sequence exists. I formulated this problem while writing these lines and must ask the indulgence of the reader if it turns out to be trivial.'\n\nIndeed, there are trivially at most finitely many such a, since there cannot be any primes p∈ (a^{1/2},(2a)^{1/2}], but there exist primes in (x,\\sqrt{2}x) for all large x.\n\nIf A=\\{a_1<a_2<\\cdots\\} is such a sequence then van Doorn and Tao \\cite{vDTa25} have shown that a_j > 0.24j^{4/3} for all j, and further that there exists such a sequence (furthermore with squarefree terms) such thata_j < \\exp(5j/\\log j)for all large j. A superior lower bound of a_j \\gg j^{15/11-o(1)} had earlier been found by Konyagin \\cite{Ko04} when considering the finite case [1109].\n\nThey also obtain further results for the generalisation from squarefree to k-free integers, and also replacing A+A with A∪ (A+A)∪(A+A+A).\n\nSee also [1109] for the finite analogue of this problem.\n\nReferences\n\n[Er81h] Erdős, P., Some problems and results on additive and multiplicative\nnumber theory. Analytic number theory (Philadelphia, Pa., 1980) (1981), 171-182.\n\n[Ko04] Konyagin, S. V., Problems of the set of square-free numbers. Izv. Ross. Akad. Nauk Ser. Mat. (2004), 63--90.\n\n[vDTa25] W. van Doorn and T. Tao, Growth rates of sequences governed by the squarefree properties of its translates. arXiv:2512.01087 (2025).",
+  "reference_proof_hint": "Write the sequence as (A={a_1<a_2<\\cdots}\\subset \\mathbb Z).\nYour condition is that **every pairwise sum** (a_i+a_j) [[nomath]](including $2a_i$)[[/nomath]] is squarefree.\n\nA convenient way to phrase “how fast $A$ must grow” is via the counting function\n[\nA(N):=\\bigl|A\\cap[1,N]\\bigr|\n]\nor equivalently via the size of (a_j) in terms of $j$.\n\n## What is known (best current bounds)\n\nLet (\\mathrm{ES}_N) denote the **maximum** size of a subset of ({1,2,\\dots,N}) whose pairwise sums are all squarefree. Then for any infinite $A$ with squarefree sums, we always have\n[\nA(N)\\le \\mathrm{ES}_N\n]\nand hence (a_j) is controlled by upper bounds on (\\mathrm{ES}_N). (This is exactly the finite analogue studied in the literature.)\n\n### Best known upper bound on $A(N)$ (hence best lower bound on growth)\n\nThe currently best bounds quoted for (\\mathrm{ES}_N) are [[nomath]](for large $N$)[[/nomath]]\n[\n\\mathrm{ES}_N \\ll N^{11/15}\\exp\\\\(O\\\\(\\tfrac{\\log N}{\\sqrt{\\log\\log N}}\\\\)\\\\),\n]\ndue to work of Konyagin in ",
+  "expert_comments": [
+    {
+      "author": "",
+      "text": "I dont understand the part \"furthermore with squarefree terms\", because by simply taking $a+a$ for some term of $A$, we immediately have that $a$ must be squarefree."
+    },
+    {
+      "author": "Dogmachine",
+      "text": "The paper Terence Tao and I just uploaded is mostly aimed at resolving #1102, but we have some results for this problem as well. In particular, we improve upon the $0$ density result in my earlier comment and, in the other direction, we show the existence of a sequence with sub-exponential growth. More precisely, define $\\mathcal{SF} \\subset \\mathbb{N}$ to be the set of squarefree integers, let $kA$ be the set of $k$ (not necessarily distinct) elements of $A$, and let us say that $A$ has squarefree sums if $2A \\subset \\mathcal{SF}$. We then have the following results:\n\nTheorem 1. For any sequence $A = \\{a_1 < a_2 < \\cdots \\} \\subset \\mathbb{N}$ with squarefree sums, we have $a_j > 0.24j^{4/3}$ for all $j \\in \\mathbb{N}$.\n\nTheorem 2. There exists a sequence $A = \\{a_1 < a_2 < \\cdots \\} \\subset \\mathcal{SF}$ with squarefree sums for which $a_j < \\exp(5j / \\log j)$ holds for all large enough $j \\in \\mathbb{N}$.\n\nWe furthermore observe that the proofs of Theorem 1 and 2 can be modified to "
+    },
+    {
+      "author": "Woett",
+      "text": "Benjamin Bedert has pointed out to us that there is in fact a significant body of literature on this problem already, namely\n\n* P. Erdős and A. Sárközy. On divisibility properties of integers of the form a + a′. Acta Math. Hungar., 50(1-\n2):117–122, 1987. doi:10.1007/BF01903370.\n* S. V. Konyagin. Problems of the set of square-free numbers. Izv. Ross. Akad. Nauk Ser. Mat., 68(3):63–90, 2004.\ndoi:10.1070/IM2004v068n03ABEH000486.\n* G. N. Sárközy. On a problem of P. Erdős. Acta Math. Hungar., 60(3-4):271–282, 1992. doi:10.1007/BF00051645.\n* Katalin Gyarmati. On divisibility properties of integers of the form ab + 1. Period. Math. Hungar., 43(1-2):71–79,\n2001. doi:10.1023/A:1015229531017.\n\nIn particular, the results of Konyagin give the improved lower bound\n$$ a_j \\gg j^{15/11} \\exp\\left( -O\\left(\\frac{\\log j}{\\sqrt{\\log\\log j}} \\right)\\right).$$\n\nKonyagin also constructs subsets of $\\{1,\\dots,N\\}$ with squarefree sums of cardinality $\\gg \\log^2 N \\log\\log N$.  If there was a way to paste t"
+    },
+    {
+      "author": "TerenceTao",
+      "text": "Thanks! I see that Erdős and Sárközy were just looking at the finite case, which (although obviously closely related) feels like a different enough problem to me that I've separated it at [1109].\n\nHopefully I've managed to capture all the relevant results and references between the two problems, please let me know if not.\n\n(I believe there is a typo in your Konyagin lower bound, the exponent should be $15/11$.)"
+    },
+    {
+      "author": "Thomas Bloom",
+      "text": "For a prime $p$, let $A_p$ be the set of residue classes $x \\pmod{p^2}$ for which at least two distinct $a \\in A$ exist with $a \\equiv x \\pmod{p^2}$. Then $|A_p| < \\frac{p^2}{2}$ for all $p$ by the assumption that $A + A$ only contains squarefree integers. Taking the product $M = (p_1p_2 \\cdots p_k)^2$ of distinct primes $p_1, p_2, \\ldots, p_k$ then gives that the number of residue classes $x \\pmod{M}$ that occur more than once among the $a \\in A$ is smaller than $\\frac{M}{2^k}$. By the infinitude of primes we therefore obtain $A \\cap \\{1, 2, \\ldots, x\\} = o(x)$.\n\nI understand that this is a terrible bound which is clearly improvable, but hey, you have to start somewhere!"
+    }
+  ]
+}

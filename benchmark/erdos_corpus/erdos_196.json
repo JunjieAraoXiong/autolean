@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_196",
+  "problem": [
+    "Must every permutation of ℕ contain a monotone 4-term arithmetic progression? In other words, given a permutation x of ℕ must there be indices with either i<j<k<l or i>j>k>l such that x_i,x_j,x_k,x_l are an arithmetic progression?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 196,
+  "status": "open",
+  "tags": [
+    "arithmetic progressions"
+  ],
+  "prize": "no",
+  "formalized_on_site": true,
+  "original_latex": "Must every permutation of $\\mathbb{N}$ contain a monotone 4-term arithmetic progression? In other words, given a permutation $x$ of $\\mathbb{N}$ must there be indices with either $i<j<k<l$ or $i>j>k>l$ such that $x_i,x_j,x_k,x_l$ are an arithmetic progression?",
+  "additional_context": "Davis, Entringer, Graham, and Simmons \\cite{DEGS77} have shown that there must exist a monotone 3-term arithmetic progression and need not contain a 5-term arithmetic progression.\n\nSee also [194] and [195].\n\nReferences\n\n[DEGS77] Davis, J. A. and Entringer, R. C. and Graham, R. L. and\nSimmons, G. J., On permutations containing no long arithmetic progressions. Acta Arith. (1977/78), 81-90.",
+  "reference_proof_hint": "No one knows the answer yet.\n\nThis is a well-known open problem (asked by Erdős and Graham). It is listed as open as “Erdős Problem #196”. ([Erdős Problems][1])\n\nA small simplification: if you find indices (i>j>k>l) with ((x_i,x_j,x_k,x_l)) an arithmetic progression, then ((x_l,x_k,x_j,x_i)) is also an arithmetic progression, and now the indices are increasing. So it is enough to ask for (i<j<k<l). (Reversing the order just changes the common difference from $d$ to $-d$.)\n\n### What is known around it\n\n* **Length 3 is forced.** Every permutation of (\\mathbb N) has a 3-term arithmetic progression as a subsequence. There is even a short proof: take the first term (a_1), take the first later term (a_k>a_1), then the number (2a_k-a_1) must appear somewhere to the right (because it is a permutation), and (a_1,a_k,2a_k-a_1) is a 3-term AP. \n\n* **Length 5 can be avoided.** Davis–Entringer–Graham–Simmons constructed a permutation of the positive integers with **no** 5-term arithmetic progressio",
+  "ground_truth_lean": "/-\nCopyright 2025 The Formal Conjectures Authors.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    https://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n-/\n\nimport FormalConjectures.Util.ProblemImports\n\n/-!\n# Erdős Problem 196\n\n*Reference:* [erdosproblems.com/196](https://www.erdosproblems.com/196)\n-/\nnamespace Erdos196\n\n/-- Must every permutation of $\\mathbb{N}$, contain a monotone 4-term arithmetic progression?-/\n@[category research open, AMS 5 11]\ntheorem erdos_196 : answer(sorry) ↔ ∀ (f : ℕ ≃ ℕ), HasMonotoneAP f 4 := by\n  sorry\n\nend Erdos196\n"
+}

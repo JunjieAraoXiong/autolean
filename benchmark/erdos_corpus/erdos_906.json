@@ -1,0 +1,19 @@
+{
+  "uuid": "erdos_906",
+  "problem": [
+    "Is there an entire non-zero function f:\\mathbb{C}→ \\mathbb{C} such that, for any infinite sequence n_1<n_2<\\cdots, the set\\{ z: f^{(n_k)}(z)=0 \\textrm{ for some }k≥ 1\\}is everywhere dense?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 906,
+  "status": "open",
+  "tags": [
+    "analysis",
+    "iterated functions"
+  ],
+  "prize": "no",
+  "formalized_on_site": true,
+  "original_latex": "Is there an entire non-zero function $f:\\mathbb{C}\\to \\mathbb{C}$ such that, for any infinite sequence $n_1<n_2<\\cdots$, the set\\[\\{ z: f^{(n_k)}(z)=0 \\textrm{ for some }k\\geq 1\\}\\]is everywhere dense?",
+  "additional_context": "Erdős \\cite{Er82e} writes that this was solved in the affirmative 'more than ten years ago', but gives no reference or indication who solved it. From context he seems to attribute this to Barth and Schneider \\cite{BaSc72}, but this paper contains no such result.\n\nTang points out that the problem is trivial if we take f to be a polynomial, so presumably it is intended the function f is transcendental.\n\nReferences\n\n[BaSc72] Barth, K. F. and Schneider, W. J., On a problem of Erdős concerning the zeros of the\nderivatives of an entire function. Proc. Amer. Math. Soc. (1972), 229--232.\n\n[Er82e] Erdős, Paul, Some of my favourite problems which recently have been solved.  (1982), 59--79.",
+  "reference_proof_hint": "Yes — in fact, **any nonzero polynomial works**.\n\nExample: take (f(z)=1). Then for every (n\\ge 1),\n[\nf^{(n)}(z)\\equiv 0 \\quad\\text{for all }z\\in\\mathbb C,\n]\nso for any infinite increasing sequence (n_1<n_2<\\cdots),\n[\n{z:\\ f^{(n_k)}(z)=0\\text{ for some }k}=\\mathbb C,\n]\nwhich is certainly everywhere dense.\n\nMore generally, if $f$ is a polynomial of degree $d$, then (f^{(n)}\\equiv 0) for all (n>d), and every infinite increasing sequence ((n_k)) eventually contains some (n_k>d). Hence the set above is again all of (\\mathbb C).\n",
+  "ground_truth_lean": "/-\nCopyright 2025 The Formal Conjectures Authors.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    https://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n-/\n\nimport FormalConjectures.Util.ProblemImports\n\n/-!\n# Erdős Problem 906\n\n*Reference:* [erdosproblems.com/906](https://www.erdosproblems.com/906)\n-/\n\nnamespace Erdos906\n\n/-- Does there exists an entire non-zero transcendental function `f : ℂ → ℂ` such that for any\nsequence `n₀ < n₁ < ...`, `{ z | ∃ k, iteratedDeriv (n k) f z = 0 }` is dense. -/\n@[category research open, AMS 30]\ntheorem erdos_906 : answer(sorry) ↔ ∃ f : ℂ → ℂ, Transcendental (Polynomial ℂ) f ∧\n    Differentiable ℂ f ∧ ∀ n : ℕ → ℕ, StrictMono n →\n    Dense { z | ∃ k, iteratedDeriv (n k) f z = 0 } := by\n  sorry\n\nend Erdos906\n"
+}

@@ -1,0 +1,12 @@
+{
+  "uuid": "bertrand_postulate",
+  "problem": [
+    "Prove Bertrand's postulate (Erdős's proof): for every natural number n > 0, there exists a prime p such that n < p ≤ 2n."
+  ],
+  "tier": 1,
+  "mathlib_status": "formalized",
+  "mathlib_declaration": "Nat.bertrand",
+  "mathlib_module": "Mathlib/NumberTheory/Bertrand",
+  "proof_strategy": "Central binomial coefficient prime factorization analysis",
+  "expected_difficulty": "easy_with_retrieval"
+}

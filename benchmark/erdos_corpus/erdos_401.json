@@ -1,0 +1,101 @@
+{
+  "uuid": "erdos_401",
+  "problem": [
+    "Erdős Problem #401"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 401,
+  "status": "proved (Lean)",
+  "tags": [
+    "number theory",
+    "factorials"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "expert_comments": [
+    {
+      "author": "",
+      "text": "EDIT (on April 02, 2026): ** This was an April joke. ** I had asked\nChat GPT 5.4 Thinking to generate a fake alternative proof\nfor problem 401, making free use of intense hallucinating.\n\nThe model answered: \"Ok, I like the idea\", and then\nit delivered. The first version was still way too simple to\nbe identified as a joke, so I organized some finetuning.\n\nAlternative Proof\n\nOriginal words of GPT: \"I love the second contour shift!\""
+    },
+    {
+      "author": "old-bielefelder",
+      "text": "🤡"
+    },
+    {
+      "author": "natso26",
+      "text": "EDIT (on April 02, 2026):\nI let Gemini 3.1 Pro check the alternative proof.\nIt was quick to identify a few errors. In particular, it also wrote:\n\n> There is a highly specific, very recent reason why the author \n> chose Erdős Problem #401 for this prank, and it is directly \n> tied to the current events in the mathematical community.\n>\n> Considering today's date—April 1, 2026—this document is \n> an elaborate April Fools' joke designed to troll mathematicians \n> who are currently caught up in the recent hype surrounding \n> Artificial Intelligence.\n\nIt is reassuring to see that noone of our \nfriendly community fell in the pit.\n\n Gemini speaking"
+    },
+    {
+      "author": "old-bielefelder",
+      "text": "On reading the source [ErGr80, p.78] it is ambiguous whether the question is posed for all sufficiently large $n$ (as is currently written here) or just for infinitely many $n$.  I imagine that the type of arguments used to establish #728 or #729 can obtain a result of the latter type, but the \"all $n$\" version of the problem looks significantly harder to settle in the affirmative (and may in fact be false). The situation may be similar to that in #728 in which many formulations of the problem may admit degenerate solutions, and some thought will need to be taken to locate a proper formulation of the problem that captures the spirit of the question (taking into account all the related discussion in [ErGr80]).\n\nEDIT: A Claude literature search did not uncover any relevant references."
+    },
+    {
+      "author": "TerenceTao",
+      "text": "Kevin and I will give it ago!"
+    },
+    {
+      "author": "Liam Price",
+      "text": "I am happy to announce that the \"all $n$\" version is false!\n\nSpecifically, ChatGPT shows that taking $n = p_{r+1}^k - 1$ we must have $a_1+a_2-n \\le 2p_{r+1}$ for $r \\ge 2$. Thus in fact $\\omega(r) = 0$ for all $r \\ge 2$. I have checked the argument manually; it is pretty readable. It's not autonomous because I gave a hint to look at #728, #729 and to use Kummer. ChatGPT took $27+13=40$ minutes."
+    },
+    {
+      "author": "natso26",
+      "text": "Damn! Beat me to it. GPT-5.2 Pro was still generating a response for me. Nice job. I guess mine might be considered autonomous, though. Still trying to come to an understanding of what the likely non-trivial intent is."
+    },
+    {
+      "author": "Kevin Barreto",
+      "text": "Update: I’ve had a conversation with GPT-5.2 Pro on the various different possible interpretations of the problem. It may be worth others having a read so that we can come to an understanding of what the likely intent is. See here."
+    },
+    {
+      "author": "Kevin Barreto",
+      "text": "Great! I see that your instance has a similar solution to mine but with a stronger bound; I have not checked it though. But the approach looks largely correct (in fact very similar).\n\nThis would indeed be autonomous. I see that you feed 728, 729 solutions. While this preserves autonomy, I do get a bit worried because there are gaps in those solutions and your instance is probably not aware of that.\n\nI think if we finally get a Lean proof - that’s the certificate. But all these intermediate conversations are now “tainted” with inherited gaps… Not a bad thing if the current goal is autonomy, but I guess this means we’d need a human-readable version independent of these chats later.\n\nI suppose at this point the intent is likely the “infinitely many” version? (If we take it to be the “all sufficiently large” version, then there’s a solution as well, so all good!)"
+    },
+    {
+      "author": "natso26",
+      "text": "I think it is now clear (from context and comparing to earlier problems and papers of Erdős) that the 'for infinitely many $n$' version was intended (in fact, the way the problem is written this is equivalent to the 'at least one $n$' statement). The 'for all large $n$' is not present in [ErGr80], and is my misreading of the source."
+    },
+    {
+      "author": "Thomas Bloom",
+      "text": "Yep FYI this is how I interpreted the problem and GPT-5.2 Pro did give a positive answer, I’m just waiting on Aristotle to formalise its proof before posting."
+    },
+    {
+      "author": "Kevin Barreto",
+      "text": "Presumably there should be a single clean theorem statement this proof idea gives, from which this problem and [728] and [729] are all immediate corollaries?"
+    },
+    {
+      "author": "Thomas Bloom",
+      "text": "I have a feeling something like this should be possible... but it's still not immediately clear what it is from my [728] writeup + my [729] argument.\n\nOnce we have this [401] solution as well (assuming Aristotle succeeds), I may think about what this should be!"
+    },
+    {
+      "author": "natso26",
+      "text": "GPT-5.2 Pro produced this informal proof for the infinitely many $n$ interpretation. It can be viewed as a PDF here. Aristotle has autoformalised its proof (although for some strange reason \"X_fixed_eq_countP_digits_fixed\" gives an error, so gonna get it to redo the proof of that one), which can be viewed here. This takes a long time to compile. I do want autoformalisers to write faster-compiling Lean code in future.\n\nUPDATE: Even after sorrying that lemma proof and getting Aristotle to fill in the sorry, it reproduces a similar error-giving proof. Not sure what's happening there. I've reached out to someone at Harmonic to see if it's a bug with Aristotle.\n      \n      \n      \n(The site has been updated to address this comment.)"
+    },
+    {
+      "author": "Kevin Barreto",
+      "text": "Congrats again!"
+    },
+    {
+      "author": "natso26",
+      "text": "Here is a version that compiles.  Type-check it online!\n      \n      \n      \n(The site has been updated to address this comment.)"
+    },
+    {
+      "author": "BorisAlexeev",
+      "text": "Thanks Boris! I think we’ve come to an agreement that this should constitute a resolution to this problem. I don’t think any past literature has been located resolving it. Thus, this should be a section 1 result as well."
+    },
+    {
+      "author": "Kevin Barreto",
+      "text": "Great!\n\nGiven the level of human interaction involved here, for instance with regards to reconstructing the intent of the problem, I think I will classify this one as a Section 4 result for the purpose of the wiki, though the boundary line is a little bit blurry."
+    },
+    {
+      "author": "TerenceTao",
+      "text": "So I just noticed (actually it was ChatGPT) that our solution for [729] implies [401].\n\nTo recap, in [729] it was shown that for any $c > 0$, there is $A = A(c)$ such that for all sufficiently large $M$, there exists $m \\in [M, 2M]$ such that the family\n$$ n = 2m, a = m + k, b = m, k = \\lfloor c \\log M \\rfloor. $$\nsatisfies that $n!/(a!b!)$ has denominator containing only primes $\\le A$.\n\nTo make it into a [401] solution, large primes $> A$ are automatic. For small primes $\\le A$, you need\n$$ v_p(m!) + v_p((m+k)!) - v_p((2m)!) \\le 2m. $$\nUsing the base-$p$ version of Legendre's formula, the left-hand side is just $O(\\log m)$. So there is enough room, actually way too much.\n\nNow you need to turn this into $f(r)$. One way is $f(r) = 0.9 \\sup \\{ c: A(c) \\le p_r \\}$. (If this is infinite at some point it's even easier, so we can assume finite.) It's easy to check that this works and $f(r) \\to \\infty$ as $r \\to \\infty$."
+    },
+    {
+      "author": "natso26",
+      "text": "Nice! For the record, I’m currently trying to see if I can push GPT on [400]. I think it would be nice to collaborate on writing up a publishable human-readable paper combining the solutions of 401, 758, and 759 in a natural way (and hopefully 400 if I can get it out of it, but it seems to be struggling)."
+    },
+    {
+      "author": "Kevin Barreto",
+      "text": "Nice! Don't know if [400] is similar or different from [728]/[729]/[401] though, so don't know if it will succeed.\n\nAbout the paper, I think I can at least help but you may want a different main author (could be yourself) who owns the project."
+    }
+  ]
+}

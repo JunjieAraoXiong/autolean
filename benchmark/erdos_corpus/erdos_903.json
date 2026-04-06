@@ -1,0 +1,14 @@
+{
+  "uuid": "erdos_903",
+  "problem": [
+    "Erdős Problem #903"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 903,
+  "status": "proved",
+  "tags": [
+    "combinatorics"
+  ],
+  "prize": "no",
+  "formalized_on_site": false
+}

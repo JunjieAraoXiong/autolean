@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_1088",
+  "problem": [
+    "Let f_d(n) be the minimal m such that any set of m points in ℝ^d contains a set of n points such that any two determined distances are distinct. Estimate f_d(n). In particular, is it true that, for fixed n≥ 3,f_d(n)=2^{o(d)}?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 1088,
+  "status": "open",
+  "tags": [
+    "geometry"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $f_d(n)$ be the minimal $m$ such that any set of $m$ points in $\\mathbb{R}^d$ contains a set of $n$ points such that any two determined distances are distinct. Estimate $f_d(n)$. In particular, is it true that, for fixed $n\\geq 3$,\\[f_d(n)=2^{o(d)}?\\]",
+  "additional_context": "It is easy to prove that f_d(n) ≤ n^{O_d(1)}. Erdős \\cite{Er75f} claimed that he and Straus proved f_d(n)≤ c_n^d for some constant c_n>0.\n\nWhen d=1 this is the subject of [530], and f_1(n)\\asymp n^2.\n\nWhen n=3 this is the subject of [503]. Erdős could prove f_2(3)=7 and Croft \\cite{Cr62} proved f_3(3)=9. The results described at [503] demonstrate that f_d(3)=d^2/2+O(d).\n\nReferences\n\n[Cr62] Croft, H. T., 9-point and 7-point configurations in 3-space. Proc. London Math. Soc. (3) (1962), 400-424.\n\n[Er75f] Erdős, Paul, On some problems of elementary and combinatorial geometry. Ann. Mat. Pura Appl. (4) (1975), 99-108.",
+  "reference_proof_hint": "Write (f_d(n)) for the least $m$ such that **every** $m$-point set (P\\subset \\mathbb R^d) contains an $n$-point subset (Q\\subset P) with **all** (\\binom n2) pairwise distances in $Q$ distinct [[nomath]](a “no–repeated-distance” $n$-set)[[/nomath]]. This is exactly the parameter Erdős denoted $J(n;d)$. ([Springer][1])\n\n## What is known\n\n### 1) Fixed dimension $d$, (n\\to\\infty)\n\nErdős observed already in 1975 that for each fixed $d$ one has a polynomial bound\n[\nf_d(n)\\le n^{c_d}\n]\nfor some exponent (c_d) depending on $d$ [[nomath]](he writes “$J(n;k) < n^{c_k}$”)[[/nomath]]. ([Springer][1])\nSo for fixed $d$, the growth in $n$ is at most polynomial [[nomath]](though the best exponent $c_d$ is not determined in general)[[/nomath]].\n\n### 2) Fixed $n$, (d\\to\\infty): the Erdős–Straus exponential upper bound and Erdős’s conjecture\n\nErdős stated that he and Straus proved an unpublished bound of the form\n[\nf_d(n)\\le c_n^{d}\n]\nfor a constant (c_n>0) depending only on $n$. ([Springer][1])\n\nHe also"
+}

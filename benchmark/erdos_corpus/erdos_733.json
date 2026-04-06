@@ -1,0 +1,15 @@
+{
+  "uuid": "erdos_733",
+  "problem": [
+    "Erdős Problem #733"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 733,
+  "status": "proved",
+  "tags": [
+    "combinatorics",
+    "geometry"
+  ],
+  "prize": "no",
+  "formalized_on_site": false
+}

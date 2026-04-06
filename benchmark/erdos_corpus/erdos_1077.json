@@ -1,0 +1,15 @@
+{
+  "uuid": "erdos_1077",
+  "problem": [
+    "Erdős Problem #1077"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 1077,
+  "status": "disproved",
+  "tags": [
+    "graph theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": true,
+  "ground_truth_lean": "/-\nCopyright 2025 The Formal Conjectures Authors.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    https://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n-/\n\nimport FormalConjectures.Util.ProblemImports\n\n/-!\n# Erdős Problem 1077\n\n*Reference:* [erdosproblems.com/1077](https://www.erdosproblems.com/1077)\n-/\n\nopen Classical Finset Filter SimpleGraph\n\nnamespace Erdos1077\n\n/--\nWe call a graph $D$-balanced (or $D$-almost-regular) if the maximum degree is at most $D$ times the\nminimum degree.\n\nLet $ε, α > 0$ and $D$ and $n$ be sufficiently large. If $G$ is a graph on $n$ vertices with at\nleast $n^{1+α}$ edges, then must $G$ contain a $D$-balanced subgraph on $m > n^{1-α}$ vertices with\nat least $εm^{1+α}$ edges?\n-/\n@[category research solved, AMS 5]\ntheorem erdos_1077 :\n    answer(False) ↔ ∀ ε > (0 : ℝ), ε < 1 → ∀ α > (0 : ℝ), α < 1 → ∀ᶠ D in atTop, ∀ᶠ n in atTop,\n      ∀ G : SimpleGraph (Fin n), G.edgeSet.ncard > (n : ℝ) ^ (1 + α) →\n        ∃ (H : Subgraph G),\n          letI m := H.verts.ncard\n          IsBalanced H.coe D ∧\n          m > (n : ℝ) ^ (1 - α) ∧\n          H.edgeSet.ncard > ε * m ^ (1 + α) := by\n  sorry\n\nend Erdos1077\n"
+}

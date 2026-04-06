@@ -1,0 +1,16 @@
+{
+  "uuid": "erdos_523",
+  "problem": [
+    "Erdős Problem #523"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 523,
+  "status": "proved",
+  "tags": [
+    "analysis",
+    "probability",
+    "polynomials"
+  ],
+  "prize": "no",
+  "formalized_on_site": false
+}

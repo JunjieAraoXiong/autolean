@@ -1,0 +1,14 @@
+{
+  "uuid": "erdos_1023",
+  "problem": [
+    "Erdős Problem #1023"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 1023,
+  "status": "solved (Lean)",
+  "tags": [
+    "combinatorics"
+  ],
+  "prize": "no",
+  "formalized_on_site": false
+}

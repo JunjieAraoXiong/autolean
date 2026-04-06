@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_604",
+  "problem": [
+    "Given n distinct points A⊂ℝ^2 must there be a point x∈ A such that\\#\\{ d(x,y) : y ∈ A\\} \\gg n^{1-o(1)}?Or even \\gg n/\\sqrt{\\log n}?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 604,
+  "status": "open",
+  "tags": [
+    "geometry",
+    "distances"
+  ],
+  "prize": "$500",
+  "formalized_on_site": false,
+  "original_latex": "Given $n$ distinct points $A\\subset\\mathbb{R}^2$ must there be a point $x\\in A$ such that\\[\\#\\{ d(x,y) : y \\in A\\} \\gg n^{1-o(1)}?\\]Or even $\\gg n/\\sqrt{\\log n}$?",
+  "additional_context": "The pinned distance problem, a stronger form of [89]. The example of an integer grid show that n/\\sqrt{\\log n} would be best possible.\n\nIt may be true that there are \\gg n many such points, or that this is true on average -  for example, if d(x) counts the number of distinct distances from x then in \\cite{Er75f} Erdős conjectured∑_{x∈ A}d(x) \\gg (n^2)/(\\sqrt{\\log n)},where A⊂ ℝ^2 is any set of n points.\n\nIn \\cite{Er97e} Erdős offers \\500 for a solution to this problem, but it is unclear whether he intended this for proving the existence of a single such point or for \\gg n many such points.\n\nIn \\cite{Er97e} Erdős wrote that he initially 'overconjectured' and thought that the answer to this problem is the same as for the number of distinct distances between all pairs (see [89]), but this was disproved by Harborth. It could be true that the answers are the same up to an additive factor of n^{o(1)}$.\n\nThe best known bound is\\gg n^{c-o(1)},due to Katz and Tardos \\cite{KaTa04}, wherec=(48-14e)/(55-16e)=0.864137\\cdots.\n\nReferences\n\n[Er75f] Erdős, Paul, On some problems of elementary and combinatorial geometry. Ann. Mat. Pura Appl. (4) (1975), 99-108.\n\n[Er97e] Erdős, Paul, Some of my favourite unsolved problems. Math. Japon. (1997), 527-537.\n\n[KaTa04] Katz, Nets Hawk and Tardos, G\\'{a}bor, A new entropy inequality for the Erdős distance problem. Towards a theory of geometric graphs (2004), 119-126.",
+  "reference_proof_hint": "This is the **(discrete) pinned distance problem** (Erdős problem #604), and the bounds you ask for are **not known** in general.\n\nIf we write\n[\nd(x):=|\\\\{|x-y|:y\\in A\\\\}|,\\qquad \\widehat D(n):=\\min_{|A|=n}\\max_{x\\in A} d(x),\n]\nthen your question is whether (\\widehat D(n)\\gg n^{1-o(1)}), or even (\\widehat D(n)\\gg n/\\sqrt{\\log n}).\n\n### Upper bound [[nomath]](why $n/\\sqrt{\\log n}$ would be best possible)[[/nomath]]\n\nA (\\sqrt n\\times \\sqrt n) integer grid has only (\\Theta(n/\\sqrt{\\log n})) distinct distances (by the Landau–Ramanujan theorem on sums of two squares), so certainly\n[\n\\widehat D(n)\\le O(n/\\sqrt{\\log n}).\n]\nThis is the standard “best possible” obstruction. \n\n### Best known general lower bound [[nomath]](far from $n^{1-o(1)}$)[[/nomath]]\n\nThe problem is open, and the best current general lower bound is **polynomial with exponent (\\approx 0.8641)**:\n[\n\\widehat D(n)\\ \\ge\\ n^{,c-o(1)},\\qquad c=\\frac{48-14e}{55-16e}=0.864137\\ldots,\n]\ndue to **Katz–Tardos (2004)** [[nomath]](in the "
+}

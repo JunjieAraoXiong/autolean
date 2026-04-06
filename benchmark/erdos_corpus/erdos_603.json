@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_603",
+  "problem": [
+    "Let (A_i) be a family of countably infinite sets such that | A_i∩ A_j| ≠ 2 for all i≠ j. Find the smallest cardinal C such that ∪ A_i can always be coloured with at most C colours so that no A_i is monochromatic."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 603,
+  "status": "open",
+  "tags": [
+    "combinatorics",
+    "set theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $(A_i)$ be a family of countably infinite sets such that $\\lvert A_i\\cap A_j\\rvert \\neq 2$ for all $i\\neq j$. Find the smallest cardinal $C$ such that $\\cup A_i$ can always be coloured with at most $C$ colours so that no $A_i$ is monochromatic.",
+  "additional_context": "A problem of Komj\\'{a}th. If instead we have | A_i∩ A_j| ≠ 1 then Komj\\'{a}th showed that this is possible with at most \\aleph_0 colours.",
+  "reference_proof_hint": "Write (X=\\bigcup_iA_i) and view (\\mathcal H=(X,{A_i:i\\in I})) as a hypergraph whose hyperedges are the (A_i). The question asks for the least cardinal $C$ such that **every** such (\\mathcal H) with (|A_i|=\\aleph_0) and (|A_i\\cap A_j|\\neq 2) admits a vertex–colouring (c:X\\to C) with no monochromatic hyperedge.\n\n## What is known\n\n### 1) No finite number of colours can work in general\n\nSo necessarily (C\\ge \\aleph_0).\n\nExample: let (X=\\omega) and let ({A_i}) be any **nonprincipal ultrafilter** (\\mathcal U) on (\\omega) [[nomath]](so each $A\\in\\mathcal U$ is infinite, and $A\\cap B\\in\\mathcal U$ for $A,B\\in\\mathcal U$, hence $|A\\cap B|=\\aleph_0\\neq 2$)[[/nomath]].\nIf you colour (\\omega) with (n<\\omega) colours, you partition (\\omega) into $n$ colour classes. An ultrafilter contains exactly one cell of any finite partition, so one colour class $C$ lies in (\\mathcal U), meaning $C$ itself is one of the (A_i) and is monochromatic. Thus **no finite $n$** can be a universal bound.\n\nOn the other ha"
+}

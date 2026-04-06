@@ -1,0 +1,15 @@
+{
+  "uuid": "erdos_164",
+  "problem": [
+    "Erdős Problem #164"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 164,
+  "status": "proved",
+  "tags": [
+    "number theory",
+    "primitive sets"
+  ],
+  "prize": "no",
+  "formalized_on_site": false
+}

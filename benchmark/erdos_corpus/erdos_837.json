@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_837",
+  "problem": [
+    "Let k≥ 2 and A_k⊆ [0,1] be the set of \\alpha such that there exists some \\beta(\\alpha)>\\alpha with the property that, if G_1,G_2,\\ldots is a sequence of k-uniform hypergraphs with\\liminf (e(G_n))/(\\binom{| G_n|){k}} >\\alphathen there exist subgraphs H_n⊆ G_n such that | H_n| → ∞ and\\liminf (e(H_n))/(\\binom{| H_n|){k}} >\\beta,and further that this property does not necessarily hold if >\\alpha is replaced by ≥ \\alpha.\n\nWhat is A_3?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 837,
+  "status": "open",
+  "tags": [
+    "graph theory",
+    "hypergraphs"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $k\\geq 2$ and $A_k\\subseteq [0,1]$ be the set of $\\alpha$ such that there exists some $\\beta(\\alpha)>\\alpha$ with the property that, if $G_1,G_2,\\ldots$ is a sequence of $k$-uniform hypergraphs with\\[\\liminf \\frac{e(G_n)}{\\binom{\\lvert G_n\\rvert}{k}} >\\alpha\\]then there exist subgraphs $H_n\\subseteq G_n$ such that $\\lvert H_n\\rvert \\to \\infty$ and\\[\\liminf \\frac{e(H_n)}{\\binom{\\lvert H_n\\rvert}{k}} >\\beta,\\]and further that this property does not necessarily hold if $>\\alpha$ is replaced by $\\geq \\alpha$.\n\nWhat is $A_3$?",
+  "additional_context": "A problem of Erdős and Simonovits. It is known thatA_2 = \\left\\{ 1-(1)/(k) : k≥ 1\\right\\}.",
+  "reference_proof_hint": "Your definition is the “**weak jump**” version of Erdős’s *jumping constant* phenomenon for $3$-uniform hypergraphs:\n\n* the first clause [[nomath]](“$>\\alpha$ forces a density increment to some $\\beta(\\alpha)>\\alpha$ on larger and larger subgraphs”)[[/nomath]] is exactly the usual notion that **(\\alpha) is a jump**, and\n* the second clause [[nomath]](“this can fail if $>\\alpha$ is replaced by $\\ge \\alpha$”)[[/nomath]] is exactly saying (\\alpha) is **not** a *strong* jump (so it’s “weak”). \n\n## What is known about (A_3)\n\n### 1) (0\\in A_3)\n\nJohnston–Lu show (in their terminology) that $0$ is always a jump but cannot be a strong jump, hence $0$ is a *weak* jump. Translating to your notation gives (0\\in A_3). ([arXiv][1])\n\n[[nomath]](And of course, the “$\\ge 0$” version fails trivially by taking the empty $3$-graph sequence.)[[/nomath]]\n\n### 2) No (\\alpha\\in(0,2/9)) lies in (A_3)\n\nPeng–Zhao (Fact 1.11) prove that for every (r\\ge 3), **every (\\alpha\\in(0, r!/r^r)) is a strong jump** and $0$"
+}

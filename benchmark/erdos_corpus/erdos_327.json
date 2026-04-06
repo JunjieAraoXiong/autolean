@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_327",
+  "problem": [
+    "Suppose A⊆ \\{1,\\ldots,N\\} is such that if a,b∈ A and a≠ b then a+b\\nmid ab. Can A be 'substantially more' than the odd numbers?\n\nWhat if a,b∈ A with a≠ b implies a+b\\nmid 2ab? Must | A|=o(N)?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 327,
+  "status": "open",
+  "tags": [
+    "number theory",
+    "unit fractions"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Suppose $A\\subseteq \\{1,\\ldots,N\\}$ is such that if $a,b\\in A$ and $a\\neq b$ then $a+b\\nmid ab$. Can $A$ be 'substantially more' than the odd numbers?\n\nWhat if $a,b\\in A$ with $a\\neq b$ implies $a+b\\nmid 2ab$? Must $\\lvert A\\rvert=o(N)$?",
+  "additional_context": "The connection to unit fractions comes from the observation that (1)/(a)+(1)/(b) is a unit fraction if and only if a+b\\mid ab.\n\nWouter van Doorn has given an elementary argument that proves that if A⊆ \\{1,\\ldots,N\\} has | A| ≥ (25/28+o(1))N then A must contain a≠ b with a+b\\mid ab (see the discussion in [301]).\n\nSee also [302].",
+  "reference_proof_hint": "Write (g=\\gcd(a,b)), $a=gx$, $b=gy$ with (\\gcd(x,y)=1). Then\n[\na+b=g(x+y),\\qquad ab=g^2xy.\n]\nA key observation is that $\\gcd(x+y,xy)=1$ when (\\gcd(x,y)=1): if a prime (p\\mid (x+y)) and (p\\mid xy), then (p\\mid x) or (p\\mid y), hence also (p\\mid y) or (p\\mid x), contradicting (\\gcd(x,y)=1).\n\nFrom this one gets the clean criterion\n[\na+b\\mid m,ab \\quad\\Longleftrightarrow\\quad x+y\\mid m,g,\n]\nfor $m=1$ (your first condition) and $m=2$ (your second condition).\n\nEquivalently:\n\n* (a+b\\mid ab) iff (x+y\\mid g).\n* (a+b\\mid 2ab) iff (x+y\\mid 2g), i.e. iff (\\dfrac{x+y}{\\gcd(x+y,2)}\\mid g).\n\nThis also yields a standard parametrization of *all* bad pairs:\n\n* For $m=1$: choose coprime (x<y) and (t\\ge1), and set\n  [\n  a=t,x(x+y),\\qquad b=t,y(x+y).\n  ]\n  Then (a+b\\mid ab). Conversely every bad pair arises this way. ([Mathematics Stack Exchange][1])\n* For $m=2$: with (d=\\gcd(x+y,2)\\in{1,2}), choose coprime (x<y) and (t\\ge1), and set\n  [\n  a=t,x\\frac{x+y}{d},\\qquad b=t,y\\frac{x+y}{d}.\n  ]\n  Then (a+b\\mid 2"
+}

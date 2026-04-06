@@ -1,0 +1,15 @@
+{
+  "uuid": "erdos_720",
+  "problem": [
+    "Erdős Problem #720"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 720,
+  "status": "proved",
+  "tags": [
+    "graph theory",
+    "ramsey theory"
+  ],
+  "prize": "$100",
+  "formalized_on_site": false
+}

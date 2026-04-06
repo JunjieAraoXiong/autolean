@@ -1,0 +1,15 @@
+{
+  "uuid": "erdos_192",
+  "problem": [
+    "Erdős Problem #192"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 192,
+  "status": "solved",
+  "tags": [
+    "arithmetic progressions",
+    "combinatorics"
+  ],
+  "prize": "no",
+  "formalized_on_site": false
+}

@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_345",
+  "problem": [
+    "Let A⊆ ℕ be a complete sequence, and define the threshold of completeness T(A) to be the least integer m such that all n≥ m are inP(A) = \\left\\{∑_{n∈ B}n : B⊆ A\\textrm{ finite }\\right\\}(the existence of T(A) is guaranteed by completeness).\n\nIs it true that there are infinitely many k such that T(n^k)>T(n^{k+1})?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 345,
+  "status": "open",
+  "tags": [
+    "number theory",
+    "complete sequences"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $A\\subseteq \\mathbb{N}$ be a complete sequence, and define the threshold of completeness $T(A)$ to be the least integer $m$ such that all $n\\geq m$ are in\\[P(A) = \\left\\{\\sum_{n\\in B}n : B\\subseteq A\\textrm{ finite }\\right\\}\\](the existence of $T(A)$ is guaranteed by completeness).\n\nIs it true that there are infinitely many $k$ such that $T(n^k)>T(n^{k+1})$?",
+  "additional_context": "Erdős and Graham \\cite{ErGr80} remark that very little is known about T(A) in general. It is known thatT(n)=1, T(n^2)=128, T(n^3)=12758,T(n^4)=5134240,\\textrm{ and }T(n^5)=67898771.Erdős and Graham remark that a good candidate for the n in the question are k=2^t for large t, perhaps even t=3, because of the highly restricted values of n^{2^t} modulo 2^{t+1}.\n\nReferences\n\n[ErGr80] Erdős, P. and Graham, R., Old and new problems and results in combinatorial number theory. Monographies de L'Enseignement Mathematique (1980).",
+  "reference_proof_hint": "This is **open** in general.\n\nFor the specific power sequences\n[\nA_k={1^k,2^k,3^k,\\dots},\n]\nit is classical that (A_k) is complete for every $k$ [[nomath]](so $T(A_k)$ exists)[[/nomath]]. This goes back to Sprague (1948), with later generalisations by Roth–Szekeres and an “elementary” proof by Graham; see e.g. Kim’s paper for a summary and explicit bounds. \n\n### Conventions and the known computed values\n\nMany papers (and OEIS A001661) define the “threshold” as the **largest** integer **not** representable as a sum of distinct (k)th powers; call that (\\theta_k). ([OEIS][1])\n\nYour (T(A_k)) is the **least** $m$ such that every (n\\ge m) is representable, so [[nomath]](for $k\\ge2$)[[/nomath]]\n[\nT(A_k)=\\theta_k+1.\n]\nThis shift by $1$ does **not** affect inequalities like (T(A_k)>T(A_{k+1})) [[nomath]](for $k\\ge2$)[[/nomath]].\n\nThe currently *known exact* values [[nomath]](largest non-representable $\\theta_k$)[[/nomath]] are:\n[\n\\theta_2=128,\\ \\theta_3=12758,\\ \\theta_4=5134240,\\ \\theta_5=67898"
+}

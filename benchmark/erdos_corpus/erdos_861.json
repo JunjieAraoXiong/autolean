@@ -1,0 +1,15 @@
+{
+  "uuid": "erdos_861",
+  "problem": [
+    "Erdős Problem #861"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 861,
+  "status": "solved",
+  "tags": [
+    "number theory",
+    "sidon sets"
+  ],
+  "prize": "no",
+  "formalized_on_site": false
+}

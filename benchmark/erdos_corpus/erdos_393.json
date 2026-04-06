@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_393",
+  "problem": [
+    "Let f(n) denote the minimal m≥ 1 such thatn! = a_1\\cdots a_twith a_1<\\cdots <a_t=a_1+m. What is the behaviour of f(n)?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 393,
+  "status": "open",
+  "tags": [
+    "number theory",
+    "factorials"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $f(n)$ denote the minimal $m\\geq 1$ such that\\[n! = a_1\\cdots a_t\\]with $a_1<\\cdots <a_t=a_1+m$. What is the behaviour of $f(n)$?",
+  "additional_context": "Erdős and Graham write that they do not even know whether f(n)=1 infinitely often (i.e. whether a factorial is the product of two consecutive integers infinitely often).\n\nLet F_m(N) count the number of n≤ N such that f(n)=m. Berend and Osgood \\cite{BeOs92} proved that, for each fixed m, F_m(N)=o(N). Bui, Pratt, and Zaharescu \\cite{BPZ23} have shown thatF_m(N)\\ll_m N^{33/34}.A result of Luca \\cite{Lu02} implies that f(n)→ ∞ as n→ ∞, conditional on the ABC conjecture.\n\nReferences\n\n[BPZ23] Bui, Hung M. and Pratt, Kyle and Zaharescu, Alexandru, Power savings for counting solutions to polynomial-factorial\nequations. Adv. Math. (2023), Paper No. 109021, 32.\n\n[BeOs92] Berend, Daniel and Osgood, Charles F., On the equation {P(x)=n!} and a question of {E}rd\\H{o}s. J. Number Theory (1992), 189--193.\n\n[Lu02] Luca, Florian, The {D}iophantine equation {P(x)=n!} and a result of {M}.\n{O}verholt. Glas. Mat. Ser. III (2002), 269--273.",
+  "reference_proof_hint": "Write the factors as\n[\nn!=a_1a_2\\cdots a_t,\\qquad a_1<\\cdots<a_t=a_1+m,\n]\nso $f(n)$ is the **minimum possible width** (m=a_t-a_1) of an interval that contains a set of **distinct** divisors of $n!$ whose product is $n!$.\n\nA convenient reformulation is: (f(n)\\le m) iff there exist an integer $x$ and a subset (S\\subseteq{0,1,\\dots,m}) with (0,m\\in S), (|S|\\ge 2), such that\n[\nn! = \\prod_{s\\in S}(x+s).\n]\nSo for each fixed $m$, you are asking whether a factorial can be represented as a value of one of finitely many “shifted product” polynomials (\\prod_{s\\in S}(X+s)) [[nomath]](degree between $2$ and $m+1$)[[/nomath]].\n\n## What is known (and what is open)\n\nThis question goes back to Erdős–Graham and is explicitly listed as an **open** Erdős problem (#393). ([Erdős Problems][1])\n\n### Basic bounds\n\n* Trivially (f(n)\\le n-2) for (n\\ge 3), because\n  [\n  n!=2\\cdot 3\\cdots n\n  ]\n  uses distinct factors in $[2,n]$ so (m=n-2). (This is also noted in the OEIS entry.) ([OEIS][2])\n* Of course (f(n)\\ge "
+}

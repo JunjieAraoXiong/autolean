@@ -1,0 +1,15 @@
+{
+  "uuid": "erdos_1019",
+  "problem": [
+    "Erdős Problem #1019"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 1019,
+  "status": "proved",
+  "tags": [
+    "graph theory",
+    "planar graphs"
+  ],
+  "prize": "no",
+  "formalized_on_site": false
+}

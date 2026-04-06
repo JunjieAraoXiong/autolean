@@ -1,0 +1,15 @@
+{
+  "uuid": "erdos_594",
+  "problem": [
+    "Erdős Problem #594"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 594,
+  "status": "proved",
+  "tags": [
+    "graph theory",
+    "set theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false
+}

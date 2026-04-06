@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_543",
+  "problem": [
+    "Define f(N) be the minimal k such that the following holds: if G is an abelian group of size N and A⊆ G is a random set of size k then, with probability ≥ 1/2, all elements of G can be written as ∑_{x∈ S}x for some S⊆ A. Isf(N) ≤ \\log_2 N+o(\\log\\log N)?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 543,
+  "status": "disproved",
+  "tags": [
+    "number theory",
+    "group theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Define $f(N)$ be the minimal $k$ such that the following holds: if $G$ is an abelian group of size $N$ and $A\\subseteq G$ is a random set of size $k$ then, with probability $\\geq 1/2$, all elements of $G$ can be written as $\\sum_{x\\in S}x$ for some $S\\subseteq A$. Is\\[f(N) \\leq \\log_2 N+o(\\log\\log N)?\\]",
+  "additional_context": "Erdős and R\\'{e}nyi \\cite{ErRe65} proved thatf(N) ≤ \\log_2N+O(\\log\\log N).Erdős believed improving this to o(\\log\\log N) is impossible.\n\nReferences\n\n[ErRe65] Erdős, P. and R\\'{e}nyi, A., Probabilistic methods in group theory. J. Analyse Math. (1965), 127-138.",
+  "reference_proof_hint": "As of **January 2026**, this is **open** in general (it is listed as Erdős Problem #543). ([Erdős Problems][1])\n\nWhat *is* known is that $f(N)$ sits between (\\log_2 N) and (\\log_2 N + \\Theta(\\log\\log N)):\n\n## Lower bound: (f(N)\\ge \\log_2 N)\n\nFor any $A$ with (|A|=k), there are only (2^k) subsets (S\\subseteq A), hence at most (2^k) subset sums (\\sum_{x\\in S}x). If these subset sums cover all $N$ elements of $G$, then (2^k\\ge N), i.e.\n[\nk\\ge \\log_2 N.\n]\n\nSo you cannot hope for $f(N)$ below (\\log_2 N) (up to lower-order terms).\n\n## Best known general upper bound: (f(N)\\le \\log_2 N + O(\\log\\log N))\n\nErdős–Rényi (1965) proved a much more quantitative statement: if one chooses $k$ random elements in an abelian group of order $n$ [[nomath]](they work with random sequences; for $k=O(\\log n)$ this is essentially the same as a random $k$-set)[[/nomath]], then for any (\\delta>0), if\n[\nk \\ge \\frac{\\log n + 2\\log(1/\\delta) + \\log\\log n}{\\log 2} + O(1),\n]\nthen with probability at least (1-\\delta), *"
+}

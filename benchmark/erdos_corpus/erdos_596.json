@@ -1,0 +1,19 @@
+{
+  "uuid": "erdos_596",
+  "problem": [
+    "For which graphs G_1,G_2 is it true that\n{UL}\n{LI} for every n≥ 1 there is a graph H without a G_1 but if the edges of H are n-coloured then there is a monochromatic copy of G_2, and yet{/LI}\n{LI} for every graph H without a G_1 there is an \\aleph_0-colouring of the edges of H without a monochromatic G_2.\n{/UL}"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 596,
+  "status": "open",
+  "tags": [
+    "graph theory",
+    "ramsey theory",
+    "set theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "For which graphs $G_1,G_2$ is it true that\n{UL}\n{LI} for every $n\\geq 1$ there is a graph $H$ without a $G_1$ but if the edges of $H$ are $n$-coloured then there is a monochromatic copy of $G_2$, and yet{/LI}\n{LI} for every graph $H$ without a $G_1$ there is an $\\aleph_0$-colouring of the edges of $H$ without a monochromatic $G_2$.\n{/UL}",
+  "additional_context": "Erdős and Hajnal originally conjectured that there are no such G_1,G_2, but in fact G_1=C_4 and G_2=C_6 is an example. Indeed, for this pair Ne\\v{s}et\\v{r}il and R\\\"{o}dl established the first property and Erdős and Hajnal the second (in fact every C_4-free graph is a countable union of trees).\n\nWhether this is true for G_1=K_4 and G_2=K_3 is the content of [595].",
+  "reference_proof_hint": "Write (H\\to (G_2)^E_n) to mean: **every** $n$-edge-colouring of $H$ contains a **monochromatic** copy of (G_2) (as a subgraph). Your two bullets ask for pairs $(G_1,G_2)$ such that\n\n1. for every finite $n$ there exists a (G_1)-free $H$ with (H\\to (G_2)^E_n), **but**\n2. for every (G_1)-free $H$ we have (H\\nrightarrow (G_2)^E_{\\aleph_0}) [[nomath]](i.e. there is some countable edge-colouring with no monochromatic $G_2$)[[/nomath]].\n\n## What is known\n\nA complete classification of all such $(G_1,G_2)$ is **not known**; this is essentially **Erdős problem #596**. ([Erdős Problems][1])\n\n### A concrete example (and the historically first one)\n\n[\nG_1=C_4,\\qquad G_2=C_6\n]\n\nworks:\n\n* **(finite colours)** Nešetřil and Rödl proved the needed finite-colour Ramsey property inside the class of graphs of girth (>4) [[nomath]](hence $C_4$-free)[[/nomath]], i.e. for every $n$ there is a (C_4)-free $H$ such that every $n$-edge-colouring yields a monochromatic (C_6). ([Erdős Problems][1])\n* **[[nomath]]($"
+}

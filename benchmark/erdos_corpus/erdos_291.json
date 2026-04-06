@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_291",
+  "problem": [
+    "Let n≥ 1 and define L_n to be the least common multiple of \\{1,\\ldots,n\\} and a_n by∑_{1≤ k≤ n}(1)/(k)=(a_n)/(L_n).Is it true that (a_n,L_n)=1 and (a_n,L_n)>1 both occur for infinitely many n?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 291,
+  "status": "open",
+  "tags": [
+    "number theory",
+    "unit fractions"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $n\\geq 1$ and define $L_n$ to be the least common multiple of $\\{1,\\ldots,n\\}$ and $a_n$ by\\[\\sum_{1\\leq k\\leq n}\\frac{1}{k}=\\frac{a_n}{L_n}.\\]Is it true that $(a_n,L_n)=1$ and $(a_n,L_n)>1$ both occur for infinitely many $n$?",
+  "additional_context": "Steinerberger has observed that the answer to the second question is trivially yes: for example, any n which begins with a 2 in base 3 has 3\\mid (a_n,L_n).\n\nMore generally, if the leading digit of n in base p is p-1 then p\\mid (a_n,L_n). There is in fact a necessary and sufficient condition: a prime p≤ n divides (a_n,L_n) if and only if p divides the numerator of 1+\\cdots+(1)/(k), where k is the leading digit of n in base p. This can be seen by writinga_n = (L_n)/(1)+\\cdots+(L_n)/(n)and observing that the right-hand side is congruent to 1+\\cdots+1/k modulo p. (The previous claim about p-1 follows immediately from Wolstenholme's theorem.)\n\nThis leads to a heuristic prediction (see for example a preprint of Shiu \\cite{Sh16}) of \\asymp(x)/(\\log x) for the number of n∈ [1,x] such that (a_n,L_n)=1. In particular, there should be infinitely many n, but the set of such n should have density zero. Unfortunately this heuristic is difficult to turn into a proof.\n\nWu and Yan \\cite{WuYa22} have proved, conditional on (1)/(\\log p) being linearly independent over ℚ for any finite collection of primes p (itself a consequence of Schanuel's conjecture), that the set of n for which (a_n,L_n)>1 has upper density 1.\n\nReferences\n\n[Sh16] P. Shiu, The denominators of harmonic numbers. arXiv:1607.02863 (2016).\n\n[WuYa22] Wu, Bing-Ling and Yan, Xiao-Hui, On the denominators of harmonic numbers. {IV}. C. R. Math. Acad. Sci. Paris (2022), 53--57.",
+  "reference_proof_hint": "Write the harmonic number as\n[\nH_n:=\\sum_{k=1}^n \\frac1k=\\frac{a_n}{L_n},\\qquad L_n=\\mathrm{lcm}(1,2,\\dots,n),\n]\nso (a_n=L_nH_n\\in\\mathbb Z). Let (\\frac{u_n}{v_n}) be the reduced fraction for (H_n). Then\n[\n\\frac{a_n}{L_n}=\\frac{u_n}{v_n}\\quad\\Longrightarrow\\quad v_n=\\frac{L_n}{\\gcd(a_n,L_n)}.\n]\nSo (\\gcd(a_n,L_n)=1) is equivalent to (v_n=L_n), while (\\gcd(a_n,L_n)>1) is equivalent to (v_n<L_n). This is exactly the “(d_n=D_n) vs. (d_n<D_n)” question in the literature on denominators of harmonic numbers. ([arXiv][1])\n\n## The case (\\gcd(a_n,L_n)>1) does occur infinitely often (in fact, trivially)\n\nThere is a clean criterion for when a prime (p\\le n) divides (\\gcd(a_n,L_n)).\n\nLet (p\\le n) be prime, and let $e$ be maximal such that (p^e\\le n) [[nomath]](so $p^e$ is the highest power of $p$ appearing in $L_n$)[[/nomath]]. Write\n$\nn = k,p^e + r,\\qquad 0\\le r<p^e,\n$\nso (k=\\lfloor n/p^e\\rfloor) is the leading digit of $n$ written in base $p$.\n\nThen one checks [[nomath]](by reducing $a_n=\\sum_{m="
+}

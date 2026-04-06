@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_688",
+  "problem": [
+    "Define \\epsilon_n to be maximal such that there exists some choice of congruence class a_p for all primes n^{\\epsilon_n}<p≤ n such that every integer in [1,n] satisfies at least one of the congruences \\equiv a_p\\pmod{p}.\n\nEstimate \\epsilon_n - in particular is it true that \\epsilon_n=o(1)?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 688,
+  "status": "open",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Define $\\epsilon_n$ to be maximal such that there exists some choice of congruence class $a_p$ for all primes $n^{\\epsilon_n}<p\\leq n$ such that every integer in $[1,n]$ satisfies at least one of the congruences $\\equiv a_p\\pmod{p}$.\n\nEstimate $\\epsilon_n$ - in particular is it true that $\\epsilon_n=o(1)$?",
+  "additional_context": "Erdős could prove\\epsilon_n \\gg (\\log\\log\\log n)/(\\log\\log n).See also [687] and [689].",
+  "reference_proof_hint": "Let $n$ be large and fix (\\varepsilon\\in(0,1)).  Write\n$\n\\mathcal P_\\varepsilon(n)\\ :=\\ {p\\ \\text{prime}: n^\\varepsilon<p\\le n}.\n$\nFor each (p\\in\\mathcal P_\\varepsilon(n)) we choose one residue class (a_p\\pmod p), and we ask that\n[\n\\forall m\\in[1,n]\\cap\\mathbb Z\\quad \\exists p\\in\\mathcal P_\\varepsilon(n)\\ \\text{ with }\\ m\\equiv a_p\\pmod p.\n]\nThen (\\varepsilon_n) is the maximal (\\varepsilon) for which such a choice is possible.\n\nThis is Erdős problem #688 (open). ([Erdős Problems][1])\n\n## A clean necessary upper bound: (\\varepsilon_n\\le e^{-1+o(1)})\n\nIf we have a covering for some (\\varepsilon), then counting “incidences” $(m,p)$ with (m\\le n) and (m\\equiv a_p\\pmod p) gives a simple constraint.\n\nFor each prime (p\\le n), a single residue class modulo $p$ hits at most (\\lceil n/p\\rceil) integers in $[1,n]$. Thus\n[\n|\\\\{(m,p):1\\le m\\le n,\\ p\\in\\mathcal P_\\varepsilon(n)\\ m\\equiv a_p!\\pmod p\\\\}|\n\\ \\le\\ \\sum_{p\\in\\mathcal P_\\varepsilon(n)}\\\\(\\frac np+1\\\\)\n= n\\sum_{p\\in\\mathcal P_\\varepsilon(n)"
+}

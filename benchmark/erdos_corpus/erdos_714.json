@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_714",
+  "problem": [
+    "Is it true that\\mathrm{ex}(n; K_{r,r}) \\gg n^{2-1/r}?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 714,
+  "status": "open",
+  "tags": [
+    "graph theory",
+    "turan number"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Is it true that\\[\\mathrm{ex}(n; K_{r,r}) \\gg n^{2-1/r}?\\]",
+  "additional_context": "K\\\"{o}v\\'{a}ri, S\\'{o}s, and Tur\\'{a}n \\cite{KST54} proved\\mathrm{ex}(n; K_{r,r}) \\ll n^{2-1/r}for all r≥ 2. Brown \\cite{Br66} and, independently, Erdős, R\\'{e}nyi, and S\\'{o}s \\cite{ERS66}, proved the conjectured lower bound when r=3.\n\nWhen r=2 it is known that\\mathrm{ex}(n;K_{2,2})=\\left((1)/(2)+o(1)\\right)n^{3/2}(see [768], since K_{2,2}=C_4).\n\nSee also [147].\n\nReferences\n\n[Br66] Brown, W. G., On graphs that do not contain a Thomsen graph. Canad. Math. Bull. (1966), 281-285.\n\n[ERS66] Erdős, P. and R\\'{e}nyi, A. and S\\'os, V. T., On a problem of graph theory. Studia Sci. Math. Hungar. (1966), 215--235.\n\n[KST54] K\\\"{o}vari, T. and S\\'{o}s, V. T. and Tur\\'{a}n, P., On a problem of K. Zarankiewicz. Colloq. Math. (1954), 50-57.",
+  "reference_proof_hint": "It depends what you mean by “(\\gg)”, but in either standard interpretation the situation is basically “known for (r=2,3), open for (r\\ge 4)”.\n\n### 1) If you mean “(\\gg)” = **(\\Omega(\\cdot))** (a constant-factor lower bound)\n\nThen you’re asking whether the Kővári–Sós–Turán upper bound is tight in the *balanced* case (K_{r,r}), i.e. whether\n[\n\\mathrm{ex}(n,K_{r,r}) \\ge c_r n^{2-1/r}\n\\quad\\text{for some }c_r>0.\n]\nThis is a special case of the classical Zarankiewicz problem / conjecture (balanced case), and:\n\n* **True for (r=2)**: (\\mathrm{ex}(n,K_{2,2})=\\mathrm{ex}(n,C_4)=\\Theta(n^{3/2})). ([TAU Math][1])\n* **True for (r=3)**: (\\mathrm{ex}(n,K_{3,3})=\\Theta(n^{5/3})); a matching lower bound was proved by Brown (1966). ([VU Web][2])\n* **Open for (r\\ge 4)**: even (r=4) is wide open; e.g. it has been explicitly noted that the “fundamental question” of (\\mathrm{ex}(n,K_{t,t})) is wide open even for (t=4). ([UserPages][3])\n\nWhat *is* known in general is a weaker probabilistic lower bound: for "
+}

@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_623",
+  "problem": [
+    "Let X be a set of cardinality \\aleph_\\omega and f be a function from the finite subsets of X to X such that f(A)\\not∈ A for all A. Must there exist an infinite Y⊆ X that is independent - that is, for all finite B⊂ Y we have f(B)\\not∈ Y?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 623,
+  "status": "open",
+  "tags": [
+    "set theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": true,
+  "original_latex": "Let $X$ be a set of cardinality $\\aleph_\\omega$ and $f$ be a function from the finite subsets of $X$ to $X$ such that $f(A)\\not\\in A$ for all $A$. Must there exist an infinite $Y\\subseteq X$ that is independent - that is, for all finite $B\\subset Y$ we have $f(B)\\not\\in Y$?",
+  "additional_context": "A problem of Erdős and Hajnal \\cite{ErHa58}, who proved that if | X| <\\aleph_\\omega then the answer is no. Erdős suggests in \\cite{Er99} that this problem is 'perhaps undecidable'.\n\nReferences\n\n[Er99] Erdős, Paul, A selection of problems and results in combinatorics. Combin. Probab. Comput. (1999), 1-6.\n\n[ErHa58] Erdős, P. and Hajnal, A., On the structure of set mappings. Acta Math. Acad. Sci. Hungar. (1958), 111-133.",
+  "reference_proof_hint": "This is **open** (in ZFC).\n\nIn fact, your question is exactly **Erdős Problem #623**: given (|X|=\\aleph_\\omega) and (f:[X]^{<\\omega}\\to X) with (f(A)\\notin A) for every finite $A$, must there be an infinite (Y\\subseteq X) with (f(B)\\notin Y) for all finite (B\\subseteq Y)? The current status is listed as **OPEN**. ([Erdős Problems][1])\n\nWhat *is* known is that Erdős–Hajnal already showed a sharp obstruction below (\\aleph_\\omega): if (|X|<\\aleph_\\omega), then the answer can be **no** [[nomath]](i.e., there are such $f$ with **no** infinite independent/free $Y$)[[/nomath]]. Erdős later remarked that the (\\aleph_\\omega) case might even be “perhaps undecidable”. ([Erdős Problems][2])\n\nContextually, this sits in the “free set”/“set mapping” circle of problems: Kuratowski’s free set theorem characterizes (\\aleph_n) via the existence of ((n+1))-element free sets for *every* mapping ([X]^n\\to [X]^{<\\omega}), and (\\aleph_\\omega) is the first cardinal past all (\\aleph_n)’s—so it’s the natural thr",
+  "ground_truth_lean": "/-\nCopyright 2025 The Formal Conjectures Authors.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    https://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n-/\nimport FormalConjectures.Util.ProblemImports\n\nopen Filter Real Set\nopen scoped Cardinal Ordinal\n\nnamespace Erdos623\n\n/-!\n# Erdős Problem 623\n\n*Reference:* [erdosproblems.com/623](https://www.erdosproblems.com/623)\n-/\nuniverse u\n\n/--\nLet $X$ be a set of cardinality $\\aleph_\\omega$ and $f$ be a function from the finite subsets of\n$X$ to $X$ such that $f(A)\\not\\in A$ for all $A$. Must there exist an infinite $Y\\subseteq X$\nthat is independent - that is, for all finite $B\\subset Y$ we have $f(B)\\not\\in Y$?\n-/\n@[category research open, AMS 3]\ntheorem erdos_623 : answer(sorry) ↔ ∀ (X : Type u) (hX : #X = ℵ_ ω)\n    (f : Finset X → X), (∀ A : Finset X, f A ∉ A) →\n    (∃ Y : Set X, Set.Infinite Y ∧ (∀ (B : Finset X), ↑B ⊆ Y → f B ∉ Y)) := by\n  sorry\n\n-- TODO(firsching): formalize the statement about X < ℵ_ω\n\nend Erdos623\n"
+}

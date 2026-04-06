@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_657",
+  "problem": [
+    "Is it true that if A⊂ ℝ^2 is a set of n points such that every subset of 3 points determines 3 distinct distances (i.e. A has no isosceles triangles) then A must determine at least f(n)n distinct distances, for some f(n)→ ∞?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 657,
+  "status": "open",
+  "tags": [
+    "geometry",
+    "distances"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Is it true that if $A\\subset \\mathbb{R}^2$ is a set of $n$ points such that every subset of $3$ points determines $3$ distinct distances (i.e. $A$ has no isosceles triangles) then $A$ must determine at least $f(n)n$ distinct distances, for some $f(n)\\to \\infty$?",
+  "additional_context": "In \\cite{Er73} Erdős attributes this problem (more generally in ℝ^k) to himself and Davies. In \\cite{Er97e} he does not mention Davis, but says this problem was investigated by himself, F\\\"{u}redi, Ruzsa, and Pach.\n\nIn \\cite{Er73} Erdős says it is not even known in ℝ whether f(n)→ ∞. Sarosh Adenwalla has observed that this is equivalent to minimising the number of distinct differences in a set A⊂ ℝ of size n without three-term arithmetic progressions. Dumitrescu \\cite{Du08} proved that, in these terms,(\\log n)^c ≤ f(n) ≤ 2^{O(\\sqrt{\\log n})}for some constant c>0.\n\nHunter observed in the comments that a result of Ruzsa coupled with standard tools of additive combinatorics (with details given by Alfaiz and Tang) allow recent progress on the size of subsets without three-term arithmetic progression (see \\cite{BlSi23} which improves slightly on the bounds due to Kelley and Meka \\cite{KeMe23}) yield2^{c(\\log n)^{1/9}}≤ f(n)for some constant c>0.\n\nStraus has observed that if 2^k≥ n then there exist n points in ℝ^k which contain no isosceles triangle and determine at most n-1 distances.\n\nSee also [135].\n\nReferences\n\n[BlSi23] T. F. Bloom and O. Sisask, An improvement to the Kelley-Meka bounds on three-term arithmetic progressions. arXiv:2309.02353 (2023).\n\n[Du08] Dumitrescu, Adrian, On distinct distances and {\\lambda}-free point sets. Discrete Math. (2008), 6533--6538.\n\n[Er73] Erdős, P., Problems and results on combinatorial number theory. A survey of combinatorial theory (Proc. Internat. Sympos., Colorado State Univ., Fort Collins, Colo., 1971) (1973), 117-138.\n\n[Er97e] Erdős, Paul, Some of my favourite unsolved problems. Math. Japon. (1997), 527-537.\n\n[KeMe23] Kelley, Z. and Meka, R., Strong Bounds for 3-Progressions. arXiv:2302.05537 (2023).",
+  "reference_proof_hint": "This is **open** in the plane.\n\nIt is exactly **Erdős problem #657** [[nomath]](sometimes written in the notation $\\phi(n,3,3)$)[[/nomath]], asking whether an $n$-point set in (\\mathbb R^2) with **no isosceles triangles** must span **(\\omega(n))** distinct distances [[nomath]](equivalently: at least $n,f(n)$ with $f(n)\\to\\infty$)[[/nomath]]. ([Erdős Problems][1])\n\n### What is known\n\nLet (A\\subset\\mathbb R^2), (|A|=n), and assume every triple determines three distinct distances.\n\n**1) Only linear lower bounds are known.**\nA standard “pinned” argument gives (D(A)\\ge n-1): fix (p\\in A). If (|pp_1|=|pp_2|) for two distinct (p_1,p_2\\in A), then $(p,p_1,p_2)$ is isosceles, forbidden. Hence the $n-1$ distances from $p$ to (A\\setminus{p}) are all distinct. ([NYU Math][2])\n\nThere is a small sharpening (essentially a matching/edge-coloring count): color the edges of (K_n) by their lengths. Since equal-length edges cannot meet at a vertex, each color class is a matching of size at most (\\lfloor n"
+}

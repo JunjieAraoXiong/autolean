@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_690",
+  "problem": [
+    "Let d_k(p) be the density of those integers whose kth smallest prime factor is p (i.e. if p_1<p_2<\\cdots are the primes dividing n then p_k=p).\n\nFor fixed k≥ 1 is d_k(p) unimodular in p? That is, it first increases in p until its maximum then decreases."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 690,
+  "status": "open",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $d_k(p)$ be the density of those integers whose $k$th smallest prime factor is $p$ (i.e. if $p_1<p_2<\\cdots$ are the primes dividing $n$ then $p_k=p$).\n\nFor fixed $k\\geq 1$ is $d_k(p)$ unimodular in $p$? That is, it first increases in $p$ until its maximum then decreases.",
+  "additional_context": "Erdős believes that this is not possible, but could not disprove it. He could show that p_k is about e^{e^k} for almost all n, but the maximal value of d_k(p) is assumed for much smaller values of p, atp=e^{(1+o(1))k}.A similar question can be asked if we consider the density of integers whose kth smallest divisor is d. Erdős could show that this function is not unimodular.\n\nCambie \\cite{Ca25} has shown that d_k(p) is unimodular for 1≤ k≤ 3 and is not unimodular for 4≤ k≤ 20.\n\nReferences\n\n[Ca25] S. Cambie, Resolution of Erdős' problems about unimodularity. arXiv:2501.10333 (2025).",
+  "reference_proof_hint": "No. It already fails for $k=4$.\n\n## A clean formula for (d_k(p))\n\nFix a prime $p$. Let $S$ range over subsets of the primes (<p) of size $k-1$.\nThe condition “the $k$th smallest (distinct) prime factor is $p$” is exactly:\n\n* (p\\mid n);\n* **exactly** the primes in $S$ [[nomath]](with $|S|=k-1$)[[/nomath]] divide $n$ among the primes (<p);\n* no restriction on primes (>p).\n\nUsing standard density/CRT independence facts for divisibility by distinct primes,\n[\n\\Pr(q\\mid n)=\\frac1q,\\qquad \\Pr(q\\nmid n)=1-\\frac1q,\n]\nand these multiply across primes. Hence\n$\nd_k(p)\n=\\frac1p\\sum_{\\substack{S\\subset{q<p}\\ |S|=k-1}}\n(\\prod_{q\\in S}\\frac1q)(\\prod_{\\substack{r<p\\ r\\notin S}}(1-\\frac1r)).\n$\n\nIt is convenient to factor out\n$\nA(p):=\\prod_{q<p}(1-\\frac1q).\n$\nThen for each $S$,\n$\n(\\prod_{q\\in S}\\frac1q)(\\prod_{r<p,, r\\notin S}(1-\\frac1r))\n= A(p)\\prod_{q\\in S}\\frac{\\frac1q}{1-\\frac1q}\n= A(p)\\prod_{q\\in S}\\frac1{q-1}.\n$\nSo\n$\n\\boxed{\nd_k(p)=\\frac{A(p)}{p}\\sum_{\\substack{S\\subset{q<p}\\ |S|=k-1}}\n\\ \\prod_{q\\i"
+}

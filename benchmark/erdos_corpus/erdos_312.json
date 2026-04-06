@@ -1,0 +1,19 @@
+{
+  "uuid": "erdos_312",
+  "problem": [
+    "Does there exist some c>0 such that, for any K>1, whenever A is a sufficiently large finite multiset of integers with ∑_{n∈ A}(1)/(n)>K there exists some S⊆ A such that1-e^{-cK} < ∑_{n∈ S}(1)/(n)≤ 1?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 312,
+  "status": "open",
+  "tags": [
+    "number theory",
+    "unit fractions"
+  ],
+  "prize": "no",
+  "formalized_on_site": true,
+  "original_latex": "Does there exist some $c>0$ such that, for any $K>1$, whenever $A$ is a sufficiently large finite multiset of integers with $\\sum_{n\\in A}\\frac{1}{n}>K$ there exists some $S\\subseteq A$ such that\\[1-e^{-cK} < \\sum_{n\\in S}\\frac{1}{n}\\leq 1?\\]",
+  "additional_context": "Erdős and Graham knew this with e^{-cK} replaced by c/K^2.",
+  "reference_proof_hint": "This is **open**.\n\nIt is recorded (verbatim) as **Erdős Problem #312** (from Erdős–Graham, 1980): asking whether there is an absolute constant (c>0) such that whenever a finite multiset $A$ of (positive) integers has\n[\nR(A):=\\sum_{n\\in A}\\frac1n>K,\n]\none can find a submultiset (S\\subseteq A) with\n[\n1-e^{-cK}<\\sum_{n\\in S}\\frac1n\\le 1.\n]\nThe Erdős Problems site lists it as **OPEN** as of Jan 16, 2026. ([Erdős Problems][1])\n\nA common reformulation is to define the “best deficit below (1)”:\n$\n\\varepsilon(A):=\\min\\\\{1-\\sum_{n\\in S}\\frac1n:\\ S\\subseteq A,\\ \\sum_{n\\in S}\\frac1n\\le 1\\\\},\n$\nso the question is whether there is (c>0) with\n[\n\\varepsilon(A)\\ \\le\\ e^{-c,R(A)}\n]\nfor all sufficiently large $A$. ([Erdős Problems][2])\n\n### What *is* known\n\nErdős and Graham proved a **much weaker** (polynomial) approximation: they “knew this” with the exponential term (e^{-cK}) replaced by a bound of the form (C/K^2). In other words, there is an absolute constant $C$ such that from (R(A)>K) one can alwa",
+  "ground_truth_lean": "/-\nCopyright 2025 The Formal Conjectures Authors.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    https://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n-/\n\nimport FormalConjectures.Util.ProblemImports\n\n/-!\n# Erdős Problem 312\n\n*Reference:* [erdosproblems.com/312](https://www.erdosproblems.com/312)\n-/\n\nnamespace Erdos312\n\n/--\nDoes there exist a constant `c > 0` such that, for any `K > 1`, whenever `A` is a sufficiently large\nfinite multiset of integers with $\\sum_{n \\in A} 1/n > K$ there exists some $S \\subseteq A$ such that\n$1 - \\exp(-(c*K)) < \\sum_{n \\in S} 1/n \\le 1$?\n-/\n@[category research open, AMS 5 11]\ntheorem erdos_312 :\n    answer(sorry) ↔\n    ∃ (c : ℝ), 0 < c ∧\n      ∀ (K : ℝ), 1 < K →\n        ∃ (N₀ : ℕ),\n          ∀ (n : ℕ) (a : Fin n → ℕ),\n            (n ≥ N₀ ∧ (∑ i : Fin n, (a i : ℝ)⁻¹) > K) →\n              ∃ (S : Finset (Fin n)),\n                1 - Real.exp (-(c * K)) < (∑ i ∈ S, (a i : ℝ)⁻¹) ∧\n                ∑ i ∈ S, (a i : ℝ)⁻¹ ≤ 1 := by\n  sorry\n\nend Erdos312\n"
+}

@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_872",
+  "problem": [
+    "Consider the two-player game in which players alternately choose integers from \\{2,3,\\ldots,n\\} to be included in some set A (the same set for both players) such that no a\\mid b for a≠ b∈ A.\n\nThe game ends when no legal move is possible. One player wants the game to last as long as possible, the other wants the game to end quickly. How long can the game be guaranteed to last for?\n\nAt least \\epsilon n moves? (For \\epsilon>0 and n sufficiently large.) At least (1-\\epsilon)(n)/(2) moves?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 872,
+  "status": "open",
+  "tags": [
+    "number theory",
+    "primitive sets"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Consider the two-player game in which players alternately choose integers from $\\{2,3,\\ldots,n\\}$ to be included in some set $A$ (the same set for both players) such that no $a\\mid b$ for $a\\neq b\\in A$.\n\nThe game ends when no legal move is possible. One player wants the game to last as long as possible, the other wants the game to end quickly. How long can the game be guaranteed to last for?\n\nAt least $\\epsilon n$ moves? (For $\\epsilon>0$ and $n$ sufficiently large.) At least $(1-\\epsilon)\\frac{n}{2}$ moves?",
+  "additional_context": "A number theoretic variant of a combinatorial game of Hajnal, in which players alternately add edges to a graph while keeping it triangle-free. This game must trivially end in at most n^2/4 moves, and F\\\"{u}redi and Seress \\cite{FuSe91} proved that it can be guaranteed to last for \\gg n\\log n moves. Bir\\'{o}, Horn, and Wildstrom \\cite{BPW16} proved that it must end in at most ((26)/(121)+o(1))n^2 moves.\n\nThis type of game is known as a saturation game.\n\nErdős does not specify which player goes first, which may result in different answers.\n\nReferences\n\n[BPW16] Bir\\'{o}, Csaba and Horn, Paul and Wildstrom, D. Jacob, An upper bound on the extremal version of Hajnal's\ntriangle-free game. Discrete Appl. Math. (2016), 20--28.\n\n[FuSe91] F\\\"{u}redi, Zolt\\'{a}n and Reimer, Dave and Seress, \\'{A}kos, Hajnal's triangle-free game and extremal graph problems. Congr. Numer. (1991), 123--128.",
+  "reference_proof_hint": "You can rephrase this as a graph/poset “saturation” game.\n\n* Let (G_n) be the graph with vertex set ({2,3,\\dots,n}), where two vertices are adjacent iff they are comparable by divisibility [[nomath]](i.e., $a\\mid b$ or $b\\mid a$)[[/nomath]].\n* A legal position $A$ is exactly an **independent set** in (G_n) (no edges among chosen vertices), i.e. a **primitive set**.\n* The game ends exactly when $A$ is a **maximal** independent set (equivalently, a maximal primitive set).\n\nThis is the “competition–independence game” / “independent domination game” viewpoint from graph games. \nIt’s also explicitly listed as an Erdős “saturation game”–type problem, and (as of the most recent public discussion I can find) it is **open** in the sense that Erdős’s linear-vs-$n/2$ thresholds are not resolved. ([Erdős Problems][1])\n\n## What is guaranteed (unconditionally) about the length?\n\nLet (|A|) be the number of moves when the game ends.\n\n### Trivial universal upper bound: (|A|\\le \\lfloor n/2\\rfloor)\n\nThe "
+}

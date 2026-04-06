@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_1089",
+  "problem": [
+    "Let g_d(n) be minimal such that every collection of g_d(n) points in ℝ^d determines at least n many distinct distances. Estimate g_d(n). In particular, does\\lim_{d→ ∞}(g_d(n))/(d^{n-1)}exist?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 1089,
+  "status": "solved",
+  "tags": [
+    "geometry",
+    "distances"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $g_d(n)$ be minimal such that every collection of $g_d(n)$ points in $\\mathbb{R}^d$ determines at least $n$ many distinct distances. Estimate $g_d(n)$. In particular, does\\[\\lim_{d\\to \\infty}\\frac{g_d(n)}{d^{n-1}}\\]exist?",
+  "additional_context": "A question of Kelly. Erdős \\cite{Er75f} writes it is 'easy' to see that g_d(n)\\gg d^{n-1}. Erdős and Straus proved (in unpublished work mentioned in \\cite{Er75f}) thatg_d(n) ≤ c^{d^{1-b_n}}for some constants c>0 and b_n>0.\n\nIt is trivial that g_1(3)=4, and easy to see that g_2(3)=6. Croft \\cite{Cr62} proved g_3(3)=7. The vertices of a d-dimensional cube demonstrate thatg_d(d+1)>2^d.The function g_d(n) is essentially the inverse of the function f_d(n) considered in [1083] - with our definitions, g_d(n)>m if and only if f_d(m)<n. The emphasis in this problem is, however, on the behaviour for fixed n as d→∞.\n\nReferences\n\n[Cr62] Croft, H. T., 9-point and 7-point configurations in 3-space. Proc. London Math. Soc. (3) (1962), 400-424.\n\n[Er75f] Erdős, Paul, On some problems of elementary and combinatorial geometry. Ann. Mat. Pura Appl. (4) (1975), 99-108.",
+  "reference_proof_hint": "Write\n[\nm_k(d):=\\max\\\\{|X|:\\ X\\subset\\mathbb R^d,\\ \\bigl|{|x-y|:\\ x\\neq y\\in X}\\bigr|\\le k\\\\},\n]\nthe largest size of a $k$-distance set in (\\mathbb R^d). Then by definition\n[\ng_d(n)=m_{n-1}(d)+1.\n]\n\n## General bounds (sharp in the leading term)\n\n### Upper bound (Bannai–Bannai–Stanton; also Blokhuis)\n\nA classical result of Bannai–Bannai–Stanton shows that any $k$-distance set (X\\subset\\mathbb R^d) satisfies\n[\n|X|\\le \\binom{d+k}{k}. \\tag{UB}\n]\n([Springer][1])\n\nSo\n[\ng_d(n)=m_{n-1}(d)+1\\ \\le\\ \\binom{d+n-1}{n-1}+1.\n]\n([Springer][2])\n\n### Lower bound (explicit construction)\n\nFor (k\\le d+1), take all vectors in ({0,1}^{d+1}) with exactly $k$ ones. They lie in the $d$-dimensional affine hyperplane (\\sum x_i=k) and determine exactly $k$ distances [[nomath]](equivalently $k+1$ possible inner products)[[/nomath]], giving a $k$-distance set of size (\\binom{d+1}{k}). ([Springer][2])\n\nHence\n[\nm_k(d)\\ge \\binom{d+1}{k}\\quad\\Longrightarrow\\quad\ng_d(n)=m_{n-1}(d)+1\\ \\ge\\ \\binom{d+1}{n-1}+1\n]\n[[nomath]]("
+}

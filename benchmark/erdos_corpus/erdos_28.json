@@ -1,0 +1,19 @@
+{
+  "uuid": "erdos_28",
+  "problem": [
+    "If A⊆ ℕ is such that A+A contains all but finitely many integers then \\limsup 1_A\\ast 1_A(n)=∞."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 28,
+  "status": "open",
+  "tags": [
+    "number theory",
+    "additive basis"
+  ],
+  "prize": "$500",
+  "formalized_on_site": true,
+  "original_latex": "If $A\\subseteq \\mathbb{N}$ is such that $A+A$ contains all but finitely many integers then $\\limsup 1_A\\ast 1_A(n)=\\infty$.",
+  "additional_context": "Conjectured by Erdős and Tur\\'{a}n. They also suggest the stronger conjecture that \\limsup  1_A\\ast 1_A(n)/\\log n>0.\n\nAnother stronger conjecture would be that the hypothesis | A∩ [1,N]| \\gg N^{1/2} for all large N suffices.\n\nErdős and S\\'{a}rk\\\"{o}zy conjectured the stronger version that if A=\\{a_1<a_2<\\cdots\\} and B=\\{b_1<b_2<\\cdots\\} with a_n/b_n→ 1 are such that A+B=ℕ then \\limsup 1_A\\ast 1_B(n)=∞.\n\nSee also [40].\n\nThis is discussed in problem C9 of Guy's collection \\cite{Gu04}.\n\nReferences\n\n[Gu04] Guy, Richard K., Unsolved problems in number theory.  (2004), xviii+437.",
+  "reference_proof_hint": "Let\n[\nr_A(n):=(1_A*1_A)(n)=\\sum_{k\\ge 0}1_A(k)1_A(n-k)\n]\n[[nomath]](the number of **ordered** pairs $(a,b)\\in A^2$ with $a+b=n$)[[/nomath]]. Your hypothesis “$A+A$ contains all but finitely many integers” is exactly\n[\nr_A(n)>0\\qquad\\text{for all }n\\ge n_0 .\n]\n\nThe conclusion you wrote,\n[\n\\limsup_{n\\to\\infty} r_A(n)=\\infty,\n]\nis the **Erdős–Turán conjecture on additive bases (order 2)**. It is *not* known in full generality as of the current literature: modern references still present it explicitly as a conjecture/problem rather than a theorem. ([ScienceDirect][1])\n\n### What *is* known unconditionally\n\nAlthough the conjecture remains open, there are nontrivial lower bounds showing that (r_A(n)) cannot stay too small forever. For instance, results of Grekos–Haddad–Helou–Pihko and later Borwein–Choi–Chu imply that for every (asymptotic) additive basis $A$ of order 2 one has\n[\n\\limsup_{n\\to\\infty} r_A(n)\\ge 8,\n]\nequivalently (r_A(n)) exceeds $7$ infinitely often. \n\nSo we can prove “(\\limsu",
+  "ground_truth_lean": "/-\nCopyright 2025 The Formal Conjectures Authors.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    https://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n-/\n\nimport FormalConjectures.Util.ProblemImports\n\n/-!\n# Erdős Problem 28\n\n*Reference:* [erdosproblems.com/28](https://www.erdosproblems.com/28)\n-/\n\nopen Filter Set AdditiveCombinatorics\nopen scoped Pointwise\n\n\nnamespace Erdos28\n\n/--\nIf $A ⊆ \\mathbb{N}$ is such that $A + A$ contains all but finitely many integers then\n $\\limsup 1_A ∗ 1_A(n) = \\infty$.\n-/\n@[category research open, AMS 11]\ntheorem erdos_28 (A : Set ℕ) (h : (A + A)ᶜ.Finite) :\n    limsup (fun (n : ℕ) => (sumRep A n : ℕ∞)) atTop = (⊤ : ℕ∞) := by\n  sorry\n\n-- TODO(firsching): add the theorems/conjectures for the comments on the page\n\nend Erdos28\n"
+}

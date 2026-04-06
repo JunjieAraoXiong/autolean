@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_408",
+  "problem": [
+    "Let \\phi(n) be the Euler totient function and \\phi_k(n) be the iterated \\phi function, so that \\phi_1(n)=\\phi(n) and \\phi_k(n)=\\phi(\\phi_{k-1}(n)). Letf(n) = \\min \\{ k : \\phi_k(n)=1\\}.Does f(n)/\\log n have a distribution function? Is f(n)/\\log n almost always constant? What can be said about the largest prime factor of \\phi_k(n) when, say, k=\\log\\log n?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 408,
+  "status": "open",
+  "tags": [
+    "number theory",
+    "iterated functions"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $\\phi(n)$ be the Euler totient function and $\\phi_k(n)$ be the iterated $\\phi$ function, so that $\\phi_1(n)=\\phi(n)$ and $\\phi_k(n)=\\phi(\\phi_{k-1}(n))$. Let\\[f(n) = \\min \\{ k : \\phi_k(n)=1\\}.\\]Does $f(n)/\\log n$ have a distribution function? Is $f(n)/\\log n$ almost always constant? What can be said about the largest prime factor of $\\phi_k(n)$ when, say, $k=\\log\\log n$?",
+  "additional_context": "Pillai \\cite{Pi29} was the first to investigate this function, and proved\\log_3 n < f(n) < \\log_2 nfor all large n. Shapiro \\cite{Sh50} proved that f(n) is essentially multiplicative.\n\nErdős, Granville, Pomerance, and Spiro \\cite{EGPS90} have proved that the answer to the first two questions is yes, conditional on a form of the Elliott-Halberstam conjecture.\n\nIt is likely true that, if k→ ∞ however slowly with n, then for almost all n the largest prime factor of \\phi_k(n) is ≤ n^{o(1)}.\n\nThis is discussed in problem B41 of Guy's collection \\cite{Gu04}.\n\nReferences\n\n[EGPS90] Erdős, P. and Granville, A. and Pomerance, C. and Spiro, C., On the normal behavior of the iterates of some arithmetic functions. Analytic number theory (Allerton Park, IL, 1989) (1990), 165-204.\n\n[Gu04] Guy, Richard K., Unsolved problems in number theory.  (2004), xviii+437.\n\n[Pi29] Pillai, S. Sivasankaranarayana, On some functions connected with {\\phi(n)}. Bull. Amer. Math. Soc. (1929), 832-836.\n\n[Sh50] Shapiro, Harold N., On the iterates of a certain class of arithmetic functions. Comm. Pure Appl. Math. (1950), 259-272.",
+  "reference_proof_hint": "Let ( \\phi_0(n)=n), (\\phi_{k+1}(n)=\\phi(\\phi_k(n))), and\n[\nf(n)=\\min{k:\\phi_k(n)=1}.\n]\nThis $f(n)$ is the classical “height” (Pillai–Shapiro height) of $n$ under (\\phi)-iteration.\n\n## 1) Scale of $f(n)$ and what is known unconditionally\n\nA first key point is that $f(n)$ is **linear in (\\log n)** up to absolute constants. Pillai (1929) proved (in a form equivalent to)\n[\n\\frac{\\log(n/2)}{\\log 3}+1 \\ \\le\\ f(n)\\ \\le\\ \\frac{\\log n}{\\log 2}+1\n\\qquad (n\\ge 2),\n]\nso (f(n)\\asymp \\log n). ([OEIS][1])\n\nThe extremal behaviors are easy to see:\n\n* If (n=2^a), then (\\phi(2^a)=2^{a-1}), so (f(2^a)=a) and (f(n)/\\log n \\to 1/\\log 2).\n* If (n=2\\cdot 3^b), then (\\phi(2\\cdot 3^b)=2\\cdot 3^{b-1}), so (f(2\\cdot 3^b)=b+1) and (f(n)/\\log n \\to 1/\\log 3).\n\nIn fact Erdős–Granville–Pomerance–Spiro (EGPS) note that by taking (n=2^a3^b) and varying $(a,b)$, the set of values (f(n)/\\log n) is **dense** in the interval ([1/\\log 3,;1/\\log 2]). ([OEIS][2])\n\nSo:\n\n* The normalization (f(n)/\\log n) is the “right” scale [["
+}

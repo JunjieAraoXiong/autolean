@@ -1,0 +1,15 @@
+{
+  "uuid": "erdos_965",
+  "problem": [
+    "Erdős Problem #965"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 965,
+  "status": "disproved",
+  "tags": [
+    "ramsey theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": true,
+  "ground_truth_lean": "/-\nCopyright 2026 The Formal Conjectures Authors.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    https://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n-/\n\nimport FormalConjectures.Util.ProblemImports\n\n/-!\n# Erdős Problem 965\n\nFor every 2-coloring of ℝ, is there an uncountable set $A ⊆ ℝ$ such that\nall sums $a + b$ for $a, b ∈ A, a ≠ b$ have the same colour?\n\n*References:*\n- [erdosproblems.com/965](https://www.erdosproblems.com/965)\n- [Er75b] Erdős, Paul, Problems and results in combinatorial number theory. Journées Arithmétiques de Bordeaux (Conf., Univ. Bordeaux, Bordeaux, 1974) (1975), 295-310.\n- [HLS17] Hindman, Neil and Leader, Imre and Strauss, Dona, Pairwise sums in colourings of the reals. Abh. Math. Semin. Univ. Hambg. (2017), 275--287.\n- [Ko16] Komjáth, Péter, A certain 2-coloring of the reals. Real Anal. Exchange (2016), 227--231.\n- [SWCol] Sokoup Dániel and Weiss, William, Sums and Anti-Ramsey Colourings of ℝ. https://danieltsoukup.github.io/academic/finset_colouring.pdf\n-/\n\nnamespace Erdos965\n\n/--\nErdős asks in [Er75b] if for every 2-coloring of ℝ, there is an uncountable set $A ⊆ ℝ$ such that\nall sums $a + b$ for $a, b ∈ A, a ≠ b$ have the same colour.\n\nIn [Ko16] Péter Komjáth constructed a counterexample.\nThe same result was proven independently in [SWCol] by Sokoup and Weiss.\n-/\n@[category research solved, AMS 03 05]\ntheorem erdos_965 :\n    answer(False) ↔ ∀ f : ℝ → Fin 2, ∃ A : Set ℝ, ¬ A.Countable ∧\n      ∀ᵉ (a ∈ A) (b ∈ A) (c ∈ A) (d ∈ A), a ≠ b → c ≠ d → f (a + b) = f (c + d) := by\n  sorry\n\n/--\nIn fact, in both [Ko16] and [SWCol] a generalized example for $k$-sums is constructed.\n-/\n@[category research solved, AMS 03 05]\ntheorem erdos_965.variants.generalization : answer(False) ↔\n     ∀ᵉ (k ≥ 2), ∀ f : ℝ → Fin 2, ∃ A : Set ℝ, ¬ A.Countable ∧ ∀ s t : Finset ℝ,\n      ↑s ⊆ A → ↑t ⊆ A → s.card = k → t.card = k → f (s.sum id) = f (t.sum id) := by\n  sorry\n\nend Erdos965\n"
+}

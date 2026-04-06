@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_1091",
+  "problem": [
+    "Let G be a K_4-free graph with chromatic number 4. Must G contain an odd cycle with at least two diagonals?\n\nMore generally, is there some f(r)→ ∞ such that every graph with chromatic number 4, in which every subgraph on ≤ r vertices has chromatic number ≤ 3, contains an odd cycle with at least f(r) diagonals?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 1091,
+  "status": "open",
+  "tags": [
+    "geometry",
+    "chromatic number"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $G$ be a $K_4$-free graph with chromatic number $4$. Must $G$ contain an odd cycle with at least two diagonals?\n\nMore generally, is there some $f(r)\\to \\infty$ such that every graph with chromatic number $4$, in which every subgraph on $\\leq r$ vertices has chromatic number $\\leq 3$, contains an odd cycle with at least $f(r)$ diagonals?",
+  "additional_context": "Erdős originally asked about the existence of just one diagonal, which is true, and was proved by Larson \\cite{La79}. In fact Larson proved the following stronger conjecture of Bollob\\'{a}s and Erdős: if G is a K_4-free graph containing no odd cycle with a diagonal then either G is bipartite, or G contains a cut vertex, or G contains a vertex with degree ≤ 2.\n\nThe pentagonal wheel shows that three diagonals are not guaranteed.\n\nThe first question was solved in the affirmative by Voss \\cite{Vo82}.\n\nReferences\n\n[La79] Larson, Jean A., Some graphs with chromatic number three. J. Combin. Theory Ser. B (1979), 317--322.\n\n[Vo82] Voss, Heinz-J\\\"urgen, Graphs having circuits with at least two chords. J. Combin. Theory Ser. B (1982), 264--285.",
+  "reference_proof_hint": "Yes.\n\nVoss proved (answering a conjecture of Erdős) that **every graph with chromatic number (\\ge 4) and with no (K_4) subgraph contains an odd cycle with at least two chords** (i.e., at least two “diagonals” of that cycle). ([ScienceDirect][1])\nIn particular, if $G$ is (K_4)-free and (\\chi(G)=4), then $G$ must contain an odd cycle with at least two diagonals.\n\nAs for your more general question: **it is (as far as currently recorded) still open** whether one can force the number of diagonals to go to infinity as the “local 3-colorability radius” $r$ grows. ([Erdős Problems][2])\nWhat is known from the same problem record:\n\n* Erdős originally asked just for **one** diagonal; that was proved by Larson. ([Erdős Problems][2])\n* Voss’s result gives a uniform lower bound **(f(r)\\ge 2)** [[nomath]](once $r\\ge 4$, since then the hypothesis “every subgraph on $\\le r$ vertices is 3-colorable” in particular excludes $K_4$)[[/nomath]]. ([ScienceDirect][1])\n* You **cannot** hope for (f(r)\\ge 3) in g"
+}

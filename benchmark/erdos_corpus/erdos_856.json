@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_856",
+  "problem": [
+    "Let k≥ 3 and f_k(N) be the maximum value of ∑_{n∈ A}(1)/(n), where A ranges over all subsets of \\{1,\\ldots,N\\} which contain no subset of size k with the same pairwise least common multiple.\n\nEstimate f_k(N)."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 856,
+  "status": "open",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $k\\geq 3$ and $f_k(N)$ be the maximum value of $\\sum_{n\\in A}\\frac{1}{n}$, where $A$ ranges over all subsets of $\\{1,\\ldots,N\\}$ which contain no subset of size $k$ with the same pairwise least common multiple.\n\nEstimate $f_k(N)$.",
+  "additional_context": "Erdős \\cite{Er70} notes thatf_k(N) \\ll (\\log N)/(\\log\\log N).Indeed, let A be such a set. This in particular implies that, for every t, there are <k solutions to t=ap with a∈ A and p prime, whence∑_{n∈ A}(1)/(n)∑_{p<N}(1)/(p)< k ∑_{t<N^2}(1)/(t) \\ll \\log N,and the bound follows since ∑_{p<N}(1)/(p)\\gg \\log\\log N.\n\nImproved bounds have been given by Tang and Zhang \\cite{TaZh25}, who proved bounds of the shape(\\log N)^{b_k-o(1)}≤ f_k(N)≤ (\\log N)^{c_k+o(1)}for some constants 0<b_k≤ c_k≤ 1, and in particular(\\log N)^{0.438}≤ f_3(N)≤ (\\log N)^{0.889},say, for all large N. The exponents here are related to progress in the sunflower conjecture [857], to which this problem is closely related. For example, the exponents c_k are <1 (and so the upper bound above is non-trivial) if and only if [857] holds for k-sunflowers.\n\nThe analogous question with natural density in place of logarithmic density (that is, we measure | A| in place of ∑_{n∈ A}(1)/(n)) is the subject of [536]. In particular Erdős \\cite{Er70} has constructed A⊆ \\{1,\\ldots,N\\} with | A| \\gg N where no four have the same pairwise least common multiple, and hence the interest of the natural density problem is the k=3 case.\n\nA related combinatorial problem is asked at [857].\n\nReferences\n\n[Er70] Erdős, Paul, Some extremal problems in combinatorial number theory. Mathematical Essays Dedicated to A. J. Macintyre (1970), 123-133.\n\n[TaZh25] Q. Tang and H. Zhang, Average first-passage times for character sums.  (2025).",
+  "reference_proof_hint": "Write (A\\subseteq [N]:={1,\\dots,N}). Call $A$ **LCM-$k$-free** if it contains no distinct (a_1,\\dots,a_k) such that\n$\n\\mathrm{lcm}(a_i,a_j)\\ \\text{ is the same for all }1\\le i<j\\le k .\n$\nYour (f_k(N)) is exactly the extremal “harmonic weight” of an LCM-$k$-free set.\n\n## What is known (best current bounds)\n\nA 2025 paper of Tang–Zhang (written to address Erdős’s question) gives the sharpest general picture available. ([arXiv][1])\n\n### Upper bounds\n\nThe trivial bound is just the harmonic sum:\n[\nf_k(N)\\le \\sum_{n\\le N}\\frac1n = \\log N + O(1).\n]\n([arXiv][1])\n\nErdős proved the stronger\n[\nf_k(N)\\ll_k \\frac{\\log N}{\\log\\log N}.\n]\n([arXiv][1])\n\nAnd it is noted (via the Erdős Problems website discussion) that one can further improve this to\n[\nf_k(N)\\ \\le\\ \\log N\\cdot \\exp\\Big(-\\Omega_k\\Big(\\frac{\\log\\log N}{\\log\\log\\log N}\\Big)\\Big),\n]\nwhich is still ((\\log N)^{1-o(1)}) but with a power saving in the exponent. ([arXiv][1])\n\n### Unconditional polylogarithmic lower bound\n\nTang–Zhang prove an expli"
+}

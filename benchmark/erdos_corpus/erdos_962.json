@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_962",
+  "problem": [
+    "Let k(n) be the maximal k such that there exists m≤ n such that each of the integersm+1,\\ldots,m+kare divisible by at least one prime >k. Estimate k(n)."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 962,
+  "status": "open",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $k(n)$ be the maximal $k$ such that there exists $m\\leq n$ such that each of the integers\\[m+1,\\ldots,m+k\\]are divisible by at least one prime $>k$. Estimate $k(n)$.",
+  "additional_context": "Erdős \\cite{Er65} wrote it is 'not hard to prove' thatk(n)\\gg_\\epsilon \\exp((\\log n)^{1/2-\\epsilon})and it 'seems likely' that k(n)=o(n^\\epsilon), but had no non-trivial upper bound for k(n).\n\nIt is not clear what he meant by a non-trivial bound for this problem, but Tao in the comments has given a simple argument proving k(n) ≤ (1+o(1))n^{1/2}.\n\nTang has proved a lower bound ofk(n)≥ \\exp\\left(\\left((1)/(\\sqrt{2)}-o(1)\\right)\\sqrt{\\log n\\log\\log n}\\right).\n\nReferences\n\n[Er65] Erdős, P., Extremal problems in number theory. Proc. Sympos. Pure Math., Vol. VIII (1965), 181-189.",
+  "reference_proof_hint": "Write (P^{+}(N)) for the largest prime factor of $N$.\nYour condition says\n\n[\nP^{+}(m+i)>k\\qquad (1\\le i\\le k),\n]\n\ni.e. the interval $[m+1,m+k]$ contains **no $k$-smooth numbers** [[nomath]](numbers whose prime factors are all $\\le k$)[[/nomath]]. So $k(n)$ measures how long a gap one can force between $k$-smooth numbers with the start of the gap (\\le n).\n\n## Best known bounds (as of late 2025)\n\nThe problem is open in the sense that the correct order of growth of $k(n)$ is not known. What *is* known (and currently the “right” estimate to quote) is:\n\n[\n\\exp!\\left(\\left(\\frac1{\\sqrt2}-o(1)\\right)\\sqrt{\\log n,\\log\\log n}\\right)\n\\le\nk(n)\n\\le\n(1+o(1)),n^{1/2}.\n]\n\n* The **upper bound** (k(n)\\le (1+o(1))n^{1/2}) is a remark of Tao (given in the discussion): if (k>(1+\\varepsilon)\\sqrt n), then among (m+1,\\dots,m+k) there is a number divisible by some prime $p$ with (\\sqrt n<p<(1+\\varepsilon)\\sqrt n); for such a number (\\le n+k), that prime $p$ is its largest prime factor, which is (<k), contrad"
+}

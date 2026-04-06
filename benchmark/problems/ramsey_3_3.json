@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_ramsey_3_3",
+  "problem": [
+    "In any 2-coloring of the edges of the complete graph K_6, there exists a monochromatic triangle. Equivalently, the Ramsey number R(3,3) = 6: every graph on 6 vertices contains either a triangle or an independent set of size 3."
+  ],
+  "tier": 2,
+  "mathlib_status": "not_in_mathlib",
+  "building_blocks": [
+    "Mathlib.Combinatorics.SimpleGraph.Basic",
+    "Mathlib.Combinatorics.SimpleGraph.Clique",
+    "Mathlib.Combinatorics.SimpleGraph.Complement",
+    "Mathlib.Combinatorics.Pigeonhole",
+    "Mathlib.Data.Finset.Card"
+  ],
+  "proof_strategy": "Fix any vertex v in K_6. By the pigeonhole principle, at least 3 of the 5 edges from v share the same color. Among those 3 neighbors, if any edge between them has the same color, that edge and the two edges to v form a monochromatic triangle; otherwise all 3 mutual edges have the other color, yielding a monochromatic triangle in that color.",
+  "expected_difficulty": "medium"
+}

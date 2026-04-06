@@ -1,0 +1,16 @@
+{
+  "uuid": "erdos_1128",
+  "problem": [
+    "Erdős Problem #1128"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 1128,
+  "status": "disproved",
+  "tags": [
+    "set theory",
+    "ramsey theory",
+    "hypergraphs"
+  ],
+  "prize": "$50",
+  "formalized_on_site": false
+}

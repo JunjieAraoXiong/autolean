@@ -1,0 +1,19 @@
+{
+  "uuid": "erdos_289",
+  "problem": [
+    "Is it true that, for all sufficiently large k, there exist finite intervals I_1,\\ldots,I_k⊂ ℕ, distinct, not overlapping or adjacent, with | I_i| ≥ 2 for 1≤ i≤ k such that1=∑_{i=1}^k ∑_{n∈ I_i}(1)/(n)?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 289,
+  "status": "open",
+  "tags": [
+    "number theory",
+    "unit fractions"
+  ],
+  "prize": "no",
+  "formalized_on_site": true,
+  "original_latex": "Is it true that, for all sufficiently large $k$, there exist finite intervals $I_1,\\ldots,I_k\\subset \\mathbb{N}$, distinct, not overlapping or adjacent, with $\\lvert I_i\\rvert \\geq 2$ for $1\\leq i\\leq k$ such that\\[1=\\sum_{i=1}^k \\sum_{n\\in I_i}\\frac{1}{n}?\\]",
+  "additional_context": "Erdős and Graham posed this in \\cite{ErGr80} without the stipulation the intervals be distinct, non-overlapping, or adjacent, but Kovac in the comments has provided a simple argument showing that it is easily possible without this restriction, and likely \\cite{ErGr80} just forgot to mention this natural restriction.\n\nAs an example representing 2 rather than 1, Hickerson and Montgomery, in the solution to AMS Monthly problem E2689 proposed by Hahn, found2=∑_{i=1}^5 ∑_{n∈ I_i}(1)/(n)where I_1=[2,7], I_2=[9,10], I_3=[17,18], I_4=[34,35], and I_5=[84,85].\n\nReferences\n\n[ErGr80] Erdős, P. and Graham, R., Old and new problems and results in combinatorial number theory. Monographies de L'Enseignement Mathematique (1980).",
+  "reference_proof_hint": "As of **January 2026**, this is **not known**. In fact, with the conditions exactly as you stated (the (I_i) are **distinct**, **pairwise disjoint**, and **not adjacent**, and each has (|I_i|\\ge 2)), it is recorded as an **open Erdős–Graham problem** (Erdős Problem #289). ([Erdős Problems][1])\n\nA bit of context:\n\n* Erdős and Graham posed a closely related question in their 1980 problem collection, but (apparently) **without** explicitly requiring the intervals to be distinct/non-overlapping/non-adjacent. Under that *weaker* interpretation (allowing overlaps/repetitions), Vjekoslav Kovač gave a **simple affirmative argument** that one can achieve such representations for all sufficiently large $k$. ([Erdős Problems][2])\n* However, Kovač also notes that this “easy” method does **not** really address the **non-overlapping / distinct** version, which is the nontrivial one and is what is now listed as #289. ([Erdős Problems][2])\n\nWhat *is* known in the same spirit is that **integers other t",
+  "ground_truth_lean": "/-\nCopyright 2025 The Formal Conjectures Authors.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    https://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n-/\n\nimport FormalConjectures.Util.ProblemImports\n\n/-!\n# Erdős Problem 289\n*Reference:* [erdosproblems.com/289](https://www.erdosproblems.com/289)\n-/\n\nopen Asymptotics Filter Finset\n\nnamespace Erdos289\n\n/-- Is it true that, for all sufficiently large $k$, there exists finite intervals\n$I_1, \\dotsc, I_k \\subset \\mathbb{N}$ with $|I_i| \\geq 2$ for $1 \\leq i \\leq k$ such that\n$$\n1 = \\sum_{i=1}^k \\sum_{n \\in I_i} \\frac{1}{n}.\n$$\n-/\n@[category research open, AMS 11]\ntheorem erdos_289 : answer(sorry) ↔\n    (∀ᶠ k : ℕ in atTop, ∃ I : Fin k → ℕ × ℕ,\n    (∀ i, (I i).1 < (I i).2) ∧\n    (∀ i j, i ≠ j → (I i).2 < (I j).1 ∨ (I j).2 < (I i).1) ∧\n    ∑ i, ∑ n ∈ .Icc (I i).1 (I i).2, (n⁻¹ : ℚ) = 1) := by\n  sorry\n\nend Erdos289\n"
+}

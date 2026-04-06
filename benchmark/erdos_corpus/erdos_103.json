@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_103",
+  "problem": [
+    "Let h(n) count the number of incongruent sets of n points in ℝ^2 which minimise the diameter subject to the constraint that d(x,y)≥ 1 for all points x≠ y. Is it true that h(n)→ ∞?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 103,
+  "status": "open",
+  "tags": [
+    "geometry",
+    "distances"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $h(n)$ count the number of incongruent sets of $n$ points in $\\mathbb{R}^2$ which minimise the diameter subject to the constraint that $d(x,y)\\geq 1$ for all points $x\\neq y$. Is it true that $h(n)\\to \\infty$?",
+  "additional_context": "It is not even known whether h(n)≥ 2 for all large n.\n\nSee also [99].",
+  "reference_proof_hint": "This is not known.\n\nIt is an open problem of Erdős (listed as Erdős Problem #103). In fact, even the much weaker statement “for all large $n$, there are **at least two** non-congruent diameter-minimising configurations” is not proved. ([erdosproblems.com][1])\n\nFor context: for large $n$, the **shape** of a diameter-minimising set is expected to look like a dense “triangular/hexagonal lattice” packing inside something close to a disk (because the triangular lattice is the densest packing pattern in the plane, and this gives the right asymptotic behaviour). But turning that into a proof about **exact** minimisers for each $n$, and then counting how many different minimisers exist, is exactly what is hard here. ([erdosproblems.com][2])\n\n[1]: https://www.erdosproblems.com/forum/thread/103 \"\n\n    Erdős Problem #103 - Discussion thread\n\n\"\n[2]: https://www.erdosproblems.com/99 \"\n  \n    Erdős Problem #99\n  \n\"\n"
+}

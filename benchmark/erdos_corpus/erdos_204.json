@@ -1,0 +1,15 @@
+{
+  "uuid": "erdos_204",
+  "problem": [
+    "Erdős Problem #204"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 204,
+  "status": "disproved (Lean)",
+  "tags": [
+    "covering systems"
+  ],
+  "prize": "no",
+  "formalized_on_site": true,
+  "ground_truth_lean": "/-\nCopyright 2026 The Formal Conjectures Authors.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    https://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n-/\n\nimport FormalConjectures.Util.ProblemImports\n\n/-!\n# Erdős Problem 204\n\n*References:*\n- [erdosproblems.com/204](https://www.erdosproblems.com/204)\n- [Ad25] S. Adenwalla, A Question of Erdős and Graham on Covering Systems. arXiv:2501.15170 (2025).\n-/\n\nnamespace Erdos204\n\n/--\nAre there $n$ such that there is a covering system with moduli the divisors of $n$ which is 'as\ndisjoint as possible'?\n\nThat is, for all $d\\mid n$ with $d>1$ there is an associated $a_d$ such that every integer is\ncongruent to some $a_d\\pmod{d}$, and if there is some integer $x$ with\n\\[x\\equiv a_d\\pmod{d}\\textrm{ and }x\\equiv a_{d'}\\pmod{d'}\\]then $(d,d')=1$.\n\nThe density of such $n$ is zero. Erdős and Graham believed that no such $n$ exist.\n\nAdenwalla [Ad25] has proved there are no such $n$.\n\nThis was formalized by van Doorn in Lean using Aristotle.\n-/\n@[category research solved, AMS 5, formal_proof using lean4 at \"https://github.com/Woett/Lean-files/blob/main/ErdosProblem204.lean\"]\ntheorem erdos_204 : answer(False) ↔ ∃ (n : ℕ) (a : ℕ → ℤ),\n    let D := {d : ℕ | d ∣ n ∧ d > 1}\n    (∀ x : ℤ, ∃ d ∈ D, x ≡ a d [ZMOD d]) ∧\n    (∀ d ∈ D, ∀ d' ∈ D, d ≠ d' → (∃ x : ℤ, x ≡ a d [ZMOD d] → x ≡ a d' [ZMOD d']) →\n      Nat.gcd d d' = 1) := by\n  sorry\n\nend Erdos204\n"
+}

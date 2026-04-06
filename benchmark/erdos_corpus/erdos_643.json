@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_643",
+  "problem": [
+    "Let f(n;t) be minimal such that if a t-uniform hypergraph on n vertices contains at least f(n;t) edges then there must be four edges A,B,C,D such thatA∪ B= C∪ DandA∩ B=C∩ D=\\emptyset.Estimate f(n;t) - in particular, is it true that for t≥ 3f(n;t)=(1+o(1))\\binom{n}{t-1}?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 643,
+  "status": "open",
+  "tags": [
+    "graph theory",
+    "hypergraphs"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $f(n;t)$ be minimal such that if a $t$-uniform hypergraph on $n$ vertices contains at least $f(n;t)$ edges then there must be four edges $A,B,C,D$ such that\\[A\\cup B= C\\cup D\\]and\\[A\\cap B=C\\cap D=\\emptyset.\\]Estimate $f(n;t)$ - in particular, is it true that for $t\\geq 3$\\[f(n;t)=(1+o(1))\\binom{n}{t-1}?\\]",
+  "additional_context": "For t=2 this is asking for the maximal number of edges on a graph which contains no C_4, and so f(n;2)=(1/2+o(1))n^{3/2}.\n\nF\\\"{u}redi \\cite{Fu84} proved that f(n;3) \\ll n^2 and f(n;3) > \\binom{n}{2} for infinitely many n. Pikhurko and Verstra\\\"{e}te \\cite{PiVe09} have proved f(n;3)≤ (13)/(9)\\binom{n}{2} for all n.\n\nMore generally, F\\\"{u}redi \\cite{Fu84} proved that\\binom{n-1}{t-1}+\\left\\lfloor(n-1)/(t)\\right\\rfloor≤ f(n;t) < (7)/(2)\\binom{n}{t-1},and conjectured the lower bound is sharp for t≥ 4. Pikhurko and Verstra\\\"{e}te \\cite{PiVe09} have proved that1 ≤ \\limsup_{n→ ∞} (f(n;t))/(\\binom{n){t-1}}≤ \\min\\left((7)/(4),1+(2)/(\\sqrt{t)}\\right)for all t≥ 3.\n\nF\\\"{u}redi \\cite{Fu84} proved that f(n;3)/\\binom{n}{2} converges as n→ ∞, but the existence of the limit for t≥ 4 is unknown.\n\nReferences\n\n[Fu84] F\\\"uredi, Z., Hypergraphs in which all disjoint pairs have distinct unions. Combinatorica (1984), 161--168.\n\n[PiVe09] Pikhurko, Oleg and Verstra\\\"{e}te, Jacques, The maximum size of hypergraphs without generalized 4-cycles. J. Combin. Theory Ser. A (2009), 637--649.",
+  "reference_proof_hint": "Write $g(n,t)$ for the **maximum** number of edges in a $t$-uniform hypergraph on $[n]$ that avoids your configuration [[nomath]](i.e. contains **no** four *distinct* edges $A,B,C,D$ with\n$A\\cup B=C\\cup D$ and $A\\cap B=C\\cap D=\\varnothing$)[[/nomath]].\nThen your threshold satisfies\n[\nf(n;t)=g(n,t)+1.\n]\nThis forbidden configuration is standard in the literature under the name **generalized 4‑cycle** [[nomath]](often denoted $C_4^t$ or $C_4^r$)[[/nomath]]. ([Opikhurko][1])\n\n## What is known for fixed (t\\ge 3)\n\n### General growth rate\n\nFor every fixed (t\\ge 3),\n[\ng(n,t)=\\Theta!\\big(\\tbinom{n}{t-1}\\big)\\qquad\\text{and hence}\\qquad\nf(n;t)=\\Theta!\\big(\\tbinom{n}{t-1}\\big).\n]\nSo the right “scale” is indeed (\\binom{n}{t-1}), unlike $t=2$ (graphs), where one gets the (C_4) extremal behavior (\\sim \\tfrac12 n^{3/2}). ([Opikhurko][1])\n\n### Best general lower bound (Füredi)\n\nFüredi proved the lower bound\n[\ng(n,t)\\ge\\binom{n-1}{t-1}+\\Big\\lfloor\\frac{n-1}{t}\\Big\\rfloor,\n]\ncoming from the construction"
+}

@@ -1,0 +1,14 @@
+{
+  "uuid": "erdos_910",
+  "problem": [
+    "Erdős Problem #910"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 910,
+  "status": "disproved",
+  "tags": [
+    "topology"
+  ],
+  "prize": "no",
+  "formalized_on_site": false
+}

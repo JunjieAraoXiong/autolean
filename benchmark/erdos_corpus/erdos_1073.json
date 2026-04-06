@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_1073",
+  "problem": [
+    "Let A(x) count the number of composite u<x such that n!+1\\equiv 0\\pmod{u} for some n. Is it true that A(x)≤ x^{o(1)}?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 1073,
+  "status": "open",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": true,
+  "original_latex": "Let $A(x)$ count the number of composite $u<x$ such that $n!+1\\equiv 0\\pmod{u}$ for some $n$. Is it true that $A(x)\\leq x^{o(1)}$?",
+  "additional_context": "A question of Erdős raised in discussions with Hardy and Subbarao \\cite{HaSu02}. The sequence of such u begins25,121,169,437,\\ldotsand is A256519 in the OEIS.\n\nWilson's theorem states that u is prime if and only if (u-1)!+1\\equiv 0\\pmod{u}.\n\nThis is mentioned in problem A2 of Guy's collection.\n\nReferences\n\n[HaSu02] Hardy, G. E. and Subbarao, M. V., A modified problem of Pillai and some related questions. Amer. Math. Monthly (2002), 554--559.",
+  "reference_proof_hint": "This is **open**.\n\nIt is an Erdős question (Erdős Problem #1073): if $A(x)$ counts the **composite** (u<x) for which (u\\mid(n!+1)) for some $n$, Erdős asked whether\n[\nA(x)\\le x^{o(1)}\\qquad(\\text{equivalently }A(x)=o(x^\\varepsilon)\\text{ for every }\\varepsilon>0).\n]\nIt appears as Problem **F*** in Hardy–Subbarao (2002), and is recorded in the ErdosProblems database; the corresponding integers begin (25,121,169,437,\\dots) and form OEIS **A256519**. ([Erdős Problems][1])\n\nA couple of basic observations (easy but useful):\n\n* If (u\\mid(n!+1)), then (\\gcd(u,n!)=1). In particular **every prime factor** (p\\mid u) satisfies (p>n) [[nomath]](since if $p\\le n$ then $p\\mid n!$ so $n!+1\\not\\equiv 0\\pmod p$)[[/nomath]].\n* Hence (n< P^-(u)), the least prime factor of $u$. If $u$ is composite then (P^-(u)\\le \\sqrt u), so necessarily (n<\\sqrt u\\le \\sqrt x).\n\nNone of this comes close to proving (A(x)\\le x^{o(1)}), and as far as I can tell there is **no known proof or disproof** of that subpolynomial bo",
+  "ground_truth_lean": "/-\nCopyright 2025 The Formal Conjectures Authors.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    https://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n-/\n\nimport FormalConjectures.Util.ProblemImports\n\n/-!\n# Erdős Problem 1073\n\n*Reference:* [erdosproblems.com/1073](https://www.erdosproblems.com/1073)\n-/\n\nopen Nat Filter\n\nnamespace Erdos1073\n\n/--\nLet $A(x)$ count the number of composite $u < x$ such that $n!+1 \\equiv 0 (\\mod u)$ for some $n$.\n-/\nnoncomputable def A (x : ℕ) : ℝ := {u | u.Composite ∧ ∃ n, n ! + 1 ≡ 0 [MOD u] ∧ u < x}.ncard\n\n/-- Is it true that $A(x) \\le x^{o(1)}$? -/\n@[category research open, AMS 11]\ntheorem erdos_1073 :\n    answer(sorry) ↔ ∃ (o : ℕ → ℝ), o =o[atTop] (1 : ℕ → ℝ) ∧ ∀ x, A x ≤ x ^ (o x) := by\n  sorry\n\nend Erdos1073\n"
+}

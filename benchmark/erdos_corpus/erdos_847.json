@@ -1,0 +1,36 @@
+{
+  "uuid": "erdos_847",
+  "problem": [
+    "Let A⊂ ℕ be an infinite set for which there exists some \\epsilon>0 such that in any subset of A of size n there is a subset of size at least \\epsilon n which contains no three-term arithmetic progression.\n\nIs it true that A is the union of a finite number of sets which contain no three-term arithmetic progression?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 847,
+  "status": "disproved",
+  "tags": [
+    "additive combinatorics"
+  ],
+  "prize": "no",
+  "formalized_on_site": true,
+  "original_latex": "Let $A\\subset \\mathbb{N}$ be an infinite set for which there exists some $\\epsilon>0$ such that in any subset of $A$ of size $n$ there is a subset of size at least $\\epsilon n$ which contains no three-term arithmetic progression.\n\nIs it true that $A$ is the union of a finite number of sets which contain no three-term arithmetic progression?",
+  "additional_context": "A problem of Erdős, Ne\\v{s}et\\v{r}il, and R\\\"{o}dl.\n\nSee also [774] and [846].",
+  "reference_proof_hint": "No.\n\nA counterexample is given by a recent construction of **Reiher, Rödl, and Sales**. Specialising their result to $k=3$, they construct [[nomath]](for any $\\mu\\in(0,2/3)$)[[/nomath]] a set (X\\subset\\mathbb N) such that:\n\n1. **(Local large 3AP-free subsets)** Every finite (Y\\subseteq X) contains a subset (Z\\subseteq Y) with\n   [\n   |Z|\\ge \\mu |Y|\n   ]\n   and $Z$ contains **no three-term arithmetic progression**.\n\n2. **(Global “van der Waerden” property)** For **every** finite number of colours $r$, **every** $r$-colouring of $X$ contains a **monochromatic** three-term arithmetic progression. ([arXiv][1])\n\nProperty $1$ is exactly your hypothesis [[nomath]](take $\\epsilon=\\mu$)[[/nomath]]. But $2$ implies $X$ **cannot** be a union of finitely many 3AP-free sets: if (X=\\bigcup_{i=1}^m X_i) with each (X_i) 3AP-free, then colouring each (X_i) with colour $i$ gives an $m$-colouring with **no** monochromatic 3AP—contradicting $2$.\n\nSo the answer to your question is **false**. ([arXiv][1])\n\n",
+  "ground_truth_lean": "/-\nCopyright 2026 The Formal Conjectures Authors.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    https://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n-/\nimport FormalConjectures.Util.ProblemImports\n\n/-!\n# Erdős Problem 847\n\n*References:*\n- [erdosproblems.com/847](https://www.erdosproblems.com/847)\n- [RRS24] Reiher, Christian and R\\\"odl, Vojt\\v ech and Sales, Marcelo, Colouring versus density in integers and {H}ales-{J}ewett cubes. J. Lond. Math. Soc. (2) (2024)\n  [arXiv:2311.08556](https://arxiv.org/abs/2311.08556)\n-/\n\nnamespace Erdos847\n\n/--\n`HasFew3APs A` means that $A \\subset \\mathbb{N}$ is a set for which there exists some $\\epsilon > 0$ such that\nin any subset of $A$ of size $n$ there is a subset of size at least $\\epsilon n$ which contains no\nthree-term arithmetic progression.\n-/\ndef HasFew3APs (A : Set ℕ) := ∃ (ε : ℝ), ε > 0 ∧ ∀ (B : Set ℕ), B ⊆ A → Finite B →\n  ∃ (C : Set ℕ), C ⊆ B ∧ C.ncard ≥ ε * B.ncard ∧ ThreeAPFree C\n\n/--\nLet $A \\subset \\mathbb{N}$ be an infinite set for which there exists some $\\epsilon > 0$ such that\nin any subset of $A$ of size $n$ there is a subset of size at least $\\epsilon n$ which contains no\nthree-term arithmetic progression.\n\nIs it true that $A$ is the union of a finite number of sets which contain no three-term arithmetic\nprogression?\n\nA negative answer was given by Reiher, Rödl, and Sales [RRS24], who proved that, for any\n$0<\\mu<1/2$, there exists $A\\subseteq \\mathbb{N}$ such that every finite colouring of $A$ contains\na three-term arithmetic progression, and yet every subset of $A$ of size $n$ contains a subset of\nsize $\\geq \\mu n$ without a three-term arithmetic progression.\n-/\n@[category research solved, AMS 11]\ntheorem erdos_847 : answer(False) ↔ ∀ (A : Set ℕ), Infinite A → HasFew3APs A →\n    ∃ n, ∃ (S : Fin n → Set ℕ), (∀ i, ThreeAPFree (S i)) ∧ A = ⋃ i : Fin n, S i := by\n  sorry\n\nend Erdos847\n",
+  "expert_comments": [
+    {
+      "author": "",
+      "text": "In fact, the paper shows $0<\\mu<2/3$ and any $\\mu>2/3$ cannot hold (consider subsets of size three that form a 3-AP)."
+    },
+    {
+      "author": "Adenwalla",
+      "text": "Can this problem appear in the front page since It was disproved already?\n      \n      \n      \n(The site has been updated to address this comment.)"
+    },
+    {
+      "author": "Dogmachine",
+      "text": "My colleague Andrew Xu has produced a GPT 5.2 Pro response that claims the problem is solved negatively in a paper by Reiher-Rodl-Sales (\"Colouring versus density in integers and Hales-Jewett cubes,\" arXiv:2311.08556): https://chatgpt.com/share/696d3236-3d78-8009-905f-0606c66b1efa\n      \n      \n      \n(The site has been updated to address this comment.)"
+    },
+    {
+      "author": "Neel Somani",
+      "text": "Confirmed. Theorem 1.4 shows for any $k \\ge 3$ (here we take $k=3$) and $0 < \\varepsilon < (k-1)/k$, there is an $A \\subset \\mathbb{N}$ such that (a) any subset of $A$ of size $n$ contains a subset of size $\\varepsilon n$ with no $k$-term AP; (b) for every $r \\ge 1$ and every $r$-coloring of $A$, there is a monochromatic $k$-term AP."
+    }
+  ]
+}

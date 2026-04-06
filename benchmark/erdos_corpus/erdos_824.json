@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_824",
+  "problem": [
+    "Let h(x) count the number of integers 1≤ a<b<x such that (a,b)=1 and \\sigma(a)=\\sigma(b), where \\sigma is the sum of divisors function.\n\nIs it true that h(x)>x^{2-o(1)}?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 824,
+  "status": "open",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $h(x)$ count the number of integers $1\\leq a<b<x$ such that $(a,b)=1$ and $\\sigma(a)=\\sigma(b)$, where $\\sigma$ is the sum of divisors function.\n\nIs it true that $h(x)>x^{2-o(1)}$?",
+  "additional_context": "Erdős \\cite{Er74b} proved that \\limsup h(x)/x= ∞, and claimed a similar proof for this problem. A complete proof that h(x)/x→ ∞ was provided by Pollack and Pomerance \\cite{PoPo16}.\n\nA similar question can be asked if we replace the condition (a,b)=1 with the condition that a and b are squarefree. Weisenberg suggests another variant, with the condition that there are no proper factors u\\mid a and v\\mid b such that \\sigma(u)=\\sigma(v) and (u,a/u)=(v,b/v)=1, which is the weakest restriction one can impose that is still strong enough to eliminate trivial duplicates.\n\nReferences\n\n[Er74b] Erdős, P., Remarks on some problems in number theory. Math. Balkanica (1974), 197-202.\n\n[PoPo16] Pollack, Paul and Pomerance, Carl, Some problems of Erdős on the sum-of-divisors function. Trans. Amer. Math. Soc. Ser. B (2016), 1-26.",
+  "reference_proof_hint": "This is **open**.\n\nIt is recorded as an Erdős problem (Erdős Problem #824): given\n$\nh(x)=|\\\\{(a,b): 1\\le a<b<x,\\ (a,b)=1,\\ \\sigma(a)=\\sigma(b)\\\\}|,\n$\nErdős asked whether one has the near–quadratic lower bound (h(x) > x^{2-o(1)}). ([Erdős Problems][1])\n\nWhat *is* known is much weaker but still nontrivial:\n\n* Erdős proved that (\\limsup_{x\\to\\infty} h(x)/x = \\infty), i.e. $h(x)$ is arbitrarily large compared to $x$ along some sequence of $x$. ([Erdős Problems][1])\n* Pollack and Pomerance later gave a complete proof that in fact\n  [\n  \\frac{h(x)}{x}\\to\\infty,\n  ]\n  so $h(x)$ grows **superlinearly** (by an unbounded factor). ([Erdős Problems][1])\n\nSo we know $h(x)$ is “quite large” in the sense (h(x)\\gg x\\cdot g(x)) with (g(x)\\to\\infty), but this is still extremely far from (x^{2-o(1)}).\n\nThere is also strong structural evidence that coprime collisions (\\sigma(a)=\\sigma(b)) are not ubiquitous:\n\n* Pollack proved that for **asymptotically 100% of (\\sigma)-values $v$**, *all* integers $n$ with"
+}

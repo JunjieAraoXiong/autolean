@@ -1,0 +1,14 @@
+{
+  "uuid": "erdos_372",
+  "problem": [
+    "Erdős Problem #372"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 372,
+  "status": "proved",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false
+}

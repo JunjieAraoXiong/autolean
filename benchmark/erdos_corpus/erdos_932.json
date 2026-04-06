@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_932",
+  "problem": [
+    "Let p_k denote the kth prime. For infinitely many r there are at least two integers p_r<n<p_{r+1} all of whose prime factors are <p_{r+1}-p_r."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 932,
+  "status": "open",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": true,
+  "original_latex": "Let $p_k$ denote the $k$th prime. For infinitely many $r$ there are at least two integers $p_r<n<p_{r+1}$ all of whose prime factors are $<p_{r+1}-p_r$.",
+  "additional_context": "Erdős thought this was true but that there are very few such r. He could show that the density of r such that at least one such n exist is 0.\n\nThis problem has been formalised in Lean as part of the Google DeepMind Formal Conjectures project.",
+  "reference_proof_hint": "What you wrote is *not* known to be true at present: it is an open Erdős problem (Erdős Problems Project **#932**) as of January 2026. ([Erdős Problems][1])\n\nTo restate the condition in standard language: if (g:=p_{r+1}-p_r), you’re asking for infinitely many prime gaps $(p_r,p_{r+1})$ that contain **at least two $g$-smooth integers**, i.e. integers $n$ whose *largest* prime factor is (<g).\n\n## Small examples (just to see the phenomenon)\n\nFor instance:\n\n* $(7,11)$ has $g=4$, and (8=2^3), (9=3^2) both have all prime factors (<4).\n* $(23,29)$ has $g=6$, and (24=2^3\\cdot 3), (25=5^2), (27=3^3) all have prime factors (<6).\n\n(These match what you’ll see in the little table I computed above.)\n\n## What *is* known unconditionally: “at least one” is easy\n\nIf you weaken “at least two integers” to “at least one integer”, then it’s straightforward to prove there are infinitely many such $r$. This is also noted in the discussion of the problem. ([Erdős Problems][1])\n\nHere is a clean proof.\n\n### Cla",
+  "ground_truth_lean": "/-\nCopyright 2025 The Formal Conjectures Authors.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    https://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n-/\n\nimport FormalConjectures.Util.ProblemImports\n\n/-!\n# Erdős Problem 932\n\n*Reference:* [erdosproblems.com/932](https://www.erdosproblems.com/932)\n-/\n\nnamespace Erdos932\n\n/--\nLet $p_k$ denote the $k$th prime. For infinitely many $r$ there are at least two\nintegers $p_r < n < p_{r+1}$ all of whose prime factors are $< p_{r + 1} - p_r$.\n-/\n@[category research open, AMS 11]\ntheorem erdos_932 :\n    { r : ℕ | 2 ≤ (Finset.Ioo (r.nth Nat.Prime) (r.succ.nth Nat.Prime) |>.filter\n      (fun m => m.maxPrimeFac < r.succ.nth Nat.Prime - r.nth Nat.Prime)).card }.Infinite := by\n  sorry\n\n/--\nErdős could show that the density of $r$ such that at least one such $n$ exists is $0$.\n-/\n@[category research solved, AMS 11]\ntheorem erdos_932.variants.one_le :\n    { r : ℕ | 1 ≤ (Finset.Ioo (r.nth Nat.Prime) (r.succ.nth Nat.Prime) |>.filter\n      (fun m => m.maxPrimeFac < r.succ.nth Nat.Prime - r.nth Nat.Prime)).card }.HasDensity 0 := by\n  sorry\n\nend Erdos932\n"
+}

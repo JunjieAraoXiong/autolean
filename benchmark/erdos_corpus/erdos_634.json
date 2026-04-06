@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_634",
+  "problem": [
+    "Find all n such that there is at least one triangle which can be cut into n congruent triangles."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 634,
+  "status": "open",
+  "tags": [
+    "geometry"
+  ],
+  "prize": "$25",
+  "formalized_on_site": false,
+  "original_latex": "Find all $n$ such that there is at least one triangle which can be cut into $n$ congruent triangles.",
+  "additional_context": "Erdős' question was reported by Soifer \\cite{So09c}. It is easy to see that all square numbers have this property (in fact for square numbers any triangle will do). Soifer \\cite{So09c} has shown that numbers of the form 2n^2,3n^2,6n^2,n^2+m^2 also have this property. Beeson has shown (see the slides below) that 7 and 11 do not have this property. It is possible that any prime of the form 4n+3 does not have this property.\n\nIn particular, it is not known if 19 has this property (i.e. are there 19 congruent triangles which can be assembled into a triangle?).\n\nFor more on this problem see these slides from a talk by Michael Beeson. As a demonstration of this problem we include {IMAGE=634Triangle,a picture} of a cutting of an equilateral triangle into 27 congruent triangles from these slides.\n\nSoifer proved \\cite{So09} that if we relax congruence to similarity then every triangle can be cut into N similar triangles when N≠ 2,3,5.\n\nIf one requires the smaller triangles to be similar to the larger triangle then the only possible values of N are n^2,n^2+m^2,3n^2, proved by Snover, Waiveris, and Williams \\cite{SWW91}.\n\nZhang \\cite{Zh25}, among other results, has proved that for any integers a ≥ b, ifn≥ 3\\left\\lceil (a^2+b^2+ab-a-b)/(ab)\\right\\rceilthen n^2ab has this property (indeed, they explicitly show that an equilateral triangle can be tiled with n^2ab many triangles of side lengths a,b,\\sqrt{a^2+b^2+2+ab}).\n\nSee also [633].\n\nReferences\n\n[SWW91] Snover, S. and Waiveris, C. and Williams, J., Rep-tiling for triangles. Discrete Math. (1991), 193-200.\n\n[So09] Soifer, Alexander, How Does One Cut a Triangle? I.  (2009), 15-23.\n\n[So09c] Soifer, Alexander, Is there anything beyond the solution?.  (2009), 47-50.\n\n[Zh25] Y. Zhang, Tiling Triangles With 2\\pi/3 Angles. arXiv:2512.22696 (2025).",
+  "reference_proof_hint": "This is one of Erdős’ 25 problems (Soifer’s Problem 6.7), and a complete classification of **all** such integers $n$ is **still not known** as of the latest literature summaries (edited Dec 30, 2025). ([Erdős Problems][1])\n\nWhat *is* known is a fairly large set of values that **do** work, and a couple that **provably do not**.\n\n## Infinitely many values of $n$ that work\n\nLet $S$ be the set of positive integers $n$ for which **there exists at least one** triangle that can be cut into $n$ congruent triangles.\n\n### 1) Every perfect square works: (n = k^2)\n\nIn fact, **every** triangle can be cut into (k^2) congruent triangles (“quadratic tiling”): divide each side into $k$ equal parts and draw parallels to the sides to form a triangular grid; the smallest triangles all have side lengths (\\frac{1}{k}) of the original, hence are congruent. ([arXiv][2])\n\nSo:\n[\nk^2 \\in S \\quad \\text{for every } k\\ge 1.\n]\n\n### 2) Closure under multiplying by squares\n\nIf (N\\in S), then for any integer (m\\ge 1),\n"
+}

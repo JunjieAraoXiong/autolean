@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_181",
+  "problem": [
+    "Let Q_n be the n-dimensional hypercube graph (so that Q_n has 2^n vertices and n2^{n-1} edges). Prove thatR(Q_n) \\ll 2^n."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 181,
+  "status": "open",
+  "tags": [
+    "graph theory",
+    "ramsey theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $Q_n$ be the $n$-dimensional hypercube graph (so that $Q_n$ has $2^n$ vertices and $n2^{n-1}$ edges). Prove that\\[R(Q_n) \\ll 2^n.\\]",
+  "additional_context": "Conjectured by Burr and Erdős, althouhg in \\cite{Er93} Erdős says the behaviour of R(Q_n) was considered by himself and S\\'{o}s, who could not decide whether R(Q_n)/2^n→ ∞ or not.\n\nThe trivial bound isR(Q_n) ≤ R(K_{2^n})≤ C^{2^n}for some constant C>1. This was improved a number of times; the current best bound due to Tikhomirov \\cite{Ti22} isR(Q_n)\\ll 2^{(2-c)n}for some small constant c>0. (In fact c\\approx 0.03656 is permissible.)\n\nThis problem is #20 in Ramsey Theory in the graphs problem collection.\n\nReferences\n\n[Er93] Erdős, Paul, Some of my favorite solved and unsolved problems in graph\ntheory. Quaestiones Math. (1993), 333-350.\n\n[Ti22] Tikhomirov, K., A remark on the Ramsey number of the hypercube. arXiv:2208.14568 (2022).",
+  "reference_proof_hint": "The estimate\n[\nR(Q_n)\\ll 2^n\n]\n[[nomath]](where $R(\\cdot)$ is the usual 2–colour Ramsey number)[[/nomath]] is **a famous open problem**. It is Erdős problem #181 (posed with Burr) and is still listed as open. ([Erdős Problems][1])  In particular, no proof of (R(Q_n)=O(2^n)) with an absolute constant is currently known.\n\nWhat *is* known is that (R(Q_n)) is at most about (4^n) (and slightly better bounds are known). For example, Conlon–Fox–Sudakov proved that for every bipartite $H$ on $m$ vertices of maximum degree $d$,\n[\nR(H)\\le 2^{d+6}m,\n]\nand applying this to (Q_n) [[nomath]](where $m=2^n$ and $d=n$)[[/nomath]] gives (R(Q_n)\\le 2^{2n+6}).   More recently, Tikhomirov improved the best known upper bound to (R(Q_n)=O(2^{2n-cn})) for a universal constant (c>0) [[nomath]](with an explicit $c\\approx 0.03656$ in the paper)[[/nomath]]. \n\nBelow is a **self-contained proof** of the classical bound\n[\nR(Q_n)\\le 2^{2n+6}=64\\cdot 4^n,\n]\nwhich is far weaker than the conjectured $O(2^n)$ but illustr"
+}

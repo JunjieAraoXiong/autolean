@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_852",
+  "problem": [
+    "Let d_n=p_{n+1}-p_n, where p_n is the nth prime. Let h(x) be maximal such that for some n<x the numbers d_n,d_{n+1},\\ldots,d_{n+h(x)-1} are all distinct. Estimate h(x). In particular, is it true thath(x) >(\\log x)^cfor some constant c>0, andh(x)=o(\\log x)?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 852,
+  "status": "open",
+  "tags": [
+    "number theory",
+    "primes"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $d_n=p_{n+1}-p_n$, where $p_n$ is the $n$th prime. Let $h(x)$ be maximal such that for some $n<x$ the numbers $d_n,d_{n+1},\\ldots,d_{n+h(x)-1}$ are all distinct. Estimate $h(x)$. In particular, is it true that\\[h(x) >(\\log x)^c\\]for some constant $c>0$, and\\[h(x)=o(\\log x)?\\]",
+  "additional_context": "Brun's sieve implies h(x) → ∞ as x→ ∞.",
+  "reference_proof_hint": "Let\n\n* (d_n:=p_{n+1}-p_n) [[nomath]](the $n$th prime gap)[[/nomath]], and\n* $a(n):=\\max{k\\ge 1:\\ d_n,d_{n+1},\\dots,d_{n+k-1}\\ \\text{are all distinct}}$.\n\nThen your $h(x)$ is exactly\n$\nh(x)=\\max_{1\\le n<x} a(n).\n$\nThis is the quantity encoded by OEIS **A053597** [[nomath]](the function $a(n)$)[[/nomath]] and its record-setters **A078515** (the indices where a new maximum occurs). ([OEIS][1])\n\n## What is known rigorously\n\nNot much quantitatively seems to be known. The Erdős-problems entry for this question records only that **Brun’s sieve implies (h(x)\\to\\infty)** as (x\\to\\infty). ([Erdős Problems][2])\n\nI don’t see (from the sources available) any proven bound of the shape (h(x)>(\\log x)^c) for some fixed (c>0), nor a proven $o(\\log x)$ upper bound. The problem is listed as open. ([Erdős Problems][2])\n\n## What the standard random/Poisson prime heuristic predicts\n\nHeuristically, near a large prime $p$, the primes behave like a Poisson process with intensity (\\approx 1/\\log p) (Cramér-type"
+}

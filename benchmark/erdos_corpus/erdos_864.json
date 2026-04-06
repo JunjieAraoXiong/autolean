@@ -1,0 +1,19 @@
+{
+  "uuid": "erdos_864",
+  "problem": [
+    "Let A⊆ \\{1,\\ldots N\\} be a set such that there exists at most one n with more than one solution to n=a+b (with a≤ b∈ A). Estimate the maximal possible size of | A| - in particular, is it true that| A| ≤ (1+o(1))(2)/(\\sqrt{3)}N^{1/2}?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 864,
+  "status": "open",
+  "tags": [
+    "number theory",
+    "sidon sets",
+    "additive combinatorics"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $A\\subseteq \\{1,\\ldots N\\}$ be a set such that there exists at most one $n$ with more than one solution to $n=a+b$ (with $a\\leq b\\in A$). Estimate the maximal possible size of $\\lvert A\\rvert$ - in particular, is it true that\\[\\lvert A\\rvert \\leq (1+o(1))\\frac{2}{\\sqrt{3}}N^{1/2}?\\]",
+  "additional_context": "A problem of Erdős and Freud, who prove that| A| ≥ (1+o(1))(2)/(\\sqrt{3)}N^{1/2}.This is shown by taking a genuine Sidon set B⊂ [1,N/3] of size \\sim N^{1/2}/\\sqrt{3} and taking the union with \\{N-b : b∈ B\\}.\n\nFor the analogous question with n=a-b they prove that | A|\\sim N^{1/2}.\n\nThis is a weaker form of [840].",
+  "reference_proof_hint": "Let\n\n[\nr^*(n):=|\\\\{(a,b)\\in A^2:\\ a\\le b,\\ a+b=n\\\\}|.\n]\n\nYour hypothesis is: $r^*(n)\\le 1$ for all $n$, except possibly for one value (n\\_0) where $r^*(n_0)\\ge 2$.\n\n### 1) The only possible “collision” is of the form (2x=y+z)\n\nSuppose there are two *distinct* solutions to the same sum\n[\nn=a+b=c+d\n]\nwith (a\\le b,\\ c\\le d) and ({a,b}\\ne{c,d}).\n\n* If both solutions use two distinct elements [[nomath]](i.e. $a<b$ and $c<d$)[[/nomath]], then the four elements are distinct. From (a+b=c+d) we get\n  [\n  a+d = b+c\n  ]\n  [[nomath]](just rewrite $a-c=d-b$ and add $b+d$)[[/nomath]]. This would give a *second* integer (n_1:=a+d=b+c) with (r^*(n_1)\\ge 2). Moreover (n_1\\neq n) in the nontrivial case. That contradicts “at most one” exceptional $n$.\n\nSo **no collision can occur between two off-diagonal pairs**.\n\nTherefore, if a collision exists at all, one of the representations must be diagonal: it must be of the form\n$\nn_0=2x=y+z\\qquad (y<z,\\ x\\in A,\\ y,z\\in A),\n$\ni.e. $A$ contains exactly one 3-term"
+}

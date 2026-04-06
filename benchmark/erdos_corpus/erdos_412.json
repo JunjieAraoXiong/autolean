@@ -1,0 +1,19 @@
+{
+  "uuid": "erdos_412",
+  "problem": [
+    "Let \\sigma_1(n)=\\sigma(n), the sum of divisors function, and \\sigma_k(n)=\\sigma(\\sigma_{k-1}(n)).\n\nIs it true that, for every m,n≥ 2, there exist some i,j such that \\sigma_i(m)=\\sigma_j(n)?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 412,
+  "status": "open",
+  "tags": [
+    "number theory",
+    "iterated functions"
+  ],
+  "prize": "no",
+  "formalized_on_site": true,
+  "original_latex": "Let $\\sigma_1(n)=\\sigma(n)$, the sum of divisors function, and $\\sigma_k(n)=\\sigma(\\sigma_{k-1}(n))$.\n\nIs it true that, for every $m,n\\geq 2$, there exist some $i,j$ such that $\\sigma_i(m)=\\sigma_j(n)$?",
+  "additional_context": "In \\cite{Er79d} Erdős attributes this conjecture to van Wijngaarden, who told it to Erdős in the 1950s.\n\nThat is, there is (eventually) only one possible sequence that the iterated sum of divisors function can settle on. Selfridge reports numerical evidence which suggests the answer is no, but Erdős and Graham write 'it seems unlikely that anything can be proved about this in the near future'.\n\nSee also [413] and [414].\n\nReferences\n\n[Er79d] Erdős, P., Some unconventional problems in number theory. Acta Math. Acad. Sci. Hungar. (1979), 71-80.",
+  "reference_proof_hint": "This is a known open problem.\n\nA couple of basic observations first:\n\n* For every (n>1) we have (\\sigma(n)\\ge 1+n), hence (\\sigma(n)>n). So each forward orbit\n  [\n  n,\\ \\sigma(n),\\ \\sigma_2(n),\\ \\sigma_3(n),\\dots\n  ]\n  is a **strictly increasing** infinite sequence.\n* Therefore, if (\\sigma_i(m)=\\sigma_j(n)) ever happens, then the two orbits **merge forever after** (all subsequent iterates are equal).\n\nSo your question is equivalent to: *do all orbits for (n\\ge2) eventually coalesce into a single “tree” under the map (x\\mapsto \\sigma(x))?*\n\n### Status\n\nThis is recorded as **Erdős Problem #412** (attributed by Erdős to van Wijngaarden) and is listed as **OPEN**: it “cannot be resolved with a finite computation.” ([Erdős Problems][1])\n\nThe same source notes that Selfridge reported numerical evidence suggesting the answer is **no**, and Erdős–Graham remarked that it seems unlikely anything could be proved “in the near future.” ([Erdős Problems][1])\n\n### Evidence against the statement\n\nCohe",
+  "ground_truth_lean": "/-\nCopyright 2025 The Formal Conjectures Authors.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    https://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n-/\n\nimport FormalConjectures.Util.ProblemImports\n\n/-!\n# Erdős Problem 412\n\n*Reference:* [erdosproblems.com/412](https://www.erdosproblems.com/412)\n\nReviewed by @b-mehta on 2025-05-27\n-/\n\nopen ArithmeticFunction.sigma\n\nnamespace Erdos412\n\n/--\nLet $σ_1(n)=σ(n)$, the sum of divisors function, and $σ_k(n) = σ(σ_{k-1}(n))$.\nIs it true that, for every $m, n ≥ 2$, there exist some $i, j$ such that $σ_i(m) = σ_j(n)$?\n-/\n@[category research open, AMS 11]\ntheorem erdos_412 : answer(sorry) ↔ ∀ᵉ (m ≥ 2) (n ≥ 2), ∃ i j, (σ 1)^[i] m = (σ 1)^[j] n := by\n  sorry\n\nend Erdos412\n"
+}

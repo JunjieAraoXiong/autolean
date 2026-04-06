@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_638",
+  "problem": [
+    "Let S be a family of finite graphs such that for every n there is some G_n∈ S such that if the edges of G_n are coloured with n colours then there is a monochromatic triangle.\n\nIs it true that for every infinite cardinal \\aleph there is a graph G of which every finite subgraph is in S and if the edges of G are coloured with \\aleph many colours then there is a monochromatic triangle."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 638,
+  "status": "open",
+  "tags": [
+    "graph theory",
+    "ramsey theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $S$ be a family of finite graphs such that for every $n$ there is some $G_n\\in S$ such that if the edges of $G_n$ are coloured with $n$ colours then there is a monochromatic triangle.\n\nIs it true that for every infinite cardinal $\\aleph$ there is a graph $G$ of which every finite subgraph is in $S$ and if the edges of $G$ are coloured with $\\aleph$ many colours then there is a monochromatic triangle.",
+  "additional_context": "Erdős writes 'if the answer is affirmative many extensions and generalisations will be possible'.",
+  "reference_proof_hint": "As stated [[nomath]](with **no further closure assumptions on** $S$)[[/nomath]], the answer is **no**.\n\n### A simple counterexample\n\nLet $R(3;n)$ be the usual $n$-colour Ramsey number for a monochromatic triangle, and let\n[\nS={,K_{R(3;n)} : n\\in\\mathbb N,}.\n]\nThen for each $n$, take (G_n=K_{R(3;n)}\\in S). By definition of $R(3;n)$, **every** $n$-edge-colouring of (G_n) contains a monochromatic triangle.\n\nBut now suppose there were a graph $G$ such that **every finite subgraph** of $G$ lies in $S$. If $G$ has even a single edge, then it has (K_2) as a finite subgraph. However (K_2\\notin S) [[nomath]](every graph in $S$ is a complete graph on at least $3$ vertices)[[/nomath]]. Hence $G$ must be **edgeless**, so it has **no** triangle at all—therefore it certainly does **not** have the property that every (\\aleph)-colouring of its edges yields a monochromatic triangle.\n\nSo the statement is **false in general**.\n\n---\n\n### The “intended” hereditary version is (apparently) open\n\nIf one adds "
+}

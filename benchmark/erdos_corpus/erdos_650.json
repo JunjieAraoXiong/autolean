@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_650",
+  "problem": [
+    "Let f(m) be such that if A⊆ \\{1,\\ldots,N\\} has | A|=m then every interval in [1,∞) of length 2N contains ≥ f(m) many distinct integers b_1,\\ldots,b_r where each b_i is divisible by some a_i∈ A, where a_1,\\ldots,a_r are distinct.\n\nEstimate f(m). In particular is it true that f(m)\\ll m^{1/2}?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 650,
+  "status": "solved (Lean)",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $f(m)$ be such that if $A\\subseteq \\{1,\\ldots,N\\}$ has $\\lvert A\\rvert=m$ then every interval in $[1,\\infty)$ of length $2N$ contains $\\geq f(m)$ many distinct integers $b_1,\\ldots,b_r$ where each $b_i$ is divisible by some $a_i\\in A$, where $a_1,\\ldots,a_r$ are distinct.\n\nEstimate $f(m)$. In particular is it true that $f(m)\\ll m^{1/2}$?",
+  "additional_context": "Erdős and Sar\\'{a}nyi \\cite{ErSa59} proved that f(m)\\gg m^{1/2}.\n\nReferences\n\n[ErSa59] Erdős, P. and Sar\\'{a}nyi, Megjegyz\\'{e}sek egy versenyfeladathoz. Matematikai Lapok (1959).",
+  "reference_proof_hint": "Let me restate the problem in matching language, because that makes the combinatorics transparent.\n\nFix $N$ and (A\\subseteq{1,\\dots,N}) with (|A|=m).\nGiven an interval $I$ of length (2N), let $B$ be the set of integers in $I$.\nBuild a bipartite graph with left–vertices $A$, right–vertices $B$, and an edge\n[\na\\sim b \\quad\\Longleftrightarrow\\quad a\\mid b.\n]\nThen the quantity you are trying to guarantee is exactly the size of a maximum matching in this bipartite graph. The function $f(m)$ is the minimum possible value of that maximum matching over all choices of $N$, all sets (A\\subseteq{1,\\dots,N}) of size $m$, and all length–(2N) intervals $I$.\n\n---\n\n## A universal lower bound: (f(m)\\gtrsim \\sqrt m)\n\nThere is a clean argument that shows you *always* get at least on the order of (\\sqrt m) distinct divisible integers, no matter how nasty $A$ and the interval are.\n\nLet $r$ be the size of a **maximum** matching in the graph. Then there are $m-r$ unmatched elements of $A$. Let (M\\subseteq B)"
+}

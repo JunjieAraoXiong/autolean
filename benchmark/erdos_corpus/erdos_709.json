@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_709",
+  "problem": [
+    "Let f(n) be minimal such that, for any A=\\{a_1,\\ldots,a_n\\}⊆ [2,∞)∩ℕ of size n, in any interval I of f(n)\\max(A) consecutive integers there exist distinct x_1,\\ldots,x_n∈ I such that a_i\\mid x_i.\n\nObtain good bounds for f(n), or even an asymptotic formula."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 709,
+  "status": "open",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $f(n)$ be minimal such that, for any $A=\\{a_1,\\ldots,a_n\\}\\subseteq [2,\\infty)\\cap\\mathbb{N}$ of size $n$, in any interval $I$ of $f(n)\\max(A)$ consecutive integers there exist distinct $x_1,\\ldots,x_n\\in I$ such that $a_i\\mid x_i$.\n\nObtain good bounds for $f(n)$, or even an asymptotic formula.",
+  "additional_context": "A problem of Erdős and Sur\\'{a}nyi \\cite{ErSu59}, who proved(\\log n)^c \\ll f(n) \\ll n^{1/2}for some constant c>0.\n\nSee also [708].\n\nReferences\n\n[ErSu59] Erdős, P\\'{a}l and Sur\\'{a}nyi, J\\'{a}nos, Bemerkungen zu einer Aufgabe eines mathematischen\n{W}ettbewerbs. Mat. Lapok (1959), 39-48.",
+  "reference_proof_hint": "Let me rewrite your $f(n)$ in the language that makes the combinatorics visible, and then I’ll give the best unconditional bounds I know (and what’s believed to be the truth).\n\n---\n\n## 1) Reformulation as a matching / Hall problem\n\nFix a set (A={a_1,\\dots,a_n}\\subset\\mathbb N\\cap[2,\\infty)) and an interval (I) of (L) consecutive integers.\n\nBuild a bipartite graph with left vertices (a_i\\in A) and right vertices (x\\in I), and an edge (a_i\\sim x) iff (a_i\\mid x).\n\nYour requirement is exactly:\n\n> In this bipartite graph there is a matching that covers all $n$ left vertices.\n\nBy Hall’s theorem, this fails iff there exists a subset (B\\subseteq A) such that\n$\n|\\\\{x\\in I:\\exists,b\\in B\\text{ with }b\\mid x\\\\}|<|B|.\n$\nSo $f(n)$ is the least multiplier such that for every $A$ [[nomath]](size $n$)[[/nomath]] and every interval $I$ of length (f(n)\\max(A)), every subset (B\\subseteq A) “hits” at least (|B|) integers in $I$ by divisibility.\n\n---\n\n## 2) A universal easy upper bound: (f(n)\\le n)\n\nLet ("
+}

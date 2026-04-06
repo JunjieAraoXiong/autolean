@@ -1,0 +1,19 @@
+{
+  "uuid": "erdos_563",
+  "problem": [
+    "Let F(n,\\alpha) denote the largest m such that there exists a 2-colouring of the edges of K_n so that every X⊆ [n] with | X|≥ m contains more than \\alpha \\binom{| X|}{2} many edges of each colour.\n\nProve that, for every 0≤ \\alpha≤ 1/2,F(n,\\alpha)\\sim c_\\alpha\\log nfor some constant c_\\alpha depending only on \\alpha."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 563,
+  "status": "open",
+  "tags": [
+    "graph theory",
+    "ramsey theory",
+    "hypergraphs"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $F(n,\\alpha)$ denote the largest $m$ such that there exists a $2$-colouring of the edges of $K_n$ so that every $X\\subseteq [n]$ with $\\lvert X\\rvert\\geq m$ contains more than $\\alpha \\binom{\\lvert X\\rvert}{2}$ many edges of each colour.\n\nProve that, for every $0\\leq \\alpha\\leq 1/2$,\\[F(n,\\alpha)\\sim c_\\alpha\\log n\\]for some constant $c_\\alpha$ depending only on $\\alpha$.",
+  "additional_context": "It is easy to show that, for every 0≤ \\alpha≤ 1/2,F(n,\\alpha)\\asymp_\\alpha \\log n.Note that when \\alpha=0 this is just asking for a 2-colouring of the edges of K_n which contains no monochromatic clique of size m, and hence we recover the classical Ramsey numbers.\n\nSee also [161].\n\nSee also the entry in the graphs problem collection.",
+  "reference_proof_hint": "As written [[nomath]](“**largest** $m$”)[[/nomath]], the parameter is trivial: for any (0\\le \\alpha<\\tfrac12) you can pick a colouring with, say, about half the edges red/blue, and then taking $m=n$ makes the condition apply only to (X=[n]), so (F(n,\\alpha)=n).\nThe interesting (and standard) formulation—e.g. Erdős Problem #563—is with **“smallest”** $m$, and in that form it is explicitly listed as **OPEN** to prove the full asymptotic constant. ([Erdős Problems][1])\n\nSo below I do two things:\n\n1. I give a complete proof that for every fixed (0\\le \\alpha<\\tfrac12),\n   [\n   F(n,\\alpha)=\\Theta_\\alpha(\\log n),\n   ]\n   including an essentially sharp upper bound constant from the random colouring.\n\n2. I explain why upgrading (\\Theta(\\log n)) to (\\sim c_\\alpha\\log n) [[nomath]](existence of the limit constant $c_\\alpha$)[[/nomath]] is currently an open problem in general [[nomath]](already at $\\alpha=0$ it ties into the famous “Ramsey limit” problem)[[/nomath]]. ([Erdős Problems][1])\n\nThrough"
+}

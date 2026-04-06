@@ -1,0 +1,15 @@
+{
+  "uuid": "erdos_751",
+  "problem": [
+    "Erdős Problem #751"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 751,
+  "status": "disproved (Lean)",
+  "tags": [
+    "graph theory",
+    "chromatic number"
+  ],
+  "prize": "no",
+  "formalized_on_site": false
+}

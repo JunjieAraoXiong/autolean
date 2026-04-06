@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_995",
+  "problem": [
+    "Let n_1<n_2<\\cdots be a lacunary sequence of integers and f∈ L^2([0,1]). Estimate the growth of, for almost all \\alpha,∑_{1≤ k≤ N}f(\\{ \\alpha n_k\\}).For example, is it true that, for almost all \\alpha,∑_{1≤ k≤ N}f(\\{ \\alpha n_k\\})=o(N\\sqrt{\\log\\log N})?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 995,
+  "status": "open",
+  "tags": [
+    "analysis",
+    "discrepancy"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $n_1<n_2<\\cdots$ be a lacunary sequence of integers and $f\\in L^2([0,1])$. Estimate the growth of, for almost all $\\alpha$,\\[\\sum_{1\\leq k\\leq N}f(\\{ \\alpha n_k\\}).\\]For example, is it true that, for almost all $\\alpha$,\\[\\sum_{1\\leq k\\leq N}f(\\{ \\alpha n_k\\})=o(N\\sqrt{\\log\\log N})?\\]",
+  "additional_context": "Erdős \\cite{Er49d} constructed a lacunary sequence and f∈ L^2([0,1]) such that, for every \\epsilon>0, for almost all \\alpha\\limsup_{N→ ∞}(1)/(N(\\log\\log N)^{\\frac{1){2}-\\epsilon}}∑_{1≤ k≤ N}f(\\{\\alpha n_k\\})=∞.Erdős also proved that, for every lacunary sequence and f∈ L^2, for every \\epsilon>0, for almost all \\alpha,∑_{1≤ k≤ N}∑_{1≤ k≤ N}f(\\{\\alpha n_k\\})=o( N(\\log N)^{(1)/(2)+\\epsilon}).Erdős \\cite{Er64b} thought that his lower bound was closer to the truth.\n\nReferences\n\n[Er49d] Erdős, P., On the strong law of large numbers. Trans. Amer. Math. Soc. (1949), 51--56.\n\n[Er64b] Erdős, P., Problems and results on diophantine approximations. Compositio Math. (1964), 52-65.",
+  "reference_proof_hint": "Write\n[\nS_N(\\alpha):=\\sum_{k=1}^N f({\\alpha n_k}),\\qquad \\mu:=\\int_0^1 f(x),dx,\\qquad g:=f-\\mu.\n]\nThen\n[\nS_N(\\alpha)=N\\mu+\\sum_{k=1}^N g({\\alpha n_k}),\n]\nso the real issue is the *centered* sum (\\sum_{k\\le N} g({\\alpha n_k})) [[nomath]](since $N\\mu=o(N\\sqrt{\\log\\log N})$ automatically)[[/nomath]].\n\n## What happens for “nice” $f$ (BV/Lipschitz/trig polynomials)\n\nIf (n_{k+1}/n_k\\ge q>1) (Hadamard lacunarity) and $g$ has some regularity (e.g. bounded variation, Lipschitz, etc.), then one has a genuine “probabilistic” behavior: there is an LIL-type upper bound\n[\n\\limsup_{N\\to\\infty}\\frac{\\sum_{k=1}^N g({n_k\\alpha})}{\\sqrt{2N\\log\\log N}} ;<;\\infty\n\\quad\\text{for a.e. }\\alpha,\n]\nand in many classical settings one even has a full LIL/CLT/invariance principle (the behavior resembles sums of independent variables). \n\nIn particular, under such regularity,\n[\nS_N(\\alpha)=N\\mu+O\\big(\\sqrt{N\\log\\log N}\\big)\\quad\\text{for a.e. }\\alpha,\n]\nso your proposed bound (S_N(\\alpha)=o\\big(N\\sqrt{\\log\\log N}\\bi"
+}

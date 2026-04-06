@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_75",
+  "problem": [
+    "Is there a graph of chromatic number \\aleph_1 such that for all \\epsilon>0 if n is sufficiently large and H is a subgraph on n vertices then H contains an independent set of size >n^{1-\\epsilon}?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 75,
+  "status": "open",
+  "tags": [
+    "graph theory",
+    "chromatic number"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Is there a graph of chromatic number $\\aleph_1$ such that for all $\\epsilon>0$ if $n$ is sufficiently large and $H$ is a subgraph on $n$ vertices then $H$ contains an independent set of size $>n^{1-\\epsilon}$?",
+  "additional_context": "Conjectured by Erdős, Hajnal, and Szemer\\'{e}di \\cite{EHS82}. In \\cite{Er95d} Erdős suggests this may even be true with an independent set of size \\gg n.\n\nSee also [750].\n\nReferences\n\n[EHS82] Erdős, P. and Hajnal, A. and Szemer\\'{e}di, E., On almost bipartite large chromatic graphs. Theory and practice of combinatorics (1982), 117-123.\n\n[Er95d] Erdős, Paul, On some problems in combinatorial set theory. Publ. Inst. Math. (Beograd) (N.S.) (1995), 61-65.",
+  "reference_proof_hint": "Yes.\n\nA result of Chris Lambie‑Hanson gives much more than what you ask. He proves that for **every** function (f:\\mathbb N\\to\\mathbb N) there is a graph $G$ with\n[\n\\chi(G)=\\aleph_1\n]\n(sindeed (|G|=2^{\\aleph_1})) such that for every (k\\ge 3),\n\n* every subgraph of $G$ with **fewer than $f(k)$** vertices has chromatic number **$<k$**. \n\nNow pick a very fast growing $f$. For example, let\n[\nf(k)=2^{k^2}.\n]\n\nTake any subgraph $H$ of $G$ with $n$ vertices. Put\n[\nk=\\left\\lceil \\sqrt{\\log_2 n}\\right\\rceil + 3.\n]\nThen (k^2>\\log_2 n), so (2^{k^2}>n), i.e. $n<f(k)$. By the theorem, this forces\n[\n\\chi(H)<k \\le \\left\\lceil \\sqrt{\\log_2 n}\\right\\rceil + 3.\n]\n\nIn any proper coloring of $H$ with (\\chi(H)) colors, one color class has size at least (n/\\chi(H)), so $H$ has an independent set of size\n[\n\\alpha(H)\\ \\ge\\ \\frac{n}{\\chi(H)}\\ >\\ \\frac{n}{n^\\varepsilon}\\ =\\ n^{1-\\varepsilon}\n]\nfor every fixed (\\varepsilon>0) once $n$ is large enough [[nomath]](because $\\sqrt{\\log n}$ grows much slower than $n^\\v"
+}

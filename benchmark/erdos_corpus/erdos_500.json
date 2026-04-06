@@ -1,0 +1,19 @@
+{
+  "uuid": "erdos_500",
+  "problem": [
+    "What is \\mathrm{ex}_3(n,K_4^3)? That is, the largest number of 3-edges which can placed on n vertices so that there exists no K_4^3, a set of 4 vertices which is covered by all 4 possible 3-edges."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 500,
+  "status": "open",
+  "tags": [
+    "graph theory",
+    "hypergraphs",
+    "turan number"
+  ],
+  "prize": "$500",
+  "formalized_on_site": false,
+  "original_latex": "What is $\\mathrm{ex}_3(n,K_4^3)$? That is, the largest number of $3$-edges which can placed on $n$ vertices so that there exists no $K_4^3$, a set of 4 vertices which is covered by all 4 possible $3$-edges.",
+  "additional_context": "A problem of Tur\\'{a}n. Tur\\'{a}n observed that dividing the vertices into three equal parts X_1,X_2,X_3, and taking the edges to be those triples that either have exactly one vertex in each part or two vertices in X_i and one vertex in X_{i+1} (where X_4=X_1) shows that\\mathrm{ex}_3(n,K_4^3)≥\\left((5)/(9)+o(1)\\right)\\binom{n}{3}.This is probably the truth. The current best upper bound is\\mathrm{ex}_3(n,K_4^3)≤ 0.5611666\\binom{n}{3},due to Razborov \\cite{Ra10}.\n\nSee also [712] for the general case.\n\nReferences\n\n[Ra10] Razborov, Alexander A., On 3-hypergraphs with forbidden 4-vertex configurations. SIAM J. Discrete Math. (2010), 946-963.",
+  "reference_proof_hint": "This is the classical **Turán tetrahedron problem** [[nomath]](also called Turán’s $(3,4)$-problem)[[/nomath]]. **The exact value of**\n[\n\\mathrm{ex}_3(n,K_4^3)\n]\n**is not known in general** (and in particular its asymptotic density is still open). ([Mathematical Institute][1])\n\n## What is known\n\nIt is standard to define the **Turán density**\n[\n\\pi(K_4^3):=\\lim_{n\\to\\infty}\\frac{\\mathrm{ex}_3(n,K_4^3)}{\\binom{n}{3}},\n]\nand the main open conjecture is that (\\pi(K_4^3)=5/9). ([Combinatorics.org][2])\n\n### Lower bound: Turán’s construction [[nomath]](density $5/9$)[[/nomath]]\n\nTurán’s explicit construction is:\n\n* Partition the $n$ vertices into **three parts** (V_0,V_1,V_2) as equally as possible.\n* Declare a triple to be an edge if it is either\n\n  1. **transversal**: one vertex in each of (V_0,V_1,V_2), or\n  2. of **cyclic type**: two vertices in (V_i) and one vertex in (V_{i+1}) [[nomath]](indices mod $3$)[[/nomath]]. ([Mathematical Institute][1])\n\nKeevash’s survey records that this gives"
+}

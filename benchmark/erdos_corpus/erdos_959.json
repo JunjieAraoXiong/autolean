@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_959",
+  "problem": [
+    "Let A⊂ ℝ^2 be a set of size n and let \\{d_1,\\ldots,d_k\\} be the set of distinct distances determined by A. Let f(d) be the number of times the distance d is determined, and suppose the d_i are ordered such thatf(d_1)≥ f(d_2)≥ \\cdots ≥ f(d_k).Estimate\\max (f(d_1)-f(d_2)),where the maximum is taken over all A of size n."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 959,
+  "status": "open",
+  "tags": [
+    "geometry",
+    "distances"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $A\\subset \\mathbb{R}^2$ be a set of size $n$ and let $\\{d_1,\\ldots,d_k\\}$ be the set of distinct distances determined by $A$. Let $f(d)$ be the number of times the distance $d$ is determined, and suppose the $d_i$ are ordered such that\\[f(d_1)\\geq f(d_2)\\geq \\cdots \\geq f(d_k).\\]Estimate\\[\\max (f(d_1)-f(d_2)),\\]where the maximum is taken over all $A$ of size $n$.",
+  "additional_context": "More generally, one can ask about\\max (f(d_r)-f(d_{r+1})).Clemen, Dumitrescu, and Liu \\cite{CDL25}, have shown that\\max (f(d_1)-f(d_2))\\gg n\\log n.More generally, for any 1≤ k≤ \\log n, there exists a set A of n points such thatf(d_r)-f(d_{r+1})\\gg (n\\log n)/(r).They conjecture that n\\log n can be improved to n^{1+c/\\log\\log n} for some constant c>0.\n\nReferences\n\n[CDL25] F. Clemen, A. Dumitrescu, and D. Liu, On multiplicities of interpoint distances. arXiv:2505.04283 (2025).",
+  "reference_proof_hint": "Let\n[\nM(n):=\\max_{|A|=n}\\bigl(f(d_1)-f(d_2)\\bigr).\n]\n\n### Upper bound\n\nTrivially,\n[\nf(d_1)-f(d_2)\\le f(d_1).\n]\nAfter scaling the plane so that (d_1=1), $f(d_1)$ becomes the number of **unit distances** in $A$. Thus (f(d_1)\\le U(n)), where $U(n)$ is the maximum number of unit-distance pairs among $n$ planar points. The best known general upper bound is\n[\nU(n)=O!\\left(n^{4/3}\\right)\n]\n(Spencer–Szemerédi–Trotter). Hence\n[\nM(n)=O!\\left(n^{4/3}\\right). \\tag{1}\n]\n(Quoted, for example, in Clemen–Dumitrescu–Liu’s 2025 paper.) ([arXiv][1])\n\n### Lower bound\n\nA recent result of Clemen, Dumitrescu, and Liu (2025) gives a **superlinear** lower bound on the possible gap between the largest and second-largest distance multiplicities: they construct $n$-point sets with\n[\nf(d_1)-f(d_2)=\\Omega(n\\log n),\n]\nso in particular\n[\nM(n)=\\Omega(n\\log n). \\tag{2}\n]\n([arXiv][1])\n\n[[nomath]](They prove a more general statement: for $1\\le r\\le \\log n$, one can achieve $f(d_r)-f(d_{r+1})=\\Omega\\bigl(\\frac{n\\log n}{r}"
+}

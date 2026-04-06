@@ -1,0 +1,12 @@
+{
+  "uuid": "sum_prime_reciprocals",
+  "problem": [
+    "Prove that the sum of the reciprocals of the prime numbers diverges, i.e., the series sum_{p prime} 1/p is not summable."
+  ],
+  "tier": 1,
+  "mathlib_status": "formalized",
+  "mathlib_declaration": "Nat.Primes.not_summable_one_div",
+  "mathlib_module": "Mathlib/NumberTheory/SumPrimeReciprocals",
+  "proof_strategy": "Erdős's elementary proof via rough number bounds",
+  "expected_difficulty": "easy_with_retrieval"
+}

@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_1066",
+  "problem": [
+    "Let G be a graph given by n points in ℝ^2, where any two distinct points are at least distance 1 apart, and we draw an edge between two points if they are distance 1 apart.\n\nLet g(n) be maximal such that any such graph always has an independent set on at least g(n) vertices. Estimate g(n), or perhaps \\lim (g(n))/(n)."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 1066,
+  "status": "open",
+  "tags": [
+    "graph theory",
+    "planar graphs"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $G$ be a graph given by $n$ points in $\\mathbb{R}^2$, where any two distinct points are at least distance $1$ apart, and we draw an edge between two points if they are distance $1$ apart.\n\nLet $g(n)$ be maximal such that any such graph always has an independent set on at least $g(n)$ vertices. Estimate $g(n)$, or perhaps $\\lim \\frac{g(n)}{n}$.",
+  "additional_context": "Such graphs are always planar. Erdős initially thought that g(n)=n/3, but Chung and Graham, and independently Pach, gave a construction that shows g(n)≤ (6)/(19)n. Pach and Toth \\cite{PaTo96} improved this to g(n)≤ (5)/(16)n.\n\nPollack \\cite{Po85} noted that the Four colour theorem implies g(n)≥ n/4, since the graph is planar. Pollack reports that Pach observed that this in for unit distance graphs the four colour theorem can be proved by a simple induction.\n\nThis lower bound has been improved to (9)/(35)n by Csizmadia \\cite{Cs98} and then (8)/(31)n by Swanepoel \\cite{Sw02}. The current record bounds are therefore(8)/(31)n \\approx 0.258n ≤ g(n) ≤ 0.3125n=(5)/(16)n.Pollack \\cite{Po85} also reports a letter from Erdős which poses the more general problem of, given n points in ℝ^d with minimum distance 1, let g_d(n) be maximal such that there always exist at least g_d(n) many points which have minimum distance >1. Is it true that g_d(n) \\gg n/d in general? The upper bound g_d(n) \\ll n/d is trivial, considering widely spaced unit simplices.\n\nSee [1070] for the general estimate of independence number of unit distance graphs.\n\nReferences\n\n[Cs98] Csizmadia, G., On the independence number of minimum distance graphs. Discrete Comput. Geom. (1998), 179--187.\n\n[PaTo96] Pach, J\\'anos and T\\'oth, G\\'{e}za, On the independence number of coin graphs. Geombinatorics (1996), 30--33.\n\n[Po85] Pollack, R., Increasing the minimum distance of a set of points. J. Combin. Theory Ser. A (1985), 450.\n\n[Sw02] Swanepoel, Konrad J., Independence numbers of planar contact graphs. Discrete Comput. Geom. (2002), 649--670.",
+  "reference_proof_hint": "Your graphs are exactly the **minimum‑distance graphs** in the plane (equivalently, **penny graphs**): put a circle of diameter $1$ around each point; two vertices are adjacent iff the circles are tangent. In this model one gets two key structural facts:\n\n* **Planarity:** every such graph is planar.\n* **Degree bound:** every vertex has degree (\\le 6) (the planar “kissing number” for equal circles). ([Springer][1])\n\nLet $g(n)$ be the minimum possible independence number over all $n$-vertex graphs of this type [[nomath]](this is the same function denoted $F(n)$ or $\\alpha_m(n,\\mathbb E^2)$ in the literature)[[/nomath]]. Then:\n\n## Linear growth and existence of the limit\n\nBecause you can take two extremal configurations on $n$ and $m$ points and place them far apart, you get\n[\ng(n+m)\\ \\le\\ g(n)+g(m),\n]\ni.e. $g$ is **subadditive**. By Fekete’s lemma, the limit\n[\n\\lim_{n\\to\\infty}\\frac{g(n)}{n}\n]\n**exists** and equals (\\inf_n g(n)/n). (So you don’t need to worry about limsup/liminf.)\n\n## Be"
+}

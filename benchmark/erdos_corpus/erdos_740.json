@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_740",
+  "problem": [
+    "Let \\mathfrak{m} be an infinite cardinal and G be a graph with chromatic number \\mathfrak{m}. Let r≥ 1. Must G contain a subgraph of chromatic number \\mathfrak{m} which does not contain any odd cycle of length ≤ r?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 740,
+  "status": "open",
+  "tags": [
+    "graph theory",
+    "chromatic number"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Let $\\mathfrak{m}$ be an infinite cardinal and $G$ be a graph with chromatic number $\\mathfrak{m}$. Let $r\\geq 1$. Must $G$ contain a subgraph of chromatic number $\\mathfrak{m}$ which does not contain any odd cycle of length $\\leq r$?",
+  "additional_context": "A question of Erdős and Hajnal. R\\\"{o}dl proved this is true if \\mathfrak{m}=\\aleph_0 and r=3 (see [108] for the finitary version).\n\nMore generally, Erdős and Hajnal asked must there exist (for every cardinal \\mathfrak{m} and integer r) some f_r(\\mathfrak{m}) such that every graph with chromatic number ≥ f_r(\\mathfrak{m}) contains a subgraph with chromatic number \\mathfrak{m} with no odd cycle of length ≤ r?\n\nErdős \\cite{Er95d} claimed that even the r=3 case of this is open: must every graph with sufficiently large chromatic number contain a triangle free graph with chromatic number \\mathfrak{m}?\n\nIn \\cite{Er81} Erdős also asks the same question but with girth (i.e. the subgraph does not contain any cycle at all of length ≤ C).\n\nReferences\n\n[Er81] Erdős, P., On the combinatorial problems which I would most like to see solved. Combinatorica (1981), 25-42.\n\n[Er95d] Erdős, Paul, On some problems in combinatorial set theory. Publ. Inst. Math. (Beograd) (N.S.) (1995), 61-65.",
+  "reference_proof_hint": "For (r\\le 2) the condition is vacuous [[nomath]](simple graphs have no odd cycles of length $1$ or $2$)[[/nomath]], so you can just take $G$ itself.\n\nFor (r\\ge 3) this is a well-known Erdős–Hajnal problem and, as far as is known, it is **open in ZFC in full generality**. ([Erdős Problems][1])\n\nWhat *is* known is:\n\n* **Countable case, ( \\mathfrak m=\\aleph_0), $r=3$: YES.**\n  Rödl proved that every graph of chromatic number (\\aleph_0) contains a **triangle-free** subgraph of chromatic number (\\aleph_0). ([Erdős Problems][1])\n\n* **Uncountable case: not provable in ZFC; consistent counterexamples exist already for $r=3$.**\n  Komjáth and Shelah showed it is **consistent** (relative to ZFC) that there is a graph $X$ on (\\omega_1) with (\\chi(X)=\\aleph_1) such that **every** subgraph (Y\\subseteq X) which does not contain $K(\\omega+1)$ is **countably chromatic**. \n  In particular, any triangle-free subgraph is $K(\\omega+1)$-free [[nomath]](since $K(\\omega+1)$ contains triangles)[[/nomath]], so "
+}

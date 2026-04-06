@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_619",
+  "problem": [
+    "For a triangle-free graph G let h_r(G) be the smallest number of edges that need to be added to G so that it has diameter r (while preserving the property of being triangle-free).\n\nIs it true that there exists a constant c>0 such that if G is a connected graph on n vertices then h_4(G)<(1-c)n?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 619,
+  "status": "open",
+  "tags": [
+    "graph theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "For a triangle-free graph $G$ let $h_r(G)$ be the smallest number of edges that need to be added to $G$ so that it has diameter $r$ (while preserving the property of being triangle-free).\n\nIs it true that there exists a constant $c>0$ such that if $G$ is a connected graph on $n$ vertices then $h_4(G)<(1-c)n$?",
+  "additional_context": "A problem of Erdős, Gy\\'{a}rf\\'{a}s, and Ruszink\\'{o} \\cite{EGR98} who proved that h_3(G)≤ n and h_5(G) ≤ (n-1)/(2) and there exist connected graphs G on n vertices with h_3(G)≥ n-c for some constant c>0.\n\nIf we omit the condition that the graph must remain triangle-free then Alon, Gy\\'{a}rf\\'{a}s, and Ruszink\\'{o} \\cite{AGR00} have proved that adding n/2 edges always suffices to obtain diameter at most 4.\n\nSee also [134] and [618].\n\nReferences\n\n[AGR00] Alon, Noga and Gy\\'{a}rf\\'{a}s, Andr\\'{a}s and Ruszink\\'{o}, Mikl\\'{o}s, Decreasing the diameter of bounded degree graphs. J. Graph Theory (2000), 161--172.\n\n[EGR98] Erdős, Paul and Gy\\'{a}rf\\'{a}s, Andr\\'{a}s and\nRuszink\\'{o}, Mikl\\'{o}s, How to decrease the diameter of triangle-free graphs. Combinatorica (1998), 493-501.",
+  "reference_proof_hint": "This is **open** (still not settled, as far as I can find).\n\nIt is exactly **Problem 4.3** in Erdős–Gyárfás–Ruszinkó, *How to decrease the diameter of triangle‑free graphs* (Combinatorica 1998): they explicitly state that they “could not decide” whether there is an (\\varepsilon>0) such that every connected triangle‑free $n$-vertex graph satisfies\n[\nh_4(G)\\le (1-\\varepsilon)n .\n]\n([ResearchGate][1])\n\nThe same question is also tracked as **Erdős Problem #619** and is listed there as **OPEN**. ([Erdős Problems][2])\n\n### What *is* known around it\n\nFrom the same 1998 paper:\n\n* They prove a linear upper bound for diameter $3$: for every triangle‑free $G$ on $n$ vertices,\n  [\n  h_3(G)\\le n-1,\n  ]\n  and in the connected case this is essentially tight [[nomath]](already for paths, one needs $n-O(1)$ added edges to get diameter $3$)[[/nomath]]. ([ResearchGate][1])\n\n* They prove a much better bound for diameter $5$: for triangle‑free graphs without isolated vertices (in particular, for connected "
+}

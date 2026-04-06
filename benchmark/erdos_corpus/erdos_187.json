@@ -1,0 +1,18 @@
+{
+  "uuid": "erdos_187",
+  "problem": [
+    "Find the best function f(d) such that, in any 2-colouring of the integers, at least one colour class contains an arithmetic progression with common difference d of length f(d) for infinitely many d."
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 187,
+  "status": "open",
+  "tags": [
+    "additive combinatorics",
+    "ramsey theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "Find the best function $f(d)$ such that, in any 2-colouring of the integers, at least one colour class contains an arithmetic progression with common difference $d$ of length $f(d)$ for infinitely many $d$.",
+  "additional_context": "Originally asked by Cohen. Erdős observed that colouring according to whether \\{ \\sqrt{2}n\\}<1/2 or not implies f(d) \\ll d (using the fact that \\|\\sqrt{2}q\\| \\gg 1/q for all q, where \\|x\\| is the distance to the nearest integer). Beck \\cite{Be80} has improved this using the probabilistic method, constructing a colouring that shows f(d)≤ (1+o(1))\\log_2 d. Van der Waerden's theorem implies f(d)→ ∞ is necessary.\n\nReferences\n\n[Be80] Beck, J\\'{o}zsef, A remark concerning arithmetic progressions. J. Combin. Theory Ser. A (1980), 376-379.",
+  "reference_proof_hint": "This is a classical Erdős–Cohen problem (Erdős Problem #187), and **the exact “best” growth of $f(d)$ is not known**. What *is* known is a fairly sharp **upper bound** (via an explicit 2‑colouring construction) and only a very weak **lower bound** (that $f(d)$ must be unbounded).\n\nA standard way to formalize “best” is: among all functions (f:\\mathbb N\\to\\mathbb N) with the property\n\n> for every 2‑colouring of (\\mathbb Z), there is a colour class containing a monochromatic arithmetic progression of length $f(d)$ and common difference $d$ for infinitely many $d$,\n\ndetermine/estimate the largest possible growth rate of such an $f$.\n\n## What is known (best current bounds)\n\n### Upper bound: $f(d)$ cannot beat (\\log_2 d) (up to $1+o(1)$)\n\nBeck proved (using the probabilistic method) that there exists a 2‑colouring of the integers in which **every** monochromatic arithmetic progression with common difference (d) has length at most about (\\log_2 d). Concretely, this shows that any “best possib"
+}

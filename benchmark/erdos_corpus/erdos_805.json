@@ -1,0 +1,17 @@
+{
+  "uuid": "erdos_805",
+  "problem": [
+    "For which functions g(n) with n>g(n)≥ (\\log n)^2 is there a graph on n vertices in which every induced subgraph on g(n) vertices contains a clique of size ≥ \\log n and an independent set of size ≥ \\log n?\n\nIn particular, is there such a graph for g(n)=(\\log n)^3?"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 805,
+  "status": "open",
+  "tags": [
+    "graph theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "original_latex": "For which functions $g(n)$ with $n>g(n)\\geq (\\log n)^2$ is there a graph on $n$ vertices in which every induced subgraph on $g(n)$ vertices contains a clique of size $\\geq \\log n$ and an independent set of size $\\geq \\log n$?\n\nIn particular, is there such a graph for $g(n)=(\\log n)^3$?",
+  "additional_context": "A problem of Erdős and Hajnal, who thought that there is no such graph for g(n)=(\\log n)^3. Alon and Sudakov \\cite{AlSu07} proved that there is no such graph withg(n)=(c)/(\\log\\log n)(\\log n)^3for some constant c>0.\n\nAlon, Buci\\'{c}, and Sudakov \\cite{ABS21} construct such a graph withg(n)≤ 2^{2^{(\\log\\log n)^{1/2+o(1)}}}.See also [804].\n\nReferences\n\n[ABS21] Alon, Noga and Buci\\'c, Matija and Sudakov, Benny, Large cliques and independent sets all over the place. Proc. Amer. Math. Soc. (2021), 3145-3157.\n\n[AlSu07] Alon, Noga and Sudakov, Benny, On graphs with subgraphs having large independence numbers. J. Graph Theory (2007), 149-157.",
+  "reference_proof_hint": "This is exactly the Erdős–Hajnal “**locally Ramsey**” problem.\n\nLet (r=r(n)) and for an $n$-vertex graph $G$ define (m_G(r)) to be the smallest $m$ such that **every** vertex subset $S$ with (|S|\\ge m) spans **both** a clique (K_r) and an independent set (I_r). [[nomath]](Alon–Bucić–Sudakov use this definition and say $G$ is $(m,r)$-locally Ramsey when $m\\ge m_G(r)$.)[[/nomath]] \n\nYour condition “every induced subgraph on exactly $g(n)$ vertices contains (K_{\\log n}) and (I_{\\log n})” is equivalent to being ((g(n),\\log n))-locally Ramsey, because if it holds for all (|S|=g(n)) then it automatically holds for all larger (|S|\\ge g(n)) [[nomath]](just take any $g(n)$-subset of $S$)[[/nomath]].\n\nSo the question becomes: how small can (m_G(\\log n)) be for an $n$-vertex graph? Denote\n[\nm_n(r):=\\min{m_G(r): |V(G)|=n}.\n]\n\n## What is known for (r=\\log n)\n\nAs of the bounds in Alon’s paper:\n\n### Lower bound [[nomath]](impossibility for too-small $g(n)$)[[/nomath]]\n\nOne has\n[\nm_n(\\log n)\\ \\ge\\ \\Om"
+}

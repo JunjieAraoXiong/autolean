@@ -1,0 +1,100 @@
+{
+  "uuid": "erdos_205",
+  "problem": [
+    "Erdős Problem #205"
+  ],
+  "source": "erdosproblems.com",
+  "erdos_number": 205,
+  "status": "disproved (Lean)",
+  "tags": [
+    "number theory"
+  ],
+  "prize": "no",
+  "formalized_on_site": false,
+  "expert_comments": [
+    {
+      "author": "",
+      "text": "Using $p_k^E$ as moduli looks sufficient, and we have formalized a version that drops j from the original proof. It seems that AI tried to cover for $\\omega(m)$ as well as $\\Omega(m)$ but to no avail. So the version of the conjecture with $\\omega(m)$ still stands, albeit barely, per Wouter's heuristic."
+    },
+    {
+      "author": "MingHe",
+      "text": "Can the odd case by added as an open variant in the remarks?\n      \n      \n      \n(The site has been updated to address this comment.)"
+    },
+    {
+      "author": "Dogmachine",
+      "text": "The improved lower bound stated was worked out by Tao and Alexeev, so I think they deserve some credit as well.\n      \n      \n      \n(The site has been updated to address this comment.)"
+    },
+    {
+      "author": "Woett",
+      "text": "Thanks! I appreciate you advocating for others' credits when they're deserved."
+    },
+    {
+      "author": "natso26",
+      "text": "I understand. I suppose it is Just that the set intended to be covered by such sums is historically always odd, so It would make sense to ask It only for all sufficiently large odd Integers."
+    },
+    {
+      "author": "Dogmachine",
+      "text": "I think that the odd case of this problem (i.e., impose the constraint that $n$ is odd) is an interesting variant that perhaps is worth posing, even if it isn't literally what Erdos and Graham asked.  The current counterexample construction relies very heavily on being able to be divisible by many powers of 2, and so does not directly address the odd case yet.  For that, an argument closer in spirit to Woett's proposal may be needed.\n      \n      \n      \n(The site has been updated to address this comment.)"
+    },
+    {
+      "author": "TerenceTao",
+      "text": "Given that this question arose in connection to Romanoff's question, is It not implicit that the counterexamples have to be odd?"
+    },
+    {
+      "author": "Dogmachine",
+      "text": "I don't see why? In Romanoff's question there is an obvious congruence obstruction so one should only look at odd integers of the shape $2^k+p$ (since almost all primes are odd). But there is no similar modulo $2$ obstruction to integers $m$ with $\\Omega(m)<\\log\\log m$."
+    },
+    {
+      "author": "Thomas Bloom",
+      "text": "I have de-formalized Boris' Aristotle's Lean proof (the one with the improved asymptotics) as a human-readable version.\n\nIt is available here.\n\nI have checked everything manually and it is pretty readable."
+    },
+    {
+      "author": "natso26",
+      "text": "I performed a ChatGPT DeepResearch review on this problem.  It mostly repeated the references given here and declared the problem open.  It did mention that if one replaced the exponential $2^k$ with a monomial $k^d$ then the (positive) result would follow from recent work of Johnston and Thomas (and one could even require $k$ to be prime and $n-k^d$ to have $O_d(1)$ prime factors), but acknowledged that this was quite a different problem.\n\nI think I'll go ahead and mark this as a Section 1 result.  The construction is surprisingly simple and it is a little puzzling that Erdos and Graham missed it, but perhaps as Thomas has speculated they were misled by the positive results concerning representability of almost all numbers, which we now see to be a rather different problem than the question of representing all numbers thanks to the ability to drastically reduce the number of conditions that need to be verified by restricting $n$ to be divisible by a medium size power of two."
+    },
+    {
+      "author": "TerenceTao",
+      "text": "Just an FYI, the model I used was GPT-5.2 Thinking rather than GPT-5.2 Pro, with the latter being far superior. I think it’s worth changing the note on the GitHub page.\n      \n      \n      \n(The site has been updated to address this comment.)"
+    },
+    {
+      "author": "Liam Price",
+      "text": "Congrats!\n\nRegarding why Erdos-Graham missed, I think it’s probably becoming clear by now that mathematicians’ time and resources are limited. So I guess we shouldn’t assume any open problem must be genuinely hard, or that there is no value if “the author could have produced this proof (but didn’t)”. Anything that adds to our understanding is great!\n\nRegarding Thinking vs. Pro, while it is common understanding that Pro must be superior - I want to note this is not always the case. To explain shortly, Pro has more reliability due to decoding techniques and things in this family, but this also reduces its creativity. It’s in fact a tradeoff - in my workflow I usually use Thinking and supply human feedback to compensate for reliability, and this is optimal in many cases! I haven’t seen this point mentioned anywhere, though."
+    },
+    {
+      "author": "natso26",
+      "text": "I'm probably missing something, but if we consider (for a given $n$) the roughly $\\log_2 n$ positive integers $m$ of the form $n - 2^k$, then every such $m$ has probability $\\frac{1}{2}$ of having $\\Omega(m) > \\log \\log m$. So if these probabilities are independent, then the probability that $\\Omega(m) > \\log \\log m$ for all these $m$ is about $\\frac{1}{n}$. Since the harmonic series diverges, by Borel-Cantelli we should expect infinitely many $n$ that cannot be written in the desired way. Where does my thinking or this heuristic break down?"
+    },
+    {
+      "author": "Woett",
+      "text": "This looks reasonable to me! I guess Erdős and Graham were perhaps just thinking of Romanoff's result that $2^k+p$ covers a positive density set, and thought that if we relax $p$ being prime to just having slightly less than the typical amount of prime factors, perhaps this is enough to cover all integers. But really this is just a heuristic to show that almost all integers can be so represented.\n\nIt's surprising that they made the even bolder conjecture that $<\\log\\log m$ can be replaced with function that goes to infinity 'much more slowly'. \n\nThe only thing I can see that might undermine this heuristic is if there is some kind of bias amongst $n-2^k$ towards numbers with few prime factors - but I can't see any such bias that would hold for all $n$! \n\nSo I agree this is surely false, and perhaps not that hard to disprove? If anyone can see a flaw in your heuristic I'd also be very interested to hear it."
+    },
+    {
+      "author": "Thomas Bloom",
+      "text": "Aristotle formalised a negative answer in similar vein here.\n      \n      \n      \n(The site has been updated to address this comment.)"
+    },
+    {
+      "author": "Liam Price",
+      "text": "Nice!  Can you describe your workflow?  Also, do you have a human readable version of the proof?  The idea seems natural in retrospect - use the Chinese remainder theorem to locate $n$ such that all of the $n-2^k$ have many prime factors.  By making $n$ a multiple of $2^E$ for $E \\gg \\log\\log n$ one can already handle all the $k > E$ cases; the remaining $k$ are few enough in number that there is more than enough room to apply the Chinese remainder theorem (which, when combined with a weak version of the prime number theorem basically allows one to set about $\\log n / \\log\\log n$ many congruences, and we only need about $(\\log\\log n)^2$ or so here).\n\nEDIT: it seems the same construction (now choosing $E \\asymp \\log^{1/2} n / (\\log\\log n)^{1/2}$) might in fact allow one to make $\\Omega(n-2^k)$ as large as $\\gg \\log^{1/2} n / (\\log\\log n)^{1/2}$ for all $k$ with $2^k < n$, but to formalize this would likely require a stronger piece of the prime number theorem than just Bertrand's postula"
+    },
+    {
+      "author": "TerenceTao",
+      "text": "I worked with Kevin on the #728 and #729 solutions, so the workflow was the same with those problems: asking ChatGPT 5.2 to research the problem, brainstorm some ideas and then using an offline version of 5.2 to carry out the solution using that chosen method. I didn’t mention ChatGPT here as, unlike 728 and 729, the solution wasn’t novel and seemed to use the idea Woett outlined. I’m not at my computer currently so I will comment a human readable version as soon as I can. \nApologies if my understanding is slightly off, I’m not a mathematician by trade."
+    },
+    {
+      "author": "Liam Price",
+      "text": "I would like to understand better what you mean with your formulation \"using an offline version of 5.2...\". Can you tell more at an appropriate place here at erdosproblems.com? Or does someone else has experience using offline versions of 5.2 (or other strong LLMs) for hard mathematics?"
+    },
+    {
+      "author": "old-bielefelder",
+      "text": "If 5.2 attempts to resolve this problem whilst having internet access, it will realise it’s an open problem and basically refuse to try. Restricting its internet access and not mentioning the problem is open seems to break this barrier."
+    },
+    {
+      "author": "Liam Price",
+      "text": "Here’s the human readable version, not sure how good it is though as it’s ChatGPT’s output."
+    },
+    {
+      "author": "Liam Price",
+      "text": "I also computed what the Prime Number Theorem would give, and I got the same asymptotic.\n\nAccordingly, here is a formalization of infinitely many $n$ so that for all $k$ with $2^k<n$, the number of prime factors $\\Omega(n-2^k)\\gg\\sqrt{\\log n/\\log \\log n}$.  Type-check it online!\n\nThis uses the following statement of the Prime Number Theorem taken directly from the PrimeNumberTheoremAnd project, but admitted as an axiom:\naxiom nth_prime_asymp : (fun n ↦ ((nth_prime n) : ℝ)) ~[atTop] (fun n ↦ (n : ℝ) * Real.log (n : ℝ))"
+    }
+  ]
+}
